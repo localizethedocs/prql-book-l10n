@@ -1,0 +1,279 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/tutorial/relations.md:1
+msgid "Relations"
+msgstr ""
+
+#: src/tutorial/relations.md:3
+msgid ""
+"PRQL is designed on top of _relational algebra_, which is the established "
+"data model used by modern SQL databases. A _relation_ has a rigid "
+"mathematical definition, which can be simplified to \"a table of data\". For "
+"example, the `invoices` table from the Chinook database ([https://github.com/"
+"lerocha/chinook-database](https://github.com/lerocha/chinook-database)) "
+"looks like this:"
+msgstr ""
+
+#: src/tutorial/relations.md:10
+msgid "invoice_id"
+msgstr ""
+
+#: src/tutorial/relations.md:10
+msgid "customer_id"
+msgstr ""
+
+#: src/tutorial/relations.md:10
+msgid "billing_city"
+msgstr ""
+
+#: src/tutorial/relations.md:10
+msgid "_other columns_"
+msgstr ""
+
+#: src/tutorial/relations.md:10
+msgid "total"
+msgstr ""
+
+#: src/tutorial/relations.md:12
+msgid "1"
+msgstr ""
+
+#: src/tutorial/relations.md:12 src/tutorial/relations.md:13
+msgid "2"
+msgstr ""
+
+#: src/tutorial/relations.md:12
+msgid "Stuttgart"
+msgstr ""
+
+#: src/tutorial/relations.md:12 src/tutorial/relations.md:13
+#: src/tutorial/relations.md:14 src/tutorial/relations.md:15
+#: src/tutorial/relations.md:16 src/tutorial/relations.md:17
+msgid "..."
+msgstr ""
+
+#: src/tutorial/relations.md:12
+msgid "1.98"
+msgstr ""
+
+#: src/tutorial/relations.md:13 src/tutorial/relations.md:15
+msgid "4"
+msgstr ""
+
+#: src/tutorial/relations.md:13
+msgid "Oslo"
+msgstr ""
+
+#: src/tutorial/relations.md:13
+msgid "3.96"
+msgstr ""
+
+#: src/tutorial/relations.md:14
+msgid "3"
+msgstr ""
+
+#: src/tutorial/relations.md:14
+msgid "8"
+msgstr ""
+
+#: src/tutorial/relations.md:14
+msgid "Brussels"
+msgstr ""
+
+#: src/tutorial/relations.md:14
+msgid "5.94"
+msgstr ""
+
+#: src/tutorial/relations.md:15
+msgid "14"
+msgstr ""
+
+#: src/tutorial/relations.md:15
+msgid "Edmonton"
+msgstr ""
+
+#: src/tutorial/relations.md:15
+msgid "8.91"
+msgstr ""
+
+#: src/tutorial/relations.md:16
+msgid "5"
+msgstr ""
+
+#: src/tutorial/relations.md:16
+msgid "23"
+msgstr ""
+
+#: src/tutorial/relations.md:16
+msgid "Boston"
+msgstr ""
+
+#: src/tutorial/relations.md:16
+msgid "13.86"
+msgstr ""
+
+#: src/tutorial/relations.md:17
+msgid "6"
+msgstr ""
+
+#: src/tutorial/relations.md:17
+msgid "37"
+msgstr ""
+
+#: src/tutorial/relations.md:17
+msgid "Frankfurt"
+msgstr ""
+
+#: src/tutorial/relations.md:17
+msgid "0.99"
+msgstr ""
+
+#: src/tutorial/relations.md:19
+msgid ""
+"A relation is composed of rows. Each row in a relation contains a value for "
+"each of the relation's columns. Each column in a relation has a unique name "
+"and a designated data type. The table above is a relation, and has columns "
+"named `invoice_id`and `customer_id` each with a data type of \"integer "
+"number\", a `billing_city` column with a data type of \"text\", several "
+"other columns, and a `total` column that contains floating-point numbers."
+msgstr ""
+
+#: src/tutorial/relations.md:26
+msgid "Queries"
+msgstr ""
+
+#: src/tutorial/relations.md:28
+msgid ""
+"The main purpose of PRQL is to build queries that combine and transform data "
+"from relations such as the `invoices` table above. Here is the most basic "
+"query:"
+msgstr ""
+
+#: src/tutorial/relations.md:35
+msgid ""
+"\\[!NOTE\\] Try each of these examples here in the [Playground.](https://"
+"prql-lang.org/playground/) Enter the query on the left-hand side, and click "
+"**output.arrow** in the right-hand side to see the result."
+msgstr ""
+
+#: src/tutorial/relations.md:40
+msgid ""
+"The result of the query above is not terribly interesting, it's just the "
+"same relation as before."
+msgstr ""
+
+#: src/tutorial/relations.md:43
+msgid "`select` transform"
+msgstr ""
+
+#: src/tutorial/relations.md:45
+msgid ""
+"The `select` function picks the columns to pass through based on a list and "
+"discards all others. Formally, that list is a _tuple_ of comma-separated "
+"expressions wrapped in `{ ... }`."
+msgstr ""
+
+#: src/tutorial/relations.md:49
+msgid ""
+"Suppose we only need the `order_id` and `total` columns. Use `select` to "
+"choose the columns to pass through. _(Try it in the [Playground.](https://"
+"prql-lang.org/playground/))_"
+msgstr ""
+
+#: src/tutorial/relations.md:58
+msgid ""
+"We can write the items in the tuple on one or several lines: trailing commas "
+"are ignored. In addition, we can assign any of the expressions to a "
+"_variable_ that becomes the name of the resulting column in the SQL output."
+msgstr ""
+
+#: src/tutorial/relations.md:70
+msgid ""
+"This is the same query as above, rewritten on multiple lines, and assigning "
+"`OrderID` and `Total` names to the columns."
+msgstr ""
+
+#: src/tutorial/relations.md:73
+msgid ""
+"Once we `select` certain columns, subsequent transforms will have access "
+"only to those columns named in the tuple."
+msgstr ""
+
+#: src/tutorial/relations.md:76
+msgid "`derive` transform"
+msgstr ""
+
+#: src/tutorial/relations.md:78
+msgid ""
+"To add columns to a relation, we can use the `derive` function. Let's define "
+"a new column for Value Added Tax, set at 19% of the invoice total."
+msgstr ""
+
+#: src/tutorial/relations.md:88
+msgid ""
+"The value of the new column can be a constant (such as a number or a "
+"string), or can be computed from the value of an existing column. Note that "
+"the value of the new column is assigned the name `VAT`."
+msgstr ""
+
+#: src/tutorial/relations.md:92
+msgid "`join` transform"
+msgstr ""
+
+#: src/tutorial/relations.md:94
+msgid ""
+"The `join` transform also adds columns to the relation by combining the rows "
+"from two relations \"side by side\". To determine which rows from each "
+"relation should be joined, `join` has match criteria, written in `( ... )`."
+msgstr ""
+
+#: src/tutorial/relations.md:103
+msgid ""
+"This example \"connects\" the customer information from the `customers` "
+"relation with the information from the `invoices` relation, using identical "
+"values of the `customer_id` column from each relation to match the rows."
+msgstr ""
+
+#: src/tutorial/relations.md:107
+msgid ""
+"It is frequently useful to assign an alias to both relations being joined "
+"together so that each relation's columns can be referred to uniquely."
+msgstr ""
+
+#: src/tutorial/relations.md:115
+msgid ""
+"In the example above, the alias `inv` represents the `invoices` relation and "
+"`cust` represents the `customers` relation. It then becomes possible to "
+"refer to `inv.billing_city` and `cust.last_name` unambiguously."
+msgstr ""
+
+#: src/tutorial/relations.md:119
+msgid "Summary"
+msgstr ""
+
+#: src/tutorial/relations.md:121
+msgid ""
+"PRQL manipulates relations (tables) of data. The `derive`, `select`, and "
+"`join` transforms change the number of columns in a table. The first two "
+"never affect the number of rows in a table. `join` may change the number of "
+"rows, depending on the chosen type of join."
+msgstr ""
+
+#: src/tutorial/relations.md:126
+msgid ""
+"This final example combines the above into a single query. It illustrates _a "
+"pipeline_ - the fundamental basis of PRQL. We simply add new lines "
+"(transforms) at the end of the query. Each transform modifies the relation "
+"produced by the statement above to produce the desired result."
+msgstr ""

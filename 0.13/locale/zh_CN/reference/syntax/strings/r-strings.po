@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/r-strings.md:1
+msgid "R-strings"
+msgstr ""
+
+#: src/reference/syntax/r-strings.md:3
+msgid "R-strings handle escape characters without special treatment:"
+msgstr ""
+
+#: src/reference/syntax/r-strings.md:5
+msgid ""
+"```prql\n"
+"from artists\n"
+"derive normal_string =  \"\\\\\\t\"   #  two characters - \\ and tab (\\t)\n"
+"derive raw_string    = r\"\\\\\\t\"   # four characters - \\, \\, \\, and t\n"
+"```"
+msgstr ""
