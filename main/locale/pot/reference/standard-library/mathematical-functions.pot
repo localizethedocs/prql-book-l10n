@@ -1,0 +1,207 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:13:49Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/math.md:1
+msgid "Mathematical functions"
+msgstr ""
+
+#: src/reference/stdlib/math.md:3
+msgid "These are all the functions defined in the `math` module:"
+msgstr ""
+
+#: src/reference/stdlib/math.md:5
+msgid "function"
+msgstr ""
+
+#: src/reference/stdlib/math.md:5
+msgid "parameters"
+msgstr ""
+
+#: src/reference/stdlib/math.md:5
+msgid "description"
+msgstr ""
+
+#: src/reference/stdlib/math.md:7
+msgid "abs"
+msgstr ""
+
+#: src/reference/stdlib/math.md:7 src/reference/stdlib/math.md:8
+#: src/reference/stdlib/math.md:9 src/reference/stdlib/math.md:10
+#: src/reference/stdlib/math.md:11 src/reference/stdlib/math.md:12
+#: src/reference/stdlib/math.md:13 src/reference/stdlib/math.md:14
+#: src/reference/stdlib/math.md:15 src/reference/stdlib/math.md:16
+#: src/reference/stdlib/math.md:18 src/reference/stdlib/math.md:21
+#: src/reference/stdlib/math.md:23 src/reference/stdlib/math.md:24
+#: src/reference/stdlib/math.md:25
+msgid "`col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:7
+msgid "Absolute value of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:8
+msgid "acos"
+msgstr ""
+
+#: src/reference/stdlib/math.md:8
+msgid "Arccosine of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:9
+msgid "asin"
+msgstr ""
+
+#: src/reference/stdlib/math.md:9
+msgid "Arcsine of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:10
+msgid "atan"
+msgstr ""
+
+#: src/reference/stdlib/math.md:10
+msgid "Arctangent of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:11
+msgid "ceil"
+msgstr ""
+
+#: src/reference/stdlib/math.md:11
+msgid "Rounds the number up of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:12
+msgid "cos"
+msgstr ""
+
+#: src/reference/stdlib/math.md:12
+msgid "Cosine of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:13
+msgid "degrees"
+msgstr ""
+
+#: src/reference/stdlib/math.md:13
+msgid "Converts radians to degrees"
+msgstr ""
+
+#: src/reference/stdlib/math.md:14
+msgid "exp"
+msgstr ""
+
+#: src/reference/stdlib/math.md:14
+msgid "Exponential of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:15
+msgid "floor"
+msgstr ""
+
+#: src/reference/stdlib/math.md:15
+msgid "Rounds the number down"
+msgstr ""
+
+#: src/reference/stdlib/math.md:16
+msgid "ln"
+msgstr ""
+
+#: src/reference/stdlib/math.md:16
+msgid "Natural logarithm of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:17
+msgid "log"
+msgstr ""
+
+#: src/reference/stdlib/math.md:17 src/reference/stdlib/math.md:20
+msgid "`b` `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:17
+msgid "`b`\\-log of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:18
+msgid "log10"
+msgstr ""
+
+#: src/reference/stdlib/math.md:18
+msgid "10-log of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:19
+msgid "pi"
+msgstr ""
+
+#: src/reference/stdlib/math.md:19
+msgid "The constant π"
+msgstr ""
+
+#: src/reference/stdlib/math.md:20
+msgid "pow"
+msgstr ""
+
+#: src/reference/stdlib/math.md:20
+msgid "Computes `col` to the power `b`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:21
+msgid "radians"
+msgstr ""
+
+#: src/reference/stdlib/math.md:21
+msgid "Converts degrees to radians"
+msgstr ""
+
+#: src/reference/stdlib/math.md:22
+msgid "round"
+msgstr ""
+
+#: src/reference/stdlib/math.md:22
+msgid "`n` `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:22
+msgid "Rounds `col` to `n` decimal places"
+msgstr ""
+
+#: src/reference/stdlib/math.md:23
+msgid "sin"
+msgstr ""
+
+#: src/reference/stdlib/math.md:23
+msgid "Sin of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:24
+msgid "sqrt"
+msgstr ""
+
+#: src/reference/stdlib/math.md:24
+msgid "Square root of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:25
+msgid "tan"
+msgstr ""
+
+#: src/reference/stdlib/math.md:25
+msgid "Tangent of `col`"
+msgstr ""
+
+#: src/reference/stdlib/math.md:27
+msgid "Example"
+msgstr ""
