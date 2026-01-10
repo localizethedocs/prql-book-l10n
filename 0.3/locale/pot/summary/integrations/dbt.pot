@@ -1,0 +1,187 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:24Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/integrations/dbt.md:1
+msgid "dbt-prql"
+msgstr ""
+
+#: src/integrations/dbt.md:3
+msgid "Original docs at <https://github.com/prql/dbt-prql>"
+msgstr ""
+
+#: src/integrations/dbt.md:5
+msgid ""
+"[dbt-prql](https://github.com/prql/dbt-prql) allows writing PRQL in dbt "
+"models. This combines the benefits of PRQL's power & simplicity _within_ "
+"queries, with dbt's version control, lineage & testing _across_ queries."
+msgstr ""
+
+#: src/integrations/dbt.md:9
+msgid ""
+"Once `dbt-prql` in installed, dbt commands compile PRQL between `{% prql %}` "
+"& `{% endprql %}` jinja tags to SQL as part of dbt's compilation. No "
+"additional config is required."
+msgstr ""
+
+#: src/integrations/dbt.md:13
+msgid "Examples"
+msgstr ""
+
+#: src/integrations/dbt.md:15
+msgid "Simple example"
+msgstr ""
+
+#: src/integrations/dbt.md:24 src/integrations/dbt.md:49
+msgid "...would appear to dbt as:"
+msgstr ""
+
+#: src/integrations/dbt.md:36
+msgid "Less simple example"
+msgstr ""
+
+#: src/integrations/dbt.md:54 src/integrations/dbt.md:56
+msgid "'salesforce'"
+msgstr ""
+
+#: src/integrations/dbt.md:54 src/integrations/dbt.md:56
+msgid "'in_process'"
+msgstr ""
+
+#: src/integrations/dbt.md:57
+msgid "'team'"
+msgstr ""
+
+#: src/integrations/dbt.md:57
+msgid "'team_sales'"
+msgstr ""
+
+#: src/integrations/dbt.md:62
+msgid ""
+"...and then dbt will compile the `source` and `ref`s to a full SQL query."
+msgstr ""
+
+#: src/integrations/dbt.md:64
+msgid "Replacing macros"
+msgstr ""
+
+#: src/integrations/dbt.md:66
+msgid ""
+"dbt's use of macros has saved many of us many lines of code, and even saved "
+"some people some time. But imperatively programming text generation with "
+"code like `if not loop.last` is not our highest calling. It's the "
+"\"necessary\" part rather than beautiful part of dbt."
+msgstr ""
+
+#: src/integrations/dbt.md:71
+msgid ""
+"Here's the canonical example of macros in the [dbt documentation](https://"
+"docs.getdbt.com/docs/get-started/learning-more/using-jinja):"
+msgstr ""
+
+#: src/integrations/dbt.md:75
+msgid "\"bank_transfer\""
+msgstr ""
+
+#: src/integrations/dbt.md:75
+msgid "\"credit_card\""
+msgstr ""
+
+#: src/integrations/dbt.md:75
+msgid "\"gift_card\""
+msgstr ""
+
+#: src/integrations/dbt.md:80
+msgid "'{{payment_method}}'"
+msgstr ""
+
+#: src/integrations/dbt.md:83
+msgid "'raw_payments'"
+msgstr ""
+
+#: src/integrations/dbt.md:87
+msgid "Here's that model using PRQL[^1], including the prql jinja tags."
+msgstr ""
+
+#: src/integrations/dbt.md:89
+msgid ""
+"```prql_no_test\n"
+"{% prql %}\n"
+"func filter_amount method -> s\"sum(case when payment_method = '{method}' "
+"then amount end) as {method}_amount\"\n"
+"\n"
+"from {{ ref('raw_payments') }}\n"
+"group order_id (\n"
+"  aggregate [\n"
+"    filter_amount bank_transfer,\n"
+"    filter_amount credit_card,\n"
+"    filter_amount gift_card,\n"
+"  ]\n"
+")\n"
+"{% endprql %}\n"
+"```"
+msgstr ""
+
+#: src/integrations/dbt.md:104
+msgid ""
+"As well the query being simpler in its final form, writing in PRQL also "
+"gives us live feedback around any errors, on every keystroke. Though there's "
+"much more to come, check out the current version on [PRQL Playground]"
+"(https://prql-lang.org/playground/)."
+msgstr ""
+
+#: src/integrations/dbt.md:109
+msgid "What it does"
+msgstr ""
+
+#: src/integrations/dbt.md:111
+msgid "When dbt compiles models to SQL queries:"
+msgstr ""
+
+#: src/integrations/dbt.md:113
+msgid ""
+"Any text in a dbt model between `{% prql %}` and `{% endprql %}` tags is "
+"compiled from PRQL to SQL before being passed to dbt."
+msgstr ""
+
+#: src/integrations/dbt.md:115
+msgid ""
+"The PRQL complier passes text that's containing `{{` & `}}` through to dbt "
+"without modification, which allows us to embed jinja expressions in PRQL. "
+"(This was added to PRQL specifically for this use-case.)"
+msgstr ""
+
+#: src/integrations/dbt.md:118
+msgid ""
+"dbt will then compile the resulting model into its final form of raw SQL, "
+"and dispatch it to the database, as per usual."
+msgstr ""
+
+#: src/integrations/dbt.md:121
+msgid ""
+"There's no config needed in the dbt project; this works automatically on any "
+"dbt command (e.g. `dbt run`) assuming `dbt-prql` is installed."
+msgstr ""
+
+#: src/integrations/dbt.md:124
+msgid "Installation"
+msgstr ""
+
+#: src/integrations/dbt.md:130
+msgid "Current state"
+msgstr ""
+
+#: src/integrations/dbt.md:132
+msgid ""
+"Currently this is new, but fairly feature-complete. It's enthusiastically "
+"supported — if there are any problems, please open an issue."
+msgstr ""
