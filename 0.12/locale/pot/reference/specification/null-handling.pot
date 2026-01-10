@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/spec/null.md:1
+msgid "Null handling"
+msgstr ""
+
+#: src/reference/spec/null.md:3
+msgid ""
+"SQL has an unconventional way of handling `NULL` values, since it treats "
+"them as unknown values. As a result, in SQL:"
+msgstr ""
+
+#: src/reference/spec/null.md:6
+msgid ""
+"`NULL` is not a value indicating a missing entry, but a placeholder for "
+"anything possible,"
+msgstr ""
+
+#: src/reference/spec/null.md:8
+msgid ""
+"`NULL = NULL` evaluates to `NULL`, since one cannot know if one unknown is "
+"equal to another unknown,"
+msgstr ""
+
+#: src/reference/spec/null.md:10
+msgid "`NULL <> NULL` evaluates to `NULL`, using same logic,"
+msgstr ""
+
+#: src/reference/spec/null.md:11
+msgid ""
+"to check if a value is `NULL`, SQL introduces `IS NULL` and `IS NOT NULL` "
+"operators,"
+msgstr ""
+
+#: src/reference/spec/null.md:13
+msgid "`DISTINCT column` may return multiple `NULL` values."
+msgstr ""
+
+#: src/reference/spec/null.md:15
+msgid ""
+"For more information, check out the [Postgres documentation](https://www."
+"postgresql.org/docs/current/functions-comparison.html)."
+msgstr ""
+
+#: src/reference/spec/null.md:18
+msgid "PRQL, on the other hand, treats `null` as a value, which means that:"
+msgstr ""
+
+#: src/reference/spec/null.md:20
+msgid "`null == null` evaluates to `true`,"
+msgstr ""
+
+#: src/reference/spec/null.md:21
+msgid "`null != null` evaluates to `false`,"
+msgstr ""
+
+#: src/reference/spec/null.md:22
+msgid "distinct column cannot contain multiple `null` values."
+msgstr ""
+
+#: src/reference/spec/null.md:30
+msgid ""
+"Note that PRQL doesn't change how `NULL` is compared between columns, for "
+"example in joins. (PRQL compiles to SQL and so can't change the behavior of "
+"the database)."
+msgstr ""
+
+#: src/reference/spec/null.md:34
+msgid ""
+"For more context or to provide feedback check out the discussion on [issue "
+"#99](https://github.com/PRQL/prql/issues/99)."
+msgstr ""

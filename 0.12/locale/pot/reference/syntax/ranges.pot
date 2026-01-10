@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/ranges.md:1
+msgid "Ranges"
+msgstr ""
+
+#: src/reference/syntax/ranges.md:3
+msgid ""
+"Range `start..end` represents as set of values between `start` and `end`, "
+"inclusive (greater of equal to `start` and less than or equal to `end`)."
+msgstr ""
+
+#: src/reference/syntax/ranges.md:6
+msgid ""
+"To express a range that is open on one side, either `start` or `end` can be "
+"omitted."
+msgstr ""
+
+#: src/reference/syntax/ranges.md:9
+msgid ""
+"Ranges can be used in filters with the `in` function, with any type of "
+"literal, including dates:"
+msgstr ""
+
+#: src/reference/syntax/ranges.md:19
+msgid "Ranges can also be used in `take`:"
+msgstr ""
+
+#: src/reference/syntax/ranges.md:32
+msgid "See also"
+msgstr ""
+
+#: src/reference/syntax/ranges.md:34
+msgid "[take transform](../stdlib/transforms/take.md)"
+msgstr ""
+
+#: src/reference/syntax/ranges.md:36
+msgid "Roadmap"
+msgstr ""
+
+#: src/reference/syntax/ranges.md:38
+msgid ""
+"We'd like to use ranges for other types, such as whether an object is in an "
+"array or list literal."
+msgstr ""

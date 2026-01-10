@@ -1,0 +1,581 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/spec/type-system.md:1
+msgid "Type system"
+msgstr ""
+
+#: src/reference/spec/type-system.md:3
+msgid "Status: under development"
+msgstr ""
+
+#: src/reference/spec/type-system.md:5
+msgid "The type system determines the allowed values of a term."
+msgstr ""
+
+#: src/reference/spec/type-system.md:7
+msgid "Purpose"
+msgstr ""
+
+#: src/reference/spec/type-system.md:9
+msgid ""
+"Each of the SQL DBMSs has their own type system. Thanks to the SQL standard, "
+"they are very similar, but have key differences regardless. For example, "
+"SQLite does not have a type for date or time or timestamps, but it has "
+"functions for handling date and time that take ISO 8601 strings or integers "
+"that represent Unix timestamps. So it does support most of what is possible "
+"to do with dates in other dialects, even though it stores data with a "
+"different physical layout and uses different functions to achieve that."
+msgstr ""
+
+#: src/reference/spec/type-system.md:17
+msgid ""
+"PRQL's task is to define it's own description of _data formats_, just as how "
+"it already defines common _data transformations_."
+msgstr ""
+
+#: src/reference/spec/type-system.md:20
+msgid "This is done in two steps:"
+msgstr ""
+
+#: src/reference/spec/type-system.md:22
+msgid ""
+"Define PRQL's Type System (PTS), following principles we think a relational "
+"language should have (and not fixate on what existing SQL DBMSs have)."
+msgstr ""
+
+#: src/reference/spec/type-system.md:25
+msgid ""
+"Define a mapping between SQL Type System (STS) and PTS, for each of the "
+"DBMSs. Ideally we'd want that to be a bijection, so each type in PTS would "
+"be represented by a single type in STS and vice-versa. Unfortunately this is "
+"not entirely possible, as shown below."
+msgstr ""
+
+#: src/reference/spec/type-system.md:30
+msgid "In practical terms, we want for a user to be able to:"
+msgstr ""
+
+#: src/reference/spec/type-system.md:32
+msgid ""
+"... express types of their database with PRQL (map their STS into PTS). In "
+"some cases, we can allow to say \"your database is not representable with "
+"PRQL, change it or use only a subset of it\". An example of what we don't "
+"want to support are arrays with arbitrary indexes in Postgres (i.e. 2-based "
+"index for arrays)."
+msgstr ""
+
+#: src/reference/spec/type-system.md:38
+msgid ""
+"This task of mapping to PTS could be automated by LSP server, by "
+"introspecting user's SQL database and generating PRQL source."
+msgstr ""
+
+#: src/reference/spec/type-system.md:41
+msgid ""
+"... express their SQL queries in PRQL. Again, using mapping from STS to PTS, "
+"one should be able to express any SQL operation in PRQL."
+msgstr ""
+
+#: src/reference/spec/type-system.md:44
+msgid ""
+"For example, translate MSSQL `DATEDIFF` to subtraction operator `-` in PRQL."
+msgstr ""
+
+#: src/reference/spec/type-system.md:46
+msgid ""
+"For now, this mapping is manual, but should be documented and may be "
+"automated."
+msgstr ""
+
+#: src/reference/spec/type-system.md:49
+msgid ""
+"... use any PRQL feature in their database. Here we are mapping from PTS "
+"into an arbitrary STS."
+msgstr ""
+
+#: src/reference/spec/type-system.md:52
+msgid ""
+"For example, translate PRQL's datetime operations to use TEXT in SQLite."
+msgstr ""
+
+#: src/reference/spec/type-system.md:54
+msgid ""
+"As of now, prqlc already does a good job of automatically doing this mapping."
+msgstr ""
+
+#: src/reference/spec/type-system.md:56
+msgid "Example of the mapping between PTS and two STSs:"
+msgstr ""
+
+#: src/reference/spec/type-system.md:58
+msgid "PTS"
+msgstr ""
+
+#: src/reference/spec/type-system.md:58
+msgid "STS Postgres"
+msgstr ""
+
+#: src/reference/spec/type-system.md:58
+msgid "STS SQLite"
+msgstr ""
+
+#: src/reference/spec/type-system.md:60
+msgid "int32"
+msgstr ""
+
+#: src/reference/spec/type-system.md:60
+msgid "integer"
+msgstr ""
+
+#: src/reference/spec/type-system.md:60 src/reference/spec/type-system.md:61
+msgid "INTEGER"
+msgstr ""
+
+#: src/reference/spec/type-system.md:61
+msgid "int64"
+msgstr ""
+
+#: src/reference/spec/type-system.md:61
+msgid "bigint"
+msgstr ""
+
+#: src/reference/spec/type-system.md:62
+msgid "timestamp"
+msgstr ""
+
+#: src/reference/spec/type-system.md:62
+msgid "TEXT"
+msgstr ""
+
+#: src/reference/spec/type-system.md:64
+msgid "Principles"
+msgstr ""
+
+#: src/reference/spec/type-system.md:66
+msgid ""
+"**Algebraic types** - have a way of expressing sum and product types. In "
+"Rust, sum would be an enum and product would be tuple or a struct. In SQL, "
+"product would be a row, since it can contain different types, all at once. "
+"Sum would be harder to express, see (this post)\\[https://www.parsonsmatt."
+"org/2019/03/19/sum_types_in_sql.html \\]."
+msgstr ""
+
+#: src/reference/spec/type-system.md:72
+msgid ""
+"The value proposition here is that algebraic types give a lot modeling "
+"flexibility, all while being conceptually simple."
+msgstr ""
+
+#: src/reference/spec/type-system.md:75
+msgid ""
+"**Composable** - as with transformation, we'd want types to compose together."
+msgstr ""
+
+#: src/reference/spec/type-system.md:77
+msgid ""
+"Using Python, JavaScript, C++ or Rust, one could define many different data "
+"structures that would correspond to our idea of \"relation\". Most of them "
+"would be an object/struct that has column names and types and then a generic "
+"array of arrays for rows."
+msgstr ""
+
+#: src/reference/spec/type-system.md:82
+msgid ""
+"PRQL's type system should also be able to express relations as composed from "
+"primitive types, but have only one idiomatic way of doing so."
+msgstr ""
+
+#: src/reference/spec/type-system.md:85
+msgid ""
+"In practice, this means that builtin types include only primitives (int, "
+"text, bool, float), tuple (for product), enum (for sum) and array (for "
+"repeating). An SQL row translates to a tuple, and a relation translates to "
+"an array of tuples."
+msgstr ""
+
+#: src/reference/spec/type-system.md:89
+msgid ""
+"Composability also leads to a minimal type system, which does not "
+"differentiate between tuples, objects and structs. A single product type is "
+"enough."
+msgstr ""
+
+#: src/reference/spec/type-system.md:92
+msgid "**No subtyping** - avoid super types and inheritance."
+msgstr ""
+
+#: src/reference/spec/type-system.md:94
+msgid ""
+"Subtyping is a natural extension to a type system, where a type can be a "
+"super type of some other type. This is base mechanism for Object Oriented "
+"Programming, but is also present in most dynamically types languages. For "
+"example, a type `number` might be super type of `int` and `float`."
+msgstr ""
+
+#: src/reference/spec/type-system.md:99
+msgid ""
+"PTS does not have subtyping, because it requires dynamic dispatch and "
+"because it adds unnecessary complexity to generic type arguments."
+msgstr ""
+
+#: src/reference/spec/type-system.md:102
+msgid ""
+"Dynamic dispatch, is a mechanism that would be able, for example, to call "
+"appropriate `to_string` function for each element of an array of `number`. "
+"This array contains both elements of type `int` and type `float`, with "
+"different `to_string` implementations."
+msgstr ""
+
+#: src/reference/spec/type-system.md:130
+msgid "Definition"
+msgstr ""
+
+#: src/reference/spec/type-system.md:132
+msgid ""
+"For any undefined terms used in this section, refer to set theory and "
+"mathematical definitions in general."
+msgstr ""
+
+#: src/reference/spec/type-system.md:135
+msgid ""
+"A \"type of a variable\" is a \"set of all possible values of that "
+"variable\"."
+msgstr ""
+
+#: src/reference/spec/type-system.md:137
+msgid "Primitives"
+msgstr ""
+
+#: src/reference/spec/type-system.md:139
+msgid ""
+"At the moment of writing, PRQL defines following primitive types: `int`, "
+"`float`, `bool`, `text`, `date`, `time` and `timestamp`. New primitive types "
+"will be added in the future and some of existing types might be split into "
+"smaller subsets (see section \"Splitting primitives\")."
+msgstr ""
+
+#: src/reference/spec/type-system.md:144
+msgid "Tuples"
+msgstr ""
+
+#: src/reference/spec/type-system.md:146
+msgid "Tuple type is a product type."
+msgstr ""
+
+#: src/reference/spec/type-system.md:148
+msgid ""
+"It contains n ordered fields, where n is known at compile-time. Each field "
+"has a type itself and an optional name. Fields are not necessarily of the "
+"same type."
+msgstr ""
+
+#: src/reference/spec/type-system.md:151
+msgid ""
+"In other languages, similar constructs are named record, struct, tuple, "
+"named tuple or (data)class."
+msgstr ""
+
+#: src/reference/spec/type-system.md:158
+msgid "Arrays"
+msgstr ""
+
+#: src/reference/spec/type-system.md:160
+msgid ""
+"Array is a container type that contains n ordered fields, where n is not "
+"known at compile-time. All fields are of the same type and cannot be named."
+msgstr ""
+
+#: src/reference/spec/type-system.md:167
+msgid "Functions"
+msgstr ""
+
+#: src/reference/spec/type-system.md:173
+msgid "Union"
+msgstr ""
+
+#: src/reference/spec/type-system.md:183
+msgid "This is \"a sum type\"."
+msgstr ""
+
+#: src/reference/spec/type-system.md:185
+msgid "Type annotations"
+msgstr ""
+
+#: src/reference/spec/type-system.md:187
+msgid ""
+"Variable annotations and function parameters may specify type annotations:"
+msgstr ""
+
+#: src/reference/spec/type-system.md:193
+msgid "The value of `x` (and thus `a`) must be an element of `t`."
+msgstr ""
+
+#: src/reference/spec/type-system.md:199
+msgid "The value of argument supplied to `x` must be an element of `t`."
+msgstr ""
+
+#: src/reference/spec/type-system.md:205
+msgid "The value of function body `y` must be an element of `t`."
+msgstr ""
+
+#: src/reference/spec/type-system.md:207
+msgid "Physical layout"
+msgstr ""
+
+#: src/reference/spec/type-system.md:209
+msgid ""
+"_Logical type_ is user-facing the notion of a type that is the building "
+"block of the type system."
+msgstr ""
+
+#: src/reference/spec/type-system.md:212
+msgid ""
+"_Physical layout_ is the underlying memory layout of the data represented by "
+"a variable."
+msgstr ""
+
+#: src/reference/spec/type-system.md:215
+msgid ""
+"In many programming languages, physical layout of a logical type is "
+"dependent on the target platform. Similarly, physical layout of a PRQL "
+"logical type is dependent on representation of that type in the target STS."
+msgstr ""
+
+#: src/reference/spec/type-system.md:223
+msgid ""
+"Note that not all STS types do not have a single physical layout. Postgres "
+"has a logical (pseudo)type `anyelement`, which is a super type of any data "
+"type. It can be used as a function parameter type, but does not have a "
+"single physical layout so it cannot be used in a column declaration."
+msgstr ""
+
+#: src/reference/spec/type-system.md:228
+msgid ""
+"For now, PRQL does not define physical layouts of any type. It is not needed "
+"since PRQL is not used for DDL (see section \"Splitting primitives\") or "
+"does not support raw access to underlying memory."
+msgstr ""
+
+#: src/reference/spec/type-system.md:232
+msgid ""
+"As a consequence, results of a PRQL query cannot be robustly compared across "
+"DBMSs, since the physical layout of the result will vary."
+msgstr ""
+
+#: src/reference/spec/type-system.md:235
+msgid ""
+"In the future, PRQL may define a common physical layout of types, probably "
+"using Apache Arrow."
+msgstr ""
+
+#: src/reference/spec/type-system.md:238
+msgid "Examples"
+msgstr ""
+
+#: src/reference/spec/type-system.md:261
+msgid "Appendix"
+msgstr ""
+
+#: src/reference/spec/type-system.md:263
+msgid "Splitting primitives"
+msgstr ""
+
+#: src/reference/spec/type-system.md:265
+msgid ""
+"This document mentions `int32` and `int64` as distinct types, but there is "
+"no need for that in the initial implementation. The built-in `int` can "
+"associate with all operations on integers and translate PRQL to valid SQL "
+"regardless of the size of the integer. Later, `int` cam be replaced by "
+"`int8`, `int16`, `int32`, `int64`."
+msgstr ""
+
+#: src/reference/spec/type-system.md:271
+msgid ""
+"The general rule for \"when to make a distinction between types\" would be "
+"\"as soon as the types carry different information and we find an operation "
+"that would be expressed differently\". In this example, that would require "
+"some operation on `int32` to have different syntax than same operation over "
+"`int64`."
+msgstr ""
+
+#: src/reference/spec/type-system.md:276
+msgid ""
+"We can have such relaxed rule because PRQL is not aiming to be a Data "
+"Definition Language and does not have to bother with exact physical layout "
+"of types."
+msgstr ""
+
+#: src/reference/spec/type-system.md:279
+msgid "Type representations"
+msgstr ""
+
+#: src/reference/spec/type-system.md:281
+msgid ""
+"There are cases where a PTS type has multiple possible and valid "
+"representations in some STSs."
+msgstr ""
+
+#: src/reference/spec/type-system.md:284
+msgid ""
+"For such cases, we'd want to support the use of alternative representations "
+"for storing data, but also application of any function that is defined for "
+"the original type."
+msgstr ""
+
+#: src/reference/spec/type-system.md:288
+msgid ""
+"Using SQLite as an example again, users may have some temporal data stored "
+"as INTEGER unix timestamp and some as TEXT that contains ISO 8601 without "
+"timezone. From the user's perspective, both of these types are `timestamp`s "
+"and should be declared as such. But when compiling operations over these "
+"types to SQL, the compiler should consider their different representations "
+"in STS. For example a difference between two timestamps `timestamp - "
+"timestamp` can be translated to a normal int subtraction for INTEGER repr, "
+"but must apply SQLite's function `unixepoch` when dealing with TEXT repr."
+msgstr ""
+
+#: src/reference/spec/type-system.md:297
+msgid ""
+"Table declarations should therefore support annotations that give hints "
+"about which representation is used:"
+msgstr ""
+
+#: src/reference/spec/type-system.md:307
+msgid ""
+"A similar example is an \"array of strings type\" in PTS that could be "
+"represented by a `text[]` (if DBMS supports arrays) or `json` or it's "
+"variant `jsonb` in Postgres. Again, the representation would affect "
+"operators: in Postgres, arrays would be accessed with `my_array[1]` and json "
+"arrays would use `my_json_array -> 1`. This example may not be applicable, "
+"if we decide that we want a separate JSON type in PST."
+msgstr ""
+
+#: src/reference/spec/type-system.md:314
+msgid "RQ functions, targets and reprs"
+msgstr ""
+
+#: src/reference/spec/type-system.md:316
+msgid ""
+"This part is talks about technical implementations, not the language itself"
+msgstr ""
+
+#: src/reference/spec/type-system.md:318
+msgid "Idea"
+msgstr ""
+
+#: src/reference/spec/type-system.md:320
+msgid ""
+"RQ contains a single node kind for expressing operations and functions: "
+"BuiltInFunction (may be renamed in the future)."
+msgstr ""
+
+#: src/reference/spec/type-system.md:323
+msgid ""
+"It is a bottleneck that we can leverage when trying to affect how an "
+"operator or a function interacts with different type representations on "
+"different targets."
+msgstr ""
+
+#: src/reference/spec/type-system.md:326
+msgid ""
+"Idea is to implement the BuiltInFunction multiple times and annotate it with "
+"it intended target and parameter representation. Then we can teach the "
+"compiler to pick the appropriate function implementation that suit current "
+"repr and compilation target."
+msgstr ""
+
+#: src/reference/spec/type-system.md:331
+msgid "Specifics"
+msgstr ""
+
+#: src/reference/spec/type-system.md:333
+msgid ""
+"RQ specification is an interface that contains functions, identified by name "
+"(i.e. `std.int8.add`). These functions have typed parameters and a return "
+"value. If an RQ function call does not match the function declaration in "
+"number or in types of the parameters, this is considered an invalid RQ AST."
+msgstr ""
+
+#: src/reference/spec/type-system.md:338
+msgid ""
+"We provide multiple implementations for each RQ function. They are annotated "
+"with a target (i.e. `#[target(sql.sqlite)]`) and have their params annotated "
+"with type reprs (i.e. `#[repr(int)]`)."
+msgstr ""
+
+#: src/reference/spec/type-system.md:342
+msgid ""
+"```\n"
+"# using a made-up syntax\n"
+"\n"
+"#[target(sql.sqlite)]\n"
+"func std.int8.add\n"
+"    #[repr(int8)] x\n"
+"    #[repr(int8)] y\n"
+"    -> s\"{x} + {y}\"\n"
+"```"
+msgstr ""
+
+#: src/reference/spec/type-system.md:352
+msgid ""
+"Each RQ type has one canonical repr that serves as the reference "
+"implementation for other reprs and indicates the amount of contained data (i."
+"e. 1 bit, 8 bits, 64 bits)."
+msgstr ""
+
+#: src/reference/spec/type-system.md:356
+msgid "Example"
+msgstr ""
+
+#: src/reference/spec/type-system.md:358
+msgid ""
+"Let's say for example, that we'd want to support 8bit integer arithmetic, "
+"and that we'd want the result of `127 + 1` to be `-128` (ideally we'd handle "
+"this better, but bear with me for the sake of the example). Because some "
+"RDBMSs don't support 8bit numbers and do all their integer computation with "
+"64bit numbers (SQLite), we need to implement an alternative type "
+"representation for that target."
+msgstr ""
+
+#: src/reference/spec/type-system.md:365
+msgid "The logical type `int8` could have the following two reprs:"
+msgstr ""
+
+#: src/reference/spec/type-system.md:367
+msgid ""
+"canonical `repr_int8` that contains 8 bits in two's complement, covering "
+"integer values in range -128 to 127 (inclusive),"
+msgstr ""
+
+#: src/reference/spec/type-system.md:369
+msgid ""
+"`repr_int64` that contains 64 bits of data, but is using only the values "
+"that are also covered by `repr_int8`."
+msgstr ""
+
+#: src/reference/spec/type-system.md:372
+msgid ""
+"Now we'd implement function `std.int8.add` for each of the reprs. Let's "
+"assume that the `int8` implementation is straightforward and that databases "
+"don't just change the data type when a number overflows. The impl for "
+"`int64` requires a CASE statement that checks if the value would overflow "
+"and subtact 256 in that case."
+msgstr ""
+
+#: src/reference/spec/type-system.md:378
+msgid ""
+"The goal here is that the results of the two impls are equivalent. To "
+"validate that, we also need a way to convert between the reprs, or another "
+"`to_string` function, implemented for both reprs."
+msgstr ""
