@@ -1,0 +1,440 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:13:49Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/date.md:1
+msgid "Date functions"
+msgstr ""
+
+#: src/reference/stdlib/date.md:3
+msgid "These are all the functions defined in the `date` module:"
+msgstr ""
+
+#: src/reference/stdlib/date.md:5
+msgid "`to_text`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:7
+msgid ""
+"Converts a date into a text.  \n"
+"Since there are many possible date representations, `to_text` takes a "
+"`format` parameter that describes thanks to [specifiers](#date--time-format-"
+"specifiers) how the date or timestamp should be structured."
+msgstr ""
+
+#: src/reference/stdlib/date.md:13
+msgid ""
+"\\[!NOTE\\] Since all RDBMS have different ways to format dates and times, "
+"PRQL **requires an explicit dialect** to be specified"
+msgstr ""
+
+#: src/reference/stdlib/date.md:18
+msgid ""
+"\\[!NOTE\\] For now the supported DBs are: Clickhouse, DuckDB, MySQL, MSSQL "
+"and Postgres."
+msgstr ""
+
+#: src/reference/stdlib/date.md:22
+msgid ""
+"```prql\n"
+"prql target:sql.duckdb\n"
+"\n"
+"from invoices\n"
+"select (invoice_date | date.to_text \"%d/%m/%Y\")\n"
+"\n"
+"```"
+msgstr ""
+
+#: src/reference/stdlib/date.md:30
+msgid ""
+"```prql\n"
+"prql target:sql.postgres\n"
+"\n"
+"from invoices\n"
+"select (invoice_date | date.to_text \"%d/%m/%Y\")\n"
+"\n"
+"```"
+msgstr ""
+
+#: src/reference/stdlib/date.md:38
+msgid ""
+"```prql\n"
+"prql target:sql.mysql\n"
+"\n"
+"from invoices\n"
+"select (invoice_date | date.to_text \"%d/%m/%Y\")\n"
+"\n"
+"```"
+msgstr ""
+
+#: src/reference/stdlib/date.md:46
+msgid "Date & time format specifiers"
+msgstr ""
+
+#: src/reference/stdlib/date.md:48
+msgid ""
+"PRQL specifiers for date and time formatting is a subset of specifiers used "
+"by [`chrono`](https://docs.rs/chrono/latest/chrono/format/strftime/index."
+"html)."
+msgstr ""
+
+#: src/reference/stdlib/date.md:51
+msgid "Here is the list of the specifiers currently supported:"
+msgstr ""
+
+#: src/reference/stdlib/date.md:53
+msgid "Spec."
+msgstr ""
+
+#: src/reference/stdlib/date.md:53
+msgid "Example"
+msgstr ""
+
+#: src/reference/stdlib/date.md:53
+msgid "Description"
+msgstr ""
+
+#: src/reference/stdlib/date.md:56
+msgid "**DATE SPECIFIERS:**"
+msgstr ""
+
+#: src/reference/stdlib/date.md:57
+msgid "`%Y`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:57
+msgid "`2001`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:57
+msgid "Year number, zero-padded to 4 digits"
+msgstr ""
+
+#: src/reference/stdlib/date.md:58
+msgid "`%y`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:58
+msgid "`01`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:58
+msgid "Year number, zero-padded to 2 digits"
+msgstr ""
+
+#: src/reference/stdlib/date.md:59
+msgid "`%m`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:59
+msgid "`07`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:59
+msgid "Month number (01–12), zero-padded to 2 digits"
+msgstr ""
+
+#: src/reference/stdlib/date.md:60
+msgid "`%-m`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:60
+msgid "`7`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:60
+msgid "Month number (1-12)"
+msgstr ""
+
+#: src/reference/stdlib/date.md:61
+msgid "`%b`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:61
+msgid "`Jul`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:61
+msgid "Abbreviated month name. Always 3 letters."
+msgstr ""
+
+#: src/reference/stdlib/date.md:62
+msgid "`%B`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:62
+msgid "`July`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:62
+msgid "Full month name"
+msgstr ""
+
+#: src/reference/stdlib/date.md:63
+msgid "`%d`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:63
+msgid "`08`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:63
+msgid "Day number (01-31), zero-padded to 2 digits"
+msgstr ""
+
+#: src/reference/stdlib/date.md:64
+msgid "`%-d`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:64
+msgid "` 8`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:64
+msgid "Day number (1-31)"
+msgstr ""
+
+#: src/reference/stdlib/date.md:65
+msgid "`%a`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:65
+msgid "`Sun`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:65
+msgid "Abbreviated weekday name. Always 3 letters"
+msgstr ""
+
+#: src/reference/stdlib/date.md:66
+msgid "`%A`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:66
+msgid "`Sunday`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:66
+msgid "Full weekday name"
+msgstr ""
+
+#: src/reference/stdlib/date.md:67
+msgid "`%D`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:67 src/reference/stdlib/date.md:68
+msgid "`07/08/01`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:67
+msgid "Month-day-year format. Same as `%m/%d/%y`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:68
+msgid "`%x`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:68
+msgid "Locale's date representation"
+msgstr ""
+
+#: src/reference/stdlib/date.md:69
+msgid "`%F`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:69
+msgid "`2001-07-08`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:69
+msgid "Year-month-day format (ISO 8601). Same as `%Y-%m-%d`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:71
+msgid "**TIME SPECIFIERS:**"
+msgstr ""
+
+#: src/reference/stdlib/date.md:72
+msgid "`%H`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:72
+msgid "`00`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:72
+msgid "Hour number (00-23)"
+msgstr ""
+
+#: src/reference/stdlib/date.md:73
+msgid "`%k`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:73
+msgid "` 0`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:73
+msgid "Same as `%H` but space-padded. Same as `%_H`."
+msgstr ""
+
+#: src/reference/stdlib/date.md:74
+msgid "`%I`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:74
+msgid "`12`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:74
+msgid "Hour number in 12-hour clocks (01--12), zero-padded to 2 digits."
+msgstr ""
+
+#: src/reference/stdlib/date.md:75
+msgid "`%p`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:75
+msgid "`AM`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:75
+msgid "`AM` or `PM` in 12-hour clocks."
+msgstr ""
+
+#: src/reference/stdlib/date.md:76
+msgid "`%M`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:76
+msgid "`34`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:76
+msgid "Minute number (00-59), zero-padded to 2 digits."
+msgstr ""
+
+#: src/reference/stdlib/date.md:77
+msgid "`%S`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:77
+msgid "`60`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:77
+msgid "Second number (00-59), zero-padded to 2 digits."
+msgstr ""
+
+#: src/reference/stdlib/date.md:78
+msgid "`%f`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:78
+msgid "`264900`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:78
+msgid "Number of microseconds[^1] since last whole second"
+msgstr ""
+
+#: src/reference/stdlib/date.md:79
+msgid "`%R`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:79
+msgid "`00:34`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:79
+msgid "Hour-minute format. Same as `%H:%M`."
+msgstr ""
+
+#: src/reference/stdlib/date.md:80
+msgid "`%T`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:80 src/reference/stdlib/date.md:81
+msgid "`00:34:60`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:80
+msgid "Hour-minute-second format. Same as `%H:%M:%S`."
+msgstr ""
+
+#: src/reference/stdlib/date.md:81
+msgid "`%X`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:81
+msgid "Locale's time representation (e.g., 23:13:48)."
+msgstr ""
+
+#: src/reference/stdlib/date.md:82
+msgid "`%r`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:82
+msgid "`12:34:60 AM`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:82
+msgid "Locale's 12 hour clock time. (e.g., 11:11:04 PM)"
+msgstr ""
+
+#: src/reference/stdlib/date.md:84
+msgid "**DATE & TIME SPECIFIERS:**"
+msgstr ""
+
+#: src/reference/stdlib/date.md:85
+msgid "`%+`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:85
+msgid "`2001-07-08T00:34:60.026490Z`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:85
+msgid "ISO 8601 / RFC 3339 date & time format."
+msgstr ""
+
+#: src/reference/stdlib/date.md:87
+msgid "**SPECIAL SPECIFIERS:**"
+msgstr ""
+
+#: src/reference/stdlib/date.md:88
+msgid "`%t`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:88
+msgid "Literal tab (`\\t`)."
+msgstr ""
+
+#: src/reference/stdlib/date.md:89
+msgid "`%n`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:89
+msgid "Literal newline (`\\n`)."
+msgstr ""
+
+#: src/reference/stdlib/date.md:90
+msgid "`%%`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:90
+msgid "Literal percent sign."
+msgstr ""
+
+#: src/reference/stdlib/date.md:92
+msgid "This is different from chrono, for which `%f` represents nanoseconds"
+msgstr ""
