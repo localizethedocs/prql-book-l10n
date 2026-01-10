@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:17:04Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/language-features/distinct.md:1
+msgid "Distinct"
+msgstr ""
+
+#: src/language-features/distinct.md:3
+msgid ""
+"PRQL doesn't have a specific `distinct` keyword. Instead, use `group` and "
+"`take 1`:"
+msgstr ""
+
+#: src/language-features/distinct.md:14
+msgid "This also works without a linebreak:"
+msgstr ""
+
+#: src/language-features/distinct.md:22
+msgid "Selecting from each group"
+msgstr ""
+
+#: src/language-features/distinct.md:24
+msgid ""
+"We are be able to [select a single row from each group](https://"
+"stackoverflow.com/questions/3800551/select-first-row-in-each-group-by-group) "
+"by combining `group` and `sort`:"
+msgstr ""
+
+#: src/language-features/distinct.md:37
+msgid "Roadmap"
+msgstr ""
+
+#: src/language-features/distinct.md:39
+msgid "When using Postgres dialect, we are planning to compile:"
+msgstr ""
+
+#: src/language-features/distinct.md:50
+msgid "... to ..."
+msgstr ""

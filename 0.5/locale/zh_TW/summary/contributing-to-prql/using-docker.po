@@ -1,0 +1,143 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:17:04Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/contributing/using-docker.md:1
+msgid "Using the Dockerfile"
+msgstr ""
+
+#: src/contributing/using-docker.md:3
+msgid ""
+"The `Dockerfile` in this repo builds a Docker image that has current "
+"versions of our Rust development tools. This can be the lowest-effort way of "
+"setting up a Rust environment for those that don't have one already."
+msgstr ""
+
+#: src/contributing/using-docker.md:7
+msgid "Development cycle"
+msgstr ""
+
+#: src/contributing/using-docker.md:9
+msgid ""
+"The developer loop when using Docker is substantially the same as if the "
+"tools had been installed directly."
+msgstr ""
+
+#: src/contributing/using-docker.md:12
+msgid ""
+"All the source files live in the `prql` directory on the host. As the source "
+"changes, the tools (running in the Docker container) can watch those "
+"directories and re-run so results are instantly visible."
+msgstr ""
+
+#: src/contributing/using-docker.md:16
+msgid ""
+"When the Docker container exits (say, at the end of the development "
+"session), the `prql` directory on the local machine contains the latest "
+"files. Use `git` to pull or to push the `prql` repo from the host as normal."
+msgstr ""
+
+#: src/contributing/using-docker.md:20
+msgid ""
+"To do all this, build the Docker image and start a container as described in "
+"the **Installation** section."
+msgstr ""
+
+#: src/contributing/using-docker.md:23
+msgid "Installation"
+msgstr ""
+
+#: src/contributing/using-docker.md:25
+msgid ""
+"Once Docker is installed, build the Docker image with the following commands."
+msgstr ""
+
+#: src/contributing/using-docker.md:27
+msgid ""
+"Note: It will take some time while Docker pulls in all the necessary "
+"developer tools."
+msgstr ""
+
+#: src/contributing/using-docker.md:35
+msgid ""
+"_Optional:_ Install `pre-commit` on the machine that hosts Docker. It runs "
+"several [Static Checks](./development.md#tests) to ensure code consistency. "
+"You can also configure `git` to run `pre-commit` automatically for each "
+"commit with the second (one-time) command below."
+msgstr ""
+
+#: src/contributing/using-docker.md:41
+msgid "# Run checks manually\n"
+msgstr ""
+
+#: src/contributing/using-docker.md:42
+msgid "# (one time) install the git hooks\n"
+msgstr ""
+
+#: src/contributing/using-docker.md:45
+msgid "Finally, start up the Docker container with:"
+msgstr ""
+
+#: src/contributing/using-docker.md:52
+msgid "There'll be a `root@xxxxxxxxx:/src/#` prompt"
+msgstr ""
+
+#: src/contributing/using-docker.md:53
+msgid "Enter a command to run or test code; for example `cargo test`"
+msgstr ""
+
+#: src/contributing/using-docker.md:54
+msgid "Enter `exit` to stop the container"
+msgstr ""
+
+#: src/contributing/using-docker.md:56
+msgid "Running code with Docker"
+msgstr ""
+
+#: src/contributing/using-docker.md:58
+msgid ""
+"Currently our Docker image only supports running Rust dependencies. (adding "
+"`hugo` & `nodejs` so that the playground can run would be a welcome "
+"contribution.)"
+msgstr ""
+
+#: src/contributing/using-docker.md:62
+msgid ""
+"Use the `docker run...` command above, then enter the relevant commands; for "
+"example `cargo insta test --accept` or `task run book` — more details of the "
+"commands are in each component's `README.md` file or our [Development docs]"
+"(./development.md)."
+msgstr ""
+
+#: src/contributing/using-docker.md:67
+msgid ""
+"Note: The first time you run a component, it may take some time to install "
+"additional files. Once they're built, start up is quick."
+msgstr ""
+
+#: src/contributing/using-docker.md:95
+msgid "Developing the Dockerfile"
+msgstr ""
+
+#: src/contributing/using-docker.md:97
+msgid ""
+"When making updates to the Dockerfile, we have automated testing that the "
+"Dockerfile builds on each merge in [**`test-all.yaml`**](https://github.com/"
+"PRQL/prql/blob/main/.github/workflows/test-all.yaml), and automated testing "
+"that the confirms all Rust tests pass, in [**`nightly.yaml`**](https://"
+"github.com/PRQL/prql/blob/main/.github/workflows/nightly.yaml)."
+msgstr ""
+
+#: src/contributing/using-docker.md:103
+msgid ""
+"Add a label to the PR `pr-test-all` or `pr-cron` to run these tests on a PR."
+msgstr ""
