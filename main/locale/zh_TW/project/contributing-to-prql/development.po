@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/project/contributing/development.md:1
 msgid "Development"
-msgstr ""
+msgstr "開發"
 
 #: src/project/contributing/development.md:3
 msgid "Setting up an initial dev environment"
@@ -659,7 +659,7 @@ msgstr ""
 
 #: src/project/contributing/development.md:437
 msgid "Example"
-msgstr ""
+msgstr "範例"
 
 #: src/project/contributing/development.md:439
 msgid "Does someone want to sign up to maintain a repo?"
