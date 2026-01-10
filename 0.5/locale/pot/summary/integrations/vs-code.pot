@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:17:04Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/integrations/vscode.md:1
+msgid "Visual Studio Code extension"
+msgstr ""
+
+#: src/integrations/vscode.md:3
+msgid ""
+"PRQL has a Visual Studio Code extension that compiles a PRQL query in a VS "
+"Code editor and displays the resulting SQL code in a second pane on the "
+"side. This is very handy for editing, saving, and reusing PRQL queries in VS "
+"Code."
+msgstr ""
+
+#: src/integrations/vscode.md:7
+msgid ""
+"To install the VS Code extension, open VS Code and type Ctl-Shift-P (Cmd-"
+"Shift-P on a Mac) and type `PRQL`. Install the extension as usual."
+msgstr ""
+
+#: src/integrations/vscode.md:10
+msgid ""
+"[Repo for the PRQL VS Code extension](https://github.com/PRQL/prql-vscode)"
+msgstr ""
+
+#: src/integrations/vscode.md:12
+msgid ""
+"[Extension on VS Marketplace](https://marketplace.visualstudio.com/items?"
+"itemName=PRQL-lang.prql-vscode)"
+msgstr ""

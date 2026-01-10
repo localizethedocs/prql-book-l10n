@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:17:04Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/integrations/index.md:1
+msgid "Integrations"
+msgstr ""
+
+#: src/integrations/index.md:3
+msgid "PRQL is building integrations with lots of external tools, including:"
+msgstr ""
+
+#: src/integrations/index.md:5
+msgid "[dbt](./dbt.md)"
+msgstr ""
+
+#: src/integrations/index.md:6
+msgid "[Jupyter](./jupyter.md)"
+msgstr ""
+
+#: src/integrations/index.md:7
+msgid "[Prefect](./prefect.md)"
+msgstr ""
+
+#: src/integrations/index.md:8
+msgid "[VS Code](./vscode.md)"
+msgstr ""
+
+#: src/integrations/index.md:9
+msgid "[Rill](./rill.md)"
+msgstr ""
