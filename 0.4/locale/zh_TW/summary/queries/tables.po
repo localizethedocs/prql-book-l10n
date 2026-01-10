@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:54Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/queries/tables.md:1
+msgid "Tables"
+msgstr ""
+
+#: src/queries/tables.md:3
+msgid "We can define a temporary table — similar to a CTE in SQL — with `let`:"
+msgstr ""
+
+#: src/queries/tables.md:16
+msgid ""
+"We can even place a whole CTE in an s-string, enabling us to use features "
+"which PRQL doesn't yet support."
+msgstr ""
+
+#: src/queries/tables.md:19
+msgid ""
+"```prql\n"
+"let grouping = s\"\"\"\n"
+"  SELECT SUM(a)\n"
+"  FROM tbl\n"
+"  GROUP BY\n"
+"    GROUPING SETS\n"
+"    ((b, c, d), (d), (b, d))\n"
+"\"\"\"\n"
+"\n"
+"from grouping\n"
+"```"
+msgstr ""

@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:54Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/transforms/from.md:1
+msgid "From"
+msgstr ""
+
+#: src/transforms/from.md:3
+msgid "Specifies a data source."
+msgstr ""
+
+#: src/transforms/from.md:9
+msgid ""
+"Table names containing [schemas](../syntax.md#quoting-schemas) or needing to "
+"be quoted for [other reasons](../syntax.md#quoted-identifiers) need to be "
+"contained within backticks."
+msgstr ""
+
+#: src/transforms/from.md:13
+msgid "Examples"
+msgstr ""
+
+#: src/transforms/from.md:19
+msgid "To introduce an alias, use an assign expression:"
+msgstr ""

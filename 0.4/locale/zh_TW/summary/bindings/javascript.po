@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:54Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/bindings/javascript.md:1
+msgid "prql-js"
+msgstr ""
+
+#: src/bindings/javascript.md:3
+msgid ""
+"JavaScript bindings for [`prql-compiler`](https://github.com/PRQL/prql/)."
+msgstr ""
+
+#: src/bindings/javascript.md:5
+msgid "Installation"
+msgstr ""
+
+#: src/bindings/javascript.md:11
+msgid "Usage"
+msgstr ""
+
+#: src/bindings/javascript.md:13
+msgid "Currently these functions are exposed"
+msgstr ""
+
+#: src/bindings/javascript.md:25
+msgid "From NodeJS"
+msgstr ""
+
+#: src/bindings/javascript.md:27
+msgid "Direct usage"
+msgstr ""
+
+#: src/bindings/javascript.md:30 src/bindings/javascript.md:39
+#: src/bindings/javascript.md:49
+msgid "\"prql-js\""
+msgstr ""
+
+#: src/bindings/javascript.md:32
+msgid "`from employees | select first_name`"
+msgstr ""
+
+#: src/bindings/javascript.md:36
+msgid "Template literal"
+msgstr ""
+
+#: src/bindings/javascript.md:40 src/bindings/javascript.md:50
+msgid "\"\""
+msgstr ""
+
+#: src/bindings/javascript.md:42
+msgid "prql`from employees | select first_name`"
+msgstr ""
+
+#: src/bindings/javascript.md:46
+msgid "Template literal with newlines"
+msgstr ""
+
+#: src/bindings/javascript.md:52
+msgid ""
+"prql`\n"
+"    from employees\n"
+"    select first_name\n"
+"`"
+msgstr ""
+
+#: src/bindings/javascript.md:59
+msgid "From a Browser"
+msgstr ""
+
+#: src/bindings/javascript.md:64
+msgid "\"./node_modules/prql-js/dist/web/prql_js.js\""
+msgstr ""
+
+#: src/bindings/javascript.md:69
+msgid "\"./node_modules/prql-js/dist/web/prql_js_bg.wasm\""
+msgstr ""
+
+#: src/bindings/javascript.md:70
+msgid "\"from employees | select first_name\""
+msgstr ""
+
+#: src/bindings/javascript.md:83
+msgid "From a Framework or a Bundler"
+msgstr ""
+
+#: src/bindings/javascript.md:85
+msgid ""
+"```typescript\n"
+"import compile from \"prql-js/dist/bundler\";\n"
+"\n"
+"const sql = compile(`from employees | select first_name`);\n"
+"console.log(sql);\n"
+"```"
+msgstr ""
+
+#: src/bindings/javascript.md:92
+msgid "Errors"
+msgstr ""
+
+#: src/bindings/javascript.md:94
+msgid "Errors are returned as following object, serialized as a JSON array:"
+msgstr ""
+
+#: src/bindings/javascript.md:96
+msgid ""
+"```ts\n"
+"interface ErrorMessage {\n"
+"  /// Plain text of the error\n"
+"  reason: string;\n"
+"  /// A list of suggestions of how to fix the error\n"
+"  hint: string | null;\n"
+"  /// Character offset of error origin within a source file\n"
+"  span: [number, number] | null;\n"
+"\n"
+"  /// Annotated code, containing cause and hints.\n"
+"  display: string | null;\n"
+"  /// Line and column number of error origin within a source file\n"
+"  location: SourceLocation | null;\n"
+"}\n"
+"\n"
+"/// Location within the source file.\n"
+"/// Tuples contain:\n"
+"/// - line number (0-based),\n"
+"/// - column number within that line (0-based),\n"
+"interface SourceLocation {\n"
+"  start: [number, number];\n"
+"\n"
+"  end: [number, number];\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/bindings/javascript.md:122
+msgid "These errors can be caught as such:"
+msgstr ""
+
+#: src/bindings/javascript.md:126
+msgid "`from employees | foo first_name`"
+msgstr ""
+
+#: src/bindings/javascript.md:135
+msgid "Development"
+msgstr ""
+
+#: src/bindings/javascript.md:137
+msgid "Build:"
+msgstr ""
+
+#: src/bindings/javascript.md:143
+msgid "This builds Node, bundler and web packages in the `dist` path."
+msgstr ""
+
+#: src/bindings/javascript.md:145
+msgid "Test:"
+msgstr ""
+
+#: src/bindings/javascript.md:151
+msgid "Notes"
+msgstr ""
+
+#: src/bindings/javascript.md:153
+msgid ""
+"This uses [`wasm-pack`](https://rustwasm.github.io/docs/wasm-pack/) to "
+"generate bindings[^1]."
+msgstr ""
+
+#: src/bindings/javascript.md:155
+msgid ""
+"We've added an `npm` layer on top of the usual approach of just using `wasm-"
+"pack`, so we can distribute a single package with targets of `node`, "
+"`bundler` and `no-modules` — somewhat inverting the approach recommended by "
+"`wasm-pack`. The build instruction goes in a `build` script, rather than a "
+"`pack` script."
+msgstr ""
