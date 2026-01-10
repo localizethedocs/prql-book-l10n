@@ -1,0 +1,62 @@
+{
+  "dev" : [
+    {
+      "VERSION" : "main",
+      "VERSION_COMPENDIUM" : ""
+    }
+  ],
+  "rel" : [
+    {
+      "VERSION" : "0.13",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.12",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.11",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.10",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.9",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.8",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.7",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.6",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.5",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.4",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.3",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.2",
+      "VERSION_COMPENDIUM" : "main"
+    },
+    {
+      "VERSION" : "0.1",
+      "VERSION_COMPENDIUM" : "main"
+    }
+  ]
+}
