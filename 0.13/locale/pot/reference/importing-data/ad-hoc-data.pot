@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/data/relation-literals.md:1
+msgid "How do I: create ad-hoc relations?"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:3
+msgid ""
+"It's often useful to make a small inline relation, for example when "
+"exploring how a database will evaluate an expression, or for a small lookup "
+"table. This can be quite verbose in SQL."
+msgstr ""
+
+#: src/reference/data/relation-literals.md:7
+msgid ""
+"PRQL offers two approaches — array literals, and a `from_text` transform."
+msgstr ""
+
+#: src/reference/data/relation-literals.md:9
+msgid "Array literals"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:11
+msgid ""
+"Because relations (aka a table) in PRQL are just arrays of tuples, they can "
+"be expressed with array and tuple syntax:"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:23
+msgid ""
+"```prql\n"
+"let my_artists = [\n"
+"  {artist=\"Miles Davis\"},\n"
+"  {artist=\"Marvin Gaye\"},\n"
+"  {artist=\"James Brown\"},\n"
+"]\n"
+"\n"
+"from artists\n"
+"join my_artists (==artist)\n"
+"join albums (==artist_id)\n"
+"select {artists.artist_id, albums.title}\n"
+"```"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:36
+msgid "`from_text`"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:38
+msgid ""
+"`from_text` takes a string in a common format, and converts it to table. It "
+"accepts a few formats:"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:41
+msgid "`format:csv` parses CSV (default),"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:43
+msgid "`format:json` parses either:"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:44
+msgid "an array of objects each of which represents a row, or"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:46
+msgid ""
+"an object with fields `columns` & `data`, where `columns` take an array of "
+"column names and `data` takes an array of arrays."
+msgstr ""
+
+#: src/reference/data/relation-literals.md:49
+msgid ""
+"```prql\n"
+"from_text \"\"\"\n"
+"a,b,c\n"
+"1,2,3\n"
+"4,5,6\n"
+"\"\"\"\n"
+"derive {\n"
+"    d = b + c,\n"
+"    answer = 20 * 2 + 2,\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:61
+msgid ""
+"```prql\n"
+"from_text format:json \"\"\"\n"
+"[\n"
+"    {\"a\": 1, \"m\": \"5\"},\n"
+"    {\"a\": 4, \"n\": \"6\"}\n"
+"]\n"
+"\"\"\"\n"
+"```"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:70
+msgid ""
+"```prql\n"
+"from_text format:json \"\"\"\n"
+"{\n"
+"    \"columns\": [\"a\", \"b\", \"c\"],\n"
+"    \"data\": [\n"
+"        [1, \"x\", false],\n"
+"        [4, \"y\", null]\n"
+"    ]\n"
+"}\n"
+"\"\"\"\n"
+"```"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:82
+msgid "See also"
+msgstr ""
+
+#: src/reference/data/relation-literals.md:84
+msgid "[How do I: read files?](./read-files.md)"
+msgstr ""
