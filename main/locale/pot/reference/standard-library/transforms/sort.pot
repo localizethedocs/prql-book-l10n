@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:13:49Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/transforms/sort.md:1
+msgid "Sort"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:3
+msgid ""
+"Order rows based on the values of one or more expressions (generally "
+"columns)."
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:9
+msgid "Parameters"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:11
+msgid "One expression or a tuple of expressions to sort by"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:12
+msgid "Each expression can be prefixed with:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:13
+msgid "`+`, for ascending order, the default"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:14
+msgid "`-`, for descending order"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:15
+msgid ""
+"When using prefixes, even a single expression needs to be in a tuple or "
+"parentheses. (Otherwise, `sort -foo` is parsed as a subtraction between "
+"`sort` and `foo`.)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:19
+msgid "Examples"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:36
+msgid "We can also use expressions:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:38
+msgid ""
+"```prql\n"
+"from employees\n"
+"sort {s\"substr({first_name}, 2, 5)\"}\n"
+"```"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:43
+msgid "Ordering guarantees"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:45
+msgid "Ordering is persistent through a pipeline in PRQL. For example:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:53
+msgid ""
+"Here, PRQL pushes the `sort` down the pipeline, compiling the `ORDER BY` to "
+"the _end_ of the query. Consequently, most relation transforms retain the "
+"row order."
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:56
+msgid "The explicit semantics are:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:58
+msgid "`sort` introduces a new order,"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:59
+msgid "`group` resets the order,"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:60
+msgid "`join` retains the order of the left relation,"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:61
+msgid "database tables don't have a known order."
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:63
+msgid ""
+"Comparatively, in SQL, relations possess no order, being orderable solely "
+"within the context of the query result, `LIMIT` statement, or window "
+"function. The lack of inherent order can result in an unexpected reshuffling "
+"of a previously ordered relation from a `JOIN` or windowing operation."
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:69
+msgid ""
+"\\[!NOTE\\] To be precise — in PRQL, a relation is an _array of tuples_ and "
+"not a set or a bag. The persistent nature of this order remains intact "
+"through sub-queries and intermediate table definitions."
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:74
+msgid "For instance, an SQL query such as:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:87
+msgid ""
+"...doesn't guarantee any row order (indeed — even without the `JOIN`, the "
+"SQL standard doesn't guarantee an order, although most implementations will "
+"respect it)."
+msgstr ""
+
+#: src/reference/stdlib/transforms/sort.md:122
+msgid ""
+"<a name=\"footnote-1\">[1](#to-footnote-1)</a>: except for MSSQL, which "
+"doesn't support this"
+msgstr ""
