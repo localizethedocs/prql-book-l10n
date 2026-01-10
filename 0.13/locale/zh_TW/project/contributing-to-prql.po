@@ -5,10 +5,10 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/project/contributing/index.md:1
@@ -69,7 +69,7 @@ msgstr ""
 
 #: src/project/contributing/index.md:26
 msgid "Compiler"
-msgstr ""
+msgstr "編譯器"
 
 #: src/project/contributing/index.md:28
 msgid ""
@@ -137,7 +137,7 @@ msgstr ""
 
 #: src/project/contributing/index.md:59
 msgid "Language design"
-msgstr ""
+msgstr "語言設計"
 
 #: src/project/contributing/index.md:61
 msgid ""
@@ -199,7 +199,7 @@ msgstr ""
 
 #: src/project/contributing/index.md:87
 msgid "Core team"
-msgstr ""
+msgstr "核心團隊"
 
 #: src/project/contributing/index.md:89
 msgid ""
