@@ -1,0 +1,22 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/syntax/numbers.md:1
+msgid "Numbers"
+msgstr ""
+
+#: src/syntax/numbers.md:3
+msgid ""
+"Numbers can contain underscores between numbers; which can make reading "
+"large numbers easier:"
+msgstr ""
