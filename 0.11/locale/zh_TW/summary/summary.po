@@ -5,10 +5,10 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/SUMMARY.md:3
@@ -17,7 +17,7 @@ msgstr ""
 
 #: src/SUMMARY.md:5
 msgid "Tutorial"
-msgstr ""
+msgstr "教學"
 
 #: src/SUMMARY.md:7
 msgid "Relations"
@@ -53,7 +53,7 @@ msgstr ""
 
 #: src/SUMMARY.md:19
 msgid "Syntax"
-msgstr ""
+msgstr "語法"
 
 #: src/SUMMARY.md:21
 msgid "Literals"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: src/SUMMARY.md:27
 msgid "Arrays"
-msgstr ""
+msgstr "陣列"
 
 #: src/SUMMARY.md:28
 msgid "Identifiers & keywords"
@@ -213,11 +213,11 @@ msgstr ""
 
 #: src/SUMMARY.md:69
 msgid "Modules"
-msgstr ""
+msgstr "模組"
 
 #: src/SUMMARY.md:70
 msgid "Type system"
-msgstr ""
+msgstr "型別系統"
 
 #: src/SUMMARY.md:72
 msgid "Project"
@@ -225,7 +225,7 @@ msgstr ""
 
 #: src/SUMMARY.md:74
 msgid "Changelog"
-msgstr ""
+msgstr "變更日誌"
 
 #: src/SUMMARY.md:76
 msgid "Target & version"
@@ -237,35 +237,35 @@ msgstr ""
 
 #: src/SUMMARY.md:80
 msgid ".NET"
-msgstr ""
+msgstr ".NET"
 
 #: src/SUMMARY.md:81
 msgid "Elixir"
-msgstr ""
+msgstr "Elixir"
 
 #: src/SUMMARY.md:82
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #: src/SUMMARY.md:83
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: src/SUMMARY.md:84
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 #: src/SUMMARY.md:85
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: src/SUMMARY.md:86
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: src/SUMMARY.md:87
 msgid "Rust"
-msgstr ""
+msgstr "Rust"
 
 #: src/SUMMARY.md:89
 msgid "Integrations"
@@ -273,7 +273,7 @@ msgstr ""
 
 #: src/SUMMARY.md:91
 msgid "`prqlc CLI`"
-msgstr ""
+msgstr "`prqlc CLI`"
 
 #: src/SUMMARY.md:92
 msgid "ClickHouse"
@@ -281,11 +281,11 @@ msgstr ""
 
 #: src/SUMMARY.md:93
 msgid "Jupyter"
-msgstr ""
+msgstr "Jupyter"
 
 #: src/SUMMARY.md:94
 msgid "DuckDB"
-msgstr ""
+msgstr "DuckDB"
 
 #: src/SUMMARY.md:95
 msgid "Prefect"
@@ -301,7 +301,7 @@ msgstr ""
 
 #: src/SUMMARY.md:98
 msgid "Syntax highlighting"
-msgstr ""
+msgstr "語法標明"
 
 #: src/SUMMARY.md:99
 msgid "PostgreSQL"
@@ -313,8 +313,8 @@ msgstr ""
 
 #: src/SUMMARY.md:103
 msgid "Development"
-msgstr ""
+msgstr "開發"
 
 #: src/SUMMARY.md:104
 msgid "Language design"
-msgstr ""
+msgstr "語言設計"
