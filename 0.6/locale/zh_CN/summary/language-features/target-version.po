@@ -1,0 +1,115 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:39Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/language-features/target.md:1
+msgid "Target & Version"
+msgstr ""
+
+#: src/language-features/target.md:3
+msgid "Target dialect"
+msgstr ""
+
+#: src/language-features/target.md:5
+msgid ""
+"PRQL allows specifying a target dialect at the top of the query, which "
+"allows PRQL to compile to a database-specific SQL flavor."
+msgstr ""
+
+#: src/language-features/target.md:8
+msgid "Examples"
+msgstr ""
+
+#: src/language-features/target.md:26
+msgid "Supported dialects"
+msgstr ""
+
+#: src/language-features/target.md:34
+msgid "`sql.ansi`"
+msgstr ""
+
+#: src/language-features/target.md:35
+msgid "`sql.bigquery`"
+msgstr ""
+
+#: src/language-features/target.md:36
+msgid "`sql.clickhouse`"
+msgstr ""
+
+#: src/language-features/target.md:37
+msgid "`sql.generic`"
+msgstr ""
+
+#: src/language-features/target.md:38
+msgid "`sql.hive`"
+msgstr ""
+
+#: src/language-features/target.md:39
+msgid "`sql.mssql`"
+msgstr ""
+
+#: src/language-features/target.md:40
+msgid "`sql.mysql`"
+msgstr ""
+
+#: src/language-features/target.md:41
+msgid "`sql.postgres`"
+msgstr ""
+
+#: src/language-features/target.md:42
+msgid "`sql.sqlite`"
+msgstr ""
+
+#: src/language-features/target.md:43
+msgid "`sql.snowflake`"
+msgstr ""
+
+#: src/language-features/target.md:44
+msgid "`sql.duckdb`"
+msgstr ""
+
+#: src/language-features/target.md:46
+msgid "Version"
+msgstr ""
+
+#: src/language-features/target.md:48
+msgid ""
+"PRQL allows specifying a version of the language in the PRQL header, like:"
+msgstr ""
+
+#: src/language-features/target.md:50
+msgid ""
+"```prql_no_fmt\n"
+"prql version:\"0.6.1\"\n"
+"\n"
+"from employees\n"
+"```"
+msgstr ""
+
+#: src/language-features/target.md:56
+msgid "This has two roles, one of which is implemented:"
+msgstr ""
+
+#: src/language-features/target.md:58
+msgid ""
+"The compiler will raise an error if the compiler is older than the query "
+"version. This prevents confusing errors when queries use newer features of "
+"the language but the compiler hasn't yet been upgraded."
+msgstr ""
+
+#: src/language-features/target.md:61
+msgid ""
+"The compiler will compile for the major version of the query. This allows "
+"the language to evolve without breaking existing queries, or forcing "
+"multiple installations of the compiler. This isn't yet implemented, but is a "
+"gating feature for PRQL 1.0."
+msgstr ""

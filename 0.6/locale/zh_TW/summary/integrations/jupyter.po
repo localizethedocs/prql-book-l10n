@@ -1,0 +1,150 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:39Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/integrations/jupyter.md:1
+msgid "Jupyter"
+msgstr ""
+
+#: src/integrations/jupyter.md:3
+msgid ""
+"Original docs at <https://pyprql.readthedocs.io/en/latest/magic_readme.html>"
+msgstr ""
+
+#: src/integrations/jupyter.md:5
+msgid "Work with pandas and PRQL in an IPython terminal or Jupyter notebook."
+msgstr ""
+
+#: src/integrations/jupyter.md:7
+msgid "Implementation"
+msgstr ""
+
+#: src/integrations/jupyter.md:9
+msgid ""
+"This is a thin wrapper around the fantastic [IPython-sql](https://github.com/"
+"catherinedevlin/ipython-sql) magic. Roughly speaking, all we do is parse "
+"PRQL to SQL and pass that through to `ipython-sql`. A full documentation of "
+"the supported features is available at their [repository](https://github.com/"
+"catherinedevlin/ipython-sql). Here, we document those places where we differ "
+"from them, plus those features we think you are mostly likely to find useful."
+msgstr ""
+
+#: src/integrations/jupyter.md:15
+msgid "Usage"
+msgstr ""
+
+#: src/integrations/jupyter.md:17
+msgid "Installation"
+msgstr ""
+
+#: src/integrations/jupyter.md:19
+msgid ""
+"If you have already installed PyPRQL into your environment, then you should "
+"be could to go! We bundle in `IPython` and `pandas`, though you'll need to "
+"install `Jupyter` separately. If you haven't installed PyPRQL, that's as "
+"simple as:"
+msgstr ""
+
+#: src/integrations/jupyter.md:27
+msgid "Set up"
+msgstr ""
+
+#: src/integrations/jupyter.md:29
+msgid ""
+"Open up either an `IPython` terminal or `Jupyter` notebook. First, we need "
+"to load the extension and connect to a database."
+msgstr ""
+
+#: src/integrations/jupyter.md:37
+msgid "Connecting a database"
+msgstr ""
+
+#: src/integrations/jupyter.md:39
+msgid "We have two options for connecting a database"
+msgstr ""
+
+#: src/integrations/jupyter.md:41
+msgid "Create an in-memory DB. This is the easiest way to get started."
+msgstr ""
+
+#: src/integrations/jupyter.md:47
+msgid ""
+"However, in-memory databases start off empty! So, we need to add some data. "
+"We have a two options:"
+msgstr ""
+
+#: src/integrations/jupyter.md:50
+msgid ""
+"We can easily add a [pandas](https://pandas.pydata.org) dataframe to the "
+"`DuckDB` database like so:"
+msgstr ""
+
+#: src/integrations/jupyter.md:57
+msgid ""
+"where `df` is a pandas dataframe. This adds a table named `df` to the in-"
+"memory `DuckDB` instance."
+msgstr ""
+
+#: src/integrations/jupyter.md:60
+msgid "Or download a CSV and query it directly, with DuckDB:"
+msgstr ""
+
+#: src/integrations/jupyter.md:66
+msgid "...and then `from products.csv` will work."
+msgstr ""
+
+#: src/integrations/jupyter.md:68
+msgid "Connect to an existing database"
+msgstr ""
+
+#: src/integrations/jupyter.md:70
+msgid ""
+"When connecting to a database, pass the connection string as an argument to "
+"the line magic `%prql`. The connection string needs to be in [SQLAlchemy "
+"format](https://docs.sqlalchemy.org/en/14/core/engines.html#database-urls), "
+"so any connection supported by `SQLAlchemy` is supported by the magic. "
+"Additional connection parameters can be passed as a dictionary using the `--"
+"connection_arguments` flag to the the `%prql` line magic. We ship with the "
+"necessary extensions to use [DuckDB](https://duckdb.org) as the backend, and "
+"here connect to an in-memory database."
+msgstr ""
+
+#: src/integrations/jupyter.md:78
+msgid "Querying"
+msgstr ""
+
+#: src/integrations/jupyter.md:80
+msgid ""
+"Now, let's do a query! By default, `PRQLMagic` always returns the results as "
+"dataframe, and always prints the results. The results of the previous query "
+"are accessible in the `_` variable."
+msgstr ""
+
+#: src/integrations/jupyter.md:84
+msgid "These examples are based on the `products.csv` example above."
+msgstr ""
+
+#: src/integrations/jupyter.md:110
+msgid "\"unitPrice\""
+msgstr ""
+
+#: src/integrations/jupyter.md:121
+msgid "We can capture the results into a different variable like so:"
+msgstr ""
+
+#: src/integrations/jupyter.md:130
+msgid "\"unitsInStock\""
+msgstr ""
+
+#: src/integrations/jupyter.md:134
+msgid "Now, the output of the query is saved to `results`."
+msgstr ""

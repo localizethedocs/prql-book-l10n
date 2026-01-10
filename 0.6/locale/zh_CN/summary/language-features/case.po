@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:39Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/language-features/case.md:1
+msgid "Case"
+msgstr ""
+
+#: src/language-features/case.md:7
+msgid ""
+"PRQL uses `case` for both SQL's `CASE` and `IF` statements. Here's an "
+"example:"
+msgstr ""
+
+#: src/language-features/case.md:9
+msgid ""
+"```prql_no_fmt\n"
+"from employees\n"
+"derive distance = case [\n"
+"  city == \"Calgary\" => 0,\n"
+"  city == \"Edmonton\" => 300,\n"
+"]\n"
+"```"
+msgstr ""
+
+#: src/language-features/case.md:17
+msgid ""
+"If no condition is met, the value takes a `null` value. To set a default, "
+"use a `true` condition:"
+msgstr ""
+
+#: src/language-features/case.md:20
+msgid ""
+"```prql_no_fmt\n"
+"from employees\n"
+"derive distance = case [\n"
+"  city == \"Calgary\" => 0,\n"
+"  city == \"Edmonton\" => 300,\n"
+"  true => \"Unknown\",\n"
+"]\n"
+"```"
+msgstr ""

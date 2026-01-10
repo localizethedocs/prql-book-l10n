@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:39Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/language-features/dates-and-times.md:1
+msgid "Dates & times"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:3
+msgid ""
+"PRQL uses `@` followed by a string to represent dates & times. This is less "
+"verbose than SQL's approach of `TIMESTAMP '2004-10-19 10:23:54'` and more "
+"explicit than SQL's implicit option of just using a string `'2004-10-19 "
+"10:23:54'`."
+msgstr ""
+
+#: src/language-features/dates-and-times.md:8
+msgid ""
+"```admonish note\n"
+"Currently PRQL passes strings which can be compiled straight through to the\n"
+"database, and so many compatible formats string may work, but we may refine "
+"this\n"
+"in the future to aid in compatibility across databases. We'll always support "
+"the\n"
+"canonical [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format described "
+"below.\n"
+"```"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:15
+msgid "Dates"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:17
+msgid ""
+"Dates are represented by `@{yyyy-mm-dd}` — a `@` followed by the date format."
+msgstr ""
+
+#: src/language-features/dates-and-times.md:24
+msgid "Times"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:26
+msgid ""
+"Times are represented by `@{HH:mm:ss.SSS±Z}` with any parts not supplied "
+"being rounded to zero, including the timezone, which is represented by `+HH:"
+"mm`, `-HH:mm` or `Z`. This is consistent with the ISO8601 time format."
+msgstr ""
+
+#: src/language-features/dates-and-times.md:35
+msgid "Timestamps"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:37
+msgid ""
+"Timestamps are represented by `@{yyyy-mm-ddTHH:mm:ss.SSS±Z}` / `@{date}"
+"T{time}`, with any time parts not supplied being rounded to zero, including "
+"the timezone, which is represented by `+HH:mm`, `-HH:mm` or `Z` (`:` is "
+"optional). This is `@` followed by the ISO8601 datetime format, which uses "
+"`T` to separate date & time."
+msgstr ""
+
+#: src/language-features/dates-and-times.md:47
+msgid "Intervals"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:49
+msgid ""
+"Intervals are represented by `{N}{periods}`, such as `2years` or "
+"`10minutes`, without a space."
+msgstr ""
+
+#: src/language-features/dates-and-times.md:65
+msgid "Examples"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:67
+msgid "Here's a fuller list of examples:"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:69
+msgid ""
+"`@20221231` is invalid — it must contain full punctuation (`-` and `:`),"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:70
+msgid "`@2022-12-31` is a date"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:71
+msgid ""
+"`@2022-12` or `@2022` are invalid — SQL can't express a month, only a date"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:72
+msgid "`@16:54:32.123456` is a time"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:73
+msgid ""
+"`@16:54:32`, `@16:54`, `@16` are all allowed, expressing `@16:54:32.000000`, "
+"`@16:54:00.000000`, `@16:00:00.000000` respectively"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:75
+msgid "`@2022-12-31T16:54:32.123456` is a timestamp without timezone"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:76
+msgid "`@2022-12-31T16:54:32.123456Z` is a timestamp in UTC"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:77
+msgid "`@2022-12-31T16:54+02` is timestamp in UTC+2"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:78
+msgid ""
+"`@2022-12-31T16:54+02:00` and `@2022-12-31T16:54+02` are datetimes in UTC+2"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:79
+msgid ""
+"`@16:54+02` is invalid — time is always local, so it cannot have a timezone"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:80
+msgid ""
+"`@2022-12-31+02` is invalid — date is always local, so it cannot have a "
+"timezone"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:83
+msgid "Roadmap"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:85
+msgid "Datetimes"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:87
+msgid ""
+"Datetimes are supported by some databases (e.g. MySql, BigQuery) in addition "
+"to timestamps. When we have type annotations, these will be represented by a "
+"timestamp annotated as a datetime:"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:95
+msgid "These are some examples we can then add:"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:97
+msgid "`@2022-12-31T16:54<datetime>` is datetime without timezone"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:98
+msgid "`@2022-12-31<datetime>` is forbidden — datetime must specify time"
+msgstr ""
+
+#: src/language-features/dates-and-times.md:99
+msgid "`@16:54<datetime>` is forbidden — datetime must specify date"
+msgstr ""

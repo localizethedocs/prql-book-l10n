@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:39Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/language-features/f-strings.md:1
+msgid "F-strings"
+msgstr ""
+
+#: src/language-features/f-strings.md:3
+msgid ""
+"F-strings are a readable approach to building new strings from existing "
+"strings. Currently PRQL supports this for concatenating strings:"
+msgstr ""
+
+#: src/language-features/f-strings.md:6
+msgid ""
+"```prql\n"
+"from employees\n"
+"select full_name = f\"{first_name} {last_name}\"\n"
+"```"
+msgstr ""
+
+#: src/language-features/f-strings.md:11
+msgid ""
+"This can be much easier to read for longer strings, relative to the SQL "
+"approach:"
+msgstr ""
+
+#: src/language-features/f-strings.md:14
+msgid ""
+"```prql\n"
+"from web\n"
+"select url = f\"http{tls}://www.{domain}.{tld}/{page}\"\n"
+"```"
+msgstr ""
+
+#: src/language-features/f-strings.md:19
+msgid ""
+"Note that interpolations can only contain plain variable names and not whole "
+"expression like Python."
+msgstr ""
+
+#: src/language-features/f-strings.md:22
+msgid "Roadmap"
+msgstr ""
+
+#: src/language-features/f-strings.md:24
+msgid ""
+"In the future, f-strings may incorporate string formatting such as "
+"datetimes, numbers, and padding. If there's a feature that would be helpful, "
+"please [post an issue](https://github.com/PRQL/prql/issues/new/)."
+msgstr ""

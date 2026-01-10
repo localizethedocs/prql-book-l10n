@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:39Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/internals/compiler-architecture.md:1
+msgid "Compiler architecture"
+msgstr ""
+
+#: src/internals/compiler-architecture.md:3
+msgid "Compiler works in the following stages:"
+msgstr ""
+
+#: src/internals/compiler-architecture.md:5
+msgid ""
+"Lexing & parsing - split PRQL text into tokens, build parse tree and convert "
+"into our AST (Abstract Syntax Tree, see `ast` module). Parsing is done using "
+"the chumsky parser, AST is constructed in `parser.rs`."
+msgstr ""
+
+#: src/internals/compiler-architecture.md:9
+msgid ""
+"Semantic analysis - resolves names (identifiers), extracts declarations, "
+"determines frames (columns of the table in each step). It declares `Context` "
+"that contains root module (mapping from accessible names to their "
+"declarations)."
+msgstr ""
+
+#: src/internals/compiler-architecture.md:14
+msgid "Resolving includes following operations:"
+msgstr ""
+
+#: src/internals/compiler-architecture.md:16
+msgid "Assign an id to each node (`Expr` and `Stmt`)."
+msgstr ""
+
+#: src/internals/compiler-architecture.md:17
+msgid ""
+"Extract function declarations and variable def into appropriate `Module`, "
+"accessible from `Context::root_mod`"
+msgstr ""
+
+#: src/internals/compiler-architecture.md:19
+msgid ""
+"Lookup identifiers in module and find associated declaration. Ident is "
+"replaced with fully qualified name that guarantees unique name in "
+"`root_mod`. Sometimes, `Expr::target` is also set."
+msgstr ""
+
+#: src/internals/compiler-architecture.md:22
+msgid ""
+"Function calls to transforms (`from`, `derive`, `filter`) are converted from "
+"`FuncCall` into `TransformCall`, which is more convenient for later "
+"processing."
+msgstr ""
+
+#: src/internals/compiler-architecture.md:25
+msgid ""
+"Determine type of expr. If expr is a reference to a table use the frame of "
+"the table as the type. If it is a `TransformCall`, apply the transform to "
+"the input frame to obtain resulting type. For simple expressions, try to "
+"infer from `ExprKind`."
+msgstr ""
+
+#: src/internals/compiler-architecture.md:30
+msgid ""
+"Lowering - converts PL into RQ that is more strictly typed, contains less "
+"information but is convenient for translating into SQL or some other backend."
+msgstr ""
+
+#: src/internals/compiler-architecture.md:33
+msgid ""
+"SQL backend - converts RQ into SQL. It converts each of the relations into a "
+"SQL query. Pipelines are analyzed and split at appropriate positions into "
+"\"AtomicPipelines\" which can be represented by a single SELECT statement."
+msgstr ""
+
+#: src/internals/compiler-architecture.md:37
+msgid ""
+"Splitting is done back-to-front. First, we start with list all output "
+"columns we want. Then we traverse the pipeline backwards and split when we "
+"encounter a transform that is incompatible with transforms already present "
+"in the pipeline. Split can also be triggered by encountering an expression "
+"that cannot be materialized where it is used (window function is WHERE for "
+"example)."
+msgstr ""
+
+#: src/internals/compiler-architecture.md:44
+msgid ""
+"This process is also called anchoring, because it anchors a column "
+"definition to a specific location in the output query."
+msgstr ""
+
+#: src/internals/compiler-architecture.md:47
+msgid "During this process, `sql::context` keeps track of:"
+msgstr ""
+
+#: src/internals/compiler-architecture.md:49
+msgid ""
+"table instances in the query (to prevent mixing up two instances of the same "
+"table)"
+msgstr ""
+
+#: src/internals/compiler-architecture.md:51
+msgid "column definitions, whether computed or a reference to a table column,"
+msgstr ""
+
+#: src/internals/compiler-architecture.md:52
+msgid "column names, as defined in RQ or generated"
+msgstr ""
