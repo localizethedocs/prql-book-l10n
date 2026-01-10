@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/reference/spec/type-system.md:1
 msgid "Type system"
-msgstr ""
+msgstr "型別系統"
 
 #: src/reference/spec/type-system.md:3
 msgid "The type system determines the allowed values of a term."
@@ -607,7 +607,7 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:389
 msgid "Example"
-msgstr ""
+msgstr "範例"
 
 #: src/reference/spec/type-system.md:391
 msgid ""

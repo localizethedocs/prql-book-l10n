@@ -5,10 +5,10 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/project/bindings/index.md:1
@@ -76,15 +76,15 @@ msgstr ""
 
 #: src/project/bindings/index.md:26
 msgid "[Python](./python.md)"
-msgstr ""
+msgstr "[Python](./python.md)"
 
 #: src/project/bindings/index.md:27
 msgid "[R](./r.md)"
-msgstr ""
+msgstr "[R](./r.md)"
 
 #: src/project/bindings/index.md:28
 msgid "[Rust](./rust.md)"
-msgstr ""
+msgstr "[Rust](./rust.md)"
 
 #: src/project/bindings/index.md:30
 msgid ""
@@ -101,11 +101,11 @@ msgstr ""
 
 #: src/project/bindings/index.md:39
 msgid "[Java](./java.md)"
-msgstr ""
+msgstr "[Java](./java.md)"
 
 #: src/project/bindings/index.md:40
 msgid "[Elixir](./elixir.md)"
-msgstr ""
+msgstr "[Elixir](./elixir.md)"
 
 #: src/project/bindings/index.md:41
 msgid "`prqlc-clib`, the C bindings"
@@ -117,8 +117,8 @@ msgstr ""
 
 #: src/project/bindings/index.md:47
 msgid "[.NET](./dotnet.md)"
-msgstr ""
+msgstr "[.NET](./dotnet.md)"
 
 #: src/project/bindings/index.md:48
 msgid "[PHP](./php.md)"
-msgstr ""
+msgstr "[PHP](./php.md)"
