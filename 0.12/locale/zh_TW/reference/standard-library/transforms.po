@@ -1,0 +1,202 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/transforms/index.md:1
+msgid "Transforms"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:3
+msgid "Transforms are functions that take a relation and produce a relation."
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:5
+msgid ""
+"Usually they are chained together into a pipeline, which resembles an SQL "
+"query."
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:7
+msgid ""
+"Transforms were designed with a focus on modularity, so each of them is "
+"fulfilling a specific purpose and has defined invariants (properties of the "
+"relation that are left unaffected). That's often referred to as "
+"\"orthogonality\" and its goal is to keep transform functions composable by "
+"minimizing interference of their effects. Additionally, it also keeps the "
+"number of transforms low."
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:14
+msgid ""
+"For example, `select` and `derive` will not change the number of rows, while "
+"`filter` and `take` will not change the number of columns."
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:17
+msgid ""
+"In SQL, we can see this lack of invariant when an aggregation function is "
+"used in the `SELECT` clause. Before, the number of rows was kept constant, "
+"but introduction of an aggregation function caused the whole statement to "
+"produce only one row (per group)."
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:22
+msgid "These are the currently available transforms:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:24
+msgid "Transform"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:24
+msgid "Purpose"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:24
+msgid "SQL Equivalent"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:26
+msgid "`derive`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:26
+msgid "[Compute new columns](./derive.md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:26
+msgid "`SELECT *, ... AS ...`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:27
+msgid "`select`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:27
+msgid "[Pick & compute columns](./select.md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:27
+msgid "`SELECT ... AS ...`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:28
+msgid "`filter`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:28
+msgid "[Pick rows based on their values](./filter.md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:28
+msgid "`WHERE`, `HAVING`,`QUALIFY`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:29
+msgid "`sort`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:29
+msgid "[Order rows based on the values of columns](./sort.md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:29
+msgid "`ORDER BY`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:30
+msgid "`join`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:30
+msgid ""
+"[Add columns from another table, matching rows based on a condition](./join."
+"md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:30
+msgid "`JOIN`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:31
+msgid "`take`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:31
+msgid "[Pick rows based on their position](./take.md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:31
+msgid "`TOP`, `LIMIT`, `OFFSET`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:32
+msgid "`group`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:32
+msgid ""
+"[Partition rows into groups and applies a pipeline to each of them](./group."
+"md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:32
+msgid "`GROUP BY`, `PARTITION BY`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:33
+msgid "`aggregate`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:33
+msgid "[Summarize many rows into one row](./aggregate.md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:33
+msgid "`SELECT foo(...)`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:34
+msgid "`window`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:34
+msgid "[Apply a pipeline to overlapping segments of rows](./window.md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:34
+msgid "`OVER`, `ROWS`, `RANGE`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:35
+msgid "`loop`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:35
+msgid ""
+"[Iteratively apply a function to a relation until it's empty](./loop.md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:35
+msgid "`WITH RECURSIVE ...`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:37
+msgid "See also"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:39
+msgid ""
+"[`from`](../../data/from.md) — `from` is the main way of getting data into a "
+"pipeline (it's not listed above since it's not technically a transform, "
+"since it doesn't receive an input)."
+msgstr ""

@@ -1,0 +1,259 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/operators.md:1
+msgid "Operators"
+msgstr ""
+
+#: src/reference/syntax/operators.md:3
+msgid ""
+"Expressions can be composed from _function calls_ and _operations_, such as "
+"`2 + 3` or `((1 + x) * -y)`. In the example below, note the use of "
+"expressions to calculate the alias `circumference` and in the `filter` "
+"transform."
+msgstr ""
+
+#: src/reference/syntax/operators.md:7
+msgid ""
+"```prql\n"
+"from foo\n"
+"select {\n"
+"  circumference = diameter * 3.14159,\n"
+"  color,\n"
+"}\n"
+"filter circumference > 10 && color != \"red\"\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:16
+msgid "Operator precedence"
+msgstr ""
+
+#: src/reference/syntax/operators.md:18
+msgid ""
+"This table shows operator precedence. Use parentheses `()` to prioritize "
+"operations and for function calls (see the discussion below.)"
+msgstr ""
+
+#: src/reference/syntax/operators.md:23
+msgid ""
+"\\|          Group | Operators                   | Precedence | "
+"Associativity | \\| -------------: | --------------------------- "
+"| :--------: | :-----------: | --- | --- | \\|    parentheses | "
+"`()`                        |     0      |   see below   | \\| identifier "
+"dot | `.`                         |     1      |               | "
+"\\|          unary | `-` `+` `!` `==`            |     2      "
+"|               | \\|          range | `..`                        |     "
+"3      |               | \\|           <!-- | pow                         "
+"|    `**`    |       4       |     | --> | \\|            mul | `*` `/` `//` "
+"`%`            |     5      | left-to-right | \\|            add | `+` `-"
+"`                     |     6      | left-to-right | \\|        compare | "
+"`==` `!=` `<=` `>=` `<` `>` |     7      | left-to-right | \\|       "
+"coalesce | `??`                        |     8      | left-to-right | "
+"\\|            and | `&&`                        |     9      | left-to-"
+"right | \\|             or | <code>\\|\\|</code>           |     10     | "
+"left-to-right | \\|  function call |                             |     "
+"11     |               |"
+msgstr ""
+
+#: src/reference/syntax/operators.md:38
+msgid "Division and integer division"
+msgstr ""
+
+#: src/reference/syntax/operators.md:40
+msgid ""
+"The `/` operator performs division that always returns a float value, while "
+"the `//` operator does integer division (truncated division) that always "
+"returns an integer value."
+msgstr ""
+
+#: src/reference/syntax/operators.md:44
+msgid ""
+"```prql\n"
+"prql target:sql.sqlite\n"
+"\n"
+"from [\n"
+"  {a = 5, b = 2},\n"
+"  {a = 5, b = -2},\n"
+"]\n"
+"select {\n"
+"  div_out = a / b,\n"
+"  int_div_out = a // b,\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:57
+msgid "Coalesce"
+msgstr ""
+
+#: src/reference/syntax/operators.md:59
+msgid ""
+"We can coalesce values with an `??` operator. Coalescing takes either the "
+"first value or, if that value is null, the second value."
+msgstr ""
+
+#: src/reference/syntax/operators.md:67
+msgid "Regex expressions"
+msgstr ""
+
+#: src/reference/syntax/operators.md:73
+msgid ""
+"To perform a case-sensitive regex search, use the `~=` operator. This "
+"generally compiles to `REGEXP`, though differs by dialect. A regex search "
+"means that to match an exact value, the start and end need to be anchored "
+"with `^foo$`."
+msgstr ""
+
+#: src/reference/syntax/operators.md:77
+msgid ""
+"```prql\n"
+"from tracks\n"
+"filter (name ~= \"Love\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:82
+msgid ""
+"```prql\n"
+"prql target:sql.duckdb\n"
+"\n"
+"from artists\n"
+"filter (name ~= \"Love.*You\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:89
+msgid ""
+"```prql\n"
+"prql target:sql.bigquery\n"
+"\n"
+"from tracks\n"
+"filter (name ~= \"\\\\bLove\\\\b\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:96
+msgid ""
+"```prql\n"
+"prql target:sql.postgres\n"
+"\n"
+"from tracks\n"
+"filter (name ~= \"\\\\(I Can't Help\\\\) Falling\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:103
+msgid ""
+"```prql\n"
+"prql target:sql.mysql\n"
+"\n"
+"from tracks\n"
+"filter (name ~= \"With You\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:110
+msgid ""
+"```prql\n"
+"prql target:sql.sqlite\n"
+"\n"
+"from tracks\n"
+"filter (name ~= \"But Why Isn't Your Syntax More Similar\\\\?\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:117
+msgid "Parentheses"
+msgstr ""
+
+#: src/reference/syntax/operators.md:119
+msgid "PRQL uses parentheses `()` for several purposes:"
+msgstr ""
+
+#: src/reference/syntax/operators.md:121
+msgid ""
+"Parentheses group operands to control the order of evaluation, for example: "
+"`((1 + x) * y)`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:124
+msgid ""
+"Parentheses delimit a minus sign of a function argument, for example: `add "
+"(-1) (-3)`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:127
+msgid ""
+"Parentheses delimit nested function calls that contain a pipe, either the `|"
+"` symbol or a new line. “Nested” means within a transform; i.e. not just the "
+"main pipeline, for example: `(column-name | in 0..20)`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:131
+msgid ""
+"Parentheses wrap a function call that is part of a larger expression, for "
+"example: `math.round 0 (sum distance)`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:134
+msgid ""
+"Parentheses are _not_ required for expressions that do not contain function "
+"calls, for example: `foo + bar`."
+msgstr ""
+
+#: src/reference/syntax/operators.md:137
+msgid "Here's a set of examples of these rules:"
+msgstr ""
+
+#: src/reference/syntax/operators.md:170
+msgid ""
+"For example, the snippet below produces an error because the `sum` function "
+"call is not in a tuple."
+msgstr ""
+
+#: src/reference/syntax/operators.md:178
+msgid "...while with parentheses, it works at expected:"
+msgstr ""
+
+#: src/reference/syntax/operators.md:191
+msgid "Wrapping lines"
+msgstr ""
+
+#: src/reference/syntax/operators.md:193
+msgid ""
+"Line breaks in PRQL have semantic meaning, so to wrap a single logical line "
+"into multiple physical lines, we can use `\\` at the beginning of subsequent "
+"physical lines:"
+msgstr ""
+
+#: src/reference/syntax/operators.md:197
+msgid ""
+"```prql\n"
+"from artists\n"
+"select is_europe =\n"
+"\\ country == \"DE\"\n"
+"\\ || country == \"FR\"\n"
+"\\ || country == \"ES\"\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:205
+msgid ""
+"Wrapping will \"jump over\" empty lines or lines with comments. For example, "
+"the `select` here is only one logical line:"
+msgstr ""
+
+#: src/reference/syntax/operators.md:227
+msgid "See [Pipes](./pipes.md) for more details on line breaks."
+msgstr ""

@@ -1,0 +1,347 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/SUMMARY.md:3 src/SUMMARY.md:5
+msgid "Introduction"
+msgstr ""
+
+#: src/SUMMARY.md:7
+msgid "Tutorial"
+msgstr ""
+
+#: src/SUMMARY.md:9
+msgid ""
+"A friendly & accessible guide for learning PRQL. It has a gradual increase "
+"of difficulty and requires only basic understanding of programming "
+"languages. Knowledge of SQL is beneficial, because of many comparisons to "
+"SQL, but not required."
+msgstr ""
+
+#: src/SUMMARY.md:14
+msgid "Relations"
+msgstr ""
+
+#: src/SUMMARY.md:15
+msgid "Filtering"
+msgstr ""
+
+#: src/SUMMARY.md:16
+msgid "Aggregation"
+msgstr ""
+
+#: src/SUMMARY.md:21
+msgid "Reference"
+msgstr ""
+
+#: src/SUMMARY.md:23
+msgid ""
+"In-depth information about the PRQL language. Includes justifications for "
+"language design decisions and formal specifications for parts of the "
+"language."
+msgstr ""
+
+#: src/SUMMARY.md:26
+msgid "Syntax"
+msgstr ""
+
+#: src/SUMMARY.md:28
+msgid "Literals"
+msgstr ""
+
+#: src/SUMMARY.md:29
+msgid "Strings"
+msgstr ""
+
+#: src/SUMMARY.md:30
+msgid "F-strings"
+msgstr ""
+
+#: src/SUMMARY.md:31
+msgid "R-strings"
+msgstr ""
+
+#: src/SUMMARY.md:32
+msgid "S-strings"
+msgstr ""
+
+#: src/SUMMARY.md:33
+msgid "Tuples"
+msgstr ""
+
+#: src/SUMMARY.md:34
+msgid "Arrays"
+msgstr ""
+
+#: src/SUMMARY.md:35
+msgid "Identifiers & keywords"
+msgstr ""
+
+#: src/SUMMARY.md:36
+msgid "Function calls"
+msgstr ""
+
+#: src/SUMMARY.md:37
+msgid "Pipes"
+msgstr ""
+
+#: src/SUMMARY.md:38
+msgid "Operators"
+msgstr ""
+
+#: src/SUMMARY.md:39
+msgid "Case"
+msgstr ""
+
+#: src/SUMMARY.md:40
+msgid "Ranges"
+msgstr ""
+
+#: src/SUMMARY.md:41
+msgid "Comments"
+msgstr ""
+
+#: src/SUMMARY.md:42
+msgid "Parameters"
+msgstr ""
+
+#: src/SUMMARY.md:44
+msgid "Importing data"
+msgstr ""
+
+#: src/SUMMARY.md:46
+msgid "From"
+msgstr ""
+
+#: src/SUMMARY.md:47
+msgid "Reading files"
+msgstr ""
+
+#: src/SUMMARY.md:48
+msgid "Ad-hoc data"
+msgstr ""
+
+#: src/SUMMARY.md:50
+msgid "Declarations"
+msgstr ""
+
+#: src/SUMMARY.md:53
+msgid "Variables — `let` & `into`"
+msgstr ""
+
+#: src/SUMMARY.md:54
+msgid "Functions"
+msgstr ""
+
+#: src/SUMMARY.md:56
+msgid "Standard library"
+msgstr ""
+
+#: src/SUMMARY.md:58
+msgid "Transforms"
+msgstr ""
+
+#: src/SUMMARY.md:60
+msgid "Aggregate"
+msgstr ""
+
+#: src/SUMMARY.md:61
+msgid "Append"
+msgstr ""
+
+#: src/SUMMARY.md:62
+msgid "Derive"
+msgstr ""
+
+#: src/SUMMARY.md:63
+msgid "Filter"
+msgstr ""
+
+#: src/SUMMARY.md:64
+msgid "Group"
+msgstr ""
+
+#: src/SUMMARY.md:65
+msgid "Join"
+msgstr ""
+
+#: src/SUMMARY.md:66
+msgid "Loop"
+msgstr ""
+
+#: src/SUMMARY.md:67
+msgid "Select"
+msgstr ""
+
+#: src/SUMMARY.md:68
+msgid "Sort"
+msgstr ""
+
+#: src/SUMMARY.md:69
+msgid "Take"
+msgstr ""
+
+#: src/SUMMARY.md:70
+msgid "Window"
+msgstr ""
+
+#: src/SUMMARY.md:72
+msgid "Aggregation functions"
+msgstr ""
+
+#: src/SUMMARY.md:73
+msgid "Date functions"
+msgstr ""
+
+#: src/SUMMARY.md:74
+msgid "Mathematical functions"
+msgstr ""
+
+#: src/SUMMARY.md:75
+msgid "Text functions"
+msgstr ""
+
+#: src/SUMMARY.md:76
+msgid "Removing duplicates"
+msgstr ""
+
+#: src/SUMMARY.md:78
+msgid "Specification"
+msgstr ""
+
+#: src/SUMMARY.md:80
+msgid "Null handling"
+msgstr ""
+
+#: src/SUMMARY.md:81
+msgid "Name resolution"
+msgstr ""
+
+#: src/SUMMARY.md:82
+msgid "Modules"
+msgstr ""
+
+#: src/SUMMARY.md:83
+msgid "Type system"
+msgstr ""
+
+#: src/SUMMARY.md:85
+msgid "Project"
+msgstr ""
+
+#: src/SUMMARY.md:87
+msgid "General information about the project, tooling and development."
+msgstr ""
+
+#: src/SUMMARY.md:89
+msgid "Changelog"
+msgstr ""
+
+#: src/SUMMARY.md:91
+msgid "Target & version"
+msgstr ""
+
+#: src/SUMMARY.md:93
+msgid "Bindings"
+msgstr ""
+
+#: src/SUMMARY.md:95
+msgid ".NET"
+msgstr ""
+
+#: src/SUMMARY.md:96
+msgid "Elixir"
+msgstr ""
+
+#: src/SUMMARY.md:97
+msgid "Java"
+msgstr ""
+
+#: src/SUMMARY.md:98
+msgid "JavaScript"
+msgstr ""
+
+#: src/SUMMARY.md:99
+msgid "PHP"
+msgstr ""
+
+#: src/SUMMARY.md:100
+msgid "Python"
+msgstr ""
+
+#: src/SUMMARY.md:101
+msgid "R"
+msgstr ""
+
+#: src/SUMMARY.md:102
+msgid "Rust"
+msgstr ""
+
+#: src/SUMMARY.md:104
+msgid "Integrations"
+msgstr ""
+
+#: src/SUMMARY.md:106
+msgid "`prqlc CLI`"
+msgstr ""
+
+#: src/SUMMARY.md:107
+msgid "ClickHouse"
+msgstr ""
+
+#: src/SUMMARY.md:108
+msgid "Jupyter"
+msgstr ""
+
+#: src/SUMMARY.md:109
+msgid "DuckDB"
+msgstr ""
+
+#: src/SUMMARY.md:110
+msgid "qStudio"
+msgstr ""
+
+#: src/SUMMARY.md:111
+msgid "Prefect"
+msgstr ""
+
+#: src/SUMMARY.md:112
+msgid "VS Code"
+msgstr ""
+
+#: src/SUMMARY.md:113
+msgid "PostgreSQL"
+msgstr ""
+
+#: src/SUMMARY.md:114
+msgid "Databend"
+msgstr ""
+
+#: src/SUMMARY.md:115
+msgid "Rill"
+msgstr ""
+
+#: src/SUMMARY.md:116
+msgid "Syntax highlighting"
+msgstr ""
+
+#: src/SUMMARY.md:118
+msgid "Contributing to PRQL"
+msgstr ""
+
+#: src/SUMMARY.md:120
+msgid "Development"
+msgstr ""
+
+#: src/SUMMARY.md:121
+msgid "Language design"
+msgstr ""

@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/transforms/select.md:1
+msgid "Select"
+msgstr ""
+
+#: src/reference/stdlib/transforms/select.md:3
+msgid "Picks and computes columns."
+msgstr ""
+
+#: src/reference/stdlib/transforms/select.md:15
+msgid "Examples"
+msgstr ""
+
+#: src/reference/stdlib/transforms/select.md:17
+msgid ""
+"```prql\n"
+"from employees\n"
+"select name = f\"{first_name} {last_name}\"\n"
+"```"
+msgstr ""
+
+#: src/reference/stdlib/transforms/select.md:22
+msgid ""
+"```prql\n"
+"from employees\n"
+"select {\n"
+"  name = f\"{first_name} {last_name}\",\n"
+"  age_eoy = dob - @2022-12-31,\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/reference/stdlib/transforms/select.md:40
+msgid "Excluding columns"
+msgstr ""
+
+#: src/reference/stdlib/transforms/select.md:42
+msgid ""
+"We can use `!` to exclude a list of columns. This can operate in two ways:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/select.md:44
+msgid ""
+"We use `SELECT * EXCLUDE` / `SELECT * EXCEPT` for the columns supplied to "
+"`select !{}` in dialects which support it."
+msgstr ""
+
+#: src/reference/stdlib/transforms/select.md:46
+msgid ""
+"Otherwise, the columns must have been defined prior in the query (unless all "
+"of a table's columns are excluded); for example in another `select` or a "
+"`group` transform. In this case, we evaluate and specify the columns that "
+"should be included in the output SQL."
+msgstr ""
+
+#: src/reference/stdlib/transforms/select.md:51
+msgid "Some examples:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/select.md:71
+msgid ""
+"Note that `!` is also the `NOT` operator, so without the tuple it has a "
+"different meaning:"
+msgstr ""

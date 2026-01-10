@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/bindings/dotnet.md:1
+msgid "prql-dotnet"
+msgstr ""
+
+#: src/project/bindings/dotnet.md:3
+msgid ""
+"`prql-net` offers PRQL bindings for .NET bindings as a `netstandard2.0` "
+"library."
+msgstr ""
+
+#: src/project/bindings/dotnet.md:5
+msgid ""
+"It provides the `PrqlCompiler` class which contains the `ToJson` and `ToSql` "
+"static methods."
+msgstr ""
+
+#: src/project/bindings/dotnet.md:8
+msgid ""
+"It's still at an early stage, and isn't published to NuGet. Contributions "
+"are welcome."
+msgstr ""
+
+#: src/project/bindings/dotnet.md:11
+msgid "Installation"
+msgstr ""
+
+#: src/project/bindings/dotnet.md:13
+msgid ""
+"Make sure that `libprqlc_c.so` (Linux), `libprqlc_c.dylib` (macOS) or "
+"`libprqlc_c.dll` (Windows) is in the project's `bin` directory together with "
+"`PrqlCompiler.dll` and the rest of the project's compiled files. I.e. "
+"`{your_project}/bin/Debug/net7.0/`."
+msgstr ""
+
+#: src/project/bindings/dotnet.md:18
+msgid "The `libprqlc_c` library gets dynamically imported at runtime."
+msgstr ""
+
+#: src/project/bindings/dotnet.md:20
+msgid "Usage"
+msgstr ""
+
+#: src/project/bindings/dotnet.md:22
+msgid ""
+"```csharp\n"
+"using Prql.Compiler;\n"
+"\n"
+"var options = new PrqlCompilerOptions\n"
+"{\n"
+"    Format = false,\n"
+"    SignatureComment = false,\n"
+"};\n"
+"var sql = PrqlCompiler.Compile(\"from employees\", options);\n"
+"Console.WriteLine(sql);\n"
+"```"
+msgstr ""
+
+#: src/project/bindings/dotnet.md:34
+msgid "TODO"
+msgstr ""
+
+#: src/project/bindings/dotnet.md:36
+msgid ""
+"This is currently at 0.1.0 because we're waiting to update prqlc-c for the "
+"latest API. When we've done that, we can match the version here with the "
+"broader PRQL version."
+msgstr ""
