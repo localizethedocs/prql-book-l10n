@@ -5,19 +5,19 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/SUMMARY.md:3 src/SUMMARY.md:5
 msgid "Introduction"
-msgstr ""
+msgstr "介紹"
 
 #: src/SUMMARY.md:7
 msgid "Tutorial"
-msgstr ""
+msgstr "教學"
 
 #: src/SUMMARY.md:9
 msgid ""
@@ -52,7 +52,7 @@ msgstr ""
 
 #: src/SUMMARY.md:26
 msgid "Syntax"
-msgstr ""
+msgstr "語法"
 
 #: src/SUMMARY.md:28
 msgid "Literals"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: src/SUMMARY.md:34
 msgid "Arrays"
-msgstr ""
+msgstr "陣列"
 
 #: src/SUMMARY.md:35
 msgid "Identifiers & keywords"
@@ -228,11 +228,11 @@ msgstr ""
 
 #: src/SUMMARY.md:82
 msgid "Modules"
-msgstr ""
+msgstr "模組"
 
 #: src/SUMMARY.md:83
 msgid "Type system"
-msgstr ""
+msgstr "型別系統"
 
 #: src/SUMMARY.md:85
 msgid "Project"
@@ -244,7 +244,7 @@ msgstr ""
 
 #: src/SUMMARY.md:89
 msgid "Changelog"
-msgstr ""
+msgstr "變更日誌"
 
 #: src/SUMMARY.md:91
 msgid "Target & version"
@@ -256,35 +256,35 @@ msgstr ""
 
 #: src/SUMMARY.md:95
 msgid ".NET"
-msgstr ""
+msgstr ".NET"
 
 #: src/SUMMARY.md:96
 msgid "Elixir"
-msgstr ""
+msgstr "Elixir"
 
 #: src/SUMMARY.md:97
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #: src/SUMMARY.md:98
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: src/SUMMARY.md:99
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 #: src/SUMMARY.md:100
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: src/SUMMARY.md:101
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: src/SUMMARY.md:102
 msgid "Rust"
-msgstr ""
+msgstr "Rust"
 
 #: src/SUMMARY.md:104
 msgid "Integrations"
@@ -292,7 +292,7 @@ msgstr ""
 
 #: src/SUMMARY.md:106
 msgid "`prqlc CLI`"
-msgstr ""
+msgstr "`prqlc CLI`"
 
 #: src/SUMMARY.md:107
 msgid "ClickHouse"
@@ -300,11 +300,11 @@ msgstr ""
 
 #: src/SUMMARY.md:108
 msgid "Jupyter"
-msgstr ""
+msgstr "Jupyter"
 
 #: src/SUMMARY.md:109
 msgid "DuckDB"
-msgstr ""
+msgstr "DuckDB"
 
 #: src/SUMMARY.md:110
 msgid "qStudio"
@@ -332,7 +332,7 @@ msgstr ""
 
 #: src/SUMMARY.md:116
 msgid "Syntax highlighting"
-msgstr ""
+msgstr "語法標明"
 
 #: src/SUMMARY.md:118
 msgid "Contributing to PRQL"
@@ -340,8 +340,8 @@ msgstr ""
 
 #: src/SUMMARY.md:120
 msgid "Development"
-msgstr ""
+msgstr "開發"
 
 #: src/SUMMARY.md:121
 msgid "Language design"
-msgstr ""
+msgstr "語言設計"
