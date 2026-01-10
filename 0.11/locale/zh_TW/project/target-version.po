@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:28Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/target.md:1
+msgid "Target & Version"
+msgstr ""
+
+#: src/project/target.md:3
+msgid "Target dialect"
+msgstr ""
+
+#: src/project/target.md:5
+msgid ""
+"PRQL allows specifying a target dialect at the top of the query, which "
+"allows PRQL to compile to a database-specific SQL flavor."
+msgstr ""
+
+#: src/project/target.md:8
+msgid "Examples"
+msgstr ""
+
+#: src/project/target.md:26
+msgid "Dialects"
+msgstr ""
+
+#: src/project/target.md:28
+msgid "Supported"
+msgstr ""
+
+#: src/project/target.md:30
+msgid ""
+"Supported dialects support all PRQL language features where possible, are "
+"tested on every commit, and we'll endeavor to fix bugs."
+msgstr ""
+
+#: src/project/target.md:33
+msgid "`sql.clickhouse`"
+msgstr ""
+
+#: src/project/target.md:34
+msgid "`sql.duckdb`"
+msgstr ""
+
+#: src/project/target.md:35
+msgid "`sql.generic` <sup><a name=\"to-footnote-1\">[1](#footnote-1)</a></sup>"
+msgstr ""
+
+#: src/project/target.md:37
+msgid "`sql.glaredb`"
+msgstr ""
+
+#: src/project/target.md:38
+msgid "`sql.mysql`"
+msgstr ""
+
+#: src/project/target.md:39
+msgid "`sql.postgres`"
+msgstr ""
+
+#: src/project/target.md:40
+msgid "`sql.sqlite`"
+msgstr ""
+
+#: src/project/target.md:42
+msgid "Unsupported"
+msgstr ""
+
+#: src/project/target.md:44
+msgid ""
+"Unsupported dialects have implementations in the compiler, but are tested "
+"minimally or not at all, and may have gaps for some features."
+msgstr ""
+
+#: src/project/target.md:47
+msgid ""
+"We're open to contributions to improve our coverage of these, and to adding "
+"additional dialects."
+msgstr ""
+
+#: src/project/target.md:50
+msgid "`sql.mssql`"
+msgstr ""
+
+#: src/project/target.md:51
+msgid "`sql.ansi`"
+msgstr ""
+
+#: src/project/target.md:52
+msgid "`sql.bigquery`"
+msgstr ""
+
+#: src/project/target.md:53
+msgid "`sql.snowflake`"
+msgstr ""
+
+#: src/project/target.md:55
+msgid "Priority of targets"
+msgstr ""
+
+#: src/project/target.md:57
+msgid ""
+"The compile target of a query is defined in the query's header or as an "
+"argument to the compiler. option. The argument to the compiler takes "
+"precedence."
+msgstr ""
+
+#: src/project/target.md:60
+msgid ""
+"For example, the following shell example specifies `sql.generic` in the "
+"query and `sql.duckdb` in the `--target` option of the `prqlc compile` "
+"command. In this case, `sql.duckdb` takes precedence and the SQL output is "
+"based on the DuckDB dialect."
+msgstr ""
+
+#: src/project/target.md:66 src/project/target.md:74
+msgid ""
+"'prql target:sql.generic\n"
+"      from foo'"
+msgstr ""
+
+#: src/project/target.md:70
+msgid ""
+"To use the target described in the query, a special target `sql.any` can be "
+"specified in the compiler option."
+msgstr ""
+
+#: src/project/target.md:78
+msgid "Version"
+msgstr ""
+
+#: src/project/target.md:80
+msgid ""
+"PRQL allows specifying a version of the language in the PRQL header, like:"
+msgstr ""
+
+#: src/project/target.md:82
+msgid ""
+"```prql\n"
+"prql version:\"0.11.3\"\n"
+"\n"
+"from employees\n"
+"```"
+msgstr ""
+
+#: src/project/target.md:88
+msgid "This has two roles, one of which is implemented:"
+msgstr ""
+
+#: src/project/target.md:90
+msgid ""
+"The compiler will raise an error if the compiler is older than the query "
+"version. This prevents confusing errors when queries use newer features of "
+"the language but the compiler hasn't yet been upgraded."
+msgstr ""
+
+#: src/project/target.md:93
+msgid ""
+"The compiler will compile for the major version of the query. This allows "
+"the language to evolve without breaking existing queries, or forcing "
+"multiple installations of the compiler. This isn't yet implemented, but is a "
+"gating feature for PRQL 1.0."
+msgstr ""
+
+#: src/project/target.md:98
+msgid ""
+"The version of the compiler currently in use can be called using the special "
+"function `std.prql.version` in PRQL."
+msgstr ""
+
+#: src/project/target.md:112
+msgid ""
+"<a name=\"footnote-1\">[1](#to-footnote-1)</a>: while there's no \"generic\" "
+"DB to test `sql.generic` against, we still count it as supported."
+msgstr ""

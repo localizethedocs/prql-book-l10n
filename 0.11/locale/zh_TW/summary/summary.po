@@ -1,0 +1,320 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:28Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/SUMMARY.md:3
+msgid "Overview"
+msgstr ""
+
+#: src/SUMMARY.md:5
+msgid "Tutorial"
+msgstr ""
+
+#: src/SUMMARY.md:7
+msgid "Relations"
+msgstr ""
+
+#: src/SUMMARY.md:8
+msgid "Filtering"
+msgstr ""
+
+#: src/SUMMARY.md:9
+msgid "Aggregation"
+msgstr ""
+
+#: src/SUMMARY.md:11
+msgid "How do I?"
+msgstr ""
+
+#: src/SUMMARY.md:13
+msgid "Read files?"
+msgstr ""
+
+#: src/SUMMARY.md:14
+msgid "Remove duplicates?"
+msgstr ""
+
+#: src/SUMMARY.md:15
+msgid "Create ad-hoc relations?"
+msgstr ""
+
+#: src/SUMMARY.md:17
+msgid "Reference"
+msgstr ""
+
+#: src/SUMMARY.md:19
+msgid "Syntax"
+msgstr ""
+
+#: src/SUMMARY.md:21
+msgid "Literals"
+msgstr ""
+
+#: src/SUMMARY.md:22
+msgid "Strings"
+msgstr ""
+
+#: src/SUMMARY.md:23
+msgid "F-strings"
+msgstr ""
+
+#: src/SUMMARY.md:24
+msgid "R-strings"
+msgstr ""
+
+#: src/SUMMARY.md:25
+msgid "S-strings"
+msgstr ""
+
+#: src/SUMMARY.md:26
+msgid "Tuples"
+msgstr ""
+
+#: src/SUMMARY.md:27
+msgid "Arrays"
+msgstr ""
+
+#: src/SUMMARY.md:28
+msgid "Identifiers & keywords"
+msgstr ""
+
+#: src/SUMMARY.md:29
+msgid "Function calls"
+msgstr ""
+
+#: src/SUMMARY.md:30
+msgid "Pipes"
+msgstr ""
+
+#: src/SUMMARY.md:31
+msgid "Operators"
+msgstr ""
+
+#: src/SUMMARY.md:32
+msgid "Case"
+msgstr ""
+
+#: src/SUMMARY.md:33
+msgid "Ranges"
+msgstr ""
+
+#: src/SUMMARY.md:34
+msgid "Comments"
+msgstr ""
+
+#: src/SUMMARY.md:35
+msgid "Parameters"
+msgstr ""
+
+#: src/SUMMARY.md:37
+msgid "Declarations"
+msgstr ""
+
+#: src/SUMMARY.md:40
+msgid "Variables"
+msgstr ""
+
+#: src/SUMMARY.md:41
+msgid "Functions"
+msgstr ""
+
+#: src/SUMMARY.md:43
+msgid "Standard library"
+msgstr ""
+
+#: src/SUMMARY.md:45
+msgid "Transforms"
+msgstr ""
+
+#: src/SUMMARY.md:47
+msgid "Aggregate"
+msgstr ""
+
+#: src/SUMMARY.md:48
+msgid "Append"
+msgstr ""
+
+#: src/SUMMARY.md:49
+msgid "Derive"
+msgstr ""
+
+#: src/SUMMARY.md:50
+msgid "Filter"
+msgstr ""
+
+#: src/SUMMARY.md:51
+msgid "From"
+msgstr ""
+
+#: src/SUMMARY.md:52
+msgid "Group"
+msgstr ""
+
+#: src/SUMMARY.md:53
+msgid "Join"
+msgstr ""
+
+#: src/SUMMARY.md:54
+msgid "Loop"
+msgstr ""
+
+#: src/SUMMARY.md:55
+msgid "Select"
+msgstr ""
+
+#: src/SUMMARY.md:56
+msgid "Sort"
+msgstr ""
+
+#: src/SUMMARY.md:57
+msgid "Take"
+msgstr ""
+
+#: src/SUMMARY.md:58
+msgid "Window"
+msgstr ""
+
+#: src/SUMMARY.md:60
+msgid "Aggregation functions"
+msgstr ""
+
+#: src/SUMMARY.md:61
+msgid "Date functions"
+msgstr ""
+
+#: src/SUMMARY.md:62
+msgid "Mathematical functions"
+msgstr ""
+
+#: src/SUMMARY.md:63
+msgid "Text functions"
+msgstr ""
+
+#: src/SUMMARY.md:65
+msgid "Specification"
+msgstr ""
+
+#: src/SUMMARY.md:67
+msgid "Null handling"
+msgstr ""
+
+#: src/SUMMARY.md:68
+msgid "Name resolution"
+msgstr ""
+
+#: src/SUMMARY.md:69
+msgid "Modules"
+msgstr ""
+
+#: src/SUMMARY.md:70
+msgid "Type system"
+msgstr ""
+
+#: src/SUMMARY.md:72
+msgid "Project"
+msgstr ""
+
+#: src/SUMMARY.md:74
+msgid "Changelog"
+msgstr ""
+
+#: src/SUMMARY.md:76
+msgid "Target & version"
+msgstr ""
+
+#: src/SUMMARY.md:78
+msgid "Bindings"
+msgstr ""
+
+#: src/SUMMARY.md:80
+msgid ".NET"
+msgstr ""
+
+#: src/SUMMARY.md:81
+msgid "Elixir"
+msgstr ""
+
+#: src/SUMMARY.md:82
+msgid "Java"
+msgstr ""
+
+#: src/SUMMARY.md:83
+msgid "JavaScript"
+msgstr ""
+
+#: src/SUMMARY.md:84
+msgid "PHP"
+msgstr ""
+
+#: src/SUMMARY.md:85
+msgid "Python"
+msgstr ""
+
+#: src/SUMMARY.md:86
+msgid "R"
+msgstr ""
+
+#: src/SUMMARY.md:87
+msgid "Rust"
+msgstr ""
+
+#: src/SUMMARY.md:89
+msgid "Integrations"
+msgstr ""
+
+#: src/SUMMARY.md:91
+msgid "`prqlc CLI`"
+msgstr ""
+
+#: src/SUMMARY.md:92
+msgid "ClickHouse"
+msgstr ""
+
+#: src/SUMMARY.md:93
+msgid "Jupyter"
+msgstr ""
+
+#: src/SUMMARY.md:94
+msgid "DuckDB"
+msgstr ""
+
+#: src/SUMMARY.md:95
+msgid "Prefect"
+msgstr ""
+
+#: src/SUMMARY.md:96
+msgid "VS Code"
+msgstr ""
+
+#: src/SUMMARY.md:97
+msgid "Rill"
+msgstr ""
+
+#: src/SUMMARY.md:98
+msgid "Syntax highlighting"
+msgstr ""
+
+#: src/SUMMARY.md:99
+msgid "PostgreSQL"
+msgstr ""
+
+#: src/SUMMARY.md:101
+msgid "Contributing to PRQL"
+msgstr ""
+
+#: src/SUMMARY.md:103
+msgid "Development"
+msgstr ""
+
+#: src/SUMMARY.md:104
+msgid "Language design"
+msgstr ""

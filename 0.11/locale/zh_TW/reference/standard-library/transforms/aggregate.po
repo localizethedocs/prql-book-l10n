@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:28Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/transforms/aggregate.md:1
+msgid "Aggregate"
+msgstr ""
+
+#: src/reference/stdlib/transforms/aggregate.md:3
+msgid "Summarizes many rows into one row."
+msgstr ""
+
+#: src/reference/stdlib/transforms/aggregate.md:5
+msgid "When applied:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/aggregate.md:7
+msgid "without `group`, it produces one row from the whole table,"
+msgstr ""
+
+#: src/reference/stdlib/transforms/aggregate.md:8
+msgid "within a `group` pipeline, it produces one row from each group."
+msgstr ""
+
+#: src/reference/stdlib/transforms/aggregate.md:20
+msgid "Examples"
+msgstr ""
+
+#: src/reference/stdlib/transforms/aggregate.md:40
+msgid "Aggregate is required"
+msgstr ""
+
+#: src/reference/stdlib/transforms/aggregate.md:42
+msgid ""
+"Unlike in SQL, using an aggregation function in `derive` or `select` (or any "
+"other transform except `aggregate`) will not trigger aggregation. By "
+"default, PRQL will interpret such attempts functions as window functions:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/aggregate.md:51
+msgid ""
+"This ensures that `derive` does not manipulate the number of rows, but only "
+"ever adds a column. For more information, see [window transform](./window."
+"md)."
+msgstr ""

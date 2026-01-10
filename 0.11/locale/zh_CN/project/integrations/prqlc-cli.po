@@ -1,0 +1,217 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:28Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/integrations/prqlc-cli.md:1
+msgid "PRQL compiler"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:3
+msgid ""
+"`prqlc` is the reference implementation of a compiler from PRQL to SQL, "
+"written in Rust. It also serves as the CLI."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:6
+msgid ""
+"For more on PRQL, check out the [PRQL website](https://prql-lang.org) or the "
+"[PRQL repo](https://github.com/PRQL/prql)."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:9
+msgid "CLI"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:11
+msgid ""
+"`prqlc` serves as a CLI for the PRQL compiler. It is a single, dependency-"
+"free binary that compiles PRQL into SQL."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:14
+msgid "Usage"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:16
+msgid "`prqlc compile`"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:18
+msgid ""
+"This command works as a filter that compiles a PRQL string into an SQL "
+"string."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:21
+msgid "'from employees | filter has_dog | select salary'"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:31
+msgid ""
+"A PRQL query can be executed with CLI tools compatible with SQL,, such as "
+"[DuckDB CLI](https://duckdb.org/docs/api/cli.html)."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:36
+msgid "'from `albums.csv` | take 3'"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:47
+msgid ""
+"Executing this command without any argument will start interactive mode, "
+"allowing a PRQL query to be written interactively. In this mode, after "
+"writing PRQL and press `Ctrl-d` (Linux, macOS) or `Ctrl-z` (Windows) to "
+"display the compiled SQL."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:56
+msgid ""
+"Just like when using it as a filter, SQL string output can be passed to the "
+"DuckDB CLI and similar tools."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:75
+msgid "Installation"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:77
+msgid ""
+"[![Packaging status](https://repology.org/badge/vertical-allrepos/prqlc.svg)]"
+"(https://repology.org/project/prqlc/versions)"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:79
+msgid "via Homebrew (macOS, Linux)"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:85
+msgid "via winget (Windows)"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:91
+msgid "From GitHub release page"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:93
+msgid ""
+"Precompiled binaries are available for Linux, macOS, and Windows on the "
+"[PRQL release page](https://github.com/PRQL/prql/releases)."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:96
+msgid "From source"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:99
+msgid "# From crates.io\n"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:104
+msgid "# From a local PRQL repository\n"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:108
+msgid "Shell completions"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:110
+msgid ""
+"The `prqlc shell-completion` command prints a shell completion script for "
+"supported shells, and saving the printed scripts to files makes for shells "
+"to load completions for each session."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:114
+msgid "Bash"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:116
+msgid "For Linux:"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:122
+msgid "For macOS:"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:128
+msgid "fish"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:134
+msgid "PowerShell"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:142
+msgid "zsh"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:145
+msgid "\"${fpath[1]}/_prqlc\""
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:148
+msgid "Ensure that the following lines are present in `~/.zshrc`:"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:155
+msgid "Helpers"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:157
+msgid ""
+"Cheat sheets for `prqlc` are available on various websites and with various "
+"tools."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:160
+msgid ""
+"[`tldr`](https://tldr.sh/) ([on the web](https://tldr.inbrowser.app/pages/"
+"common/prqlc))"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:162
+msgid "[`eg`](https://github.com/srsudar/eg)"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:166
+msgid "Library"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:168
+msgid ""
+"For more usage examples and the library documentation, check out the "
+"[`prqlc` documentation](https://docs.rs/prqlc/)."
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:171
+msgid "Library installation"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:177
+msgid "Examples"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:179
+msgid "Compile a PRQL string to a SQLite dialect string:"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:182
+msgid "// In a file src/main.rs\n"
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:186
+msgid "\"from employees | select {name, age}\""
+msgstr ""
+
+#: src/project/integrations/prqlc-cli.md:194
+msgid "\"SELECT name, age FROM employees\""
+msgstr ""
