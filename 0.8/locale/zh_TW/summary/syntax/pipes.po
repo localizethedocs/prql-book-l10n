@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/syntax/pipes.md:1
+msgid "Pipes"
+msgstr ""
+
+#: src/syntax/pipes.md:3
+msgid ""
+"Pipes — the connection between [transforms](../transforms/) that make up a "
+"pipeline — can be either line breaks or a pipe character (`|`)."
+msgstr ""
+
+#: src/syntax/pipes.md:6
+msgid ""
+"In almost all situations, line-breaks pipe the result of a line's transform "
+"into the transform on the following line. For example, the `filter` "
+"transform operates on the result of `from employees` (which is just the "
+"`employees` table), and the `select` transform operates on the result of the "
+"`filter` transform."
+msgstr ""
+
+#: src/syntax/pipes.md:12
+msgid ""
+"```prql\n"
+"from employees\n"
+"filter department == \"Product\"\n"
+"select [first_name, last_name]\n"
+"```"
+msgstr ""
+
+#: src/syntax/pipes.md:18
+msgid ""
+"In the place of a line-break, it's also possible to use the `|` character to "
+"pipe results, such that this is equivalent:"
+msgstr ""
+
+#: src/syntax/pipes.md:21
+msgid ""
+"```prql\n"
+"from employees | filter department == \"Product\" | select [first_name, "
+"last_name]\n"
+"```"
+msgstr ""
+
+#: src/syntax/pipes.md:25
+msgid "A line-break doesn't create a pipeline in a couple of cases:"
+msgstr ""
+
+#: src/syntax/pipes.md:27
+msgid "within a list (e.g. the `derive` examples below),"
+msgstr ""
+
+#: src/syntax/pipes.md:28
+msgid ""
+"when the following line is a new statement, which starts with a keyword of "
+"`func`, `let` or `from`."
+msgstr ""

@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/internals/index.md:1
+msgid "Internals"
+msgstr ""
+
+#: src/internals/index.md:3
+msgid ""
+"This chapter explains PRQL's semantics: how expressions are interpreted and "
+"their meaning. It's intended for advanced users and compiler contributors."
+msgstr ""
+
+#: src/internals/index.md:6
+msgid "[Name resolving](./name-resolving.md)"
+msgstr ""
+
+#: src/internals/index.md:7
+msgid "[Functions](./functional-lang.md)"
+msgstr ""
+
+#: src/internals/index.md:8
+msgid "[Syntax highlighting](./syntax-highlighting.md)"
+msgstr ""
+
+#: src/internals/index.md:10
+msgid ""
+"It's also worth checking out the [`prql-compiler` docs](https://docs.rs/prql-"
+"compiler/latest/prql_compiler/) for more details on its API."
+msgstr ""
