@@ -5,19 +5,19 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/queries/syntax.md:1 src/queries/syntax.md:9
 msgid "Syntax"
-msgstr ""
+msgstr "語法"
 
 #: src/queries/syntax.md:3
 msgid "Summary"
-msgstr ""
+msgstr "摘要"
 
 #: src/queries/syntax.md:5
 msgid "A summary of PRQL syntax"
@@ -29,7 +29,7 @@ msgstr ""
 
 #: src/queries/syntax.md:9
 msgid "Example"
-msgstr ""
+msgstr "範例"
 
 #: src/queries/syntax.md:11
 msgid "<code>\\|</code>"
@@ -266,7 +266,7 @@ msgstr ""
 
 #: src/queries/syntax.md:102
 msgid "Comments"
-msgstr ""
+msgstr "註釋"
 
 #: src/queries/syntax.md:104
 msgid ""
