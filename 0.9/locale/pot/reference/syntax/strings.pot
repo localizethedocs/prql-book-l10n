@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/strings.md:1
+msgid "Strings"
+msgstr ""
+
+#: src/reference/syntax/strings.md:3
+msgid ""
+"String literals can use any matching odd number of either single or double "
+"quotes:"
+msgstr ""
+
+#: src/reference/syntax/strings.md:6
+msgid ""
+"```prql\n"
+"from artists\n"
+"derive {\n"
+"  single        =   'hello world',\n"
+"  double        =   \"hello world\",\n"
+"  double_triple = \"\"\"hello world\"\"\",\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/strings.md:15
+msgid "Quoting and escape characters"
+msgstr ""
+
+#: src/reference/syntax/strings.md:17
+msgid ""
+"To quote a string containing quote characters, use the \"other\" type of "
+"quote, or use the escape character `\\`, or use more quotes."
+msgstr ""
+
+#: src/reference/syntax/strings.md:20
+msgid ""
+"```prql\n"
+"from artists\n"
+"select {\n"
+"  other   = '\"hello world\"',\n"
+"  escaped = \"\\\"hello world\\\"\",\n"
+"  triple  = \"\"\"I said \"hello world\"!\"\"\",\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/strings.md:29
+msgid ""
+"Strings can contain any escape character sequences defined by the [JSON "
+"standard](https://www.ecma-international.org/publications-and-standards/"
+"standards/ecma-404/)."
+msgstr ""
+
+#: src/reference/syntax/strings.md:32
+msgid ""
+"```prql\n"
+"from artists\n"
+"derive escapes = \"\\tXYZ\\n \\\\ \"                  # tab (\\t), \"XYZ\", "
+"newline (\\n), \" \", \\, \" \"\n"
+"derive world = \"\\u0048\\u0065\\u006C\\u006C\\u006F\" # \"Hello\"\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/strings.md:38
+msgid "Other string formats"
+msgstr ""
+
+#: src/reference/syntax/strings.md:40
+msgid ""
+"[**F-strings**](./f-strings.md) - Build up a new string from a set of "
+"columns or values."
+msgstr ""
+
+#: src/reference/syntax/strings.md:42
+msgid ""
+"[**R-strings**](./r-strings.md) - Include the raw characters of the string "
+"without any form of escaping."
+msgstr ""
+
+#: src/reference/syntax/strings.md:44
+msgid ""
+"[**S-strings**](./s-strings.md) - Insert SQL statements directly into the "
+"query. Use when PRQL doesn't have an equivalent facility."
+msgstr ""

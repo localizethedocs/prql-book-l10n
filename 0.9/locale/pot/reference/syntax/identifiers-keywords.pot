@@ -1,0 +1,149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/keywords.md:1
+msgid "Identifiers & keywords"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:3
+msgid ""
+"Identifiers can contain alphanumeric characters and `_` and must not start "
+"with a number. They can be chained together with the `.` indirection "
+"operator, used to retrieve a tuple from a field or a variable from a module."
+msgstr ""
+
+#: src/reference/syntax/keywords.md:15
+msgid "`this` & `that`"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:17
+msgid "`this` refers to the current relation:"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:26
+msgid ""
+"Within a [`join`](../stdlib/transforms/join.md), `that` refers to the other "
+"table:"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:34
+msgid ""
+"`this` can also be used to remove any column ambiguity. For example, "
+"currently using a bare `time` as a column name will fail, because it's also "
+"a type:"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:42
+msgid "But with `this.time`, we can remove the ambiguity:"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:49
+msgid "Quoting"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:51
+msgid ""
+"To use characters that would be otherwise invalid, identifiers can be "
+"surrounded by with backticks."
+msgstr ""
+
+#: src/reference/syntax/keywords.md:54
+msgid ""
+"When compiling to SQL, these identifiers will use dialect-specific quotes "
+"and quoting rules."
+msgstr ""
+
+#: src/reference/syntax/keywords.md:76
+msgid "Schemas & database names"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:78
+msgid ""
+"Identifiers of database tables can be prefixed with schema and databases "
+"names."
+msgstr ""
+
+#: src/reference/syntax/keywords.md:84
+msgid ""
+"Note that all of following identifiers will be treated as separate table "
+"definitions: `tracks`, `public.tracks`, `my_database.public.tracks`."
+msgstr ""
+
+#: src/reference/syntax/keywords.md:87
+msgid "Keywords"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:89
+msgid "PRQL uses following keywords:"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:91
+msgid "**`prql`** - query header [_more..._](../../project/target.md)"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:92
+msgid ""
+"**`let`** - variable definition [_more..._](../declarations/variables.md)"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:93
+msgid ""
+"**`into`** - variable definition [_more..._](../declarations/variables.md)"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:94
+msgid "**`case`** - flow control [_more..._](../syntax/case.md)"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:95
+msgid "**`type`** - type declaration"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:96
+msgid ""
+"**`func`** - explicit function declaration [_more..._](../declarations/"
+"functions.md)"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:98
+msgid "**`module`** - used internally"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:99
+msgid "**`internal`** - used internally"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:100
+msgid "**`true`** - boolean [_more..._](./literals.md#booleans)"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:101
+msgid "**`false`** - boolean [_more..._](./literals.md#booleans)"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:102
+msgid "**`null`** - NULL [_more..._](./literals.md#null)"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:104
+msgid ""
+"Keywords can be used as identifiers (of columns or variables) when encased "
+"in backticks: `` `case` ``."
+msgstr ""
+
+#: src/reference/syntax/keywords.md:107
+msgid ""
+"Transforms are normal functions within the `std` namespace, not keywords. "
+"That is, `std.from` is the same function as `from`. In the example below, "
+"the resulting query is the same as without the `std.` namespace:"
+msgstr ""

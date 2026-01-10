@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/transforms/window.md:1
+msgid "Window"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:3
+msgid ""
+"Applies a pipeline to segments of rows, producing one output value for every "
+"input value."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:10
+msgid ""
+"For each row, the segment over which the pipeline is applied is determined "
+"by one of:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:13
+msgid ""
+"`rows`, which takes a range of rows relative to the current row position."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:14
+msgid "`0` references the current row."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:15
+msgid "`range`, which takes a range of values relative to current row value."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:17
+msgid ""
+"The bounds of the range are inclusive. If a bound is omitted, the segment "
+"will extend until the edge of the table or group."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:22
+msgid "For ease of use, there are two flags that override `rows` or `range`:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:24
+msgid ""
+"`expanding:true` is an alias for `rows:..0`. A sum using this window is also "
+"known as \"cumulative sum\"."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:26
+msgid ""
+"`rolling:n` is an alias for `row:(-n+1)..0`, where `n` is an integer. This "
+"will include `n` last values, including current row. An average using this "
+"window is also knows as a Simple Moving Average."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:30
+msgid "Some examples:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:32
+msgid "Expression"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:32
+msgid "Meaning"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:34
+msgid "`rows:0..2`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:34
+msgid "current row plus two following"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:35
+msgid "`rows:-2..0`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:35
+msgid "two preceding rows plus current row"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:36
+msgid "`rolling:3`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:36
+#: src/reference/stdlib/transforms/window.md:39
+msgid "(same as previous)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:37
+msgid "`rows:-2..4`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:37
+msgid "two preceding rows plus current row plus four following rows"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:38
+msgid "`rows:..0`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:38
+msgid "all rows from the start of the table up to & including current row"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:39
+msgid "`expanding:true`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:40
+msgid "`rows:0..`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:40
+msgid "current row and all following rows until the end of the table"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:41
+msgid "`rows:..`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:41
+msgid "all rows, which same as not having window at all"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:43
+msgid "Example"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:69
+msgid "Windowing by default"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:71
+msgid ""
+"If you use window functions without `window` transform, they will be applied "
+"to the whole table. Unlike in SQL, they will remain window functions and "
+"will not trigger aggregation."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:81
+msgid "You can also only apply `group`:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:91
+msgid "Window functions as first class citizens"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:93
+msgid "There are no limitations on where windowed expressions can be used:"
+msgstr ""

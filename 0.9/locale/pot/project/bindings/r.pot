@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/bindings/r.md:1
+msgid "R (prqlr)"
+msgstr ""
+
+#: src/project/bindings/r.md:3
+msgid "R bindings for `prql-compiler`."
+msgstr ""
+
+#: src/project/bindings/r.md:5
+msgid ""
+"`prqlr` also includes `knitr` (R Markdown and Quarto) integration, which "
+"allows us to easily create documents with the PRQL conversion results "
+"embedded in."
+msgstr ""
+
+#: src/project/bindings/r.md:8
+msgid "Check out <https://eitsupi.github.io/prqlr/> for more context."
+msgstr ""
+
+#: src/project/bindings/r.md:10
+msgid ""
+"```admonish note\n"
+"`prqlr` is generously maintained by [@eitsupi](https://github.com/eitsupi) "
+"in the\n"
+"[eitsupi/prqlr](https://github.com/eitsupi/prqlr) repo.\n"
+"```"
+msgstr ""
+
+#: src/project/bindings/r.md:15
+msgid "Installation"
+msgstr ""
+
+#: src/project/bindings/r.md:18
+msgid "\"prqlr\""
+msgstr ""
