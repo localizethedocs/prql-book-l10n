@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:36Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/tutorial/aggregation.md:1
+msgid "Aggregation"
+msgstr ""
+
+#: src/tutorial/aggregation.md:3
+msgid ""
+"A key feature of analytics is reducing many values down to some summary. "
+"This act is called \"aggregation\" and always includes a function — for "
+"example, `average` or `sum` — that reduces values in the table to a single "
+"row."
+msgstr ""
+
+#: src/tutorial/aggregation.md:7
+msgid "`aggregate` transform"
+msgstr ""
+
+#: src/tutorial/aggregation.md:9
+msgid ""
+"The `aggregate` transform takes a tuple to create one or more new columns "
+"that \"distill down\" data from all the rows."
+msgstr ""
+
+#: src/tutorial/aggregation.md:17
+msgid ""
+"The query above computes the sum of the `total` column of all rows of the "
+"`invoices` table to produce a single value."
+msgstr ""
+
+#: src/tutorial/aggregation.md:20
+msgid ""
+"`aggregate` can produce multiple summaries at once when one or more "
+"aggregation expressions are contained in a tuple. `aggregate` discards all "
+"columns that are not present in the tuple."
+msgstr ""
+
+#: src/tutorial/aggregation.md:32
+msgid ""
+"In the example above, the result is a single row with two columns. The "
+"`count` function displays the number of rows in the table that was passed "
+"in; the `sum` function adds up the values of the `total` column of all rows."
+msgstr ""
+
+#: src/tutorial/aggregation.md:36
+msgid "Grouping"
+msgstr ""
+
+#: src/tutorial/aggregation.md:38
+msgid ""
+"Suppose we want to produce summaries of invoices _for each city_ in the "
+"table. We could create a query for each city, and aggregate its rows:"
+msgstr ""
+
+#: src/tutorial/aggregation.md:41
+msgid ""
+"```prql no-eval\n"
+"from albums\n"
+"filter billing_city == \"Oslo\"\n"
+"aggregate { sum_of_orders = sum total }\n"
+"```"
+msgstr ""
+
+#: src/tutorial/aggregation.md:47
+msgid ""
+"But we would need to do it for each city: `London`, `Frankfurt`, etc. Of "
+"course this is repetitive (and boring) and error prone (because we would "
+"need to type each `billing_city` by hand). Moreover, we would need to create "
+"a list of each `billing_city` before we started."
+msgstr ""
+
+#: src/tutorial/aggregation.md:52
+msgid "`group` transform"
+msgstr ""
+
+#: src/tutorial/aggregation.md:54
+msgid ""
+"The `group` transform separates the table into groups (say, those having the "
+"same city) using information that's already in the table. It then applies a "
+"transform to each group, and combines the results back together:"
+msgstr ""
+
+#: src/tutorial/aggregation.md:68
+msgid ""
+"Those familiar with SQL have probably noticed that we just decoupled "
+"aggregation from grouping."
+msgstr ""
+
+#: src/tutorial/aggregation.md:71
+msgid ""
+"Although these operations are connected in SQL, PRQL makes it "
+"straightforward to use `group` and `aggregate` separate from each other, "
+"while combining with other transform functions, such as:"
+msgstr ""
+
+#: src/tutorial/aggregation.md:82
+msgid "This code collects the first two rows for each city's `group`."
+msgstr ""
