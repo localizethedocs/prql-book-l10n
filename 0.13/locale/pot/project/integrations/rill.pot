@@ -1,0 +1,22 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/integrations/rill.md:1
+msgid "Rill"
+msgstr ""
+
+#: src/project/integrations/rill.md:3
+msgid ""
+"PRQL has had some work to integrate with Rill. See the [Rill issues](https://"
+"github.com/PRQL/prql/issues?q=is%3Aissue+rill) for more details."
+msgstr ""
