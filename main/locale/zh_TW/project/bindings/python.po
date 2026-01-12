@@ -29,6 +29,10 @@ msgid ""
 "supports abstractions such as variables and functions. It can be used with "
 "any database that uses SQL, since it compiles to SQL."
 msgstr ""
+"PRQL 是一種用於變換資料的現代語言 — 一個簡單、強大且採用管道化設計的 SQL 替代"
+"方案。與 SQL 一樣，它具備易讀性、明確性且屬於宣告型語言。與 SQL 不同的是，它"
+"構建了一個邏輯上的變換管道，並支援變數與函式等抽象概念。由於它可以編譯為 "
+"SQL，因此適用於任何使用 SQL 的資料庫。"
 
 #: src/project/bindings/python.md:12
 msgid "PRQL can be as simple as:"

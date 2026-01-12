@@ -102,7 +102,7 @@ msgstr ""
 
 #: src/reference/spec/name-resolution.md:52
 msgid "Translating to SQL"
-msgstr ""
+msgstr "翻譯為 SQL"
 
 #: src/reference/spec/name-resolution.md:54
 msgid ""

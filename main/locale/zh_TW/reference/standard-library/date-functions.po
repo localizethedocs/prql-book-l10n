@@ -53,6 +53,13 @@ msgid ""
 "\n"
 "```"
 msgstr ""
+"```prql\n"
+"prql target:sql.duckdb\n"
+"\n"
+"from invoices\n"
+"select (invoice_date | date.to_text \"%d/%m/%Y\")\n"
+"\n"
+"```"
 
 #: src/reference/stdlib/date.md:30
 msgid ""
@@ -64,6 +71,13 @@ msgid ""
 "\n"
 "```"
 msgstr ""
+"```prql\n"
+"prql target:sql.postgres\n"
+"\n"
+"from invoices\n"
+"select (invoice_date | date.to_text \"%d/%m/%Y\")\n"
+"\n"
+"```"
 
 #: src/reference/stdlib/date.md:38
 msgid ""
@@ -75,6 +89,13 @@ msgid ""
 "\n"
 "```"
 msgstr ""
+"```prql\n"
+"prql target:sql.mysql\n"
+"\n"
+"from invoices\n"
+"select (invoice_date | date.to_text \"%d/%m/%Y\")\n"
+"\n"
+"```"
 
 #: src/reference/stdlib/date.md:46
 msgid "Date & time format specifiers"
@@ -177,7 +198,7 @@ msgstr ""
 
 #: src/reference/stdlib/date.md:62
 msgid "Full month name"
-msgstr ""
+msgstr "完整月份名稱"
 
 #: src/reference/stdlib/date.md:63
 msgid "`%d`"

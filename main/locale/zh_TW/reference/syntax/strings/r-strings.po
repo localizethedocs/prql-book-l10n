@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/syntax/r-strings.md:1
 msgid "R-strings"
-msgstr ""
+msgstr "R-字串"
 
 #: src/reference/syntax/r-strings.md:3
 msgid "R-strings handle escape characters without special treatment:"

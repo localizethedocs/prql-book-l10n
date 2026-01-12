@@ -21,7 +21,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/select.md:15
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/reference/stdlib/transforms/select.md:17
 msgid ""

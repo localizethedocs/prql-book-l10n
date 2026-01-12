@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/project/integrations/prqlc-cli.md:1
 msgid "PRQL compiler"
-msgstr ""
+msgstr "PRQL 編譯器"
 
 #: src/project/integrations/prqlc-cli.md:3
 msgid ""
@@ -198,7 +198,7 @@ msgstr ""
 
 #: src/project/integrations/prqlc-cli.md:177
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/project/integrations/prqlc-cli.md:179
 msgid "Compile a PRQL string to a SQLite dialect string:"

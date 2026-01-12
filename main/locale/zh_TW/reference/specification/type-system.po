@@ -381,11 +381,11 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:238
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/reference/spec/type-system.md:261
 msgid "Appendix"
-msgstr ""
+msgstr "附錄"
 
 #: src/reference/spec/type-system.md:263
 msgid "Splitting primitives"

@@ -108,7 +108,7 @@ msgstr ""
 #: src/project/changelog.md:1707 src/project/changelog.md:1742
 #: src/project/changelog.md:1762
 msgid "**Internal changes**:"
-msgstr ""
+msgstr "**內部變更**："
 
 #: src/project/changelog.md:22 src/project/changelog.md:88
 #: src/project/changelog.md:177 src/project/changelog.md:215

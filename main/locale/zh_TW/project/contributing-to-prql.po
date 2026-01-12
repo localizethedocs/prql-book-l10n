@@ -37,11 +37,11 @@ msgstr ""
 
 #: src/project/contributing/index.md:11
 msgid "Follow us on [Twitter](https://twitter.com/prql_lang)."
-msgstr ""
+msgstr "在 [Twitter](https://twitter.com/prql_lang) 上關注我們。"
 
 #: src/project/contributing/index.md:12
 msgid "Join our [Discord](https://discord.gg/eQcfaCmsNc)."
-msgstr ""
+msgstr "加入我們的 [Discord](https://discord.gg/eQcfaCmsNc)。"
 
 #: src/project/contributing/index.md:13
 msgid ""
