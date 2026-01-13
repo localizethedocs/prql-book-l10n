@@ -25,11 +25,11 @@ msgstr ""
 
 #: src/SUMMARY.md:8
 msgid "Filtering"
-msgstr ""
+msgstr "篩選"
 
 #: src/SUMMARY.md:9
 msgid "Aggregation"
-msgstr ""
+msgstr "聚合"
 
 #: src/SUMMARY.md:11
 msgid "How do I?"
@@ -65,15 +65,15 @@ msgstr ""
 
 #: src/SUMMARY.md:23
 msgid "F-strings"
-msgstr ""
+msgstr "F-字串"
 
 #: src/SUMMARY.md:24
 msgid "R-strings"
-msgstr ""
+msgstr "R-字串"
 
 #: src/SUMMARY.md:25
 msgid "S-strings"
-msgstr ""
+msgstr "S-字串"
 
 #: src/SUMMARY.md:26
 msgid "Tuples"

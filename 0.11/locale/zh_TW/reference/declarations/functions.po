@@ -45,7 +45,7 @@ msgstr ""
 
 #: src/reference/declarations/functions.md:37
 msgid "Other examples"
-msgstr ""
+msgstr "其他範例"
 
 #: src/reference/declarations/functions.md:39
 msgid ""

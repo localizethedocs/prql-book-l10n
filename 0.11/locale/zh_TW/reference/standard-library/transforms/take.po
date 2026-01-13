@@ -26,4 +26,4 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/take.md:11
 msgid "Examples"
-msgstr ""
+msgstr "範例"

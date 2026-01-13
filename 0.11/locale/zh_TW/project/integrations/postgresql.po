@@ -32,7 +32,7 @@ msgstr ""
 
 #: src/project/integrations/postgresql.md:8
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/project/integrations/postgresql.md:9
 msgid "PL/PRQL functions are defined using the `plprql` language specifier:"

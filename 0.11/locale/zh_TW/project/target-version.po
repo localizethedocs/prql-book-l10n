@@ -27,7 +27,7 @@ msgstr ""
 
 #: src/project/target.md:8
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/project/target.md:26
 msgid "Dialects"
@@ -57,19 +57,19 @@ msgstr ""
 
 #: src/project/target.md:37
 msgid "`sql.glaredb`"
-msgstr ""
+msgstr "`sql.glaredb`"
 
 #: src/project/target.md:38
 msgid "`sql.mysql`"
-msgstr ""
+msgstr "`sql.mysql`"
 
 #: src/project/target.md:39
 msgid "`sql.postgres`"
-msgstr ""
+msgstr "`sql.postgres`"
 
 #: src/project/target.md:40
 msgid "`sql.sqlite`"
-msgstr ""
+msgstr "`sql.sqlite`"
 
 #: src/project/target.md:42
 msgid "Unsupported"
@@ -89,19 +89,19 @@ msgstr ""
 
 #: src/project/target.md:50
 msgid "`sql.mssql`"
-msgstr ""
+msgstr "`sql.mssql`"
 
 #: src/project/target.md:51
 msgid "`sql.ansi`"
-msgstr ""
+msgstr "`sql.ansi`"
 
 #: src/project/target.md:52
 msgid "`sql.bigquery`"
-msgstr ""
+msgstr "`sql.bigquery`"
 
 #: src/project/target.md:53
 msgid "`sql.snowflake`"
-msgstr ""
+msgstr "`sql.snowflake`"
 
 #: src/project/target.md:55
 msgid "Priority of targets"
