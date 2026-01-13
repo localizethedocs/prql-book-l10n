@@ -129,11 +129,11 @@ msgstr ""
 
 #: src/SUMMARY.md:41
 msgid "S-strings"
-msgstr ""
+msgstr "S-字串"
 
 #: src/SUMMARY.md:42
 msgid "F-strings"
-msgstr ""
+msgstr "F-字串"
 
 #: src/SUMMARY.md:43
 msgid "Switch"

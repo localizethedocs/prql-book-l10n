@@ -522,7 +522,7 @@ msgstr ""
 
 #: src/contributing/development.md:353
 msgid "Website"
-msgstr ""
+msgstr "網站"
 
 #: src/contributing/development.md:355
 msgid ""
