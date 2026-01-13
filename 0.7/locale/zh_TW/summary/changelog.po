@@ -153,7 +153,7 @@ msgstr ""
 #: src/changelog.md:677 src/changelog.md:723 src/changelog.md:758
 #: src/changelog.md:780
 msgid "**Internal changes**:"
-msgstr ""
+msgstr "**內部變更**："
 
 #: src/changelog.md:75
 msgid ""

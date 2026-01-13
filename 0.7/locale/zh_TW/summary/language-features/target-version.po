@@ -35,11 +35,11 @@ msgstr ""
 
 #: src/language-features/target.md:34
 msgid "`sql.ansi`"
-msgstr ""
+msgstr "`sql.ansi`"
 
 #: src/language-features/target.md:35
 msgid "`sql.bigquery`"
-msgstr ""
+msgstr "`sql.bigquery`"
 
 #: src/language-features/target.md:36
 msgid "`sql.clickhouse`"
@@ -55,23 +55,23 @@ msgstr ""
 
 #: src/language-features/target.md:39
 msgid "`sql.mssql`"
-msgstr ""
+msgstr "`sql.mssql`"
 
 #: src/language-features/target.md:40
 msgid "`sql.mysql`"
-msgstr ""
+msgstr "`sql.mysql`"
 
 #: src/language-features/target.md:41
 msgid "`sql.postgres`"
-msgstr ""
+msgstr "`sql.postgres`"
 
 #: src/language-features/target.md:42
 msgid "`sql.sqlite`"
-msgstr ""
+msgstr "`sql.sqlite`"
 
 #: src/language-features/target.md:43
 msgid "`sql.snowflake`"
-msgstr ""
+msgstr "`sql.snowflake`"
 
 #: src/language-features/target.md:44
 msgid "`sql.duckdb`"

@@ -137,11 +137,11 @@ msgstr ""
 
 #: src/SUMMARY.md:43
 msgid "S-strings"
-msgstr ""
+msgstr "S-字串"
 
 #: src/SUMMARY.md:44
 msgid "F-strings"
-msgstr ""
+msgstr "F-字串"
 
 #: src/SUMMARY.md:45
 msgid "Case"
