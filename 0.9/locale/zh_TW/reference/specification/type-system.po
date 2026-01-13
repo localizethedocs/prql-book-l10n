@@ -453,11 +453,11 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:267
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/reference/spec/type-system.md:291
 msgid "Appendix"
-msgstr ""
+msgstr "附錄"
 
 #: src/reference/spec/type-system.md:293
 msgid "Built-in primitives"

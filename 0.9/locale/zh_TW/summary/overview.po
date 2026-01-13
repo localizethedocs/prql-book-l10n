@@ -41,6 +41,7 @@ msgid ""
 "language design decisions and formal specifications for parts of the "
 "language."
 msgstr ""
+"關於 PRQL 語言的深入資訊。包含語言設計決策的理據，以及語言各部分的正式規範。"
 
 #: src/overview.md:19
 msgid "[How do I?](./how-do-i/distinct.md)"
@@ -56,7 +57,7 @@ msgstr ""
 
 #: src/overview.md:25
 msgid "General information about the project, tooling and development."
-msgstr ""
+msgstr "關於專案、工具與開發的一般資訊。"
 
 #: src/overview.md:27
 msgid "[Changelog](./project/changelog.md)"
