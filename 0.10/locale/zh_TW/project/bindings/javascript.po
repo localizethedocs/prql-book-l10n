@@ -51,7 +51,7 @@ msgstr ""
 
 #: src/project/bindings/javascript.md:36
 msgid "Options"
-msgstr ""
+msgstr "選項"
 
 #: src/project/bindings/javascript.md:40
 msgid "\"sql.mssql\""
@@ -178,7 +178,7 @@ msgstr ""
 
 #: src/project/bindings/javascript.md:161
 msgid "Test:"
-msgstr ""
+msgstr "測試："
 
 #: src/project/bindings/javascript.md:167
 msgid ""

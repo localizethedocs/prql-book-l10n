@@ -17,7 +17,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/derive.md:3
 msgid "Computes one or more new columns."
-msgstr ""
+msgstr "計算一個或多個新欄位。"
 
 #: src/reference/stdlib/transforms/derive.md:13
 msgid "Examples"

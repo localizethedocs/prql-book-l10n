@@ -407,7 +407,7 @@ msgstr ""
 #: src/project/changelog.md:1190 src/project/changelog.md:1225
 #: src/project/changelog.md:1245
 msgid "**Internal changes**:"
-msgstr ""
+msgstr "**內部變更**："
 
 #: src/project/changelog.md:185
 msgid "Simplify & speed up lexer (@max-sixty, #3426, #3418)"

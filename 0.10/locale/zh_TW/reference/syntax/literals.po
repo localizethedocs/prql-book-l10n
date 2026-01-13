@@ -140,7 +140,7 @@ msgstr ""
 
 #: src/reference/syntax/literals.md:112
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/reference/syntax/literals.md:114
 msgid "Here's a larger list of date and time examples:"

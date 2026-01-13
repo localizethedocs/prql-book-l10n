@@ -113,7 +113,7 @@ msgstr ""
 
 #: src/project/contributing/development.md:91
 msgid "Option 3: Use a Dev Container"
-msgstr ""
+msgstr "選項 3：使用 Dev Container"
 
 #: src/project/contributing/development.md:93
 msgid ""
@@ -150,7 +150,7 @@ msgstr ""
 
 #: src/project/contributing/development.md:113
 msgid "Option 4: Use nix development environment"
-msgstr ""
+msgstr "選項 4：使用 nix 開發環境"
 
 #: src/project/contributing/development.md:115
 msgid ""
@@ -559,7 +559,7 @@ msgstr ""
 
 #: src/project/contributing/development.md:403
 msgid "Website"
-msgstr ""
+msgstr "網站"
 
 #: src/project/contributing/development.md:405
 msgid ""
