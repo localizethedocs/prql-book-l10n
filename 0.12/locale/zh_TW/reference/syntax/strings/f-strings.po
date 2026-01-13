@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/syntax/f-strings.md:1
 msgid "F-strings"
-msgstr ""
+msgstr "F-字串"
 
 #: src/reference/syntax/f-strings.md:3
 msgid ""
@@ -28,6 +28,10 @@ msgid ""
 "select full_name = f\"{first_name} {last_name}\"\n"
 "```"
 msgstr ""
+"```prql\n"
+"from employees\n"
+"select full_name = f\"{first_name} {last_name}\"\n"
+"```"
 
 #: src/reference/syntax/f-strings.md:11
 msgid ""
@@ -42,6 +46,10 @@ msgid ""
 "select url = f\"http{tls}://www.{domain}.{tld}/{page}\"\n"
 "```"
 msgstr ""
+"```prql\n"
+"from web\n"
+"select url = f\"http{tls}://www.{domain}.{tld}/{page}\"\n"
+"```"
 
 #: src/reference/syntax/f-strings.md:19
 msgid ""
@@ -56,6 +64,10 @@ msgid ""
 "select length_str = f\"{length_seconds / 60} minutes\"\n"
 "```"
 msgstr ""
+"```prql error no-fmt\n"
+"from tracks\n"
+"select length_str = f\"{length_seconds / 60} minutes\"\n"
+"```"
 
 #: src/reference/syntax/f-strings.md:27
 msgid "Roadmap"

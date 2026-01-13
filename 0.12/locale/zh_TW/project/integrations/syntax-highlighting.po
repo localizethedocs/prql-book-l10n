@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/project/integrations/syntax-highlighting.md:1
 msgid "Grammars / syntax highlighting"
-msgstr ""
+msgstr "文法/語法標明"
 
 #: src/project/integrations/syntax-highlighting.md:3
 msgid ""

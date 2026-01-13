@@ -168,7 +168,7 @@ msgstr ""
 
 #: src/reference/stdlib/date.md:63
 msgid "Full month name"
-msgstr ""
+msgstr "完整月份名稱"
 
 #: src/reference/stdlib/date.md:64
 msgid "`%d`"

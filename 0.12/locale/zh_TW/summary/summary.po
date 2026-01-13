@@ -33,11 +33,11 @@ msgstr ""
 
 #: src/SUMMARY.md:15
 msgid "Filtering"
-msgstr ""
+msgstr "篩選"
 
 #: src/SUMMARY.md:16
 msgid "Aggregation"
-msgstr ""
+msgstr "聚合"
 
 #: src/SUMMARY.md:21
 msgid "Reference"
@@ -49,6 +49,7 @@ msgid ""
 "language design decisions and formal specifications for parts of the "
 "language."
 msgstr ""
+"關於 PRQL 語言的深入資訊。包含語言設計決策的理據，以及語言各部分的正式規範。"
 
 #: src/SUMMARY.md:26
 msgid "Syntax"
@@ -64,15 +65,15 @@ msgstr ""
 
 #: src/SUMMARY.md:30
 msgid "F-strings"
-msgstr ""
+msgstr "F-字串"
 
 #: src/SUMMARY.md:31
 msgid "R-strings"
-msgstr ""
+msgstr "R-字串"
 
 #: src/SUMMARY.md:32
 msgid "S-strings"
-msgstr ""
+msgstr "S-字串"
 
 #: src/SUMMARY.md:33
 msgid "Tuples"
@@ -124,7 +125,7 @@ msgstr ""
 
 #: src/SUMMARY.md:47
 msgid "Reading files"
-msgstr ""
+msgstr "讀取檔案"
 
 #: src/SUMMARY.md:48
 msgid "Ad-hoc data"
@@ -240,7 +241,7 @@ msgstr ""
 
 #: src/SUMMARY.md:87
 msgid "General information about the project, tooling and development."
-msgstr ""
+msgstr "關於專案、工具與開發的一般資訊。"
 
 #: src/SUMMARY.md:89
 msgid "Changelog"

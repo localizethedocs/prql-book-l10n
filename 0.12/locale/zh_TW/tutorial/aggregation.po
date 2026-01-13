@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/tutorial/aggregation.md:1
 msgid "Aggregation"
-msgstr ""
+msgstr "聚合"
 
 #: src/tutorial/aggregation.md:3
 msgid ""
