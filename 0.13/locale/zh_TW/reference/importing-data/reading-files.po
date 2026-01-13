@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/data/read-files.md:1
 msgid "Reading files"
-msgstr ""
+msgstr "讀取檔案"
 
 #: src/reference/data/read-files.md:3
 msgid ""

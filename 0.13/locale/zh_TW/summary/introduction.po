@@ -19,6 +19,7 @@ msgstr "PRQL 語言手冊"
 msgid ""
 "**P**ipelined **R**elational **Q**uery **L**anguage, pronounced \"Prequel\"."
 msgstr ""
+"**P**ipelined **R**elational **Q**uery **L**anguage，讀音同「Prequel」。"
 
 #: src/index.md:5
 msgid ""
@@ -28,6 +29,10 @@ msgid ""
 "supports abstractions such as variables and functions. It can be used with "
 "any database that uses SQL, since it compiles to SQL."
 msgstr ""
+"PRQL 是一種用於變換資料的現代語言 — 一個簡單、強大且採用管道化設計的 SQL 替代"
+"方案。與 SQL 一樣，它具備易讀性、明確性且屬於宣告型語言。與 SQL 不同的是，它"
+"構建了一個邏輯上的變換管道，並支援變數與函式等抽象概念。由於它可以編譯為 "
+"SQL，因此適用於任何使用 SQL 的資料庫。"
 
 #: src/index.md:11
 msgid ""
@@ -50,11 +55,13 @@ msgid ""
 "justifications for language design decisions and formal specifications for "
 "parts of the language."
 msgstr ""
+"**參考** — 關於 PRQL 語言的深入資訊。包含語言設計決策的理據，以及語言各部分的"
+"正式規範。"
 
 #: src/index.md:22
 msgid ""
 "**Project** — General information about the project, tooling and development."
-msgstr ""
+msgstr "**專案** — 關於專案、工具與開發的一般資訊。"
 
 #: src/index.md:26
 msgid ""

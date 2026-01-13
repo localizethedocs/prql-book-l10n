@@ -75,7 +75,7 @@ msgstr ""
 #: src/project/changelog.md:1640 src/project/changelog.md:1686
 #: src/project/changelog.md:1721 src/project/changelog.md:1741
 msgid "**Internal changes**:"
-msgstr ""
+msgstr "**內部變更**："
 
 #: src/project/changelog.md:17
 msgid "Fix npm OIDC publishing by upgrading to Node 24 (@max-sixty, #5619)"

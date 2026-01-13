@@ -32,7 +32,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/loop.md:26
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/reference/stdlib/transforms/loop.md:38
 msgid ""

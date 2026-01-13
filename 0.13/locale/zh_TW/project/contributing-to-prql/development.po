@@ -128,7 +128,7 @@ msgstr ""
 
 #: src/project/contributing/development.md:87
 msgid "Option 3: Use a Dev Container"
-msgstr ""
+msgstr "選項 3：使用 Dev Container"
 
 #: src/project/contributing/development.md:89
 msgid ""
@@ -165,7 +165,7 @@ msgstr ""
 
 #: src/project/contributing/development.md:109
 msgid "Option 4: Use nix development environment"
-msgstr ""
+msgstr "選項 4：使用 nix 開發環境"
 
 #: src/project/contributing/development.md:111
 msgid ""
@@ -213,7 +213,7 @@ msgstr ""
 
 #: src/project/contributing/development.md:133
 msgid "'experimental-features = nix-command flakes'"
-msgstr ""
+msgstr "'experimental-features = nix-command flakes'"
 
 #: src/project/contributing/development.md:136
 msgid ""
@@ -598,7 +598,7 @@ msgstr ""
 
 #: src/project/contributing/development.md:395
 msgid "Website"
-msgstr ""
+msgstr "網站"
 
 #: src/project/contributing/development.md:397
 msgid ""

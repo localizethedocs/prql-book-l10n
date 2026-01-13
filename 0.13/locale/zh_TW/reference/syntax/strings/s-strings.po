@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/syntax/s-strings.md:1
 msgid "S-strings"
-msgstr ""
+msgstr "S-字串"
 
 #: src/reference/syntax/s-strings.md:3
 msgid ""
