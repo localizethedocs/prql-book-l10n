@@ -162,7 +162,7 @@ msgstr ""
 
 #: src/bindings/javascript.md:145
 msgid "Test:"
-msgstr ""
+msgstr "測試："
 
 #: src/bindings/javascript.md:151
 msgid "Notes"
