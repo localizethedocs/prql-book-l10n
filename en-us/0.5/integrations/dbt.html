@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html lang="en_US" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>dbt - PRQL Language Book</title>
+
+
+        <!-- Custom HTML head -->
+        <script type="text/javascript" src="../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="Modern language for transforming data — a simple, powerful, pipelined SQL replacement">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../comparison-table.css">
+        <link rel="stylesheet" href="../mdbook-admonish.css">
+        <link rel="stylesheet" href=".././mdbook-admonish.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">PRQL Language Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/PRQL/prql" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="dbt-prql"><a class="header" href="#dbt-prql">dbt-prql</a></h1>
+<blockquote>
+<p>Original docs at <a href="https://github.com/prql/dbt-prql">https://github.com/prql/dbt-prql</a></p>
+</blockquote>
+<pre><code class="language-note admonish">As of Feb 2022, we're again considering how to best integrate with
+dbt more closely. Ideally a file with a `.prql` extension will just work™.
+
+If you're interested in this, subscribe or 👍 to
+&lt;https://github.com/dbt-labs/dbt-core/pull/5982&gt;.
+
+The original plugin is hosted here, but only works with a minority of
+dialects, and isn't a focus of development at the moment.
+</code></pre>
+<p>dbt-prql allows writing PRQL in <a href="https://www.getdbt.com/">dbt</a> models. This
+combines the benefits of PRQL’s power &amp; simplicity <em>within</em> queries, with dbt’s
+version control, lineage &amp; testing <em>across</em> queries.</p>
+<p>Once <code>dbt-prql</code> in installed, dbt commands compile PRQL between <code>{% prql %}</code> &amp;
+<code>{% endprql %}</code> Jinja tags to SQL as part of dbt’s compilation. No additional
+config is required.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="simple-example"><a class="header" href="#simple-example">Simple example</a></h3>
+<pre><code class="language-elm">{% prql %}
+from employees
+filter (age | in 20..30)
+{% endprql %}
+</code></pre>
+<p>…would appear to dbt as:</p>
+<pre><code class="language-sql">SELECT
+  employees.*
+FROM
+  employees
+WHERE
+  age BETWEEN 20
+  AND 30
+</code></pre>
+<h3 id="less-simple-example"><a class="header" href="#less-simple-example">Less simple example</a></h3>
+<pre><code class="language-elm">{% prql %}
+from in_process = {{ source('salesforce', 'in_process') }}
+derive expected_sales = probability * value
+join {{ ref('team', 'team_sales') }} [name]
+group name (
+  aggregate (sum expected_sales)
+)
+{% endprql %}
+</code></pre>
+<p>…would appear to dbt as:</p>
+<pre><code class="language-sql">SELECT
+  name,
+  sum(in_process.probability * in_process.value) AS expected_sales
+FROM
+  {{ source('salesforce', 'in_process') }} AS in_process
+  JOIN {{ ref('team', 'team_sales') }} USING(name)
+GROUP BY
+  name
+</code></pre>
+<p>…and then dbt will compile the <code>source</code> and <code>ref</code>s to a full SQL query.</p>
+<h3 id="replacing-macros"><a class="header" href="#replacing-macros">Replacing macros</a></h3>
+<p>dbt’s use of macros has saved many of us many lines of code, and even saved some
+people some time. But imperatively programming text generation with code like
+<code>if not loop.last</code> is not our highest calling. It’s the “necessary” part rather
+than beautiful part of dbt.</p>
+<p>Here’s the canonical example of macros in the
+<a href="https://docs.getdbt.com/docs/build/jinja-macros">dbt documentation</a>:</p>
+<pre><code class="language-sql">{%- set payment_methods = ["bank_transfer", "credit_card", "gift_card"] -%}
+
+select
+order_id,
+{%- for payment_method in payment_methods %}
+sum(case when payment_method = '{{payment_method}}' then amount end) as {{payment_method}}_amount
+{%- if not loop.last %},{% endif -%}
+{% endfor %}
+from {{ ref('raw_payments') }}
+group by 1
+</code></pre>
+<p>Here’s that model using PRQL<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>, including the prql Jinja tags.</p>
+<pre><code class="language-elm">{% prql %}
+func filter_amount method -&gt; s"sum(case when payment_method = '{method}' then amount end) as {method}_amount"
+
+from {{ ref('raw_payments') }}
+group order_id (
+  aggregate [
+    filter_amount bank_transfer,
+    filter_amount credit_card,
+    filter_amount gift_card,
+  ]
+)
+{% endprql %}
+</code></pre>
+<p>As well the query being simpler in its final form, writing in PRQL also gives us
+live feedback around any errors, on every keystroke. Though there’s much more to
+come, check out the current version on
+<a href="https://prql-lang.org/playground/">PRQL Playground</a>.</p>
+<p>Note that when <a href="https://github.com/prql/prql/issues/82">https://github.com/prql/prql/issues/82</a> is implemented, we
+can dispense with the s-string, and optionally dispense with the function.</p>
+<pre><code class="language-elm">from {{ ref('raw_payments') }}
+group order_id (
+  aggregate [
+    bank_transfer_amount = amount | filter payment_method == 'bank'        | sum,
+    credit_card_amount = amount   | filter payment_method == 'credit_card' | sum,
+    gift_amount = amount          | filter payment_method == 'gift_card'   | sum,
+  ]
+)
+</code></pre>
+<p>or</p>
+<pre><code class="language-elm">func filter_amount method -&gt; amount | filter payment_method == method | sum
+
+from {{ ref('raw_payments') }}
+group order_id (
+  aggregate [
+    bank_transfer_amount = filter_amount 'bank'
+    credit_card_amount   = filter_amount 'credit_card'
+    gift_amount          = filter_amount 'gift_card'
+  ]
+)
+</code></pre>
+<pre><code>
+## What it does
+
+When dbt compiles models to SQL queries:
+
+* Any text in a dbt model between `{% prql %}` and `{% endprql %}` tags is
+  compiled from PRQL to SQL before being passed to dbt.
+* The PRQL compiler passes text that’s containing `{{` &amp; `}}` through to dbt
+  without modification, which allows us to embed Jinja expressions in PRQL.
+  (This was added to PRQL specifically for this use-case.)
+* dbt will then compile the resulting model into its final form of raw SQL, and
+  dispatch it to the database, as per usual.
+
+There’s no config needed in the dbt project; this works automatically on any dbt
+command (e.g. `dbt run`) assuming `dbt-prql` is installed.
+
+## Installation
+
+````sh
+pip install dbt-prql
+</code></pre>
+<h2 id="current-state"><a class="header" href="#current-state">Current state</a></h2>
+<p>Currently this is new, but fairly feature-complete. It’s enthusiastically
+supported — if there are any problems, please open an issue.</p>
+<h2 id="how-does-it-work"><a class="header" href="#how-does-it-work">How does it work?</a></h2>
+<p>It’s some dark magic, unfortunately.</p>
+<p>dbt doesn’t allow adding behavior beyond the database adapters (e.g.
+<code>dbt-bigquery</code>) or Jinja-only plugins (e.g. <code>dbt-utils</code>). So this library hacks
+the Python import system to monkeypatch dbt’s Jinja environment with an
+additional Jinja extension on Python’s startup<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup>.</p>
+<p>Thanks to
+<a href="https://github.com/mtkennerly/poetry-dynamic-versioning">mtkennerly/poetry-dynamic-versioning</a>
+for the technique.</p>
+<pre><code>
+This approach was discussed with the dbt team
+[here](https://github.com/prql/prql/issues/375) and
+[here](https://github.com/prql/prql/issues/13).
+
+This isn’t stable between dbt versions, since it relies on internal dbt APIs.
+The technique is also normatively bad — it runs a few lines of code every time
+the Python interpreter starts — whose errors could lead to very confusing bugs
+beyond the domain of the problem (though in the case of this library, it’s small
+and well-constructed™).
+
+If there’s ever any concern that the library might be causing a problem, just
+set an environment variable `DBT_PRQL_DISABLE=1`, and this library won’t
+monkeypatch anything. It’s also fully uninstallable with
+`pip uninstall dbt-prql`.
+
+## Roadmap
+
+Open to ideas; at the moment it’s fairly feature-complete. If we were
+unconstrained in dbt functionality:
+
+* If dbt allowed for external plugins, we’d enthusiastically move to that.
+* We’d love to have this work on `.prql` files without the `{% prql %}` tags;
+  but with the current approach that would require quite invasive
+  monkeypatching.
+* If we could add the dialect in automatically (i.e. `prql dialect:snowflake`),
+  that would save a line per model.
+* If we could upstream this into dbt-core, that would be awesome. It may be on
+  PRQL to demonstrate its staying power before that, though.
+
+We may move this library to the &lt;https://github.com/prql/PyPrql&gt; or
+&lt;https://github.com/prql/prql&gt; repos. We’d prefer to keep it as its own package
+given the hackery above, but there’s no need for it to be its own repo.</code></pre>
+<hr>
+<ol class="footnote-definition"><li id="footnote-1">
+<pre><code></code></pre>
+ <a href="#fr-1-1">↩</a></li>
+<li id="footnote-2">
+<pre><code></code></pre>
+ <a href="#fr-2-1">↩</a></li>
+</ol>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../integrations/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../integrations/jupyter.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../integrations/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../integrations/jupyter.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../highlight-prql.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
