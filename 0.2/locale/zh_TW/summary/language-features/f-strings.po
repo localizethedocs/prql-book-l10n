@@ -28,6 +28,10 @@ msgid ""
 "select full_name = f\"{first_name} {last_name}\"\n"
 "```"
 msgstr ""
+"```prql\n"
+"from employees\n"
+"select full_name = f\"{first_name} {last_name}\"\n"
+"```"
 
 #: src/language-features/f-strings.md:11
 msgid ""
@@ -42,6 +46,10 @@ msgid ""
 "select url = f\"http{tls}://www.{domain}.{tld}/{page}\"\n"
 "```"
 msgstr ""
+"```prql\n"
+"from web\n"
+"select url = f\"http{tls}://www.{domain}.{tld}/{page}\"\n"
+"```"
 
 #: src/language-features/f-strings.md:18
 msgid "Roadmap"

@@ -110,4 +110,4 @@ msgstr ""
 
 #: src/bindings/javascript.md:88
 msgid "Test:"
-msgstr ""
+msgstr "測試："
