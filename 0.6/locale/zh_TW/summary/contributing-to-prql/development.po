@@ -581,7 +581,7 @@ msgstr ""
 
 #: src/contributing/development.md:386
 msgid "Website"
-msgstr ""
+msgstr "網站"
 
 #: src/contributing/development.md:388
 msgid ""
