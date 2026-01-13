@@ -169,7 +169,7 @@ msgstr ""
 
 #: src/SUMMARY.md:53
 msgid "Reading files"
-msgstr ""
+msgstr "讀取檔案"
 
 #: src/SUMMARY.md:54
 msgid "Strings"
@@ -177,11 +177,11 @@ msgstr ""
 
 #: src/SUMMARY.md:55
 msgid "S-strings"
-msgstr ""
+msgstr "S-字串"
 
 #: src/SUMMARY.md:56
 msgid "F-strings"
-msgstr ""
+msgstr "F-字串"
 
 #: src/SUMMARY.md:57
 msgid "Target & Version"

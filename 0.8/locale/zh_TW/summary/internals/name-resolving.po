@@ -92,7 +92,7 @@ msgstr ""
 
 #: src/internals/name-resolving.md:51
 msgid "Translating to SQL"
-msgstr ""
+msgstr "翻譯為 SQL"
 
 #: src/internals/name-resolving.md:53
 msgid ""

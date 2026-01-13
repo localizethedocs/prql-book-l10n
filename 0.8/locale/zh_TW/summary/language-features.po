@@ -87,7 +87,7 @@ msgstr ""
 
 #: src/language-features/index.md:15
 msgid "S-strings"
-msgstr ""
+msgstr "S-字串"
 
 #: src/language-features/index.md:15
 msgid "[Insert SQL directly into a query with an S-string](./s-strings.md)"
@@ -95,7 +95,7 @@ msgstr ""
 
 #: src/language-features/index.md:16
 msgid "F-strings"
-msgstr ""
+msgstr "F-字串"
 
 #: src/language-features/index.md:16
 msgid "[Combine several column's data with F-strings](./f-strings.md)"

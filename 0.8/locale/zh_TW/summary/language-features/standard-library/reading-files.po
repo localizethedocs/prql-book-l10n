@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/language-features/standard-library/reading-files.md:1
 msgid "Reading files"
-msgstr ""
+msgstr "讀取檔案"
 
 #: src/language-features/standard-library/reading-files.md:3
 msgid ""
