@@ -1,4 +1,10 @@
 <div align="center">
+<picture>
+  <img height="100" src="https://cdn.jsdelivr.net/gh/localizethedocs/static/mark/prql.svg">
+</picture>
+</div>
+
+<div align="center">
 <h1 id="localization-of-prql-language-book">Localization of PRQL Language Book</h1>
 </div>
 
