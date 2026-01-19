@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/project/bindings/dotnet.md:1
 msgid "prql-dotnet"
-msgstr ""
+msgstr "prql-dotnet"
 
 #: src/project/bindings/dotnet.md:3
 msgid ""
