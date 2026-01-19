@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-<h1 id="localization-of-prql-language-book">Localization of PRQL Language Book</h1>
+<h1 id="localization-of-prql-language-book">PRQL 語言手冊的在地化</h1>
 </div>
 
 <details><summary><strong>切換語言</strong></summary>
