@@ -20,6 +20,8 @@ msgid ""
 "`prqlc` serves as a CLI for the PRQL compiler. It is a single, dependency-"
 "free binary that compiles PRQL into SQL."
 msgstr ""
+"`prqlc` 是 PRQL 編譯器的 CLI。它是一個無相依項的二進位檔，可以將 PRQL 編譯為 "
+"SQL。"
 
 #: src/project/integrations/prqlc-cli.md:6
 msgid "Usage"
