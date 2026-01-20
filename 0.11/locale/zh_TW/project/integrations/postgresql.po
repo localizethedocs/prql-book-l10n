@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/project/integrations/postgresql.md:1
 msgid "PostgreSQL"
-msgstr ""
+msgstr "PostgreSQL"
 
 #: src/project/integrations/postgresql.md:3
 msgid ""
@@ -55,7 +55,7 @@ msgstr ""
 
 #: src/project/integrations/postgresql.md:41
 msgid "----+----------+-------+---------+-------+--------\n"
-msgstr ""
+msgstr "----+----------+-------+---------+-------+--------\n"
 
 #: src/project/integrations/postgresql.md:46
 msgid ""
@@ -68,7 +68,7 @@ msgstr ""
 
 #: src/project/integrations/postgresql.md:52
 msgid "Getting Started"
-msgstr ""
+msgstr "開始使用"
 
 #: src/project/integrations/postgresql.md:53
 msgid ""

@@ -305,7 +305,7 @@ msgstr "語法標明"
 
 #: src/SUMMARY.md:99
 msgid "PostgreSQL"
-msgstr ""
+msgstr "PostgreSQL"
 
 #: src/SUMMARY.md:101
 msgid "Contributing to PRQL"

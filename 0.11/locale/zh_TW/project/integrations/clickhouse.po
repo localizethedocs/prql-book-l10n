@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/project/integrations/clickhouse.md:1
 msgid "ClickHouse"
-msgstr ""
+msgstr "ClickHouse"
 
 #: src/project/integrations/clickhouse.md:3
 msgid ""
