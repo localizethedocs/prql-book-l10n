@@ -168,6 +168,8 @@ msgid ""
 "suggestions _without_ examples are difficult to engage with, so please do "
 "anchor suggestions in examples.)"
 msgstr ""
+"提供充足的範例來建議語言變更！（由於沒有範例的建議很難進行討論，因此請務必將"
+"建議建立在具體範例之上。）"
 
 #: src/contributing/index.md:76
 msgid "Marketing"
@@ -205,22 +207,24 @@ msgid ""
 "If you have any questions or feedback and don't receive a response on one of "
 "the general channels such as GitHub or Discord, feel free to reach out to:"
 msgstr ""
+"如果您有任何問題或意見反饋，並且在 GitHub 或 Discord 等公開頻道未收到回覆，歡"
+"迎隨時聯繫："
 
 #: src/contributing/index.md:92
 msgid "[**@aljazerzen**](https://github.com/aljazerzen) — Aljaž Mur Eržen"
-msgstr ""
+msgstr "[**@aljazerzen**](https://github.com/aljazerzen) — Aljaž Mur Eržen"
 
 #: src/contributing/index.md:93
 msgid "[**@max-sixty**](https://github.com/max-sixty) — Maximilian Roos"
-msgstr ""
+msgstr "[**@max-sixty**](https://github.com/max-sixty) — Maximilian Roos"
 
 #: src/contributing/index.md:94
 msgid "[**@snth**](https://github.com/snth) — Tobias Brandt"
-msgstr ""
+msgstr "[**@snth**](https://github.com/snth) — Tobias Brandt"
 
 #: src/contributing/index.md:96
 msgid "Core team Emeritus"
-msgstr ""
+msgstr "核心團隊榮譽成員"
 
 #: src/contributing/index.md:98
 msgid "Thank you to those who have previously served on the core team:"

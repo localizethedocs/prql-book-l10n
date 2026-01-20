@@ -562,7 +562,7 @@ msgstr ""
 
 #: src/syntax.md:289
 msgid "Keywords"
-msgstr ""
+msgstr "關鍵字"
 
 #: src/syntax.md:291
 msgid "At the moment, PRQL uses only four keywords:"
