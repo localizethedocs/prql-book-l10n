@@ -81,11 +81,11 @@ msgstr ""
 
 #: src/reference/syntax/keywords.md:87
 msgid "Keywords"
-msgstr ""
+msgstr "關鍵字"
 
 #: src/reference/syntax/keywords.md:89
 msgid "PRQL uses following keywords:"
-msgstr ""
+msgstr "PRQL 使用了以下關鍵字："
 
 #: src/reference/syntax/keywords.md:91
 msgid "**`prql`** - query header [_more..._](../../project/target.md)"
@@ -107,7 +107,7 @@ msgstr ""
 
 #: src/reference/syntax/keywords.md:95
 msgid "**`type`** - type declaration"
-msgstr ""
+msgstr "**`type`** - 型別宣告"
 
 #: src/reference/syntax/keywords.md:96
 msgid ""
@@ -117,11 +117,11 @@ msgstr ""
 
 #: src/reference/syntax/keywords.md:98
 msgid "**`module`** - used internally"
-msgstr ""
+msgstr "**`module`** - 內部使用"
 
 #: src/reference/syntax/keywords.md:99
 msgid "**`internal`** - used internally"
-msgstr ""
+msgstr "**`internal`** - 內部使用"
 
 #: src/reference/syntax/keywords.md:100
 msgid "**`true`** - boolean [_more..._](./literals.md#booleans)"

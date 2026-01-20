@@ -321,7 +321,7 @@ msgstr ""
 
 #: src/SUMMARY.md:113
 msgid "PostgreSQL"
-msgstr ""
+msgstr "PostgreSQL"
 
 #: src/SUMMARY.md:114
 msgid "Databend"
