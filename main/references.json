@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-01-06 13:46:28 -0800",
-      "hash" : "a1c3f4ca42c26850394420b58c6ef1e8607cb3c7",
-      "title" : "fix: handle partial application of transforms in user-defined functions (#5663)"
+      "date" : "2026-01-23 17:29:48 +0000",
+      "hash" : "1ef8c1bb218d2111df8c3668ddd020bd5c2cde2b",
+      "title" : "build: Update rust toolchain version (#5673)"
     }
   },
   "type" : "branch",
