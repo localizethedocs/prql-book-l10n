@@ -1,0 +1,198 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/strings.md:1
+msgid "Strings"
+msgstr ""
+
+#: src/reference/syntax/strings.md:3
+msgid ""
+"String literals can use any matching odd number of either single or double "
+"quotes:"
+msgstr ""
+
+#: src/reference/syntax/strings.md:6
+msgid ""
+"```prql\n"
+"from artists\n"
+"derive {\n"
+"  single        =   'hello world',\n"
+"  double        =   \"hello world\",\n"
+"  double_triple = \"\"\"hello world\"\"\",\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/strings.md:15
+msgid "Quoting and escape characters"
+msgstr ""
+
+#: src/reference/syntax/strings.md:17
+msgid ""
+"To quote a string containing quote characters, use the \"other\" type of "
+"quote, or use the escape character `\\`, or use more quotes."
+msgstr ""
+
+#: src/reference/syntax/strings.md:20
+msgid ""
+"```prql\n"
+"from artists\n"
+"select {\n"
+"  other   = '\"hello world\"',\n"
+"  escaped = \"\\\"hello world\\\"\",\n"
+"  triple  = \"\"\"I said \"hello world\"!\"\"\",\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/strings.md:29
+msgid ""
+"Strings can contain any escape character sequences defined by the [JSON "
+"standard](https://www.ecma-international.org/publications-and-standards/"
+"standards/ecma-404/)."
+msgstr ""
+
+#: src/reference/syntax/strings.md:32
+msgid ""
+"```prql\n"
+"from artists\n"
+"derive escapes = \"\\tXYZ\\n \\\\ \"                            # tab (\\t), "
+"\"XYZ\", newline (\\n), \" \", \\, \" \"\n"
+"derive world = \"\\u{0048}\\u{0065}\\u{006C}\\u{006C}\\u{006F}\" # "
+"\"Hello\"\n"
+"derive hex = \"\\x48\\x65\\x6C\\x6C\\x6F\"                       # "
+"\"Hello\"\n"
+"derive turtle = \"\\u{01F422}\"                              # \"🐢\"\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/strings.md:40
+msgid "Other string formats"
+msgstr ""
+
+#: src/reference/syntax/strings.md:42
+msgid ""
+"[**F-strings**](./f-strings.md) - Build up a new string from a set of "
+"columns or values."
+msgstr ""
+
+#: src/reference/syntax/strings.md:44
+msgid ""
+"[**R-strings**](./r-strings.md) - Include the raw characters of the string "
+"without any form of escaping."
+msgstr ""
+
+#: src/reference/syntax/strings.md:46
+msgid ""
+"[**S-strings**](./s-strings.md) - Insert SQL statements directly into the "
+"query. Use when PRQL doesn't have an equivalent facility."
+msgstr ""
+
+#: src/reference/syntax/strings.md:64
+msgid "Escape sequences"
+msgstr ""
+
+#: src/reference/syntax/strings.md:66
+msgid ""
+"Unless an `r` prefix is present, escape sequences in string literals are "
+"interpreted according to rules similar to those used by Standard C. The "
+"recognized escape sequences are:"
+msgstr ""
+
+#: src/reference/syntax/strings.md:70
+msgid "Escape Sequence"
+msgstr ""
+
+#: src/reference/syntax/strings.md:70
+msgid "Meaning"
+msgstr ""
+
+#: src/reference/syntax/strings.md:72
+msgid "`\\\\`"
+msgstr ""
+
+#: src/reference/syntax/strings.md:72
+msgid "Backslash ()"
+msgstr ""
+
+#: src/reference/syntax/strings.md:73
+msgid "`\\'`"
+msgstr ""
+
+#: src/reference/syntax/strings.md:73
+msgid "Single quote (')"
+msgstr ""
+
+#: src/reference/syntax/strings.md:74
+msgid "`\\\"`"
+msgstr ""
+
+#: src/reference/syntax/strings.md:74
+msgid "Double quote (\")"
+msgstr ""
+
+#: src/reference/syntax/strings.md:75
+msgid "`\\b`"
+msgstr ""
+
+#: src/reference/syntax/strings.md:75
+msgid "Backspace"
+msgstr ""
+
+#: src/reference/syntax/strings.md:76
+msgid "`\\f`"
+msgstr ""
+
+#: src/reference/syntax/strings.md:76
+msgid "Formfeed"
+msgstr ""
+
+#: src/reference/syntax/strings.md:77
+msgid "`\\n`"
+msgstr ""
+
+#: src/reference/syntax/strings.md:77
+msgid "ASCII Linefeed (LF)"
+msgstr ""
+
+#: src/reference/syntax/strings.md:78
+msgid "`\\r`"
+msgstr ""
+
+#: src/reference/syntax/strings.md:78
+msgid "ASCII Carriage Return (CR)"
+msgstr ""
+
+#: src/reference/syntax/strings.md:79
+msgid "`\\t`"
+msgstr ""
+
+#: src/reference/syntax/strings.md:79
+msgid "ASCII Horizontal Tab (TAB)"
+msgstr ""
+
+#: src/reference/syntax/strings.md:80
+msgid "`\\xhh`"
+msgstr ""
+
+#: src/reference/syntax/strings.md:80
+msgid "Character with hex value hh"
+msgstr ""
+
+#: src/reference/syntax/strings.md:81
+msgid "`\\u{xxxx}`"
+msgstr ""
+
+#: src/reference/syntax/strings.md:81
+msgid "Character with hex value xxxx"
+msgstr ""

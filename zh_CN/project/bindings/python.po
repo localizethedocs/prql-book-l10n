@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/bindings/python.md:1
+msgid "Python bindings to `prqlc`"
+msgstr ""
+
+#: src/project/bindings/python.md:3
+msgid ""
+"The `prqlc-python` crate offer Rust bindings to the `prqlc` Rust library, "
+"published to a python package named `prqlc`."
+msgstr ""
+
+#: src/project/bindings/python.md:6
+msgid ""
+"The main entry point is a Python method `prqlc.compile(query: str) -> str`."
+msgstr ""
+
+#: src/project/bindings/python.md:8
+msgid ""
+"The package is consumed by [pyprql](https://github.com/prql/pyprql) & [dbt-"
+"prql](https://github.com/prql/dbt-prql)."
+msgstr ""
+
+#: src/project/bindings/python.md:11
+msgid ""
+"The crate is not published to crates.io; only to PyPI at <https://pypi.org/"
+"project/prqlc/>."
+msgstr ""
+
+#: src/project/bindings/python.md:14
+msgid "Installation"
+msgstr ""
+
+#: src/project/bindings/python.md:16
+msgid "`pip install prqlc`"
+msgstr ""
+
+#: src/project/bindings/python.md:18
+msgid "Usage"
+msgstr ""
+
+#: src/project/bindings/python.md:23
+msgid ""
+"\"\"\"\n"
+"    from employees\n"
+"    join salaries (==emp_id)\n"
+"    group {employees.dept_id, employees.gender} (\n"
+"      aggregate {\n"
+"        avg_salary = average salaries.salary\n"
+"      }\n"
+"    )\n"
+"\"\"\""
+msgstr ""
+
+#: src/project/bindings/python.md:34
+msgid "\"sql.postgres\""
+msgstr ""
+
+#: src/project/bindings/python.md:41
+msgid "Relies on [pyo3](https://github.com/PyO3/pyo3) for all the magic."
+msgstr ""
