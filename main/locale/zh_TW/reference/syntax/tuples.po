@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/syntax/tuples.md:1
 msgid "Tuples"
-msgstr ""
+msgstr "值組"
 
 #: src/reference/syntax/tuples.md:3
 msgid ""
@@ -21,6 +21,8 @@ msgid ""
 "a different type. Number of fields and their types must be known at compile "
 "time."
 msgstr ""
+"值組是一個容器型別，由多個欄位組成。每個欄位可以有不同的型別。欄位的數量和型"
+"別必須在編譯時已知。"
 
 #: src/reference/syntax/tuples.md:6
 msgid ""
@@ -28,6 +30,8 @@ msgid ""
 "assigned a name. Fields are separated by commas, trailing trailing comma is "
 "optional."
 msgstr ""
+"值組由 `{}` 表示。它可以跨越多行。欄位可以分配名稱。欄位由逗號分隔，尾部逗號"
+"是可選的。"
 
 #: src/reference/syntax/tuples.md:23
 msgid ""
@@ -35,6 +39,8 @@ msgid ""
 "many transforms. Most transforms can also take a single field, which will be "
 "converted into a tuple. These are equivalent:"
 msgstr ""
+"值組是表格行的型別，這意味著許多轉換都期望它們。大多數轉換也可以採用單個欄"
+"位，該欄位將被轉換為值組。這些是等效的："
 
 #: src/reference/syntax/tuples.md:38
 msgid ""
@@ -42,3 +48,5 @@ msgid ""
 "represented with `[]` syntax. There may still be references to the old "
 "naming."
 msgstr ""
+"\\[!NOTE\\] 在 `0.9.0` 之前，值組之前被命名為列表，並用 `[]` 語法表示。可能仍"
+"有對舊命名的引用。"

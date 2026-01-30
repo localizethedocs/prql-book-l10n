@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/math.md:1
 msgid "Mathematical functions"
-msgstr ""
+msgstr "數學函式"
 
 #: src/reference/stdlib/math.md:3
 msgid "These are all the functions defined in the `math` module:"

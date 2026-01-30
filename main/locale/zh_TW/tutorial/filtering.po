@@ -13,28 +13,28 @@ msgstr ""
 
 #: src/tutorial/filtering.md:1
 msgid "Filtering rows"
-msgstr ""
+msgstr "篩選行"
 
 #: src/tutorial/filtering.md:3
 msgid ""
 "In the previous page we learned how `select`, `derive`, and `join` change "
 "the columns of a table."
-msgstr ""
+msgstr "在前一頁，我們學到了 `select`、`derive` 和 `join` 如何改變表的列。"
 
 #: src/tutorial/filtering.md:6
 msgid ""
 "Now we will explore how to manipulate the rows of a table using `filter` and "
 "`take`."
-msgstr ""
+msgstr "現在我們將探索如何使用 `filter` 和 `take` 操作表的行。"
 
 #: src/tutorial/filtering.md:9
 msgid "`filter` transform"
-msgstr ""
+msgstr "`filter` 變換"
 
 #: src/tutorial/filtering.md:11
 msgid ""
 "The `filter` transform picks rows to pass through based on their values:"
-msgstr ""
+msgstr "`filter` 變換根據值選擇要通過的行："
 
 #: src/tutorial/filtering.md:13
 msgid ""
@@ -46,37 +46,40 @@ msgstr ""
 
 #: src/tutorial/filtering.md:18
 msgid "The resulting table contains all the rows that came from Berlin."
-msgstr ""
+msgstr "結果表包含來自柏林的所有行。"
 
 #: src/tutorial/filtering.md:20
 msgid ""
 "PRQL converts the single `filter` transform to use the appropriate SQL "
 "`WHERE` or `HAVING` command, depending on where it appears in the pipeline."
 msgstr ""
+"PRQL 將單個 `filter` 變換轉換為使用適當的 SQL `WHERE` 或 `HAVING` 命令，取決"
+"於它在管道中出現的位置。"
 
 #: src/tutorial/filtering.md:23
 msgid "`take` transform"
-msgstr ""
+msgstr "`take` 變換"
 
 #: src/tutorial/filtering.md:25
 msgid ""
 "The `take` transform picks rows to pass through based on their position "
 "within the table. The set of rows picked can be specified in two ways:"
 msgstr ""
+"`take` 變換根據行在表中的位置選擇要通過的行。所選行的集合可以用兩種方式指定："
 
 #: src/tutorial/filtering.md:28
 msgid "a plain number `x`, which will pick the first `x` rows, or"
-msgstr ""
+msgstr "一個純數字 `x`，將選擇前 `x` 行，或"
 
 #: src/tutorial/filtering.md:29
 msgid "an inclusive range of rows `start..end`."
-msgstr ""
+msgstr "行的包含範圍 `start..end`。"
 
 #: src/tutorial/filtering.md:41
 msgid ""
 "Of course, it is possible combine all these transforms into a single "
 "pipeline:"
-msgstr ""
+msgstr "當然，可以將所有這些變換組合到一個管道中："
 
 #: src/tutorial/filtering.md:43
 msgid ""
@@ -99,6 +102,8 @@ msgid ""
 "We did something a bit odd at the end: first we took rows `11..20` and then "
 "took the first 3 rows from that result."
 msgstr ""
+"在最後我們做了一些有點奇怪的事情：首先我們取了行 `11..20`，然後從該結果中取"
+"前 3 行。"
 
 #: src/tutorial/filtering.md:60
 msgid ""
@@ -108,3 +113,6 @@ msgid ""
 "unlike SQL, each new transform interacts _only_ with the results of the "
 "previous query."
 msgstr ""
+"\\[!NOTE\\] 注意，單個變換 `take 11..13` 會產生相同的 SQL。此示例展示了 PRQL "
+"如何通過在管道中「堆疊」變換來允許快速資料探索。這減少了認知負擔：與 SQL 不"
+"同，每個新的變換只與前一個查詢的結果相互作用。"

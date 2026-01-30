@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/loop.md:1
 msgid "Loop"
-msgstr ""
+msgstr "循環"
 
 #: src/reference/stdlib/transforms/loop.md:3
 msgid "_Experimental_"

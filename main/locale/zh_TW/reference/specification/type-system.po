@@ -267,7 +267,7 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:144
 msgid "Tuples"
-msgstr ""
+msgstr "元組"
 
 #: src/reference/spec/type-system.md:146
 msgid "Tuple type is a product type."
@@ -298,7 +298,7 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:167
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/reference/spec/type-system.md:173
 msgid "Union"

@@ -13,11 +13,11 @@ msgstr ""
 
 #: src/reference/syntax/function-calls.md:1
 msgid "Function calls"
-msgstr ""
+msgstr "函式呼叫"
 
 #: src/reference/syntax/function-calls.md:3
 msgid "Simple"
-msgstr ""
+msgstr "簡單"
 
 #: src/reference/syntax/function-calls.md:5
 msgid ""
@@ -25,6 +25,8 @@ msgid ""
 "function call syntax. It consists of the function name followed by arguments "
 "separated by whitespace."
 msgstr ""
+"PRQL 和大多數其他程式語言之間的區別是函式呼叫語法。它由函式名稱組成，後面跟著"
+"以空格分隔的引數。"
 
 #: src/reference/syntax/function-calls.md:13
 msgid ""
@@ -32,6 +34,8 @@ msgid ""
 "parentheses, so we know where arguments of inner function end and the "
 "arguments of outer function start."
 msgstr ""
+"如果其中一個引數也是函式呼叫，它必須用括號括起來，這樣我們才能知道內部函式的"
+"引數在哪裡結束，外部函式的引數在哪裡開始。"
 
 #: src/reference/syntax/function-calls.md:21
 msgid ""
@@ -39,14 +43,16 @@ msgid ""
 "declared](../declarations/functions.md) in the [standard library](../"
 "stdlib/) or some other module."
 msgstr ""
+"函式名稱必須指向函式變數，該變數要麼在[標準函式庫](../stdlib/)中[已被宣告]"
+"(../declarations/functions.md)，要麼在其他某個模組中。"
 
 #: src/reference/syntax/function-calls.md:25
 msgid "Function calls can also specify named parameters using `:` notation:"
-msgstr ""
+msgstr "函式呼叫也可以使用 `:` 符號指定具名參數："
 
 #: src/reference/syntax/function-calls.md:31
 msgid "Pipeline"
-msgstr ""
+msgstr "管道"
 
 #: src/reference/syntax/function-calls.md:33
 msgid ""
@@ -55,7 +61,9 @@ msgid ""
 "line, the pipeline is equivalent to applying each of functions as the last "
 "argument of the next function."
 msgstr ""
+"有另一種呼叫函式的方式：使用管道。無論管道是由管道符號 `|` 還是新行分隔，管道"
+"相當於將每個函式作為下一個函式的最後一個引數應用。"
 
 #: src/reference/syntax/function-calls.md:42
 msgid "... is equivalent to ..."
-msgstr ""
+msgstr "...等價於..."

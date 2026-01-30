@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/select.md:1
 msgid "Select"
-msgstr ""
+msgstr "選擇"
 
 #: src/reference/stdlib/transforms/select.md:3
 msgid "Picks and computes columns."

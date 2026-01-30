@@ -13,13 +13,15 @@ msgstr ""
 
 #: src/reference/syntax/case.md:1
 msgid "Case"
-msgstr ""
+msgstr "情況"
 
 #: src/reference/syntax/case.md:3
 msgid ""
 "Search for the first condition that evaluates to `true` and return its "
 "associated value. If none of the conditions match, `null` is returned."
 msgstr ""
+"搜尋第一個評估為 `true` 的條件並返回其關聯值。如果沒有條件符合，則返回 "
+"`null`。"
 
 #: src/reference/syntax/case.md:6
 msgid ""
@@ -34,7 +36,7 @@ msgstr ""
 
 #: src/reference/syntax/case.md:14
 msgid "To set a default, a `true` condition can be used:"
-msgstr ""
+msgstr "要設定預設值，可以使用 `true` 條件："
 
 #: src/reference/syntax/case.md:16
 msgid ""

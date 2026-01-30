@@ -17,8 +17,8 @@ msgstr "註釋"
 
 #: src/reference/syntax/comments.md:3
 msgid "Character `#` denotes a comment until the end of the line."
-msgstr ""
+msgstr "字元 `#` 表示註釋到行的結尾。"
 
 #: src/reference/syntax/comments.md:11
 msgid "There's no distinct multiline comment syntax."
-msgstr ""
+msgstr "沒有明確的多行註釋語法。"

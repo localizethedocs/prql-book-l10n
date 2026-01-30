@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/derive.md:1
 msgid "Derive"
-msgstr ""
+msgstr "衍生"
 
 #: src/reference/stdlib/transforms/derive.md:3
 msgid "Computes one or more new columns."
