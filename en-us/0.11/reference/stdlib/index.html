@@ -1,0 +1,592 @@
+<!DOCTYPE HTML>
+<html lang="en_US" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Standard library - PRQL language book</title>
+
+
+        <!-- Custom HTML head -->
+        <script type="text/javascript" src="../../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="Modern language for transforming data — a simple, powerful, pipelined SQL replacement">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../comparison-table.css">
+        <link rel="stylesheet" href="../../mdbook-admonish.css">
+        <link rel="stylesheet" href="../.././mdbook-admonish.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">PRQL language book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/PRQL/prql" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="standard-library"><a class="header" href="#standard-library">Standard library</a></h1>
+<p>The standard library currently contains commonly used functions that are used in
+SQL. It’s not yet as broad as we’d like, and we’re very open to expanding it.</p>
+<p>Currently s-strings are an escape-hatch for any function that isn’t in our
+standard library. If we find ourselves using them for something frequently,
+raise an issue and we’ll add it to the stdlib.</p>
+<p>Here’s the source of the current
+<a href="https://github.com/PRQL/prql/blob/main/prqlc/prqlc/src/semantic/std.prql">PRQL <code>std</code></a>:</p>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-note"></a>
+</div>
+<div>
+<p>PRQL 0.9.0 has started supporting different DB implementations for standard library functions.
+The source is the <a href="https://github.com/PRQL/prql/blob/main/prqlc/prqlc/src/sql/std.sql.prql"><code>std.sql</code></a>.</p>
+</div>
+</div>
+<pre><code class="language-prql no-eval"># The PRQL standard library defines the following functions and transforms.
+# The definitions are whitespace insensitive, and have this form:
+#
+# ```
+# let my_func = param1 param2 ...  -&gt; &lt;return_type&gt; body_expr
+# ```
+#
+# Where:
+#   * `my_func` is the name of the function
+#   * `param1` is the first parameter optionally followed by a type in "&lt; ... &gt;"
+#   * `param2` etc. follow the same pattern as param1
+#   * `&lt;return_type&gt;` is the type of result wrapped in "&lt; ... &gt;"
+#   * `body_expr` defines the function body that creates the result.
+#     It can be PRQL code or `internal ...` to indicate internal compiler code.
+
+# Operators
+
+let mul = left right -&gt; &lt;int || float&gt; internal std.mul
+let div_i = left right -&gt; &lt;int || float&gt; internal std.div_i
+let div_f = left right -&gt; &lt;int || float&gt; internal std.div_f
+let mod = left right -&gt; &lt;int || float&gt; internal std.mod
+let add = left right -&gt; &lt;int || float || timestamp || date&gt; internal std.add
+let sub = left right -&gt; &lt;int || float || timestamp || date&gt; internal std.sub
+let eq = left right -&gt; &lt;bool&gt; internal std.eq
+let ne = left right -&gt; &lt;bool&gt; internal std.ne
+let gt = left right -&gt; &lt;bool&gt; internal std.gt
+let lt = left right -&gt; &lt;bool&gt; internal std.lt
+let gte = left right -&gt; &lt;bool&gt; internal std.gte
+let lte = left right -&gt; &lt;bool&gt; internal std.lte
+let and = left&lt;bool&gt; right&lt;bool&gt; -&gt; &lt;bool&gt; internal std.and
+let or = left&lt;bool&gt; right&lt;bool&gt; -&gt; &lt;bool&gt; internal std.or
+let coalesce = left right -&gt; internal std.coalesce
+let regex_search = text pattern -&gt; &lt;bool&gt; internal std.regex_search
+
+let neg = expr&lt;int || float&gt; -&gt; &lt;int || float&gt; internal std.neg
+let not = expr&lt;bool&gt; -&gt; &lt;bool&gt; internal std.not
+
+# Types
+
+## Type primitives
+type int = int
+type float = float
+type bool = bool
+type text = text
+type date = date
+type time = time
+type timestamp = timestamp
+type `func` = func
+type anytype = anytype
+
+## Generic array
+# TODO: an array of anything, not just nulls
+type array = [anytype]
+
+## Scalar
+type scalar = int || float || bool || text || date || time || timestamp || null
+type tuple = {anytype..}
+
+## Range
+type range = {start = scalar, end = scalar}
+
+## Relation (an array of tuples)
+type relation = [tuple]
+
+## Transform
+type transform = func relation -&gt; relation
+
+# Functions
+
+## Relational transforms
+let from = func
+  `default_db.source` &lt;relation&gt;
+  -&gt; &lt;relation&gt; source
+
+let select = func
+  columns &lt;anytype&gt;
+  tbl &lt;relation&gt;
+  -&gt; &lt;relation&gt; internal select
+
+let filter = func
+  condition &lt;bool&gt;
+  tbl &lt;relation&gt;
+  -&gt; &lt;relation&gt; internal filter
+
+let derive = func
+  columns &lt;anytype&gt;
+  tbl &lt;relation&gt;
+  -&gt; &lt;relation&gt; internal derive
+
+let aggregate = func
+  columns &lt;anytype&gt;
+  tbl &lt;relation&gt;
+  -&gt; &lt;relation&gt; internal aggregate
+
+let sort = func
+  by &lt;anytype&gt;
+  tbl &lt;relation&gt;
+  -&gt; &lt;relation&gt; internal sort
+
+let take = func
+  expr &lt;anytype&gt;
+  tbl &lt;relation&gt;
+  -&gt; &lt;relation&gt; internal take
+
+let join = func
+  `default_db.with` &lt;relation&gt;
+  condition &lt;bool&gt;
+  `noresolve.side`:inner
+  tbl &lt;relation&gt;
+  -&gt; &lt;relation&gt; internal join
+
+let group = func
+  by&lt;scalar || tuple&gt;
+  pipeline &lt;transform&gt;
+  tbl &lt;relation&gt;
+  -&gt; &lt;relation&gt; internal group
+
+let window = func
+  rows:0..0
+  range:0..0
+  expanding &lt;bool&gt;:false
+  rolling &lt;int&gt;:0
+  pipeline &lt;transform&gt;
+  tbl &lt;relation&gt;
+  -&gt; &lt;relation&gt; internal window
+
+let append = `default_db.bottom`&lt;relation&gt; top&lt;relation&gt; -&gt; &lt;relation&gt; internal append
+let intersect = `default_db.bottom`&lt;relation&gt; top&lt;relation&gt; -&gt; &lt;relation&gt; (
+  t = top
+  join (b = bottom) (tuple_every (tuple_map _eq (tuple_zip t.* b.*)))
+  select t.*
+)
+let remove = `default_db.bottom`&lt;relation&gt; top&lt;relation&gt; -&gt; &lt;relation&gt; (
+  t = top
+  join side:left (b = bottom) (tuple_every (tuple_map _eq (tuple_zip t.* b.*)))
+  filter (tuple_every (tuple_map _is_null b.*))
+  select t.*
+)
+let loop = func
+  pipeline &lt;transform&gt;
+  top &lt;relation&gt;
+  -&gt; &lt;relation&gt; internal loop
+
+## Aggregate functions
+# These return either a scalar when used within `aggregate`, or a column when used anywhere else.
+
+let min = column &lt;array&gt; -&gt; &lt;int || float || null&gt; internal std.min
+
+let max = column &lt;array&gt; -&gt; &lt;int || float || null&gt; internal std.max
+
+let sum = column &lt;array&gt; -&gt; &lt;int || float&gt; internal std.sum
+
+let average = column &lt;array&gt; -&gt; &lt;float || null&gt; internal std.average
+
+let stddev = column &lt;array&gt; -&gt; &lt;float || null&gt; internal std.stddev
+
+let all = column &lt;array&gt; -&gt; &lt;bool&gt; internal std.all
+
+let any = column &lt;array&gt; -&gt; &lt;bool&gt; internal std.any
+
+let concat_array = column &lt;array&gt; -&gt; &lt;text&gt; internal std.concat_array
+
+# Counts number of items in the column.
+# Note that the count will include null values.
+let count = column&lt;array&gt; -&gt; &lt;int&gt; internal count
+
+# Deprecated in favour of filterning input to the [std.count] function (not yet implemented).
+@{deprecated}
+let count_distinct = column &lt;array&gt; -&gt; internal std.count_distinct
+
+## Window functions
+let lag =   offset &lt;int&gt;    column &lt;array&gt; -&gt; internal std.lag
+let lead =  offset &lt;int&gt;    column &lt;array&gt; -&gt; internal std.lead
+let first      = column &lt;array&gt; -&gt; internal std.first
+let last       = column &lt;array&gt; -&gt; internal std.last
+let rank       = column &lt;array&gt; -&gt; internal std.rank
+let rank_dense = column &lt;array&gt; -&gt; internal std.rank_dense
+let row_number = column &lt;array&gt; -&gt; internal row_number
+
+# Mathematical functions
+module math {
+  let abs = column -&gt; &lt;int || float&gt; internal std.math.abs
+  let floor = column -&gt; &lt;int&gt; internal std.math.floor
+  let ceil = column -&gt; &lt;int&gt; internal std.math.ceil
+  let pi = -&gt; &lt;float&gt; internal std.math.pi
+  let exp = column -&gt; &lt;int || float&gt; internal std.math.exp
+  let ln = column -&gt; &lt;int || float&gt; internal std.math.ln
+  let log10 = column -&gt; &lt;int || float&gt; internal std.math.log10
+  let log = base&lt;int || float&gt; column -&gt; &lt;int || float&gt; internal std.math.log
+  let sqrt = column -&gt; &lt;int || float&gt; internal std.math.sqrt
+  let degrees = column -&gt; &lt;int || float&gt; internal std.math.degrees
+  let radians = column -&gt; &lt;int || float&gt; internal std.math.radians
+  let cos = column -&gt; &lt;int || float&gt; internal std.math.cos
+  let acos = column -&gt; &lt;int || float&gt; internal std.math.acos
+  let sin = column -&gt; &lt;int || float&gt; internal std.math.sin
+  let asin = column -&gt; &lt;int || float&gt; internal std.math.asin
+  let tan = column -&gt; &lt;int || float&gt; internal std.math.tan
+  let atan = column -&gt; &lt;int || float&gt; internal std.math.atan
+  let pow = exponent&lt;int || float&gt; column -&gt; &lt;int || float&gt; internal std.math.pow
+  let round = n_digits column -&gt; &lt;scalar&gt; internal std.math.round
+}
+
+## Misc functions
+let as = `noresolve.type` column -&gt; &lt;scalar&gt; internal std.as
+let in = pattern value -&gt; &lt;bool&gt; internal in
+
+## Tuple functions
+let tuple_every = func list -&gt; &lt;bool&gt; internal tuple_every
+let tuple_map = func fn &lt;func&gt; list -&gt; internal tuple_map
+let tuple_zip = func a b -&gt; internal tuple_zip
+let _eq = func a -&gt; internal _eq
+let _is_null = func a -&gt; _param.a == null
+
+## Misc
+let from_text = input&lt;text&gt; `noresolve.format`:csv -&gt; &lt;relation&gt; internal from_text
+
+## Text functions
+module text {
+  let lower = column -&gt; &lt;text&gt; internal std.text.lower
+  let upper = column -&gt; &lt;text&gt; internal std.text.upper
+  let ltrim = column -&gt; &lt;text&gt; internal std.text.ltrim
+  let rtrim = column -&gt; &lt;text&gt; internal std.text.rtrim
+  let trim = column -&gt; &lt;text&gt; internal std.text.trim
+  let length = column -&gt; &lt;int&gt; internal std.text.length
+  let extract = offset&lt;int&gt; length&lt;int&gt; column -&gt; &lt;text&gt; internal std.text.extract
+  let replace = pattern&lt;text&gt; replacement&lt;text&gt; column -&gt; &lt;text&gt; internal std.text.replace
+  let starts_with = prefix&lt;text&gt; column -&gt; &lt;bool&gt; internal std.text.starts_with
+  let contains = substr&lt;text&gt; column -&gt; &lt;bool&gt; internal std.text.contains
+  let ends_with = suffix&lt;text&gt; column -&gt; &lt;bool&gt; internal std.text.ends_with
+}
+
+## Date functions
+module date {
+  let to_text = format&lt;text&gt; column -&gt; &lt;text&gt; internal std.date.to_text
+}
+
+## File-reading functions, primarily for DuckDB
+let read_parquet = source&lt;text&gt; -&gt; &lt;relation&gt; internal std.read_parquet
+let read_csv = source&lt;text&gt; -&gt; &lt;relation&gt; internal std.read_csv
+
+
+## PRQL compiler functions
+module `prql` {
+  let version = -&gt; &lt;text&gt; internal prql_version
+}
+
+# Deprecated, will be removed in 0.12.0
+let prql_version = -&gt; &lt;text&gt; internal prql_version
+</code></pre>
+<p>And a couple of examples:</p>
+<div class="comparison">
+<div>
+<h4 id="prql"><a class="header" href="#prql">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive {
+  gross_salary = (salary + payroll_tax | as int),
+  gross_salary_rounded = (gross_salary | math.round 0),
+  time = s"NOW()",  # an s-string, given no `now` function exists in PRQL
+}
+</code></pre>
+</div>
+<div>
+<h4 id="sql"><a class="header" href="#sql">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  CAST(salary + payroll_tax AS int) AS gross_salary,
+  ROUND(CAST(salary + payroll_tax AS int), 0) AS gross_salary_rounded,
+  NOW() AS time
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>Example of different implementations of division and integer division:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-1"><a class="header" href="#prql-1">PRQL</a></h4>
+<pre><code class="language-prql">prql target:sql.sqlite
+
+from [{x = 13, y = 5}]
+select {
+  quotient = x / y,
+  int_quotient = x // y,
+}
+</code></pre>
+</div>
+<div>
+<h4 id="sql-1"><a class="header" href="#sql-1">SQL</a></h4>
+<pre><code class="language-sql">WITH table_0 AS (
+  SELECT
+    13 AS x,
+    5 AS y
+)
+SELECT
+  (x * 1.0 / y) AS quotient,
+  ROUND(ABS(x / y) - 0.5) * SIGN(x) * SIGN(y) AS int_quotient
+FROM
+  table_0
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-2"><a class="header" href="#prql-2">PRQL</a></h4>
+<pre><code class="language-prql">prql target:sql.mysql
+
+from [{x = 13, y = 5}]
+select {
+  quotient = x / y,
+  int_quotient = x // y,
+}
+</code></pre>
+</div>
+<div>
+<h4 id="sql-2"><a class="header" href="#sql-2">SQL</a></h4>
+<pre><code class="language-sql">WITH table_0 AS (
+  SELECT
+    13 AS x,
+    5 AS y
+)
+SELECT
+  (x / y) AS quotient,
+  (x DIV y) AS int_quotient
+FROM
+  table_0
+
+</code></pre>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../reference/declarations/functions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../reference/stdlib/transforms/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../reference/declarations/functions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../reference/stdlib/transforms/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../highlight-prql.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
