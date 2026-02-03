@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/aggregate.md:1
 msgid "Aggregate"
-msgstr ""
+msgstr "聚合"
 
 #: src/reference/stdlib/transforms/aggregate.md:3
 msgid "Summarizes many rows into one row."

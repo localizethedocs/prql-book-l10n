@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/filter.md:1
 msgid "Filter"
-msgstr ""
+msgstr "篩選"
 
 #: src/reference/stdlib/transforms/filter.md:3
 msgid "Picks rows based on their values."

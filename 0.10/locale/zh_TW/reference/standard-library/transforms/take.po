@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/take.md:1
 msgid "Take"
-msgstr ""
+msgstr "取"
 
 #: src/reference/stdlib/transforms/take.md:3
 msgid "Picks rows based on their position."

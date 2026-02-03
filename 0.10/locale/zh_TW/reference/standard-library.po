@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/index.md:1
 msgid "Standard library"
-msgstr ""
+msgstr "標準庫"
 
 #: src/reference/stdlib/index.md:3
 msgid ""
@@ -21,6 +21,8 @@ msgid ""
 "used in SQL. It's not yet as broad as we'd like, and we're very open to "
 "expanding it."
 msgstr ""
+"標準庫目前包含在 SQL 中使用的常用函式。它的覆蓋範圍還不如我們希望的那麼寬，我"
+"們非常歡迎擴展它。"
 
 #: src/reference/stdlib/index.md:6
 msgid ""
@@ -28,6 +30,8 @@ msgid ""
 "standard library. If we find ourselves using them for something frequently, "
 "raise an issue and we'll add it to the stdlib."
 msgstr ""
+"目前 s-字串是任何不在我們標準庫中的函式的逃脫艙口。如果我們發現自己經常為某些"
+"東西使用它們，請提出問題，我們會將其新增到標準庫中。"
 
 #: src/reference/stdlib/index.md:10
 msgid ""
@@ -269,7 +273,7 @@ msgstr ""
 
 #: src/reference/stdlib/index.md:227
 msgid "And a couple of examples:"
-msgstr ""
+msgstr "以下是幾個示例："
 
 #: src/reference/stdlib/index.md:229
 msgid ""
@@ -285,7 +289,7 @@ msgstr ""
 
 #: src/reference/stdlib/index.md:238
 msgid "Example of different implementations of division and integer division:"
-msgstr ""
+msgstr "不同實現的除法和整數除法的示例："
 
 #: src/reference/stdlib/index.md:240
 msgid ""

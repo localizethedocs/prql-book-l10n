@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/declarations/functions.md:1
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/reference/declarations/functions.md:7
 msgid "Functions have two types of parameters:"
@@ -58,7 +58,7 @@ msgstr ""
 
 #: src/reference/declarations/functions.md:55
 msgid "and"
-msgstr ""
+msgstr "且"
 
 #: src/reference/declarations/functions.md:64
 msgid "We can combine a chain of functions, which makes logic more readable:"

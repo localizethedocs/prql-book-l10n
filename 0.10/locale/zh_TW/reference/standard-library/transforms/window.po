@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/window.md:1
 msgid "Window"
-msgstr ""
+msgstr "視窗"
 
 #: src/reference/stdlib/transforms/window.md:3
 msgid ""
