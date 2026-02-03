@@ -40,7 +40,7 @@ msgstr ""
 
 #: src/integrations/jupyter.md:18
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/integrations/jupyter.md:20
 msgid "Installation"

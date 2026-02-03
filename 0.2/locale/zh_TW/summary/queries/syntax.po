@@ -25,7 +25,7 @@ msgstr ""
 
 #: src/queries/syntax.md:11
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/queries/syntax.md:11
 msgid "Example"
@@ -85,7 +85,7 @@ msgstr ""
 
 #: src/queries/syntax.md:17
 msgid "Precedence"
-msgstr ""
+msgstr "優先級"
 
 #: src/queries/syntax.md:17
 msgid "`derive fahrenheit = (celsius - 32) * 1.8`"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: src/queries/syntax.md:18
 msgid "Strings"
-msgstr ""
+msgstr "字串"
 
 #: src/queries/syntax.md:18
 msgid "`derive name = \"Mary\"`"
@@ -181,7 +181,7 @@ msgstr ""
 
 #: src/queries/syntax.md:25
 msgid "Coalesce"
-msgstr ""
+msgstr "合併"
 
 #: src/queries/syntax.md:25
 msgid "`amount ?? 0`"
@@ -201,7 +201,7 @@ msgstr ""
 
 #: src/queries/syntax.md:30
 msgid "Pipes"
-msgstr ""
+msgstr "管道"
 
 #: src/queries/syntax.md:32
 msgid ""
@@ -273,7 +273,7 @@ msgstr ""
 
 #: src/queries/syntax.md:89
 msgid "Parentheses"
-msgstr ""
+msgstr "括號"
 
 #: src/queries/syntax.md:91
 msgid ""
