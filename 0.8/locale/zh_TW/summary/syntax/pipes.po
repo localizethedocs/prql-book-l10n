@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/syntax/pipes.md:1
 msgid "Pipes"
-msgstr ""
+msgstr "管道"
 
 #: src/syntax/pipes.md:3
 msgid ""

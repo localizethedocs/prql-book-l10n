@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/syntax/parameters.md:1
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: src/syntax/parameters.md:3
 msgid ""

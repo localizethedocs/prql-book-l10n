@@ -29,7 +29,7 @@ msgstr ""
 
 #: src/SUMMARY.md:10 src/SUMMARY.md:96
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/SUMMARY.md:11 src/SUMMARY.md:80
 msgid "Variables"
@@ -37,51 +37,51 @@ msgstr ""
 
 #: src/SUMMARY.md:13
 msgid "Transforms"
-msgstr ""
+msgstr "轉換"
 
 #: src/SUMMARY.md:15
 msgid "Aggregate"
-msgstr ""
+msgstr "聚合"
 
 #: src/SUMMARY.md:16
 msgid "Append"
-msgstr ""
+msgstr "附加"
 
 #: src/SUMMARY.md:17
 msgid "Derive"
-msgstr ""
+msgstr "衍生"
 
 #: src/SUMMARY.md:18
 msgid "Filter"
-msgstr ""
+msgstr "篩選"
 
 #: src/SUMMARY.md:19
 msgid "From"
-msgstr ""
+msgstr "從"
 
 #: src/SUMMARY.md:20
 msgid "Group"
-msgstr ""
+msgstr "群組"
 
 #: src/SUMMARY.md:21
 msgid "Join"
-msgstr ""
+msgstr "聯接"
 
 #: src/SUMMARY.md:22
 msgid "Select"
-msgstr ""
+msgstr "選擇"
 
 #: src/SUMMARY.md:23
 msgid "Sort"
-msgstr ""
+msgstr "排序"
 
 #: src/SUMMARY.md:24
 msgid "Take"
-msgstr ""
+msgstr "取"
 
 #: src/SUMMARY.md:25
 msgid "Window"
-msgstr ""
+msgstr "視窗"
 
 #: src/SUMMARY.md:27
 msgid "Syntax"
@@ -89,7 +89,7 @@ msgstr "語法"
 
 #: src/SUMMARY.md:29
 msgid "Pipes"
-msgstr ""
+msgstr "管道"
 
 #: src/SUMMARY.md:30
 msgid "Lists"
@@ -105,7 +105,7 @@ msgstr ""
 
 #: src/SUMMARY.md:33
 msgid "Comments"
-msgstr ""
+msgstr "註釋"
 
 #: src/SUMMARY.md:34
 msgid "Quoted Identifiers"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: src/SUMMARY.md:35
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: src/SUMMARY.md:36
 msgid "Numbers"
@@ -129,7 +129,7 @@ msgstr ""
 
 #: src/SUMMARY.md:41
 msgid "Case"
-msgstr ""
+msgstr "情況"
 
 #: src/SUMMARY.md:42
 msgid "Coalesce"
@@ -145,11 +145,11 @@ msgstr ""
 
 #: src/SUMMARY.md:46
 msgid "Null handling"
-msgstr ""
+msgstr "Null 處理"
 
 #: src/SUMMARY.md:47
 msgid "Ranges"
-msgstr ""
+msgstr "範圍"
 
 #: src/SUMMARY.md:49
 msgid "Regex"
@@ -157,7 +157,7 @@ msgstr ""
 
 #: src/SUMMARY.md:50
 msgid "Standard library"
-msgstr ""
+msgstr "標準庫"
 
 #: src/SUMMARY.md:51
 msgid "From_text"
@@ -165,7 +165,7 @@ msgstr ""
 
 #: src/SUMMARY.md:52
 msgid "Loop"
-msgstr ""
+msgstr "循環"
 
 #: src/SUMMARY.md:53
 msgid "Reading files"
@@ -173,7 +173,7 @@ msgstr "讀取檔案"
 
 #: src/SUMMARY.md:54
 msgid "Strings"
-msgstr ""
+msgstr "字串"
 
 #: src/SUMMARY.md:55
 msgid "S-strings"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: src/SUMMARY.md:59
 msgid "Bindings"
-msgstr ""
+msgstr "綁定"
 
 #: src/SUMMARY.md:61
 msgid ".NET"
@@ -265,7 +265,7 @@ msgstr ""
 
 #: src/SUMMARY.md:85
 msgid "Contributing to PRQL"
-msgstr ""
+msgstr "對 PRQL 做出貢獻"
 
 #: src/SUMMARY.md:87
 msgid "Development"

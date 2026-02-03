@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/queries/functions.md:1
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/queries/functions.md:7
 msgid ""
@@ -65,7 +65,7 @@ msgstr ""
 
 #: src/queries/functions.md:59
 msgid "and"
-msgstr ""
+msgstr "且"
 
 #: src/queries/functions.md:68
 msgid "We can combine a chain of functions, which makes logic more readable:"

@@ -17,11 +17,11 @@ msgstr "語法"
 
 #: src/syntax/index.md:3
 msgid "A summary of PRQL syntax:"
-msgstr ""
+msgstr "PRQL 語法摘要："
 
 #: src/syntax/index.md:11
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/syntax/index.md:11
 msgid "Example"
@@ -129,7 +129,7 @@ msgstr ""
 
 #: src/syntax/index.md:21
 msgid "[Comments](./comments.md)"
-msgstr ""
+msgstr "[註釋](./comments.md)"
 
 #: src/syntax/index.md:21
 msgid "`# A comment`"

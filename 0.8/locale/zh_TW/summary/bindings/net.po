@@ -51,7 +51,7 @@ msgstr ""
 
 #: src/bindings/dotnet.md:20
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/bindings/dotnet.md:22
 msgid ""

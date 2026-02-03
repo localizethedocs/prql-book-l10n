@@ -44,7 +44,7 @@ msgstr ""
 
 #: src/language-features/distinct.md:45
 msgid "Roadmap"
-msgstr ""
+msgstr "路線圖"
 
 #: src/language-features/distinct.md:47
 msgid "When using Postgres dialect, we are planning to compile:"

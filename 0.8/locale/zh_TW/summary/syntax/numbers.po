@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/syntax/numbers.md:1
 msgid "Numbers"
-msgstr ""
+msgstr "數字"
 
 #: src/syntax/numbers.md:3
 msgid ""

@@ -113,7 +113,7 @@ msgstr ""
 
 #: src/language-features/s-strings.md:71
 msgid "Precedence"
-msgstr ""
+msgstr "優先級"
 
 #: src/language-features/s-strings.md:73
 msgid ""
