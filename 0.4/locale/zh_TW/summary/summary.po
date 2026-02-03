@@ -29,7 +29,7 @@ msgstr ""
 
 #: src/SUMMARY.md:10 src/SUMMARY.md:78
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/SUMMARY.md:11
 msgid "Tables"
@@ -37,51 +37,51 @@ msgstr ""
 
 #: src/SUMMARY.md:13
 msgid "Transforms"
-msgstr ""
+msgstr "轉換"
 
 #: src/SUMMARY.md:15
 msgid "Aggregate"
-msgstr ""
+msgstr "聚合"
 
 #: src/SUMMARY.md:16
 msgid "Append"
-msgstr ""
+msgstr "附加"
 
 #: src/SUMMARY.md:17
 msgid "Derive"
-msgstr ""
+msgstr "衍生"
 
 #: src/SUMMARY.md:18
 msgid "Filter"
-msgstr ""
+msgstr "篩選"
 
 #: src/SUMMARY.md:19
 msgid "From"
-msgstr ""
+msgstr "從"
 
 #: src/SUMMARY.md:20
 msgid "Group"
-msgstr ""
+msgstr "群組"
 
 #: src/SUMMARY.md:21
 msgid "Join"
-msgstr ""
+msgstr "聯接"
 
 #: src/SUMMARY.md:22
 msgid "Select"
-msgstr ""
+msgstr "選擇"
 
 #: src/SUMMARY.md:23
 msgid "Sort"
-msgstr ""
+msgstr "排序"
 
 #: src/SUMMARY.md:24
 msgid "Take"
-msgstr ""
+msgstr "取"
 
 #: src/SUMMARY.md:25
 msgid "Window"
-msgstr ""
+msgstr "視窗"
 
 #: src/SUMMARY.md:27
 msgid "Syntax"
@@ -105,11 +105,11 @@ msgstr ""
 
 #: src/SUMMARY.md:34
 msgid "Null handling"
-msgstr ""
+msgstr "Null 處理"
 
 #: src/SUMMARY.md:35
 msgid "Ranges"
-msgstr ""
+msgstr "範圍"
 
 #: src/SUMMARY.md:37
 msgid "Regex"
@@ -121,7 +121,7 @@ msgstr ""
 
 #: src/SUMMARY.md:39
 msgid "Strings"
-msgstr ""
+msgstr "字串"
 
 #: src/SUMMARY.md:40
 msgid "S-Strings"
@@ -141,7 +141,7 @@ msgstr ""
 
 #: src/SUMMARY.md:45
 msgid "Bindings"
-msgstr ""
+msgstr "綁定"
 
 #: src/SUMMARY.md:47
 msgid "Elixir"
@@ -213,7 +213,7 @@ msgstr ""
 
 #: src/SUMMARY.md:69
 msgid "Contributing to PRQL"
-msgstr ""
+msgstr "對 PRQL 做出貢獻"
 
 #: src/SUMMARY.md:71
 msgid "Development"

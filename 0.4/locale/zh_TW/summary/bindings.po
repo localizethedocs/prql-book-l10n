@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/bindings/index.md:1
 msgid "Bindings"
-msgstr ""
+msgstr "綁定"
 
 #: src/bindings/index.md:3
 msgid "PRQL has bindings for many languages. These include:"

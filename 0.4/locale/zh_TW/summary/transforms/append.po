@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/transforms/append.md:1
 msgid "Append"
-msgstr ""
+msgstr "附加"
 
 #: src/transforms/append.md:3
 msgid "Concatenates two tables together."

@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/language-features/ranges.md:1
 msgid "Ranges"
-msgstr ""
+msgstr "範圍"
 
 #: src/language-features/ranges.md:3
 msgid ""
@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Ranges can be used in filters with the `in` function, with any type of "
 "literal, including dates:"
-msgstr ""
+msgstr "範圍可以在 `in` 函式的篩選器中使用，具有任何型別的字面值，包括日期："
 
 #: src/language-features/ranges.md:16
 msgid "Like in SQL, ranges are inclusive."
@@ -39,10 +39,10 @@ msgstr ""
 
 #: src/language-features/ranges.md:32
 msgid "Roadmap"
-msgstr ""
+msgstr "路線圖"
 
 #: src/language-features/ranges.md:34
 msgid ""
 "We'd like to use ranges for other types, such as whether an object is in an "
 "array or list literal."
-msgstr ""
+msgstr "我們想將範圍用於其他型別，例如物件是否在陣列或列表字面值中。"

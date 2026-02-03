@@ -21,7 +21,7 @@ msgstr "安裝"
 
 #: src/bindings/rust.md:11
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/bindings/rust.md:13
 msgid "`cargo run`"
