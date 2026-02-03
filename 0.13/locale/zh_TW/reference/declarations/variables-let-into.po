@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/declarations/variables.md:1
 msgid "Variables — `let` & `into`"
-msgstr ""
+msgstr "變數 — `let` 與 `into`"
 
 #: src/reference/declarations/variables.md:3
 msgid ""

@@ -13,13 +13,13 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:1
 msgid "Strings"
-msgstr ""
+msgstr "字串"
 
 #: src/reference/syntax/strings.md:3
 msgid ""
 "String literals can use any matching odd number of either single or double "
 "quotes:"
-msgstr ""
+msgstr "字串字面值可以使用任何匹配的奇數個單引號或雙引號："
 
 #: src/reference/syntax/strings.md:6
 msgid ""
@@ -43,13 +43,15 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:15
 msgid "Quoting and escape characters"
-msgstr ""
+msgstr "引用和轉義字元"
 
 #: src/reference/syntax/strings.md:17
 msgid ""
 "To quote a string containing quote characters, use the \"other\" type of "
 "quote, or use the escape character `\\`, or use more quotes."
 msgstr ""
+"要引用包含引號字元的字串，使用「其他」型別的引號，或使用轉義字元 `\\`，或使用"
+"更多引號。"
 
 #: src/reference/syntax/strings.md:20
 msgid ""
@@ -69,6 +71,8 @@ msgid ""
 "standard](https://www.ecma-international.org/publications-and-standards/"
 "standards/ecma-404/)."
 msgstr ""
+"字串可以包含 [JSON 標準](https://www.ecma-international.org/publications-and-"
+"standards/standards/ecma-404/)定義的任何轉義字元序列。"
 
 #: src/reference/syntax/strings.md:32
 msgid ""
@@ -86,25 +90,27 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:40
 msgid "Other string formats"
-msgstr ""
+msgstr "其他字串格式"
 
 #: src/reference/syntax/strings.md:42
 msgid ""
 "[**F-strings**](./f-strings.md) - Build up a new string from a set of "
 "columns or values."
-msgstr ""
+msgstr "[**F-字串**](./f-strings.md) - 從一組欄位或值建立新字串。"
 
 #: src/reference/syntax/strings.md:44
 msgid ""
 "[**R-strings**](./r-strings.md) - Include the raw characters of the string "
 "without any form of escaping."
-msgstr ""
+msgstr "[**R-字串**](./r-strings.md) - 不含任何形式轉義的字串的原始字元。"
 
 #: src/reference/syntax/strings.md:46
 msgid ""
 "[**S-strings**](./s-strings.md) - Insert SQL statements directly into the "
 "query. Use when PRQL doesn't have an equivalent facility."
 msgstr ""
+"[**S-字串**](./s-strings.md) - 將 SQL 陳述句直接插入查詢。在 PRQL 沒有等效工"
+"具時使用。"
 
 #: src/reference/syntax/strings.md:49
 msgid ""
@@ -112,6 +118,8 @@ msgid ""
 "character or multiple character quotes. This may change for strings using a "
 "single character quote in future versions."
 msgstr ""
+"\\[!WARNING\\] 目前 PRQL 允許使用單一字元或多個字元引號的多行字串。在未來版本"
+"中，使用單一字元引號的字串可能會改變。"
 
 #: src/reference/syntax/strings.md:53
 msgid ""
@@ -121,10 +129,13 @@ msgid ""
 "PRQL doesn't currently account for these differences. Please open issues "
 "with any difficulties in the current implementation."
 msgstr ""
+"\\[!NOTE\\] 這些轉義規則指定 PRQL 在將字串編譯為 SQL 時如何解釋轉義字元，不一"
+"定是資料庫如何解釋字串。方言解釋轉義字元的方式不同，PRQL 目前不考慮這些差異。"
+"如對目前實現有任何困難，請提出問題。"
 
 #: src/reference/syntax/strings.md:59
 msgid "Escape sequences"
-msgstr ""
+msgstr "轉義序列"
 
 #: src/reference/syntax/strings.md:61
 msgid ""
@@ -132,14 +143,16 @@ msgid ""
 "interpreted according to rules similar to those used by Standard C. The "
 "recognized escape sequences are:"
 msgstr ""
+"除非存在 `r` 前綴，否則字串字面值中的轉義序列將按照類似於標準 C 所使用的規則"
+"進行解釋。公認的轉義序列是："
 
 #: src/reference/syntax/strings.md:65
 msgid "Escape Sequence"
-msgstr ""
+msgstr "轉義序列"
 
 #: src/reference/syntax/strings.md:65
 msgid "Meaning"
-msgstr ""
+msgstr "意義"
 
 #: src/reference/syntax/strings.md:67
 msgid "`\\\\`"
@@ -147,7 +160,7 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:67
 msgid "Backslash ()"
-msgstr ""
+msgstr "反斜線（）"
 
 #: src/reference/syntax/strings.md:68
 msgid "`\\'`"
@@ -155,7 +168,7 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:68
 msgid "Single quote (')"
-msgstr ""
+msgstr "單引號（'）"
 
 #: src/reference/syntax/strings.md:69
 msgid "`\\\"`"
@@ -163,7 +176,7 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:69
 msgid "Double quote (\")"
-msgstr ""
+msgstr "雙引號（\"）"
 
 #: src/reference/syntax/strings.md:70
 msgid "`\\b`"
@@ -171,7 +184,7 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:70
 msgid "Backspace"
-msgstr ""
+msgstr "退格"
 
 #: src/reference/syntax/strings.md:71
 msgid "`\\f`"
@@ -179,7 +192,7 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:71
 msgid "Formfeed"
-msgstr ""
+msgstr "分頁符"
 
 #: src/reference/syntax/strings.md:72
 msgid "`\\n`"
@@ -187,7 +200,7 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:72
 msgid "ASCII Linefeed (LF)"
-msgstr ""
+msgstr "ASCII 換行符 (LF)"
 
 #: src/reference/syntax/strings.md:73
 msgid "`\\r`"
@@ -195,7 +208,7 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:73
 msgid "ASCII Carriage Return (CR)"
-msgstr ""
+msgstr "ASCII 回車符 (CR)"
 
 #: src/reference/syntax/strings.md:74
 msgid "`\\t`"
@@ -203,7 +216,7 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:74
 msgid "ASCII Horizontal Tab (TAB)"
-msgstr ""
+msgstr "ASCII 水平製表符 (TAB)"
 
 #: src/reference/syntax/strings.md:75
 msgid "`\\xhh`"
@@ -211,7 +224,7 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:75
 msgid "Character with hex value hh"
-msgstr ""
+msgstr "十六進位值為 hh 的字元"
 
 #: src/reference/syntax/strings.md:76
 msgid "`\\u{xxxx}`"
@@ -219,4 +232,4 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:76
 msgid "Character with hex value xxxx"
-msgstr ""
+msgstr "十六進位值為 xxxx 的字元"

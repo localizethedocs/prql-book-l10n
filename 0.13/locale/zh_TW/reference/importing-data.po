@@ -13,4 +13,4 @@ msgstr ""
 
 #: src/reference/data/index.md:1
 msgid "Importing data"
-msgstr ""
+msgstr "匯入資料"
