@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/text.md:1
 msgid "Text functions"
-msgstr ""
+msgstr "文字函式"
 
 #: src/reference/stdlib/text.md:3
 msgid "These are all the functions defined in the `text` module:"

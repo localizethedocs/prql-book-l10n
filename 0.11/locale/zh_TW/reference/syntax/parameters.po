@@ -13,22 +13,22 @@ msgstr ""
 
 #: src/reference/syntax/parameters.md:1
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: src/reference/syntax/parameters.md:3
 msgid ""
 "Parameter is a placeholder for a value provided after the compilation of the "
 "query."
-msgstr ""
+msgstr "參數是查詢編譯後提供的值的佔位符。"
 
 #: src/reference/syntax/parameters.md:6
 msgid ""
 "It uses the following syntax: `$id`, where `id` is an arbitrary alpha "
 "numeric string."
-msgstr ""
+msgstr "它使用以下語法：`$id`，其中 `id` 是任意英數字元字串。"
 
 #: src/reference/syntax/parameters.md:9
 msgid ""
 "Most database engines only support numeric positional parameter ids (i.e "
 "`$3`)."
-msgstr ""
+msgstr "大多數資料庫引擎只支援數字位置參數 ID（例如 `$3`）。"

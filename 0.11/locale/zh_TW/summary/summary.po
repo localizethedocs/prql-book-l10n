@@ -21,7 +21,7 @@ msgstr "教學"
 
 #: src/SUMMARY.md:7
 msgid "Relations"
-msgstr ""
+msgstr "關係"
 
 #: src/SUMMARY.md:8
 msgid "Filtering"
@@ -49,7 +49,7 @@ msgstr ""
 
 #: src/SUMMARY.md:17
 msgid "Reference"
-msgstr ""
+msgstr "參考"
 
 #: src/SUMMARY.md:19
 msgid "Syntax"
@@ -57,11 +57,11 @@ msgstr "語法"
 
 #: src/SUMMARY.md:21
 msgid "Literals"
-msgstr ""
+msgstr "字面量"
 
 #: src/SUMMARY.md:22
 msgid "Strings"
-msgstr ""
+msgstr "字串"
 
 #: src/SUMMARY.md:23
 msgid "F-strings"
@@ -77,7 +77,7 @@ msgstr "S-字串"
 
 #: src/SUMMARY.md:26
 msgid "Tuples"
-msgstr ""
+msgstr "元組"
 
 #: src/SUMMARY.md:27
 msgid "Arrays"
@@ -85,39 +85,39 @@ msgstr "陣列"
 
 #: src/SUMMARY.md:28
 msgid "Identifiers & keywords"
-msgstr ""
+msgstr "識別符號與關鍵字"
 
 #: src/SUMMARY.md:29
 msgid "Function calls"
-msgstr ""
+msgstr "函式呼叫"
 
 #: src/SUMMARY.md:30
 msgid "Pipes"
-msgstr ""
+msgstr "管道"
 
 #: src/SUMMARY.md:31
 msgid "Operators"
-msgstr ""
+msgstr "運算子"
 
 #: src/SUMMARY.md:32
 msgid "Case"
-msgstr ""
+msgstr "情況"
 
 #: src/SUMMARY.md:33
 msgid "Ranges"
-msgstr ""
+msgstr "範圍"
 
 #: src/SUMMARY.md:34
 msgid "Comments"
-msgstr ""
+msgstr "註釋"
 
 #: src/SUMMARY.md:35
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: src/SUMMARY.md:37
 msgid "Declarations"
-msgstr ""
+msgstr "宣告"
 
 #: src/SUMMARY.md:40
 msgid "Variables"
@@ -125,91 +125,91 @@ msgstr ""
 
 #: src/SUMMARY.md:41
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/SUMMARY.md:43
 msgid "Standard library"
-msgstr ""
+msgstr "標準庫"
 
 #: src/SUMMARY.md:45
 msgid "Transforms"
-msgstr ""
+msgstr "轉換"
 
 #: src/SUMMARY.md:47
 msgid "Aggregate"
-msgstr ""
+msgstr "聚合"
 
 #: src/SUMMARY.md:48
 msgid "Append"
-msgstr ""
+msgstr "附加"
 
 #: src/SUMMARY.md:49
 msgid "Derive"
-msgstr ""
+msgstr "衍生"
 
 #: src/SUMMARY.md:50
 msgid "Filter"
-msgstr ""
+msgstr "篩選"
 
 #: src/SUMMARY.md:51
 msgid "From"
-msgstr ""
+msgstr "從"
 
 #: src/SUMMARY.md:52
 msgid "Group"
-msgstr ""
+msgstr "群組"
 
 #: src/SUMMARY.md:53
 msgid "Join"
-msgstr ""
+msgstr "聯接"
 
 #: src/SUMMARY.md:54
 msgid "Loop"
-msgstr ""
+msgstr "循環"
 
 #: src/SUMMARY.md:55
 msgid "Select"
-msgstr ""
+msgstr "選擇"
 
 #: src/SUMMARY.md:56
 msgid "Sort"
-msgstr ""
+msgstr "排序"
 
 #: src/SUMMARY.md:57
 msgid "Take"
-msgstr ""
+msgstr "取"
 
 #: src/SUMMARY.md:58
 msgid "Window"
-msgstr ""
+msgstr "視窗"
 
 #: src/SUMMARY.md:60
 msgid "Aggregation functions"
-msgstr ""
+msgstr "聚合函式"
 
 #: src/SUMMARY.md:61
 msgid "Date functions"
-msgstr ""
+msgstr "日期函式"
 
 #: src/SUMMARY.md:62
 msgid "Mathematical functions"
-msgstr ""
+msgstr "數學函式"
 
 #: src/SUMMARY.md:63
 msgid "Text functions"
-msgstr ""
+msgstr "文字函式"
 
 #: src/SUMMARY.md:65
 msgid "Specification"
-msgstr ""
+msgstr "規格"
 
 #: src/SUMMARY.md:67
 msgid "Null handling"
-msgstr ""
+msgstr "Null 處理"
 
 #: src/SUMMARY.md:68
 msgid "Name resolution"
-msgstr ""
+msgstr "名稱解析"
 
 #: src/SUMMARY.md:69
 msgid "Modules"
@@ -221,7 +221,7 @@ msgstr "型別系統"
 
 #: src/SUMMARY.md:72
 msgid "Project"
-msgstr ""
+msgstr "專案"
 
 #: src/SUMMARY.md:74
 msgid "Changelog"
@@ -229,11 +229,11 @@ msgstr "變更日誌"
 
 #: src/SUMMARY.md:76
 msgid "Target & version"
-msgstr ""
+msgstr "目標與版本"
 
 #: src/SUMMARY.md:78
 msgid "Bindings"
-msgstr ""
+msgstr "綁定"
 
 #: src/SUMMARY.md:80
 msgid ".NET"
@@ -309,7 +309,7 @@ msgstr "PostgreSQL"
 
 #: src/SUMMARY.md:101
 msgid "Contributing to PRQL"
-msgstr ""
+msgstr "對 PRQL 做出貢獻"
 
 #: src/SUMMARY.md:103
 msgid "Development"
