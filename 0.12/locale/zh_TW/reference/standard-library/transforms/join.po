@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/join.md:1
 msgid "Join"
-msgstr ""
+msgstr "聯接"
 
 #: src/reference/stdlib/transforms/join.md:3
 msgid "Adds columns from another relation, matching rows based on a condition."
@@ -21,7 +21,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/join.md:9
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: src/reference/stdlib/transforms/join.md:11
 msgid "`side` specifies which rows to include, defaulting to `inner`."

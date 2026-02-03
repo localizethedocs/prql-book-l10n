@@ -71,7 +71,7 @@ msgstr ""
 
 #: src/reference/syntax/f-strings.md:27
 msgid "Roadmap"
-msgstr ""
+msgstr "路線圖"
 
 #: src/reference/syntax/f-strings.md:29
 msgid ""

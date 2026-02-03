@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/spec/name-resolution.md:1
 msgid "Name resolution"
-msgstr ""
+msgstr "名稱解析"
 
 #: src/reference/spec/name-resolution.md:3
 msgid ""

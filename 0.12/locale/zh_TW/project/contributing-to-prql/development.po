@@ -608,7 +608,7 @@ msgstr ""
 
 #: src/project/contributing/development.md:431
 msgid "Bindings"
-msgstr ""
+msgstr "綁定"
 
 #: src/project/contributing/development.md:433
 msgid ""

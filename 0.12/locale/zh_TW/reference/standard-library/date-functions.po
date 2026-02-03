@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/date.md:1
 msgid "Date functions"
-msgstr ""
+msgstr "日期函式"
 
 #: src/reference/stdlib/date.md:3
 msgid "These are all the functions defined in the `date` module:"
