@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/tutorial/relations.md:1
 msgid "Relations"
-msgstr ""
+msgstr "關係"
 
 #: src/tutorial/relations.md:3
 msgid ""
@@ -24,6 +24,10 @@ msgid ""
 "lerocha/chinook-database](https://github.com/lerocha/chinook-database)) "
 "looks like this:"
 msgstr ""
+"PRQL 建立在 _關係代數_ 的基礎上，這是現代 SQL 資料庫使用的既定資料模型。_關係"
+"_ 具有嚴格的數學定義，可以簡化為「資料表」。例如，Chinook 資料庫 ([https://"
+"github.com/lerocha/chinook-database](https://github.com/lerocha/chinook-"
+"database)) 中的 `invoices` 表如下所示："
 
 #: src/tutorial/relations.md:10
 msgid "invoice_id"
@@ -151,7 +155,7 @@ msgstr ""
 
 #: src/tutorial/relations.md:26
 msgid "Queries"
-msgstr ""
+msgstr "查詢"
 
 #: src/tutorial/relations.md:28
 msgid ""
@@ -159,6 +163,8 @@ msgid ""
 "from relations such as the `invoices` table above. Here is the most basic "
 "query:"
 msgstr ""
+"PRQL 的主要目的是建立查詢，以結合和轉換來自關係（如上面的 `invoices` 表）的資"
+"料。以下是最基本的查詢："
 
 #: src/tutorial/relations.md:35
 msgid ""
@@ -175,11 +181,11 @@ msgstr ""
 msgid ""
 "The result of the query above is not terribly interesting, it's just the "
 "same relation as before."
-msgstr ""
+msgstr "上面查詢的結果並不特別有趣，它只是與之前相同的關係。"
 
 #: src/tutorial/relations.md:45
 msgid "`select` transform"
-msgstr ""
+msgstr "`select` 變換"
 
 #: src/tutorial/relations.md:47
 msgid ""
@@ -187,6 +193,8 @@ msgid ""
 "discards all others. Formally, that list is a _tuple_ of comma-separated "
 "expressions wrapped in `{ ... }`."
 msgstr ""
+"`select` 函式基於列表選擇要通過的列，並捨棄所有其他列。形式上，該列表是以 "
+"`{ ... }` 包裹的逗號分隔表達式的 _元組_。"
 
 #: src/tutorial/relations.md:51
 msgid ""
@@ -194,6 +202,8 @@ msgid ""
 "choose the columns to pass through. _(Try it in the [Playground.](https://"
 "prql-lang.org/playground/))_"
 msgstr ""
+"假設我們只需要 `order_id` 和 `total` 列。使用 `select` 來選擇要通過的列。_"
+"（在 [Playground](https://prql-lang.org/playground/) 中試試看。）_"
 
 #: src/tutorial/relations.md:60
 msgid ""
@@ -201,22 +211,25 @@ msgid ""
 "are ignored. In addition, we can assign any of the expressions to a "
 "_variable_ that becomes the name of the resulting column in the SQL output."
 msgstr ""
+"我們可以在一行或多行上寫入元組中的項目：尾部逗號被忽略。此外，我們可以將任何"
+"表達式指派給 _變數_，該變數成為 SQL 輸出中結果列的名稱。"
 
 #: src/tutorial/relations.md:72
 msgid ""
 "This is the same query as above, rewritten on multiple lines, and assigning "
 "`OrderID` and `Total` names to the columns."
 msgstr ""
+"這是與上面相同的查詢，改寫在多行上，並將 `OrderID` 和 `Total` 名稱指派給列。"
 
 #: src/tutorial/relations.md:75
 msgid ""
 "Once we `select` certain columns, subsequent transforms will have access "
 "only to those columns named in the tuple."
-msgstr ""
+msgstr "一旦我們 `select` 某些列，後續變換將只能訪問在元組中命名的那些列。"
 
 #: src/tutorial/relations.md:78
 msgid "`derive` transform"
-msgstr ""
+msgstr "`derive` 變換"
 
 #: src/tutorial/relations.md:80
 msgid ""
@@ -230,10 +243,12 @@ msgid ""
 "string), or can be computed from the value of an existing column. Note that "
 "the value of the new column is assigned the name `VAT`."
 msgstr ""
+"新列的值可以是常數（例如數字或字串），也可以從現有列的值計算得出。注意新列被"
+"指派名稱 `VAT`。"
 
 #: src/tutorial/relations.md:94
 msgid "`join` transform"
-msgstr ""
+msgstr "`join` 變換"
 
 #: src/tutorial/relations.md:96
 msgid ""
@@ -241,6 +256,8 @@ msgid ""
 "from two relations \"side by side\". To determine which rows from each "
 "relation should be joined, `join` has match criteria, written in `( ... )`."
 msgstr ""
+"`join` 變換也通過將來自兩個關係的行「並排」組合來向關係新增列。為了確定應該聯"
+"接每個關係的哪些行，`join` 有以 `( ... )` 寫出的匹配條件。"
 
 #: src/tutorial/relations.md:105
 msgid ""
@@ -248,12 +265,14 @@ msgid ""
 "relation with the information from the `invoices` relation, using identical "
 "values of the `customer_id` column from each relation to match the rows."
 msgstr ""
+"此示例「連接」來自 `customers` 關係的客戶資訊與來自 `invoices` 關係的資訊，使"
+"用來自每個關係的 `customer_id` 列的相同值來匹配行。"
 
 #: src/tutorial/relations.md:109
 msgid ""
 "It is frequently useful to assign an alias to both relations being joined "
 "together so that each relation's columns can be referred to uniquely."
-msgstr ""
+msgstr "為兩個被聯接的關係指派別名通常很有用，以便可以唯一地參考每個關係的列。"
 
 #: src/tutorial/relations.md:117
 msgid ""
@@ -261,6 +280,8 @@ msgid ""
 "`cust` represents the `customers` relation. It then becomes possible to "
 "refer to `inv.billing_city` and `cust.last_name` unambiguously."
 msgstr ""
+"在上面的示例中，別名 `inv` 代表 `invoices` 關係，`cust` 代表 `customers` 關"
+"係。然後可以明確地參考 `inv.billing_city` 和 `cust.last_name`。"
 
 #: src/tutorial/relations.md:121
 msgid "Summary"
@@ -281,3 +302,6 @@ msgid ""
 "(transforms) at the end of the query. Each transform modifies the relation "
 "produced by the statement above to produce the desired result."
 msgstr ""
+"這個最後的示例將上述內容組合成一個單一查詢。它說明了 _管道_ - PRQL 的基礎。我"
+"們只是在查詢末尾新增新的行（變換）。每個變換修改由上述語句產生的關係，以產生"
+"所需的結果。"

@@ -13,10 +13,12 @@ msgstr ""
 
 #: src/reference/spec/index.md:1
 msgid "Specification"
-msgstr ""
+msgstr "規範"
 
 #: src/reference/spec/index.md:3
 msgid ""
 "This chapter explains PRQL's semantics: how expressions are interpreted and "
 "their meaning. It's intended for advanced users and compiler contributors."
 msgstr ""
+"本章解釋了 PRQL 的語義：表達式如何被解釋及其含義。它適用於進階使用者和編譯器"
+"貢獻者。"

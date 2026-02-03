@@ -17,11 +17,11 @@ msgstr "語法"
 
 #: src/reference/syntax/index.md:3
 msgid "A summary of PRQL syntax:"
-msgstr ""
+msgstr "PRQL 語法摘要："
 
 #: src/reference/syntax/index.md:11
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/reference/syntax/index.md:11
 msgid "Example"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:13
 msgid "[Pipelines](./function-calls.md)"
-msgstr ""
+msgstr "[管道](./function-calls.md)"
 
 #: src/reference/syntax/index.md:13
 msgid "<code>from employees \\| select first_name</code>"
@@ -57,7 +57,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:15
 msgid "[Named args & parameters](../declarations/functions.md)"
-msgstr ""
+msgstr "[具名引數和參數](../declarations/functions.md)"
 
 #: src/reference/syntax/index.md:15
 msgid "`interp low:0 1600 sat_score`"
@@ -69,7 +69,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:16
 msgid "[Tuples](./tuples.md)"
-msgstr ""
+msgstr "[值組](./tuples.md)"
 
 #: src/reference/syntax/index.md:16
 msgid "`{id, false, total = 3}`"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:18
 msgid "[Operators](./operators.md)"
-msgstr ""
+msgstr "[運算子](./operators.md)"
 
 #: src/reference/syntax/index.md:18
 msgid "<code>filter a == b + c \\|\\| d >= e</code>"
@@ -105,7 +105,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:19
 msgid "[Parentheses](./operators.md#parentheses)"
-msgstr ""
+msgstr "[括號](./operators.md#parentheses)"
 
 #: src/reference/syntax/index.md:19
 msgid "`derive celsius = (fht - 32) / 1.8`"
@@ -117,7 +117,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:20
 msgid "[Line wrap](./operators.md#wrapping-lines)"
-msgstr ""
+msgstr "[換行](./operators.md#wrapping-lines)"
 
 #: src/reference/syntax/index.md:20
 msgid "<code>1 + 2 + 3 +</code><br><code>\\\\ 4 + 5</code>"
@@ -125,11 +125,11 @@ msgstr ""
 
 #: src/reference/syntax/index.md:21
 msgid "`1`,`100_000`,`5e10`"
-msgstr ""
+msgstr "`1`、`100_000`、`5e10`"
 
 #: src/reference/syntax/index.md:21
 msgid "[Numbers](./literals.md#numbers)"
-msgstr ""
+msgstr "[數字](./literals.md#numbers)"
 
 #: src/reference/syntax/index.md:21
 msgid "`derive { huge = 5e10 * 10_000 }`"
@@ -137,11 +137,11 @@ msgstr ""
 
 #: src/reference/syntax/index.md:22
 msgid "`''`,`\"\"`"
-msgstr ""
+msgstr "`''`、`\"\"`"
 
 #: src/reference/syntax/index.md:22
 msgid "[Strings](./literals.md#strings)"
-msgstr ""
+msgstr "[字串](./literals.md#strings)"
 
 #: src/reference/syntax/index.md:22
 msgid "`derive name = 'Mary'`"
@@ -149,11 +149,11 @@ msgstr ""
 
 #: src/reference/syntax/index.md:23
 msgid "`true`,`false`"
-msgstr ""
+msgstr "`true`、`false`"
 
 #: src/reference/syntax/index.md:23
 msgid "[Booleans](./literals.md#booleans)"
-msgstr ""
+msgstr "[布林值](./literals.md#booleans)"
 
 #: src/reference/syntax/index.md:23
 msgid "`derive { Col1 = true }`"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:25
 msgid "[Dates & times](./literals.md#date-and-time)"
-msgstr ""
+msgstr "[日期和時間](./literals.md#date-and-time)"
 
 #: src/reference/syntax/index.md:25
 msgid "`@2021-01-01`"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:26
 msgid "[Quoted identifiers](./keywords.md#quoting)"
-msgstr ""
+msgstr "[引用的識別符號](./keywords.md#quoting)"
 
 #: src/reference/syntax/index.md:26
 msgid "``select `first name` ``"
@@ -201,7 +201,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:27
 msgid "[Comments](./comments.md)"
-msgstr ""
+msgstr "[註釋](./comments.md)"
 
 #: src/reference/syntax/index.md:27
 msgid "`# A comment`"
@@ -216,6 +216,7 @@ msgid ""
 "[Self-equality in `join`](../stdlib/transforms/join.md#self-equality-"
 "operator)"
 msgstr ""
+"[`join` 中的自相等](../stdlib/transforms/join.md#self-equality-operator)"
 
 #: src/reference/syntax/index.md:28
 msgid "`join s=salaries (==id)`"
@@ -227,7 +228,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:29
 msgid "[Function definitions](../declarations/functions.md)"
-msgstr ""
+msgstr "[函式定義](../declarations/functions.md)"
 
 #: src/reference/syntax/index.md:29
 msgid "`let add = a b -> a + b`"
@@ -239,7 +240,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:30
 msgid "[Case statement](./case.md)"
-msgstr ""
+msgstr "[Case 語句](./case.md)"
 
 #: src/reference/syntax/index.md:30
 msgid "`case {a==1 => c, a==2 => d }`"
@@ -247,11 +248,11 @@ msgstr ""
 
 #: src/reference/syntax/index.md:31
 msgid "`+`,`-`"
-msgstr ""
+msgstr "`+`、`-`"
 
 #: src/reference/syntax/index.md:31
 msgid "[Sort order](../stdlib/transforms/sort.md)"
-msgstr ""
+msgstr "[排序順序](../stdlib/transforms/sort.md)"
 
 #: src/reference/syntax/index.md:31
 msgid "`sort {-amount, +date}`"
@@ -263,7 +264,7 @@ msgstr ""
 
 #: src/reference/syntax/index.md:32
 msgid "[Coalesce](./operators.md#coalesce)"
-msgstr ""
+msgstr "[合併](./operators.md#coalesce)"
 
 #: src/reference/syntax/index.md:32
 msgid "`amount ?? 0`"

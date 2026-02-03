@@ -13,23 +13,23 @@ msgstr ""
 
 #: src/reference/syntax/literals.md:1
 msgid "Literals"
-msgstr ""
+msgstr "字面值"
 
 #: src/reference/syntax/literals.md:3
 msgid ""
 "A literal is a constant value expression, with special syntax rules for each "
 "data type."
-msgstr ""
+msgstr "字面值是一個常數值表達式，每種資料型別都有特殊的語法規則。"
 
 #: src/reference/syntax/literals.md:6
 msgid "Numbers"
-msgstr ""
+msgstr "數字"
 
 #: src/reference/syntax/literals.md:8
 msgid ""
 "Number literals can contain number characters as well as a period, "
 "underscores and char `e`."
-msgstr ""
+msgstr "數字字面值可以包含數字字元以及句號、底線和字元 `e`。"
 
 #: src/reference/syntax/literals.md:11
 msgid ""
@@ -37,6 +37,8 @@ msgid ""
 "floating point number (or just _float_), otherwise it is treated as integer "
 "number."
 msgstr ""
+"如果數字字面值包含點或字元 `e`，則將其視為浮點數（或稱為 _float_），否則將其"
+"視為整數。"
 
 #: src/reference/syntax/literals.md:14
 msgid ""
@@ -44,63 +46,69 @@ msgid ""
 "wiki/Scientific_notation), where the number after `e` is the exponent in 10-"
 "base."
 msgstr ""
+"字元 `e` 表示[\"科學記數法\"](https://en.wikipedia.org/wiki/"
+"Scientific_notation)，其中 `e` 後面的數字是以 10 為基數的指數。"
 
 #: src/reference/syntax/literals.md:18
 msgid ""
 "Underscores are ignored, so they can be placed at arbitrary positions, but "
 "it is advised to use them as thousand separators."
-msgstr ""
+msgstr "底線被忽略，所以它們可以放在任意位置，但建議將它們用作千位分隔符。"
 
 #: src/reference/syntax/literals.md:30
 msgid "Strings"
-msgstr ""
+msgstr "字串"
 
 #: src/reference/syntax/literals.md:32
 msgid ""
 "PRQL supports string literals and several other formats of strings. See the "
 "[Strings](./strings.md) page for more information."
 msgstr ""
+"PRQL 支援字串字面值和多種其他字串格式。如需詳細資訊，請參閱[字串](./strings."
+"md)頁面。"
 
 #: src/reference/syntax/literals.md:35
 msgid "Booleans"
-msgstr ""
+msgstr "布林值"
 
 #: src/reference/syntax/literals.md:37
 msgid "Boolean values can be expressed with `true` or `false` keyword."
-msgstr ""
+msgstr "布林值可以用 `true` 或 `false` 關鍵字表示。"
 
 #: src/reference/syntax/literals.md:39
 msgid "Null"
-msgstr ""
+msgstr "空值"
 
 #: src/reference/syntax/literals.md:41
 msgid ""
 "The null value can be expressed with `null` keyword. See also the discussion "
 "of how [PRQL handles nulls](../spec/null.md)."
 msgstr ""
+"空值可以用 `null` 關鍵字表示。另請參閱 [PRQL 如何處理空值](../spec/null.md)的"
+"討論。"
 
 #: src/reference/syntax/literals.md:44
 msgid "Date and time"
-msgstr ""
+msgstr "日期和時間"
 
 #: src/reference/syntax/literals.md:46
 msgid ""
 "Date and time literals are expressed with character `@`, followed by a "
 "string that encodes the date & time."
-msgstr ""
+msgstr "日期和時間字面值用字元 `@` 表示，後面跟著編碼日期和時間的字串。"
 
 #: src/reference/syntax/literals.md:55
 msgid "Dates"
-msgstr ""
+msgstr "日期"
 
 #: src/reference/syntax/literals.md:57
 msgid ""
 "Dates are represented by `@{yyyy-mm-dd}` — a `@` followed by the date format."
-msgstr ""
+msgstr "日期由 `@{yyyy-mm-dd}` 表示 — `@` 後面跟著日期格式。"
 
 #: src/reference/syntax/literals.md:64
 msgid "Times"
-msgstr ""
+msgstr "時間"
 
 #: src/reference/syntax/literals.md:66
 msgid ""
@@ -108,10 +116,12 @@ msgid ""
 "defaulting to zero. This includes the timezone, which is represented by `+HH:"
 "mm`, `-HH:mm` or `Z`. This is consistent with the ISO8601 time format."
 msgstr ""
+"時間由 `@{HH:mm:ss.SSS±Z}` 表示，任何未提供的部分預設為零。這包括由 `+HH:"
+"mm`、`-HH:mm` 或 `Z` 表示的時區。這符合 ISO8601 時間格式。"
 
 #: src/reference/syntax/literals.md:75
 msgid "Timestamps"
-msgstr ""
+msgstr "時間戳記"
 
 #: src/reference/syntax/literals.md:77
 msgid ""
@@ -121,16 +131,21 @@ msgid ""
 "optional). This is `@` followed by the ISO8601 datetime format, which uses "
 "`T` to separate date & time."
 msgstr ""
+"\"\"時間戳記由 `@{yyyy-mm-ddTHH:mm:ss.SSS±Z}` / `@{date}T{time}` 表示，任何未"
+"提供的時間部分被四捨五入為零，包括由 `+HH:mm`、`-HH:mm` 或 `Z`（`:` 是可選"
+"的）表示的時區。這是 `@` 後面跟著 ISO8601 日期時間格式，該格式使用 `T` 分隔日"
+"期和時間。"
 
 #: src/reference/syntax/literals.md:87
 msgid "Durations"
-msgstr ""
+msgstr "持續時間"
 
 #: src/reference/syntax/literals.md:89
 msgid ""
 "Durations are represented by `{N}{periods}`, such as `2years` or "
 "`10minutes`, without a space."
 msgstr ""
+"持續時間由 `{N}{periods}` 表示，例如 `2years` 或 `10minutes`，中間沒有空格。"
 
 #: src/reference/syntax/literals.md:105
 msgid "Examples"
@@ -138,59 +153,62 @@ msgstr "範例"
 
 #: src/reference/syntax/literals.md:107
 msgid "Here's a larger list of date and time examples:"
-msgstr ""
+msgstr "以下是日期和時間範例的較大列表："
 
 #: src/reference/syntax/literals.md:109
 msgid ""
 "`@20221231` is invalid — it must contain full punctuation (`-` and `:`),"
-msgstr ""
+msgstr "`@20221231` 無效 — 它必須包含完整的標點符號（`-` 和 `:`），"
 
 #: src/reference/syntax/literals.md:110
 msgid "`@2022-12-31` is a date"
-msgstr ""
+msgstr "`@2022-12-31` 是日期"
 
 #: src/reference/syntax/literals.md:111
 msgid ""
 "`@2022-12` or `@2022` are invalid — SQL can't express a month, only a date"
-msgstr ""
+msgstr "`@2022-12` 或 `@2022` 無效 — SQL 無法表達月份，只能表達日期"
 
 #: src/reference/syntax/literals.md:112
 msgid "`@16:54:32.123456` is a time"
-msgstr ""
+msgstr "`@16:54:32.123456` 是時間"
 
 #: src/reference/syntax/literals.md:113
 msgid ""
 "`@16:54:32`, `@16:54`, `@16` are all allowed, expressing `@16:54:32.000000`, "
 "`@16:54:00.000000`, `@16:00:00.000000` respectively"
 msgstr ""
+"`@16:54:32`、`@16:54`、`@16` 都是允許的，分別表示 `@16:54:32.000000`、"
+"`@16:54:00.000000`、`@16:00:00.000000`"
 
 #: src/reference/syntax/literals.md:115
 msgid "`@2022-12-31T16:54:32.123456` is a timestamp without timezone"
-msgstr ""
+msgstr "`@2022-12-31T16:54:32.123456` 是沒有時區的時間戳記"
 
 #: src/reference/syntax/literals.md:116
 msgid "`@2022-12-31T16:54:32.123456Z` is a timestamp in UTC"
-msgstr ""
+msgstr "`@2022-12-31T16:54:32.123456Z` 是 UTC 時區的時間戳記"
 
 #: src/reference/syntax/literals.md:117
 msgid "`@2022-12-31T16:54+02` is timestamp in UTC+2"
-msgstr ""
+msgstr "`@2022-12-31T16:54+02` 是 UTC+2 時區的時間戳記"
 
 #: src/reference/syntax/literals.md:118
 msgid ""
 "`@2022-12-31T16:54+02:00` and `@2022-12-31T16:54+02` are datetimes in UTC+2"
 msgstr ""
+"`@2022-12-31T16:54+02:00` 和 `@2022-12-31T16:54+02` 是 UTC+2 時區的日期時間"
 
 #: src/reference/syntax/literals.md:119
 msgid ""
 "`@16:54+02` is invalid — time is always local, so it cannot have a timezone"
-msgstr ""
+msgstr "`@16:54+02` 無效 — 時間總是本地的，所以它不能有時區"
 
 #: src/reference/syntax/literals.md:120
 msgid ""
 "`@2022-12-31+02` is invalid — date is always local, so it cannot have a "
 "timezone"
-msgstr ""
+msgstr "`@2022-12-31+02` 無效 — 日期總是本地的，所以它不能有時區"
 
 #: src/reference/syntax/literals.md:123
 msgid ""
@@ -208,7 +226,7 @@ msgstr ""
 
 #: src/reference/syntax/literals.md:131
 msgid "Roadmap"
-msgstr ""
+msgstr "路線圖"
 
 #: src/reference/syntax/literals.md:133
 msgid ""
@@ -216,10 +234,12 @@ msgid ""
 "databases (e.g. MySql, BigQuery). With the addition of type casts, these "
 "could be represented by a timestamp cast to a datetime:"
 msgstr ""
+"日期時間（作為與時間戳記不同的資料型別）受某些資料庫支援（例如 MySql、"
+"BigQuery）。通過添加型別轉換，這些可以通過將時間戳記轉換為日期時間來表示："
 
 #: src/reference/syntax/literals.md:141
 msgid "These are some examples we can then add:"
-msgstr ""
+msgstr "以下是我們可以添加的一些範例："
 
 #: src/reference/syntax/literals.md:143
 msgid "`@2022-12-31T16:54<datetime>` is datetime without timezone"

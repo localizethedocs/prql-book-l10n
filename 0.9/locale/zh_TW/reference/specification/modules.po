@@ -73,7 +73,7 @@ msgstr ""
 
 #: src/reference/spec/modules.md:43
 msgid "Name resolution"
-msgstr ""
+msgstr "名稱解析"
 
 #: src/reference/spec/modules.md:45
 msgid ""

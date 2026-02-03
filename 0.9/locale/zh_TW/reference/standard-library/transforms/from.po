@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/from.md:1
 msgid "From"
-msgstr ""
+msgstr "從"
 
 #: src/reference/stdlib/transforms/from.md:3
 msgid "Specifies a data source."
