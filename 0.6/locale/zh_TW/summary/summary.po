@@ -29,7 +29,7 @@ msgstr ""
 
 #: src/SUMMARY.md:10 src/SUMMARY.md:82
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/SUMMARY.md:11 src/SUMMARY.md:67
 msgid "Variables"
@@ -37,27 +37,27 @@ msgstr ""
 
 #: src/SUMMARY.md:13
 msgid "Transforms"
-msgstr ""
+msgstr "轉換"
 
 #: src/SUMMARY.md:15
 msgid "Aggregate"
-msgstr ""
+msgstr "聚合"
 
 #: src/SUMMARY.md:16
 msgid "Append"
-msgstr ""
+msgstr "附加"
 
 #: src/SUMMARY.md:17
 msgid "Derive"
-msgstr ""
+msgstr "衍生"
 
 #: src/SUMMARY.md:18
 msgid "Filter"
-msgstr ""
+msgstr "篩選"
 
 #: src/SUMMARY.md:19
 msgid "From"
-msgstr ""
+msgstr "從"
 
 #: src/SUMMARY.md:20
 msgid "From Text"
@@ -65,27 +65,27 @@ msgstr ""
 
 #: src/SUMMARY.md:21
 msgid "Group"
-msgstr ""
+msgstr "群組"
 
 #: src/SUMMARY.md:22
 msgid "Join"
-msgstr ""
+msgstr "聯接"
 
 #: src/SUMMARY.md:23
 msgid "Select"
-msgstr ""
+msgstr "選擇"
 
 #: src/SUMMARY.md:24
 msgid "Sort"
-msgstr ""
+msgstr "排序"
 
 #: src/SUMMARY.md:25
 msgid "Take"
-msgstr ""
+msgstr "取"
 
 #: src/SUMMARY.md:26
 msgid "Window"
-msgstr ""
+msgstr "視窗"
 
 #: src/SUMMARY.md:28
 msgid "Syntax"
@@ -109,11 +109,11 @@ msgstr ""
 
 #: src/SUMMARY.md:35
 msgid "Null handling"
-msgstr ""
+msgstr "Null 處理"
 
 #: src/SUMMARY.md:36
 msgid "Ranges"
-msgstr ""
+msgstr "範圍"
 
 #: src/SUMMARY.md:38
 msgid "Regex"
@@ -121,7 +121,7 @@ msgstr ""
 
 #: src/SUMMARY.md:39
 msgid "Standard library"
-msgstr ""
+msgstr "標準庫"
 
 #: src/SUMMARY.md:40
 msgid "From text"
@@ -129,11 +129,11 @@ msgstr ""
 
 #: src/SUMMARY.md:41
 msgid "Loop"
-msgstr ""
+msgstr "循環"
 
 #: src/SUMMARY.md:42
 msgid "Strings"
-msgstr ""
+msgstr "字串"
 
 #: src/SUMMARY.md:43
 msgid "S-strings"
@@ -145,7 +145,7 @@ msgstr "F-字串"
 
 #: src/SUMMARY.md:45
 msgid "Case"
-msgstr ""
+msgstr "情況"
 
 #: src/SUMMARY.md:46
 msgid "Target & Version"
@@ -153,7 +153,7 @@ msgstr ""
 
 #: src/SUMMARY.md:48
 msgid "Bindings"
-msgstr ""
+msgstr "綁定"
 
 #: src/SUMMARY.md:50
 msgid "Elixir"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: src/SUMMARY.md:72
 msgid "Contributing to PRQL"
-msgstr ""
+msgstr "對 PRQL 做出貢獻"
 
 #: src/SUMMARY.md:74
 msgid "Development"

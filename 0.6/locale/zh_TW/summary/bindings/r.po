@@ -40,7 +40,7 @@ msgstr ""
 
 #: src/bindings/r.md:17
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/bindings/r.md:21
 msgid ""

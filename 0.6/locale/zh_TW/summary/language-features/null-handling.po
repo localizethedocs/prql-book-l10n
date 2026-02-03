@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/language-features/null.md:1
 msgid "Null handling"
-msgstr ""
+msgstr "Null 處理"
 
 #: src/language-features/null.md:3
 msgid ""

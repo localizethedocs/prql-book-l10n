@@ -25,7 +25,7 @@ msgstr ""
 
 #: src/bindings/python.md:7
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/bindings/python.md:12
 msgid ""
