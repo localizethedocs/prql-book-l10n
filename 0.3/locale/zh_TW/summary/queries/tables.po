@@ -27,7 +27,7 @@ msgstr ""
 
 #: src/queries/tables.md:19
 msgid "Roadmap"
-msgstr ""
+msgstr "路線圖"
 
 #: src/queries/tables.md:21
 msgid ""

@@ -29,7 +29,7 @@ msgstr ""
 
 #: src/SUMMARY.md:8 src/SUMMARY.md:46
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/SUMMARY.md:9
 msgid "Tables"
@@ -45,47 +45,47 @@ msgstr ""
 
 #: src/SUMMARY.md:12
 msgid "Transforms"
-msgstr ""
+msgstr "轉換"
 
 #: src/SUMMARY.md:13
 msgid "Aggregate"
-msgstr ""
+msgstr "聚合"
 
 #: src/SUMMARY.md:14
 msgid "Derive"
-msgstr ""
+msgstr "衍生"
 
 #: src/SUMMARY.md:15
 msgid "Filter"
-msgstr ""
+msgstr "篩選"
 
 #: src/SUMMARY.md:16
 msgid "From"
-msgstr ""
+msgstr "從"
 
 #: src/SUMMARY.md:17
 msgid "Group"
-msgstr ""
+msgstr "群組"
 
 #: src/SUMMARY.md:18
 msgid "Join"
-msgstr ""
+msgstr "聯接"
 
 #: src/SUMMARY.md:19
 msgid "Select"
-msgstr ""
+msgstr "選擇"
 
 #: src/SUMMARY.md:20
 msgid "Sort"
-msgstr ""
+msgstr "排序"
 
 #: src/SUMMARY.md:21
 msgid "Take"
-msgstr ""
+msgstr "取"
 
 #: src/SUMMARY.md:22
 msgid "Window"
-msgstr ""
+msgstr "視窗"
 
 #: src/SUMMARY.md:23
 msgid "Language features"
@@ -109,11 +109,11 @@ msgstr ""
 
 #: src/SUMMARY.md:30
 msgid "Null handling"
-msgstr ""
+msgstr "Null 處理"
 
 #: src/SUMMARY.md:31
 msgid "Ranges"
-msgstr ""
+msgstr "範圍"
 
 #: src/SUMMARY.md:33
 msgid "Regex"
@@ -125,7 +125,7 @@ msgstr ""
 
 #: src/SUMMARY.md:35
 msgid "Strings"
-msgstr ""
+msgstr "字串"
 
 #: src/SUMMARY.md:37
 msgid "Stdlib"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: src/SUMMARY.md:38
 msgid "Bindings"
-msgstr ""
+msgstr "綁定"
 
 #: src/SUMMARY.md:39
 msgid "Java"

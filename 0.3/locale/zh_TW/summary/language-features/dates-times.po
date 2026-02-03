@@ -38,16 +38,16 @@ msgstr ""
 
 #: src/language-features/dates_and_times.md:14
 msgid "Dates"
-msgstr ""
+msgstr "日期"
 
 #: src/language-features/dates_and_times.md:16
 msgid ""
 "Dates are represented by `@{yyyy-mm-dd}` — a `@` followed by the date format."
-msgstr ""
+msgstr "日期由 `@{yyyy-mm-dd}` 表示 — `@` 後面跟著日期格式。"
 
 #: src/language-features/dates_and_times.md:24
 msgid "Times"
-msgstr ""
+msgstr "時間"
 
 #: src/language-features/dates_and_times.md:26
 msgid ""
@@ -58,7 +58,7 @@ msgstr ""
 
 #: src/language-features/dates_and_times.md:35
 msgid "Timestamps"
-msgstr ""
+msgstr "時間戳記"
 
 #: src/language-features/dates_and_times.md:37
 msgid ""
@@ -94,7 +94,7 @@ msgstr ""
 
 #: src/language-features/dates_and_times.md:71
 msgid "`@2022-12-31` is a date"
-msgstr ""
+msgstr "`@2022-12-31` 是日期"
 
 #: src/language-features/dates_and_times.md:72
 msgid ""
@@ -103,30 +103,33 @@ msgstr ""
 
 #: src/language-features/dates_and_times.md:73
 msgid "`@16:54:32.123456` is a time"
-msgstr ""
+msgstr "`@16:54:32.123456` 是時間"
 
 #: src/language-features/dates_and_times.md:74
 msgid ""
 "`@16:54:32`, `@16:54`, `@16` are all allowed, expressing `@16:54:32.000000`, "
 "`@16:54:00.000000`, `@16:00:00.000000` respectively"
 msgstr ""
+"`@16:54:32`、`@16:54`、`@16` 都是允許的，分別表示 `@16:54:32.000000`、"
+"`@16:54:00.000000`、`@16:00:00.000000`"
 
 #: src/language-features/dates_and_times.md:75
 msgid "`@2022-12-31T16:54:32.123456` is a timestamp without timezone"
-msgstr ""
+msgstr "`@2022-12-31T16:54:32.123456` 是沒有時區的時間戳記"
 
 #: src/language-features/dates_and_times.md:76
 msgid "`@2022-12-31T16:54:32.123456Z` is a timestamp in UTC"
-msgstr ""
+msgstr "`@2022-12-31T16:54:32.123456Z` 是 UTC 時區的時間戳記"
 
 #: src/language-features/dates_and_times.md:77
 msgid "`@2022-12-31T16:54+02` is timestamp in UTC+2"
-msgstr ""
+msgstr "`@2022-12-31T16:54+02` 是 UTC+2 時區的時間戳記"
 
 #: src/language-features/dates_and_times.md:78
 msgid ""
 "`@2022-12-31T16:54+02:00` and `@2022-12-31T16:54+02` are datetimes in UTC+2"
 msgstr ""
+"`@2022-12-31T16:54+02:00` 和 `@2022-12-31T16:54+02` 是 UTC+2 時區的日期時間"
 
 #: src/language-features/dates_and_times.md:79
 msgid ""
@@ -141,7 +144,7 @@ msgstr ""
 
 #: src/language-features/dates_and_times.md:82
 msgid "Roadmap"
-msgstr ""
+msgstr "路線圖"
 
 #: src/language-features/dates_and_times.md:84
 msgid "Datetimes"
@@ -156,7 +159,7 @@ msgstr ""
 
 #: src/language-features/dates_and_times.md:94
 msgid "These are some examples we can then add:"
-msgstr ""
+msgstr "以下是我們可以添加的一些範例："
 
 #: src/language-features/dates_and_times.md:96
 msgid "`@2022-12-31T16:54<datetime>` is datetime without timezone"

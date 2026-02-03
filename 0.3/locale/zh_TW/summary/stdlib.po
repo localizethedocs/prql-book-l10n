@@ -86,4 +86,4 @@ msgstr ""
 
 #: src/stdlib.md:63
 msgid "And a couple of examples:"
-msgstr ""
+msgstr "以下是幾個示例："

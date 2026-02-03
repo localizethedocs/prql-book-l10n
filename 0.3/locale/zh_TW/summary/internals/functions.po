@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/internals/functional-lang.md:1
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/internals/functional-lang.md:3
 msgid "Function call"
@@ -32,10 +32,12 @@ msgid ""
 "parentheses, so we know where arguments of inner function end and the "
 "arguments of outer function start."
 msgstr ""
+"如果其中一個引數也是函式呼叫，它必須用括號括起來，這樣我們才能知道內部函式的"
+"引數在哪裡結束，外部函式的引數在哪裡開始。"
 
 #: src/internals/functional-lang.md:20
 msgid "Pipeline"
-msgstr ""
+msgstr "管道"
 
 #: src/internals/functional-lang.md:22
 msgid ""
@@ -44,11 +46,13 @@ msgid ""
 "line, the pipeline is equivalent to applying each of functions as the last "
 "argument of the next function."
 msgstr ""
+"有另一種呼叫函式的方式：使用管道。無論管道是由管道符號 `|` 還是新行分隔，管道"
+"相當於將每個函式作為下一個函式的最後一個引數應用。"
 
 #: src/internals/functional-lang.md:30 src/internals/functional-lang.md:44
 #: src/internals/functional-lang.md:50 src/internals/functional-lang.md:56
 msgid "... is equivalent to ..."
-msgstr ""
+msgstr "...等價於..."
 
 #: src/internals/functional-lang.md:36
 msgid "As you may have noticed, transforms are regular functions too!"

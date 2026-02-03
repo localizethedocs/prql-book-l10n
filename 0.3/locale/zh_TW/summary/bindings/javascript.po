@@ -27,7 +27,7 @@ msgstr "安裝"
 
 #: src/bindings/javascript.md:12
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/bindings/javascript.md:14
 msgid "Currently these functions are exposed"
