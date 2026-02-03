@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/transforms/group.md:1
 msgid "Group"
-msgstr ""
+msgstr "群組"
 
 #: src/transforms/group.md:3
 msgid ""

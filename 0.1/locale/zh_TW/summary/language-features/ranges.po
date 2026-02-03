@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/language-features/ranges.md:1
 msgid "Ranges"
-msgstr ""
+msgstr "範圍"
 
 #: src/language-features/ranges.md:3
 msgid "PRQL has a concise range syntax `start..end`."

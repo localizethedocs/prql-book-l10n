@@ -13,10 +13,12 @@ msgstr ""
 
 #: src/language-features/coalesce.md:1
 msgid "Coalesce"
-msgstr ""
+msgstr "合併"
 
 #: src/language-features/coalesce.md:3
 msgid ""
 "We can coalesce values with an `??` operator. Coalescing takes either the "
 "first value or, if that value is null, the second value."
 msgstr ""
+"我們可以使用 `??` 運算子合併值。合併會取第一個值，或者如果該值為空，則取第二"
+"個值。"
