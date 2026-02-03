@@ -289,7 +289,7 @@ msgstr ""
 
 #: src/integrations/dbt.md:205
 msgid "Roadmap"
-msgstr ""
+msgstr "路線圖"
 
 #: src/integrations/dbt.md:207
 msgid ""

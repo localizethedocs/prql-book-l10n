@@ -53,7 +53,7 @@ msgstr ""
 
 #: src/language-features/f-strings.md:19
 msgid "Roadmap"
-msgstr ""
+msgstr "路線圖"
 
 #: src/language-features/f-strings.md:21
 msgid ""

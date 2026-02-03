@@ -31,7 +31,7 @@ msgstr ""
 
 #: src/language-features/index.md:8
 msgid "Coalesce"
-msgstr ""
+msgstr "合併"
 
 #: src/language-features/index.md:8
 msgid "[Handle potentially NULL values](./coalesce.md)"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: src/language-features/index.md:11
 msgid "Null handling"
-msgstr ""
+msgstr "Null 處理"
 
 #: src/language-features/index.md:11
 msgid "[Handle `NULL` values](./null.md)"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: src/language-features/index.md:12
 msgid "Ranges"
-msgstr ""
+msgstr "範圍"
 
 #: src/language-features/index.md:12
 msgid "[Syntax for all forms of ranges](./ranges.md)"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: src/language-features/index.md:15
 msgid "Strings"
-msgstr ""
+msgstr "字串"
 
 #: src/language-features/index.md:15
 msgid "[Rules for creating strings](./strings.md)"

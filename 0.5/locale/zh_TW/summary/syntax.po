@@ -25,7 +25,7 @@ msgstr ""
 
 #: src/syntax.md:13
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/syntax.md:13
 msgid "Example"
@@ -197,7 +197,7 @@ msgstr ""
 
 #: src/syntax.md:36
 msgid "Pipes"
-msgstr ""
+msgstr "管道"
 
 #: src/syntax.md:38
 msgid ""
@@ -357,7 +357,7 @@ msgstr ""
 
 #: src/syntax.md:194
 msgid "There's no distinct multiline comment syntax."
-msgstr ""
+msgstr "沒有明確的多行註釋語法。"
 
 #: src/syntax.md:196
 msgid "Quoted identifiers"
@@ -396,7 +396,7 @@ msgstr ""
 
 #: src/syntax.md:241
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: src/syntax.md:243
 msgid ""
@@ -406,7 +406,7 @@ msgstr ""
 
 #: src/syntax.md:251
 msgid "Numbers"
-msgstr ""
+msgstr "數字"
 
 #: src/syntax.md:253
 msgid ""
