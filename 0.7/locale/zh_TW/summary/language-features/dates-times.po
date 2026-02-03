@@ -38,16 +38,16 @@ msgstr ""
 
 #: src/language-features/dates-and-times.md:15
 msgid "Dates"
-msgstr ""
+msgstr "日期"
 
 #: src/language-features/dates-and-times.md:17
 msgid ""
 "Dates are represented by `@{yyyy-mm-dd}` — a `@` followed by the date format."
-msgstr ""
+msgstr "日期由 `@{yyyy-mm-dd}` 表示 — `@` 後面跟著日期格式。"
 
 #: src/language-features/dates-and-times.md:24
 msgid "Times"
-msgstr ""
+msgstr "時間"
 
 #: src/language-features/dates-and-times.md:26
 msgid ""
@@ -58,7 +58,7 @@ msgstr ""
 
 #: src/language-features/dates-and-times.md:35
 msgid "Timestamps"
-msgstr ""
+msgstr "時間戳記"
 
 #: src/language-features/dates-and-times.md:37
 msgid ""
@@ -68,6 +68,10 @@ msgid ""
 "optional). This is `@` followed by the ISO8601 datetime format, which uses "
 "`T` to separate date & time."
 msgstr ""
+"\"\"時間戳記由 `@{yyyy-mm-ddTHH:mm:ss.SSS±Z}` / `@{date}T{time}` 表示，任何未"
+"提供的時間部分被四捨五入為零，包括由 `+HH:mm`、`-HH:mm` 或 `Z`（`:` 是可選"
+"的）表示的時區。這是 `@` 後面跟著 ISO8601 日期時間格式，該格式使用 `T` 分隔日"
+"期和時間。"
 
 #: src/language-features/dates-and-times.md:47
 msgid "Intervals"
@@ -90,58 +94,61 @@ msgstr ""
 #: src/language-features/dates-and-times.md:69
 msgid ""
 "`@20221231` is invalid — it must contain full punctuation (`-` and `:`),"
-msgstr ""
+msgstr "`@20221231` 無效 — 它必須包含完整的標點符號（`-` 和 `:`），"
 
 #: src/language-features/dates-and-times.md:70
 msgid "`@2022-12-31` is a date"
-msgstr ""
+msgstr "`@2022-12-31` 是日期"
 
 #: src/language-features/dates-and-times.md:71
 msgid ""
 "`@2022-12` or `@2022` are invalid — SQL can't express a month, only a date"
-msgstr ""
+msgstr "`@2022-12` 或 `@2022` 無效 — SQL 無法表達月份，只能表達日期"
 
 #: src/language-features/dates-and-times.md:72
 msgid "`@16:54:32.123456` is a time"
-msgstr ""
+msgstr "`@16:54:32.123456` 是時間"
 
 #: src/language-features/dates-and-times.md:73
 msgid ""
 "`@16:54:32`, `@16:54`, `@16` are all allowed, expressing `@16:54:32.000000`, "
 "`@16:54:00.000000`, `@16:00:00.000000` respectively"
 msgstr ""
+"`@16:54:32`、`@16:54`、`@16` 都是允許的，分別表示 `@16:54:32.000000`、"
+"`@16:54:00.000000`、`@16:00:00.000000`"
 
 #: src/language-features/dates-and-times.md:75
 msgid "`@2022-12-31T16:54:32.123456` is a timestamp without timezone"
-msgstr ""
+msgstr "`@2022-12-31T16:54:32.123456` 是沒有時區的時間戳記"
 
 #: src/language-features/dates-and-times.md:76
 msgid "`@2022-12-31T16:54:32.123456Z` is a timestamp in UTC"
-msgstr ""
+msgstr "`@2022-12-31T16:54:32.123456Z` 是 UTC 時區的時間戳記"
 
 #: src/language-features/dates-and-times.md:77
 msgid "`@2022-12-31T16:54+02` is timestamp in UTC+2"
-msgstr ""
+msgstr "`@2022-12-31T16:54+02` 是 UTC+2 時區的時間戳記"
 
 #: src/language-features/dates-and-times.md:78
 msgid ""
 "`@2022-12-31T16:54+02:00` and `@2022-12-31T16:54+02` are datetimes in UTC+2"
 msgstr ""
+"`@2022-12-31T16:54+02:00` 和 `@2022-12-31T16:54+02` 是 UTC+2 時區的日期時間"
 
 #: src/language-features/dates-and-times.md:79
 msgid ""
 "`@16:54+02` is invalid — time is always local, so it cannot have a timezone"
-msgstr ""
+msgstr "`@16:54+02` 無效 — 時間總是本地的，所以它不能有時區"
 
 #: src/language-features/dates-and-times.md:80
 msgid ""
 "`@2022-12-31+02` is invalid — date is always local, so it cannot have a "
 "timezone"
-msgstr ""
+msgstr "`@2022-12-31+02` 無效 — 日期總是本地的，所以它不能有時區"
 
 #: src/language-features/dates-and-times.md:83
 msgid "Roadmap"
-msgstr ""
+msgstr "路線圖"
 
 #: src/language-features/dates-and-times.md:85
 msgid "Datetimes"
@@ -156,7 +163,7 @@ msgstr ""
 
 #: src/language-features/dates-and-times.md:95
 msgid "These are some examples we can then add:"
-msgstr ""
+msgstr "以下是我們可以添加的一些範例："
 
 #: src/language-features/dates-and-times.md:97
 msgid "`@2022-12-31T16:54<datetime>` is datetime without timezone"

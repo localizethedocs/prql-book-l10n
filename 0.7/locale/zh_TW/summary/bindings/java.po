@@ -34,7 +34,7 @@ msgstr "安裝"
 
 #: src/bindings/java.md:19
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/bindings/java.md:26
 msgid "\"from table\""

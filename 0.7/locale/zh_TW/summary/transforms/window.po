@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/transforms/window.md:1
 msgid "Window"
-msgstr ""
+msgstr "視窗"
 
 #: src/transforms/window.md:3
 msgid ""
@@ -73,7 +73,7 @@ msgstr "表達式"
 
 #: src/transforms/window.md:32
 msgid "Meaning"
-msgstr ""
+msgstr "意義"
 
 #: src/transforms/window.md:34
 msgid "`rows:0..2`"

@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/language-features/standard-library/loop.md:1
 msgid "Loop"
-msgstr ""
+msgstr "循環"
 
 #: src/language-features/standard-library/loop.md:3
 msgid "_Experimental_"

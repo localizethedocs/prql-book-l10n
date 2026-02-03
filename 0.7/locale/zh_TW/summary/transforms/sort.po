@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/transforms/sort.md:1
 msgid "Sort"
-msgstr ""
+msgstr "排序"
 
 #: src/transforms/sort.md:3
 msgid "Orders rows based on the values of one or more columns."
@@ -21,7 +21,7 @@ msgstr ""
 
 #: src/transforms/sort.md:9
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: src/transforms/sort.md:11
 msgid "One column or a list of columns to sort by"

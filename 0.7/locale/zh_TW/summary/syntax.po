@@ -25,7 +25,7 @@ msgstr ""
 
 #: src/syntax.md:13
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: src/syntax.md:13
 msgid "Example"
@@ -197,7 +197,7 @@ msgstr ""
 
 #: src/syntax.md:36
 msgid "Pipes"
-msgstr ""
+msgstr "管道"
 
 #: src/syntax.md:38
 msgid ""
@@ -351,23 +351,23 @@ msgstr ""
 
 #: src/syntax.md:180
 msgid "Group"
-msgstr ""
+msgstr "群組"
 
 #: src/syntax.md:180
 msgid "Operators"
-msgstr ""
+msgstr "運算子"
 
 #: src/syntax.md:180
 msgid "Precedence"
-msgstr ""
+msgstr "優先級"
 
 #: src/syntax.md:180
 msgid "Associativity"
-msgstr ""
+msgstr "結合性"
 
 #: src/syntax.md:182
 msgid "identifier dot"
-msgstr ""
+msgstr "識別符點"
 
 #: src/syntax.md:182
 msgid "`.`"
@@ -379,7 +379,7 @@ msgstr ""
 
 #: src/syntax.md:183
 msgid "unary"
-msgstr ""
+msgstr "一元"
 
 #: src/syntax.md:183
 msgid "`- + ! ==`"
@@ -391,7 +391,7 @@ msgstr ""
 
 #: src/syntax.md:184
 msgid "range"
-msgstr ""
+msgstr "範圍"
 
 #: src/syntax.md:184
 msgid "`..`"
@@ -403,7 +403,7 @@ msgstr ""
 
 #: src/syntax.md:185
 msgid "mul"
-msgstr ""
+msgstr "乘法"
 
 #: src/syntax.md:185
 msgid "`* / %`"
@@ -416,11 +416,11 @@ msgstr ""
 #: src/syntax.md:185 src/syntax.md:186 src/syntax.md:187 src/syntax.md:188
 #: src/syntax.md:189 src/syntax.md:190
 msgid "left-to-right"
-msgstr ""
+msgstr "左至右"
 
 #: src/syntax.md:186
 msgid "add"
-msgstr ""
+msgstr "加法"
 
 #: src/syntax.md:186
 msgid "`+ -`"
@@ -432,7 +432,7 @@ msgstr ""
 
 #: src/syntax.md:187
 msgid "compare"
-msgstr ""
+msgstr "比較"
 
 #: src/syntax.md:187
 msgid "`== != <= >= < >`"
@@ -444,7 +444,7 @@ msgstr ""
 
 #: src/syntax.md:188
 msgid "coalesce"
-msgstr ""
+msgstr "合併"
 
 #: src/syntax.md:188
 msgid "7"
@@ -452,7 +452,7 @@ msgstr ""
 
 #: src/syntax.md:189
 msgid "and"
-msgstr ""
+msgstr "且"
 
 #: src/syntax.md:189
 msgid "`and`"
@@ -464,7 +464,7 @@ msgstr ""
 
 #: src/syntax.md:190
 msgid "or"
-msgstr ""
+msgstr "或"
 
 #: src/syntax.md:190
 msgid "`or`"
@@ -476,7 +476,7 @@ msgstr ""
 
 #: src/syntax.md:191
 msgid "function call"
-msgstr ""
+msgstr "函式呼叫"
 
 #: src/syntax.md:191
 msgid "10"
@@ -503,7 +503,7 @@ msgstr ""
 
 #: src/syntax.md:219
 msgid "There's no distinct multiline comment syntax."
-msgstr ""
+msgstr "沒有明確的多行註釋語法。"
 
 #: src/syntax.md:221
 msgid "Quoted identifiers"
@@ -542,7 +542,7 @@ msgstr ""
 
 #: src/syntax.md:266
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: src/syntax.md:268
 msgid ""
@@ -552,7 +552,7 @@ msgstr ""
 
 #: src/syntax.md:276
 msgid "Numbers"
-msgstr ""
+msgstr "數字"
 
 #: src/syntax.md:278
 msgid ""
