@@ -50,6 +50,9 @@ msgid ""
 "[`grammars/CotEditor/`](https://github.com/PRQL/prql/tree/main/grammars/"
 "CotEditor/)."
 msgstr ""
+"[CotEditor](https://coteditor.com/) — macOS 的文字編輯器。檔案位於 "
+"[`grammars/CotEditor/`](https://github.com/PRQL/prql/tree/main/grammars/"
+"CotEditor/)。"
 
 #: src/project/integrations/syntax-highlighting.md:22
 msgid ""
