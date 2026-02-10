@@ -79,7 +79,7 @@ msgstr ""
 #: src/project/changelog.md:1152 src/project/changelog.md:1215
 #: src/project/changelog.md:1258
 msgid "**Features**:"
-msgstr ""
+msgstr "**功能**："
 
 #: src/project/changelog.md:29
 msgid ""
@@ -115,7 +115,7 @@ msgstr ""
 #: src/project/changelog.md:854 src/project/changelog.md:1119
 #: src/project/changelog.md:1316 src/project/changelog.md:1351
 msgid "**Integrations**:"
-msgstr ""
+msgstr "**整合**："
 
 #: src/project/changelog.md:39
 msgid "Add syntax highlight file for GtkSourceView. (@vanillajonathan, #4062)"
@@ -229,7 +229,7 @@ msgstr ""
 #: src/project/changelog.md:91 src/project/changelog.md:177
 #: src/project/changelog.md:266 src/project/changelog.md:412
 msgid "**Language**:"
-msgstr ""
+msgstr "**語言**："
 
 #: src/project/changelog.md:93
 msgid ""
@@ -686,7 +686,7 @@ msgstr ""
 #: src/project/changelog.md:1307 src/project/changelog.md:1345
 #: src/project/changelog.md:1371
 msgid "**Documentation**:"
-msgstr ""
+msgstr "**文件**："
 
 #: src/project/changelog.md:342
 msgid "New docs for strings (@max-sixty, #3281)"
