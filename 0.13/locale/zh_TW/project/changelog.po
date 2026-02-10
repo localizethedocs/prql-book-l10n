@@ -36,7 +36,7 @@ msgstr ""
 #: src/project/changelog.md:1356 src/project/changelog.md:1517
 #: src/project/changelog.md:1580 src/project/changelog.md:1623
 msgid "**Features**:"
-msgstr ""
+msgstr "**功能**："
 
 #: src/project/changelog.md:9
 msgid "Add `read_json` support for DuckDB and ClickHouse (@adamnemecek, #5608)"
@@ -173,7 +173,7 @@ msgstr ""
 #: src/project/changelog.md:1672 src/project/changelog.md:1710
 #: src/project/changelog.md:1736
 msgid "**Documentation**:"
-msgstr ""
+msgstr "**文件**："
 
 #: src/project/changelog.md:55
 msgid "Close HTML comment in sort.md documentation (@max-sixty, #5597)"
@@ -189,7 +189,7 @@ msgstr ""
 #: src/project/changelog.md:1484 src/project/changelog.md:1681
 #: src/project/changelog.md:1716
 msgid "**Integrations**:"
-msgstr ""
+msgstr "**整合**："
 
 #: src/project/changelog.md:59
 msgid "Add grammar file for Raku (@vanillajonathan, #5576)"
@@ -586,7 +586,7 @@ msgstr ""
 #: src/project/changelog.md:544 src/project/changelog.md:633
 #: src/project/changelog.md:779
 msgid "**Language**:"
-msgstr ""
+msgstr "**語言**："
 
 #: src/project/changelog.md:244
 msgid ""
