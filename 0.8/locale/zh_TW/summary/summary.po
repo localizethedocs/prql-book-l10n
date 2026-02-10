@@ -221,7 +221,7 @@ msgstr "Rust"
 
 #: src/SUMMARY.md:69
 msgid "Integrations"
-msgstr ""
+msgstr "整合"
 
 #: src/SUMMARY.md:71
 msgid "dbt"
@@ -237,15 +237,15 @@ msgstr "DuckDB"
 
 #: src/SUMMARY.md:74
 msgid "Prefect"
-msgstr ""
+msgstr "Prefect"
 
 #: src/SUMMARY.md:75
 msgid "VS Code"
-msgstr ""
+msgstr "VS Code"
 
 #: src/SUMMARY.md:76
 msgid "Rill"
-msgstr ""
+msgstr "Rill"
 
 #: src/SUMMARY.md:78
 msgid "Examples"

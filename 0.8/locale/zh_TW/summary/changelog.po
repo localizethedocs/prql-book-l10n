@@ -57,7 +57,7 @@ msgstr ""
 #: src/changelog.md:423 src/changelog.md:583 src/changelog.md:646
 #: src/changelog.md:689
 msgid "**Features**:"
-msgstr ""
+msgstr "**功能**："
 
 #: src/changelog.md:25
 msgid ""
@@ -273,7 +273,7 @@ msgstr ""
 #: src/changelog.md:700 src/changelog.md:738 src/changelog.md:776
 #: src/changelog.md:802
 msgid "**Documentation**:"
-msgstr ""
+msgstr "**文件**："
 
 #: src/changelog.md:133
 msgid ""
@@ -285,7 +285,7 @@ msgstr ""
 #: src/changelog.md:137 src/changelog.md:232 src/changelog.md:286
 #: src/changelog.md:550 src/changelog.md:747 src/changelog.md:782
 msgid "**Integrations**:"
-msgstr ""
+msgstr "**整合**："
 
 #: src/changelog.md:139
 msgid "\\[prql-lib\\] Added C++ header file. (@vanillajonathan, #2126)"

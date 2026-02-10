@@ -23,7 +23,7 @@ msgstr ""
 
 #: src/contributing/index.md:6
 msgid "Star the [repo](https://github.com/PRQL/prql)."
-msgstr ""
+msgstr "星標收藏[儲存庫](https://github.com/PRQL/prql)。"
 
 #: src/contributing/index.md:7
 msgid "Send a link to PRQL to a couple of people whose opinion you respect."
