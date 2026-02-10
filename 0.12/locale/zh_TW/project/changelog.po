@@ -66,7 +66,7 @@ msgstr ""
 #: src/project/changelog.md:1054 src/project/changelog.md:1215
 #: src/project/changelog.md:1278 src/project/changelog.md:1321
 msgid "**Features**:"
-msgstr ""
+msgstr "**功能**："
 
 #: src/project/changelog.md:25
 msgid "Add `prqlc lex` command to the CLI (@max-sixty)"
@@ -136,7 +136,7 @@ msgstr ""
 #: src/project/changelog.md:1182 src/project/changelog.md:1379
 #: src/project/changelog.md:1414
 msgid "**Integrations**:"
-msgstr ""
+msgstr "**整合**："
 
 #: src/project/changelog.md:48
 msgid ""
@@ -363,7 +363,7 @@ msgstr ""
 #: src/project/changelog.md:154 src/project/changelog.md:240
 #: src/project/changelog.md:329 src/project/changelog.md:475
 msgid "**Language**:"
-msgstr ""
+msgstr "**語言**："
 
 #: src/project/changelog.md:156
 msgid ""
@@ -813,7 +813,7 @@ msgstr ""
 #: src/project/changelog.md:1370 src/project/changelog.md:1408
 #: src/project/changelog.md:1434
 msgid "**Documentation**:"
-msgstr ""
+msgstr "**文件**："
 
 #: src/project/changelog.md:405
 msgid "New docs for strings (@max-sixty, #3281)"

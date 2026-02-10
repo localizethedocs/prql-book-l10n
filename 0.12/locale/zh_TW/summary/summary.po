@@ -291,7 +291,7 @@ msgstr "Rust"
 
 #: src/SUMMARY.md:104
 msgid "Integrations"
-msgstr ""
+msgstr "整合"
 
 #: src/SUMMARY.md:106
 msgid "`prqlc CLI`"
@@ -299,7 +299,7 @@ msgstr "`prqlc CLI`"
 
 #: src/SUMMARY.md:107
 msgid "ClickHouse"
-msgstr ""
+msgstr "ClickHouse"
 
 #: src/SUMMARY.md:108
 msgid "Jupyter"
@@ -315,11 +315,11 @@ msgstr ""
 
 #: src/SUMMARY.md:111
 msgid "Prefect"
-msgstr ""
+msgstr "Prefect"
 
 #: src/SUMMARY.md:112
 msgid "VS Code"
-msgstr ""
+msgstr "VS Code"
 
 #: src/SUMMARY.md:113
 msgid "PostgreSQL"
@@ -327,11 +327,11 @@ msgstr "PostgreSQL"
 
 #: src/SUMMARY.md:114
 msgid "Databend"
-msgstr ""
+msgstr "Databend"
 
 #: src/SUMMARY.md:115
 msgid "Rill"
-msgstr ""
+msgstr "Rill"
 
 #: src/SUMMARY.md:116
 msgid "Syntax highlighting"
