@@ -1,0 +1,5640 @@
+<!DOCTYPE HTML>
+<html lang="en_US" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>PRQL language book</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        <script type="text/javascript" src="ltd-provenance.js"></script>
+        <script type="text/javascript" src="ltd-current.js"></script>
+        <script type="text/javascript" src="../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+        <meta name="description" content="Modern language for transforming data — a simple, powerful, pipelined SQL replacement">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="comparison-table.css">
+        <link rel="stylesheet" href="mdbook-admonish.css">
+        <link rel="stylesheet" href="./mdbook-admonish.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">PRQL language book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/PRQL/prql" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>PRQL is a modern language for transforming data — a simple, powerful, pipelined
+SQL replacement. Like SQL, it’s readable, explicit and declarative. Unlike SQL,
+it forms a logical pipeline of transformations, and supports abstractions such
+as variables and functions. It can be used with any database that uses SQL,
+since it transpiles to SQL.</p>
+<p>Let’s get started with an example:</p>
+<!-- TODO: make this onramp friendlier: https://github.com/PRQL/prql/issues/522 -->
+<div class="comparison">
+<div>
+<h4 id="prql"><a class="header" href="#prql">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+filter start_date &gt; @2021-01-01               # Clear date syntax
+derive [                                      # `derive` adds columns / variables
+  gross_salary = salary + (tax ?? 0),         # Terse coalesce
+  gross_cost = gross_salary + benefits_cost,  # Variables can use other variables
+]
+filter gross_cost &gt; 0
+group [title, country] (                      # `group` runs a pipeline over each group
+  aggregate [                                 # `aggregate` reduces each group to a value
+    average gross_salary,
+    sum_gross_cost = sum gross_cost,          # `=` sets a column name
+  ]
+)
+filter sum_gross_cost &gt; 100_000               # `filter` replaces both of SQL's `WHERE` &amp; `HAVING`
+derive id = f"{title}_{country}"              # F-strings like Python
+derive country_code = s"LEFT(country, 2)"     # S-strings allow using SQL as an escape hatch
+sort [sum_gross_cost, -country]               # `-country` means descending order
+take 1..20                                    # Range expressions (also valid here as `take 20`)
+</code></pre>
+</div>
+<div>
+<h4 id="sql"><a class="header" href="#sql">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    title,
+    country,
+    salary + COALESCE(tax, 0) + benefits_cost AS _expr_0,
+    salary + COALESCE(tax, 0) AS _expr_1
+  FROM
+    employees
+  WHERE
+    start_date &gt; DATE '2021-01-01'
+)
+SELECT
+  title,
+  country,
+  AVG(_expr_1),
+  SUM(_expr_0) AS sum_gross_cost,
+  CONCAT(title, '_', country) AS id,
+  LEFT(country, 2) AS country_code
+FROM
+  table_1 AS table_0
+WHERE
+  _expr_0 &gt; 0
+GROUP BY
+  title,
+  country
+HAVING
+  SUM(_expr_0) &gt; 100000
+ORDER BY
+  sum_gross_cost,
+  country DESC
+LIMIT
+  20
+
+</code></pre>
+</div>
+</div>
+<p>As you can see, PRQL is a linear <strong>pipeline of transformations</strong> — each line of
+the query is a transformation of the previous line’s result.</p>
+<p>You can see that in SQL, operations do not follow one another, which makes it
+hard to compose larger queries.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="queries"><a class="header" href="#queries">Queries</a></h1>
+<p>PRQL queries are composed of a sequence of <em>transforms</em> that form a <em>pipeline</em>
+that modifies data as it is passed from one to the next.</p>
+<p>The major items of a <em>query</em> are listed at the left:</p>
+<ul>
+<li><a href="queries/./pipelines.html">Pipelines</a></li>
+<li><a href="queries/./functions.html">Functions</a></li>
+<li><a href="queries/./variables.html">Variables</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pipelines"><a class="header" href="#pipelines">Pipelines</a></h1>
+<p>PRQL queries are a sequence of lines (or <em>transforms</em>) that form a <em>pipeline</em>.
+Each line transforms the data, and passes its result to the next.</p>
+<p><strong>The simplest pipeline</strong> is just:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-1"><a class="header" href="#prql-1">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+</code></pre>
+</div>
+<div>
+<h4 id="sql-1"><a class="header" href="#sql-1">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<h2 id="adding-transforms"><a class="header" href="#adding-transforms">Adding transforms</a></h2>
+<p>As we add additional lines, each one transforms the result:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-2"><a class="header" href="#prql-2">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive gross_salary = (salary + payroll_tax)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-2"><a class="header" href="#sql-2">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  salary + payroll_tax AS gross_salary
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>…and so on:</p>
+<h2 id="compiling-to-sql"><a class="header" href="#compiling-to-sql">Compiling to SQL</a></h2>
+<p>PRQL compiles the query to SQL. The PRQL compiler tries to represent as many
+transforms as possible with a single <code>SELECT</code> statement. When necessary, the
+compiler “overflows” and creates CTEs (common table expressions):</p>
+<div class="comparison">
+<div>
+<h4 id="prql-3"><a class="header" href="#prql-3">PRQL</a></h4>
+<pre><code class="language-prql">from e = employees
+derive gross_salary = (salary + payroll_tax)
+sort gross_salary
+take 10
+join d = department [==dept_no]
+select [e.name, gross_salary, d.name]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-3"><a class="header" href="#sql-3">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    name,
+    salary + payroll_tax AS gross_salary,
+    dept_no
+  FROM
+    employees AS e
+  ORDER BY
+    gross_salary
+  LIMIT
+    10
+)
+SELECT
+  table_0.name,
+  table_0.gross_salary,
+  d.name
+FROM
+  table_1 AS table_0
+  JOIN department AS d ON table_0.dept_no = d.dept_no
+
+</code></pre>
+</div>
+</div>
+<h2 id="see-also"><a class="header" href="#see-also">See also</a></h2>
+<ul>
+<li><a href="queries/../transforms/README.html">Transforms</a> - PRQL Transforms</li>
+<li><a href="queries/../syntax.html">Syntax</a> - Notation for PRQL queries</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="functions"><a class="header" href="#functions">Functions</a></h1>
+<!--
+TODOs:
+- Examples are a bit artificial — the interp is just "divide by 100" in one case!  -->
+<p>Functions are a fundamental abstraction in PRQL — they allow us to run code in
+many places that we’ve written once. This reduces the number of errors in our
+code, makes our code more readable, and simplifies making changes.</p>
+<p>Functions have two types of parameters:</p>
+<ol>
+<li>Positional parameters, which require an argument.</li>
+<li>Named parameters, which optionally take an argument, otherwise using their
+default value.</li>
+</ol>
+<p>So this function is named <code>fahrenheit_to_celsius</code> and has one parameter <code>temp</code>:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-4"><a class="header" href="#prql-4">PRQL</a></h4>
+<pre><code class="language-prql">func fahrenheit_to_celsius temp -&gt; (temp - 32) / 1.8
+
+from cities
+derive temp_c = (fahrenheit_to_celsius temp_f)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-4"><a class="header" href="#sql-4">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  (temp_f - 32) / 1.8 AS temp_c
+FROM
+  cities
+
+</code></pre>
+</div>
+</div>
+<p>This function is named <code>interp</code>, and has two positional parameters named <code>high</code>
+and <code>x</code>, and one named parameter named <code>low</code> which takes a default argument of
+<code>0</code>. It calculates the proportion of the distance that <code>x</code> is between <code>low</code> and
+<code>high</code>.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-5"><a class="header" href="#prql-5">PRQL</a></h4>
+<pre><code class="language-prql">func interp low:0 high x -&gt; (x - low) / (high - low)
+
+from students
+derive [
+  sat_proportion_1 = (interp 1600 sat_score),
+  sat_proportion_2 = (interp low:0 1600 sat_score),
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-5"><a class="header" href="#sql-5">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  (sat_score - 0) / 1600 AS sat_proportion_1,
+  (sat_score - 0) / 1600 AS sat_proportion_2
+FROM
+  students
+
+</code></pre>
+</div>
+</div>
+<h2 id="piping"><a class="header" href="#piping">Piping</a></h2>
+<p>Consistent with the principles of PRQL, it’s possible to pipe values into
+functions, which makes composing many functions more readable. When piping a
+value into a function, the value is passed as an argument to the final
+positional parameter of the function. Here’s the same result as the examples
+above with an alternative construction:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-6"><a class="header" href="#prql-6">PRQL</a></h4>
+<pre><code class="language-prql">func interp low:0 high x -&gt; (x - low) / (high - low)
+
+from students
+derive [
+  sat_proportion_1 = (sat_score | interp 1600),
+  sat_proportion_2 = (sat_score | interp low:0 1600),
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-6"><a class="header" href="#sql-6">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  (sat_score - 0) / 1600 AS sat_proportion_1,
+  (sat_score - 0) / 1600 AS sat_proportion_2
+FROM
+  students
+
+</code></pre>
+</div>
+</div>
+<p>and</p>
+<div class="comparison">
+<div>
+<h4 id="prql-7"><a class="header" href="#prql-7">PRQL</a></h4>
+<pre><code class="language-prql">func fahrenheit_to_celsius temp -&gt; (temp - 32) / 1.8
+
+from cities
+derive temp_c = (temp_f | fahrenheit_to_celsius)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-7"><a class="header" href="#sql-7">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  (temp_f - 32) / 1.8 AS temp_c
+FROM
+  cities
+
+</code></pre>
+</div>
+</div>
+<p>We can combine a chain of functions, which makes logic more readable:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-8"><a class="header" href="#prql-8">PRQL</a></h4>
+<pre><code class="language-prql">func fahrenheit_to_celsius temp -&gt; (temp - 32) / 1.8
+func interp low:0 high x -&gt; (x - low) / (high - low)
+
+from kettles
+derive boiling_proportion = (temp_c | fahrenheit_to_celsius | interp 100)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-8"><a class="header" href="#sql-8">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  ((temp_c - 32) / 1.8 - 0) / 100 AS boiling_proportion
+FROM
+  kettles
+
+</code></pre>
+</div>
+</div>
+<h2 id="scope"><a class="header" href="#scope">Scope</a></h2>
+<h3 id="late-binding"><a class="header" href="#late-binding">Late binding</a></h3>
+<p>Functions can binding to any variables in scope when the function is executed.
+For example, here <code>cost_total</code> refers to the column that’s introduced in the
+<code>from</code>.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-9"><a class="header" href="#prql-9">PRQL</a></h4>
+<pre><code class="language-prql">func cost_share cost -&gt; cost / cost_total
+
+from costs
+select [materials, labor, overhead, cost_total]
+derive [
+  materials_share = (cost_share materials),
+  labor_share = (cost_share labor),
+  overhead_share = (cost_share overhead),
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-9"><a class="header" href="#sql-9">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  materials,
+  labor,
+  overhead,
+  cost_total,
+  materials / cost_total AS materials_share,
+  labor / cost_total AS labor_share,
+  overhead / cost_total AS overhead_share
+FROM
+  costs
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="variables"><a class="header" href="#variables">Variables</a></h1>
+<p>We can define a relation — similar to a CTE in SQL — as a variable with <code>let</code>:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-10"><a class="header" href="#prql-10">PRQL</a></h4>
+<pre><code class="language-prql">let top_50 = (
+  from employees
+  sort salary
+  take 50
+  aggregate [total_salary = sum salary]
+)
+
+from top_50      # Starts a new pipeline
+</code></pre>
+</div>
+<div>
+<h4 id="sql-10"><a class="header" href="#sql-10">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    salary
+  FROM
+    employees
+  ORDER BY
+    salary
+  LIMIT
+    50
+), top_50 AS (
+  SELECT
+    SUM(salary) AS total_salary
+  FROM
+    table_1 AS table_0
+)
+SELECT
+  total_salary
+FROM
+  top_50
+
+</code></pre>
+</div>
+</div>
+<p>We can even place a whole CTE in an
+<a href="queries/../language-features/s-strings.html">s-string</a>, enabling us to use features which
+PRQL doesn’t yet support.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-11"><a class="header" href="#prql-11">PRQL</a></h4>
+<pre><code class="language-prql">let grouping = s"""
+  SELECT SUM(a)
+  FROM tbl
+  GROUP BY
+    GROUPING SETS
+    ((b, c, d), (d), (b, d))
+"""
+
+from grouping
+</code></pre>
+</div>
+<div>
+<h4 id="sql-11"><a class="header" href="#sql-11">SQL</a></h4>
+<pre><code class="language-sql">WITH table_0 AS (
+  SELECT
+    SUM(a)
+  FROM
+    tbl
+  GROUP BY
+    GROUPING SETS ((b, c, d), (d), (b, d))
+),
+grouping AS (
+  SELECT
+    *
+  FROM
+    table_0 AS table_1
+)
+SELECT
+  *
+FROM
+  grouping
+
+</code></pre>
+</div>
+</div>
+<div id="admonition-info" class="admonition admonish-info" role="note" aria-labelledby="admonition-info-title">
+<div class="admonition-title">
+<div id="admonition-info-title">
+<p>Info</p>
+</div>
+<a class="admonition-anchor-link" href="queries/variables.html#admonition-info"></a>
+</div>
+<div>
+<p>In PRQL <code>table</code>s are far less common than CTEs are in SQL, since a linear series
+of CTEs can be represented with a single pipeline.</p>
+</div>
+</div>
+<p>Currently defining variables with <code>let</code> is restricted to relations. We’d like to
+extend this to expressions that evaluate to scalars.</p>
+<!--
+, like recursive queries:
+
+TODO: get this example to work by removing the restriction to start with SELECT
+
+Example from https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#recursive_keyword
+
+table recursive_example = (s"""
+  WITH RECURSIVE
+    T1 AS ( (SELECT 1 AS n) UNION ALL (SELECT n + 1 AS n FROM T1 WHERE n < 3) )
+  SELECT n FROM T1
+""")
+
+from recursive_example
+
+-->
+<div style="break-before: page; page-break-before: always;"></div><h1 id="transforms"><a class="header" href="#transforms">Transforms</a></h1>
+<p>PRQL queries are a pipeline of transformations (“transforms”), where each
+transform takes the previous result and adjusts it in some way, before passing
+it onto to the next transform.</p>
+<p>Because PRQL focuses on modularity, we have far fewer transforms than SQL, each
+one fulfilling a specific purpose. That’s often referred to as “orthogonality”.</p>
+<p>These are the currently available transforms:</p>
+<div class="table-wrapper"><table><thead><tr><th>Transform</th><th>Purpose</th><th>SQL Equivalent</th></tr></thead><tbody>
+<tr><td><code>from</code></td><td><a href="transforms/./from.html">Start from a table</a></td><td><code>FROM</code></td></tr>
+<tr><td><code>derive</code></td><td><a href="transforms/./derive.html">Compute new columns</a></td><td><code>SELECT *, ... AS ...</code></td></tr>
+<tr><td><code>select</code></td><td><a href="transforms/./select.html">Pick &amp; compute columns</a></td><td><code>SELECT ... AS ...</code></td></tr>
+<tr><td><code>filter</code></td><td><a href="transforms/./filter.html">Pick rows based on their values</a></td><td><code>WHERE</code>, <code>HAVING</code>,<code>QUALIFY</code></td></tr>
+<tr><td><code>sort</code></td><td><a href="transforms/./sort.html">Order rows based on the values of columns</a></td><td><code>ORDER BY</code></td></tr>
+<tr><td><code>join</code></td><td><a href="transforms/./join.html">Add columns from another table, matching rows based on a condition</a></td><td><code>JOIN</code></td></tr>
+<tr><td><code>take</code></td><td><a href="transforms/./take.html">Pick rows based on their position</a></td><td><code>TOP</code>, <code>LIMIT</code>, <code>OFFSET</code></td></tr>
+<tr><td><code>group</code></td><td><a href="transforms/./group.html">Partition rows into groups and applies a pipeline to each of them</a></td><td><code>GROUP BY</code>, <code>PARTITION BY</code></td></tr>
+<tr><td><code>aggregate</code></td><td><a href="transforms/./aggregate.html">Summarize many rows into one row</a></td><td><code>SELECT foo(...)</code></td></tr>
+<tr><td><code>window</code></td><td><a href="transforms/./window.html">Apply a pipeline to overlapping segments of rows</a></td><td><code>OVER</code>, <code>ROWS</code>, <code>RANGE</code></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="aggregate"><a class="header" href="#aggregate">Aggregate</a></h1>
+<p>Summarizes many rows into one row.</p>
+<p>When applied:</p>
+<ul>
+<li>without <code>group</code>, it produces one row from the whole table,</li>
+<li>within a <code>group</code> pipeline, it produces one row from each group.</li>
+</ul>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="transforms/aggregate.html#admonition-note"></a>
+</div>
+<div>
+<p>Currently, all declared aggregation functions are <code>min</code>, <code>max</code>, <code>count</code>,
+<code>average</code>, <code>stddev</code>, <code>avg</code>, <code>sum</code> and <code>count_distinct</code>. We are in the
+process of filling out <a href="transforms/../stdlib.html">std lib</a>.</p>
+</div>
+</div>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-12"><a class="header" href="#prql-12">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+aggregate [
+  average salary,
+  ct = count
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-12"><a class="header" href="#sql-12">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  AVG(salary),
+  COUNT(*) AS ct
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-13"><a class="header" href="#prql-13">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+group [title, country] (
+  aggregate [
+    average salary,
+    ct = count
+  ]
+)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-13"><a class="header" href="#sql-13">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  title,
+  country,
+  AVG(salary),
+  COUNT(*) AS ct
+FROM
+  employees
+GROUP BY
+  title,
+  country
+
+</code></pre>
+</div>
+</div>
+<h2 id="aggregate-is-required"><a class="header" href="#aggregate-is-required">Aggregate is required</a></h2>
+<p>Unlike in SQL, using an aggregation function in <code>derive</code> or <code>select</code> (or any
+other transform except <code>aggregate</code>) will not trigger aggregation. By default,
+PRQL will interpret such attempts functions as window functions:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-14"><a class="header" href="#prql-14">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive [avg_sal = average salary]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-14"><a class="header" href="#sql-14">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  AVG(salary) OVER () AS avg_sal
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>This ensures that <code>derive</code> does not manipulate the number of rows, but only ever
+adds a column. For more information, see <a href="transforms/./window.html">window transform</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="append"><a class="header" href="#append">Append</a></h1>
+<p>Concatenates two tables together.</p>
+<p>Equivalent to <code>UNION ALL</code> in SQL. The number of rows is always the sum of the
+number of rows from the two input tables. To replicate <code>UNION DISTINCT</code>, see
+<a href="transforms/append.html#set-operations">set operations</a>.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-15"><a class="header" href="#prql-15">PRQL</a></h4>
+<pre><code class="language-prql">from employees_1
+append employees_2
+</code></pre>
+</div>
+<div>
+<h4 id="sql-15"><a class="header" href="#sql-15">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees_1
+UNION
+ALL
+SELECT
+  *
+FROM
+  employees_2
+
+</code></pre>
+</div>
+</div>
+<h2 id="remove"><a class="header" href="#remove">Remove</a></h2>
+<blockquote>
+<p><em>experimental</em></p>
+</blockquote>
+<p>Removes rows that appear in another relation, like <code>EXCEPT ALL</code>. Duplicate rows
+are removed one-for-one.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-16"><a class="header" href="#prql-16">PRQL</a></h4>
+<pre><code class="language-prql">from employees_1
+remove employees_2
+</code></pre>
+</div>
+<div>
+<h4 id="sql-16"><a class="header" href="#sql-16">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees_1 AS t
+EXCEPT
+  ALL
+SELECT
+  *
+FROM
+  employees_2 AS b
+
+</code></pre>
+</div>
+</div>
+<h2 id="intersection"><a class="header" href="#intersection">Intersection</a></h2>
+<blockquote>
+<p><em>experimental</em></p>
+</blockquote>
+<div class="comparison">
+<div>
+<h4 id="prql-17"><a class="header" href="#prql-17">PRQL</a></h4>
+<pre><code class="language-prql">from employees_1
+intersect employees_2
+</code></pre>
+</div>
+<div>
+<h4 id="sql-17"><a class="header" href="#sql-17">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees_1 AS t
+INTERSECT
+ALL
+SELECT
+  *
+FROM
+  employees_2 AS b
+
+</code></pre>
+</div>
+</div>
+<h2 id="set-operations"><a class="header" href="#set-operations">Set operations</a></h2>
+<blockquote>
+<p><em>experimental</em></p>
+</blockquote>
+<p>To imitate set operations i.e. (<code>UNION</code>, <code>EXCEPT</code> and <code>INTERSECT</code>), you can use
+the following functions:</p>
+<p>Don’t mind the <code>default_db.</code> and <code>_param.</code>, these are compiler implementation
+detail for now.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="derive"><a class="header" href="#derive">Derive</a></h1>
+<p>Computes one or more new columns.</p>
+<h2 id="examples-1"><a class="header" href="#examples-1">Examples</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-18"><a class="header" href="#prql-18">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive gross_salary = salary + payroll_tax
+</code></pre>
+</div>
+<div>
+<h4 id="sql-18"><a class="header" href="#sql-18">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  salary + payroll_tax AS gross_salary
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-19"><a class="header" href="#prql-19">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive [
+  gross_salary = salary + payroll_tax,
+  gross_cost = gross_salary + benefits_cost
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-19"><a class="header" href="#sql-19">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  salary + payroll_tax AS gross_salary,
+  salary + payroll_tax + benefits_cost AS gross_cost
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="filter"><a class="header" href="#filter">Filter</a></h1>
+<p>Picks rows based on their values.</p>
+<h2 id="examples-2"><a class="header" href="#examples-2">Examples</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-20"><a class="header" href="#prql-20">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+filter age &gt; 25
+</code></pre>
+</div>
+<div>
+<h4 id="sql-20"><a class="header" href="#sql-20">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+WHERE
+  age &gt; 25
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-21"><a class="header" href="#prql-21">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+filter (age &gt; 25 or department != "IT")
+</code></pre>
+</div>
+<div>
+<h4 id="sql-21"><a class="header" href="#sql-21">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+WHERE
+  age &gt; 25
+  OR department &lt;&gt; 'IT'
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-22"><a class="header" href="#prql-22">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+filter (age | in 25..40)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-22"><a class="header" href="#sql-22">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+WHERE
+  age BETWEEN 25 AND 40
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="from"><a class="header" href="#from">From</a></h1>
+<p>Specifies a data source.</p>
+<p>Table names containing <a href="transforms/../syntax.html#quoting-schemas">schemas</a> or needing to be
+quoted for <a href="transforms/../syntax.html#quoted-identifiers">other reasons</a> need to be contained
+within backticks.</p>
+<h2 id="examples-3"><a class="header" href="#examples-3">Examples</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-23"><a class="header" href="#prql-23">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+</code></pre>
+</div>
+<div>
+<h4 id="sql-23"><a class="header" href="#sql-23">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>To introduce an alias, use an assign expression:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-24"><a class="header" href="#prql-24">PRQL</a></h4>
+<pre><code class="language-prql">from e = employees
+select e.first_name
+</code></pre>
+</div>
+<div>
+<h4 id="sql-24"><a class="header" href="#sql-24">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  first_name
+FROM
+  employees AS e
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="from-text"><a class="header" href="#from-text">From Text</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="group"><a class="header" href="#group">Group</a></h1>
+<p>Partitions the rows into groups and applies a pipeline to each of the groups.</p>
+<p>The partitioning of groups are determined by the <code>key_column</code>s (first argument).</p>
+<p>The most conventional use of <code>group</code> is with <code>aggregate</code>:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-25"><a class="header" href="#prql-25">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+group [title, country] (
+  aggregate [
+    average salary,
+    ct = count
+  ]
+)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-25"><a class="header" href="#sql-25">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  title,
+  country,
+  AVG(salary),
+  COUNT(*) AS ct
+FROM
+  employees
+GROUP BY
+  title,
+  country
+
+</code></pre>
+</div>
+</div>
+<p>In concept, a transform in context of a <code>group</code> does the same transformation to
+the group as it would to the table — for example finding the employee who joined
+first across the whole table:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-26"><a class="header" href="#prql-26">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+sort join_date
+take 1
+</code></pre>
+</div>
+<div>
+<h4 id="sql-26"><a class="header" href="#sql-26">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+ORDER BY
+  join_date
+LIMIT
+  1
+
+</code></pre>
+</div>
+</div>
+<p>To find the employee who joined first in each department, it’s exactly the same
+pipeline, but within a <code>group</code> expression:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-27"><a class="header" href="#prql-27">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+group role (
+  sort join_date  # taken from above
+  take 1
+)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-27"><a class="header" href="#sql-27">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    *,
+    ROW_NUMBER() OVER (
+      PARTITION BY role
+      ORDER BY
+        join_date
+    ) AS _expr_0
+  FROM
+    employees
+)
+SELECT
+  *
+FROM
+  table_1 AS table_0
+WHERE
+  _expr_0 &lt;= 1
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="join"><a class="header" href="#join">Join</a></h1>
+<p>Adds columns from another table, matching rows based on a condition.</p>
+<h2 id="parameters"><a class="header" href="#parameters">Parameters</a></h2>
+<ul>
+<li><code>side</code> decides which rows to include, defaulting to <code>inner</code>.</li>
+<li>Table reference</li>
+<li>List of conditions
+<ul>
+<li>The result of join operation is a cartesian (cross) product of rows from
+both tables, which is then filtered to match all of these conditions.</li>
+<li>If name is the same from both tables, it can be expressed with only <code>==col</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="examples-4"><a class="header" href="#examples-4">Examples</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-28"><a class="header" href="#prql-28">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+join side:left positions [employees.id==positions.employee_id]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-28"><a class="header" href="#sql-28">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  employees.*,
+  positions.*
+FROM
+  employees
+  LEFT JOIN positions ON employees.id = positions.employee_id
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-29"><a class="header" href="#prql-29">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+join side:left p=positions [employees.id==p.employee_id]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-29"><a class="header" href="#sql-29">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  employees.*,
+  p.*
+FROM
+  employees
+  LEFT JOIN positions AS p ON employees.id = p.employee_id
+
+</code></pre>
+</div>
+</div>
+<h2 id="self-equality-operator"><a class="header" href="#self-equality-operator">Self equality operator</a></h2>
+<p>If the join conditions are of form <code>left.x == right.x</code>, we can use “self
+equality operator”:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-30"><a class="header" href="#prql-30">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+join positions [==emp_no]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-30"><a class="header" href="#sql-30">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  employees.*,
+  positions.*
+FROM
+  employees
+  JOIN positions ON employees.emp_no = positions.emp_no
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="select"><a class="header" href="#select">Select</a></h1>
+<p>Picks and computes columns.</p>
+<h2 id="examples-5"><a class="header" href="#examples-5">Examples</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-31"><a class="header" href="#prql-31">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select name = f"{first_name} {last_name}"
+</code></pre>
+</div>
+<div>
+<h4 id="sql-31"><a class="header" href="#sql-31">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  CONCAT(first_name, ' ', last_name) AS name
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-32"><a class="header" href="#prql-32">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select [
+  name = f"{first_name} {last_name}",
+  age_eoy = dob - @2022-12-31,
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-32"><a class="header" href="#sql-32">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  CONCAT(first_name, ' ', last_name) AS name,
+  dob - DATE '2022-12-31' AS age_eoy
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-33"><a class="header" href="#prql-33">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select first_name
+</code></pre>
+</div>
+<div>
+<h4 id="sql-33"><a class="header" href="#sql-33">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  first_name
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-34"><a class="header" href="#prql-34">PRQL</a></h4>
+<pre><code class="language-prql">from e=employees
+select [e.first_name, e.last_name]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-34"><a class="header" href="#sql-34">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  first_name,
+  last_name
+FROM
+  employees AS e
+
+</code></pre>
+</div>
+</div>
+<h3 id="excluding-columns"><a class="header" href="#excluding-columns">Excluding columns</a></h3>
+<p>We can use <code>!</code> to exclude a list of columns. This can operate in two ways:</p>
+<ul>
+<li>We use <code>SELECT * EXCLUDE</code> / <code>SELECT * EXCEPT</code> for the columns supplied to
+<code>select ![]</code> in dialects which support it.</li>
+<li>Otherwise, the columns must have been defined prior in the query (unless all
+of a table’s columns are excluded); for example in another <code>select</code> or a
+<code>group</code> transform. In this case, we evaluate and specify the columns that
+should be included in the output SQL.</li>
+</ul>
+<p>Some examples:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-35"><a class="header" href="#prql-35">PRQL</a></h4>
+<pre><code class="language-prql">prql target:sql.bigquery
+from tracks
+select ![milliseconds,bytes]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-35"><a class="header" href="#sql-35">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+EXCEPT
+  (milliseconds, bytes)
+FROM
+  tracks
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-36"><a class="header" href="#prql-36">PRQL</a></h4>
+<pre><code class="language-prql">from tracks
+select [track_id, title, composer, bytes]
+select ![title, composer]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-36"><a class="header" href="#sql-36">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  track_id,
+  bytes
+FROM
+  tracks
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-37"><a class="header" href="#prql-37">PRQL</a></h4>
+<pre><code class="language-prql">from artists
+derive nick = name
+select ![artists.*]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-37"><a class="header" href="#sql-37">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  name AS nick
+FROM
+  artists
+
+</code></pre>
+</div>
+</div>
+<!-- TODO: I think this should move to a separate "Aliases" page -->
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="transforms/select.html#admonition-note"></a>
+</div>
+<div>
+<p>In the final example above, the <code>e</code> representing the table / namespace is no
+longer available after the <code>select</code> statement. For example, this would raise an error:</p>
+<p>To refer to the <code>e.first_name</code> column in subsequent transforms,
+either refer to it using <code>first_name</code>, or if it requires a different name,
+assign one in the <code>select</code> statement:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-38"><a class="header" href="#prql-38">PRQL</a></h4>
+<pre><code class="language-prql">from e=employees
+select fname = e.first_name
+filter fname == "Fred"
+</code></pre>
+</div>
+<div>
+<h4 id="sql-38"><a class="header" href="#sql-38">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    first_name AS fname
+  FROM
+    employees AS e
+)
+SELECT
+  fname
+FROM
+  table_1 AS table_0
+WHERE
+  fname = 'Fred'
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sort"><a class="header" href="#sort">Sort</a></h1>
+<p>Orders rows based on the values of one or more columns.</p>
+<h2 id="parameters-1"><a class="header" href="#parameters-1">Parameters</a></h2>
+<ul>
+<li>One column or a list of columns to sort by</li>
+<li>Each column can be prefixed with:
+<ul>
+<li><code>+</code>, for ascending order, the default</li>
+<li><code>-</code>, for descending order</li>
+</ul>
+</li>
+<li>When using prefixes, even a single column needs to be in a list or
+parentheses. (Otherwise, <code>sort -foo</code> is parsed as a subtraction between <code>sort</code>
+and <code>foo</code>.)</li>
+</ul>
+<h2 id="examples-6"><a class="header" href="#examples-6">Examples</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-39"><a class="header" href="#prql-39">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+sort age
+</code></pre>
+</div>
+<div>
+<h4 id="sql-39"><a class="header" href="#sql-39">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+ORDER BY
+  age
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-40"><a class="header" href="#prql-40">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+sort [-age]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-40"><a class="header" href="#sql-40">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+ORDER BY
+  age DESC
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-41"><a class="header" href="#prql-41">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+sort [age, -tenure, +salary]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-41"><a class="header" href="#sql-41">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+ORDER BY
+  age,
+  tenure DESC,
+  salary
+
+</code></pre>
+</div>
+</div>
+<p>We can also use expressions:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-42"><a class="header" href="#prql-42">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+sort [s"substr({first_name}, 2, 5)"]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-42"><a class="header" href="#sql-42">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  substr(first_name, 2, 5) AS _expr_0
+FROM
+  employees
+ORDER BY
+  _expr_0
+
+</code></pre>
+</div>
+</div>
+<h2 id="notes"><a class="header" href="#notes">Notes</a></h2>
+<h3 id="ordering-guarantees"><a class="header" href="#ordering-guarantees">Ordering guarantees</a></h3>
+<p>Most DBs will persist ordering through most transforms; for example, you can
+expect this result to be ordered by <code>tenure</code>.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-43"><a class="header" href="#prql-43">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+sort tenure
+derive name = f"{first_name} {last_name}"
+</code></pre>
+</div>
+<div>
+<h4 id="sql-43"><a class="header" href="#sql-43">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  CONCAT(first_name, ' ', last_name) AS name
+FROM
+  employees
+ORDER BY
+  tenure
+
+</code></pre>
+</div>
+</div>
+<p>But:</p>
+<ul>
+<li>This is an implementation detail of the DB. If there are instances where this
+doesn’t hold, please open an issue, and we’ll consider how to manage it.</li>
+<li>Some transforms which change the existence of rows, such as <code>join</code> or <code>group</code>,
+won’t persist ordering; for example:</li>
+</ul>
+<div class="comparison">
+<div>
+<h4 id="prql-44"><a class="header" href="#prql-44">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+sort tenure
+join locations [==employee_id]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-44"><a class="header" href="#sql-44">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    *
+  FROM
+    employees
+  ORDER BY
+    tenure
+)
+SELECT
+  table_0.*,
+  locations.*
+FROM
+  table_1 AS table_0
+  JOIN locations ON table_0.employee_id = locations.employee_id
+
+</code></pre>
+</div>
+</div>
+<p>See <a href="https://github.com/PRQL/prql/issues/1363">Issue #1363</a> for more details.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="take"><a class="header" href="#take">Take</a></h1>
+<p>Picks rows based on their position.</p>
+<p>See <a href="transforms/../language-features/ranges.html">Ranges</a> for more details on how ranges
+work.</p>
+<h2 id="examples-7"><a class="header" href="#examples-7">Examples</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-45"><a class="header" href="#prql-45">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+take 10
+</code></pre>
+</div>
+<div>
+<h4 id="sql-45"><a class="header" href="#sql-45">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+LIMIT
+  10
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-46"><a class="header" href="#prql-46">PRQL</a></h4>
+<pre><code class="language-prql">from orders
+sort [-value, created_at]
+take 101..110
+</code></pre>
+</div>
+<div>
+<h4 id="sql-46"><a class="header" href="#sql-46">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  orders
+ORDER BY
+  value DESC,
+  created_at
+LIMIT
+  10 OFFSET 100
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="window"><a class="header" href="#window">Window</a></h1>
+<p>Applies a pipeline to segments of rows, producing one output value for every
+input value.</p>
+<p>For each row, the segment over which the pipeline is applied is determined by
+one of:</p>
+<ul>
+<li><code>rows</code>, which takes a range of rows relative to the current row position.
+<ul>
+<li><code>0</code> references the current row.</li>
+</ul>
+</li>
+<li><code>range</code>, which takes a range of values relative to current row value.</li>
+</ul>
+<p>The bounds of the range are inclusive. If a bound is omitted, the segment will
+extend until the edge of the table or group.</p>
+<!-- TODO: rows vs range example, with visualization -->
+<p>For ease of use, there are two flags that override <code>rows</code> or <code>range</code>:</p>
+<ul>
+<li><code>expanding:true</code> is an alias for <code>rows:..0</code>. A sum using this window is also
+known as “cumulative sum”.</li>
+<li><code>rolling:n</code> is an alias for <code>row:(-n+1)..0</code>, where <code>n</code> is an integer. This
+will include <code>n</code> last values, including current row. An average using this
+window is also knows as a Simple Moving Average.</li>
+</ul>
+<p>Some examples:</p>
+<div class="table-wrapper"><table><thead><tr><th>Expression</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>rows:0..2</code></td><td>current row plus two following</td></tr>
+<tr><td><code>rows:-2..0</code></td><td>two preceding rows plus current row</td></tr>
+<tr><td><code>rolling:3</code></td><td>(same as previous)</td></tr>
+<tr><td><code>rows:-2..4</code></td><td>two preceding rows plus current row plus four following rows</td></tr>
+<tr><td><code>rows:..0</code></td><td>all rows from the start of the table up to &amp; including current row</td></tr>
+<tr><td><code>expanding:true</code></td><td>(same as previous)</td></tr>
+<tr><td><code>rows:0..</code></td><td>current row and all following rows until the end of the table</td></tr>
+<tr><td><code>rows:..</code></td><td>all rows, which same as not having window at all</td></tr>
+</tbody></table>
+</div>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-47"><a class="header" href="#prql-47">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+group employee_id (
+  sort month
+  window rolling:12 (
+    derive [trail_12_m_comp = sum paycheck]
+  )
+)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-47"><a class="header" href="#sql-47">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  SUM(paycheck) OVER (
+    PARTITION BY employee_id
+    ORDER BY
+      month ROWS BETWEEN 11 PRECEDING AND CURRENT ROW
+  ) AS trail_12_m_comp
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-48"><a class="header" href="#prql-48">PRQL</a></h4>
+<pre><code class="language-prql">from orders
+sort day
+window rows:-3..3 (
+  derive [centered_weekly_average = average value]
+)
+group [order_month] (
+  sort day
+  window expanding:true (
+    derive [monthly_running_total = sum value]
+  )
+)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-48"><a class="header" href="#sql-48">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  AVG(value) OVER (
+    ORDER BY
+      day ROWS BETWEEN 3 PRECEDING AND 3 FOLLOWING
+  ) AS centered_weekly_average,
+  SUM(value) OVER (
+    PARTITION BY order_month
+    ORDER BY
+      day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+  ) AS monthly_running_total
+FROM
+  orders
+
+</code></pre>
+</div>
+</div>
+<h2 id="windowing-by-default"><a class="header" href="#windowing-by-default">Windowing by default</a></h2>
+<p>If you use window functions without <code>window</code> transform, they will be applied to
+the whole table. Unlike in SQL, they will remain window functions and will not
+trigger aggregation.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-49"><a class="header" href="#prql-49">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+sort age
+derive rnk = rank
+</code></pre>
+</div>
+<div>
+<h4 id="sql-49"><a class="header" href="#sql-49">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  RANK() OVER (
+    ORDER BY
+      age ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+  ) AS rnk
+FROM
+  employees
+ORDER BY
+  age
+
+</code></pre>
+</div>
+</div>
+<p>You can also only apply <code>group</code>:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-50"><a class="header" href="#prql-50">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+group department (
+  sort age
+  derive rnk = rank
+)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-50"><a class="header" href="#sql-50">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  RANK() OVER (
+    PARTITION BY department
+    ORDER BY
+      age ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+  ) AS rnk
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<h2 id="window-functions-as-first-class-citizens"><a class="header" href="#window-functions-as-first-class-citizens">Window functions as first class citizens</a></h2>
+<p>There is no limitaions where windowed expressions can be used:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-51"><a class="header" href="#prql-51">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+filter salary &lt; (average salary)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-51"><a class="header" href="#sql-51">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    *,
+    AVG(salary) OVER () AS _expr_0
+  FROM
+    employees
+)
+SELECT
+  *
+FROM
+  table_1 AS table_0
+WHERE
+  salary &lt; _expr_0
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="syntax"><a class="header" href="#syntax">Syntax</a></h1>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>A summary of PRQL syntax</p>
+<!-- markdownlint-disable MD033 — the `|` characters need to be escaped, and surrounded with tags rather than backticks   -->
+<!-- I can't seem to get "Quoted identifies" to work without a space between the backticks. VS Code will preview ` `` ` correctly, but not mdbook -->
+<!-- TODO: assigns links to select, aliases to join, potentially we should have explicit sections for them?  -->
+<div class="table-wrapper"><table><thead><tr><th>Syntax</th><th>Usage</th><th>Example</th></tr></thead><tbody>
+<tr><td><code>|</code></td><td><a href="queries/pipelines.html">Pipelines</a></td><td><code>from employees | select first_name</code></td></tr>
+<tr><td><code>=</code></td><td><a href="transforms/select.html">Assigns</a> &amp; <a href="transforms/join.html">Aliases</a></td><td><code>from e = employees</code> <br> <code>derive total = (sum salary)</code></td></tr>
+<tr><td><code>:</code></td><td><a href="queries/functions.html">Named args &amp; Parameters</a></td><td><code>interp low:0 1600 sat_score</code></td></tr>
+<tr><td><code>[]</code></td><td><a href="./syntax.html#lists">Lists</a></td><td><code>select [id, amount]</code></td></tr>
+<tr><td><code>()</code></td><td><a href="./syntax.html#precedence-and-parentheses">Precedence &amp; Parentheses</a></td><td><code>derive celsius = (fahrenheit - 32) / 1.8</code></td></tr>
+<tr><td><code>''</code> &amp; <code>""</code></td><td><a href="language-features/strings.html">Strings</a></td><td><code>derive name = 'Mary'</code></td></tr>
+<tr><td><code>` `</code></td><td><a href="./syntax.html#quoted-identifiers">Quoted identifiers</a></td><td><code>select `first name` </code></td></tr>
+<tr><td><code>#</code></td><td><a href="./syntax.html#comments">Comments</a></td><td><code># A comment</code></td></tr>
+<tr><td><code>@</code></td><td><a href="language-features/dates-and-times.html#dates--times">Dates &amp; Times</a></td><td><code>@2021-01-01</code></td></tr>
+<tr><td><code>==</code></td><td><a href="./syntax.html#expressions">Expressions</a></td><td><code>filter a == b and c != d and e &gt; f</code></td></tr>
+<tr><td><code>==</code></td><td><a href="transforms/join.html#self-equality-operator">Self-equality in <code>join</code></a></td><td><code>join s=salaries [==id]</code></td></tr>
+<tr><td><code>-&gt;</code></td><td><a href="queries/functions.html">Function definitions</a></td><td><code>func add a b -&gt; a + b</code></td></tr>
+<tr><td><code>+</code>/<code>-</code></td><td><a href="transforms/sort.html">Sort order</a></td><td><code>sort [-amount, +date]</code></td></tr>
+<tr><td><code>??</code></td><td><a href="language-features/coalesce.html">Coalesce</a></td><td><code>amount ?? 0</code></td></tr>
+</tbody></table>
+</div><!--
+| `<type>`        | Annotations                                           |  `@2021-01-01<datetime>`                                |
+-->
+<!-- markdownlint-enable MD033 -->
+<h2 id="pipes"><a class="header" href="#pipes">Pipes</a></h2>
+<p>Pipes — the connection between <a href="transforms/README.html">transforms</a> that make up a
+pipeline — can be either line breaks or a pipe character (<code>|</code>).</p>
+<p>In almost all situations, line-breaks pipe the result of a line’s transform into
+the transform on the following line. For example, the <code>filter</code> transform
+operates on the result of <code>from employees</code> (which is just the <code>employees</code>
+table), and the <code>select</code> transform operates on the result of the <code>filter</code>
+transform.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-52"><a class="header" href="#prql-52">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+filter department == "Product"
+select [first_name, last_name]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-52"><a class="header" href="#sql-52">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  first_name,
+  last_name
+FROM
+  employees
+WHERE
+  department = 'Product'
+
+</code></pre>
+</div>
+</div>
+<p>In the place of a line-break, it’s also possible to use the <code>|</code> character to
+pipe results, such that this is equivalent:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-53"><a class="header" href="#prql-53">PRQL</a></h4>
+<pre><code class="language-prql">from employees | filter department == "Product" | select [first_name, last_name]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-53"><a class="header" href="#sql-53">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  first_name,
+  last_name
+FROM
+  employees
+WHERE
+  department = 'Product'
+
+</code></pre>
+</div>
+</div>
+<p>A line-break doesn’t create a pipeline in a couple of cases:</p>
+<ul>
+<li>within a list (e.g. the <code>derive</code> examples below),</li>
+<li>when the following line is a new statement, which starts with a keyword of
+<code>func</code>, <code>table</code> or <code>from</code>.</li>
+</ul>
+<h2 id="lists"><a class="header" href="#lists">Lists</a></h2>
+<p>Lists are represented with <code>[]</code>, and can span multiple lines. A final trailing
+comma is optional.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-54"><a class="header" href="#prql-54">PRQL</a></h4>
+<pre><code class="language-prql">from numbers
+derive [x = 1, y = 2]
+derive [
+  a = x,
+  b = y
+]
+derive [
+  c = a,
+  d = b,
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-54"><a class="header" href="#sql-54">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  1 AS x,
+  2 AS y,
+  1 AS a,
+  2 AS b,
+  1 AS c,
+  2 AS d
+FROM
+  numbers
+
+</code></pre>
+</div>
+</div>
+<p>Most transforms can take either a list or a single item, so these are
+equivalent:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-55"><a class="header" href="#prql-55">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select [first_name]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-55"><a class="header" href="#sql-55">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  first_name
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-56"><a class="header" href="#prql-56">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select first_name
+</code></pre>
+</div>
+<div>
+<h4 id="sql-56"><a class="header" href="#sql-56">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  first_name
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<h2 id="expressions"><a class="header" href="#expressions">Expressions</a></h2>
+<p>PRQL is made up of <em>expressions</em>, like <code>2 + 3</code> or <code>((1 + x) * y)</code>. In the
+example below, note the use of expressions to calculate the alias
+<code>circumference</code> and in the <code>filter</code> transform.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-57"><a class="header" href="#prql-57">PRQL</a></h4>
+<pre><code class="language-prql">from foo
+select [
+  circumference = diameter * 3.14159,
+  color,
+]
+filter circumference &gt; 10 and color != "red"
+</code></pre>
+</div>
+<div>
+<h4 id="sql-57"><a class="header" href="#sql-57">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    diameter * 3.14159 AS circumference,
+    color
+  FROM
+    foo
+)
+SELECT
+  circumference,
+  color
+FROM
+  table_1 AS table_0
+WHERE
+  circumference &gt; 10
+  AND color &lt;&gt; 'red'
+
+</code></pre>
+</div>
+</div>
+<h2 id="precedence-and-parentheses"><a class="header" href="#precedence-and-parentheses">Precedence and Parentheses</a></h2>
+<p>Parentheses — <code>()</code> — are used to give <em>precedence</em> to inner expressions.</p>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="syntax.html#admonition-note"></a>
+</div>
+<div>
+<p>We realize some of the finer points here are not intuitive. We are considering approaches to
+make this more intuitive — even at the cost of requiring more syntax in some
+circumstances. And we’re planning to make the error messages much better,
+so the compiler is there to help out.</p>
+</div>
+</div>
+<p>Parentheses are required around:</p>
+<ul>
+<li>Any nested function call containing a pipe, either the <code>|</code> symbol or a new
+line. “Nested” means within a transform; i.e. not just the main pipeline.</li>
+<li>Any function call that isn’t a single item in a list or a pipeline, like
+<code>sum distance</code> in
+<code>round 0 (sum distance)</code><sup><a name="to-footnote-1"><a href="syntax.html#footnote-1">1</a></a></sup>.</li>
+<li>A minus sign in a function argument, like in <code>add (-1) (-3)</code></li>
+<li><a href="syntax.html#inner-transforms">Inner transforms</a> for <code>group</code>, <code>window</code>, and other
+transforms.</li>
+</ul>
+<p>Parentheses are not required around expressions which use operators but no
+function call, like <code>foo + bar</code>.</p>
+<p>Here’s a full rundown of times this applier:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-58"><a class="header" href="#prql-58">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+# Requires parentheses, because it's contains a pipe
+derive is_proximate = (distance | in 0..20)
+# Requires parentheses, because it's a function call
+derive total_distance = (sum distance)
+# `??` doesn't require parentheses, as it's not a function call
+derive min_capped_distance = (min distance ?? 5)
+# No parentheses needed, because no function call
+derive travel_time = distance / 40
+# No inner parentheses needed around `1+1` because no function call
+derive distance_rounded_2_dp = (round 1+1 distance)
+derive [
+  # Requires parentheses, because it contains a pipe
+  is_far = (distance | in 100..),
+  # The left value of the range requires parentheses,
+  # because of the minus sign
+  is_negative = (distance | in (-100..0)),
+  # ...this is equivalent
+  is_negative = (distance | in (-100)..0),
+  # Doesn't require parentheses, because it's in a list (confusing, see footnote)!
+  average_distance = average distance,
+]
+# Requires parentheses because of the minus sign
+sort (-distance)
+# A list is fine too
+sort [-distance]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-58"><a class="header" href="#sql-58">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  distance BETWEEN 0 AND 20 AS is_proximate,
+  SUM(distance) OVER () AS total_distance,
+  MIN(COALESCE(distance, 5)) OVER () AS min_capped_distance,
+  distance / 40 AS travel_time,
+  ROUND(distance, 2) AS distance_rounded_2_dp,
+  distance &gt;= 100 AS is_far,
+  distance BETWEEN -100 AND 0,
+  distance BETWEEN -100 AND 0 AS is_negative,
+  AVG(distance) OVER () AS average_distance
+FROM
+  employees
+ORDER BY
+  distance DESC
+
+</code></pre>
+</div>
+</div>
+<p>This doesn’t work, for example (though it should provide a much better error
+message):</p>
+<div class="comparison">
+<div>
+<h4 id="prql-59"><a class="header" href="#prql-59">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive total_distance = sum distance
+</code></pre>
+</div>
+<div>
+<h4 id="error"><a class="header" href="#error">Error</a></h4>
+<pre><code>Error:
+   ╭─[:2:29]
+   │
+ 2 │ derive total_distance = sum distance
+   ·                             ────┬───
+   ·                                 ╰───── Unknown name distance
+───╯
+
+</code></pre>
+</div>
+</div>
+<p>For a more formal definition, refer to this precedence table. Because function
+calls have the lowest precedence, nested function calls or arguments that start
+or end with an operator require parenthesis.</p>
+<div class="table-wrapper"><table><thead><tr><th>Group</th><th>Operators</th><th>Precedence</th><th>Associativity</th></tr></thead><tbody>
+<tr><td>identifier dot</td><td><code>.</code></td><td>1</td><td></td></tr>
+<tr><td>unary</td><td><code>- + ! ==</code></td><td>2</td><td></td></tr>
+<tr><td>range</td><td><code>..</code></td><td>3</td><td></td></tr>
+<tr><td>mul</td><td><code>* / %</code></td><td>4</td><td>left-to-right</td></tr>
+<tr><td>add</td><td><code>+ -</code></td><td>5</td><td>left-to-right</td></tr>
+<tr><td>compare</td><td><code>== != &lt;= &gt;= &lt; &gt;</code></td><td>6</td><td>left-to-right</td></tr>
+<tr><td>coalesce</td><td><code>??</code></td><td>7</td><td>left-to-right</td></tr>
+<tr><td>and</td><td><code>and</code></td><td>8</td><td>left-to-right</td></tr>
+<tr><td>or</td><td><code>or</code></td><td>9</td><td>left-to-right</td></tr>
+<tr><td>function call</td><td></td><td>10</td><td></td></tr>
+</tbody></table>
+</div>
+<h2 id="inner-transforms"><a class="header" href="#inner-transforms">Inner Transforms</a></h2>
+<p>Parentheses are also used for transforms (such as <code>group</code> and <code>window</code>) that
+pass their result to an “inner transform”. The example below applies the
+<code>aggregate</code> pipeline to each group of unique <code>title</code> and <code>country</code> values:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-60"><a class="header" href="#prql-60">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+group [title, country] (
+  aggregate [
+    average salary,
+    ct = count
+  ]
+)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-59"><a class="header" href="#sql-59">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  title,
+  country,
+  AVG(salary),
+  COUNT(*) AS ct
+FROM
+  employees
+GROUP BY
+  title,
+  country
+
+</code></pre>
+</div>
+</div>
+<h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
+<p>Comments are represented by <code>#</code>.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-61"><a class="header" href="#prql-61">PRQL</a></h4>
+<pre><code class="language-prql">from employees  # Comment 1
+# Comment 2
+aggregate [average salary]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-60"><a class="header" href="#sql-60">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  AVG(salary)
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>There’s no distinct multiline comment syntax.</p>
+<h2 id="quoted-identifiers"><a class="header" href="#quoted-identifiers">Quoted identifiers</a></h2>
+<p>To use identifiers that are otherwise invalid, surround them with backticks.
+Depending on the dialect, these will remain as backticks or be converted to
+double-quotes.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-62"><a class="header" href="#prql-62">PRQL</a></h4>
+<pre><code class="language-prql">prql target:sql.mysql
+from employees
+select `first name`
+</code></pre>
+</div>
+<div>
+<h4 id="sql-61"><a class="header" href="#sql-61">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  `first name`
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-63"><a class="header" href="#prql-63">PRQL</a></h4>
+<pre><code class="language-prql">prql target:sql.postgres
+from employees
+select `first name`
+</code></pre>
+</div>
+<div>
+<h4 id="sql-62"><a class="header" href="#sql-62">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  "first name"
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-64"><a class="header" href="#prql-64">PRQL</a></h4>
+<pre><code class="language-prql">from `dir/*.parquet`
+</code></pre>
+</div>
+<div>
+<h4 id="sql-63"><a class="header" href="#sql-63">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  "dir/*.parquet"
+
+</code></pre>
+</div>
+</div>
+<p>BigQuery also uses backticks to surround project &amp; dataset names (even if valid
+identifiers) in the <code>SELECT</code> statement:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-65"><a class="header" href="#prql-65">PRQL</a></h4>
+<pre><code class="language-prql">prql target:sql.bigquery
+from `project-foo.dataset.table`
+join `project-bar.dataset.table` [==col_bax]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-64"><a class="header" href="#sql-64">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  `project-foo.dataset.table`.*,
+  `project-bar.dataset.table`.*
+FROM
+  `project-foo.dataset.table`
+  JOIN `project-bar.dataset.table` ON `project-foo.dataset.table`.col_bax = `project-bar.dataset.table`.col_bax
+
+</code></pre>
+</div>
+</div>
+<h3 id="quoting-schemas"><a class="header" href="#quoting-schemas">Quoting schemas</a></h3>
+<pre><code class="language-note admonish">If supplying a schema without a column — for example in a `from` or `join`
+transform, that also needs to be a quoted identifier:
+
+&lt;div class="comparison"&gt;
+
+&lt;div&gt;
+&lt;h4&gt;PRQL&lt;/h4&gt;
+
+```prql
+from `music.albums`
+```
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;h4&gt;SQL&lt;/h4&gt;
+
+```sql
+SELECT
+  *
+FROM
+  music.albums
+
+```
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+## Parameters
+
+PRQL will retain parameters like `$1` in SQL output, which can then be supplied
+to the SQL query as a prepared query:
+
+&lt;div class="comparison"&gt;
+
+&lt;div&gt;
+&lt;h4&gt;PRQL&lt;/h4&gt;
+
+```prql
+from employees
+filter id == $1
+```
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;h4&gt;SQL&lt;/h4&gt;
+
+```sql
+SELECT
+  *
+FROM
+  employees
+WHERE
+  id = $1
+
+```
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+## Numbers
+
+Numbers can contain underscores between numbers; which can make reading large
+numbers easier:
+
+&lt;div class="comparison"&gt;
+
+&lt;div&gt;
+&lt;h4&gt;PRQL&lt;/h4&gt;
+
+```prql
+from numbers
+select [
+    small = 1.000_000_1,
+    big = 5_000_000,
+]
+```
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;h4&gt;SQL&lt;/h4&gt;
+
+```sql
+SELECT
+  1.0000001 AS small,
+  5000000 AS big
+FROM
+  numbers
+
+```
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+## Keywords
+
+At the moment, PRQL uses only four keywords:
+
+* `prql`
+* `let`
+* `func`
+* `case`
+
+To use these names as columns or relations, use backticks: `` `case` ``.
+
+It may seem that transforms are also keywords, but they are normal function
+within std namespace:
+
+&lt;div class="comparison"&gt;
+
+&lt;div&gt;
+&lt;h4&gt;PRQL&lt;/h4&gt;
+
+```prql
+std.from my_table
+std.select [from = my_table.a, take = my_table.b]
+std.take 3
+```
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;h4&gt;SQL&lt;/h4&gt;
+
+```sql
+SELECT
+  a AS "from",
+  b AS take
+FROM
+  my_table
+LIMIT
+  3
+
+```
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;p&gt;&lt;hr/&gt;
+
+
+&lt;a name="footnote-1"&gt;[1](#to-footnote-1)&lt;/a&gt;: or, technically, it’s on the right
+  side of an assignment in a list…</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="language-features"><a class="header" href="#language-features">Language features</a></h1>
+<p>The pages of this section describe how PRQL handles various aspects of the
+language.</p>
+<div class="table-wrapper"><table><thead><tr><th>Feature</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>Coalesce</td><td><a href="language-features/./coalesce.html">Handle potentially NULL values</a></td></tr>
+<tr><td>Dates &amp; times</td><td><a href="language-features/./dates-and-times.html">Handle dates and times</a></td></tr>
+<tr><td>Distinct</td><td><a href="language-features/./distinct.html">Equivalent of SQL <code>DISTINCT</code></a></td></tr>
+<tr><td>Null handling</td><td><a href="language-features/./null.html">Handle <code>NULL</code> values</a></td></tr>
+<tr><td>Ranges</td><td><a href="language-features/./ranges.html">Syntax for all forms of ranges</a></td></tr>
+<tr><td>Regex</td><td><a href="language-features/./regex.html">Handle regular expressions</a></td></tr>
+<tr><td>Strings</td><td><a href="language-features/./strings.html">Rules for creating strings</a></td></tr>
+<tr><td>S-strings</td><td><a href="language-features/./s-strings.html">Insert SQL directly into a query with an S-string</a></td></tr>
+<tr><td>F-strings</td><td><a href="language-features/./f-strings.html">Combine several column’s data with F-strings</a></td></tr>
+<tr><td>Case</td><td><a href="language-features/./case.html">Create a new column based on the contents of other columns</a></td></tr>
+<tr><td>Target &amp; Version</td><td><a href="language-features/./target.html">Specify a target SQL engine and PRQL version</a></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="coalesce"><a class="header" href="#coalesce">Coalesce</a></h1>
+<p>We can coalesce values with an <code>??</code> operator. Coalescing takes either the first
+value or, if that value is null, the second value.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-66"><a class="header" href="#prql-66">PRQL</a></h4>
+<pre><code class="language-prql">from orders
+derive amount ?? 0
+</code></pre>
+</div>
+<div>
+<h4 id="sql-65"><a class="header" href="#sql-65">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  COALESCE(amount, 0)
+FROM
+  orders
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dates--times"><a class="header" href="#dates--times">Dates &amp; times</a></h1>
+<p>PRQL uses <code>@</code> followed by a string to represent dates &amp; times. This is less
+verbose than SQL’s approach of <code>TIMESTAMP '2004-10-19 10:23:54'</code> and more
+explicit than SQL’s implicit option of just using a string
+<code>'2004-10-19 10:23:54'</code>.</p>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="language-features/dates-and-times.html#admonition-note"></a>
+</div>
+<div>
+<p>Currently PRQL passes strings which can be compiled straight through to the
+database, and so many compatible formats string may work, but we may refine this
+in the future to aid in compatibility across databases. We’ll always support the
+canonical <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601</a> format described below.</p>
+</div>
+</div>
+<h2 id="dates"><a class="header" href="#dates">Dates</a></h2>
+<p>Dates are represented by <code>@{yyyy-mm-dd}</code> — a <code>@</code> followed by the date format.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-67"><a class="header" href="#prql-67">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive age_at_year_end = (@2022-12-31 - dob)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-66"><a class="header" href="#sql-66">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  DATE '2022-12-31' - dob AS age_at_year_end
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<h2 id="times"><a class="header" href="#times">Times</a></h2>
+<p>Times are represented by <code>@{HH:mm:ss.SSS±Z}</code> with any parts not supplied being
+rounded to zero, including the timezone, which is represented by <code>+HH:mm</code>,
+<code>-HH:mm</code> or <code>Z</code>. This is consistent with the ISO8601 time format.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-68"><a class="header" href="#prql-68">PRQL</a></h4>
+<pre><code class="language-prql">from orders
+derive should_have_shipped_today = (order_time &lt; @08:30)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-67"><a class="header" href="#sql-67">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  order_time &lt; TIME '08:30' AS should_have_shipped_today
+FROM
+  orders
+
+</code></pre>
+</div>
+</div>
+<h2 id="timestamps"><a class="header" href="#timestamps">Timestamps</a></h2>
+<p>Timestamps are represented by <code>@{yyyy-mm-ddTHH:mm:ss.SSS±Z}</code> / <code>@{date}T{time}</code>,
+with any time parts not supplied being rounded to zero, including the timezone,
+which is represented by <code>+HH:mm</code>, <code>-HH:mm</code> or <code>Z</code> (<code>:</code> is optional). This is <code>@</code>
+followed by the ISO8601 datetime format, which uses <code>T</code> to separate date &amp; time.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-69"><a class="header" href="#prql-69">PRQL</a></h4>
+<pre><code class="language-prql">from commits
+derive first_prql_commit = @2020-01-01T13:19:55-08:00
+</code></pre>
+</div>
+<div>
+<h4 id="sql-68"><a class="header" href="#sql-68">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  TIMESTAMP '2020-01-01T13:19:55-08:00' AS first_prql_commit
+FROM
+  commits
+
+</code></pre>
+</div>
+</div>
+<h2 id="intervals"><a class="header" href="#intervals">Intervals</a></h2>
+<p>Intervals are represented by <code>{N}{periods}</code>, such as <code>2years</code> or <code>10minutes</code>,
+without a space.</p>
+<div id="admonition-note-1" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-1-title">
+<div class="admonition-title">
+<div id="admonition-note-1-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="language-features/dates-and-times.html#admonition-note-1"></a>
+</div>
+<div>
+<p>These aren’t the same as ISO8601, because we evaluated <code>P3Y6M4DT12H30M5S</code> to
+be difficult to understand, but we could support a simplified form if there’s
+demand for it. We don’t currently support compound expressions, for example
+<code>2years10months</code>, but most DBs will allow <code>2years + 10months</code>. Please raise an
+issue if this is inconvenient.</p>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-70"><a class="header" href="#prql-70">PRQL</a></h4>
+<pre><code class="language-prql">from projects
+derive first_check_in = start + 10days
+</code></pre>
+</div>
+<div>
+<h4 id="sql-69"><a class="header" href="#sql-69">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  start + INTERVAL 10 DAY AS first_check_in
+FROM
+  projects
+
+</code></pre>
+</div>
+</div>
+<h2 id="examples-8"><a class="header" href="#examples-8">Examples</a></h2>
+<p>Here’s a fuller list of examples:</p>
+<ul>
+<li><code>@20221231</code> is invalid — it must contain full punctuation (<code>-</code> and <code>:</code>),</li>
+<li><code>@2022-12-31</code> is a date</li>
+<li><code>@2022-12</code> or <code>@2022</code> are invalid — SQL can’t express a month, only a date</li>
+<li><code>@16:54:32.123456</code> is a time</li>
+<li><code>@16:54:32</code>, <code>@16:54</code>, <code>@16</code> are all allowed, expressing <code>@16:54:32.000000</code>,
+<code>@16:54:00.000000</code>, <code>@16:00:00.000000</code> respectively</li>
+<li><code>@2022-12-31T16:54:32.123456</code> is a timestamp without timezone</li>
+<li><code>@2022-12-31T16:54:32.123456Z</code> is a timestamp in UTC</li>
+<li><code>@2022-12-31T16:54+02</code> is timestamp in UTC+2</li>
+<li><code>@2022-12-31T16:54+02:00</code> and <code>@2022-12-31T16:54+02</code> are datetimes in UTC+2</li>
+<li><code>@16:54+02</code> is invalid — time is always local, so it cannot have a timezone</li>
+<li><code>@2022-12-31+02</code> is invalid — date is always local, so it cannot have a
+timezone</li>
+</ul>
+<h2 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h2>
+<h3 id="datetimes"><a class="header" href="#datetimes">Datetimes</a></h3>
+<p>Datetimes are supported by some databases (e.g. MySql, BigQuery) in addition to
+timestamps. When we have type annotations, these will be represented by a
+timestamp annotated as a datetime:</p>
+<p>These are some examples we can then add:</p>
+<ul>
+<li><code>@2022-12-31T16:54&lt;datetime&gt;</code> is datetime without timezone</li>
+<li><code>@2022-12-31&lt;datetime&gt;</code> is forbidden — datetime must specify time</li>
+<li><code>@16:54&lt;datetime&gt;</code> is forbidden — datetime must specify date</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="distinct"><a class="header" href="#distinct">Distinct</a></h1>
+<p>PRQL doesn’t have a specific <code>distinct</code> keyword. Instead, use <code>group</code> and
+<code>take 1</code>:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-71"><a class="header" href="#prql-71">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select department
+group department (
+  take 1
+)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-70"><a class="header" href="#sql-70">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  DISTINCT department
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>This also works without a linebreak:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-72"><a class="header" href="#prql-72">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select department
+group department (take 1)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-71"><a class="header" href="#sql-71">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  DISTINCT department
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<h2 id="selecting-from-each-group"><a class="header" href="#selecting-from-each-group">Selecting from each group</a></h2>
+<p>We are be able to
+<a href="https://stackoverflow.com/questions/3800551/select-first-row-in-each-group-by-group">select a single row from each group</a>
+by combining <code>group</code> and <code>sort</code>:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-73"><a class="header" href="#prql-73">PRQL</a></h4>
+<pre><code class="language-prql"># youngest employee from each department
+from employees
+group department (
+  sort age
+  take 1
+)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-72"><a class="header" href="#sql-72">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    *,
+    ROW_NUMBER() OVER (
+      PARTITION BY department
+      ORDER BY
+        age
+    ) AS _expr_0
+  FROM
+    employees
+)
+SELECT
+  *
+FROM
+  table_1 AS table_0
+WHERE
+  _expr_0 &lt;= 1
+
+</code></pre>
+</div>
+</div>
+<p>Note that we can’t always compile to <code>DISTINCT</code>; when the columns in the <code>group</code>
+aren’t all the available columns, we need to use a window function:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-74"><a class="header" href="#prql-74">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+group [first_name, last_name] (take 1)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-73"><a class="header" href="#sql-73">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    *,
+    ROW_NUMBER() OVER (PARTITION BY first_name, last_name) AS _expr_0
+  FROM
+    employees
+)
+SELECT
+  *
+FROM
+  table_1 AS table_0
+WHERE
+  _expr_0 &lt;= 1
+
+</code></pre>
+</div>
+</div>
+<h2 id="roadmap-1"><a class="header" href="#roadmap-1">Roadmap</a></h2>
+<p>When using Postgres dialect, we are planning to compile:</p>
+<p>… to …</p>
+<pre><code class="language-sql"></code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="null-handling"><a class="header" href="#null-handling">Null handling</a></h1>
+<p>SQL has an unconventional way of handling <code>NULL</code> values, since it treats them as
+unknown values. As a result, in SQL:</p>
+<ul>
+<li><code>NULL</code> is not a value indicating a missing entry, but a placeholder for
+anything possible,</li>
+<li><code>NULL = NULL</code> evaluates to <code>NULL</code>, since one cannot know if one unknown is
+equal to another unknown,</li>
+<li><code>NULL &lt;&gt; NULL</code> evaluates to <code>NULL</code>, using same logic,</li>
+<li>to check if a value is <code>NULL</code>, SQL introduces <code>IS NULL</code> and <code>IS NOT NULL</code>
+operators,</li>
+<li><code>DISTINCT column</code> may return multiple <code>NULL</code> values.</li>
+</ul>
+<p>For more information, check out the
+<a href="https://www.postgresql.org/docs/current/functions-comparison.html">Postgres documentation</a>.</p>
+<p>PRQL, on the other hand, treats <code>null</code> as a value, which means that:</p>
+<ul>
+<li><code>null == null</code> evaluates to <code>true</code>,</li>
+<li><code>null != null</code> evaluates to <code>false</code>,</li>
+<li>distinct column cannot contain multiple <code>null</code> values.</li>
+</ul>
+<div class="comparison">
+<div>
+<h4 id="prql-75"><a class="header" href="#prql-75">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+filter first_name == null
+filter null != last_name
+</code></pre>
+</div>
+<div>
+<h4 id="sql-74"><a class="header" href="#sql-74">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+WHERE
+  first_name IS NULL
+  AND last_name IS NOT NULL
+
+</code></pre>
+</div>
+</div>
+<p>Note that PRQL doesn’t change how <code>NULL</code> is compared between columns, for
+example in joins. (PRQL compiles to SQL and so can’t change the behavior of the
+database).</p>
+<p>For more context or to provide feedback check out the discussion on
+<a href="https://github.com/PRQL/prql/issues/99">issue #99</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ranges"><a class="header" href="#ranges">Ranges</a></h1>
+<p>PRQL has a concise range syntax <code>start..end</code>. If only one of <code>start</code> &amp; <code>end</code> are
+supplied, the range is open on the empty side.</p>
+<p>Ranges can be used in filters with the <code>in</code> function, with any type of literal,
+including dates:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-76"><a class="header" href="#prql-76">PRQL</a></h4>
+<pre><code class="language-prql">from events
+filter (created_at | in @1776-07-04..@1787-09-17)
+filter (magnitude | in 50..100)
+derive is_northern = (latitude | in 0..)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-75"><a class="header" href="#sql-75">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  latitude &gt;= 0 AS is_northern
+FROM
+  events
+WHERE
+  created_at BETWEEN DATE '1776-07-04' AND DATE '1787-09-17'
+  AND magnitude BETWEEN 50 AND 100
+
+</code></pre>
+</div>
+</div>
+<p>Like in SQL, ranges are inclusive.</p>
+<p>As discussed in the <a href="language-features/../transforms/take.html">take</a> docs, ranges can also be used
+in <code>take</code>:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-77"><a class="header" href="#prql-77">PRQL</a></h4>
+<pre><code class="language-prql">from orders
+sort [-value, created_at]
+take 101..110
+</code></pre>
+</div>
+<div>
+<h4 id="sql-76"><a class="header" href="#sql-76">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  orders
+ORDER BY
+  value DESC,
+  created_at
+LIMIT
+  10 OFFSET 100
+
+</code></pre>
+</div>
+</div>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="language-features/ranges.html#admonition-note"></a>
+</div>
+<div>
+<p>Half-open ranges are generally less intuitive to read than a simple <code>&gt;=</code> or <code>&lt;=</code>
+operator.</p>
+</div>
+</div>
+<h2 id="roadmap-2"><a class="header" href="#roadmap-2">Roadmap</a></h2>
+<p>We’d like to use ranges for other types, such as whether an object is in an
+array or list literal.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="regex-expressions"><a class="header" href="#regex-expressions">Regex expressions</a></h1>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="language-features/regex.html#admonition-note"></a>
+</div>
+<div>
+<p>At this time, PRQL does not have a facility for regular expression (<em>regex</em>) processing.
+The <a href="https://github.com/PRQL/prql/milestone/5">Milestone for 0.5</a>
+talks about general plans for regex’s.
+The <a href="https://github.com/PRQL/prql/issues/1123#issuecomment-1354209472">Discussion #1123</a>
+provides a workaround function that emulates <code>%LIKE%</code>.</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="standard-library"><a class="header" href="#standard-library">Standard library</a></h1>
+<p>The standard library currently contains commonly used functions that are used in
+SQL. It’s not yet as broad as we’d like, and we’re very open to expanding it.</p>
+<p>Currently s-strings are an escape-hatch for any function that isn’t in our
+standard library. If we find ourselves using them for something frequently,
+raise an issue and we’ll add it to the stdlib.</p>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="language-features/standard-library/index.html#admonition-note"></a>
+</div>
+<div>
+<p>Currently the stdlib implementation doesn’t support different DB implementations itself;
+those need to be built deeper into the compiler. We’ll resolve this at some point. Until
+then, we’ll only add functions here that are broadly supported by most DBs.</p>
+</div>
+</div>
+<p>Here’s the source of the current
+<a href="https://github.com/PRQL/prql/blob/main/prql-compiler/src/semantic/std.prql">PRQL <code>std</code></a>:</p>
+<p>And a couple of examples:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-78"><a class="header" href="#prql-78">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive [
+  gross_salary = (salary + payroll_tax | as int),
+  gross_salary_rounded = (gross_salary | round 0),
+  time = s"NOW()",  # an s-string, given no `now` function exists in PRQL
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-77"><a class="header" href="#sql-77">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  CAST(salary + payroll_tax AS int) AS gross_salary,
+  ROUND(CAST(salary + payroll_tax AS int), 0) AS gross_salary_rounded,
+  NOW() AS time
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="from-text-1"><a class="header" href="#from-text-1">From text</a></h1>
+<p>It’s often useful to make a small table inline, for example when exploring how a
+database will evaluate an expression, or to have a small lookup table inline.
+This can be quite verbose in SQL.</p>
+<p>PRQL uses <code>from_text</code> for this.</p>
+<p>It accepts a few formats:</p>
+<ul>
+<li><code>format:csv</code> parses CSV (default),</li>
+<li><code>format:json</code> parses either:
+<ul>
+<li>an array of objects each of which represents a row, or</li>
+<li>an object with fields <code>columns</code> &amp; <code>data</code>, where <code>columns</code> take an array of
+column names and <code>data</code> takes an array of arrays.</li>
+</ul>
+</li>
+</ul>
+<div class="comparison">
+<div>
+<h4 id="prql-79"><a class="header" href="#prql-79">PRQL</a></h4>
+<pre><code class="language-prql">from_text """
+a,b,c
+1,2,3
+4,5,6
+"""
+derive [
+    d = b + c,
+    answer = 20 * 2 + 2,
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-78"><a class="header" href="#sql-78">SQL</a></h4>
+<pre><code class="language-sql">WITH table_0 AS (
+  SELECT
+    '1' AS a,
+    '2' AS b,
+    '3' AS c
+  UNION
+  ALL
+  SELECT
+    '4' AS a,
+    '5' AS b,
+    '6' AS c
+)
+SELECT
+  a,
+  b,
+  c,
+  b + c AS d,
+  42 AS answer
+FROM
+  table_0 AS table_1
+
+</code></pre>
+</div>
+</div>
+<p>An example of adding a small lookup table:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-80"><a class="header" href="#prql-80">PRQL</a></h4>
+<pre><code class="language-prql">let temp_format_lookup = from_text format:csv """
+country_code,format
+uk,C
+us,F
+lr,F
+de,C
+"""
+
+from temperatures
+join temp_format_lookup [==country_code]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-79"><a class="header" href="#sql-79">SQL</a></h4>
+<pre><code class="language-sql">WITH table_0 AS (
+  SELECT
+    'uk' AS country_code,
+    'C' AS format
+  UNION
+  ALL
+  SELECT
+    'us' AS country_code,
+    'F' AS format
+  UNION
+  ALL
+  SELECT
+    'lr' AS country_code,
+    'F' AS format
+  UNION
+  ALL
+  SELECT
+    'de' AS country_code,
+    'C' AS format
+),
+temp_format_lookup AS (
+  SELECT
+    country_code,
+    format
+  FROM
+    table_0 AS table_1
+)
+SELECT
+  temperatures.*,
+  temp_format_lookup.country_code,
+  temp_format_lookup.format
+FROM
+  temperatures
+  JOIN temp_format_lookup ON temperatures.country_code = temp_format_lookup.country_code
+
+</code></pre>
+</div>
+</div>
+<p>And JSON:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-81"><a class="header" href="#prql-81">PRQL</a></h4>
+<pre><code class="language-prql">let x = from_text format:json """{
+    "columns": ["a", "b", "c"],
+    "data": [
+        [1, "x", false],
+        [4, "y", null]
+    ]
+}"""
+
+let y = from_text format:json """
+    [
+        {"a": 1, "m": "5"},
+        {"a": 4, "n": "6"}
+    ]
+"""
+
+from x | join y [==a]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-80"><a class="header" href="#sql-80">SQL</a></h4>
+<pre><code class="language-sql">WITH table_0 AS (
+  SELECT
+    1 AS a,
+    'x' AS b,
+    false AS c
+  UNION
+  ALL
+  SELECT
+    4 AS a,
+    'y' AS b,
+    NULL AS c
+),
+x AS (
+  SELECT
+    a,
+    b,
+    c
+  FROM
+    table_0 AS table_1
+),
+table_2 AS (
+  SELECT
+    1 AS a,
+    '5' AS m
+  UNION
+  ALL
+  SELECT
+    4 AS a,
+    NULL AS m
+),
+y AS (
+  SELECT
+    a,
+    m
+  FROM
+    table_2 AS table_3
+)
+SELECT
+  x.a,
+  x.b,
+  x.c,
+  y.a,
+  y.m
+FROM
+  x
+  JOIN y ON x.a = y.a
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="loop"><a class="header" href="#loop">Loop</a></h1>
+<blockquote>
+<p><em>experimental</em></p>
+</blockquote>
+<p>Iteratively applies <code>step</code> function to <code>initial</code> relation until the <code>step</code>
+returns an empty table. Returns a relation that contains rows of initial
+relation and all intermediate relations.</p>
+<p>This behavior could be expressed with following pseudo-code:</p>
+<pre><code class="language-python">## Examples
+
+&lt;div class="comparison"&gt;
+
+&lt;div&gt;
+&lt;h4&gt;PRQL&lt;/h4&gt;
+
+```prql
+from_text format:json '[{"n": 1 }]'
+loop (
+    filter n&lt;4
+    select n = n+1
+)
+
+# returns [1, 2, 3, 4]
+```
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;h4&gt;SQL&lt;/h4&gt;
+
+```sql
+WITH table_0 AS (
+  SELECT
+    1 AS n
+),
+table_4 AS (
+  WITH RECURSIVE loop AS (
+    SELECT
+      n
+    FROM
+      table_0 AS table_1
+    UNION
+    ALL
+    SELECT
+      n + 1
+    FROM
+      loop AS table_2
+    WHERE
+      n &lt; 4
+  )
+  SELECT
+    *
+  FROM
+    loop
+)
+SELECT
+  n
+FROM
+  table_4 AS table_3
+
+```
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title"&gt;
+&lt;div class="admonition-title"&gt;
+&lt;div id="admonition-note-title"&gt;
+
+Note
+
+&lt;/div&gt;
+&lt;a class="admonition-anchor-link" href="#admonition-note"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&gt;
+
+Behavior of WITH RECURSIVE may depend on database configuration (MySQL).
+prql-compiler assumes behavior described by
+[Postgres documentation](https://www.postgresql.org/docs/15/queries-with.html#QUERIES-WITH-RECURSIVE)
+and will not produce correct results for
+[alternative configurations of MySQL](https://dev.mysql.com/doc/refman/8.0/en/with.html#common-table-expressions-recursive).
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="admonition-note-1" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-1-title"&gt;
+&lt;div class="admonition-title"&gt;
+&lt;div id="admonition-note-1-title"&gt;
+
+Note
+
+&lt;/div&gt;
+&lt;a class="admonition-anchor-link" href="#admonition-note-1"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&gt;
+
+Currently, `loop` may produce references to the recursive CTE in sub-queries,
+which is not supported by some database engines (SQLite). For now, we suggest you keep step
+functions simple enough to fit into a single SELECT statement.
+
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="strings"><a class="header" href="#strings">Strings</a></h1>
+<p>Strings in PRQL can use either single or double quotes:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-82"><a class="header" href="#prql-82">PRQL</a></h4>
+<pre><code class="language-prql">from my_table
+select x = "hello world"
+</code></pre>
+</div>
+<div>
+<h4 id="sql-81"><a class="header" href="#sql-81">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  'hello world' AS x
+FROM
+  my_table
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-83"><a class="header" href="#prql-83">PRQL</a></h4>
+<pre><code class="language-prql">from my_table
+select x = 'hello world'
+</code></pre>
+</div>
+<div>
+<h4 id="sql-82"><a class="header" href="#sql-82">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  'hello world' AS x
+FROM
+  my_table
+
+</code></pre>
+</div>
+</div>
+<p>To quote a string containing quotes, either use the “other” type of quote, or
+use 3, 4, 5 or 6 quotes, and close with the same number.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-84"><a class="header" href="#prql-84">PRQL</a></h4>
+<pre><code class="language-prql">from my_table
+select x = '"hello world"'
+</code></pre>
+</div>
+<div>
+<h4 id="sql-83"><a class="header" href="#sql-83">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  '"hello world"' AS x
+FROM
+  my_table
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-85"><a class="header" href="#prql-85">PRQL</a></h4>
+<pre><code class="language-prql">from my_table
+select x = """I said "hello world"!"""
+</code></pre>
+</div>
+<div>
+<h4 id="sql-84"><a class="header" href="#sql-84">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  'I said "hello world"!' AS x
+FROM
+  my_table
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-86"><a class="header" href="#prql-86">PRQL</a></h4>
+<pre><code class="language-prql">from my_table
+select x = """""I said """hello world"""!"""""
+</code></pre>
+</div>
+<div>
+<h4 id="sql-85"><a class="header" href="#sql-85">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  'I said """hello world"""!' AS x
+FROM
+  my_table
+
+</code></pre>
+</div>
+</div>
+<p>Strings can also contain any escape defined by
+<a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-404/">JSON standard</a>.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-87"><a class="header" href="#prql-87">PRQL</a></h4>
+<pre><code class="language-prql">from my_table
+select x = "\t\tline ends here\n \\ "
+</code></pre>
+</div>
+<div>
+<h4 id="sql-86"><a class="header" href="#sql-86">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  '		line ends here
+ \ ' AS x
+FROM
+  my_table
+
+</code></pre>
+</div>
+</div>
+<h2 id="f-strings-and-s-strings"><a class="header" href="#f-strings-and-s-strings">F-Strings and S-Strings</a></h2>
+<p>These special case strings can be used to:</p>
+<p><a href="language-features/./f-strings.html">F-strings</a> - Build up a new string from a set of columns or
+values</p>
+<p><a href="language-features/./s-strings.html">S-strings</a> - Insert SQL statements directly into the query. Use
+when PRQL doesn’t have an equivalent facility.</p>
+<div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
+<div class="admonition-title">
+<div id="admonition-warning-title">
+<p>Warning</p>
+</div>
+<a class="admonition-anchor-link" href="language-features/strings.html#admonition-warning"></a>
+</div>
+<div>
+<p>Currently PRQL allows multiline strings with either a single character or
+multiple character quotes. This may change for strings using a single character
+quote in future versions.</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="s-strings"><a class="header" href="#s-strings">S-strings</a></h1>
+<p>An s-string inserts SQL directly, as an escape hatch when there’s something that
+PRQL doesn’t yet implement. For example, there’s no <code>version()</code> function in SQL
+that returns the Postgres version, so if we want to use that, we use an
+s-string:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-88"><a class="header" href="#prql-88">PRQL</a></h4>
+<pre><code class="language-prql">from my_table
+select db_version = s"version()"
+</code></pre>
+</div>
+<div>
+<h4 id="sql-87"><a class="header" href="#sql-87">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  version() AS db_version
+FROM
+  my_table
+
+</code></pre>
+</div>
+</div>
+<p>Embed a column name in an s-string using braces. For example, PRQL’s standard
+library defines the <code>average</code> function as:</p>
+<p>So this compiles using the function:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-89"><a class="header" href="#prql-89">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+aggregate [average salary]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-88"><a class="header" href="#sql-88">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  AVG(salary)
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>Here’s an example of a more involved use of an s-string:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-90"><a class="header" href="#prql-90">PRQL</a></h4>
+<pre><code class="language-prql">from de=dept_emp
+join s=salaries side:left [
+  (s.emp_no == de.emp_no),
+  s"""({s.from_date}, {s.to_date})
+  OVERLAPS
+  ({de.from_date}, {de.to_date})"""
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-89"><a class="header" href="#sql-89">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  de.*,
+  s.*
+FROM
+  dept_emp AS de
+  LEFT JOIN salaries AS s ON s.emp_no = de.emp_no
+  AND (s.from_date, s.to_date) OVERLAPS (de.from_date, de.to_date)
+
+</code></pre>
+</div>
+</div>
+<p>For those who have used Python, s-strings are similar to Python’s f-strings, but
+the result is SQL code, rather than a string literal. For example, a Python
+f-string of <code>f"average({col})"</code> would produce <code>"average(salary)"</code>, with quotes;
+while in PRQL, <code>s"average({col})"</code> produces <code>average(salary)</code>, without quotes.</p>
+<p>Note that interpolations can only contain plain variable names and not whole
+expression like Python.</p>
+<p>We can also use s-strings to produce a full table:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-91"><a class="header" href="#prql-91">PRQL</a></h4>
+<pre><code class="language-prql">from s"SELECT DISTINCT ON first_name, id, age FROM employees ORDER BY age ASC"
+join s = s"SELECT * FROM salaries" [==id]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-90"><a class="header" href="#sql-90">SQL</a></h4>
+<pre><code class="language-sql">WITH table_0 AS (
+  SELECT
+    DISTINCT ON first_name,
+    id,
+    age
+  FROM
+    employees
+  ORDER BY
+    age ASC
+),
+table_1 AS (
+  SELECT
+    *
+  FROM
+    salaries
+)
+SELECT
+  table_2.*,
+  table_3.*
+FROM
+  table_0 AS table_2
+  JOIN table_1 AS table_3 ON table_2.id = table_3.id
+
+</code></pre>
+</div>
+</div>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="language-features/s-strings.html#admonition-note"></a>
+</div>
+<div>
+<p>S-strings in user code are intended as an escape-hatch for an unimplemented
+feature. If we often need s-strings to express something, that’s a sign we
+should implement it in PRQL or PRQL’s stdlib.</p>
+</div>
+</div>
+<h2 id="braces"><a class="header" href="#braces">Braces</a></h2>
+<p>To output braces from an s-string, use double braces:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-92"><a class="header" href="#prql-92">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive [
+  has_valid_title = s"regexp_contains(title, '([a-z0-9]*-){{2,}}')"
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-91"><a class="header" href="#sql-91">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  regexp_contains(title, '([a-z0-9]*-){2,}') AS has_valid_title
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<h2 id="precedence"><a class="header" href="#precedence">Precedence</a></h2>
+<p>The PRQL compiler simply places a literal copy of each variable into the
+resulting string, which means we may get surprising behavior when the variable
+is has multiple terms and the s-string isn’t parenthesized.</p>
+<p>In this toy example, the <code>salary + benefits / 365</code> gets precedence wrong:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-93"><a class="header" href="#prql-93">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive [
+  gross_salary = salary + benefits,
+  daily_rate = s"{gross_salary} / 365"
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-92"><a class="header" href="#sql-92">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  salary + benefits AS gross_salary,
+  salary + benefits / 365 AS daily_rate
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>Instead, put the denominator <code>{gross_salary}</code> in parentheses:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-94"><a class="header" href="#prql-94">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive [
+  gross_salary = salary + benefits,
+  daily_rate = s"({gross_salary}) / 365"
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-93"><a class="header" href="#sql-93">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  salary + benefits AS gross_salary,
+  (salary + benefits) / 365 AS daily_rate
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="f-strings"><a class="header" href="#f-strings">F-strings</a></h1>
+<p>F-strings are a readable approach to building new strings from existing strings.
+Currently PRQL supports this for concatenating strings:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-95"><a class="header" href="#prql-95">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select full_name = f"{first_name} {last_name}"
+</code></pre>
+</div>
+<div>
+<h4 id="sql-94"><a class="header" href="#sql-94">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  CONCAT(first_name, ' ', last_name) AS full_name
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>This can be much easier to read for longer strings, relative to the SQL
+approach:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-96"><a class="header" href="#prql-96">PRQL</a></h4>
+<pre><code class="language-prql">from web
+select url = f"http{tls}://www.{domain}.{tld}/{page}"
+</code></pre>
+</div>
+<div>
+<h4 id="sql-95"><a class="header" href="#sql-95">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  CONCAT(
+    'http',
+    tls,
+    '://www.',
+    domain,
+    '.',
+    tld,
+    '/',
+    page
+  ) AS url
+FROM
+  web
+
+</code></pre>
+</div>
+</div>
+<p>Note that interpolations can only contain plain variable names and not whole
+expression like Python.</p>
+<h2 id="roadmap-3"><a class="header" href="#roadmap-3">Roadmap</a></h2>
+<p>In the future, f-strings may incorporate string formatting such as datetimes,
+numbers, and padding. If there’s a feature that would be helpful, please
+<a href="https://github.com/PRQL/prql/issues/new/">post an issue</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="case"><a class="header" href="#case">Case</a></h1>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="language-features/case.html#admonition-note"></a>
+</div>
+<div>
+<p><code>case</code> is currently experimental and may change behavior in the near future</p>
+</div>
+</div>
+<p>PRQL uses <code>case</code> for both SQL’s <code>CASE</code> and <code>IF</code> statements. Here’s an example:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-97"><a class="header" href="#prql-97">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive distance = case [
+  city == "Calgary" =&gt; 0,
+  city == "Edmonton" =&gt; 300,
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-96"><a class="header" href="#sql-96">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  CASE
+    WHEN city = 'Calgary' THEN 0
+    WHEN city = 'Edmonton' THEN 300
+    ELSE NULL
+  END AS distance
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>If no condition is met, the value takes a <code>null</code> value. To set a default, use a
+<code>true</code> condition:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-98"><a class="header" href="#prql-98">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive distance = case [
+  city == "Calgary" =&gt; 0,
+  city == "Edmonton" =&gt; 300,
+  true =&gt; "Unknown",
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-97"><a class="header" href="#sql-97">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  CASE
+    WHEN city = 'Calgary' THEN 0
+    WHEN city = 'Edmonton' THEN 300
+    ELSE 'Unknown'
+  END AS distance
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="target--version"><a class="header" href="#target--version">Target &amp; Version</a></h1>
+<h2 id="target-dialect"><a class="header" href="#target-dialect">Target dialect</a></h2>
+<p>PRQL allows specifying a target dialect at the top of the query, which allows
+PRQL to compile to a database-specific SQL flavor.</p>
+<h3 id="examples-9"><a class="header" href="#examples-9">Examples</a></h3>
+<div class="comparison">
+<div>
+<h4 id="prql-99"><a class="header" href="#prql-99">PRQL</a></h4>
+<pre><code class="language-prql">prql target:sql.postgres
+
+from employees
+sort age
+take 10
+</code></pre>
+</div>
+<div>
+<h4 id="sql-98"><a class="header" href="#sql-98">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+ORDER BY
+  age
+LIMIT
+  10
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-100"><a class="header" href="#prql-100">PRQL</a></h4>
+<pre><code class="language-prql">prql target:sql.mssql
+
+from employees
+sort age
+take 10
+</code></pre>
+</div>
+<div>
+<h4 id="sql-99"><a class="header" href="#sql-99">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  TOP (10) *
+FROM
+  employees
+ORDER BY
+  age
+
+</code></pre>
+</div>
+</div>
+<h3 id="supported-dialects"><a class="header" href="#supported-dialects">Supported dialects</a></h3>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="language-features/target.html#admonition-note"></a>
+</div>
+<div>
+<p>Note that dialect support is early — most differences are not implemented, and
+most dialects’ implementations are identical to <code>generic</code>’s. Contributions are
+very welcome.</p>
+</div>
+</div>
+<ul>
+<li><code>sql.ansi</code></li>
+<li><code>sql.bigquery</code></li>
+<li><code>sql.clickhouse</code></li>
+<li><code>sql.generic</code></li>
+<li><code>sql.hive</code></li>
+<li><code>sql.mssql</code></li>
+<li><code>sql.mysql</code></li>
+<li><code>sql.postgres</code></li>
+<li><code>sql.sqlite</code></li>
+<li><code>sql.snowflake</code></li>
+<li><code>sql.duckdb</code></li>
+</ul>
+<h2 id="version"><a class="header" href="#version">Version</a></h2>
+<p>PRQL allows specifying a version of the language in the PRQL header, like:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-101"><a class="header" href="#prql-101">PRQL</a></h4>
+<pre><code class="language-prql">prql version:"0.6.1"
+
+from employees
+</code></pre>
+</div>
+<div>
+<h4 id="sql-100"><a class="header" href="#sql-100">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>This has two roles, one of which is implemented:</p>
+<ul>
+<li>The compiler will raise an error if the compiler is older than the query
+version. This prevents confusing errors when queries use newer features of the
+language but the compiler hasn’t yet been upgraded.</li>
+<li>The compiler will compile for the major version of the query. This allows the
+language to evolve without breaking existing queries, or forcing multiple
+installations of the compiler. This isn’t yet implemented, but is a gating
+feature for PRQL 1.0.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bindings"><a class="header" href="#bindings">Bindings</a></h1>
+<p>PRQL has bindings for many languages. These include:</p>
+<p>We have three tiers of bindings:</p>
+<ul>
+<li>Supported</li>
+<li>Unsupported</li>
+<li>Nascent</li>
+</ul>
+<h2 id="supported"><a class="header" href="#supported">Supported</a></h2>
+<p>Supported bindings require:</p>
+<ul>
+<li>
+<p>A maintainer.</p>
+</li>
+<li>
+<p>Implementations of the
+<a href="https://docs.rs/prql-compiler/latest/prql_compiler/#functions">core compile functions</a>.</p>
+</li>
+<li>
+<p>Test coverage for these functions.</p>
+</li>
+<li>
+<p>A published package to the language’s standard package repository.</p>
+</li>
+<li>
+<p>A script in <code>Taskfile.yml</code> to bootstrap a development environment.</p>
+</li>
+<li>
+<p>Any dev tools, such as a linter &amp; formatter, in pre-commit or MegaLinter.</p>
+</li>
+<li>
+<p><a href="bindings/./javascript.html">JavaScript</a></p>
+</li>
+<li>
+<p><a href="bindings/./python.html">Python</a></p>
+</li>
+<li>
+<p><a href="bindings/./r.html">R</a></p>
+</li>
+<li>
+<p><a href="bindings/./rust.html">Rust</a></p>
+</li>
+</ul>
+<p>Most of these are in the main PRQL repo, and we gate any changes to the
+compiler’s API on compatible changes to the bindings.</p>
+<h2 id="unsupported"><a class="header" href="#unsupported">Unsupported</a></h2>
+<p>Unsupported bindings work, but don’t fulfil all of the above criteria. We don’t
+gate changes to the compiler’s API. If they stop working, we’ll demote them to
+nascent.</p>
+<ul>
+<li><a href="bindings/./java.html">Java</a></li>
+<li><a href="bindings/./elixir.html">Elixir</a></li>
+<li><code>prql-lib</code>, the C bindings</li>
+</ul>
+<h2 id="nascent"><a class="header" href="#nascent">Nascent</a></h2>
+<p>Nascent bindings are in development, and may not yet fully work.</p>
+<ul>
+<li><a href="bindings/./net.html">.NET</a></li>
+<li><a href="bindings/./php.html">PHP</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="prql-102"><a class="header" href="#prql-102">PRQL</a></h1>
+<p><a href="https://prql-lang.org/">PRQL</a> bindings for Elixir.</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<pre><code class="language-elixir">## Basic Usage
+
+````elixir
+## Development
+
+We are in the early stages of developing Elixir bindings.
+
+We’re using `Rustler` to provide Rust bindings for `prql-compiler`.
+
+Currently using the bindings in an Elixir project requires compiling the Rust
+crate from this repo:
+
+* Install dependencies with `mix deps.get`
+* Compile project `mix compile`
+* Run tests `mix test`
+
+Future work includes publishing pre-compiled artifacts, so Elixir projects can
+run PRQL without needing a Rust toolchain.
+
+## Mac
+
+We currently don’t enable compilation for Mac. This is possible to enable, but
+causes some issues with cargo’s compilation cache. Briefly: it requires
+`RUST_FLAGS` to be set, and because of
+&lt;https://github.com/rust-lang/cargo/issues/8716&gt; &amp;
+&lt;https://github.com/rust-lang/cargo/issues/8899&gt;, any compilation of a different
+target will bust the cache.
+
+The possible future workarounds include:
+
+* Passing `--target=aarch64-apple-darwin` to every cargo call, which is
+  inconvenient and can be difficult in some situations; e.g. Rust Analyzer. This
+  disables passing `RUST_FLAGS` (I’m actually unclear why `prql-elixir` builds
+  successfully in that case…)
+* Directing other cargo calls to different paths, such as `/target-ra` for Rust
+  Analyzer and `/target-book` for the book building. But one `cargo build` from
+  the terminal without either the `target` or `target_dir` specified will bust
+  the cache!
+* Never compiling for other targets. But our standard tests run for
+  `--target=wasm32-unknown-unknown`, so this requires refraining from using
+  them.
+* Removing `prql-elixir` from our workspace, so that `cargo` commands in the
+  PRQL workspace don’t require rust flags. This would work well, but means we
+  need separate test coverage for this crate, which adds some weight to the
+  tests.
+
+If `prql-elixir` becomes more used (for example, we start publishing to Hex, or
+Mac developers want to work on it), then we can re-enable and deal with the
+caching issues. We can also re-enable them if the `cargo` issue is resolved.
+
+To test on Mac temporarily — for example if there’s an error in GHA and we’re on
+a Mac locally — apply a diff like this, and then run `cargo build` from the
+`prql-elixir` path, which will enable the local
+[`.cargo/config.toml`](native/prql/.cargo/config.toml)). (We could also make a
+feature like `elixir-mac` which enabled building on Mac).
+
+````diff
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="java-prql-java"><a class="header" href="#java-prql-java">Java (prql-java)</a></h1>
+<p><code>prql-java</code> offers Rust bindings to the <code>prql-compiler</code> Rust library. It exposes
+a Java native method <code>public static native String toSql(String query)</code>.</p>
+<h2 id="installation-1"><a class="header" href="#installation-1">Installation</a></h2>
+<pre><code class="language-xml">## Usage
+
+````java
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="prql-js"><a class="header" href="#prql-js">prql-js</a></h1>
+<p>JavaScript bindings for <a href="https://github.com/PRQL/prql/"><code>prql-compiler</code></a>.</p>
+<h2 id="installation-2"><a class="header" href="#installation-2">Installation</a></h2>
+<pre><code class="language-sh">## Usage
+
+Currently these functions are exposed
+
+````typescript
+### From Node.js
+
+Direct usage
+
+````javascript
+Options
+
+````javascript
+Template literal
+
+````javascript
+Template literal with newlines
+
+````javascript
+### From a browser
+
+````html
+### From a framework or a bundler
+
+````typescript
+## Errors
+
+Errors are returned as following object, serialized as a JSON array:
+
+````typescript
+These errors can be caught as such:
+
+````javascript
+## Development
+
+Build:
+
+````sh
+This builds Node, bundler and web packages in the `dist` path.
+
+Test:
+
+````sh
+## Notes
+
+* This uses [`wasm-pack`](https://rustwasm.github.io/docs/wasm-pack/) to
+  generate bindings[^1].
+* We’ve added an `npm` layer on top of the usual approach of just using
+  `wasm-pack`, so we can distribute a single package with targets of `node`,
+  `bundler` and `no-modules` — somewhat inverting the approach recommended by
+  `wasm-pack`. The build instruction goes in a `build` script, rather than a
+  `pack` script.
+
+[^1]: ````
+Though we would be very open to other approaches, given wasm-pack does not
+seem maintained, and we're eliding many of its features to build for three
+targets. See &lt;https://github.com/PRQL/prql/issues/1836&gt; for more details.
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="python-prql-python"><a class="header" href="#python-prql-python">Python (prql-python)</a></h1>
+<h2 id="installation-3"><a class="header" href="#installation-3">Installation</a></h2>
+<p><code>pip install prql-python</code></p>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<pre><code class="language-python"></code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="r-prqlr"><a class="header" href="#r-prqlr">R (prqlr)</a></h1>
+<p>R bindings for <a href="https://github.com/PRQL/prql/"><code>prql-compiler</code></a>. Check out
+<a href="https://eitsupi.github.io/prqlr/">https://eitsupi.github.io/prqlr/</a> for more context.</p>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="bindings/r.html#admonition-note"></a>
+</div>
+<div>
+<p><code>prqlr</code> is generously maintained by <a href="https://github.com/eitsupi">@eitsupi</a> in the
+<a href="https://github.com/eitsupi/prqlr">eitsupi/prqlr</a> repo.</p>
+</div>
+</div>
+<h2 id="installation-4"><a class="header" href="#installation-4">Installation</a></h2>
+<pre><code class="language-r">## Usage
+
+````r
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="prql-compiler"><a class="header" href="#prql-compiler">PRQL compiler</a></h1>
+<p><code>prql-compiler</code> contains the implementation of PRQL’s compiler, written in Rust.</p>
+<p>For more on PRQL, check out the <a href="https://prql-lang.org">PRQL website</a> or the
+<a href="https://github.com/PRQL/prql">PRQL repo</a>.</p>
+<p>For more usage examples and the library documentation, check out the
+<a href="https://docs.rs/prql-compiler/latest/prql_compiler/"><code>prql-compiler</code> documentation</a>.</p>
+<h2 id="installation-5"><a class="header" href="#installation-5">Installation</a></h2>
+<pre><code class="language-shell">## Examples
+
+Compile a PRQL string to a SQLite dialect string.
+
+**src/main.rs**
+
+````rust
+## Terminology
+
+[*Relation*](https://en.wikipedia.org/wiki/Relation_(database)): Standard
+definition of a relation in context of databases:
+
+* An ordered set of tuples of form `(d_0, d_1, d_2, ...)`.
+* Set of all `d_x` is called an attribute or a column. It has a name and a type
+  domain `D_x`.
+
+*Frame*: descriptor of a relation. Contains list of columns (with names and
+types). Does not contain data.
+
+[*Table*](https://en.wikipedia.org/wiki/Table_(database)#Tables_versus_relations):
+persistently stored relation. Some uses of this term actually mean to say
+“relation”.</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="integrations"><a class="header" href="#integrations">Integrations</a></h1>
+<p>PRQL is building integrations with lots of external tools, including:</p>
+<ul>
+<li><a href="integrations/./dbt.html">dbt</a></li>
+<li><a href="integrations/./jupyter.html">Jupyter</a></li>
+<li><a href="integrations/./prefect.html">Prefect</a></li>
+<li><a href="integrations/./vscode.html">VS Code</a></li>
+<li><a href="integrations/./rill.html">Rill</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dbt-prql"><a class="header" href="#dbt-prql">dbt-prql</a></h1>
+<blockquote>
+<p>Original docs at <a href="https://github.com/prql/dbt-prql">https://github.com/prql/dbt-prql</a></p>
+</blockquote>
+<pre><code class="language-note admonish">dbt-prql allows writing PRQL in [dbt](https://www.getdbt.com/) models. This
+combines the benefits of PRQL’s power &amp; simplicity *within* queries, with dbt’s
+version control, lineage &amp; testing *across* queries.
+
+Once `dbt-prql` in installed, dbt commands compile PRQL between `{% prql %}` &amp;
+`{% endprql %}` Jinja tags to SQL as part of dbt’s compilation. No additional
+config is required.
+
+## Examples
+
+### Simple example
+
+````elm
+…would appear to dbt as:
+
+````sql
+### Less simple example
+
+````elm
+…would appear to dbt as:
+
+````sql
+…and then dbt will compile the `source` and `ref`s to a full SQL query.
+
+### Replacing macros
+
+dbt’s use of macros has saved many of us many lines of code, and even saved some
+people some time. But imperatively programming text generation with code like
+`if not loop.last` is not our highest calling. It’s the “necessary” part rather
+than beautiful part of dbt.
+
+Here’s the canonical example of macros in the
+[dbt documentation](https://docs.getdbt.com/docs/build/jinja-macros):
+
+````sql
+Here’s that model using PRQL[^1], including the prql Jinja tags.
+
+````elm
+As well the query being simpler in its final form, writing in PRQL also gives us
+live feedback around any errors, on every keystroke. Though there’s much more to
+come, check out the current version on
+[PRQL Playground](https://prql-lang.org/playground/).
+
+[^1]: ````
+Note that when &lt;https://github.com/prql/prql/issues/82&gt; is implemented, we
+can dispense with the s-string, and optionally dispense with the function.
+
+```elm
+from {{ ref('raw_payments') }}
+group order_id (
+  aggregate [
+    bank_transfer_amount = amount | filter payment_method == 'bank'        | sum,
+    credit_card_amount = amount   | filter payment_method == 'credit_card' | sum,
+    gift_amount = amount          | filter payment_method == 'gift_card'   | sum,
+  ]
+)
+```
+
+or
+
+```elm
+func filter_amount method -&gt; amount | filter payment_method == method | sum
+
+from {{ ref('raw_payments') }}
+group order_id (
+  aggregate [
+    bank_transfer_amount = filter_amount 'bank'
+    credit_card_amount   = filter_amount 'credit_card'
+    gift_amount          = filter_amount 'gift_card'
+  ]
+)
+```
+</code></pre>
+<h2 id="what-it-does"><a class="header" href="#what-it-does">What it does</a></h2>
+<p>When dbt compiles models to SQL queries:</p>
+<ul>
+<li>Any text in a dbt model between <code>{% prql %}</code> and <code>{% endprql %}</code> tags is
+compiled from PRQL to SQL before being passed to dbt.</li>
+<li>The PRQL compiler passes text that’s containing <code>{{</code> &amp; <code>}}</code> through to dbt
+without modification, which allows us to embed Jinja expressions in PRQL.
+(This was added to PRQL specifically for this use-case.)</li>
+<li>dbt will then compile the resulting model into its final form of raw SQL, and
+dispatch it to the database, as per usual.</li>
+</ul>
+<p>There’s no config needed in the dbt project; this works automatically on any dbt
+command (e.g. <code>dbt run</code>) assuming <code>dbt-prql</code> is installed.</p>
+<h2 id="installation-6"><a class="header" href="#installation-6">Installation</a></h2>
+<pre><code class="language-sh">## Current state
+
+Currently this is new, but fairly feature-complete. It’s enthusiastically
+supported — if there are any problems, please open an issue.
+
+## How does it work?
+
+It’s some dark magic, unfortunately.
+
+dbt doesn’t allow adding behavior beyond the database adapters (e.g.
+`dbt-bigquery`) or Jinja-only plugins (e.g. `dbt-utils`). So this library hacks
+the Python import system to monkeypatch dbt’s Jinja environment with an
+additional Jinja extension on Python’s startup[^2].
+
+[^2]: ````
+Thanks to
+[mtkennerly/poetry-dynamic-versioning](https://github.com/mtkennerly/poetry-dynamic-versioning)
+for the technique.
+</code></pre>
+<p>This approach was discussed with the dbt team
+<a href="https://github.com/prql/prql/issues/375">here</a> and
+<a href="https://github.com/prql/prql/issues/13">here</a>.</p>
+<p>This isn’t stable between dbt versions, since it relies on internal dbt APIs.
+The technique is also normatively bad — it runs a few lines of code every time
+the Python interpreter starts — whose errors could lead to very confusing bugs
+beyond the domain of the problem (though in the case of this library, it’s small
+and well-constructed™).</p>
+<p>If there’s ever any concern that the library might be causing a problem, just
+set an environment variable <code>DBT_PRQL_DISABLE=1</code>, and this library won’t
+monkeypatch anything. It’s also fully uninstallable with
+<code>pip uninstall dbt-prql</code>.</p>
+<h2 id="roadmap-4"><a class="header" href="#roadmap-4">Roadmap</a></h2>
+<p>Open to ideas; at the moment it’s fairly feature-complete. If we were
+unconstrained in dbt functionality:</p>
+<ul>
+<li>If dbt allowed for external plugins, we’d enthusiastically move to that.</li>
+<li>We’d love to have this work on <code>.prql</code> files without the <code>{% prql %}</code> tags;
+but with the current approach that would require quite invasive
+monkeypatching.</li>
+<li>If we could add the dialect in automatically (i.e. <code>prql dialect:snowflake</code>),
+that would save a line per model.</li>
+<li>If we could upstream this into dbt-core, that would be awesome. It may be on
+PRQL to demonstrate its staying power before that, though.</li>
+</ul>
+<p>We may move this library to the <a href="https://github.com/prql/PyPrql">https://github.com/prql/PyPrql</a> or
+<a href="https://github.com/prql/prql">https://github.com/prql/prql</a> repos. We’d prefer to keep it as its own package
+given the hackery above, but there’s no need for it to be its own repo.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jupyter"><a class="header" href="#jupyter">Jupyter</a></h1>
+<blockquote>
+<p>Original docs at <a href="https://pyprql.readthedocs.io/en/latest/magic_readme.html">https://pyprql.readthedocs.io/en/latest/magic_readme.html</a></p>
+</blockquote>
+<p>Work with pandas and PRQL in an IPython terminal or Jupyter notebook.</p>
+<h2 id="implementation"><a class="header" href="#implementation">Implementation</a></h2>
+<p>This is a thin wrapper around the fantastic <a href="https://github.com/catherinedevlin/ipython-sql">IPython-sql</a> magic. Roughly
+speaking, all we do is parse PRQL to SQL and pass that through to <code>ipython-sql</code>.
+A full documentation of the supported features is available at their
+<a href="https://github.com/catherinedevlin/ipython-sql">repository</a>. Here, we document those places where we differ from them,
+plus those features we think you are mostly likely to find useful.</p>
+<h2 id="usage-1"><a class="header" href="#usage-1">Usage</a></h2>
+<h3 id="installation-7"><a class="header" href="#installation-7">Installation</a></h3>
+<p>If you have already installed PyPRQL into your environment, then you should be
+could to go! We bundle in <code>IPython</code> and <code>pandas</code>, though you’ll need to install
+<code>Jupyter</code> separately. If you haven’t installed PyPRQL, that’s as simple as:</p>
+<pre><code class="language-shell">### Set up
+
+Open up either an `IPython` terminal or `Jupyter` notebook. First, we need to
+load the extension and connect to a database.
+
+````python
+#### Connecting a database
+
+We have two options for connecting a database
+
+1. Create an in-memory DB. This is the easiest way to get started.
+   
+   ````python
+   However, in-memory databases start off empty! So, we need to add some data.
+   We have a two options:
+   
+   * We can easily add a [pandas](https://pandas.pydata.org) dataframe to the `DuckDB` database
+     like so:
+     
+     ````python
+     where `df` is a pandas dataframe. This adds a table named `df` to the
+     in-memory `DuckDB` instance.
+   
+   * Or download a CSV and query it directly, with DuckDB:
+     
+     ````python
+     …and then `from products.csv` will work.
+
+1. Connect to an existing database
+   
+   When connecting to a database, pass the connection string as an argument to
+   the line magic `%prql`. The connection string needs to be in [SQLAlchemy
+   format](https://docs.sqlalchemy.org/en/14/core/engines.html#database-urls), so any connection supported by `SQLAlchemy` is supported
+   by the magic. Additional connection parameters can be passed as a dictionary
+   using the `--connection_arguments` flag to the the `%prql` line magic. We
+   ship with the necessary extensions to use [DuckDB](https://duckdb.org) as the backend,
+   and here connect to an in-memory database.
+
+### Querying
+
+Now, let’s do a query! By default, `PRQLMagic` always returns the results as
+dataframe, and always prints the results. The results of the previous query are
+accessible in the `_` variable.
+
+These examples are based on the `products.csv` example above.
+
+````python
+
+````python
+We can capture the results into a different variable like so:
+
+````python
+Now, the output of the query is saved to `results`.</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="prefect"><a class="header" href="#prefect">Prefect</a></h1>
+<p>Because Prefect is in native Python, it’s extremely easy to integrate with PRQL.</p>
+<p>With a Postgres Task, replace:</p>
+<pre><code class="language-python">…with…
+
+````python
+We’re big fans of Prefect, and if there is anything that would make the
+integration easier, please open an issue.</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="visual-studio-code-extension"><a class="header" href="#visual-studio-code-extension">Visual Studio Code extension</a></h1>
+<p>PRQL has a Visual Studio Code extension that compiles a PRQL query in a VS Code
+editor and displays the resulting SQL code in a second pane on the side. This is
+very handy for editing, saving, and reusing PRQL queries in VS Code.</p>
+<p>To install the VS Code extension, open VS Code and type Ctl-Shift-P (Cmd-Shift-P
+on a Mac) and type <code>PRQL</code>. Install the extension as usual.</p>
+<p><a href="https://github.com/PRQL/prql-vscode">Repo for the PRQL VS Code extension</a></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=PRQL-lang.prql-vscode">Extension on VS Marketplace</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rill"><a class="header" href="#rill">Rill</a></h1>
+<p>PRQL has had some work to integrate with Rill. See the
+<a href="https://github.com/PRQL/prql/issues?q=is%3Aissue+rill">Rill ssues</a> for more
+details.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="examples-10"><a class="header" href="#examples-10">Examples</a></h1>
+<p>These examples are rewritten from other languages such as SQL. They try to
+express real-world problems in PRQL, covering most of the language features. We
+are looking for different use-cases of data transformation, be it database
+queries, semantic business modeling or data cleaning.</p>
+<ul>
+<li><a href="examples/./variables.html">Variables</a></li>
+<li><a href="examples/./list-equivalence.html">List equivalence</a></li>
+<li><a href="examples/./cte.html">CTE (intermediate tables)</a></li>
+<li><a href="examples/./employees.html">Employees</a></li>
+</ul>
+<p>If you want to help, translate some of your queries to PRQL and
+<a href="https://github.com/PRQL/prql/pulls">open a PR</a> to add them here!</p>
+<!-- TODO: toc -->
+<div style="break-before: page; page-break-before: always;"></div><div class="comparison">
+<div>
+<h4 id="prql-103"><a class="header" href="#prql-103">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+filter country == "USA"                       # Each line transforms the previous result.
+derive [                                     # This adds columns / variables.
+  gross_salary = salary + payroll_tax,
+  gross_cost = gross_salary + benefits_cost  # Variables can use other variables.
+]
+filter gross_cost &gt; 0
+group [title, country] (                     # For each group use a nested pipeline
+  aggregate [                                # Aggregate each group to a single row
+    average salary,
+    average gross_salary,
+    sum salary,
+    sum gross_salary,
+    average gross_cost,
+    sum_gross_cost = sum gross_cost,
+    ct = count,
+  ]
+)
+sort sum_gross_cost
+filter ct &gt; 200
+take 20
+</code></pre>
+</div>
+<div>
+<h4 id="sql-101"><a class="header" href="#sql-101">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    title,
+    country,
+    salary + payroll_tax + benefits_cost AS _expr_0,
+    salary + payroll_tax AS _expr_1,
+    salary
+  FROM
+    employees
+  WHERE
+    country = 'USA'
+)
+SELECT
+  title,
+  country,
+  AVG(salary),
+  AVG(_expr_1),
+  SUM(salary),
+  SUM(_expr_1),
+  AVG(_expr_0),
+  SUM(_expr_0) AS sum_gross_cost,
+  COUNT(*) AS ct
+FROM
+  table_1 AS table_0
+WHERE
+  _expr_0 &gt; 0
+GROUP BY
+  title,
+  country
+HAVING
+  COUNT(*) &gt; 200
+ORDER BY
+  sum_gross_cost
+LIMIT
+  20
+
+</code></pre>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-104"><a class="header" href="#prql-104">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+group [emp_no] (
+  aggregate [
+    emp_salary = average salary     # average salary resolves to "AVG(salary)" (from stdlib)
+  ]
+)
+join titles [==emp_no]
+group [title] (
+  aggregate [
+    avg_salary = average emp_salary
+  ]
+)
+select salary_k = avg_salary / 1000 # avg_salary should resolve to "AVG(emp_salary)"
+take 10                             # induces new SELECT
+derive salary = salary_k * 1000     # salary_k should not resolve to "avg_salary / 1000"
+</code></pre>
+</div>
+<div>
+<h4 id="sql-102"><a class="header" href="#sql-102">SQL</a></h4>
+<pre><code class="language-sql">WITH table_1 AS (
+  SELECT
+    AVG(salary) AS _expr_0,
+    emp_no
+  FROM
+    employees
+  GROUP BY
+    emp_no
+)
+SELECT
+  AVG(table_0._expr_0) / 1000 AS salary_k,
+  AVG(table_0._expr_0) / 1000 * 1000 AS salary
+FROM
+  table_1 AS table_0
+  JOIN titles ON table_0.emp_no = titles.emp_no
+GROUP BY
+  titles.title
+LIMIT
+  10
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="single-item-is-coerced-into-a-list"><a class="header" href="#single-item-is-coerced-into-a-list">Single item is coerced into a list</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-105"><a class="header" href="#prql-105">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select salary
+</code></pre>
+</div>
+<div>
+<h4 id="sql-103"><a class="header" href="#sql-103">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  salary
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>Same as above but with <code>salary</code> in a list:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-106"><a class="header" href="#prql-106">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select [salary]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-104"><a class="header" href="#sql-104">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  salary
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<h2 id="multiple-items"><a class="header" href="#multiple-items">Multiple items</a></h2>
+<div class="comparison">
+<div>
+<h4 id="prql-107"><a class="header" href="#prql-107">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive [
+  gross_salary = salary + payroll_tax,
+  gross_cost = gross_salary + benefits_cost
+]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-105"><a class="header" href="#sql-105">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  salary + payroll_tax AS gross_salary,
+  salary + payroll_tax + benefits_cost AS gross_cost
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>Same as above but split into two lines:</p>
+<div class="comparison">
+<div>
+<h4 id="prql-108"><a class="header" href="#prql-108">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive gross_salary = salary + payroll_tax
+derive gross_cost = gross_salary + benefits_cost
+</code></pre>
+</div>
+<div>
+<h4 id="sql-106"><a class="header" href="#sql-106">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  salary + payroll_tax AS gross_salary,
+  salary + payroll_tax + benefits_cost AS gross_cost
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><div class="comparison">
+<div>
+<h4 id="prql-109"><a class="header" href="#prql-109">PRQL</a></h4>
+<pre><code class="language-prql">let newest_employees = (
+  from employees
+  sort tenure
+  take 50
+)
+
+let average_salaries = (
+  from salaries
+  group country (
+    aggregate average_country_salary = (average salary)
+  )
+)
+
+from newest_employees
+join average_salaries [==country]
+select [name, salary, average_country_salary]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-107"><a class="header" href="#sql-107">SQL</a></h4>
+<pre><code class="language-sql">WITH newest_employees AS (
+  SELECT
+    *
+  FROM
+    employees
+  ORDER BY
+    tenure
+  LIMIT
+    50
+), average_salaries AS (
+  SELECT
+    country,
+    AVG(salary) AS average_country_salary
+  FROM
+    salaries
+  GROUP BY
+    country
+)
+SELECT
+  newest_employees.name,
+  newest_employees.salary,
+  average_salaries.average_country_salary
+FROM
+  newest_employees
+  JOIN average_salaries ON newest_employees.country = average_salaries.country
+
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="employees"><a class="header" href="#employees">Employees</a></h1>
+<p>These are homework tasks on
+<a href="https://github.com/vrajmohan/pgsql-sample-data.git">employees database</a>.</p>
+<p>Clone and init the database (requires a local PostgreSQL instance):</p>
+<pre><code class="language-sh">Execute a PRQL query:
+
+````sh
+## Task 1
+
+ &gt; 
+ &gt; rank the employee titles according to the average salary for each department.
+
+My solution:
+
+* for each employee, find their average salary,
+* join employees with their departments and titles (duplicating employees for
+  each of their titles and departments)
+* group by department and title, aggregating average salary
+* join with department to get department name
+
+&lt;div class="comparison"&gt;
+
+&lt;div&gt;
+&lt;h4&gt;PRQL&lt;/h4&gt;
+
+```prql
+from salaries
+group [emp_no] (
+  aggregate [emp_salary = average salary]
+)
+join t=titles [==emp_no]
+join dept_emp side:left [==emp_no]
+group [dept_emp.dept_no, t.title] (
+  aggregate [avg_salary = average emp_salary]
+)
+join departments [==dept_no]
+select [dept_name, title, avg_salary]
+```
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;h4&gt;SQL&lt;/h4&gt;
+
+```sql
+WITH table_3 AS (
+  SELECT
+    AVG(salary) AS _expr_0,
+    emp_no
+  FROM
+    salaries
+  GROUP BY
+    emp_no
+),
+table_1 AS (
+  SELECT
+    t.title,
+    AVG(table_2._expr_0) AS avg_salary,
+    dept_emp.dept_no
+  FROM
+    table_3 AS table_2
+    JOIN titles AS t ON table_2.emp_no = t.emp_no
+    LEFT JOIN dept_emp ON table_2.emp_no = dept_emp.emp_no
+  GROUP BY
+    dept_emp.dept_no,
+    t.title
+)
+SELECT
+  departments.dept_name,
+  table_0.title,
+  table_0.avg_salary
+FROM
+  table_1 AS table_0
+  JOIN departments ON table_0.dept_no = departments.dept_no
+
+```
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+## Task 2
+
+ &gt; 
+ &gt; Estimate distribution of salaries and gender for each department departments.
+
+&lt;div class="comparison"&gt;
+
+&lt;div&gt;
+&lt;h4&gt;PRQL&lt;/h4&gt;
+
+```prql
+from e=employees
+join salaries [==emp_no]
+group [e.emp_no, e.gender] (
+  aggregate [
+    emp_salary = average salaries.salary
+  ]
+)
+join de=dept_emp [==emp_no] side:left
+group [de.dept_no, gender] (
+  aggregate [
+    salary_avg = average emp_salary,
+    salary_sd = stddev emp_salary,
+  ]
+)
+join departments [==dept_no]
+select [dept_name, gender, salary_avg, salary_sd]
+```
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;h4&gt;SQL&lt;/h4&gt;
+
+```sql
+WITH table_3 AS (
+  SELECT
+    e.gender,
+    AVG(salaries.salary) AS _expr_0,
+    e.emp_no
+  FROM
+    employees AS e
+    JOIN salaries ON e.emp_no = salaries.emp_no
+  GROUP BY
+    e.emp_no,
+    e.gender
+),
+table_1 AS (
+  SELECT
+    table_2.gender,
+    AVG(table_2._expr_0) AS salary_avg,
+    STDDEV(table_2._expr_0) AS salary_sd,
+    de.dept_no
+  FROM
+    table_3 AS table_2
+    LEFT JOIN dept_emp AS de ON table_2.emp_no = de.emp_no
+  GROUP BY
+    de.dept_no,
+    table_2.gender
+)
+SELECT
+  departments.dept_name,
+  table_0.gender,
+  table_0.salary_avg,
+  table_0.salary_sd
+FROM
+  table_1 AS table_0
+  JOIN departments ON table_0.dept_no = departments.dept_no
+
+```
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+## Task 3
+
+ &gt; 
+ &gt; Estimate distribution of salaries and gender for each manager.
+
+&lt;div class="comparison"&gt;
+
+&lt;div&gt;
+&lt;h4&gt;PRQL&lt;/h4&gt;
+
+```prql
+from e=employees
+join salaries [==emp_no]
+group [e.emp_no, e.gender] (
+  aggregate [
+    emp_salary = average salaries.salary
+  ]
+)
+join de=dept_emp [==emp_no]
+join dm=dept_manager [
+  (dm.dept_no == de.dept_no) and s"(de.from_date, de.to_date) OVERLAPS (dm.from_date, dm.to_date)"
+]
+group [dm.emp_no, gender] (
+  aggregate [
+    salary_avg = average emp_salary,
+    salary_sd = stddev emp_salary
+  ]
+)
+derive mng_no = emp_no
+join managers=employees [==emp_no]
+derive mng_name = s"managers.first_name || ' ' || managers.last_name"
+select [mng_name, managers.gender, salary_avg, salary_sd]
+```
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;h4&gt;SQL&lt;/h4&gt;
+
+```sql
+WITH table_3 AS (
+  SELECT
+    e.gender,
+    AVG(salaries.salary) AS _expr_0,
+    e.emp_no
+  FROM
+    employees AS e
+    JOIN salaries ON e.emp_no = salaries.emp_no
+  GROUP BY
+    e.emp_no,
+    e.gender
+),
+table_1 AS (
+  SELECT
+    AVG(table_2._expr_0) AS salary_avg,
+    STDDEV(table_2._expr_0) AS salary_sd,
+    dm.emp_no
+  FROM
+    table_3 AS table_2
+    JOIN dept_emp AS de ON table_2.emp_no = de.emp_no
+    JOIN dept_manager AS dm ON dm.dept_no = de.dept_no
+    AND (de.from_date, de.to_date) OVERLAPS (dm.from_date, dm.to_date)
+  GROUP BY
+    dm.emp_no,
+    table_2.gender
+)
+SELECT
+  managers.first_name || ' ' || managers.last_name AS mng_name,
+  managers.gender,
+  table_0.salary_avg,
+  table_0.salary_sd
+FROM
+  table_1 AS table_0
+  JOIN employees AS managers ON table_0.emp_no = managers.emp_no
+
+```
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+## Task 4
+
+ &gt; 
+ &gt; Find distributions of titles, salaries and genders for each department.
+
+&lt;div class="comparison"&gt;
+
+&lt;div&gt;
+&lt;h4&gt;PRQL&lt;/h4&gt;
+
+```prql
+from de=dept_emp
+join s=salaries side:left [
+  (s.emp_no == de.emp_no),
+  s"({s.from_date}, {s.to_date}) OVERLAPS ({de.from_date}, {de.to_date})"
+]
+group [de.emp_no, de.dept_no] (
+  aggregate salary = (average s.salary)
+)
+join employees [==emp_no]
+join titles [==emp_no]
+select [dept_no, salary, employees.gender, titles.title]
+```
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;h4&gt;SQL&lt;/h4&gt;
+
+```sql
+WITH table_1 AS (
+  SELECT
+    de.dept_no,
+    AVG(s.salary) AS salary,
+    de.emp_no
+  FROM
+    dept_emp AS de
+    LEFT JOIN salaries AS s ON s.emp_no = de.emp_no
+    AND (s.from_date, s.to_date) OVERLAPS (de.from_date, de.to_date)
+  GROUP BY
+    de.emp_no,
+    de.dept_no
+)
+SELECT
+  table_0.dept_no,
+  table_0.salary,
+  employees.gender,
+  titles.title
+FROM
+  table_1 AS table_0
+  JOIN employees ON table_0.emp_no = employees.emp_no
+  JOIN titles ON table_0.emp_no = titles.emp_no
+
+```
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contributing"><a class="header" href="#contributing">Contributing</a></h1>
+<p>If you’re interested in joining the community to build a better SQL, here are
+ways to start:</p>
+<ul>
+<li>Star this repo.</li>
+<li>Send a link to PRQL to a couple of people whose opinion you respect.</li>
+<li>Subscribe to <a href="https://github.com/PRQL/prql/issues/1">Issue #1</a> for updates.</li>
+<li>Join our <a href="https://discord.gg/eQcfaCmsNc">Discord</a>.</li>
+<li>Follow us on <a href="https://twitter.com/prql_lang">Twitter</a>.</li>
+<li>Find an issue labeled
+<a href="https://github.com/prql/prql/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">Good First Issue</a>
+and start contributing to the code.</li>
+<li>Join our
+<a href="https://github.com/PRQL/prql/issues/1083">fortnightly Developer Call</a>;
+(<a href="contributing/./fortnightly-dev-call.ics">iCal file</a>).</li>
+</ul>
+<p>PRQL is evolving from a project with lots of excitement into a project that
+folks are using in their work and integrating into their tools. We’re actively
+looking for collaborators to lead that growth with us.</p>
+<h2 id="areas-for-larger-contributions"><a class="header" href="#areas-for-larger-contributions">Areas for larger contributions</a></h2>
+<h3 id="compiler"><a class="header" href="#compiler">Compiler</a></h3>
+<p>The compiler is written in Rust, and there’s enough to do such that any level of
+experience with Rust is sufficient.</p>
+<p>We try to keep a few onboarding issues on hand under the
+<a href="https://github.com/PRQL/prql/labels/good%20first%20issue">“good first issue” label</a>.
+These have been screened to have sufficient context to get started (and we very
+much welcome questions where there’s some context missing).</p>
+<p>To get started, check out the docs on <a href="contributing/./development.html">Development</a> and the
+<a href="contributing/../internals/compiler-architecture.html">Compiler architecture</a></p>
+<p>And if you have questions, there are lots of friendly people on the Discord who
+will patiently help you.</p>
+<h3 id="bindings--integrations"><a class="header" href="#bindings--integrations">Bindings &amp; integrations</a></h3>
+<p>For PRQL to be successful, it needs to be available for the languages &amp; tools
+that people already use.</p>
+<ul>
+<li>We currently have bindings to the PRQL compiler in a few different languages;
+many of these can be improved, documented, and packaged in a better way.</li>
+<li>If you have experience with packaging in an ecosystem that doesn’t currently
+have bindings, then creating PRQL bindings for that language we don’t
+currently support would be valuable to the project.</li>
+<li>If there’s a tool that you use yourself to run data queries which you think
+would benefit from a PRQL integration, suggest one to us or the tool. If it’s
+open-source, build &amp; share a prototype.</li>
+</ul>
+<p>Relevant issues are labeled
+<a href="https://github.com/PRQL/prql/labels/integrations">Integrations</a>.</p>
+<h3 id="language-design"><a class="header" href="#language-design">Language design</a></h3>
+<p>We decide on new language features in GitHub issues, usually under
+<a href="https://github.com/PRQL/prql/issues?q=is%3Aopen+label%3Alanguage-design+sort%3Aupdated-desc">“language design” label</a>.</p>
+<p>You can also contribute by:</p>
+<ul>
+<li>Finding instances where the compiler produces incorrect results, and post a
+bug report — feel free to use the
+<a href="https://prql-lang.org/playground">playground</a>.</li>
+<li>Opening an issue / append to an existing issue with examples of queries that
+are difficult to express in PRQL — especially if more difficult than SQL.</li>
+</ul>
+<p>With sufficient examples, suggest a change to the language! (Though suggestions
+<em>without</em> examples are difficult to engage with, so please do anchor suggestions
+in examples.)</p>
+<h3 id="marketing"><a class="header" href="#marketing">Marketing</a></h3>
+<ul>
+<li>Improve our website. We have
+<a href="https://github.com/PRQL/prql/labels/web">a few issues open</a> on this front and
+are looking for anyone with at least some design skills.</li>
+<li>Contribute towards the docs. Anything from shaping a whole section of the
+docs, to simply improving a confusing paragraph or fixing a typo.</li>
+<li>Tell people about PRQL.</li>
+<li>Find a group of users who would be interested in PRQL, help them get up to
+speed, help the project understand what they need.</li>
+</ul>
+<h2 id="core-team"><a class="header" href="#core-team">Core team</a></h2>
+<p>If you have any questions or feedback and don’t receive a response on one of the
+general channels such as GitHub or Discord, feel free to reach out to:</p>
+<ul>
+<li><a href="https://github.com/aljazerzen"><strong>@aljazerzen</strong></a> — Aljaž Mur Eržen</li>
+<li><a href="https://github.com/max-sixty"><strong>@max-sixty</strong></a> — Maximilian Roos</li>
+<li><a href="https://github.com/snth"><strong>@snth</strong></a> — Tobias Brandt</li>
+</ul>
+<h3 id="core-team-emeritus"><a class="header" href="#core-team-emeritus">Core team Emeritus</a></h3>
+<p>Thank you to those who have previously served on the core team:</p>
+<ul>
+<li><a href="https://github.com/charlie-sanders"><strong>@charlie-sanders</strong></a> — Charlie Sanders</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="development"><a class="header" href="#development">Development</a></h1>
+<h2 id="setting-up-an-initial-dev-environment"><a class="header" href="#setting-up-an-initial-dev-environment">Setting up an initial dev environment</a></h2>
+<p>We can set up a local development environment sufficient for navigating,
+editing, and testing PRQL’s compiler code in two minutes:</p>
+<ul>
+<li>
+<p>Install
+<a href="https://doc.rust-lang.org/cargo/getting-started/installation.html"><code>rustup</code> &amp; <code>cargo</code></a>.</p>
+</li>
+<li>
+<p>[Optional but highly recommended] Install <code>cargo-insta</code>, our testing
+framework:</p>
+<pre><code class="language-sh">
+</code></pre>
+</li>
+<li>
+<p>That’s it! Running the unit tests for the <code>prql-compiler</code> crate after cloning
+the repo should complete successfully:</p>
+<pre><code class="language-sh">…or, to run tests and update the test snapshots:
+
+````sh
+There’s more context on our tests in [How we test](#how-we-test) below.
+
+</code></pre>
+</li>
+</ul>
+<p>That’s sufficient for making an initial contribution to the compiler.</p>
+<hr />
+<h2 id="setting-up-a-full-dev-environment"><a class="header" href="#setting-up-a-full-dev-environment">Setting up a full dev environment</a></h2>
+<blockquote>
+<p><strong>Note</strong>: We really care about this process being easy, both because the
+project benefits from more contributors like you, and to reciprocate your
+future contribution. If something isn’t easy, please let us know in a GitHub
+Issue. We’ll enthusiastically help you, and use your feedback to improve the
+scripts &amp; instructions.</p>
+</blockquote>
+<p>For more advanced development; for example compiling for wasm or previewing the
+website, we have two options:</p>
+<h3 id="option-1-use-the-projects-task"><a class="header" href="#option-1-use-the-projects-task">Option 1: Use the project’s <code>task</code></a></h3>
+<blockquote>
+<p><strong>Note</strong>: This is tested on MacOS, should work on Linux, but won’t work on
+Windows.</p>
+</blockquote>
+<ul>
+<li>
+<p>Install Task; either <code>brew install go-task/tap/go-task</code> or as described on
+<a href="https://taskfile.dev/#/installation">Task</a>.</p>
+</li>
+<li>
+<p>Then run the <code>setup-dev</code> task. This runs commands from our
+<a href="https://github.com/PRQL/prql/blob/main/Taskfile.yml">Taskfile.yml</a>,
+installing dependencies with <code>cargo</code>, <code>brew</code>, <code>npm</code> &amp; <code>pip</code>, and suggests some
+VS Code extensions.</p>
+<pre><code class="language-sh">
+
+</code></pre>
+</li>
+</ul>
+<h3 id="option-2-install-tools-individually"><a class="header" href="#option-2-install-tools-individually">Option 2: Install tools individually</a></h3>
+<ul>
+<li>
+<p>We’ll need <code>cargo-insta</code>, to update snapshot tests:</p>
+<pre><code class="language-sh">
+</code></pre>
+</li>
+<li>
+<p>We’ll need a couple of additional components, which most systems will have
+already. The easiest way to check whether they’re installed is to try running
+the full tests:</p>
+<pre><code class="language-sh">…and if that doesn’t complete successfully, check we have:
+
+* A clang compiler, to compile the DuckDB integration tests, since we use
+  [`duckdb-rs’](https://github.com/wangfenjin/duckdb-rs). To install one:
+  
+  * On macOS, install xcode with `xcode-select --install`
+  * On Debian Linux, `apt-get update &amp;&amp; apt-get install clang`
+  * On Windows, `duckdb-rs` isn’t supported, so these tests are excluded
+* Python &gt;= 3.7, to compile `prql-python`.
+
+</code></pre>
+</li>
+<li>
+<p>For more involved contributions, such as building the website, playground,
+book, or some release artifacts, we’ll need some additional tools. But we
+won’t need those immediately, and the error messages on what’s missing should
+be clear when we attempt those things. When we hit them, the
+<a href="https://github.com/PRQL/prql/blob/main/Taskfile.yml">Taskfile.yml</a> will be a
+good source to copy &amp; paste instructions from.</p>
+</li>
+</ul>
+<!--
+
+Until we set up a Codespaces, I don't think this is that helpful — it can't run any code,
+including navigating Rust code with rust-analyzer. We'd def take a contribution for a
+codespaces template, though.
+
+### github.dev
+
+- Alternatively, for quick contributions (e.g. docs), hit `.` in GitHub to
+  launch a [github.dev instance](https://github.dev/PRQL/prql). This has the
+  disadvantage that code can't run. -->
+<h3 id="building--testing-the-full-project"><a class="header" href="#building--testing-the-full-project">Building &amp; testing the full project</a></h3>
+<p>We have a couple of tasks which incorporate all building &amp; testing. While they
+don’t need to be run as part of a standard dev loop — generally we’ll want to
+run a more specific test — they can be useful as a backstop to ensure everything
+works, and as a reference for how each part of the repo is built &amp; tested. They
+should be consistent with the GitHub Actions workflows; please report any
+inconsistencies.</p>
+<p>To build everything:</p>
+<pre><code class="language-sh">To run all tests; (which includes building everything):
+
+````sh
+These require installing Task, either `brew install go-task/tap/go-task` or as
+described on [Task](https://taskfile.dev/#/installation).
+
+## Contribution workflow
+
+We’re similar to most projects on GitHub — open a Pull Request with a suggested
+change!
+
+### Commits
+
+* If a change is user-facing, please add a line in
+  [**`CHANGELOG.md`**](https://github.com/PRQL/prql/blob/main/CHANGELOG.md),
+  with `{message}, ({@contributor, #X})` where `X` is the PR number.
+  * If there’s a missing entry, a follow-up PR containing just the changelog
+    entry is welcome.
+* We’re using [Conventional Commits](https://www.conventionalcommits.org)
+  message format, enforced through
+  [action-semantic-pull-request](https://github.com/amannn/action-semantic-pull-request).
+
+### Merges
+
+* **We merge any code that makes PRQL better**
+* A PR doesn’t need to be perfect to be merged; it doesn’t need to solve a big
+  problem. It needs to:
+  * be in the right direction,
+  * make incremental progress,
+  * be explicit on its current state, so others can continue the progress.
+* If you have merge permissions, and are reasonably confident that a PR is
+  suitable to merge (whether or not you’re the author), feel free to merge.
+  * If you don’t have merge permissions and have authored a few PRs, ask and ye
+    shall receive.
+* The primary way we ratchet the code quality is through automated tests.
+  * This means PRs almost always need a test to demonstrate incremental
+    progress.
+  * If a change breaks functionality without breaking tests, our tests were
+    probably insufficient.
+  * If a change breaks existing tests (for example, changing an external API),
+    that indicates we should be careful about merging a change, including
+    soliciting others’ views.
+* We use PR reviews to give general context, offer specific assistance, and
+  collaborate on larger decisions.
+  * Reviews around ‘nits’ like code formatting / idioms / etc are very welcome.
+    But the norm is for them to be received as helpful advice, rather than as
+    mandatory tasks to complete. Adding automated tests &amp; lints to automate
+    these suggestions is welcome.
+  * If you have merge permissions and would like a PR to be reviewed before it
+    merges, that’s great — ask or assign a reviewer.
+  * If a PR hasn’t received attention after a day, please feel free to ping the
+    pull request.
+* People may review a PR after it’s merged. As part of the understanding that we
+  can merge quickly, contributors are expected to incorporate substantive
+  feedback into a future PR.
+* We should revert quickly if the impact of a PR turns out not to be consistent
+  with our expectations, or there isn’t as much consensus on a decision as we
+  had hoped. It’s very easy to revert code and then re-revert when we’ve
+  resolved the issue; it’s a sign of moving quickly. Other options which resolve
+  issues immediately are also fine, such as commenting out an incorrect test or
+  adding a quick fix for the underlying issue.
+
+## Docs
+
+We’re very keen on contributions to improve our documentation.
+
+This includes our docs in the book, on the website, in our code, or in a Readme.
+We also appreciate issues pointing out that our documentation was confusing,
+incorrect, or stale — if it’s confusing for you, it’s probably confusing for
+others.
+
+Some principles for ensuring our docs remain maintainable:
+
+* Docs should be as close as possible to the code. Doctests are ideal on this
+  dimension — they’re literally very close to the code and they can’t drift
+  apart since they’re tested on every commit. Or, for example, it’s better to
+  add text to a `--help` message, rather than write a paragraph in the Readme
+  explaining the CLI.
+* We should have some visualization of how to maintain docs when we add them.
+  Docs have a habit of falling out of date — the folks reading them are often
+  different from those writing them, they’re sparse from the code, generally not
+  possible to test, and are rarely the by-product of other contributions. Docs
+  that are concise &amp; specific are easier to maintain.
+* Docs should be specifically relevant to PRQL; anything else we can instead
+  link to.
+
+If something doesn’t fit into one of these categories, there are still lots of
+ways of getting the word out there — a blog post / gist / etc. Let us know and
+we’re happy to link to it / tweet it.
+
+## Components of PRQL
+
+The PRQL project has several components. Instructions for working with them are
+in the **README.md** file in their respective paths. Here’s an overview:
+
+**[book](https://github.com/PRQL/prql/blob/main/web/book/README.md)**: The PRQL
+language book, which documents the language.
+
+**[playground](https://github.com/PRQL/prql/blob/main/web/playground/README.md)**:
+A web GUI for the PRQL compiler. It shows the PRQL source beside the resulting
+SQL output.
+
+**[prql-compiler](https://github.com/PRQL/prql/blob/main/prql-compiler/README.md)**:
+Installation and usage instructions for building and running the
+`prql-compiler`.
+
+**[prql-java](https://github.com/PRQL/prql/blob/main/bindings/prql-java/README.md)**:
+Rust bindings to the `prql-compiler` Rust library.
+
+**[prql-js](https://github.com/PRQL/prql/blob/main/bindings/prql-js/README.md)**:
+Javascript bindings to the `prql-compiler` Rust library.
+
+**[prql-lib](https://github.com/PRQL/prql/blob/main/bindings/prql-lib/README.md)**:
+Generates `.a` and `.so` libraries from the `prql-compiler` Rust library for
+bindings to other languages
+
+**[prql-python](https://github.com/PRQL/prql/blob/main/bindings/prql-python/README.md)**:
+Python bindings to the `prql-compiler` Rust library.
+
+**[website](https://github.com/PRQL/prql/blob/main/web/website/README.md)**: Our
+website, hosted at &lt;https://prql-lang.org&gt;, built with `hugo`.
+
+## How we test
+
+We use a pyramid of tests — we have fast, focused tests at the bottom of the
+pyramid, which give us low latency feedback when developing, and then slower,
+broader tests which ensure that we don’t miss anything as PRQL
+develops&lt;sup&gt;&lt;a name="to-footnote-1"&gt;[1](#footnote-1)&lt;/a&gt;&lt;/sup&gt;.
+
+&lt;!-- markdownlint-disable MD053 --&gt;
+
+
+ &gt; 
+ &gt; **Note**
+ &gt; 
+ &gt; If you’re making your first contribution, you don’t need to engage with all
+ &gt; this — it’s fine to just make a change and push the results; the tests that
+ &gt; run in GitHub will point you towards any errors, which can be then be run
+ &gt; locally if needed. We’re always around to help out.
+
+Our tests, from the bottom of the pyramid to the top:
+
+* **[Static checks](https://github.com/PRQL/prql/blob/main/.pre-commit-config.yaml)**
+  — we run a few static checks to ensure the code stays healthy and consistent.
+  They’re defined in
+  [**`.pre-commit-config.yaml`**](https://github.com/PRQL/prql/blob/main/.pre-commit-config.yaml),
+  using [pre-commit](https://pre-commit.com). They can be run locally with
+  
+  ````sh
+  The tests fix most of the issues they find themselves. Most of them also run
+  on GitHub on every commit; any changes they make are added onto the branch
+  automatically in an additional commit.
+  
+  * Checking by [MegaLinter](https://megalinter.io/latest/), which includes more
+    Linters, is also done automatically on GitHub. (experimental)
+* **Unit tests &amp; inline insta snapshots** — we rely on unit tests to rapidly
+  check that our code basically works. We extensively use
+  [Insta](https://insta.rs/), a snapshot testing tool which writes out the
+  values generated by our code, making it fast &amp; simple to write and modify
+  tests&lt;sup&gt;&lt;a name="to-footnote-2"&gt;[2](#footnote-2)&lt;/a&gt;&lt;/sup&gt;
+  
+  These are the fastest tests which run our code; they’re designed to run on
+  every save while you’re developing. We include a `task` which does this:
+  
+  ````sh
+  cargo insta test --accept -p prql-compiler --lib
+  # or, to run on every change:
+  task -w test-rust-fast
+</code></pre>
+<!--
+This is the previous doc. It has the advantage that it explains what it's doing, and is
+easy to change (e.g. to run all packages). But because of
+https://github.com/watchexec/watchexec/issues/371, the ignore behavior is unfortunately quite
+inconsistent in watchexec. Let's revert back if it gets solved.
+
+[^2]: For example, this is a command I frequently run:
+
+    ```sh
+    RUST_BACKTRACE=1 watchexec -e rs,toml,pest,md -cr --ignore='target/**' -- cargo insta test --accept -p prql-compiler --lib
+    ```
+
+    Breaking this down:
+
+    - `RUST_BACKTRACE=1` will print a full backtrace, including where an error
+      value was created, for Rust tests which return `Result`s.
+    - `watchexec -e rs,toml,pest,md -cr --ignore='target/**' --` will run the
+      subsequent command on any change to files with extensions which we are
+      generally editing.
+    - `cargo insta test --accept --` runs tests with `insta`, a snapshot
+      library, and writes any results immediately. I rely on git to track
+      changes, so I run with `--accept`, but YMMV.
+    - `-p prql-compiler --lib` is passed to cargo by `insta`; `-p prql-compiler`
+      tells it to only run the tests for `prql-compiler` rather than the other
+      crates, and `--lib` to only run the unit tests rather than the integration
+      tests, which are slower.
+    - Note that we don't want to re-run on _any_ file changing, because we can
+      get into a loop of writing snapshot files, triggering a change, writing a
+      snapshot file, etc. -->
+<ul>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/blob/main/web/book/tests/snapshot.rs">Examples</a></strong>
+— we compile all examples in the PRQL Book, to test that they produce the SQL
+we expect, and that changes to our code don’t cause any unexpected
+regressions.</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/blob/main/web/book/src/integrations/README.md">Integration tests</a></strong>
+— these run tests against real databases, to ensure we’re producing correct
+SQL.</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/blob/main/.github/workflows/pull-request.yaml">GitHub Actions on every commit</a></strong>
+— we run the tests described up to this point on every commit to a pull
+request. These are designed to run in under five minutes, and we should be
+reassessing their scope if they grow beyond that. Once these pass, a pull
+request can be merged.</p>
+<p>These can be run locally with:</p>
+<pre><code class="language-sh">
+</code></pre>
+</li>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/blob/main/.github/workflows/">GitHub Actions on specific changes</a></strong>
+— we run additional tests on pull requests when we identify changes to some
+paths, such as bindings to other languages.</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/blob/main/.github/workflows/test-all.yaml">GitHub Actions on merge</a></strong>
+— we run many more tests on every merge to main. This includes testing across
+OSs, all our language bindings, our <code>task</code> tasks, a measure of test code
+coverage, and some performance benchmarks.</p>
+<p>We can run these tests before a merge by adding a label <code>pr-test-all</code> to the
+PR.</p>
+<p>If these tests fail after merging, we revert the merged commit before fixing
+the test and then re-reverting.</p>
+<p>Most of these will run locally with:</p>
+<pre><code class="language-sh">
+</code></pre>
+</li>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/blob/main/.github/workflows/nightly.yaml">GitHub Actions nightly</a></strong>
+— we run tests that take a long time or are unrelated to code changes, such as
+security checks, or expensive timing benchmarks, every night.</p>
+<p>We can run these tests before a merge by adding a label <code>pr-cron</code> to the PR.</p>
+</li>
+</ul>
+<p>The goal of our tests is to allow us to make changes quickly. If you find
+they’re making it more difficult for you to make changes, or there are missing
+tests that would give you the confidence to make changes faster, then please
+raise an issue.</p>
+<hr />
+<h2 id="website"><a class="header" href="#website">Website</a></h2>
+<p>The website is published together with the book and the playground, and is
+automatically built and released on any push to the <code>web</code> branch.</p>
+<p>The <code>web</code> branch points to the latest release plus any website-specific fixes.
+That way, the compiler behavior in the playground matches the latest release
+while allowing us to fix mistakes with a tighter loop than every release.</p>
+<p>Fixes to the playground, book, or website should have a <code>pr-backport-web</code> label
+added to their PR — a bot will then open another PR onto the <code>web</code> branch once
+the initial branch merges.</p>
+<hr />
+<h2 id="releasing"><a class="header" href="#releasing">Releasing</a></h2>
+<p>Currently we release in a semi-automated way:</p>
+<ol>
+<li>
+<p>PR &amp; merge an updated
+<a href="https://github.com/PRQL/prql/blob/main/CHANGELOG.md">Changelog</a>. GitHub will
+produce a draft version at <a href="https://github.com/PRQL/prql/releases/new">https://github.com/PRQL/prql/releases/new</a>,
+including “New Contributors”.</p>
+<p>We can use this script to generate the first line:</p>
+<pre><code class="language-sh">
+</code></pre>
+</li>
+<li>
+<p>Run <code>cargo release version patch -x &amp;&amp; cargo release replace -x</code> to bump the
+versions, then PR the resulting commit.</p>
+</li>
+<li>
+<p>After merging, go to
+<a href="https://github.com/PRQL/prql/releases/new">Draft a new release</a><sup><a name="to-footnote-3"><a href="contributing/development.html#footnote-3">3</a></a></sup>, copy the changelog entry into the release
+description<sup><a name="to-footnote-4"><a href="contributing/development.html#footnote-4">4</a></a></sup>, enter the
+tag to be created, and hit “Publish”.</p>
+</li>
+<li>
+<p>From there, both the tag and release is created and all packages are
+published automatically based on our
+<a href="https://github.com/PRQL/prql/blob/main/.github/workflows/release.yaml">release workflow</a>.</p>
+</li>
+<li>
+<p>Update Issue <a href="https://github.com/PRQL/prql/issues/1">https://github.com/PRQL/prql/issues/1</a> so that people will be
+notified of the change.</p>
+</li>
+<li>
+<p>Add in the sections for a new Changelog:</p>
+<pre><code class="language-md">**Fixes**:
+
+**Documentation**:
+
+**Web**:
+
+**Integrations**:
+
+**Internal changes**:
+
+**New Contributors**:
+</code></pre>
+</li>
+</ol>
+<p>We may make this more automated in future; e.g. automatic changelog creation.<p><hr/></p>
+<p><a name="footnote-1"><a href="contributing/development.html#to-footnote-1">1</a></a>: Our approach is very consistent with
+<strong><a href="https://github.com/matklad">@matklad</a></strong>’s advice, in his excellent blog
+post <a href="https://matklad.github.io//2021/05/31/how-to-test.html">How to
+Test</a>.</p>
+<p><a name="footnote-2"><a href="contributing/development.html#to-footnote-2">2</a></a>: <a href="https://github.com/PRQL/prql/blob/0.2.2/prql-compiler/src/parser.rs#L580-L605">Here’s an example of an insta test</a>
+— note that only the initial line of each test is written by us; the
+remainder is filled in by insta.</p>
+<p><a name="footnote-3"><a href="contributing/development.html#to-footnote-3">3</a></a>: Only
+maintainers have access to this page.</p>
+<p><a name="footnote-4"><a href="contributing/development.html#to-footnote-4">4</a></a>: Unfortunately GitHub’s markdown parser
+interprets linebreaks as newlines. I haven’t found a better way of editing
+the markdown to look reasonable than manually editing the text.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="developing-with-docker"><a class="header" href="#developing-with-docker">Developing with Docker</a></h1>
+<p>The <code>Dockerfile</code> in this repo builds a Docker image that has current versions of
+our Rust development tools. This can be the lowest-effort way of setting up a
+Rust environment for those that don’t have one already.</p>
+<h2 id="development-cycle"><a class="header" href="#development-cycle">Development cycle</a></h2>
+<p>The developer loop when using Docker is substantially the same as if the tools
+had been installed directly.</p>
+<p>All the source files live in the <code>prql</code> directory on the host. As the source
+changes, the tools (running in the Docker container) can watch those directories
+and re-run so results are instantly visible.</p>
+<p>When the Docker container exits (say, at the end of the development session),
+the <code>prql</code> directory on the local machine contains the latest files. Use <code>git</code>
+to pull or to push the <code>prql</code> repo from the host as normal.</p>
+<p>To do all this, build the Docker image and start a container as described in the
+<strong>Installation</strong> section.</p>
+<h2 id="installation-8"><a class="header" href="#installation-8">Installation</a></h2>
+<p>Once Docker is installed, build the Docker image with the following commands.</p>
+<blockquote>
+<p>Note: It will take some time while Docker pulls in all the necessary developer
+tools.</p>
+</blockquote>
+<pre><code class="language-bash">*Optional:* Install `pre-commit` on the machine that hosts Docker. It runs
+several [Static Checks](./development.md#tests) to ensure code consistency. You
+can also configure `git` to run `pre-commit` automatically for each commit with
+the second (one-time) command below.
+
+````bash
+Finally, start up the Docker container with:
+
+````bash
+* There’ll be a `root@xxxxxxxxx:/src/#` prompt
+* Enter a command to run or test code; for example `cargo test`
+* Enter `exit` to stop the container
+
+## Running code with Docker
+
+Currently our Docker image only supports running Rust dependencies. (adding
+`hugo` &amp; `nodejs` so that the playground can run would be a welcome
+contribution.)
+
+Use the `docker run...` command above, then enter the relevant commands; for
+example `cargo insta test --accept` or `task run book` — more details of the
+commands are in each component’s `README.md` file or our
+[Development docs](./development.md).
+
+ &gt; 
+ &gt; Note: The first time you run a component, it may take some time to install
+ &gt; additional files. Once they’re built, start up is quick.
+
+&lt;!-- Currently these aren't supported in docker — see notes in Dockerfile --&gt;
+&lt;!-- **Playground:** Use the command above, then enter:
+
+```bash
+cd playground
+npm install # first time only
+npm start
+```
+
+**Language Book:** Use the command above, then enter these commands.
+(The first time you run this, the container will compile many files.)
+
+```bash
+cd book
+mdbook serve -n 0.0.0.0 -p 3000
+```
+
+**Website:** Use the command above, then enter:
+
+```bash
+cd website
+hugo server --bind 0.0.0.0 -p 3000
+``` --&gt;
+
+## Developing the Dockerfile
+
+When making updates to the Dockerfile, we have automated testing that the
+Dockerfile builds on each merge in
+[**`test-all.yaml`**](https://github.com/PRQL/prql/blob/main/.github/workflows/test-all.yaml),
+and automated testing that the confirms all Rust tests pass, in
+[**`nightly.yaml`**](https://github.com/PRQL/prql/blob/main/.github/workflows/nightly.yaml).
+
+Add a label to the PR `pr-test-all` or `pr-cron` to run these tests on a PR.</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="developing-with-dev-containers"><a class="header" href="#developing-with-dev-containers">Developing with Dev Containers</a></h1>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="contributing/developing-with-dev-containers.html#admonition-note"></a>
+</div>
+<div>
+<p>Currently the Dev Container included in this repository only supports the <code>amd64</code> platform.</p>
+</div>
+</div>
+<p><a href="https://containers.dev/">Dev Containers</a> are a way to package a number of
+developer tools (compilers, bundlers, package managers, loaders, etc.) into a
+single object. This is helpful when many people want to contribute to a project:
+each person only has to install the Dev Container on their own machine to start
+working. By definition, the Dev Container has a consistent set of tools that are
+known to work together. This avoids a fuss with finding the proper version of
+each of the build tools.</p>
+<p>While there are a variety of tools that support Dev Containers, the focus here
+is on developing with VS Code in a container by
+<a href="https://docs.github.com/en/codespaces/overview">GitHub Codespaces</a> or
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">VS Code Dev Containers extension</a>.</p>
+<p>To use a Dev Container on a local computer with VS Code, install the
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">VS Code Dev Containers extension</a>
+and its system requirements. Then refer to the links above to get started.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="internals"><a class="header" href="#internals">Internals</a></h1>
+<p>This chapter explains PRQL’s semantics: how expressions are interpreted and
+their meaning. It’s intended for advanced users and compiler contributors.</p>
+<ul>
+<li><a href="internals/./name-resolving.html">Name resolving</a></li>
+<li><a href="internals/./functional-lang.html">Functions</a></li>
+<li><a href="internals/./syntax-highlighting.html">Syntax highlighting</a></li>
+</ul>
+<p>It’s also worth checking out the
+<a href="https://docs.rs/prql-compiler/latest/prql_compiler/"><code>prql-compiler</code> docs</a> for
+more details on its API.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="compiler-architecture"><a class="header" href="#compiler-architecture">Compiler architecture</a></h1>
+<p>Compiler works in the following stages:</p>
+<ol>
+<li>
+<p>Lexing &amp; parsing - split PRQL text into tokens, build parse tree and convert
+into our AST (Abstract Syntax Tree, see <code>ast</code> module). Parsing is done using
+the chumsky parser, AST is constructed in <code>parser.rs</code>.</p>
+</li>
+<li>
+<p>Semantic analysis - resolves names (identifiers), extracts declarations,
+determines frames (columns of the table in each step). It declares <code>Context</code>
+that contains root module (mapping from accessible names to their
+declarations).</p>
+<p>Resolving includes following operations:</p>
+<ul>
+<li>Assign an id to each node (<code>Expr</code> and <code>Stmt</code>).</li>
+<li>Extract function declarations and variable def into appropriate <code>Module</code>,
+accessible from <code>Context::root_mod</code></li>
+<li>Lookup identifiers in module and find associated declaration. Ident is
+replaced with fully qualified name that guarantees unique name in
+<code>root_mod</code>. Sometimes, <code>Expr::target</code> is also set.</li>
+<li>Function calls to transforms (<code>from</code>, <code>derive</code>, <code>filter</code>) are converted
+from <code>FuncCall</code> into <code>TransformCall</code>, which is more convenient for later
+processing.</li>
+<li>Determine type of expr. If expr is a reference to a table use the frame of
+the table as the type. If it is a <code>TransformCall</code>, apply the transform to
+the input frame to obtain resulting type. For simple expressions, try to
+infer from <code>ExprKind</code>.</li>
+</ul>
+</li>
+<li>
+<p>Lowering - converts PL into RQ that is more strictly typed, contains less
+information but is convenient for translating into SQL or some other backend.</p>
+</li>
+<li>
+<p>SQL backend - converts RQ into SQL. It converts each of the relations into a
+SQL query. Pipelines are analyzed and split at appropriate positions into
+“AtomicPipelines” which can be represented by a single SELECT statement.</p>
+<p>Splitting is done back-to-front. First, we start with list all output columns
+we want. Then we traverse the pipeline backwards and split when we encounter
+a transform that is incompatible with transforms already present in the
+pipeline. Split can also be triggered by encountering an expression that
+cannot be materialized where it is used (window function is WHERE for
+example).</p>
+<p>This process is also called anchoring, because it anchors a column definition
+to a specific location in the output query.</p>
+<p>During this process, <code>sql::context</code> keeps track of:</p>
+<ul>
+<li>table instances in the query (to prevent mixing up two instances of the
+same table)</li>
+<li>column definitions, whether computed or a reference to a table column,</li>
+<li>column names, as defined in RQ or generated</li>
+</ul>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="name-resolving"><a class="header" href="#name-resolving">Name resolving</a></h1>
+<p>Because PRQL primarily handles relational data, it has specialized scoping rules
+for referencing columns.</p>
+<h2 id="scopes"><a class="header" href="#scopes">Scopes</a></h2>
+<p>In PRQL’s compiler, a scope is the collection of all names one can reference
+from a specific point in the program.</p>
+<p>In PRQL, names in the scope are composed from namespace and variable name which
+are separated by a dot, similar to SQL. Namespaces can contain many dots, but
+variable names cannot.</p>
+<div id="admonition-example" class="admonition admonish-example" role="note" aria-labelledby="admonition-example-title">
+<div class="admonition-title">
+<div id="admonition-example-title">
+<p>Example</p>
+</div>
+<a class="admonition-anchor-link" href="internals/name-resolving.html#admonition-example"></a>
+</div>
+<div>
+<p>Name <code>my_table.some_column</code> is a variable <code>some_column</code> from namespace <code>my_table</code>.</p>
+<p>Name <code>foo.bar.baz</code> is a variable <code>baz</code> from namespace <code>foo.bar</code>.</p>
+</div>
+</div>
+<p>When processing a query, a scope is maintained and updated for each point in the
+query.</p>
+<p>It start with only namespace <code>std</code>, which is the standard library. It contains
+common functions like <code>sum</code> or <code>count</code>, along with all transform functions such
+as <code>derive</code> and <code>group</code>.</p>
+<p>In pipelines (or rather in transform functions), scope is also injected with
+namespaces of tables which may have been referenced with <code>from</code> or <code>join</code>
+transforms. These namespaces contain simply all the columns of the table and
+possibly a wildcard variable, which matches any variable (see the algorithm
+below). Within transforms, there is also a special namespace that does not have
+a name. It is called a <em>“frame”</em> and it contains columns of the current table
+the transform is operating on.</p>
+<h2 id="resolving"><a class="header" href="#resolving">Resolving</a></h2>
+<p>For each ident we want to resolve, we search the scope’s items in order. One of
+three things can happen:</p>
+<ul>
+<li>
+<p>Scope contains an exact match, e.g. a name that matches in namespace and the
+variable name.</p>
+</li>
+<li>
+<p>Scope does not contain an exact match, but the ident did not specify a
+namespace, so we can match a namespace that contains a <code>*</code> wildcard. If
+there’s a single namespace, the matched namespace is also updated to contain
+this new variable name.</p>
+</li>
+<li>
+<p>Otherwise, the nothing is matched and an error is raised.</p>
+</li>
+</ul>
+<h2 id="translating-to-sql"><a class="header" href="#translating-to-sql">Translating to SQL</a></h2>
+<p>When translating into an SQL statement which references only one table, there is
+no need to reference column names with table prefix.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-110"><a class="header" href="#prql-110">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+select first_name
+</code></pre>
+</div>
+<div>
+<h4 id="sql-108"><a class="header" href="#sql-108">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  first_name
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<p>But when there are multiple tables and we don’t have complete knowledge of all
+table columns, a column without a prefix (i.e. <code>first_name</code>) may actually reside
+in multiple tables. Because of this, we have to use table prefixes for all
+column names.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-111"><a class="header" href="#prql-111">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive [first_name, dept_id]
+join d=departments [==dept_id]
+select [first_name, d.title]
+</code></pre>
+</div>
+<div>
+<h4 id="sql-109"><a class="header" href="#sql-109">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  employees.first_name,
+  d.title
+FROM
+  employees
+  JOIN departments AS d ON employees.dept_id = d.dept_id
+
+</code></pre>
+</div>
+</div>
+<p>As you can see, <code>employees.first_name</code> now needs table prefix, to prevent
+conflicts with potential column with the same name in <code>departments</code> table.
+Similarly, <code>d.title</code> needs the table prefix.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="functions-1"><a class="header" href="#functions-1">Functions</a></h1>
+<h2 id="function-call"><a class="header" href="#function-call">Function call</a></h2>
+<p>The major distinction between PRQL and today’s conventional programming
+languages such as C or Python is the function call syntax. It consists of the
+function name followed by arguments separated by whitespace.</p>
+<p>If one of the arguments is also a function call, it must be encased in
+parentheses, so we know where arguments of inner function end and the arguments
+of outer function start.</p>
+<h2 id="pipeline"><a class="header" href="#pipeline">Pipeline</a></h2>
+<p>There is a alternative way of calling functions: using a pipeline. Regardless of
+whether the pipeline is delimited by pipe symbol <code>|</code> or a new line, the pipeline
+is equivalent to applying each of functions as the last argument of the next
+function.</p>
+<p>… is equivalent to …</p>
+<p>As you may have noticed, transforms are regular functions too!</p>
+<div class="comparison">
+<div>
+<h4 id="prql-112"><a class="header" href="#prql-112">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+filter age &gt; 50
+sort name
+</code></pre>
+</div>
+<div>
+<h4 id="sql-110"><a class="header" href="#sql-110">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+WHERE
+  age &gt; 50
+ORDER BY
+  name
+
+</code></pre>
+</div>
+</div>
+<p>… is equivalent to …</p>
+<div class="comparison">
+<div>
+<h4 id="prql-113"><a class="header" href="#prql-113">PRQL</a></h4>
+<pre><code class="language-prql">from employees | filter age &gt; 50 | sort name
+</code></pre>
+</div>
+<div>
+<h4 id="sql-111"><a class="header" href="#sql-111">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+WHERE
+  age &gt; 50
+ORDER BY
+  name
+
+</code></pre>
+</div>
+</div>
+<p>… is equivalent to …</p>
+<div class="comparison">
+<div>
+<h4 id="prql-114"><a class="header" href="#prql-114">PRQL</a></h4>
+<pre><code class="language-prql">filter age &gt; 50 (from employees) | sort name
+</code></pre>
+</div>
+<div>
+<h4 id="sql-112"><a class="header" href="#sql-112">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+WHERE
+  age &gt; 50
+ORDER BY
+  name
+
+</code></pre>
+</div>
+</div>
+<p>… is equivalent to …</p>
+<div class="comparison">
+<div>
+<h4 id="prql-115"><a class="header" href="#prql-115">PRQL</a></h4>
+<pre><code class="language-prql">sort name (filter age &gt; 50 (from employees))
+</code></pre>
+</div>
+<div>
+<h4 id="sql-113"><a class="header" href="#sql-113">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  employees
+WHERE
+  age &gt; 50
+ORDER BY
+  name
+
+</code></pre>
+</div>
+</div>
+<p>As you can see, the first example with pipeline notation is much easier to
+comprehend, compared to the last one with the regular function call notation.
+This is why it is recommended to use pipelines for nested function calls that
+are 3 or more levels deep.</p>
+<h2 id="currying-and-late-binding"><a class="header" href="#currying-and-late-binding">Currying and late binding</a></h2>
+<p>In PRQL, functions are first class citizens. As cool as that sounds, we need
+simpler terms to explain it. In essence in means that we can operate with
+functions are with any other value.</p>
+<!-- TODO -->
+<div style="break-before: page; page-break-before: always;"></div><h1 id="grammars--syntax-highlighting"><a class="header" href="#grammars--syntax-highlighting">Grammars / syntax highlighting</a></h1>
+<p>PRQL contains multiple grammar definitions to enable tools to highlight PRQL
+code. These are all intended to provide as good an experience as the grammar
+supports. Please raise any shortcomings in a GitHub issue.</p>
+<p>The definitions are somewhat scattered around the codebase; this page serves as
+an index.</p>
+<ul>
+<li>
+<p><a href="https://lezer.codemirror.net/">Lezer</a> — used by CodeMirror editors. The PRQL
+file is at
+<a href="https://github.com/PRQL/prql/tree/main/grammars/prql-lezer/README.md"><code>grammars/prql-lezer/README.me</code></a>.</p>
+</li>
+<li>
+<p><a href="https://handlebarsjs.com/">Handlebars</a> — currently duplicated:</p>
+<ul>
+<li>The book:
+<a href="https://github.com/PRQL/prql/blob/main/web/book/highlight-prql.js"><code>book/highlight-prql.js</code></a></li>
+<li>The website (outside of the book &amp; playground):
+<a href="https://github.com/PRQL/prql/blob/main/web/book/highlight-prql.js"><code>website/themes/prql-theme/static/plugins/highlight/prql.js</code></a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://macromates.com/manual/en/language_grammars">Textmate</a> — used by the
+VS Code extension. It’s in the <code>prql-vscode</code> repo in
+<a href="https://github.com/PRQL/prql-vscode/blob/main/syntaxes/prql.tmLanguage.json"><code>prql-vscode/syntaxes/prql.tmLanguage.json</code></a>.</p>
+</li>
+<li>
+<p><a href="https://microsoft.github.io/monaco-editor/monarch.html">Monarch</a> — used by
+the Monaco editor, which we use for the Playground. The grammar is at
+<a href="https://github.com/PRQL/prql/blob/main/web/playground/src/workbench/prql-syntax.js"><code>playground/src/workbench/prql-syntax.js</code></a>.</p>
+</li>
+<li>
+<p><a href="https://tree-sitter.github.io/tree-sitter">Tree-Sitter</a> — used by the neovim
+and helix. The grammar can be found at
+<a href="https://github.com/PRQL/tree-sitter-prql">https://github.com/PRQL/tree-sitter-prql</a>.</p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="highlight-prql.js"></script>
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>

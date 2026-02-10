@@ -1,0 +1,1617 @@
+<!DOCTYPE HTML>
+<html lang="zh_TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>變更日誌 - PRQL language book</title>
+
+
+        <!-- Custom HTML head -->
+        <script type="text/javascript" src="../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="Modern language for transforming data — a simple, powerful, pipelined SQL replacement">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../comparison-table-23ca7667.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-5b408d97.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-fe7aafd6.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">PRQL language book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/PRQL/prql" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="prql-變更日誌"><a class="header" href="#prql-變更日誌">PRQL 變更日誌</a></h1>
+<h2 id="unreleased"><a class="header" href="#unreleased">[unreleased]</a></h2>
+<p><strong>語言</strong>：</p>
+<p><strong>功能</strong>：</p>
+<p><strong>Fixes</strong>:</p>
+<p><strong>文件</strong>：</p>
+<p><strong>Web</strong>:</p>
+<p><strong>整合</strong>：</p>
+<ul>
+<li><a href="https://micro-editor.github.io/">micro</a> 2.0.15 has syntax highlighting for PRQL. (@vanillajonathan)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<p><strong>New Contributors</strong>:</p>
+<h2 id="01310--2025-12-16"><a class="header" href="#01310--2025-12-16">0.13.10 — 2025-12-16</a></h2>
+<p>0.13.10 completes the npm OIDC publishing fix from 0.13.9.</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>Add <code>read_json</code> support for DuckDB and ClickHouse (@adamnemecek, #5608)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Fix <code>text.length</code> on Snowflake (@priithaamer, #5614)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Fix npm OIDC publishing by upgrading to Node 24 (@max-sixty, #5619)</li>
+<li>Fix push-web-branch workflow permissions (@max-sixty, #5620)</li>
+</ul>
+<h2 id="0139--2025-12-12"><a class="header" href="#0139--2025-12-12">0.13.9 — 2025-12-12</a></h2>
+<p>0.13.9 is a re-release of 0.13.8 with fixed npm publishing.</p>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Use OIDC for npm publishing (@max-sixty, #5609)</li>
+</ul>
+<h2 id="0138--2025-12-12"><a class="header" href="#0138--2025-12-12">0.13.8 — 2025-12-12</a></h2>
+<p>0.13.8 has 47 commits from 6 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>Add named parameter support for DuckDB read_parquet (@max-sixty, #5563)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Snowflake interval quoting style (@priithaamer, #5604)</li>
+<li>Return error instead of panicking when window rows/range is not a range (@max-sixty, #5603)</li>
+<li>Add ORDER BY fallback for Snowflake window functions (@max-sixty, #5583)</li>
+<li>DISTINCT ON to include wildcard when projection is empty (@max-sixty, #5562)</li>
+<li>Lineage traces through CTEs to source tables (@nightscape, #5581)</li>
+<li>Lineage works with unions (@nightscape, #5550)</li>
+<li>Handle lineage correctly when group pipeline simplifies to non-TransformCall (@max-sixty, #5584)</li>
+<li>Return error for join referencing inaccessible table (@max-sixty, #5587)</li>
+<li>Error when table variable used in scalar context (@max-sixty, #5585)</li>
+<li>Improve error messages for missing main pipeline (@max-sixty, #5565)</li>
+<li>Provide clear error for empty tuple/array in from (@max-sixty, #5564)</li>
+<li>Improve error message for negative numbers in transforms (@max-sixty, #5566)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Close HTML comment in sort.md documentation (@max-sixty, #5597)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>Add grammar file for Raku (@vanillajonathan, #5576)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Upgrade mdbook to 0.5.0 (#5568)</li>
+<li>Update macOS runners to version 15 (#5596)</li>
+<li>Remove 2nd person from error messages (#5567)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@nightscape, with #5550</li>
+</ul>
+<h2 id="0137--2025-11-08"><a class="header" href="#0137--2025-11-08">0.13.7 — 2025-11-08</a></h2>
+<p>0.13.7 has 8 commits from 6 contributors. Selected changes:</p>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Fix INTERVAL quoting in Redshift (@lukapeschke, #5545)</li>
+<li>Fix support for text.contains in sql.redshift target (@dimtion, #5549)</li>
+<li>Fix division in Redshift produces float (@priithaamer, #5546)</li>
+<li>Use || operator over CONCAT for std.concat in Redshift (@lukapeschke, #5540)</li>
+</ul>
+<p><strong>Web</strong>:</p>
+<ul>
+<li>Bump vite from 7.1.11 to 7.2.0 in playground (#5547)</li>
+</ul>
+<h2 id="0136--2025-11-01"><a class="header" href="#0136--2025-11-01">0.13.6 — 2025-11-01</a></h2>
+<p>0.13.6 has 40 commits from 6 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>Add support for Redshift dialect (@priithaamer, #5537)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Fix append regression in 0.13.5 (@priithaamer, #5495)</li>
+<li>Fix s-string escaping (@priithaamer, #5497)</li>
+<li>Filter out attestation manifests in platform verification (@max-sixty, #5509)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Migrate devcontainer build from QEMU to native ARM64 runners (@max-sixty, #5506)</li>
+<li>Migrate from markdown-link-check to lychee (@max-sixty, #5519)</li>
+<li>Use zero-copy slice for binary/hex/octal number parsing (perf improvement, @max-sixty, #5488)</li>
+<li>Update rust toolchain version (#5536)</li>
+<li>Do not allow incompatible rust-version dependencies (@eitsupi, #5493)</li>
+<li>Pin typos to v1.37.2 (@max-sixty, #5510)</li>
+</ul>
+<h2 id="0135--2025-10-09"><a class="header" href="#0135--2025-10-09">0.13.5 — 2025-10-09</a></h2>
+<p>0.13.5 has 237 commits from 14 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>Support for SQL arrays as <code>s[...]</code> syntax (@Robert Valek, #5312)</li>
+<li>Extract SQL column names from s-string tables when possible (@lukapeschke, #5310)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Sort step before an aggregate step no longer requires its columns to avoid a group by clause error (@julien-pinchelimouroux, #5347)</li>
+<li>Always add quotes on identifiers for Snowflake dialect (@julien-pinchelimouroux, #5461)</li>
+<li>Join with table containing column named “source” now works correctly (@Priit Haamer, #5468)</li>
+<li>Columns required by sorting are properly redirected (@lukapeschke, #5464)</li>
+<li>Ensure sorts are done on columns of the right table (@lukapeschke, #5338)</li>
+<li>Deduplicate selected items in gen_projection (@lukapeschke, #5305)</li>
+<li>Handle complex append cases (@Elouan Poupard-Cosquer, #5366)</li>
+<li>Improve requirement logic (@Elouan Poupard-Cosquer, #5357)</li>
+<li>Avoid type mismatch with Postgres in append (@Elouan Poupard-Cosquer, #5343)</li>
+<li>Apply column order on CTEs in append (@Elouan Poupard-Cosquer, #5323)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Fix binary literal example (@ftsfranklin, #5475)</li>
+<li>Use correct table in grouping tutorial (@fnuttens, #5332)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>TEA 63.3.1, a Qt-based text editor has syntax highlighting for PRQL (@vanillajonathan, #5220)</li>
+<li>Micro text editor grammar is now upstream (@vanillajonathan, #5353)</li>
+<li>Add LSP stub (@vanillajonathan, #5197)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Upgrade parser and lexer to chumsky 0.11, providing a 7x performance improvement (#5223, #5476, #5477)</li>
+<li>Set Rust linker on win64, fix build crash (@kgutwin, #5345)</li>
+<li>Integration tests compile all dialects and diff (@kgutwin, #5344)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@Elouan Poupard-Cosquer, with #5366</li>
+<li>@Priit Haamer, with #5468</li>
+<li>@Robert Valek, with #5312</li>
+<li>@fnuttens, with #5332</li>
+<li>@ftsfranklin, with #5475</li>
+<li>@julien-pinchelimouroux, with #5347</li>
+</ul>
+<h2 id="0134--2025-03-26"><a class="header" href="#0134--2025-03-26">0.13.4 — 2025-03-26</a></h2>
+<p>0.13.4 is a small bugfix release.</p>
+<p>It has 57 commits from 10 contributors. Selected changes (in particular, a few bugfixes aren’t listed here):</p>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>Add syntax highlight file for KSyntaxHighlighting. (@vanillajonathan, #5177)</li>
+<li>Add syntax highlight file for Vim. (@vanillajonathan, #5185)</li>
+<li>Add syntax highlight file for GNU Emacs. (@vanillajonathan, #5189)</li>
+<li><a href="https://kakoune.org/">Kakoune</a>, a terminal-based text editor has syntax highlighting for PRQL. (@vanillajonathan)</li>
+<li><a href="https://neovim.io/">Neovim</a> 0.11 has syntax highlighting for PRQL. (@vanillajonathan)</li>
+</ul>
+<h2 id="0133--2025-01-25"><a class="header" href="#0133--2025-01-25">0.13.3 — 2025-01-25</a></h2>
+<p>0.13.3 is a small release containing a few bug fixes and improvements. It has 86 commits from 10 contributors. Selected changes:</p>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Sort steps in sub-pipelines no longer cause a column lookup error (@lukapeschke, #5066)</li>
+<li>Dereferencing of sort columns when rendering SQL now done in context of main pipeline (@kgutwin, #5098)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@lukapeschke, with #5066</li>
+</ul>
+<h2 id="0132"><a class="header" href="#0132">0.13.2</a></h2>
+<p>0.13.2 is a tiny release to fix an issue publishing 0.13.1 to crates.io.</p>
+<h2 id="0131"><a class="header" href="#0131">0.13.1</a></h2>
+<p>0.13.1 is a small release containing a few bug fixes and improvements. Velocity has slowed down a bit in recent months, we’re still hoping to finish the new resolver and the new formatter in the near future.</p>
+<p>It has 97 commits from 10 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>
+<p>Add a option to the experimental documentation generator to output the docs in HTML format. The option is given using the <code>--format=html</code> option. (@vanillajonathan, 4791)</p>
+</li>
+<li>
+<p>The version of the library is now read from <code>git describe</code>. This doesn’t affect libraries built on git tags (such as our releases), only those built when developing. When reporting bugs, this helps identify the exact version. (@max-sixty &amp; @m-span, #4804)</p>
+</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>
+<p>Raw strings (<code>r"..."</code>) are retained through <code>prqlc fmt</code> (@max-sixty, #4848)</p>
+</li>
+<li>
+<p>Strings containing an odd contiguous number of quotes are now delimited by an odd number of quotes when being formatted. The previous implementation would use an even number, which is invalid PRQL. (@max-sixty, #4850)</p>
+</li>
+<li>
+<p>A few more keywords are quoted, such as <code>user</code>, which is a reserved keyword in PostgreSQL. (@max-sixty)</p>
+</li>
+</ul>
+<h2 id="0130--2024-07-25"><a class="header" href="#0130--2024-07-25">0.13.0 — 2024-07-25</a></h2>
+<p>0.13.0 brings a new debug logging framework, a big refactor of the parser, a new highlighter, an <code>**</code> operator for exponentiation, a few bug fixes, and lots of other changes. It has 153 commits from 11 contributors.</p>
+<p>Our work continues on rewriting the resolver and completing <code>prqlc fmt</code>.</p>
+<p>Selected changes:</p>
+<p><strong>語言</strong>：</p>
+<ul>
+<li>
+<p>Parentheses are always required around pipelines, even within tuples. For example:</p>
+<pre><code class="language-prql no-eval">from artists
+# These parentheses are now required
+derive {a=(b | math.abs)}
+# No change — doesn't affect expressions or function calls without pipelines
+derive {x = 3 + 4}
+</code></pre>
+<p>This is a small breaking change. The new behavior matches the existing documentation. (@max-sixty, #4775)</p>
+</li>
+<li>
+<p>A new <code>**</code> operator for exponentiation. (@aljazerzen &amp; @max-sixty, #4125)</p>
+</li>
+</ul>
+<p><strong>功能</strong>：</p>
+<ul>
+<li><code>prqlc compile --debug-log=log.html</code> will generate an HTML file with a detailed log of the compilation process. (@aljazerzen, #4646)</li>
+<li>Added <code>prqlc debug json-schema</code> command to auto-generate JSON Schema representations of commonly exposed IR types such as PL and RQ. (@kgutwin, #4698)</li>
+<li>Add documentation comments to the output of the documentation generator. (@vanillajonathan, #4729)</li>
+<li>Add CLI syntax highlighting to <code>prqlc</code>. You can try it as <code>prqlc experimental highlight example.prql</code>. (@vanillajonathan, #4755)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Using <code>in</code> with an empty array pattern (e.g. <code>expr | in []</code>) will now output a constant <code>false</code> condition instead of an <code>expr IN ()</code>, which is syntactically invalid in some SQL dialects (@Globidev, #4598)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>The Snap package previously released on the edge channel is now released on the stable channel. (@vanillajonathan, #4784)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>
+<p>Major reorganization of <code>prqlc-parser</code> — <code>prqlc-ast</code> is merged into <code>prqlc-parser</code>, and <code>prqlc-parser</code>’s files are rearranged, including its exports. This is part of an effort to modularize the compiler by stage, reducing the amount of context that’s required to understand a single stage. There will likely be some further changes (more detail in the PR description). (@m-span, #4634)</p>
+<ul>
+<li>This is a breaking change for any libraries that depend on <code>prqlc-parser</code> (which should be fairly rare).</li>
+</ul>
+</li>
+<li>
+<p>Renamed <code>prql-compiler-macros</code> to <code>prqlc-macros</code> for consistency with other crates (@max-sixty, #4565)</p>
+</li>
+<li>
+<p><code>prql-compiler</code>, the old name for <code>prqlc</code>, is removed as a facade to <code>prqlc</code>. It had been deprecated for a few versions and will no longer be updated. (@max-sixty)</p>
+</li>
+<li>
+<p>New benchmarks (@max-sixty, #4654)</p>
+</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@Globidev, with #4598</li>
+</ul>
+<h2 id="0122--2024-06-10"><a class="header" href="#0122--2024-06-10">0.12.2 — 2024-06-10</a></h2>
+<p>0.12.2 is a very small release which renames <code>prql-js</code> to <code>prqlc-js</code> to match our standard naming scheme. Within node the package is imported as <code>prqlc</code>.</p>
+<p>It also fixes a mistake in the <code>prqlc-python</code> release pipeline.</p>
+<h2 id="0121--2024-06-09"><a class="header" href="#0121--2024-06-09">0.12.1 — 2024-06-09</a></h2>
+<p>0.12.1 is a tiny hotfix release which fixes how intra-prql crate dependencies were specified.</p>
+<h2 id="0120--2024-06-08"><a class="header" href="#0120--2024-06-08">0.12.0 — 2024-06-08</a></h2>
+<p>0.12.0 contains a few months of smaller features. Our focus has been on rewriting the resolver, an effort that is still ongoing.</p>
+<p>It has 239 commits from 12 contributors. Selected changes (most are not listed here, possibly we should be more conscientious about adding them…):</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>Add <code>prqlc lex</code> command to the CLI (@max-sixty)</li>
+<li>Add <code>prqlc debug lineage</code> command to the CLI, creating an expression lineage graph from a query (@kgutwin, #4533)</li>
+<li>Initial implementation of an experimental documentation generator that generates Markdown documentation from <code>.prql</code> files. (@vanillajonathan, #4152).</li>
+<li>Join’s <code>side</code> parameter can take a reference that resolves to a literal (note: this is an experimental feature which may change in the future) (@kgutwin, #4499)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Support expressions on left hand side of <code>std.in</code> operator. (@kgutwin, #4498)</li>
+<li>Prevent panic for <code>from {}</code> and <code>std</code> (@m-span, #4538)</li>
+</ul>
+<p><strong>Web</strong>:</p>
+<ul>
+<li>The <code>browser</code> dist files are now built with <code>wasm-pack</code>’s <code>web</code> target. As a result, they should be usable as ES Modules, through JS CDNs, and for example with Observable Framework (@srenatus, #4274).</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>The syntax highlighter package for Sublime Text is now <a href="https://packagecontrol.io/packages/PRQL">published</a> (@vanillajonathan).</li>
+<li>The <a href="https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons">VSCode Great Icons</a> icon pack extension shows a database icon for <code>.prql</code> files. (@EmmanuelBeziat)</li>
+<li><a href="https://github.com/XAMPPRocky/tokei">Tokei</a>, a source lines of code counter now has support for <code>.prql</code> files. (@vanillajonathan)</li>
+<li>Add syntax highlight file for the <a href="https://micro-editor.github.io/">micro</a> text editor. (@vanillajonathan)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@srenatus, with #4274</li>
+<li>@jacquayj, with #4332</li>
+<li>@pdelewski, with #4337</li>
+<li>@m-span, with #4422</li>
+<li>@kgutwin, with #4498</li>
+</ul>
+<h2 id="0114--2024-02-25"><a class="header" href="#0114--2024-02-25">0.11.4 — 2024-02-25</a></h2>
+<p>0.11.4 is a hotfix release, fixing a CI issue that caused the CLI binaries to be built without the <code>cli</code> feature.</p>
+<h2 id="0113--2024-02-10"><a class="header" href="#0113--2024-02-10">0.11.3 — 2024-02-10</a></h2>
+<p>0.11.3 is a very small release, mostly a rename of the Python bindings.</p>
+<p>The release has 13 commits from 4 contributors.</p>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>As part of making our names more consistent, the Python bindings are renamed. <code>prql-python</code> becomes a package published and importable as <code>prqlc</code>. The internal Rust crate is named <code>prqlc-python</code>.</li>
+</ul>
+<h2 id="0112--2024-02-07"><a class="header" href="#0112--2024-02-07">0.11.2 — 2024-02-07</a></h2>
+<p>0.11.2 contains lots of internal changes, lots of syntax highlighting, and the beginning of <code>lutra</code>, a query runner.</p>
+<p>This release has 122 commits from 9 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>Initial implementation of <code>lutra</code>, a query runner. (@aljazerzen, #4182, #4174, #4134)</li>
+<li><code>prqlc fmt</code> works on projects with multiple files. (@max-sixty, #4028)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Reduce stack memory usage (@aljazerzen, #4103)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>Add syntax highlight file for GtkSourceView. (@vanillajonathan, #4062)</li>
+<li>Add syntax highlight file for CotEditor. (@vanillajonathan)</li>
+<li>Add syntax highlight file for Sublime Text. (@vanillajonathan, #4127)</li>
+<li><a href="https://github.com/flosse/sloc">sloc</a>, a source lines of code counter now has support for <code>.prql</code> files. (@vanillajonathan)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li><code>prql-compiler</code> has been renamed to <code>prqlc</code>, and we’ve established a more consistent naming scheme. The existing crate will still be published, re-exporting <code>prqlc</code>, so no dependencies will break. A future version will add a deprecation warning.</li>
+<li>The <code>prqlc-clib</code> crate was renamed to <code>prqlc-c</code>, and associated artifacts were renamed. We’re trying to make names consistent (ideally for the final time!), and have a plan to rename some other bindings. (@max-sixty, #4077)</li>
+<li>Add lots of whitespace items to the lexer, in preparation for the completion of <code>prqlc fmt</code> (@max-sixty, #4109, #4105)</li>
+<li>Table declarations (@aljazerzen, #4126)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@kaspermarstal, with #4124</li>
+</ul>
+<h2 id="0111--2023-12-26"><a class="header" href="#0111--2023-12-26">0.11.1 — 2023-12-26</a></h2>
+<p>0.11.1 fixes a couple of small bugs; it comes a few days after 0.11.</p>
+<p>This release has 16 commits from 6 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>Infer the type of array literals to be the union of types of its items. (@aljazerzen, #3989)</li>
+<li><code>prql</code> module is added and the <code>prql_version</code> function is renamed to the <code>prql.version</code> function. The old <code>prql_version</code> function is deprecated and will be removed in the future release. (@eitsupi, #4006)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Do not compile to <code>DISTINCT ON</code> when <code>take n</code> is used with <code>group</code> for the targets <code>clickhouse</code>, <code>duckdb</code> and <code>postgres</code>. (@PrettyWood, #3988)</li>
+<li>Fix <code>take</code> n rows for <code>mssql</code> dialect by switching from TOP to FETCH (@PrettyWood, #3994)</li>
+</ul>
+<h2 id="0110--2023-12-19"><a class="header" href="#0110--2023-12-19">0.11.0 — 2023-12-19</a></h2>
+<p>0.11.0 introduces new <code>date</code>, <code>text</code> &amp; <code>math</code> modules with lots of standard functions, including a new <code>date.to_text</code> function. It contains a few bugs fixes, and lots of internal improvements to the compiler.</p>
+<p>This release has 119 commits from 9 contributors. Selected changes:</p>
+<p><strong>語言</strong>：</p>
+<ul>
+<li><em>Breaking</em>: <code>group</code>’s <code>by</code> columns are now excluded from the partition. (#3490)</li>
+<li><em>Breaking</em>: <code>round</code> is now in the <code>math</code> module and needs to be called via <code>math.round</code>. (#3928)</li>
+<li><em>Breaking</em>: <code>lower</code> and <code>upper</code> are now in the <code>text</code> module and need to be called via <code>text.lower</code> and <code>text.upper</code>. (#3913, #3973)</li>
+</ul>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>The <code>std.in</code> function now supports a list of values (@PrettyWood, #3883)</li>
+<li>Most standard mathematical functions are now supported: <code>abs</code>, <code>floor</code>, <code>ceil</code>, <code>pi</code>, <code>exp</code>, <code>ln</code>, <code>log10</code>, <code>log</code>, <code>sqrt</code>, <code>degrees</code>, <code>radians</code>, <code>cos</code>, <code>acos</code>, <code>sin</code>, <code>asin</code>, <code>tan</code>, <code>atan</code>, <code>pow</code> and <code>round</code>.<br>Those functions are in the <code>math</code> module (@PrettyWood, #3909, #3916 &amp; 3928)</li>
+<li>Most standard string functions are now supported: <code>ltrim</code>, <code>rtrim</code>, <code>trim</code>, <code>length</code>, <code>extract</code>, <code>replace</code>. Utility functions <code>starts_with</code>, <code>contains</code> and <code>ends_with</code> are also available.<br>Those functions are in the <code>text</code> module (@PrettyWood, #3913, #3973)</li>
+<li>Formatting a date to a text is now available for Clickhouse, DuckDB, MySQL, MSSQL and Postgres. A new <code>date</code> module has been added with the <code>to_text</code> function (@PrettyWood, #3951, #3954 &amp; #3955)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Fix an issue with arithmetic precedence (@max-sixty, #3846)</li>
+<li><code>+</code> and <code>-</code> can be used after a cast (@PrettyWood, #3923)</li>
+<li>The <a href="https://lezer.codemirror.net/">Lezer</a> grammar had plenty of improvements and fixes. (@vanillajonathan)</li>
+</ul>
+<p><strong>Web</strong>:</p>
+<ul>
+<li>The Playground now uses <a href="https://vitejs.dev/">Vite</a>. (@vanillajonathan)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Bump <code>prql-compiler</code>’s MSRV to 1.70.0 (@eitsupi, #3876)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@PrettyWood, with #3883</li>
+</ul>
+<h2 id="0101--2023-11-14"><a class="header" href="#0101--2023-11-14">0.10.1 — 2023-11-14</a></h2>
+<p>0.10.1 is a small release containing some internal fixes of the compiler.</p>
+<p>This release has 36 commits from 7 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>The <code>std.sql.read_csv</code> function and the <code>std.sql.read_parquet</code> function supports the <code>sql.glaredb</code> target. (@eitsupi, #3749)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Fix the bug of compiling to <code>DISTINCT ON</code> when <code>take 1</code> is used with <code>group by</code> for the targets <code>sql.clickhouse</code>, <code>sql.duckdb</code> and <code>sql.postgres</code>. (@aljazerzen, #3792)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>Enable integration tests for GlareDB. (@eitsupi, #3749)</li>
+<li><a href="https://github.com/trapd00r/LS_COLORS">trapd00r/LS_COLORS</a>, a collection of LS_COLORS definitions colorizes <code>.prql</code> files. (@vanillajonathan)</li>
+<li><a href="https://github.com/sharkdp/vivid">vivid</a>, a themeable LS_COLORS generator colorizes <code>.prql</code> files. (@vanillajonathan)</li>
+<li><a href="https://github.com/athityakumar/colorls">colorls</a>, displays <code>.prql</code> files with a database icon. (@vanillajonathan)</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=mightbesimon.emoji-icons">Emoji File Icons</a>, a VS Code extension displays <code>.prql</code> files with a database emoji icon. (@vanillajonathan)</li>
+<li><a href="https://eza.rocks/">eza</a>, a modern ls replacement colorizes <code>.prql</code> files. (@vanillajonathan)</li>
+<li><a href="https://github.com/lsd-rs/lsd">lsd</a>, next gen ls command displays <code>.prql</code> files with a database icon. (@vanillajonathan)</li>
+</ul>
+<h2 id="0100--2023-10-26"><a class="header" href="#0100--2023-10-26">0.10.0 — 2023-10-26</a></h2>
+<p>0.10.0 contains lots of small improvements, including support for new types of literal notation, support for <code>read_*</code> functions in more dialects, playground improvements, and a better Lezer grammar (which we’re planning on using for a Jupyter extension).</p>
+<p>This release has 155 commits from 9 contributors. Selected changes:</p>
+<p><strong>語言</strong>：</p>
+<ul>
+<li><em>Breaking:</em> Case syntax now uses brackets <code>[]</code> rather than braces <code>{}</code>. To convert previous PRQL queries to this new syntax simply change <code>case { ... }</code> to <code>case [ ... ]</code>. (@AaronMoat, #3517)</li>
+</ul>
+<p><strong>功能</strong>：</p>
+<ul>
+<li><em>Breaking</em>: The <code>std.sql.read_csv</code> function is now compiled to <code>read_csv</code> by default. Please set the target <code>sql.duckdb</code> to use the DuckDB’s <code>read_csv_auto</code> function as previously. (@eitsupi, #3599)</li>
+<li><em>Breaking</em>: The <code>std.every</code> function is renamed to <code>std.all</code> (@aljazerzen, #3703)</li>
+<li>The <code>std.sql.read_csv</code> function and the <code>std.sql.read_parquet</code> function supports the <code>sql.clickhouse</code> target. (@eitsupi, #1533)</li>
+<li>Add <code>std.prql_version</code> function to return PRQL version (@hulxv, #3533)</li>
+<li>A new type <code>anytype</code> is added. (@aljazerzen, #3703)</li>
+<li>Add support for hex escape sequences in strings. Example <code>"Hello \x51"</code>. (@vanillajonathan, #3568)</li>
+<li>Add support for long Unicode escape sequences. Example <code>"Hello \u{01F422}"</code>. (@vanillajonathan, #3569)</li>
+<li>Add support for binary numerical notation. Example <code>filter status == 0b1111000011110000</code>. (@vanillajonathan, #3661)</li>
+<li>Add support for hexadecimal numerical notation. Example <code>filter status == 0xff</code>. (@vanillajonathan, #3654)</li>
+<li>Add support for octal numerical notation. Example <code>filter status == 0o777</code>. (@vanillajonathan, #3672)</li>
+<li>New compile target <code>sql.glaredb</code> for <a href="https://docs.glaredb.com/">GlareDB</a> and integration tests for it (However, there is a bug in the test and it is currently not running). (@universalmind303, @scsmithr, @eitsupi, #3669)</li>
+</ul>
+<p><strong>Web</strong>:</p>
+<ul>
+<li>
+<p>Allow cmd-/ (Mac) or ctrl-/ (Windows) to toggle comments in the playground editor (@AaronMoat, #3522)</p>
+</li>
+<li>
+<p>Limit maximum height of the playground editor’s error panel to avoid taking over whole screen (@AaronMoat, #3524)</p>
+</li>
+<li>
+<p>The playground now uses <a href="https://vitejs.dev/">Vite</a> (@vanillajonathan).</p>
+</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>Add a CLI command <code>prqlc collect</code> to collect a project’s modules into a single file (@aljazerzen, #3739)</li>
+<li>Add a CLI command <code>prqlc debug expand-pl</code> to parse &amp; and expand into PL without resolving (@aljazerzen, #3739)</li>
+<li>Bump <code>prqlc</code>’s MSRV to 1.70.0 (@eitsupi, #3521)</li>
+<li><a href="https://pygments.org/">Pygments</a>, a syntax highlighting library now has syntax highlighting for PRQL. (@vanillajonathan, #3564)</li>
+<li><a href="https://github.com/alecthomas/chroma">chroma</a>, a syntax highlighting library written in Go and used by the static website generator <a href="https://gohugo.io/">Hugo</a>. (@vanillajonathan, #3597)</li>
+<li><a href="https://github.com/boyter/scc">scc</a>, a source lines of code counter now has support for <code>.prql</code> files. (@vanillajonathan)</li>
+<li><a href="https://github.com/JoaoDanielRufino/gcloc">gcloc</a> a source lines of code counter now has support for <code>.prql</code> files. (@vanillajonathan)</li>
+<li><a href="https://github.com/AlDanial/cloc">cloc</a> a source lines of code counter now has support for <code>.prql</code> files. (@AlDanial)</li>
+<li><a href="https://github.com/hhatto/gocloc">gocloc</a> a source lines of code counter now has support for <code>.prql</code> files. (@vanillajonathan)</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=quarto.quarto">The Quarto VS Code extension</a> supports editing PRQL code blocks (<a href="https://prql-lang.org/book/project/bindings/r.html"><code>prqlr</code></a> is required to render Quarto Markdown with PRQL code blocks). (@jjallaire)</li>
+</ul>
+<p><strong>Internal</strong>:</p>
+<ul>
+<li>Rename some of the internal crates, and refactored their paths in the repo. (@aljazerzen, #3683).</li>
+<li>Add a <code>justfile</code> for developers who prefer that above our <code>Taskfile.yaml</code> (@aljazerzen, #3681)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@hulxv, with #3533</li>
+<li>@AaronMoat, with #3522</li>
+<li>@jangorecki, with #3634</li>
+</ul>
+<h2 id="095--2023-09-16"><a class="header" href="#095--2023-09-16">0.9.5 — 2023-09-16</a></h2>
+<p>0.9.5 adds a line-wrapping character, fixes a few bugs, and improves our CI. The release has 77 commits from 8 contributors. Selected changes are below.</p>
+<p>Look out for some conference talks coming up over the next few weeks, including <a href="https://qconsf.com/presentation/oct2023/prql-simple-powerful-pipelined-sql-replacement">QCon SF on Oct 2</a> and <a href="https://www.data2day.de/veranstaltung-21353-0-prql-a-modern-language-for-data-transformation.html">date2day on Oct 12</a>.</p>
+<p><strong>語言</strong>：</p>
+<ul>
+<li>
+<p>A new line-wrapping character, for lines that are long and we want to break up into multiple physical lines. This is slightly different from from many languages — it’s on the subsequent line:</p>
+<pre><code class="language-prql no-eval">from artists
+select is_europe =
+\ country == "DE"
+\ || country == "FR"
+\ || country == "ES"
+</code></pre>
+<p>This allows for easily commenting out physical lines while maintaining a correct logical line; for example:</p>
+<pre><code class="language-diff">from artists
+select is_europe =
+\ country == "DE"
+\ || country == "FR"
+\ || country == "FR"
+-\ || country == "ES"
++#\ || country == "ES"
+</code></pre>
+<p>(@max-sixty, #3408)</p>
+</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>
+<p>Fix stack overflow on very long queries in Windows debug builds (@max-sixty, #2908)</p>
+</li>
+<li>
+<p>Fix panic when unresolved lineage appears in group or window (@davidot, #3266)</p>
+</li>
+<li>
+<p>Fix a corner-case in handling precedence, and remove unneeded parentheses in some outputs (@max-sixty, #3472)</p>
+</li>
+</ul>
+<p><strong>Web</strong>:</p>
+<ul>
+<li>Compiler panics are now printed to the console (@max-sixty, #3446)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li><a href="https://ace.c9.io/">Ace</a>, the JavaScript code editor now has syntax highlighting for PRQL. (@vanillajonathan, #3493)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Simplify &amp; speed up lexer (@max-sixty, #3426, #3418)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@davidot, with #3450</li>
+</ul>
+<h2 id="094--2023-08-24"><a class="header" href="#094--2023-08-24">0.9.4 — 2023-08-24</a></h2>
+<p>0.9.4 is a small release with some improvements and bug fixes in the compiler and <code>prqlc</code>. And, the documentation and CI are continually being improved.</p>
+<p>This release has 110 commits from 9 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>Strings can be delimited with any odd number of quote characters. The logic for lexing quotes is now simpler and slightly faster. Escapes in single-quote-delimited strings escape single-quotes rather than double-quotes. (@max-sixty, #3274)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>S-strings within double braces now parse correctly (@max-sixty, #3265)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>New docs for strings (@max-sixty, #3281)</li>
+</ul>
+<p><strong>Web</strong>:</p>
+<ul>
+<li>Improve syntax highlighting for numbers in the book &amp; website (@max-sixty, #3261)</li>
+<li>Add ClickHouse integration to docs (@max-sixty, #3251)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li><code>prqlc</code> no longer displays a prompt when piping a query into its stdin (@max-sixty, #3248).</li>
+<li>Add a minimal example for use <code>prql-lib</code> with Zig (@vanillajonathan, #3372)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>
+<p>Overhaul our CI to run a cohesive set of tests depending on the specific changes in the PR, and elide all others. This cuts CI latency to less than three minutes for most changes, and enables GitHub’s auto-merge to wait for all relevant tests. It also reduces the CI time on merging to main, by moving some tests to only run on specific path changes or on our nightly run.</p>
+<p>We now have one label we can add to PRs to run more tests — <code>pr-nightly</code>. (@max-sixty, #3317 &amp; others).</p>
+</li>
+<li>
+<p>Auto-merge PRs for backports or pre-commit updates (@max-sixty, #3246)</p>
+</li>
+<li>
+<p>Add a workflow to create an issue when the scheduled nightly workflow fails (@max-sixty, #3304)</p>
+</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@FinnRG, with #3292</li>
+<li>@sitiom, with #3353</li>
+</ul>
+<h2 id="093--2023-08-02"><a class="header" href="#093--2023-08-02">0.9.3 — 2023-08-02</a></h2>
+<p>0.9.3 is a small release, with mostly documentation, internal, and CI changes.</p>
+<p>This release has 85 commits from 10 contributors.</p>
+<p>We’d like to welcome @not-my-profile as someone who has helped with lots of internal refactoring in the past couple of weeks.</p>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@vthriller, with #3171</li>
+<li>@postmeback, with #3216</li>
+</ul>
+<h2 id="092--2023-07-25"><a class="header" href="#092--2023-07-25">0.9.2 — 2023-07-25</a></h2>
+<p>0.9.2 is a hotfix release to fix an issue in the 0.9.0 &amp; 0.9.1 release pipelines.</p>
+<h2 id="091--2023-07-25"><a class="header" href="#091--2023-07-25">0.9.1 — 2023-07-25</a></h2>
+<p>0.9.1 is a hotfix release to fix an issue in the 0.9.0 release pipeline.</p>
+<h2 id="090--2023-07-24"><a class="header" href="#090--2023-07-24">0.9.0 — 2023-07-24</a></h2>
+<p>0.9.0 is probably PRQL’s biggest ever release. We have dialect-specific standard-libraries, a regex operator, an initial implementation of multiple-file projects &amp; modules, lots of bug fixes, and many many internal changes.</p>
+<p>We’ve made a few backward incompatible syntax changes. Most queries will work with a simple find/replace; see below for details.</p>
+<p>The release has 421 commits from 12 contributors.</p>
+<p>A small selection of the changes:</p>
+<p><strong>語言</strong>：</p>
+<ul>
+<li>
+<p>The major breaking change is a new syntax for lists, which have been renamed to <em>tuples</em>, and are now represented with braces <code>{}</code> rather than brackets <code>[]</code>.</p>
+<p>To convert previous PRQL queries to this new syntax simply change <code>[ ... ]</code> to <code>{ ... }</code>.</p>
+<p>We made the syntax change to incorporate arrays. Almost every major language uses <code>[]</code> for arrays. We are adopting that convention — arrays use <code>[]</code>, tuples will use <code>{}</code>. (Though we recognize that <code>{}</code> for tuples is also rare (Hi, Erlang!), but didn’t want to further load parentheses with meaning.)</p>
+<p>Arrays are conceptually similar to columns — their elements have a single type. Array syntax can’t contain assignments.</p>
+<p>As part of this, we’ve also formalized tuples as containing both individual items (<code>select {foo, baz}</code>), and assignments (<code>select {foo=bar, baz=fuz}</code>).</p>
+</li>
+<li>
+<p>Some significant changes regarding SQL dialects:</p>
+<ul>
+<li>Operators and functions can be defined on per-dialect basis. (@aljazerzen, #2681)</li>
+<li><em>Breaking</em>: The <code>sql.duckdb</code> target supports DuckDB 0.8 (@eitsupi, #2810).</li>
+<li><em>Breaking</em>: The <code>sql.hive</code> target is removed (@eitsupi, #2837).</li>
+</ul>
+</li>
+<li>
+<p>New arithmetic operators. These compile to different function or operator depending on the target.</p>
+<ul>
+<li>
+<p><em>Breaking</em>: Operator <code>/</code> now always performs floating division (@aljazerzen, #2684). See the <a href="https://prql-lang.org/book/reference/syntax/operators.html#division-and-integer-division">Division docs</a> for details.</p>
+</li>
+<li>
+<p>Truncated integer division operator <code>//</code> (@aljazerzen, #2684). See the <a href="https://prql-lang.org/book/reference/syntax/operators.html#division-and-integer-division">Division docs</a> for details.</p>
+</li>
+<li>
+<p>Regex search operator <code>~=</code> (@max-sixty, #2458). An example:</p>
+<pre><code class="language-prql no-eval">from tracks
+filter (name ~= "Love")
+</code></pre>
+<p>…compiles to;</p>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  tracks
+WHERE
+  REGEXP(name, 'Love')
+</code></pre>
+<p>…though the exact form differs by dialect; see the <a href="https://prql-lang.org/book/reference/syntax/operators.html#regex">Regex docs</a> for more details.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>New aggregation functions: <code>every</code>, <code>any</code>, <code>average</code>, and <code>concat_array</code>. <em>Breaking:</em> Remove <code>avg</code> in favor of <code>average</code>.</p>
+</li>
+<li>
+<p><em>Breaking:</em> We’ve changed our function declaration syntax to match other declarations. Functions were one of the first language constructs in PRQL, and since then we’ve added normal declarations there’s no compelling reason for functions to be different.</p>
+<pre><code class="language-prql no-eval">let add = a b -&gt; a + b
+</code></pre>
+<p>Previously, this was:</p>
+<pre><code class="language-prql no-eval">func add a b -&gt; a + b
+</code></pre>
+</li>
+<li>
+<p>Experimental modules, which allow importing declarations from other files. Docs are forthcoming.</p>
+</li>
+<li>
+<p>Relation literals create a relation (a “table”) as an <em>array</em> of <em>tuples</em>. This example demonstrates the new syntax for arrays <code>[]</code> and tuples <code>{}</code>. (@aljazerzen, #2605)</p>
+<pre><code class="language-prql no-eval">from [{a=5, b=false}, {a=6, b=true}]
+filter b == true
+select a
+</code></pre>
+</li>
+<li>
+<p><code>this</code> can be used to refer to the current pipeline, for situations where plain column name would be ambiguous:</p>
+<pre><code class="language-prql no-eval">from x
+derive sum = my_column
+select this.sum   # does not conflict with `std.sum`
+</code></pre>
+<p>Within a <code>join</code> transform, there is also a reference to the right relation: <code>that</code>.</p>
+</li>
+<li>
+<p><em>Breaking:</em> functions <code>count</code>, <code>rank</code> and <code>row_number</code> now require an argument of the array to operate on. In most cases you can directly replace <code>count</code> with <code>count this</code>. The <code>non_null</code> argument of <code>count</code> has been removed.</p>
+</li>
+</ul>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>
+<p>We’ve changed how we handle colors.</p>
+<p><code>Options::color</code> is deprecated and has no effect. Code which consumes <code>prql_compiler::compile</code> should instead accept the output with colors and use a library such as <code>anstream</code> to handle the presentation of colors. To ensure minimal disruption, <code>prql_compiler</code> will currently strip color codes when a standard environment variable such as <code>CLI_COLOR=0</code> is set or when it detects <code>stderr</code> is not a TTY.</p>
+<p>We now use the <a href="https://github.com/rust-cli/anstyle"><code>anstream</code></a> library in <code>prqlc</code> &amp; <code>prql-compiler</code>.</p>
+<p>(@max-sixty, #2773)</p>
+</li>
+<li>
+<p><code>prqlc</code> can now show backtraces when the standard backtrace env var (<code>RUST_BACKTRACE</code>) is active. (@max-sixty, #2751)</p>
+</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Numbers expressed with scientific notation — <code>1e9</code> — are now handled correctly by the compiler (@max-sixty, #2865).</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>prql-python now provides type hints (@philpep, #2912)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>
+<p>Annotations in PRQL. These have limited support but are currently used to specify binding strengths. They’re modeled after Rust’s annotations, but with <code>@</code> syntax, more similar to traditional decorators. (#2729)</p>
+<pre><code class="language-prql no-eval">@{binding_strength=11}
+let mod = l r -&gt; s"{l} % {r}"
+</code></pre>
+</li>
+<li>
+<p>Remove BigQuery’s special handling of quoted identifiers, now that our module system handles its semantics (@max-sixty, #2609).</p>
+</li>
+<li>
+<p>ClickHouse is tested in CI (@eitsupi, #2815).</p>
+</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@maxmcd, with #2533</li>
+<li>@khoa165, with #2876</li>
+<li>@philpep, with #2912</li>
+<li>@not-my-profile, with #2971</li>
+</ul>
+<h2 id="081--2023-04-29"><a class="header" href="#081--2023-04-29">0.8.1 — 2023-04-29</a></h2>
+<p>0.8.1 is a small release with a new <code>list-targets</code> command in <code>prqlc</code>, some documentation improvements, and some internal improvements.</p>
+<p>This release has 41 commits from 8 contributors.</p>
+<p>From the broader perspective of the project, we’re increasing the relative prioritization of it being easy for folks to actually use PRQL — either with existing tools, or a tool we’d build. We’ll be thinking about &amp; discussing the best way to do that over the next few weeks.</p>
+<h2 id="080--2023-04-14"><a class="header" href="#080--2023-04-14">0.8.0 — 2023-04-14</a></h2>
+<p>0.8.0 renames the <code>and</code> &amp; <code>or</code> operators to <code>&amp;&amp;</code> &amp; <code>||</code> respectively, reorganizes the Syntax section in the book, and introduces <code>read_parquet</code> &amp; <code>read_csv</code> functions for reading files with DuckDB.</p>
+<p>This release has 38 commits from 8 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>
+<p>Rename <code>and</code> to <code>&amp;&amp;</code> and <code>or</code> to <code>||</code>. Operators which are symbols are now consistently infix, while “words” are now consistently functions (@aljazerzen, #2422).</p>
+</li>
+<li>
+<p>New functions <code>read_parquet</code> and <code>read_csv</code>, which mirror the DuckDB functions, instructing the database to read from files (@max-sixty, #2409).</p>
+</li>
+</ul>
+<h2 id="071--2023-04-03"><a class="header" href="#071--2023-04-03">0.7.1 — 2023-04-03</a></h2>
+<p>0.7.1 is a hotfix release to fix <code>prql-js</code>’s <code>npm install</code> behavior when being installed as a dependency.</p>
+<p>This release has 17 commits from 4 contributors.</p>
+<h2 id="070--2023-04-01"><a class="header" href="#070--2023-04-01">0.7.0 — 2023-04-01</a></h2>
+<p>0.7.0 is a fairly small release in terms of new features, with lots of internal improvements, such as integration tests with a whole range of DBs, a blog post on Pi day, RFCs for a type system, and more robust language bindings.</p>
+<p>There’s a very small breaking change to the Rust API, hence the minor version bump.</p>
+<p>Here’s our April 2023 Update, from our <a href="https://github.com/PRQL/prql/blob/main/README.md">Readme</a>:</p>
+<blockquote>
+<h3 id="april-2023-update"><a class="header" href="#april-2023-update">April 2023 update</a></h3>
+<p>PRQL is being actively developed by a growing community. It’s ready to use by the intrepid, either as part of one of our supported extensions, or within your own tools, using one of our supported language bindings.</p>
+<p>PRQL still has some minor bugs and some missing features, and probably is only ready to be rolled out to non-technical teams for fairly simple queries.</p>
+<p>Here’s our current <a href="https://prql-lang.org/roadmap/">Roadmap</a> and our <a href="https://github.com/PRQL/prql/milestones">Milestones.</a></p>
+<p>Our immediate focus for the code is on:</p>
+<ul>
+<li>Building out the next few big features, including <a href="https://github.com/PRQL/prql/pull/1964">types</a> and <a href="https://github.com/PRQL/prql/pull/2129">modules</a>.</li>
+<li>Ensuring our supported features feel extremely robust; resolving any <a href="https://github.com/PRQL/prql/issues?q=is%3Aissue+is%3Aopen+label%3Abug+label%3Apriority">priority bugs</a>.</li>
+</ul>
+<p>We’re also spending time thinking about:</p>
+<ul>
+<li>Making it really easy to start using PRQL. We’re doing that by building integrations with tools that folks already use; for example our VS Code extension &amp; Jupyter integration. If there are tools you’re familiar with that you think would be open to integrating with PRQL, please let us know in an issue.</li>
+<li>Making it easier to contribute to the compiler. We have a wide group of contributors to the project, but contributions to the compiler itself are quite concentrated. We’re keen to expand this; <a href="https://github.com/PRQL/prql/issues/1840">#1840</a> for feedback.</li>
+</ul>
+</blockquote>
+<hr>
+<p>The release has 131 commits from 10 contributors. Particular credit goes to to @eitsupi &amp; @jelenkee, who have made significant contributions, and @vanillajonathan, whose prolific contribution include our growing language bindings.</p>
+<p>A small selection of the changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li><code>prqlc compile</code> adds <code>--color</code> &amp; <code>--include-signature-comment</code> options. (@max-sixty, #2267)</li>
+</ul>
+<p><strong>Web</strong>:</p>
+<ul>
+<li>Added the PRQL snippets from the book to the <a href="https://prql-lang.org/playground/">Playground</a> (@jelenkee, #2197)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li><em>Breaking</em>: The <code>compile</code> function’s <code>Options</code> now includes a <code>color</code> member, which determines whether error messages use ANSI color codes. This is technically a breaking change to the API. (@max-sixty, #2251)</li>
+<li>The <code>Error</code> struct now exposes the <code>MessageKind</code> enum. (@vanillajonathan, #2307)</li>
+<li>Integration tests run in CI with DuckDB, SQLite, PostgreSQL, MySQL and SQL Server (@jelenkee, #2286)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@k-nut, with #2294</li>
+</ul>
+<h2 id="061--2023-03-12"><a class="header" href="#061--2023-03-12">0.6.1 — 2023-03-12</a></h2>
+<p>0.6.1 is a small release containing an internal refactoring and improved bindings for C, PHP &amp; .NET.</p>
+<p>This release has 54 commits from 6 contributors. Selected changes:</p>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>No longer incorrectly compile to <code>DISTINCT</code> when a <code>take 1</code> refers to a different set of columns than are in the <code>group</code>. (@max-sixty, with thanks to @cottrell, #2109)</li>
+<li>The version specification of the dependency Chumsky was bumped from <code>0.9.0</code> to <code>0.9.2</code>. <code>0.9.0</code> has a bug that causes an infinite loop. (@eitsupi, #2110)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Add a policy for which bindings are supported / unsupported / nascent. See <a href="https://prql-lang.org/book/project/bindings/index.html">https://prql-lang.org/book/project/bindings/index.html</a> for more details (@max-sixty, #2062) (@max-sixty, #2062)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>[prql-lib] Added C++ header file. (@vanillajonathan, #2126)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Many of the items that were in the root of the repo have been aggregated into <code>web</code> &amp; <code>bindings</code>, simplifying the repo’s structure. There’s also <code>grammars</code> &amp; <code>packages</code> (@max-sixty, #2135, #2117, #2121).</li>
+</ul>
+<h2 id="060--2023-03-08"><a class="header" href="#060--2023-03-08">0.6.0 — 2023-03-08</a></h2>
+<p>0.6.0 introduces a rewritten parser, giving us the ability to dramatically improve error messages, renames <code>switch</code> to <code>case</code> and includes lots of minor improvements and fixes. It also introduces <code>loop</code>, which compiles to <code>WITH RECURSIVE</code>, as a highly experimental feature.</p>
+<p>There are a few cases of breaking changes, including switching <code>switch</code> to <code>case</code>, in case that’s confusing. There are also some minor parsing changes outlined below.</p>
+<p>This release has 108 commits from 11 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>
+<p>Add a (highly experimental) <code>loop</code> language feature, which translates to <code>WITH RECURSIVE</code>. We expect changes and refinements in upcoming releases. (#1642, @aljazerzen)</p>
+</li>
+<li>
+<p>Rename the experimental <code>switch</code> function to <code>case</code> given it more closely matches the traditional semantics of <code>case</code>. (@max-sixty, #2036)</p>
+</li>
+<li>
+<p>Change the <code>case</code> syntax to use <code>=&gt;</code> instead of <code>-&gt;</code> to distinguish it from function syntax.</p>
+</li>
+<li>
+<p>Convert parser from pest to Chumsky (@aljazerzen, #1818)</p>
+<ul>
+<li>Improved error messages, and the potential to make even better in the future. Many of these improvements come from error recovery.</li>
+<li>String escapes (<code>\n \t</code>).</li>
+<li>Raw strings that don’t escape backslashes.</li>
+<li>String interpolations can only contain identifiers and not any expression.</li>
+<li>Operator associativity has been changed from right-to-left to left-to-right to be more similar to other conventional languages.</li>
+<li><code>and</code> now has a higher precedence than <code>or</code> (of same reason as the previous point).</li>
+<li>Dates, times and timestamps have stricter parsing rules.</li>
+<li><code>let</code>, <code>func</code>, <code>prql</code>, <code>case</code> are now treated as keywords.</li>
+<li>Float literals without fraction part are not allowed anymore (<code>1.</code>).</li>
+</ul>
+</li>
+<li>
+<p>Add a <code>--format</code> option to <code>prqlc parse</code> which can return the AST in YAML (@max-sixty, #1962)</p>
+</li>
+<li>
+<p>Add a new subcommand <code>prqlc jinja</code>. (@aljazerzen, #1722)</p>
+</li>
+<li>
+<p><em>Breaking</em>: prql-compiler no longer passes text containing <code>{{</code> &amp; <code>}}</code> through to the output. (@aljazerzen, #1722)</p>
+<p>For example, the following PRQL query</p>
+<pre><code class="language-prql no-eval">from {{foo}}
+</code></pre>
+<p>was compiled to the following SQL previously, but now it raises an error.</p>
+<pre><code class="language-sql">SELECT
+  *
+FROM
+  {{ foo }}
+</code></pre>
+<p>This pass-through feature existed for integration with dbt.</p>
+<p>We’re again considering how to best integrate with dbt, and this change is based on the idea that the jinja macro should run before the PRQL compiler.</p>
+<p>If you’re interested in dbt integration, subscribe or 👍 to <a href="https://github.com/dbt-labs/dbt-core/pull/5982">https://github.com/dbt-labs/dbt-core/pull/5982</a>.</p>
+</li>
+<li>
+<p>A new compile target <code>"sql.any"</code>. When <code>"sql.any"</code> is used as the target of the compile function’s option, the target contained in the query header will be used. (@aljazerzen, #1995)</p>
+</li>
+<li>
+<p>Support for SQL parameters with similar syntax (#1957, @aljazerzen)</p>
+</li>
+<li>
+<p>Allow <code>:</code> to be elided in timezones, such as <code>0800</code> in <code>@2020-01-01T13:19:55-0800</code> (@max-sixty, #1991).</p>
+</li>
+<li>
+<p>Add <code>std.upper</code> and <code>std.lower</code> functions for changing string casing (@Jelenkee, #2019).</p>
+</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li><code>prqlc compile</code> returns a non-zero exit code for invalid queries. (@max-sixty, #1924)</li>
+<li>Identifiers can contain any alphabetic unicode characters (@max-sixty, #2003)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Operator precedence (@aljazerzen, #1818)</li>
+<li>Error messages for invalid queries are displayed in the book (@max-sixty, #2015)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>[prql-php] Added PHP bindings. (@vanillajonathan, #1860)</li>
+<li>[prql-dotnet] Added .NET bindings. (@vanillajonathan, #1917)</li>
+<li>[prql-lib] Added C header file. (@vanillajonathan, #1879)</li>
+<li>Added a workflow building a <code>.deb</code> on each release. (Note that it’s not yet published on each release). (@vanillajonathan, #1883)</li>
+<li>Added a workflow building a <code>.rpm</code> on each release. (Note that it’s not yet published on each release). (@vanillajonathan, #1918)</li>
+<li>Added a workflow building a Snap package on each release. (@vanillajonathan, #1881)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Test that the output of our nascent autoformatter can be successfully compiled into SQL. Failing examples are now clearly labeled. (@max-sixty, #2016)</li>
+<li>Definition files have been added to configure <a href="https://containers.dev/">Dev Containers</a> for Rust development environment. (@eitsupi, #1893, #2025, #2028)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@linux-china, with #1971</li>
+<li>@Jelenkee, with #2019</li>
+</ul>
+<h2 id="052--2023-02-18"><a class="header" href="#052--2023-02-18">0.5.2 — 2023-02-18</a></h2>
+<p>0.5.2 is a tiny release to fix an build issue in yesterday’s <code>prql-js</code> 0.5.1 release.</p>
+<p>This release has 7 commits from 2 contributors.</p>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@matthias-Q, with #1873</li>
+</ul>
+<h2 id="051--2023-02-17"><a class="header" href="#051--2023-02-17">0.5.1 — 2023-02-17</a></h2>
+<p>0.5.1 contains a few fixes, and another change to how bindings handle default target / dialects.</p>
+<p>This release has 53 commits from 7 contributors. Selected changes:</p>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Delegate dividing literal integers to the DB. Previously integer division was executed during PRQL compilation, which could be confusing given that behavior is different across DBs. Other arithmetic operations are still executed during compilation. (@max-sixty, #1747)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Add docs on the <code>from_text</code> transform (@max-sixty, #1756)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>[prql-js] Default compile target changed from <code>Sql(Generic)</code> to <code>Sql(None)</code>. (@eitsupi, #1856)</li>
+<li>[prql-python] Compilation options can now be specified from Python. (@eitsupi, #1807)</li>
+<li>[prql-python] Default compile target changed from <code>Sql(Generic)</code> to <code>Sql(None)</code>. (@eitsupi, #1861)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@vanillajonathan, with #1766</li>
+</ul>
+<h2 id="050--2023-02-08"><a class="header" href="#050--2023-02-08">0.5.0 — 2023-02-08</a></h2>
+<p>0.5.0 contains a few fixes, some improvements to bindings, lots of docs improvements, and some work on forthcoming features. It contains one breaking change in the compiler’s <code>Options</code> interface.</p>
+<p>This release has 74 commits from 12 contributors. Selected changes:</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>
+<p>Change public API to use target instead of dialect in preparation for feature work (@aljazerzen, #1684)</p>
+</li>
+<li>
+<p><code>prqlc watch</code> command which watches filesystem for changes and compiles .prql files to .sql (@aljazerzen, #1708)</p>
+</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Support double brackets in s-strings which aren’t symmetric (@max-sixty, #1650)</li>
+<li>Support Postgres’s Interval syntax (@max-sixty, #1649)</li>
+<li>Fixed tests for <code>prql-elixir</code> with macOS (@kasvith, #1707)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Add a documentation test for prql-compiler, update prql-compiler README, and include the README in the prql book section for Rust bindings. The code examples in the README are included and tested as doctests in the prql-compiler (@nkicg6, #1679)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Add tests for all PRQL website examples to prql-python to ensure compiled results match expected SQL (@nkicg6, #1719)</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@ruslandoga, with #1628</li>
+<li>@RalfNorthman, with #1632</li>
+<li>@nicot, with #1662</li>
+</ul>
+<h2 id="042--2023-01-25"><a class="header" href="#042--2023-01-25">0.4.2 — 2023-01-25</a></h2>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>
+<p>New <code>from_text format-arg string-arg</code> function that supports JSON and CSV formats. <em>format-arg</em> can be <code>format:csv</code> or <code>format:json</code>. <em>string-arg</em> can be a string in any format. (@aljazerzen &amp; @snth, #1514)</p>
+<pre><code class="language-prql no-eval">from_text format:csv """
+a,b,c
+1,2,3
+4,5,6
+"""
+</code></pre>
+<pre><code class="language-prql no-eval">from_text format:json '''
+    [{"a": 1, "b": "x", "c": false }, {"a": 4, "b": "y", "c": null }]
+'''
+</code></pre>
+<pre><code class="language-prql no-eval">from_text format:json '''{
+    "columns": ["a", "b", "c"],
+    "data": [
+        [1, "x", false],
+        [4, "y", null]
+    ]
+}'''
+</code></pre>
+<p>For now, the argument is limited to string constants.</p>
+</li>
+</ul>
+<p><strong>Fixes</strong></p>
+<ul>
+<li>Export constructor for SQLCompileOptions (@bcho, #1621)</li>
+<li>Remove backticks in count_distinct (@aljazerzen, #1611)</li>
+</ul>
+<p><strong>New Contributors</strong></p>
+<ul>
+<li>@1Kinoti, with #1596</li>
+<li>@veenaamb, with #1614</li>
+</ul>
+<h2 id="041--2023-01-18"><a class="header" href="#041--2023-01-18">0.4.1 — 2023-01-18</a></h2>
+<p>0.4.1 comes a few days after 0.4.0, with a couple of features and the release of <code>prqlc</code>, the CLI crate.</p>
+<p>0.4.1 has 35 commits from 6 contributors.</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>
+<p>Inferred column names include the relation name (@aljazerzen, #1550):</p>
+<pre><code class="language-prql no-eval">from albums
+select title # name used to be inferred as title only
+select albums.title # so using albums was not possible here
+</code></pre>
+</li>
+<li>
+<p>Quoted identifiers such as <code>dir/*.parquet</code> are passed through to SQL. (@max-sixty, #1516).</p>
+</li>
+<li>
+<p>The CLI is installed with <code>cargo install prqlc</code>. The binary was renamed in 0.4.0 but required an additional <code>--features</code> flag, which has been removed in favor of this new crate (@max-sixty &amp; @aljazerzen, #1549).</p>
+</li>
+</ul>
+<p><strong>New Contributors</strong>:</p>
+<ul>
+<li>@fool1280, with #1554</li>
+<li>@nkicg6, with #1567</li>
+</ul>
+<h2 id="040--2023-01-15"><a class="header" href="#040--2023-01-15">0.4.0 — 2023-01-15</a></h2>
+<p>0.4.0 brings lots of new features including <code>case</code>, <code>select ![]</code> and numbers with underscores. We have initial (unpublished) bindings to Elixir. And there’s the usual improvements to fixes &amp; documentation (only a minority are listed below in this release).</p>
+<p>0.4.0 also has some breaking changes: <code>table</code> is <code>let</code>, <code>dialect</code> is renamed to <code>target</code>, and the compiler’s API has changed. Full details below.</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>
+<p>Defining a temporary table is now expressed as <code>let</code> rather than <code>table</code> (@aljazerzen, #1315). See the <a href="https://prql-lang.org/book/reference/declarations/variables.html">tables docs</a> for details.</p>
+</li>
+<li>
+<p><em>Experimental:</em> The <a href="https://prql-lang.org/book/reference/syntax/case.html"><code>case</code></a> function sets a variable to a value based on one of several expressions (@aljazerzen, #1278).</p>
+<pre><code class="language-prql no-eval">derive var = case [
+  score &lt;= 10 -&gt; "low",
+  score &lt;= 30 -&gt; "medium",
+  score &lt;= 70 -&gt; "high",
+  true -&gt; "very high",
+]
+</code></pre>
+<p>…compiles to:</p>
+<pre><code class="language-sql">SELECT
+  *,
+  CASE
+    WHEN score &lt;= 10 THEN 'low'
+    WHEN score &lt;= 30 THEN 'medium'
+    WHEN score &lt;= 70 THEN 'high'
+    ELSE 'very high'
+  END AS var
+FROM
+  bar
+</code></pre>
+<p>Check out the <a href="https://prql-lang.org/book/reference/syntax/case.html"><code>case</code> docs</a> for more details.</p>
+</li>
+<li>
+<p><em>Experimental:</em> Columns can be excluded by name with <code>select</code> (@aljazerzen, #1329)</p>
+<pre><code class="language-prql no-eval">from albums
+select ![title, composer]
+</code></pre>
+</li>
+<li>
+<p><em>Experimental:</em> <code>append</code> transform, equivalent to <code>UNION ALL</code> in SQL. (@aljazerzen, #894)</p>
+<pre><code class="language-prql no-eval">from employees
+append managers
+</code></pre>
+<p>Check out the <a href="https://prql-lang.org/book/reference/stdlib/transforms/append.html"><code>append</code> docs</a> for more details.</p>
+</li>
+<li>
+<p>Numbers can contain underscores, which can make reading long numbers easier (@max-sixty, #1467):</p>
+<pre><code class="language-prql no-eval">from numbers
+select {
+    small = 1.000_000_1,
+    big = 5_000_000,
+}
+</code></pre>
+</li>
+<li>
+<p>The SQL output contains a comment with the PRQL compiler version (@aljazerzen, #1322)</p>
+</li>
+<li>
+<p><code>dialect</code> is renamed to <code>target</code>, and its values are prefixed with <code>sql.</code> (@max-sixty, #1388); for example:</p>
+<pre><code class="language-prql no-eval">prql target:sql.bigquery  # previously was `dialect:bigquery`
+
+from employees
+</code></pre>
+<p>This gives us the flexibility to target other languages than SQL in the long term.</p>
+</li>
+<li>
+<p>Tables definitions can contain a bare s-string (@max-sixty, #1422), which enables us to include a full CTE of SQL, for example:</p>
+<pre><code class="language-prql no-eval">let grouping = s"""
+  SELECT SUM(a)
+  FROM tbl
+  GROUP BY
+    GROUPING SETS
+    ((b, c, d), (d), (b, d))
+"""
+</code></pre>
+</li>
+<li>
+<p>Ranges supplied to <code>in</code> can be half-open (@aljazerzen, #1330).</p>
+</li>
+<li>
+<p>The crate’s external API has changed to allow for compiling to intermediate representation. This also affects bindings. See <a href="https://docs.rs/prql-compiler/latest/prql_compiler/"><code>prql-compiler</code> docs</a> for more details.</p>
+</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<p>[This release, the changelog only contains a subset of fixes]</p>
+<ul>
+<li>Allow interpolations in table s-strings (@aljazerzen, #1337)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<p>[This release, the changelog only contains a subset of documentation improvements]</p>
+<ul>
+<li>Add docs on aliases in <a href="https://prql-lang.org/book/reference/stdlib/transforms/select.html">Select</a></li>
+<li>Add JS template literal and multiline example (@BCsabaEngine, #1432)</li>
+<li>JS template literal and multiline example (@BCsabaEngine, #1432)</li>
+<li>Improve prql-compiler docs &amp; examples (@aljazerzen, #1515)</li>
+<li>Fix string highlighting in book (@max-sixty, #1264)</li>
+</ul>
+<p><strong>Web</strong>:</p>
+<ul>
+<li>The playground allows querying some sample data. As before, the result updates on every keystroke. (@aljazerzen, #1305)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<p>[This release, the changelog only contains a subset of integration improvements]</p>
+<ul>
+<li>Added Elixir integration exposing PRQL functions as NIFs (#1500, @kasvith)</li>
+<li>Exposed Elixir flavor with exceptions (#1513, @kasvith)</li>
+<li>Rename <code>prql-compiler</code> binary to <code>prqlc</code> (@aljazerzen #1515)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<p>[This release, the changelog only contains a subset of internal changes]</p>
+<ul>
+<li>Add parsing for negative select (@max-sixty, #1317)</li>
+<li>Allow for additional builtin functions (@aljazerzen, #1325)</li>
+<li>Add an automated check for typos (@max-sixty, #1421)</li>
+<li>Add tasks for running playground &amp; book (@max-sixty, #1265)</li>
+<li>Add tasks for running tests on every file change (@max-sixty, #1380)</li>
+</ul>
+<p><strong>New contributors</strong>:</p>
+<ul>
+<li>@EArazli, with #1359</li>
+<li>@boramalper, with #1362</li>
+<li>@allurefx, with #1377</li>
+<li>@bcho, with #1375</li>
+<li>@JettChenT, with #1385</li>
+<li>@BlurrechDev, with #1411</li>
+<li>@BCsabaEngine, with #1432</li>
+<li>@kasvith, with #1500</li>
+</ul>
+<h2 id="031---2022-12-03"><a class="header" href="#031---2022-12-03">0.3.1 - 2022-12-03</a></h2>
+<p>0.3.1 brings a couple of small improvements and fixes.</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>
+<p>Support for using s-strings for <code>from</code> (#1197, @aljazerzen)</p>
+<pre><code class="language-prql no-eval">from s"SELECT * FROM employees WHERE foo &gt; 5"
+</code></pre>
+</li>
+<li>
+<p>Helpful error message when referencing a table in an s-string (#1203, @aljazerzen)</p>
+</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Multiple columns with same name created (#1211, @aljazerzen)</li>
+<li>Renaming via select breaks preceding sorting (#1204, @aljazerzen)</li>
+<li>Same column gets selected multiple times (#1186, @mklopets)</li>
+</ul>
+<p><strong>Internal</strong>:</p>
+<ul>
+<li>Update Github Actions and Workflows to current version numbers (and avoid using Node 12)</li>
+</ul>
+<h2 id="030--2022-11-29"><a class="header" href="#030--2022-11-29">0.3.0 — 2022-11-29</a></h2>
+<p>🎉 0.3.0 is the biggest ever change in PRQL’s compiler, rewriting much of the internals: the compiler now has a semantic understanding of expressions, including resolving names &amp; building a DAG of column lineage 🎉.</p>
+<p>While the immediate changes to the language are modest — some long-running bugs are fixed — this unlocks the development of many of the project’s long-term priorities, such as type-checking &amp; auto-complete. And it simplifies the building of our next language features, such as match-case expressions, unions &amp; table expressions.</p>
+<p>@aljazerzen has (mostly single-handedly) done this work over the past few months. The project owes him immense appreciation.</p>
+<p><strong>Breaking changes</strong>:</p>
+<p>We’ve had to make some modest breaking changes for 0.3:</p>
+<ul>
+<li>
+<p><em>Pipelines must start with <code>from</code></em>. For example, a pipeline with only <code>derive foo = 5</code>, with no <code>from</code> transform, is no longer valid. Depending on demand for this feature, it would be possible to add this back.</p>
+</li>
+<li>
+<p><em>Shared column names now require <code>==</code> in a join</em>. The existing approach is ambiguous to the compiler — <code>id</code> in the following example could be a boolean column.</p>
+<pre><code class="language-diff">from employees
+-join positions [id]
++join positions [==id]
+</code></pre>
+</li>
+<li>
+<p><em>Table references containing periods must be surrounded by backticks</em>. For example, when referencing a schema name:</p>
+<pre><code class="language-diff">-from public.sometable
++from `public.sometable`
+</code></pre>
+</li>
+</ul>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>Change self equality op to <code>==</code> (#1176, @aljazerzen)</li>
+<li>Add logging (@aljazerzen)</li>
+<li>Add clickhouse dialect (#1090, @max-sixty)</li>
+<li>Allow namespaces &amp; tables to contain <code>.</code> (#1079, @aljazerzen)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Deduplicate column appearing in <code>SELECT</code> multiple times (#1186, @aljazerzen)</li>
+<li>Fix uppercase table names (#1184, @aljazerzen)</li>
+<li>Omit table name when only one ident in SELECT (#1094, @aljazerzen)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Add chapter on semantics’ internals (@aljazerzen, #1028)</li>
+<li>Add note about nesting variables in s-strings (@max-sixty, #1163)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Flatten group and window (#1120, @aljazerzen)</li>
+<li>Split ast into expr and stmt (@aljazerzen)</li>
+<li>Refactor associativity (#1156, @aljazerzen)</li>
+<li>Rename Ident constructor to <code>from_name</code> (#1084, @aljazerzen)</li>
+<li>Refactor rq folding (#1177, @aljazerzen)</li>
+<li>Add tests for reported bugs fixes in semantic (#1174, @aljazerzen)</li>
+<li>Bump duckdb from 0.5.0 to 0.6.0 (#1132)</li>
+<li>Bump once_cell from 1.15.0 to 1.16.0 (#1101)</li>
+<li>Bump pest from 2.4.0 to 2.5.0 (#1161)</li>
+<li>Bump pest_derive from 2.4.0 to 2.5.0 (#1179)</li>
+<li>Bump sqlparser from 0.25.0 to 0.27.0 (#1131)</li>
+<li>Bump trash from 2.1.5 to 3.0.0 (#1178)</li>
+</ul>
+<h2 id="0211--2022-11-20"><a class="header" href="#0211--2022-11-20">0.2.11 — 2022-11-20</a></h2>
+<p>0.2.11 contains a few helpful fixes.</p>
+<p>Work continues on our <code>semantic</code> refactor — look out for 0.3.0 soon! Many thanks to @aljazerzen for his continued contributions to this.</p>
+<p>Note: 0.2.10 was skipped due to this maintainer’s inability to read his own docs on bumping versions…</p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>Detect when compiler version is behind query version (@MarinPostma, #1058)</li>
+<li>Add <code>__version__</code> to prql-python package (@max-sixty, #1034)</li>
+</ul>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Fix nesting of expressions with equal binding strength and left associativity, such as <code>a - (b - c)</code> (@max-sixty, #1136)</li>
+<li>Retain floats without significant digits as floats (@max-sixty, #1141)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Add documentation of <code>prqlr</code> bindings (@eitsupi, #1091)</li>
+<li>Add a ‘Why PRQL’ section to the website (@max-sixty, #1098)</li>
+<li>Add @snth to core-devs (@max-sixty, #1050)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Use workspace versioning (@max-sixty, #1065)</li>
+</ul>
+<h2 id="029--2022-10-14"><a class="header" href="#029--2022-10-14">0.2.9 — 2022-10-14</a></h2>
+<p>0.2.9 is a small release containing a bug fix for empty strings.</p>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Fix parsing of empty strings (@aljazerzen, #1024)</li>
+</ul>
+<h2 id="028--2022-10-10"><a class="header" href="#028--2022-10-10">0.2.8 — 2022-10-10</a></h2>
+<p>0.2.8 is another modest release with some fixes, doc improvements, bindings improvements, and lots of internal changes. Note that one of the fixes causes the behavior of <code>round</code> and <code>cast</code> to change slightly — though it’s handled as a fix rather than a breaking change in semantic versioning.</p>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>
+<p>Change order of the <code>round</code> &amp; <code>cast</code> function parameters to have the column last; for example <code>round 2 foo_col</code> / <code>cast int foo</code>. This is consistent with other functions, and makes piping possible:</p>
+<pre><code class="language-prql no-eval">derive [
+  gross_salary = (salary + payroll_tax | as int),
+  gross_salary_rounded = (gross_salary | round 0),
+]
+</code></pre>
+</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Split <code>DEVELOPMENT.md</code> from <code>CONTRIBUTING.md</code> (@richb-hanover, #1010)</li>
+<li>Make s-strings more prominent in website intro (@max-sixty, #982)</li>
+</ul>
+<p><strong>Web</strong>:</p>
+<ul>
+<li>Add GitHub star count to website (@max-sixty, #990)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>Expose a shortened error message, in particular for the VS Code extension (@aljazerzen, #1005)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Specify 1.60.0 as minimum Rust version (@max-sixty, #1011)</li>
+<li>Remove old <code>wee-alloc</code> code (@max-sixty, #1013)</li>
+<li>Upgrade clap to version 4 (@aj-bagwell, #1004)</li>
+<li>Improve book-building script in Taskfile (@max-sixty, #989)</li>
+<li>Publish website using an artifact rather than a long-lived branch (@max-sixty, #1009)</li>
+</ul>
+<h2 id="027--2022-09-17"><a class="header" href="#027--2022-09-17">0.2.7 — 2022-09-17</a></h2>
+<p>0.2.7 is a fairly modest release, six weeks after 0.2.6. We have some more significant features, including a <code>union</code> operator and an overhaul of our type system, as open PRs which will follow in future releases.</p>
+<p>We also have new features in the <a href="https://github.com/PRQL/prql-code">VS Code extension</a>, courtesy of @jiripospisil, including a live output panel.</p>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li><code>range_of_ranges</code> checks the Range end is smaller than its start (@shuozeli, #946)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Improve various docs (@max-sixty, #974, #971, #972, #970, #925)</li>
+<li>Add reference to EdgeDB’s blog post in our FAQ (@max-sixty, #922)</li>
+<li>Fix typos (@kianmeng, #943)</li>
+</ul>
+<p><strong>整合</strong>：</p>
+<ul>
+<li>Add <code>prql-lib</code>, enabling language bindings with <code>go</code> (@sigxcpu76, #923)</li>
+<li>Fix line numbers in JS exceptions (@charlie-sanders, #929)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Lock the version of the rust-toolchain, with auto-updates (@max-sixty, #926, #927)</li>
+</ul>
+<h2 id="026--2022-08-05"><a class="header" href="#026--2022-08-05">0.2.6 — 2022-08-05</a></h2>
+<p><strong>Fixes</strong>:</p>
+<ul>
+<li>Adjust <code>fmt</code> to only escape names when needed (@aljazerzen, #907)</li>
+<li>Fix quoting on upper case <code>table</code> names (@max-sixty, #893)</li>
+<li>Fix scoping of identical column names from multiple tables (@max-sixty, #908)</li>
+<li>Fix parse error on newlines in a <code>table</code> (@sebastiantoh 🆕, #902)</li>
+<li>Fix quoting of upper case table names (@max-sixty, #893)</li>
+</ul>
+<p><strong>文件</strong>：</p>
+<ul>
+<li>Add docs on Architecture (@aljazerzen, #904)</li>
+<li>Add Changelog (@max-sixty, #890 #891)</li>
+</ul>
+<p><strong>內部變更</strong>：</p>
+<ul>
+<li>Start trial using Conventional Commits (@max-sixty, #889)</li>
+<li>Add crates.io release workflow, docs (@max-sixty, #887)</li>
+</ul>
+<h2 id="025---2022-07-29"><a class="header" href="#025---2022-07-29">0.2.5 - 2022-07-29</a></h2>
+<p>0.2.5 is a very small release following 0.2.4 yesterday. It includes:</p>
+<ul>
+<li>Add the ability to represent single brackets in an s-string, with two brackets (#752, @max-sixty)</li>
+<li>Fix the “Copy to Clipboard” command in the Playground, for Firefox (#880, @mklopets)</li>
+</ul>
+<h2 id="024---2022-07-28"><a class="header" href="#024---2022-07-28">0.2.4 - 2022-07-28</a></h2>
+<p>0.2.4 is a small release following 0.2.3 a few days ago. The 0.2.4 release includes:</p>
+<ul>
+<li>Enrich our CLI, adding commands to get different stages of the compilation process (@aljazerzen , #863)</li>
+<li>Fix multiple <code>take n</code> statements in a query, leading to duplicate proxy columns in generated SQL (@charlie-sanders)</li>
+<li>Fix BigQuery quoting of identifiers in <code>SELECT</code> statements (@max-sixty)</li>
+<li>Some internal changes — reorganize top-level functions (@aljazerzen), add a workflow to track our Rust compilation time (@max-sixty), simplify our simple prql-to-sql tests (@max-sixty)</li>
+</ul>
+<p>Thanks to @ankane, <code>prql-compiler</code> is now available from homebrew core; <code>brew install prql-compiler</code><sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>.</p>
+<h2 id="023---2022-07-24"><a class="header" href="#023---2022-07-24">0.2.3 - 2022-07-24</a></h2>
+<p>A couple of weeks since the 0.2.2 release: we’ve squashed a few bugs, added some mid-sized features to the language, and made a bunch of internal improvements.</p>
+<p>The 0.2.3 release includes:</p>
+<ul>
+<li>Allow for escaping otherwise-invalid identifiers (@aljazerzen &amp; @max-sixty)</li>
+<li>Fix a bug around operator precedence (@max-sixty)</li>
+<li>Add a section the book on the language bindings (@charlie-sanders)</li>
+<li>Add tests for our <code>Display</code> representation while fixing some existing bugs. This is gradually becoming our code formatter (@arrizalamin)</li>
+<li>Add a “copy to clipboard” button in the Playground (@mklopets)</li>
+<li>Add lots of guidance to our <code>CONTRIBUTING.md</code> around our tests and process for merging (@max-sixty)</li>
+<li>Add a <code>prql!</code> macro for parsing a prql query at compile time (@aljazerzen)</li>
+<li>Add tests for <code>prql-js</code> (@charlie-sanders)</li>
+<li>Add a <code>from_json</code> method for transforming json to a PRQL string (@arrizalamin)</li>
+<li>Add a workflow to release <code>prql-java</code> to Maven (@doki23)</li>
+<li>Enable running all tests from a PR by adding a <code>pr-run-all-tests</code> label (@max-sixty)</li>
+<li>Have <code>cargo-release</code> to bump all crate &amp; npm versions (@max-sixty)</li>
+<li>Update <code>prql-js</code> to use the bundler build of <code>prql-js</code> (@mklopets)</li>
+</ul>
+<p>As well as those contribution changes, thanks to those who’ve reported issues, such as @mklopets @huw @mm444 @ajfriend.</p>
+<p>From here, we’re planning to continue squashing bugs (albeit more minor than those in this release), adding some features like <code>union</code>, while working on bigger issues such as type-inference.</p>
+<p>We’re also going to document and modularize the compiler further. It’s important that we give more people an opportunity to contribute to the guts of PRQL, especially given the number and enthusiasm of contributions to project in general — and it’s not that easy to do so at the moment. While this is ongoing if anyone has something they’d like to work on in the more difficult parts of the compiler, let us know on GitHub or Discord, and we’d be happy to work together on it.</p>
+<p>Thank you!</p>
+<h2 id="022---2022-07-10"><a class="header" href="#022---2022-07-10">0.2.2 - 2022-07-10</a></h2>
+<p>We’re a couple of weeks since our 0.2.0 release. Thanks for the surge in interest and contributions! 0.2.2 has some fixes &amp; some internal improvements:</p>
+<ul>
+<li>We now test against SQLite &amp; DuckDB on every commit, to ensure we’re producing correct SQL. (@aljazerzen)</li>
+<li>We have the beginning of Java bindings! (@doki23)</li>
+<li>Idents surrounded by backticks are passed through to SQL (@max-sixty)</li>
+<li>More examples on homepage; e.g. <code>join</code> &amp; <code>window</code>, lots of small docs improvements</li>
+<li>Automated releases to homebrew (@roG0d)</li>
+<li><a href="https://github.com/PRQL/prql/tree/main/prqlc/bindings/js">prql-js</a> is now a single package for Node, browsers &amp; webpack (@charlie-sanders)</li>
+<li>Parsing has some fixes, including <code>&gt;=</code> and leading underscores in idents (@mklopets)</li>
+<li>Ranges receive correct syntax highlighting (@max-sixty)</li>
+</ul>
+<p>Thanks to Aljaž Mur Eržen @aljazerzen , George Roldugin @roldugin , Jasper McCulloch @Jaspooky , Jie Han @doki23 , Marko Klopets @mklopets , Maximilian Roos @max-sixty , Rodrigo Garcia @roG0d , Ryan Russell @ryanrussell , Steven Maude @StevenMaude , Charlie Sanders @charlie-sanders .</p>
+<p>We’re planning to continue collecting bugs &amp; feature requests from users, as well as working on some of the bigger features, like type-inference.</p>
+<p>For those interesting in joining, we also have a new <a href="https://github.com/PRQL/prql/blob/main/.github/CONTRIBUTING.md">Contributing page</a>.</p>
+<h2 id="020---2022-06-27"><a class="header" href="#020---2022-06-27">0.2.0 - 2022-06-27</a></h2>
+<p>🎉 🎉 <strong>After several months of building, PRQL is ready to use!</strong> 🎉 🎉</p>
+<hr>
+<p>How we got here:</p>
+<p>At the end of January, we published a proposal of a better language for data transformation: PRQL. The reception was better than I could have hoped for — we were no. 2 on HackerNews for a day, and gained 2.5K GitHub stars over the next few days.</p>
+<p>But man cannot live on GitHub Stars alone — we had to do the work to build it. So over the next several months, during many evenings &amp; weekends, a growing group of us gradually built the compiler, evolved the language, and wrote some integrations.</p>
+<p>We want to double-down on the community and its roots in open source — it’s incredible that a few of us from all over the globe have collaborated on a project without ever having met. We decided early-on that PRQL would always be open-source and would never have a commercial product (despite lots of outside interest to fund a seed round!). Because languages are so deep in the stack, and the data stack has so many players, the best chance of building a great language is to build an open language.</p>
+<hr>
+<p>We still have a long way to go. While PRQL is usable, it has lots of missing features, and an incredible amount of unfulfilled potential, including a language server, cohesion with databases, and type inference. Over the coming weeks, we’d like to grow the number of intrepid users experimenting PRQL in their projects, prioritize features that will unblock them, and then start fulfilling PRQL’s potential by working through our <a href="https://prql-lang.org/roadmap/">roadmap</a>.</p>
+<p>The best way to experience PRQL is to try it. Check out our <a href="https://prql-lang.org">website</a> and the <a href="https://prql-lang.org/playground">Playground</a>. Start using PRQL for your own projects in <a href="https://github.com/prql/dbt-prql">dbt</a>, <a href="https://pyprql.readthedocs.io/en/latest/magic_readme.html">Jupyter notebooks</a> and Prefect workflows.</p>
+<p>Keep in touch with PRQL by following the project on <a href="https://twitter.com/prql_lang">Twitter</a>, joining us on <a href="https://discord.gg/eQcfaCmsNc">Discord</a>, starring the <a href="https://github.com/PRQL/prql">repo</a>.</p>
+<p><a href="https://github.com/PRQL/prql/blob/main/.github/CONTRIBUTING.md">Contribute</a> to the project — we’re a really friendly community, whether you’re a recent SQL user or an advanced Rust programmer. We need bug reports, documentation tweaks &amp; feature requests — just as much as we need compiler improvements written in Rust.</p>
+<hr>
+<p>I especially want to give <a href="https://github.com/aljazerzen">Aljaž Mur Eržen</a> (@aljazerzen) the credit he deserves, who has contributed the majority of the difficult work of building out the compiler. Much credit also goes to @charlie-sanders, one of PRQL’s earliest supporters and the author of pyprql, and <a href="https://github.com/rbpatt2019">Ryan Patterson-Cross</a> (@rbpatt2019), who built the Jupyter integration among other Python contributions.</p>
+<p>Other contributors who deserve a special mention include: @roG0d, @snth, @kwigley</p>
+<hr>
+<p>Thank you, and we look forward to your feedback!</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<pre><code>    we still need to update docs and add a release workflow for this:
+    &lt;https://github.com/PRQL/prql/issues/866&gt;
+</code></pre>
+ <a href="#fr-1-1">↩</a></li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../reference/spec/type-system.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../project/target.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../reference/spec/type-system.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../project/target.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-84af7ae2.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../highlight-prql-03282581.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
