@@ -36,7 +36,7 @@ msgstr ""
 #: src/project/changelog.md:860 src/project/changelog.md:1021
 #: src/project/changelog.md:1084 src/project/changelog.md:1127
 msgid "**Features**:"
-msgstr ""
+msgstr "**功能**："
 
 #: src/project/changelog.md:11
 msgid ""
@@ -69,7 +69,7 @@ msgstr ""
 #: src/project/changelog.md:988 src/project/changelog.md:1185
 #: src/project/changelog.md:1220
 msgid "**Integrations**:"
-msgstr ""
+msgstr "**整合**："
 
 #: src/project/changelog.md:22
 msgid "Enable integration tests for GlareDB. (@eitsupi, #3749)"
@@ -131,7 +131,7 @@ msgstr ""
 #: src/project/changelog.md:46 src/project/changelog.md:135
 #: src/project/changelog.md:281
 msgid "**Language**:"
-msgstr ""
+msgstr "**語言**："
 
 #: src/project/changelog.md:48
 msgid ""
@@ -451,7 +451,7 @@ msgstr ""
 #: src/project/changelog.md:1176 src/project/changelog.md:1214
 #: src/project/changelog.md:1240
 msgid "**Documentation**:"
-msgstr ""
+msgstr "**文件**："
 
 #: src/project/changelog.md:211
 msgid "New docs for strings (@max-sixty, #3281)"
