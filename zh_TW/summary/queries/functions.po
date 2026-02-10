@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:24Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/queries/functions.md:1
+msgid "Functions"
+msgstr "函式"
+
+#: src/queries/functions.md:7
+msgid ""
+"Functions are a fundamental abstraction in PRQL — they allow us to run code "
+"in many places that we've written once. This reduces the number of errors in "
+"our code, makes our code more readable, and simplifies making changes."
+msgstr ""
+
+#: src/queries/functions.md:11
+msgid "Functions have two types of parameters:"
+msgstr ""
+
+#: src/queries/functions.md:13
+msgid "Positional parameters, which require an argument."
+msgstr ""
+
+#: src/queries/functions.md:14
+msgid ""
+"Named parameters, which optionally take an argument, otherwise using their "
+"default value."
+msgstr ""
+
+#: src/queries/functions.md:17
+msgid ""
+"So this function is named `celsius_of_fahrenheit` and has one parameter "
+"`temp`:"
+msgstr ""
+
+#: src/queries/functions.md:26
+msgid ""
+"This function is named `interp`, and has two positional parameters named "
+"`higher` and `x`, and one named parameter named `lower` which takes a "
+"default argument of `0`. It calculates the proportion of the distance that "
+"`x` is between `lower` and `higher`."
+msgstr ""
+
+#: src/queries/functions.md:41
+msgid "Piping"
+msgstr ""
+
+#: src/queries/functions.md:43
+msgid ""
+"Consistent with the principles of PRQL, it's possible to pipe values into "
+"functions, which makes composing many functions more readable. When piping a "
+"value into a function, the value is passed as an argument to the final "
+"positional parameter of the function. Here's the same result as the examples "
+"above with an alternative construction:"
+msgstr ""
+
+#: src/queries/functions.md:59
+msgid "and"
+msgstr "且"
+
+#: src/queries/functions.md:68
+msgid "We can combine a chain of functions, which makes logic more readable:"
+msgstr ""
+
+#: src/queries/functions.md:78
+msgid "Roadmap"
+msgstr "路線圖"
+
+#: src/queries/functions.md:80
+msgid "Late binding"
+msgstr ""
+
+#: src/queries/functions.md:82
+msgid ""
+"Currently, functions require a binding to variables in scope; they can't "
+"late-bind to column names; so for example:"
+msgstr ""
+
+#: src/queries/functions.md:89
+msgid "...isn't yet a valid function, and instead would needs to be:"
+msgstr ""
+
+#: src/queries/functions.md:95
+msgid "(which makes functions in this case not useful)"
+msgstr ""
