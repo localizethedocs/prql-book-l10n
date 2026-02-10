@@ -133,7 +133,7 @@ msgstr ""
 
 #: src/SUMMARY.md:36
 msgid "Integrations"
-msgstr ""
+msgstr "整合"
 
 #: src/SUMMARY.md:38
 msgid "dbt"
@@ -145,7 +145,7 @@ msgstr "Jupyter"
 
 #: src/SUMMARY.md:40
 msgid "Prefect"
-msgstr ""
+msgstr "Prefect"
 
 #: src/SUMMARY.md:41
 msgid "VSCode"
@@ -153,7 +153,7 @@ msgstr ""
 
 #: src/SUMMARY.md:42
 msgid "Rill"
-msgstr ""
+msgstr "Rill"
 
 #: src/SUMMARY.md:44
 msgid "Examples"
