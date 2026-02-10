@@ -36,7 +36,7 @@ msgstr ""
 
 #: src/project/changelog.md:13 src/project/changelog.md:159
 msgid "**Language**:"
-msgstr ""
+msgstr "**語言**："
 
 #: src/project/changelog.md:15
 msgid ""
@@ -112,7 +112,7 @@ msgstr ""
 #: src/project/changelog.md:862 src/project/changelog.md:1059
 #: src/project/changelog.md:1094
 msgid "**Integrations**:"
-msgstr ""
+msgstr "**整合**："
 
 #: src/project/changelog.md:58
 msgid ""
@@ -168,7 +168,7 @@ msgstr ""
 #: src/project/changelog.md:734 src/project/changelog.md:895
 #: src/project/changelog.md:958 src/project/changelog.md:1001
 msgid "**Features**:"
-msgstr ""
+msgstr "**功能**："
 
 #: src/project/changelog.md:78
 msgid ""
@@ -189,7 +189,7 @@ msgstr ""
 #: src/project/changelog.md:1050 src/project/changelog.md:1088
 #: src/project/changelog.md:1114
 msgid "**Documentation**:"
-msgstr ""
+msgstr "**文件**："
 
 #: src/project/changelog.md:89
 msgid "New docs for strings (@max-sixty, #3281)"

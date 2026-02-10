@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/project/integrations/index.md:1
 msgid "Integrations"
-msgstr ""
+msgstr "整合"
 
 #: src/project/integrations/index.md:3
 msgid "PRQL is building integrations with lots of external tools, including:"
