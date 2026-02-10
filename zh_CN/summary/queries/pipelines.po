@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:45Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/queries/pipelines.md:1
+msgid "Pipelines"
+msgstr ""
+
+#: src/queries/pipelines.md:3
+msgid ""
+"PRQL queries are a sequence of lines (or _transforms_) that form a "
+"_pipeline_. Each line transforms the data, and passes its result to the next."
+msgstr ""
+
+#: src/queries/pipelines.md:6
+msgid "**The simplest pipeline** is just:"
+msgstr ""
+
+#: src/queries/pipelines.md:12
+msgid "Adding transforms"
+msgstr ""
+
+#: src/queries/pipelines.md:14
+msgid "As we add additional lines, each one transforms the result:"
+msgstr ""
+
+#: src/queries/pipelines.md:21
+msgid "...and so on:"
+msgstr ""
+
+#: src/queries/pipelines.md:29
+msgid "Compiling to SQL"
+msgstr ""
+
+#: src/queries/pipelines.md:31
+msgid ""
+"PRQL compiles the query to SQL. The PRQL compiler tries to represent as many "
+"transforms as possible with a single `SELECT` statement. When necessary, the "
+"compiler \"overflows\" and creates CTEs (common table expressions):"
+msgstr ""
+
+#: src/queries/pipelines.md:44
+msgid "See also"
+msgstr ""
+
+#: src/queries/pipelines.md:46
+msgid "[Transforms](../transforms/README.md) - PRQL Transforms"
+msgstr ""
+
+#: src/queries/pipelines.md:47
+msgid "[Syntax](../syntax.md) - Notation for PRQL queries"
+msgstr ""
