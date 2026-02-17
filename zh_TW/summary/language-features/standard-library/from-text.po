@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:45Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/language-features/standard-library/from-text.md:1
+msgid "From text"
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:3
+msgid ""
+"It's often useful to make a small table inline, for example when exploring "
+"how a database will evaluate an expression, or to have a small lookup table "
+"inline. This can be quite verbose in SQL."
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:7
+msgid "PRQL uses `from_text` for this."
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:9
+msgid "It accepts a few formats:"
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:11
+msgid "`format:csv` parses CSV (default),"
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:12
+msgid "`format:json` parses either:"
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:13
+msgid "an array of objects each of which represents a row, or"
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:14
+msgid ""
+"an object with fields `columns` & `data`, where `columns` take an array of "
+"column names and `data` takes an array of arrays."
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:17
+msgid ""
+"```prql\n"
+"from_text \"\"\"\n"
+"a,b,c\n"
+"1,2,3\n"
+"4,5,6\n"
+"\"\"\"\n"
+"derive [\n"
+"    d = b + c,\n"
+"    answer = 20 * 2 + 2,\n"
+"]\n"
+"```"
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:29
+msgid "An example of adding a small lookup table:"
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:31
+msgid ""
+"```prql\n"
+"let temp_format_lookup = from_text format:csv \"\"\"\n"
+"country_code,format\n"
+"uk,C\n"
+"us,F\n"
+"lr,F\n"
+"de,C\n"
+"\"\"\"\n"
+"\n"
+"from temperatures\n"
+"join temp_format_lookup [==country_code]\n"
+"```"
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:44
+msgid "And JSON:"
+msgstr ""
+
+#: src/language-features/standard-library/from-text.md:46
+msgid ""
+"```prql\n"
+"let x = from_text format:json \"\"\"{\n"
+"    \"columns\": [\"a\", \"b\", \"c\"],\n"
+"    \"data\": [\n"
+"        [1, \"x\", false],\n"
+"        [4, \"y\", null]\n"
+"    ]\n"
+"}\"\"\"\n"
+"\n"
+"let y = from_text format:json \"\"\"\n"
+"    [\n"
+"        {\"a\": 1, \"m\": \"5\"},\n"
+"        {\"a\": 4, \"n\": \"6\"}\n"
+"    ]\n"
+"\"\"\"\n"
+"\n"
+"from x | join y [==a]\n"
+"```"
+msgstr ""
