@@ -1,0 +1,240 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:54Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/SUMMARY.md:1
+msgid "Summary"
+msgstr ""
+
+#: src/SUMMARY.md:5
+msgid "Introduction"
+msgstr "介紹"
+
+#: src/SUMMARY.md:7
+msgid "Queries"
+msgstr ""
+
+#: src/SUMMARY.md:9
+msgid "Pipelines"
+msgstr ""
+
+#: src/SUMMARY.md:10 src/SUMMARY.md:78
+msgid "Functions"
+msgstr "函式"
+
+#: src/SUMMARY.md:11
+msgid "Tables"
+msgstr ""
+
+#: src/SUMMARY.md:13
+msgid "Transforms"
+msgstr "轉換"
+
+#: src/SUMMARY.md:15
+msgid "Aggregate"
+msgstr "聚合"
+
+#: src/SUMMARY.md:16
+msgid "Append"
+msgstr "附加"
+
+#: src/SUMMARY.md:17
+msgid "Derive"
+msgstr "衍生"
+
+#: src/SUMMARY.md:18
+msgid "Filter"
+msgstr "篩選"
+
+#: src/SUMMARY.md:19
+msgid "From"
+msgstr "從"
+
+#: src/SUMMARY.md:20
+msgid "Group"
+msgstr "群組"
+
+#: src/SUMMARY.md:21
+msgid "Join"
+msgstr "聯接"
+
+#: src/SUMMARY.md:22
+msgid "Select"
+msgstr "選擇"
+
+#: src/SUMMARY.md:23
+msgid "Sort"
+msgstr "排序"
+
+#: src/SUMMARY.md:24
+msgid "Take"
+msgstr "取"
+
+#: src/SUMMARY.md:25
+msgid "Window"
+msgstr "視窗"
+
+#: src/SUMMARY.md:27
+msgid "Syntax"
+msgstr "語法"
+
+#: src/SUMMARY.md:28
+msgid "Language features"
+msgstr ""
+
+#: src/SUMMARY.md:30
+msgid "Coalesce"
+msgstr ""
+
+#: src/SUMMARY.md:32
+msgid "Dates & times"
+msgstr ""
+
+#: src/SUMMARY.md:33
+msgid "Distinct"
+msgstr ""
+
+#: src/SUMMARY.md:34
+msgid "Null handling"
+msgstr "Null 處理"
+
+#: src/SUMMARY.md:35
+msgid "Ranges"
+msgstr "範圍"
+
+#: src/SUMMARY.md:37
+msgid "Regex"
+msgstr ""
+
+#: src/SUMMARY.md:38
+msgid "Stdlib"
+msgstr ""
+
+#: src/SUMMARY.md:39
+msgid "Strings"
+msgstr "字串"
+
+#: src/SUMMARY.md:40
+msgid "S-Strings"
+msgstr ""
+
+#: src/SUMMARY.md:41
+msgid "F-Strings"
+msgstr ""
+
+#: src/SUMMARY.md:42
+msgid "Switch"
+msgstr ""
+
+#: src/SUMMARY.md:43
+msgid "Target & Version"
+msgstr ""
+
+#: src/SUMMARY.md:45
+msgid "Bindings"
+msgstr "綁定"
+
+#: src/SUMMARY.md:47
+msgid "Elixir"
+msgstr "Elixir"
+
+#: src/SUMMARY.md:48
+msgid "Java"
+msgstr "Java"
+
+#: src/SUMMARY.md:49
+msgid "JavaScript"
+msgstr "JavaScript"
+
+#: src/SUMMARY.md:50
+msgid "Python"
+msgstr "Python"
+
+#: src/SUMMARY.md:51
+msgid "R"
+msgstr "R"
+
+#: src/SUMMARY.md:52
+msgid "Rust"
+msgstr "Rust"
+
+#: src/SUMMARY.md:54
+msgid "Integrations"
+msgstr "整合"
+
+#: src/SUMMARY.md:56
+msgid "dbt"
+msgstr ""
+
+#: src/SUMMARY.md:57
+msgid "Jupyter"
+msgstr "Jupyter"
+
+#: src/SUMMARY.md:58
+msgid "Prefect"
+msgstr "Prefect"
+
+#: src/SUMMARY.md:59
+msgid "VSCode"
+msgstr ""
+
+#: src/SUMMARY.md:60
+msgid "Rill"
+msgstr "Rill"
+
+#: src/SUMMARY.md:62
+msgid "Examples"
+msgstr ""
+
+#: src/SUMMARY.md:64
+msgid "Variables"
+msgstr ""
+
+#: src/SUMMARY.md:65
+msgid "List equivalence"
+msgstr ""
+
+#: src/SUMMARY.md:66
+msgid "CTE (intermediate tables)"
+msgstr ""
+
+#: src/SUMMARY.md:67
+msgid "Employees"
+msgstr ""
+
+#: src/SUMMARY.md:69
+msgid "Contributing to PRQL"
+msgstr "對 PRQL 做出貢獻"
+
+#: src/SUMMARY.md:71
+msgid "Development"
+msgstr "開發"
+
+#: src/SUMMARY.md:72
+msgid "Using Docker"
+msgstr ""
+
+#: src/SUMMARY.md:74
+msgid "Internals"
+msgstr ""
+
+#: src/SUMMARY.md:76
+msgid "Compiler architecture"
+msgstr ""
+
+#: src/SUMMARY.md:77
+msgid "Name resolving"
+msgstr ""
+
+#: src/SUMMARY.md:79
+msgid "Syntax highlighting"
+msgstr "語法標明"

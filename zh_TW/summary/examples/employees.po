@@ -1,0 +1,135 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:54Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/examples/employees.md:1
+msgid "Employees"
+msgstr ""
+
+#: src/examples/employees.md:3
+msgid ""
+"These are homework tasks on [employees database](https://github.com/"
+"vrajmohan/pgsql-sample-data.git)."
+msgstr ""
+
+#: src/examples/employees.md:6
+msgid "Clone and init the database (requires a local PostgreSQL instance):"
+msgstr ""
+
+#: src/examples/employees.md:9
+msgid "'CREATE DATABASE employees;'"
+msgstr ""
+
+#: src/examples/employees.md:14
+msgid "Execute a PRQL query:"
+msgstr ""
+
+#: src/examples/employees.md:21
+msgid "Task 1"
+msgstr ""
+
+#: src/examples/employees.md:23
+msgid ""
+"rank the employee titles according to the average salary for each department."
+msgstr ""
+
+#: src/examples/employees.md:25
+msgid "My solution:"
+msgstr ""
+
+#: src/examples/employees.md:27
+msgid "for each employee, find their average salary,"
+msgstr ""
+
+#: src/examples/employees.md:28
+msgid ""
+"join employees with their departments and titles (duplicating employees for "
+"each of their titles and departments)"
+msgstr ""
+
+#: src/examples/employees.md:30
+msgid "group by department and title, aggregating average salary"
+msgstr ""
+
+#: src/examples/employees.md:31
+msgid "join with department to get department name"
+msgstr ""
+
+#: src/examples/employees.md:47
+msgid "Task 2"
+msgstr ""
+
+#: src/examples/employees.md:49
+msgid ""
+"Estimate distribution of salaries and gender for each department departments."
+msgstr ""
+
+#: src/examples/employees.md:70
+msgid "Task 3"
+msgstr ""
+
+#: src/examples/employees.md:72
+msgid "Estimate distribution of salaries and gender for each manager."
+msgstr ""
+
+#: src/examples/employees.md:74
+msgid ""
+"```prql\n"
+"from e=employees\n"
+"join salaries [==emp_no]\n"
+"group [e.emp_no, e.gender] (\n"
+"  aggregate [\n"
+"    emp_salary = average salaries.salary\n"
+"  ]\n"
+")\n"
+"join de=dept_emp [==emp_no]\n"
+"join dm=dept_manager [\n"
+"  (dm.dept_no == de.dept_no) and s\"(de.from_date, de.to_date) OVERLAPS (dm."
+"from_date, dm.to_date)\"\n"
+"]\n"
+"group [dm.emp_no, gender] (\n"
+"  aggregate [\n"
+"    salary_avg = average emp_salary,\n"
+"    salary_sd = stddev emp_salary\n"
+"  ]\n"
+")\n"
+"derive mng_no = emp_no\n"
+"join managers=employees [==emp_no]\n"
+"derive mng_name = s\"managers.first_name || ' ' || managers.last_name\"\n"
+"select [mng_name, managers.gender, salary_avg, salary_sd]\n"
+"```"
+msgstr ""
+
+#: src/examples/employees.md:98
+msgid "Task 4"
+msgstr ""
+
+#: src/examples/employees.md:100
+msgid "Find distributions of titles, salaries and genders for each department."
+msgstr ""
+
+#: src/examples/employees.md:102
+msgid ""
+"```prql\n"
+"from de=dept_emp\n"
+"join s=salaries side:left [\n"
+"  (s.emp_no == de.emp_no),\n"
+"  s\"({s.from_date}, {s.to_date}) OVERLAPS ({de.from_date}, {de.to_date})\"\n"
+"]\n"
+"group [de.emp_no, de.dept_no] (\n"
+"  aggregate salary = (average s.salary)\n"
+")\n"
+"join employees [==emp_no]\n"
+"join titles [==emp_no]\n"
+"select [dept_no, salary, employees.gender, titles.title]\n"
+"```"
+msgstr ""

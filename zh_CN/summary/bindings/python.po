@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:54Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/bindings/python.md:1
+msgid "Python (prql-python)"
+msgstr ""
+
+#: src/bindings/python.md:3
+msgid "Installation"
+msgstr ""
+
+#: src/bindings/python.md:5
+msgid "`pip install prql-python`"
+msgstr ""
+
+#: src/bindings/python.md:7
+msgid "Usage"
+msgstr ""
+
+#: src/bindings/python.md:12
+msgid ""
+"\"\"\"\n"
+"    from employees\n"
+"    join salaries [==emp_id]\n"
+"    group [dept_id, gender] (\n"
+"      aggregate [\n"
+"        avg_salary = average salary\n"
+"      ]\n"
+"    )\n"
+"\"\"\""
+msgstr ""
