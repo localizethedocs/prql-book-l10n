@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/tuples.md:1
+msgid "Tuples"
+msgstr ""
+
+#: src/reference/syntax/tuples.md:3
+msgid ""
+"Tuple is a container type, composed of multiple fields. Each field can have "
+"a different type. Number of fields and their types must be known at compile "
+"time."
+msgstr ""
+
+#: src/reference/syntax/tuples.md:6
+msgid ""
+"Tuple is represented by `{}`. It can span multiple lines. Fields can be "
+"assigned a name. Fields are separated by commas, trailing trailing comma is "
+"optional."
+msgstr ""
+
+#: src/reference/syntax/tuples.md:23
+msgid ""
+"Tuples are the type of a table row, which means that they are expected by "
+"many transforms. Most transforms can also take a single field, which will be "
+"converted into a tuple. These are equivalent:"
+msgstr ""
