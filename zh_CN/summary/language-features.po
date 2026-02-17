@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:39Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/language-features/index.md:1
+msgid "Language features"
+msgstr ""
+
+#: src/language-features/index.md:3
+msgid ""
+"The pages of this section describe how PRQL handles various aspects of the "
+"language."
+msgstr ""
+
+#: src/language-features/index.md:6
+msgid "Feature"
+msgstr ""
+
+#: src/language-features/index.md:6
+msgid "Purpose"
+msgstr ""
+
+#: src/language-features/index.md:8
+msgid "Coalesce"
+msgstr ""
+
+#: src/language-features/index.md:8
+msgid "[Handle potentially NULL values](./coalesce.md)"
+msgstr ""
+
+#: src/language-features/index.md:9
+msgid "Dates & times"
+msgstr ""
+
+#: src/language-features/index.md:9
+msgid "[Handle dates and times](./dates-and-times.md)"
+msgstr ""
+
+#: src/language-features/index.md:10
+msgid "Distinct"
+msgstr ""
+
+#: src/language-features/index.md:10
+msgid "[Equivalent of SQL `DISTINCT`](./distinct.md)"
+msgstr ""
+
+#: src/language-features/index.md:11
+msgid "Null handling"
+msgstr ""
+
+#: src/language-features/index.md:11
+msgid "[Handle `NULL` values](./null.md)"
+msgstr ""
+
+#: src/language-features/index.md:12
+msgid "Ranges"
+msgstr ""
+
+#: src/language-features/index.md:12
+msgid "[Syntax for all forms of ranges](./ranges.md)"
+msgstr ""
+
+#: src/language-features/index.md:13
+msgid "Regex"
+msgstr ""
+
+#: src/language-features/index.md:13
+msgid "[Handle regular expressions](./regex.md)"
+msgstr ""
+
+#: src/language-features/index.md:14
+msgid "Strings"
+msgstr ""
+
+#: src/language-features/index.md:14
+msgid "[Rules for creating strings](./strings.md)"
+msgstr ""
+
+#: src/language-features/index.md:15
+msgid "S-strings"
+msgstr ""
+
+#: src/language-features/index.md:15
+msgid "[Insert SQL directly into a query with an S-string](./s-strings.md)"
+msgstr ""
+
+#: src/language-features/index.md:16
+msgid "F-strings"
+msgstr ""
+
+#: src/language-features/index.md:16
+msgid "[Combine several column's data with F-strings](./f-strings.md)"
+msgstr ""
+
+#: src/language-features/index.md:17
+msgid "Case"
+msgstr ""
+
+#: src/language-features/index.md:17
+msgid "[Create a new column based on the contents of other columns](./case.md)"
+msgstr ""
+
+#: src/language-features/index.md:18
+msgid "Target & Version"
+msgstr ""
+
+#: src/language-features/index.md:18
+msgid "[Specify a target SQL engine and PRQL version](./target.md)"
+msgstr ""
