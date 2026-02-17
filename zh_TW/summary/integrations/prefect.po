@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:30Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/integrations/prefect.md:1
+msgid "Prefect"
+msgstr "Prefect"
+
+#: src/integrations/prefect.md:3
+msgid ""
+"Because Prefect is in native python, it's extremely easy to integrate with "
+"PRQL."
+msgstr ""
+
+#: src/integrations/prefect.md:5
+msgid "With a Postgres Task, replace:"
+msgstr ""
+
+#: src/integrations/prefect.md:11
+msgid "...with..."
+msgstr ""
+
+#: src/integrations/prefect.md:17
+msgid ""
+"We're big fans of Prefect, and if there is anything that would make the "
+"integration easier, please open an issue."
+msgstr ""
