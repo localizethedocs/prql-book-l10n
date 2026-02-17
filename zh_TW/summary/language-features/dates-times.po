@@ -1,0 +1,174 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:24Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/language-features/dates_and_times.md:1
+msgid "Dates & Times"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:3
+msgid ""
+"PRQL uses `@` followed by a string to represent dates & times. This is less "
+"verbose than SQL's approach of `TIMESTAMP '2004-10-19 10:23:54'` and more "
+"explicit than SQL's implicit option of just using a string `'2004-10-19 "
+"10:23:54'`."
+msgstr ""
+
+#: src/language-features/dates_and_times.md:7
+msgid ""
+"```admonish note\n"
+"Currently PRQL passes strings which can be compiled straight through to the\n"
+"database, and so many compatible formats string may work, but we may refine "
+"this\n"
+"in the future to aid in compatibility across databases. We'll always support "
+"the\n"
+"canonical [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format described "
+"below.\n"
+"```"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:14
+msgid "Dates"
+msgstr "日期"
+
+#: src/language-features/dates_and_times.md:16
+msgid ""
+"Dates are represented by `@{yyyy-mm-dd}` — a `@` followed by the date format."
+msgstr "日期由 `@{yyyy-mm-dd}` 表示 — `@` 後面跟著日期格式。"
+
+#: src/language-features/dates_and_times.md:24
+msgid "Times"
+msgstr "時間"
+
+#: src/language-features/dates_and_times.md:26
+msgid ""
+"Times are represented by `@{HH:mm:ss.SSS±Z}` with any parts not supplied "
+"being rounded to zero, including the timezone, which is represented by `+HH:"
+"mm`, `-HH:mm` or `Z`. This is consistent with the ISO8601 time format."
+msgstr ""
+
+#: src/language-features/dates_and_times.md:35
+msgid "Timestamps"
+msgstr "時間戳記"
+
+#: src/language-features/dates_and_times.md:37
+msgid ""
+"Timestamps are represented by `@{yyyy-mm-ddTHH:mm:ss.SSS±Z}` / `@{date}"
+"T{time}`, with any time parts not supplied being rounded to zero, including "
+"the timezone, which is represented by `+HH:mm`, `-HH:mm` or `Z`. This is `@` "
+"followed by the ISO8601 datetime format, which uses `T` to separate date & "
+"time."
+msgstr ""
+
+#: src/language-features/dates_and_times.md:48
+msgid "Intervals"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:50
+msgid ""
+"Intervals are represented by `{N}{periods}`, such as `2years` or "
+"`10minutes`, without a space."
+msgstr ""
+
+#: src/language-features/dates_and_times.md:66
+msgid "Examples"
+msgstr "範例"
+
+#: src/language-features/dates_and_times.md:68
+msgid "Here's a fuller list of examples:"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:70
+msgid ""
+"`@20221231` is forbidden — it must contain full punctuation (`-` and `:`),"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:71
+msgid "`@2022-12-31` is a date"
+msgstr "`@2022-12-31` 是日期"
+
+#: src/language-features/dates_and_times.md:72
+msgid ""
+"`@2022-12` or `@2022` are forbidden — SQL can't express a month, only a date"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:73
+msgid "`@16:54:32.123456` is a time"
+msgstr "`@16:54:32.123456` 是時間"
+
+#: src/language-features/dates_and_times.md:74
+msgid ""
+"`@16:54:32`, `@16:54`, `@16` are all allowed, expressing `@16:54:32.000000`, "
+"`@16:54:00.000000`, `@16:00:00.000000` respectively"
+msgstr ""
+"`@16:54:32`、`@16:54`、`@16` 都是允許的，分別表示 `@16:54:32.000000`、"
+"`@16:54:00.000000`、`@16:00:00.000000`"
+
+#: src/language-features/dates_and_times.md:75
+msgid "`@2022-12-31T16:54:32.123456` is a timestamp without timezone"
+msgstr "`@2022-12-31T16:54:32.123456` 是沒有時區的時間戳記"
+
+#: src/language-features/dates_and_times.md:76
+msgid "`@2022-12-31T16:54:32.123456Z` is a timestamp in UTC"
+msgstr "`@2022-12-31T16:54:32.123456Z` 是 UTC 時區的時間戳記"
+
+#: src/language-features/dates_and_times.md:77
+msgid "`@2022-12-31T16:54+02` is timestamp in UTC+2"
+msgstr "`@2022-12-31T16:54+02` 是 UTC+2 時區的時間戳記"
+
+#: src/language-features/dates_and_times.md:78
+msgid ""
+"`@2022-12-31T16:54+02:00` and `@2022-12-31T16:54+02` are datetimes in UTC+2"
+msgstr ""
+"`@2022-12-31T16:54+02:00` 和 `@2022-12-31T16:54+02` 是 UTC+2 時區的日期時間"
+
+#: src/language-features/dates_and_times.md:79
+msgid ""
+"`@16:54+02` is forbidden — time is always local, so it cannot have a timezone"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:80
+msgid ""
+"`@2022-12-31+02` is forbidden — date is always local, so it cannot have a "
+"timezone"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:82
+msgid "Roadmap"
+msgstr "路線圖"
+
+#: src/language-features/dates_and_times.md:84
+msgid "Datetimes"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:86
+msgid ""
+"Datetimes are supported by some databases (e.g. MySql, BigQuery) in addition "
+"to timestamps. When we have type annotations, these will be represented by a "
+"timestamp annotated as a datetime:"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:94
+msgid "These are some examples we can then add:"
+msgstr "以下是我們可以添加的一些範例："
+
+#: src/language-features/dates_and_times.md:96
+msgid "`@2022-12-31T16:54<datetime>` is datetime without timezone"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:97
+msgid "`@2022-12-31<datetime>` is forbidden — datetime must specify time"
+msgstr ""
+
+#: src/language-features/dates_and_times.md:98
+msgid "`@16:54<datetime>` is forbidden — datetime must specify date"
+msgstr ""
