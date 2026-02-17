@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Literals - PRQL language book</title>
+
+
+        <!-- Custom HTML head -->
+        <script type="text/javascript" src="../../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="Modern language for transforming data — a simple, powerful, pipelined SQL replacement">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../comparison-table.css">
+        <link rel="stylesheet" href="../../mdbook-admonish.css">
+        <link rel="stylesheet" href="../.././mdbook-admonish.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">PRQL language book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/PRQL/prql" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="literals"><a class="header" href="#literals">Literals</a></h1>
+<p>A literal is a constant value expression, with special syntax rules for each data type.</p>
+<h2 id="numbers"><a class="header" href="#numbers">Numbers</a></h2>
+<p>Number literals can contain number characters as well as a period, underscores and char <code>e</code>.</p>
+<p>If a number literal contains a dot or character <code>e</code>, it is treated as floating point number (or just <em>float</em>), otherwise it is treated as integer number.</p>
+<p>Character <code>e</code> denotes <a href="https://en.wikipedia.org/wiki/Scientific_notation">“scientific notation”</a>, where the number after <code>e</code> is the exponent in 10-base.</p>
+<p>Underscores are ignored, so they can be placed at arbitrary positions, but it is advised to use them as thousand separators.</p>
+<div class="comparison">
+<div>
+<h4 id="prql"><a class="header" href="#prql">PRQL</a></h4>
+<pre><code class="language-prql">from numbers
+select {
+    small = 1.000_000_1,
+    big = 5_000_000,
+    huge = 5e9,
+}
+</code></pre>
+</div>
+<div>
+<h4 id="sql"><a class="header" href="#sql">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  1.0000001 AS small,
+  5000000 AS big,
+  5000000000.0 AS huge
+FROM
+  numbers
+
+</code></pre>
+</div>
+</div>
+<h2 id="strings"><a class="header" href="#strings">Strings</a></h2>
+<p>PRQL supports string literals and several other formats of strings. See the <a href="./strings.html">Strings</a> page for more information.</p>
+<h2 id="booleans"><a class="header" href="#booleans">Booleans</a></h2>
+<p>Boolean values can be expressed with <code>true</code> or <code>false</code> keyword.</p>
+<h2 id="null"><a class="header" href="#null">Null</a></h2>
+<p>The null value can be expressed with <code>null</code> keyword. See also the discussion of how <a href="../spec/null.html">PRQL handles nulls</a>.</p>
+<h2 id="date-and-time"><a class="header" href="#date-and-time">Date and time</a></h2>
+<p>Date and time literals are expressed with character <code>@</code>, followed by a string that encodes the date &amp; time.</p>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-note"></a>
+</div>
+<div>
+<p>PRQL’s notation is designed to be less verbose than SQL’s <code>TIMESTAMP '2004-10-19 10:23:54'</code> and more explicit than SQL’s implicit option that just uses a string <code>'2004-10-19 10:23:54'</code>.</p>
+</div>
+</div>
+<h3 id="dates"><a class="header" href="#dates">Dates</a></h3>
+<p>Dates are represented by <code>@{yyyy-mm-dd}</code> — a <code>@</code> followed by the date format.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-1"><a class="header" href="#prql-1">PRQL</a></h4>
+<pre><code class="language-prql">from employees
+derive age_at_year_end = (@2022-12-31 - dob)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-1"><a class="header" href="#sql-1">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  DATE '2022-12-31' - dob AS age_at_year_end
+FROM
+  employees
+
+</code></pre>
+</div>
+</div>
+<h3 id="times"><a class="header" href="#times">Times</a></h3>
+<p>Times are represented by <code>@{HH:mm:ss.SSS±Z}</code> with any parts not supplied defaulting to zero. This includes the timezone, which is represented by <code>+HH:mm</code>, <code>-HH:mm</code> or <code>Z</code>. This is consistent with the ISO8601 time format.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-2"><a class="header" href="#prql-2">PRQL</a></h4>
+<pre><code class="language-prql">from orders
+derive should_have_shipped_today = (order_time &lt; @08:30)
+</code></pre>
+</div>
+<div>
+<h4 id="sql-2"><a class="header" href="#sql-2">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  order_time &lt; TIME '08:30' AS should_have_shipped_today
+FROM
+  orders
+
+</code></pre>
+</div>
+</div>
+<h3 id="timestamps"><a class="header" href="#timestamps">Timestamps</a></h3>
+<p>Timestamps are represented by <code>@{yyyy-mm-ddTHH:mm:ss.SSS±Z}</code> / <code>@{date}T{time}</code>, with any time parts not supplied being rounded to zero, including the timezone, which is represented by <code>+HH:mm</code>, <code>-HH:mm</code> or <code>Z</code> (<code>:</code> is optional). This is <code>@</code> followed by the ISO8601 datetime format, which uses <code>T</code> to separate date &amp; time.</p>
+<div class="comparison">
+<div>
+<h4 id="prql-3"><a class="header" href="#prql-3">PRQL</a></h4>
+<pre><code class="language-prql">from commits
+derive first_prql_commit = @2020-01-01T13:19:55-08:00
+</code></pre>
+</div>
+<div>
+<h4 id="sql-3"><a class="header" href="#sql-3">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  TIMESTAMP '2020-01-01T13:19:55-0800' AS first_prql_commit
+FROM
+  commits
+
+</code></pre>
+</div>
+</div>
+<h3 id="durations"><a class="header" href="#durations">Durations</a></h3>
+<p>Durations are represented by <code>{N}{periods}</code>, such as <code>2years</code> or <code>10minutes</code>, without a space.</p>
+<div id="admonition-note-1" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-1-title">
+<div class="admonition-title">
+<div id="admonition-note-1-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-note-1"></a>
+</div>
+<div>
+<p>These aren’t the same as ISO8601, because we evaluated <code>P3Y6M4DT12H30M5S</code> to be difficult to understand, but we could support a simplified form if there’s demand for it. We don’t currently support compound expressions, for example <code>2years10months</code>, but most DBs will allow <code>2years + 10months</code>. Please raise an issue if this is inconvenient.</p>
+</div>
+</div>
+<div class="comparison">
+<div>
+<h4 id="prql-4"><a class="header" href="#prql-4">PRQL</a></h4>
+<pre><code class="language-prql">from projects
+derive first_check_in = start + 10days
+</code></pre>
+</div>
+<div>
+<h4 id="sql-4"><a class="header" href="#sql-4">SQL</a></h4>
+<pre><code class="language-sql">SELECT
+  *,
+  start + INTERVAL 10 DAY AS first_check_in
+FROM
+  projects
+
+</code></pre>
+</div>
+</div>
+<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
+<p>Here’s a larger list of date and time examples:</p>
+<ul>
+<li><code>@20221231</code> is invalid — it must contain full punctuation (<code>-</code> and <code>:</code>),</li>
+<li><code>@2022-12-31</code> is a date</li>
+<li><code>@2022-12</code> or <code>@2022</code> are invalid — SQL can’t express a month, only a date</li>
+<li><code>@16:54:32.123456</code> is a time</li>
+<li><code>@16:54:32</code>, <code>@16:54</code>, <code>@16</code> are all allowed, expressing <code>@16:54:32.000000</code>, <code>@16:54:00.000000</code>, <code>@16:00:00.000000</code> respectively</li>
+<li><code>@2022-12-31T16:54:32.123456</code> is a timestamp without timezone</li>
+<li><code>@2022-12-31T16:54:32.123456Z</code> is a timestamp in UTC</li>
+<li><code>@2022-12-31T16:54+02</code> is timestamp in UTC+2</li>
+<li><code>@2022-12-31T16:54+02:00</code> and <code>@2022-12-31T16:54+02</code> are datetimes in UTC+2</li>
+<li><code>@16:54+02</code> is invalid — time is always local, so it cannot have a timezone</li>
+<li><code>@2022-12-31+02</code> is invalid — date is always local, so it cannot have a timezone</li>
+</ul>
+<div id="admonition-note-2" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-2-title">
+<div class="admonition-title">
+<div id="admonition-note-2-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-note-2"></a>
+</div>
+<div>
+<p>Currently prql-compiler does not parse or validate any of the datetime strings and will pass them to the database engine without adjustment. This might be refined in the future to aid in compatibility across databases. We’ll always support the canonical <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601</a> format described above.</p>
+</div>
+</div>
+<h3 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h3>
+<p>Datetimes (as a distinct datatype from the timestamps) are supported by some databases (e.g. MySql, BigQuery). With the addition of type casts, these could be represented by a timestamp cast to a datetime:</p>
+<pre><code class="language-prql no-eval">derive pi_day = @2017-03-14T15:09:26.535898&lt;datetime&gt;
+</code></pre>
+<p>These are some examples we can then add:</p>
+<ul>
+<li><code>@2022-12-31T16:54&lt;datetime&gt;</code> is datetime without timezone</li>
+<li><code>@2022-12-31&lt;datetime&gt;</code> is forbidden — datetime must specify time</li>
+<li><code>@16:54&lt;datetime&gt;</code> is forbidden — datetime must specify date</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../reference/syntax/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../reference/syntax/strings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../reference/syntax/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../reference/syntax/strings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../highlight-prql.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

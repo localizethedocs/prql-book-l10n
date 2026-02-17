@@ -1,0 +1,450 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Type system - PRQL language book</title>
+
+
+        <!-- Custom HTML head -->
+        <script type="text/javascript" src="../../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="Modern language for transforming data — a simple, powerful, pipelined SQL replacement">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../comparison-table.css">
+        <link rel="stylesheet" href="../../mdbook-admonish.css">
+        <link rel="stylesheet" href="../.././mdbook-admonish.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">PRQL language book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/PRQL/prql" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="type-system"><a class="header" href="#type-system">Type system</a></h1>
+<blockquote>
+<p>The type system determines the allowed values of a term.</p>
+<p>– Wikipedia</p>
+</blockquote>
+<h2 id="purpose"><a class="header" href="#purpose">Purpose</a></h2>
+<p>Each of the SQL DBMSs has their own type system. Thanks to SQL standard, they are very similar, but have key differences. For example, SQLite does not have a type for date or time or timestamps, but it has functions for handling date and time that take ISO 8601 strings or integers that represent Unix timestamps. So it does support most of what is possible to do with dates in other dialects, even though it stores data with a different physical layout and uses different functions to achieve that.</p>
+<p>PRQL’s task is to define common description of <em>data formats</em>, just as how it already defines common <em>data transformations</em>.</p>
+<p>We believe this should best be done in two steps:</p>
+<ol>
+<li>
+<p>Define PRQL’s Type System (PTS), following principles we think a relational language should have (and not focus on what existing SQL DBMSs have).</p>
+</li>
+<li>
+<p>Define a mapping between SQL Type System (STS) and PTS, for each of the DBMSs. Ideally we’d want that to be a bijection, so each type in PTS would be represented by a single type in STS and vice-versa. Unfortunately this is not entirely possible, as shown below.</p>
+</li>
+</ol>
+<p>In practical terms, we want for a user to be able to:</p>
+<ul>
+<li>
+<p>… express types of their database with PRQL (map their STS into PTS). In some cases, we can allow to say “your database is not representable with PRQL, change it or use only a subset of it”. An example of what we don’t want to support are arrays with arbitrary indexes in Postgres (i.e. 2-based index for arrays).</p>
+<p>This task of mapping to PTS could be automated by LSP server, by introspecting user’s SQL database and generating PRQL source.</p>
+</li>
+<li>
+<p>… express their SQL queries in PRQL. Again, using mapping from STS to PTS, one should be able to express any SQL operation in PRQL.</p>
+<p>For example, translate MSSQL <code>DATEDIFF</code> to subtraction operator <code>-</code> in PRQL.</p>
+<p>For now, this mapping is manual, but should be documented and may be automated.</p>
+</li>
+<li>
+<p>… use any PRQL feature in their database. Here we are mapping back from PTS into STS. Note that STS may have changed to a different dialect.</p>
+<p>For example, translate PRQL’s datetime operations to use TEXT in SQLite.</p>
+<p>As of now, prql-compiler already does a good job of automatically doing this mapping.</p>
+</li>
+</ul>
+<p>Example of the mapping between PTS and two STSs:</p>
+<div class="table-wrapper"><table><thead><tr><th>PTS</th><th>STS Postgres</th><th>STS SQLite</th></tr></thead><tbody>
+<tr><td>int32</td><td>integer</td><td>INTEGER</td></tr>
+<tr><td>int64</td><td>bigint</td><td>INTEGER</td></tr>
+<tr><td>timestamp</td><td>timestamp</td><td>TEXT</td></tr>
+</tbody></table>
+</div>
+<h2 id="principles"><a class="header" href="#principles">Principles</a></h2>
+<p><strong>Algebraic types</strong> - have a way of expressing sum and product types. In Rust, sum would be an enum and product would be tuple or a struct. In SQL, product would be a row, since it can contain different types, all at once. Sum would be harder to express, see (this post)[https://www.parsonsmatt.org/2019/03/19/sum_types_in_sql.html ].</p>
+<p>The value proposition here is that algebraic types give a lot modeling flexibility, all while being conceptually simple.</p>
+<p><strong>Composable</strong> - as with transformation, we’d want types to compose together.</p>
+<p>Using Python, JavaScript, C++ or Rust, one could define many different data structures that would correspond to our idea of “relation”. Most of them would be an object/struct that has column names and types and then a generic array of arrays for rows.</p>
+<p>PRQL’s type system should also be able to express relations as composed from primitive types, but have only one idiomatic way of doing so.</p>
+<p>In practice this means that builtin types include only primitives (int, text, bool, float), tuple (for product), enum (for sum) and array (for repeating).</p>
+<p>An SQL row would translate to tuple, and a relation would translate to an array of tuples.</p>
+<p>I would also strive for the type system to be minimal - don’t differentiate between tuples, objects and structs. Choose one and stick to it.</p>
+<p><strong>Type constraints</strong> - constrain a type with a predicate. For example, have a type of <code>int64</code>s that are equal or greater than 10. Postgres <a href="https://news.ycombinator.com/item?id=34835063">does support this</a>. The primary value of using constrained types would not be validation (as it is used in linked article), but when matching the type.</p>
+<p>Say, for example, that we have a pipeline like this:</p>
+<pre><code>derive color = switch [x =&gt; 'red', true =&gt; 'green']
+derive is_red = switch [color == 'red' =&gt; true, color == 'green' =&gt; false]
+</code></pre>
+<p>It should be possible to infer that <code>color</code> is of type <code>text</code>, but only when equal to <code>'red'</code> or <code>'green'</code>. This means that the second switch covers all possible cases and <code>is_red</code> cannot be <code>null</code>.</p>
+<h2 id="theory"><a class="header" href="#theory">Theory</a></h2>
+<blockquote>
+<p>For any undefined terms used in this section, refer to set theory and mathematical definitions in general.</p>
+</blockquote>
+<p>A “type of a variable” is a “set of all possible values of that variable”. This means that terms “type” and “set” are equivalent in this context.</p>
+<p>Types (sets) can be expressions. For example, a union of two types is a type itself. This means a type expression is equivalent to any other expression whose type is a “set of sets”.</p>
+<p>So let’s introduce a “set” as a PRQL expression construct (alongside existing idents, literals, ranges and so on). For now, it does not need any special syntax. Because sets are normal expressions, existing syntax can be repurposed to define operations on sets:</p>
+<ul>
+<li>
+<p>Binary operation <code>or</code> of two sets represents a union of those two sets:</p>
+<pre><code>let number = int or float
+</code></pre>
+<p>With algebraic types, this is named “a sum type”.</p>
+</li>
+<li>
+<p>Literals can be coerced into a singleton set (i.e. <code>false</code> is converted into a set with only one element <code>false</code>):</p>
+<pre><code>let int_or_null = int or null
+</code></pre>
+</li>
+<li>
+<p>A list of set expressions can be coerced into a set of tuples, where entries of the tuples correspond to elements of the set expressions in the list:</p>
+<pre><code>let my_row = [id = int, bool, name = str]
+</code></pre>
+</li>
+<li>
+<p>An array of set expressions with exactly one entry can be coerced into a set of arrays of that set expression:</p>
+<pre><code>let array_of_int = {int} # proposed syntax for arrays
+</code></pre>
+</li>
+<li>
+<p>A function that takes set as params and returns a set is converted into a set of functions.</p>
+<pre><code>let floor_signature = (float -&gt; int)
+# using a proposed syntax for lambda functions
+</code></pre>
+</li>
+</ul>
+<p>Module <code>std</code> defines built-in sets <code>int</code>, <code>float</code>, <code>bool</code>, <code>text</code> and <code>set</code>. Other built-in sets will be added in the future.</p>
+<h2 id="type-annotations"><a class="header" href="#type-annotations">Type annotations</a></h2>
+<p>Let’s extend the syntax for declaration of variable <code>a</code>, whose value can be computed by evaluating <code>x</code>, with a type annotation:</p>
+<pre><code>let a &lt;t&gt; = x
+</code></pre>
+<p>This extended syntax applies following assertions:</p>
+<ul>
+<li><code>t</code> can be evaluated statically (at compile time),</li>
+<li><code>t</code> can be coerced into a set,</li>
+<li>value of <code>x</code> (and <code>a</code>) must be an element of <code>t</code>. This assertion must be possible to evaluate statically.</li>
+</ul>
+<p>Similar rules apply to type annotations of return types of functions and function parameter definitions.</p>
+<h2 id="type-definitions"><a class="header" href="#type-definitions">Type definitions</a></h2>
+<p>As shown, types can be defined by defining expressions and coercing them to set expressions by using <code>&lt; &gt;</code>.</p>
+<p>But similar to how both <code>func</code> and <code>let</code> can be used to define functions (when we introduce lambda function syntax), let’s also introduce syntactic sugar for type definitions:</p>
+<pre><code># these two are equivalent
+let my_type &lt;set&gt; = set_expr
+type my_type = set_expr
+</code></pre>
+<h2 id="container-types"><a class="header" href="#container-types">Container types</a></h2>
+<blockquote>
+<p>Terminology is under discussion</p>
+</blockquote>
+<p><strong>Tuple</strong> is the only product type in PTS. It contains n ordered fields, where n is known at compile-time. Each field has a type itself and an optional name. Fields are not necessarily of the same type.</p>
+<p>In other languages, similar constructs are named record, struct, tuple, named tuple or (data)class.</p>
+<p><strong>Array</strong> is a container type that contains n ordered fields, where n is not known at compile-time. All fields are of the same type and cannot be named.</p>
+<p><strong>Relation</strong> is an array of tuples.</p>
+<p>The first argument of transforms <code>select</code> and <code>derive</code> contains a known number of entries, which can be of different types. Thus, it is a tuple.</p>
+<pre><code>select [1.4, false, "foo"]
+</code></pre>
+<h2 id="physical-layout"><a class="header" href="#physical-layout">Physical layout</a></h2>
+<p><em>Logical type</em> is user-facing the notion of a type that is the building block of the type system.</p>
+<p><em>Physical layout</em> is the underlying memory layout of the data represented by a variable.</p>
+<p>In many programming languages, physical layout of a logical type is dependent on the target platform. Similarly, physical layout of a PRQL logical type is dependent on representation of that type in the target STS.</p>
+<pre><code>PTS logical type  ---&gt;  STS logical type  ---&gt; STS physical layout
+</code></pre>
+<p>Note that STS types do not have a single physical layout. Postgres has a logical (pseudo)type <code>anyelement</code>, which is a super type of any data type. It can be used as a function parameter type, but does not have a single physical layout so it cannot be used in a column declaration.</p>
+<p>For now, PRQL does not define physical layouts of any type. It is not needed since PRQL is not used for DDL (see section “Built-in primitives”) or does not support raw access to underlying memory.</p>
+<p>As a consequence, results of a PRQL query cannot be robustly compared across DBMSs, since the physical layout of the result will vary.</p>
+<p>In the future, PRQL may define a common physical layout of types, probably using Apache Arrow.</p>
+<!-- ## Enums
+
+```
+# user-defined enum
+type open
+type pending
+type closed
+type status = open or pending or closed
+``` -->
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<pre><code>type my_relation = {[
+	id = int,
+	title = text,
+	age = int
+]}
+
+type invoices = {[
+    invoice_id = int64,
+    issued_at = timestamp,
+    labels = {text}
+
+    #[repr(json)]
+    items = [{
+        article_id = int64,
+        count = int16 where x -&gt; x &gt;= 1,
+    }],
+    paid_by_user_id = int64 or null,
+    status = status,
+]}
+</code></pre>
+<h2 id="appendix"><a class="header" href="#appendix">Appendix</a></h2>
+<h3 id="built-in-primitives"><a class="header" href="#built-in-primitives">Built-in primitives</a></h3>
+<p>This document mentions <code>int32</code> and <code>int64</code> as distinct types, but there is no need for that in the initial implementation. The built-in <code>int</code> can associate with all operations on integers and translate PRQL to valid SQL regardless of the size of the integer. Later, <code>int</code> cam be replaced by:</p>
+<pre><code>type int = int8 || int16 || int32 || int64
+</code></pre>
+<p>The general rule for “when to make a distinction between types” would be “as soon as the types carry different information and we find an operation that would be expressed differently”. In this example, that would require some operation on <code>int32</code> to have different syntax than same operation over <code>int64</code>.</p>
+<p>We can have such relaxed rule because PRQL is not aiming to be a Data Definition Language and does not have to bother with exact physical layout of types.</p>
+<h3 id="type-representations"><a class="header" href="#type-representations">Type representations</a></h3>
+<p>There are cases where a PTS type has multiple possible and valid representations in some STSs.</p>
+<p>For such cases, we’d want to support the use of alternative representations for storing data, but also application of any function that is defined for the original type.</p>
+<p>Using SQLite as an example again, users may have some temporal data stored as INTEGER unix timestamp and some as TEXT that contains ISO 8601 without timezone. From the user’s perspective, both of these types are <code>timestamp</code>s and should be declared as such. But when compiling operations over these types to SQL, the compiler should consider their different representations in STS. For example a difference between two timestamps <code>timestamp - timestamp</code> can be translated to a normal int subtraction for INTEGER repr, but must apply SQLite’s function <code>unixepoch</code> when dealing with TEXT repr.</p>
+<p>Table declarations should therefore support annotations that give hints about which representation is used:</p>
+<pre><code>table foo {
+    #[repr(text)]
+    created_at: timestamp,
+}
+</code></pre>
+<p>A similar example is an “array of strings type” in PTS that could be represented by a <code>text[]</code> (if DBMS supports arrays) or <code>json</code> or it’s variant <code>jsonb</code> in Postgres. Again, the representation would affect operators: in Postgres, arrays would be accessed with <code>my_array[1]</code> and json arrays would use <code>my_json_array -&gt; 1</code>. This example may not be applicable, if we decide that we want a separate JSON type in PST.</p>
+<h3 id="rq-functions-targets-and-reprs"><a class="header" href="#rq-functions-targets-and-reprs">RQ functions, targets and reprs</a></h3>
+<blockquote>
+<p>This part is talks about technical implementations, not the language itself</p>
+</blockquote>
+<h4 id="idea"><a class="header" href="#idea">Idea</a></h4>
+<p>RQ contains a single node kind for expressing operations and functions: BuiltInFunction (may be renamed in the future).</p>
+<p>It is a bottleneck that we can leverage when trying to affect how an operator or a function interacts with different type representations on different targets.</p>
+<p>Idea is to implement the BuiltInFunction multiple times and annotate it with it intended target and parameter representation. Then we can teach the compiler to pick the appropriate function implementation that suit current repr and compilation target.</p>
+<h4 id="specifics"><a class="header" href="#specifics">Specifics</a></h4>
+<p>RQ specification is an interface that contains functions, identified by name (i.e. <code>std.int8.add</code>). These functions have typed parameters and a return value. If an RQ function call does not match the function declaration in number or in types of the parameters, this is considered an invalid RQ AST.</p>
+<p>We provide multiple implementations for each RQ function. They are annotated with a target (i.e. <code>#[target(sql.sqlite)]</code>) and have their params annotated with type reprs (i.e. <code>#[repr(int)]</code>).</p>
+<pre><code># using a made-up syntax
+
+#[target(sql.sqlite)]
+func std.int8.add
+    #[repr(int8)] x
+    #[repr(int8)] y
+    -&gt; s"{x} + {y}"
+</code></pre>
+<p>Each RQ type has one canonical repr that serves as the reference implementation for other reprs and indicates the amount of contained data (i.e. 1 bit, 8 bits, 64 bits).</p>
+<h4 id="example"><a class="header" href="#example">Example</a></h4>
+<p>Let’s say for example, that we’d want to support 8bit integer arithmetic, and that we’d want the result of <code>127 + 1</code> to be <code>-128</code> (ideally we’d handle this better, but bear with me for the sake of the example). Because some RDBMSs don’t support 8bit numbers and do all their integer computation with 64bit numbers (SQLite), we need to implement an alternative type representation for that target.</p>
+<p>The logical type <code>int8</code> could have the following two reprs:</p>
+<ul>
+<li>canonical <code>repr_int8</code> that contains 8 bits in two’s complement, covering integer values in range -128 to 127 (inclusive),</li>
+<li><code>repr_int64</code> that contains 64 bits of data, but is using only the values that are also covered by <code>repr_int8</code>.</li>
+</ul>
+<p>Now we’d implement function <code>std.int8.add</code> for each of the reprs. Let’s assume that the <code>int8</code> implementation is straightforward and that databases don’t just change the data type when a number overflows. The impl for <code>int64</code> requires a CASE statement that checks if the value would overflow and subtact 256 in that case.</p>
+<p>The goal here is that the results of the two impls are equivalent. To validate that, we also need a way to convert between the reprs, or another <code>to_string</code> function, implemented for both reprs.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../reference/spec/modules.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../project/changelog.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../reference/spec/modules.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../project/changelog.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../highlight-prql.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

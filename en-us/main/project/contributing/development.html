@@ -1,0 +1,742 @@
+<!DOCTYPE HTML>
+<html lang="en_US" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Development - PRQL language book</title>
+
+
+        <!-- Custom HTML head -->
+        <script type="text/javascript" src="../../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="Modern language for transforming data — a simple, powerful, pipelined SQL replacement">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../comparison-table-23ca7667.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-15f5df35.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-b4d18dea.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">PRQL language book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/PRQL/prql" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="development"><a class="header" href="#development">Development</a></h1>
+<h2 id="setting-up-an-initial-dev-environment"><a class="header" href="#setting-up-an-initial-dev-environment">Setting up an initial dev environment</a></h2>
+<p>We can set up a local development environment sufficient for navigating,
+editing, and testing PRQL’s compiler code in two minutes:</p>
+<ul>
+<li>
+<p>Install
+<a href="https://doc.rust-lang.org/cargo/getting-started/installation.html"><code>rustup</code> &amp; <code>cargo</code></a>.</p>
+</li>
+<li>
+<p>[Optional but highly recommended] Install <code>cargo-insta</code>, our testing
+framework:</p>
+<pre><code class="language-sh">cargo install cargo-insta
+</code></pre>
+</li>
+<li>
+<p>That’s it! Running the unit tests for the <code>prqlc</code> crate after cloning the repo
+should complete successfully:</p>
+<pre><code class="language-sh">cargo test --package prqlc --lib
+</code></pre>
+<p>…or, to run tests and update the test snapshots:</p>
+<pre><code class="language-sh">cargo insta test --accept --package prqlc --lib
+</code></pre>
+<p>There’s more context on our tests in <a href="#how-we-test">How we test</a> below.</p>
+</li>
+</ul>
+<p>That’s sufficient for making an initial contribution to the compiler.</p>
+<hr>
+<h2 id="setting-up-a-full-dev-environment"><a class="header" href="#setting-up-a-full-dev-environment">Setting up a full dev environment</a></h2>
+<!-- prettier-ignore -->
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>We really care about this process being easy, both because the project
+benefits from more contributors like you, and to reciprocate your future
+contribution. If something isn’t easy, please let us know in a GitHub Issue.
+We’ll enthusiastically help you, and use your feedback to improve the scripts
+&amp; instructions.</p>
+</blockquote>
+<p>For more advanced development; for example compiling for wasm or previewing the
+website, we have two options:</p>
+<h3 id="option-1-use-the-projects-task"><a class="header" href="#option-1-use-the-projects-task">Option 1: Use the project’s <code>task</code></a></h3>
+<!-- prettier-ignore -->
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>This is tested on macOS, should work on amd64 Linux, but won’t work on
+others (include Windows), since it relies on <code>brew</code>.</p>
+</blockquote>
+<ul>
+<li>
+<p><a href="https://taskfile.dev/installation/">Install Task</a>.</p>
+</li>
+<li>
+<p>Then run the <code>setup-dev</code> task. This runs commands from our
+<a href="https://github.com/PRQL/prql/blob/main/Taskfile.yaml">Taskfile.yaml</a>,
+installing dependencies with <code>cargo</code>, <code>brew</code>, <code>npm</code> &amp; <code>uv</code>, and suggests some
+VS Code extensions.</p>
+<pre><code class="language-sh">task setup-dev
+</code></pre>
+</li>
+</ul>
+<h3 id="option-2-install-tools-individually"><a class="header" href="#option-2-install-tools-individually">Option 2: Install tools individually</a></h3>
+<ul>
+<li>
+<p>We’ll need <code>cargo-insta</code>, to update snapshot tests:</p>
+<pre><code class="language-sh">cargo install cargo-insta
+</code></pre>
+</li>
+<li>
+<p>We’ll need Python, which most systems will have already. The easiest way to
+check is to try running the full tests:</p>
+<pre><code class="language-sh">cargo test
+</code></pre>
+<p>…and if that doesn’t complete successfully, ensure we have Python &gt;= 3.7, to
+compile <code>prqlc-python</code>.</p>
+</li>
+<li>
+<p>For more involved contributions, such as building the website, playground,
+book, or some release artifacts, we’ll need some additional tools. But we
+won’t need those immediately, and the error messages on what’s missing should
+be clear when we attempt those things. When we hit them, the
+<a href="https://github.com/PRQL/prql/blob/main/Taskfile.yaml">Taskfile.yaml</a> will be
+a good source to copy &amp; paste instructions from.</p>
+</li>
+</ul>
+<h3 id="option-3-use-a-dev-container"><a class="header" href="#option-3-use-a-dev-container">Option 3: Use a Dev Container</a></h3>
+<p>This project has a
+<a href="https://github.com/PRQL/prql/blob/main/.devcontainer/devcontainer.json">devcontainer.json file</a>
+and a
+<a href="https://github.com/PRQL/prql/pkgs/container/prql-devcontainer-base">pre-built dev container base Docker image</a>.
+Learn more about Dev Containers at
+<a href="https://containers.dev/">https://containers.dev/</a></p>
+<p>Currently, the tools for Rust are already installed in the pre-built image, and,
+Node.js, Python and others are configured to be installed when build the
+container.</p>
+<p>While there are a variety of tools that support Dev Containers, the focus here
+is on developing with VS Code in a container by
+<a href="https://docs.github.com/en/codespaces/overview">GitHub Codespaces</a> or
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">VS Code Dev Containers extension</a>.</p>
+<p>To use a Dev Container on a local computer with VS Code, install the
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">VS Code Dev Containers extension</a>
+and its system requirements. Then refer to the links above to get started.</p>
+<h3 id="option-4-use-nix-development-environment"><a class="header" href="#option-4-use-nix-development-environment">Option 4: Use nix development environment</a></h3>
+<!-- prettier-ignore -->
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>This is used by a member of the core team on Linux, but doesn’t
+currently work on Mac. We’re open to contributions to improve support.</p>
+</blockquote>
+<p>A <a href="https://nixos.org/">nix</a> flake <code>flake.nix</code> provides 3 development
+environments:</p>
+<ul>
+<li><strong>default</strong>, for building the compiler</li>
+<li><strong>web</strong>, for the compiler and the website,</li>
+<li><strong>full</strong>, for the compiler, the website and the compiler bindings.</li>
+</ul>
+<p>To load the shell:</p>
+<ol>
+<li>
+<p><a href="https://nixos.org/download">Install nix (the package manager)</a>. (only first
+time)</p>
+</li>
+<li>
+<p>Enable flakes, which are a (pretty stable) experimental feature of nix. (only
+first time)</p>
+<p>For non-NixOS users:</p>
+<pre><code class="language-sh">mkdir -p ~/.config/nix/
+tee 'experimental-features = nix-command flakes' &gt;&gt; ~/.config/nix/nix.conf
+</code></pre>
+<p>For NixOS users, follow instructions <a href="https://nixos.wiki/wiki/Flakes">here</a>.</p>
+</li>
+<li>
+<p>Run:</p>
+<pre><code class="language-sh">nix develop
+</code></pre>
+<p>To use the “web” or “full” shell, run:</p>
+<pre><code class="language-sh">nix develop .#web
+</code></pre>
+</li>
+</ol>
+<p>Optionally, you can install <a href="https://direnv.net/">direnv</a>, to automatically load
+the shell when you enter this repo. The easiest way is to also install
+<a href="https://github.com/nix-community/nix-direnv">direnv-nix</a> and configure your
+<code>.envrc</code> with:</p>
+<pre><code class="language-sh"># .envrc
+use flake .#full
+</code></pre>
+<hr>
+<h2 id="contribution-workflow"><a class="header" href="#contribution-workflow">Contribution workflow</a></h2>
+<p>We’re similar to most projects on GitHub — open a Pull Request with a suggested
+change!</p>
+<h3 id="commits"><a class="header" href="#commits">Commits</a></h3>
+<ul>
+<li>If a change is user-facing, please add a line in
+<a href="https://github.com/PRQL/prql/blob/main/CHANGELOG.md"><strong><code>CHANGELOG.md</code></strong></a>,
+with <code>{message}, ({@contributor, #X})</code> where <code>X</code> is the PR number.
+<ul>
+<li>If there’s a missing entry, a follow-up PR containing just the changelog
+entry is welcome.</li>
+</ul>
+</li>
+<li>We’re using <a href="https://www.conventionalcommits.org">Conventional Commits</a>
+message format, enforced through
+<a href="https://github.com/amannn/action-semantic-pull-request">action-semantic-pull-request</a>.</li>
+</ul>
+<h3 id="merges"><a class="header" href="#merges">Merges</a></h3>
+<ul>
+<li><strong>We merge any code that makes PRQL better</strong></li>
+<li>A PR doesn’t need to be perfect to be merged; it doesn’t need to solve a big
+problem. It needs to:
+<ul>
+<li>be in the right direction,</li>
+<li>make incremental progress,</li>
+<li>be explicit on its current state, so others can continue the progress.</li>
+</ul>
+</li>
+<li>That said, there are a few instances when we need to ensure we have some
+consensus before merging code — for example non-trivial changes to the
+language, or large refactorings to the library.</li>
+<li>If you have merge permissions, and are reasonably confident that a PR is
+suitable to merge (whether or not you’re the author), feel free to merge.
+<ul>
+<li>If you don’t have merge permissions and have authored a few PRs, ask and ye
+shall receive.</li>
+</ul>
+</li>
+<li>The primary way we ratchet the code quality is through automated tests.
+<ul>
+<li>This means PRs almost always need a test to demonstrate incremental
+progress.</li>
+<li>If a change breaks functionality without breaking tests, our tests were
+probably insufficient.</li>
+<li>If a change breaks existing tests (for example, changing an external API),
+that indicates we should be careful about merging a change, including
+soliciting others’ views.</li>
+</ul>
+</li>
+<li>We use PR reviews to give general context, offer specific assistance, and
+collaborate on larger decisions.
+<ul>
+<li>Reviews around ‘nits’ like code formatting / idioms / etc are very welcome.
+But the norm is for them to be received as helpful advice, rather than as
+mandatory tasks to complete. Adding automated tests &amp; lints to automate
+these suggestions is welcome.</li>
+<li>If you have merge permissions and would like a PR to be reviewed before it
+merges, that’s great — ask or assign a reviewer.</li>
+<li>If a PR hasn’t received attention after a day, please feel free to ping the
+pull request.</li>
+</ul>
+</li>
+<li>People may review a PR after it’s merged. As part of the understanding that we
+can merge quickly, contributors are expected to incorporate substantive
+feedback into a future PR.</li>
+<li>We should revert quickly if the impact of a PR turns out not to be consistent
+with our expectations, or there isn’t as much consensus on a decision as we
+had hoped. It’s very easy to revert code and then re-revert when we’ve
+resolved the issue; it’s a sign of moving quickly. Other options which resolve
+issues immediately are also fine, such as commenting out an incorrect test or
+adding a quick fix for the underlying issue.</li>
+</ul>
+<h2 id="docs"><a class="header" href="#docs">Docs</a></h2>
+<p>We’re very keen on contributions to improve our documentation.</p>
+<p>This includes our docs in the book, on the website, in our code, or in a Readme.
+We also appreciate issues pointing out that our documentation was confusing,
+incorrect, or stale — if it’s confusing for you, it’s probably confusing for
+others.</p>
+<p>Some principles for ensuring our docs remain maintainable:</p>
+<ul>
+<li>Docs should be as close as possible to the code. Doctests are ideal on this
+dimension — they’re literally very close to the code and they can’t drift
+apart since they’re tested on every commit. Or, for example, it’s better to
+add text to a <code>--help</code> message, rather than write a paragraph in the Readme
+explaining the CLI.</li>
+<li>We should have some visualization of how to maintain docs when we add them.
+Docs have a habit of falling out of date — the folks reading them are often
+different from those writing them, they’re sparse from the code, generally not
+possible to test, and are rarely the by-product of other contributions. Docs
+that are concise &amp; specific are easier to maintain.</li>
+<li>Docs should be specifically relevant to PRQL; anything else we can instead
+link to.</li>
+</ul>
+<p>If something doesn’t fit into one of these categories, there are still lots of
+ways of getting the word out there — a blog post / gist / etc. Let us know and
+we’re happy to link to it / tweet it.</p>
+<h2 id="how-we-test"><a class="header" href="#how-we-test">How we test</a></h2>
+<p>We use a pyramid of tests — we have fast, focused tests at the bottom of the
+pyramid, which give us low latency feedback when developing, and then slower,
+broader tests which ensure that we don’t miss anything as PRQL
+develops<sup><a name="to-footnote-1"><a href="#footnote-1">1</a></a></sup>.</p>
+<!-- markdownlint-disable MD053 -->
+<!-- prettier-ignore -->
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>If you’re making your first contribution, you don’t need to engage
+with all this — it’s fine to just make a change and push the results; the
+tests that run in GitHub will point you towards any errors, which can be then
+be run locally if needed. We’re always around to help out.</p>
+</blockquote>
+<p>Our tests, from the bottom of the pyramid to the top:</p>
+<ul>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/blob/main/.pre-commit-config.yaml">Static checks</a></strong>
+— we run a few static checks to ensure the code stays healthy and consistent.
+They’re defined in
+<a href="https://github.com/PRQL/prql/blob/main/.pre-commit-config.yaml"><strong><code>.pre-commit-config.yaml</code></strong></a>,
+using <a href="https://pre-commit.com">pre-commit</a>. They can be run locally with</p>
+<pre><code class="language-sh">task lint
+# or
+pre-commit run -a
+</code></pre>
+<p>The tests fix most of the issues they find themselves. Most of them also run
+on GitHub on every commit; any changes they make are added onto the branch
+automatically in an additional commit.</p>
+<ul>
+<li>Checking by <a href="https://megalinter.io/latest/">MegaLinter</a>, which includes more
+Linters, is also done automatically on GitHub. (experimental)</li>
+</ul>
+</li>
+<li>
+<p><strong>Unit tests &amp; inline insta snapshots</strong> — we rely on unit tests to rapidly
+check that our code basically works. We extensively use
+<a href="https://insta.rs/">Insta</a>, a snapshot testing tool which writes out the
+values generated by our code, making it fast &amp; simple to write and modify
+tests<sup><a name="to-footnote-2"><a href="#footnote-2">2</a></a></sup></p>
+<p>These are the fastest tests which run our code; they’re designed to run on
+every save while you’re developing. We include a <code>task</code> which does this:</p>
+<pre><code class="language-sh">task prqlc:test
+# or
+cargo insta test --accept --package prqlc --lib
+</code></pre>
+</li>
+</ul>
+<!--
+This is the previous doc. It has the advantage that it explains what it's doing, and is
+easy to change (e.g. to run all packages). But because of
+https://github.com/watchexec/watchexec/issues/371, the ignore behavior is unfortunately quite
+inconsistent in watchexec. Let's revert back if it gets solved.
+
+[^2]: For example, this is a command I frequently run:
+
+    ```sh
+    RUST_BACKTRACE=1 watchexec -e rs,toml,md -cr --ignore='target/**' -- cargo -q insta test --accept -p prqlc --lib
+    ```
+
+    Breaking this down:
+
+    - `RUST_BACKTRACE=1` will print a full backtrace, including where an error
+      value was created, for Rust tests which return `Result`s.
+    - `watchexec -e rs,toml,md -cr --ignore='target/**' --` will run the
+      subsequent command on any change to files with extensions which we are
+      generally editing.
+    - `cargo insta test --accept --` runs tests with `insta`, a snapshot
+      library, and writes any results immediately. I rely on git to track
+      changes, so I run with `--accept`, but YMMV.
+    - `-p prqlc --lib` is passed to cargo by `insta`; `-p prqlc`
+      tells it to only run the tests for `prqlc` rather than the other
+      crates, and `--lib` to only run the unit tests rather than the integration
+      tests, which are slower.
+    - Note that we don't want to re-run on _any_ file changing, because we can
+      get into a loop of writing snapshot files, triggering a change, writing a
+      snapshot file, etc. -->
+<ul>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/tree/main/web/book/tests/documentation">Documentation</a></strong>
+— we compile all examples from our documentation in the Website, README, and
+PRQL Book, to test that they produce the SQL we expect, and that changes to
+our code don’t cause any unexpected regressions. These are included in:</p>
+<pre><code class="language-sh">cargo insta test --accept
+</code></pre>
+</li>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/tree/main/prqlc/prqlc/tests/integration/dbs">Database integration tests</a></strong>
+— we run tests with example queries against databases with actual data to
+ensure we’re producing correct SQL across our supported dialects. The
+in-process tests can be run locally with:</p>
+<pre><code class="language-sh">task prqlc:test-all
+# or
+cargo insta test --accept --features=default,test-dbs
+</code></pre>
+<p>More details on running with external databases are in the
+<a href="https://github.com/PRQL/prql/tree/main/prqlc/prqlc/tests/integration/dbs">Readme</a>.</p>
+</li>
+</ul>
+<!-- prettier-ignore -->
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>Integration tests use DuckDB, and so require a clang compiler to
+compile <a href="https://github.com/wangfenjin/duckdb-rs"><code>duckdb-rs</code></a>. Most
+development systems will have one, but if the test command fails, install a
+clang compiler with:</p>
+<ul>
+<li>On macOS, install xcode with <code>xcode-select --install</code></li>
+<li>On Debian Linux, <code>apt-get update &amp;&amp; apt-get install clang</code></li>
+<li>On Windows, <code>duckdb-rs</code> isn’t supported, so these tests are excluded</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/blob/main/.github/workflows/tests.yaml">GitHub Actions on every commit</a></strong>
+— we run tests relevant to a PR’s changes in CI — for example changes to docs
+will attempt to build docs, changes to a binding will run that binding’s
+tests. The vast majority of changes trigger tests which run in less than five
+minutes, and we should be reassessing their scope if they take longer than
+that. Once these pass, a pull request can be merged.</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/blob/c042eef48709e2c1af577161554fd09f14e67e0f/.github/workflows/pull-request.yaml#L124">GitHub Actions on merge</a></strong>
+— we run a wider set tests on every merge to main. This includes testing
+across OSs, all our language bindings, a measure of test code coverage, and
+some performance benchmarks.</p>
+<p>If these tests fail after merging, we should revert the commit before fixing
+the test and then re-reverting.</p>
+<p>Most of these will run locally with:</p>
+<pre><code class="language-sh">task test-all
+</code></pre>
+</li>
+<li>
+<p><strong><a href="https://github.com/PRQL/prql/blob/main/.github/workflows/nightly.yaml">GitHub Actions nightly</a></strong>
+— every night, we run tests that take longer, are less likely to fail, or are
+unrelated to code changes — such as security checks, bindings’ tests on
+multiple OSs, or expensive timing benchmarks.</p>
+<p>We can run these tests before a merge by adding a label <code>pr-nightly</code> to the
+PR.</p>
+</li>
+</ul>
+<p>The goal of our tests is to allow us to make changes quickly. If they’re making
+it more difficult to make changes, or there are missing tests that would offer
+the confidence to make changes faster, please raise an issue.</p>
+<hr>
+<h2 id="website"><a class="header" href="#website">Website</a></h2>
+<p>The website is published together with the book and the playground, and is
+automatically built and released on any push to the <code>web</code> branch.</p>
+<p>The <code>web</code> branch points to the latest release plus any website-specific fixes.
+That way, the compiler behavior in the playground matches the latest release
+while allowing us to fix mistakes in the docs with a tighter loop than every
+release.</p>
+<p>Fixes to the playground, book, or website should have a <code>pr-backport-web</code> label
+added to their PR — a bot will then open &amp; merge another PR onto the <code>web</code>
+branch once the initial branch merges.</p>
+<p>The website components will run locally with:</p>
+<pre><code class="language-sh"># Run the main website
+task web:run-website
+# Run the PRQL online book
+task web:run-book
+# Run the PRQL playground
+task web:run-playground
+</code></pre>
+<h2 id="bindings"><a class="header" href="#bindings">Bindings</a></h2>
+<p>We have a number of language bindings, as documented at
+<a href="https://prql-lang.org/book/project/bindings/index.html">https://prql-lang.org/book/project/bindings/index.html</a>. Some of these are
+within our monorepo, some are in separate repos. Here’s a provisional framework
+for when we use the main prql repo vs separate repos for bindings:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Factor</th><th>Rationale</th><th>Example</th></tr>
+</thead>
+<tbody>
+<tr><td>Does someone want to sign up to maintain a repo?</td><td>A different repo is harder for the core team to maintain</td><td><code>tree-sitter-prql</code> is well maintained</td></tr>
+<tr><td>Can it change independently from the compiler?</td><td>If it’s in a different repo, it can’t be changed in lockstep with the compiler</td><td><code>prql-vscode</code> is fine to change “behind” the language</td></tr>
+<tr><td>Would a separate repo invite new contributors?</td><td>A monorepo with all the rust code can be less inviting for those familiar with other langs</td><td><code>prql-vscode</code> had some JS-only contributors</td></tr>
+<tr><td>Is there an convention for a stand-alone repo?</td><td>A small number of ecosystems require a separate repo</td><td><code>homebrew-prql</code> needs to be named that way for a Homebrew tap</td></tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="releasing"><a class="header" href="#releasing">Releasing</a></h2>
+<p>Currently we release in a semi-automated way:</p>
+<ol>
+<li>
+<p>PR &amp; merge an updated
+<a href="https://github.com/PRQL/prql/blob/main/CHANGELOG.md">Changelog</a>. GitHub will
+produce a draft version at <a href="https://github.com/PRQL/prql/releases/new">https://github.com/PRQL/prql/releases/new</a>,
+including “New Contributors”.</p>
+<p>Use this script to generate a line introducing the enumerated changes:</p>
+<pre><code class="language-sh">echo "It has $(git rev-list --count $(git rev-list --tags --max-count=1)..) commits from $(git shortlog --summary $(git rev-list --tags --max-count=1).. | wc -l | tr -d '[:space:]') contributors. Selected changes:"
+</code></pre>
+</li>
+<li>
+<p>If the current version is correct, then skip ahead. But if the version needs
+to be changed — for example, we had planned on a patch release, but instead
+require a minor release — then run
+<code>cargo release version $version -x &amp;&amp; cargo release replace -x &amp;&amp; task prqlc:test-all</code>
+to bump the version, and PR the resulting commit.</p>
+</li>
+<li>
+<p>Ensure all changes intended for the release are merged to <code>main</code>. Then create
+the release (which creates the tag on the latest commit on <code>main</code>):</p>
+<p><strong>Web UI:</strong> Go to
+<a href="https://github.com/PRQL/prql/releases/new">Draft a new release</a><sup><a name="to-footnote-3"><a href="#footnote-3">3</a></a></sup>,
+copy the changelog entry into the release
+description<sup><a name="to-footnote-4"><a href="#footnote-4">4</a></a></sup>, enter the tag to be created, and hit
+“Publish”.</p>
+<p><strong>CLI:</strong></p>
+<pre><code class="language-sh">gh release create $version --title "$version" --notes "$(cat &lt;&lt;'EOF'
+&lt;paste changelog entry here&gt;
+EOF
+)"
+</code></pre>
+</li>
+<li>
+<p>From there, both the tag and release is created and all packages are
+published automatically based on our
+<a href="https://github.com/PRQL/prql/blob/main/.github/workflows/release.yaml">release workflow</a>.</p>
+</li>
+<li>
+<p>Run
+<code>cargo release patch --no-publish --no-push --execute --no-verify --no-confirm --no-tag &amp;&amp; task prqlc:test-all</code>
+to bump the versions and add a new Changelog section; then PR the resulting
+commit. Note this currently contains <code>task prqlc:test-all</code> to update snapshot
+tests which contain the version.</p>
+</li>
+</ol>
+<!-- Note we used to have `cargo release version patch -x --no-confirm && cargo release replace -x --no-confirm && task prqlc:test-all`, which was simpler, but in order for `prev_version` to work, we can't separate the `patch` and `replace`, and we need `prev_version` for the prqlc version constraint (search for `prev_version` if unclear). If we moved back to upgrading the tags at the time of release rather than after, we could go back to that. -->
+<ol start="6">
+<li>
+<p>Check whether there are <a href="https://github.com/PRQL/prql/milestones">milestones</a>
+that need to be pushed out.</p>
+</li>
+<li>
+<p>Review the <strong>Current Status</strong> on the README.md to ensure it reflects the
+project state.</p>
+</li>
+</ol>
+<p>We may make this more automated in future; e.g. automatic changelog creation.</p>
+<p />
+<hr />
+<p><a name="footnote-1"><a href="#to-footnote-1">1</a></a>: Our approach is very consistent with
+<strong><a href="https://github.com/matklad">@matklad</a></strong>’s advice, in his excellent blog
+post <a href="https://matklad.github.io//2021/05/31/how-to-test.html">How to
+Test</a>.</p>
+<p><a name="footnote-2"><a href="#to-footnote-2">2</a></a>: <a href="https://github.com/PRQL/prql/blob/0.2.2/prql-compiler/src/parser.rs#L580-L605">Here’s an example of an insta test</a>
+— note that only the initial line of each test is written by us; the
+remainder is filled in by insta.</p>
+<p><a name="footnote-3"><a href="#to-footnote-3">3</a></a>: Only
+maintainers have access to this page.</p>
+<p><a name="footnote-4"><a href="#to-footnote-4">4</a></a>: Unfortunately GitHub’s markdown parser
+interprets linebreaks as newlines. I haven’t found a better way of
+editing the markdown to look reasonable than manually editing the text
+or asking LLM to help.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../project/contributing/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../project/contributing/language-design.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../project/contributing/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../project/contributing/language-design.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-84af7ae2.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../highlight-prql-03282581.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
