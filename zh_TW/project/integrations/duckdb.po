@@ -1,0 +1,38 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/integrations/duckdb.md:1
+msgid "DuckDB"
+msgstr "DuckDB"
+
+#: src/project/integrations/duckdb.md:3
+msgid ""
+"There's a [DuckDB](https://duckdb.org/) community extension by **[@ywelsch]"
+"(https://github.com/ywelsch)** at the DuckDB Community Extension Repository."
+msgstr ""
+
+#: src/project/integrations/duckdb.md:9
+msgid "-- Once the extension is loaded, you can write PRQL queries\n"
+msgstr ""
+
+#: src/project/integrations/duckdb.md:11
+msgid ""
+"'https://raw.githubusercontent.com/PRQL/prql/0.8.0/prql-compiler/tests/"
+"integration/data/chinook/invoices.csv'"
+msgstr ""
+
+#: src/project/integrations/duckdb.md:16
+msgid ""
+"Check out the [extension's documentation](https://community-extensions."
+"duckdb.org/extensions/prql.html) for more details."
+msgstr ""

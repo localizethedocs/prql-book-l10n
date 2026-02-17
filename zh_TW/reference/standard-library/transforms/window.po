@@ -1,0 +1,292 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/transforms/window.md:1
+msgid "Window"
+msgstr "視窗"
+
+#: src/reference/stdlib/transforms/window.md:3
+msgid ""
+"Applies a pipeline to segments of rows, producing one output value for every "
+"input value."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:10
+msgid ""
+"For each row, the segment over which the pipeline is applied is determined "
+"by one of:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:13
+msgid ""
+"`rows`, which takes a range of rows relative to the current row position."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:14
+msgid "`0` references the current row."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:15
+msgid "`range`, which takes a range of values relative to current row value."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:17
+msgid ""
+"The bounds of the range are inclusive. If a bound is omitted, the segment "
+"will extend until the edge of the table or group."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:20
+msgid "For ease of use, there are two flags that override `rows` or `range`:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:22
+msgid ""
+"`expanding:true` is an alias for `rows:..0`. A sum using this window is also "
+"known as \"cumulative sum\"."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:24
+msgid ""
+"`rolling:n` is an alias for `rows:(-n+1)..0`, where `n` is an integer. This "
+"will include `n` last values, including current row. An average using this "
+"window is also knows as a Simple Moving Average."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:28
+msgid "Some examples:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:30
+msgid "Expression"
+msgstr "表達式"
+
+#: src/reference/stdlib/transforms/window.md:30
+msgid "Meaning"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:32
+msgid "`rows:0..2`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:32
+msgid "current row plus two following"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:33
+msgid "`rows:-2..0`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:33
+msgid "two preceding rows plus current row"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:34
+msgid "`rolling:3`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:34
+#: src/reference/stdlib/transforms/window.md:37
+msgid "(same as previous)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:35
+msgid "`rows:-2..4`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:35
+msgid "two preceding rows plus current row plus four following rows"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:36
+msgid "`rows:..0`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:36
+msgid "all rows from the start of the table up to & including current row"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:37
+msgid "`expanding:true`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:38
+msgid "`rows:0..`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:38
+msgid "current row and all following rows until the end of the table"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:39
+msgid "`rows:..`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:39
+msgid "all rows, which same as not having window at all"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:41
+msgid "Example"
+msgstr "範例"
+
+#: src/reference/stdlib/transforms/window.md:67
+msgid "Rows vs Range:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:88
+msgid "time_id"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:88
+msgid "value"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:88
+msgid "sma3rows"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:88
+msgid "sma3range"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:90
+msgid "1"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:90
+#: src/reference/stdlib/transforms/window.md:94
+msgid "15"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:91
+msgid "2"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:91
+msgid "11"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:91
+msgid "13"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:92
+msgid "3"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:92
+msgid "16"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:92
+msgid "14"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:93
+msgid "4"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:93
+msgid "9"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:93
+msgid "12"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:94
+msgid "7"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:94
+msgid "20"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:95
+msgid "8"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:95
+msgid "22"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:95
+msgid "17"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:95
+msgid "21"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:97
+msgid ""
+"We can see that rows having `time_id` of 5 and 6 are missing in example "
+"data; we can say there are gaps in our time series data."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:100
+msgid "When computing SMA 3 for the fifth row (`time_id==7`) then:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:102
+msgid "\"rows\" will compute average on 3 rows (`time_id` in `3, 4, 7`)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:103
+msgid "\"range\" will compute average on single row only (`time_id==7`)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:105
+msgid "When computing SMA 3 for the sixth row (`time_id==8`) then:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:107
+msgid "\"rows\" will compute average on 3 rows (`time_id` in `4, 7, 8`)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:108
+msgid "\"range\" will compute average on 2 rows (`time_id` in `7, 8`)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:110
+msgid ""
+"We can observe that \"rows\" ignores the content of the `time_id`, only uses "
+"its order; we can say its window operates on physical rows. On the other "
+"hand \"range\" looks at the content of the `time_id` and based on the "
+"content decides how many rows fits into window; we can say window operates "
+"on logical rows."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:115
+msgid "Windowing by default"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:117
+msgid ""
+"If you use window functions without `window` transform, they will be applied "
+"to the whole table. Unlike in SQL, they will remain window functions and "
+"will not trigger aggregation."
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:127
+msgid "You can also only apply `group`:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:137
+msgid "Window functions as first class citizens"
+msgstr ""
+
+#: src/reference/stdlib/transforms/window.md:139
+msgid "There are no limitations on where windowed expressions can be used:"
+msgstr ""
