@@ -1,0 +1,307 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:36Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/tutorial/relations.md:1
+msgid "Relations"
+msgstr "關係"
+
+#: src/tutorial/relations.md:3
+msgid ""
+"PRQL is designed on top of _relational algebra_, which is the established "
+"data model used by modern SQL databases. A _relation_ has a rigid "
+"mathematical definition, which can be simplified to \"a table of data\". For "
+"example, the `invoices` table from the Chinook database ([https://github.com/"
+"lerocha/chinook-database](https://github.com/lerocha/chinook-database)) "
+"looks like this:"
+msgstr ""
+"PRQL 建立在 _關係代數_ 的基礎上，這是現代 SQL 資料庫使用的既定資料模型。_關係"
+"_ 具有嚴格的數學定義，可以簡化為「資料表」。例如，Chinook 資料庫 ([https://"
+"github.com/lerocha/chinook-database](https://github.com/lerocha/chinook-"
+"database)) 中的 `invoices` 表如下所示："
+
+#: src/tutorial/relations.md:10
+msgid "invoice_id"
+msgstr ""
+
+#: src/tutorial/relations.md:10
+msgid "customer_id"
+msgstr ""
+
+#: src/tutorial/relations.md:10
+msgid "billing_city"
+msgstr ""
+
+#: src/tutorial/relations.md:10
+msgid "_other columns_"
+msgstr ""
+
+#: src/tutorial/relations.md:10
+msgid "total"
+msgstr ""
+
+#: src/tutorial/relations.md:12
+msgid "1"
+msgstr ""
+
+#: src/tutorial/relations.md:12 src/tutorial/relations.md:13
+msgid "2"
+msgstr ""
+
+#: src/tutorial/relations.md:12
+msgid "Stuttgart"
+msgstr ""
+
+#: src/tutorial/relations.md:12 src/tutorial/relations.md:13
+#: src/tutorial/relations.md:14 src/tutorial/relations.md:15
+#: src/tutorial/relations.md:16 src/tutorial/relations.md:17
+msgid "..."
+msgstr ""
+
+#: src/tutorial/relations.md:12
+msgid "1.98"
+msgstr ""
+
+#: src/tutorial/relations.md:13 src/tutorial/relations.md:15
+msgid "4"
+msgstr ""
+
+#: src/tutorial/relations.md:13
+msgid "Oslo"
+msgstr ""
+
+#: src/tutorial/relations.md:13
+msgid "3.96"
+msgstr ""
+
+#: src/tutorial/relations.md:14
+msgid "3"
+msgstr ""
+
+#: src/tutorial/relations.md:14
+msgid "8"
+msgstr ""
+
+#: src/tutorial/relations.md:14
+msgid "Brussels"
+msgstr ""
+
+#: src/tutorial/relations.md:14
+msgid "5.94"
+msgstr ""
+
+#: src/tutorial/relations.md:15
+msgid "14"
+msgstr ""
+
+#: src/tutorial/relations.md:15
+msgid "Edmonton"
+msgstr ""
+
+#: src/tutorial/relations.md:15
+msgid "8.91"
+msgstr ""
+
+#: src/tutorial/relations.md:16
+msgid "5"
+msgstr ""
+
+#: src/tutorial/relations.md:16
+msgid "23"
+msgstr ""
+
+#: src/tutorial/relations.md:16
+msgid "Boston"
+msgstr ""
+
+#: src/tutorial/relations.md:16
+msgid "13.86"
+msgstr ""
+
+#: src/tutorial/relations.md:17
+msgid "6"
+msgstr ""
+
+#: src/tutorial/relations.md:17
+msgid "37"
+msgstr ""
+
+#: src/tutorial/relations.md:17
+msgid "Frankfurt"
+msgstr ""
+
+#: src/tutorial/relations.md:17
+msgid "0.99"
+msgstr ""
+
+#: src/tutorial/relations.md:19
+msgid ""
+"A relation is composed of rows. Each row in a relation contains a value for "
+"each of the relation's columns. Each column in a relation has an unique name "
+"and a designated data type. The table above is a relation, and has columns "
+"named `invoice_id`and `customer_id` each with a data type of \"integer "
+"number\", a `billing_city` column with a data type of \"text\", several "
+"other columns, and a `total` column that contains floating-point numbers."
+msgstr ""
+
+#: src/tutorial/relations.md:26
+msgid "Queries"
+msgstr "查詢"
+
+#: src/tutorial/relations.md:28
+msgid ""
+"The main purpose of PRQL is to build queries that combine and transform data "
+"from relations such as the `invoices` table above. Here is the most basic "
+"query:"
+msgstr ""
+"PRQL 的主要目的是建立查詢，以結合和轉換來自關係（如上面的 `invoices` 表）的資"
+"料。以下是最基本的查詢："
+
+#: src/tutorial/relations.md:35
+msgid ""
+"```admonish note\n"
+"Try each of these examples here in the\n"
+"[Playground.](https://prql-lang.org/playground/) Enter the query on the\n"
+"left-hand side, and click **output.arrow** in the right-hand side to see "
+"the\n"
+"result.\n"
+"```"
+msgstr ""
+
+#: src/tutorial/relations.md:42
+msgid ""
+"The result of the query above is not terribly interesting, it's just the "
+"same relation as before."
+msgstr "上面查詢的結果並不特別有趣，它只是與之前相同的關係。"
+
+#: src/tutorial/relations.md:45
+msgid "`select` transform"
+msgstr "`select` 變換"
+
+#: src/tutorial/relations.md:47
+msgid ""
+"The `select` function picks the columns to pass through based on a list and "
+"discards all others. Formally, that list is a _tuple_ of comma-separated "
+"expressions wrapped in `{ ... }`."
+msgstr ""
+"`select` 函式基於列表選擇要通過的列，並捨棄所有其他列。形式上，該列表是以 "
+"`{ ... }` 包裹的逗號分隔表達式的 _元組_。"
+
+#: src/tutorial/relations.md:51
+msgid ""
+"Suppose we only need the `order_id` and `total` columns. Use `select` to "
+"choose the columns to pass through. _(Try it in the [Playground.](https://"
+"prql-lang.org/playground/))_"
+msgstr ""
+"假設我們只需要 `order_id` 和 `total` 列。使用 `select` 來選擇要通過的列。_"
+"（在 [Playground](https://prql-lang.org/playground/) 中試試看。）_"
+
+#: src/tutorial/relations.md:60
+msgid ""
+"We can write the items in the tuple on one or several lines: trailing commas "
+"are ignored. In addition, we can assign any of the expressions to a "
+"_variable_ that becomes the name of the resulting column in the SQL output."
+msgstr ""
+"我們可以在一行或多行上寫入元組中的項目：尾部逗號被忽略。此外，我們可以將任何"
+"表達式指派給 _變數_，該變數成為 SQL 輸出中結果列的名稱。"
+
+#: src/tutorial/relations.md:72
+msgid ""
+"This is the same query as above, rewritten on multiple lines, and assigning "
+"`OrderID` and `Total` names to the columns."
+msgstr ""
+"這是與上面相同的查詢，改寫在多行上，並將 `OrderID` 和 `Total` 名稱指派給列。"
+
+#: src/tutorial/relations.md:75
+msgid ""
+"Once we `select` certain columns, subsequent transforms will have access "
+"only to those columns named in the tuple."
+msgstr "一旦我們 `select` 某些列，後續變換將只能訪問在元組中命名的那些列。"
+
+#: src/tutorial/relations.md:78
+msgid "`derive` transform"
+msgstr "`derive` 變換"
+
+#: src/tutorial/relations.md:80
+msgid ""
+"To add columns to a relation, we can use `derive` function. Let's define a "
+"new column for Value Added Tax, set at 19% of the invoice total."
+msgstr ""
+
+#: src/tutorial/relations.md:90
+msgid ""
+"The value of the new column can be a constant (such as a number or a "
+"string), or can be computed from the value of an existing column. Note that "
+"the value of the new column is assigned the name `VAT`."
+msgstr ""
+"新列的值可以是常數（例如數字或字串），也可以從現有列的值計算得出。注意新列被"
+"指派名稱 `VAT`。"
+
+#: src/tutorial/relations.md:94
+msgid "`join` transform"
+msgstr "`join` 變換"
+
+#: src/tutorial/relations.md:96
+msgid ""
+"The `join` transform also adds columns to the relation by combining the rows "
+"from two relations \"side by side\". To determine which rows from each "
+"relation should be joined, `join` has match criteria, written in `( ... )`."
+msgstr ""
+"`join` 變換也通過將來自兩個關係的行「並排」組合來向關係新增列。為了確定應該聯"
+"接每個關係的哪些行，`join` 有以 `( ... )` 寫出的匹配條件。"
+
+#: src/tutorial/relations.md:105
+msgid ""
+"This example \"connects\" the customer information from the `customers` "
+"relation with the information from the `invoices` relation, using identical "
+"values of the `customer_id` column from each relation to match the rows."
+msgstr ""
+"此示例「連接」來自 `customers` 關係的客戶資訊與來自 `invoices` 關係的資訊，使"
+"用來自每個關係的 `customer_id` 列的相同值來匹配行。"
+
+#: src/tutorial/relations.md:109
+msgid ""
+"It is frequently useful to assign an alias to both relations being joined "
+"together so that each relation's columns can be referred to uniquely."
+msgstr "為兩個被聯接的關係指派別名通常很有用，以便可以唯一地參考每個關係的列。"
+
+#: src/tutorial/relations.md:117
+msgid ""
+"In the example above, the alias `inv` represents the `invoices` relation and "
+"`cust` represents the `customers` relation. It then becomes possible to "
+"refer to `inv.billing_city` and `cust.last_name` unambiguously."
+msgstr ""
+"在上面的示例中，別名 `inv` 代表 `invoices` 關係，`cust` 代表 `customers` 關"
+"係。然後可以明確地參考 `inv.billing_city` 和 `cust.last_name`。"
+
+#: src/tutorial/relations.md:121
+msgid "Summary"
+msgstr "摘要"
+
+#: src/tutorial/relations.md:123
+msgid ""
+"PRQL manipulates relations (tables) of data. The `derive`, `select`, and "
+"`join` transforms change the number of columns in a table. The first two "
+"never affect the number of rows in a table. `join` may change the number of "
+"rows, depending on the variation chosen."
+msgstr ""
+
+#: src/tutorial/relations.md:128
+msgid ""
+"This final example combines the above into a single query. It illustrates _a "
+"pipeline_ - the fundamental basis of PRQL. We simply add new lines "
+"(transforms) at the end of the query. Each transform modifies the relation "
+"produced by the statement above to produce the desired result."
+msgstr ""
+"這個最後的示例將上述內容組合成一個單一查詢。它說明了 _管道_ - PRQL 的基礎。我"
+"們只是在查詢末尾新增新的行（變換）。每個變換修改由上述語句產生的關係，以產生"
+"所需的結果。"

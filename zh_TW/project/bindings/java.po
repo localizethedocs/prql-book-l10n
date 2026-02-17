@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:36Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/bindings/java.md:1
+msgid "prql-java"
+msgstr ""
+
+#: src/project/bindings/java.md:3
+msgid ""
+"`prql-java` offers Java bindings to the `prql-compiler` Rust library. It "
+"exposes a Java native method `public static native String toSql(String "
+"query)`."
+msgstr ""
+
+#: src/project/bindings/java.md:6
+msgid ""
+"It's still at an early stage, and currently requires compiling locally, and "
+"isn't published to Maven. Contributions are welcome."
+msgstr ""
+
+#: src/project/bindings/java.md:9
+msgid "Installation"
+msgstr "安裝"
+
+#: src/project/bindings/java.md:19
+msgid "Usage"
+msgstr ""
+
+#: src/project/bindings/java.md:26
+msgid "\"from table\""
+msgstr ""

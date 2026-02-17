@@ -1,0 +1,405 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:36Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/operators.md:1 src/reference/syntax/operators.md:23
+msgid "Operators"
+msgstr "運算子"
+
+#: src/reference/syntax/operators.md:3
+msgid ""
+"Expressions can be composed from _function calls_ and _operations_, such as "
+"`2 + 3` or `((1 + x) * -y)`. In the example below, note the use of "
+"expressions to calculate the alias `circumference` and in the `filter` "
+"transform."
+msgstr ""
+"表達式可以由 _函式呼叫_ 和 _運算_ 組成，例如 `2 + 3` 或 `((1 + x) * -y)`。在"
+"下方的範例中，請注意使用表達式計算別名 `circumference` 和在 `filter` 轉換中的"
+"用法。"
+
+#: src/reference/syntax/operators.md:7
+msgid ""
+"```prql\n"
+"from foo\n"
+"select {\n"
+"  circumference = diameter * 3.14159,\n"
+"  color,\n"
+"}\n"
+"filter circumference > 10 && color != \"red\"\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:16
+msgid "Operator precedence"
+msgstr "運算子優先級"
+
+#: src/reference/syntax/operators.md:18
+msgid ""
+"This table shows operator precedence. Use parentheses `()` to prioritize "
+"operations and for function calls (see the discussion below.)"
+msgstr ""
+"此表顯示運算子優先級。使用括號 `()` 優先順序排列運算和函式呼叫（參閱下面的討"
+"論。）"
+
+#: src/reference/syntax/operators.md:23
+msgid "Group"
+msgstr "群組"
+
+#: src/reference/syntax/operators.md:23
+msgid "Precedence"
+msgstr "優先級"
+
+#: src/reference/syntax/operators.md:23
+msgid "Associativity"
+msgstr "結合性"
+
+#: src/reference/syntax/operators.md:25
+msgid "parentheses"
+msgstr "括號"
+
+#: src/reference/syntax/operators.md:25
+msgid "`()`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:25
+msgid "0"
+msgstr ""
+
+#: src/reference/syntax/operators.md:25
+msgid "see below"
+msgstr "見下文"
+
+#: src/reference/syntax/operators.md:26
+msgid "identifier dot"
+msgstr "識別符點"
+
+#: src/reference/syntax/operators.md:26
+msgid "`.`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:26
+msgid "1"
+msgstr ""
+
+#: src/reference/syntax/operators.md:27
+msgid "unary"
+msgstr "一元"
+
+#: src/reference/syntax/operators.md:27
+msgid "`-` `+` `!` `==`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:27
+msgid "2"
+msgstr ""
+
+#: src/reference/syntax/operators.md:28
+msgid "range"
+msgstr "範圍"
+
+#: src/reference/syntax/operators.md:28
+msgid "`..`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:28
+msgid "3"
+msgstr ""
+
+#: src/reference/syntax/operators.md:29
+msgid "mul"
+msgstr "乘法"
+
+#: src/reference/syntax/operators.md:29
+msgid "`*` `/` `//` `%`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:29
+msgid "4"
+msgstr ""
+
+#: src/reference/syntax/operators.md:29 src/reference/syntax/operators.md:30
+#: src/reference/syntax/operators.md:31 src/reference/syntax/operators.md:32
+#: src/reference/syntax/operators.md:33 src/reference/syntax/operators.md:34
+msgid "left-to-right"
+msgstr "左至右"
+
+#: src/reference/syntax/operators.md:30
+msgid "add"
+msgstr "加法"
+
+#: src/reference/syntax/operators.md:30
+msgid "`+` `-`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:30
+msgid "5"
+msgstr ""
+
+#: src/reference/syntax/operators.md:31
+msgid "compare"
+msgstr "比較"
+
+#: src/reference/syntax/operators.md:31
+msgid "`==` `!=` `<=` `>=` `<` `>`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:31
+msgid "6"
+msgstr ""
+
+#: src/reference/syntax/operators.md:32
+msgid "coalesce"
+msgstr "合併"
+
+#: src/reference/syntax/operators.md:32
+msgid "`??`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:32
+msgid "7"
+msgstr ""
+
+#: src/reference/syntax/operators.md:33
+msgid "and"
+msgstr "且"
+
+#: src/reference/syntax/operators.md:33
+msgid "`&&`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:33
+msgid "8"
+msgstr ""
+
+#: src/reference/syntax/operators.md:34
+msgid "or"
+msgstr "或"
+
+#: src/reference/syntax/operators.md:34
+msgid "<code>\\|\\|</code>"
+msgstr "<code>\\|\\</code>"
+
+#: src/reference/syntax/operators.md:34
+msgid "9"
+msgstr ""
+
+#: src/reference/syntax/operators.md:35
+msgid "function call"
+msgstr "函式呼叫"
+
+#: src/reference/syntax/operators.md:35
+msgid "10"
+msgstr ""
+
+#: src/reference/syntax/operators.md:37
+msgid "Division and integer division"
+msgstr "除法和整數除法"
+
+#: src/reference/syntax/operators.md:39
+msgid ""
+"The `/` operator performs division that always returns a float value, while "
+"the `//` operator does integer division (truncated division) that always "
+"returns an integer value."
+msgstr ""
+"`/` 運算子執行總是返回浮點值的除法，而 `//` 運算子執行整數除法（截斷除法），"
+"總是返回整數值。"
+
+#: src/reference/syntax/operators.md:43
+msgid ""
+"```prql\n"
+"prql target:sql.sqlite\n"
+"\n"
+"from [\n"
+"  {a = 5, b = 2},\n"
+"  {a = 5, b = -2},\n"
+"]\n"
+"select {\n"
+"  div_out = a / b,\n"
+"  int_div_out = a // b,\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:56
+msgid "Coalesce"
+msgstr "合併"
+
+#: src/reference/syntax/operators.md:58
+msgid ""
+"We can coalesce values with an `??` operator. Coalescing takes either the "
+"first value or, if that value is null, the second value."
+msgstr ""
+"我們可以使用 `??` 運算子合併值。合併會取第一個值，或者如果該值為空，則取第二"
+"個值。"
+
+#: src/reference/syntax/operators.md:66
+msgid "Regex expressions"
+msgstr "常規表達式"
+
+#: src/reference/syntax/operators.md:72
+msgid ""
+"To perform a case-sensitive regex search, use the `~=` operator. This "
+"generally compiles to `REGEXP`, though differs by dialect. A regex search "
+"means that to match an exact value, the start and end need to be anchored "
+"with `^foo$`."
+msgstr ""
+"要執行區分大小寫的常規表達式搜索，請使用 `~=` 運算子。這通常編譯為 `REGEXP`，"
+"儘管因方言而異。常規表達式搜索意味著要匹配確切的值，開始和結束需要用 `^foo$` "
+"錨定。"
+
+#: src/reference/syntax/operators.md:76
+msgid ""
+"```prql\n"
+"from tracks\n"
+"filter (name ~= \"Love\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:81
+msgid ""
+"```prql\n"
+"prql target:sql.duckdb\n"
+"\n"
+"from artists\n"
+"filter (name ~= \"Love.*You\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:88
+msgid ""
+"```prql\n"
+"prql target:sql.bigquery\n"
+"\n"
+"from tracks\n"
+"filter (name ~= \"\\\\bLove\\\\b\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:95
+msgid ""
+"```prql\n"
+"prql target:sql.postgres\n"
+"\n"
+"from tracks\n"
+"filter (name ~= \"\\\\(I Can't Help\\\\) Falling\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:102
+msgid ""
+"```prql\n"
+"prql target:sql.mysql\n"
+"\n"
+"from tracks\n"
+"filter (name ~= \"With You\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:109
+msgid ""
+"```prql\n"
+"prql target:sql.sqlite\n"
+"\n"
+"from tracks\n"
+"filter (name ~= \"But Why Isn't Your Syntax More Similar\\\\?\")\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:116
+msgid "Parentheses"
+msgstr "括號"
+
+#: src/reference/syntax/operators.md:118
+msgid "PRQL uses parentheses `()` for several purposes:"
+msgstr "PRQL 使用括號 `()` 有幾個目的："
+
+#: src/reference/syntax/operators.md:120
+msgid ""
+"Parentheses group operands to control the order of evaluation, for example: "
+"`((1 + x) * y)`"
+msgstr "括號對操作數進行分組以控制評估順序，例如：`((1 + x) * y)`"
+
+#: src/reference/syntax/operators.md:123
+msgid ""
+"Parentheses delimit a minus sign of a function argument, for example: `add "
+"(-1) (-3)`"
+msgstr "括號用於分隔函式引數的減號，例如：`add (-1) (-3)`"
+
+#: src/reference/syntax/operators.md:126
+msgid ""
+"Parentheses delimit nested function calls that contain a pipe, either the `|"
+"` symbol or a new line. “Nested” means within a transform; i.e. not just the "
+"main pipeline, for example: `(column-name | in 0..20)`"
+msgstr ""
+"\"\"括號用於分隔包含管道的嵌套函式呼叫，可以是 `|` 符號或新行。\"嵌套\"是指在"
+"轉換中；即不僅僅是主管道，例如：`(column-name | in 0..20)`"
+
+#: src/reference/syntax/operators.md:130
+msgid ""
+"Parentheses wrap a function call that is part of a larger expression, for "
+"example: `round 0 (sum distance)`"
+msgstr ""
+
+#: src/reference/syntax/operators.md:133
+msgid ""
+"Parentheses are _not_ required for expressions that do not contain function "
+"calls, for example: `foo + bar`."
+msgstr "括號對於不包含函式呼叫的表達式**不是**必需的，例如：`foo + bar`。"
+
+#: src/reference/syntax/operators.md:136
+msgid "Here's a set of examples of these rules:"
+msgstr "以下是這些規則的一組範例："
+
+#: src/reference/syntax/operators.md:169
+msgid ""
+"For example, the snippet below produces an error because the `sum` function "
+"call is not in a tuple."
+msgstr "例如，下面的代碼片段產生錯誤，因為 `sum` 函式呼叫不在元組中。"
+
+#: src/reference/syntax/operators.md:177
+msgid "...while with parentheses, it works at expected:"
+msgstr "...而使用括號，它可以按預期工作："
+
+#: src/reference/syntax/operators.md:190
+msgid "Wrapping lines"
+msgstr "換行"
+
+#: src/reference/syntax/operators.md:192
+msgid ""
+"Line breaks in PRQL have semantic meaning, so to wrap a single logical line "
+"into multiple physical lines, we can use `\\` at the beginning of subsequent "
+"physical lines:"
+msgstr ""
+"PRQL 中的換行有語義含義，所以要將單個邏輯行換行為多個物理行，我們可以在後續物"
+"理行的開始處使用 `\\`："
+
+#: src/reference/syntax/operators.md:196
+msgid ""
+"```prql\n"
+"from artists\n"
+"select is_europe =\n"
+"\\ country == \"DE\"\n"
+"\\ || country == \"FR\"\n"
+"\\ || country == \"ES\"\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/operators.md:204
+msgid ""
+"Wrapping will \"jump over\" empty lines or lines with comments. For example, "
+"the `select` here is only one logical line:"
+msgstr ""
+"換行會\"跳過\"空行或包含註解的行。例如，這裡的 `select` 只是一個邏輯行："
+
+#: src/reference/syntax/operators.md:226
+msgid "See [Pipes](./pipes.md) for more details on line breaks."
+msgstr "有關換行的更多詳細資訊，請參閱 [Pipes](./pipes.md)。"
