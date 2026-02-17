@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-01-06 13:46:28 -0800",
-      "hash" : "a1c3f4ca42c26850394420b58c6ef1e8607cb3c7",
-      "title" : "fix: handle partial application of transforms in user-defined functions (#5663)"
+      "date" : "2026-02-16 20:07:37 +0000",
+      "hash" : "c6fa4afa6b42506d208d52cd2e9aeaab6d65602b",
+      "title" : "chore: bump anstream from 0.6.21 to 1.0.0 (#5690)"
     }
   },
   "type" : "branch",
