@@ -1,0 +1,34 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:28Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/parameters.md:1
+msgid "Parameters"
+msgstr "參數"
+
+#: src/reference/syntax/parameters.md:3
+msgid ""
+"Parameter is a placeholder for a value provided after the compilation of the "
+"query."
+msgstr "參數是查詢編譯後提供的值的佔位符。"
+
+#: src/reference/syntax/parameters.md:6
+msgid ""
+"It uses the following syntax: `$id`, where `id` is an arbitrary alpha "
+"numeric string."
+msgstr "它使用以下語法：`$id`，其中 `id` 是任意英數字元字串。"
+
+#: src/reference/syntax/parameters.md:9
+msgid ""
+"Most database engines only support numeric positional parameter ids (i.e "
+"`$3`)."
+msgstr "大多數資料庫引擎只支援數字位置參數 ID（例如 `$3`）。"

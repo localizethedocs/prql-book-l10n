@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:28Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/tuples.md:1
+msgid "Tuples"
+msgstr "值組"
+
+#: src/reference/syntax/tuples.md:3
+msgid ""
+"Tuple is a container type, composed of multiple fields. Each field can have "
+"a different type. Number of fields and their types must be known at compile "
+"time."
+msgstr ""
+"值組是一個容器型別，由多個欄位組成。每個欄位可以有不同的型別。欄位的數量和型"
+"別必須在編譯時已知。"
+
+#: src/reference/syntax/tuples.md:6
+msgid ""
+"Tuple is represented by `{}`. It can span multiple lines. Fields can be "
+"assigned a name. Fields are separated by commas, trailing trailing comma is "
+"optional."
+msgstr ""
+"值組由 `{}` 表示。它可以跨越多行。欄位可以分配名稱。欄位由逗號分隔，尾部逗號"
+"是可選的。"
+
+#: src/reference/syntax/tuples.md:23
+msgid ""
+"Tuples are the type of a table row, which means that they are expected by "
+"many transforms. Most transforms can also take a single field, which will be "
+"converted into a tuple. These are equivalent:"
+msgstr ""
+"值組是表格行的型別，這意味著許多轉換都期望它們。大多數轉換也可以採用單個欄"
+"位，該欄位將被轉換為值組。這些是等效的："

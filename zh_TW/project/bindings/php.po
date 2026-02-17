@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:28Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/bindings/php.md:1
+msgid "prql-php"
+msgstr ""
+
+#: src/project/bindings/php.md:3
+msgid "`prql-php` offers PHP bindings to `prql-compiler` crate through FFI."
+msgstr ""
+
+#: src/project/bindings/php.md:5
+msgid ""
+"It provides the `Compiler` class which contains `compile`, `prqlToPL`, "
+"`plToRQ` and `rqToSQL` functions."
+msgstr ""
+
+#: src/project/bindings/php.md:8
+msgid ""
+"It's still at an early stage, and isn't published to Composer. Contributions "
+"are welcome."
+msgstr ""
+
+#: src/project/bindings/php.md:11
+msgid "Installation"
+msgstr "安裝"
+
+#: src/project/bindings/php.md:13
+msgid ""
+"The [PHP FFI extension](https://www.php.net/manual/en/book.ffi.php) needs to "
+"be enabled. Set `ffi.enable` in your php.ini configuration file to "
+"`\"true\"`."
+msgstr ""
+
+#: src/project/bindings/php.md:16
+msgid "Usage"
+msgstr ""
+
+#: src/project/bindings/php.md:24
+msgid "\"from employees\""
+msgstr ""
+
+#: src/project/bindings/php.md:29
+msgid "Development"
+msgstr "開發"
+
+#: src/project/bindings/php.md:31
+msgid "Environment"
+msgstr ""
+
+#: src/project/bindings/php.md:33
+msgid ""
+"A way to establish a dev environment with PHP, the ext-ffi extension and "
+"Composer is to use a [nix flake](https://github.com/loophp/nix-shell). After "
+"installing nix, enable experimental flakes feature:"
+msgstr ""
+
+#: src/project/bindings/php.md:37
+msgid ""
+"```\n"
+"mkdir -p ~/.config/nix\n"
+"echo \"experimental-features = nix-command flakes\" >> ~/.config/nix/nix."
+"conf\n"
+"```"
+msgstr ""
+
+#: src/project/bindings/php.md:42
+msgid "Now you can spawn a shell from `prql-php/`:"
+msgstr ""
+
+#: src/project/bindings/php.md:48
+msgid ""
+"This will pull-in ext-ffi extension, because it's declared in `composer."
+"json`."
+msgstr ""
+
+#: src/project/bindings/php.md:50
+msgid "Building"
+msgstr ""
+
+#: src/project/bindings/php.md:52
+msgid "There is a `task build-php` script that:"
+msgstr ""
+
+#: src/project/bindings/php.md:54
+msgid "runs cargo to build `libprqlc_c`,"
+msgstr ""
+
+#: src/project/bindings/php.md:55
+msgid "copies `libprqlc_c.*` into `lib`,"
+msgstr ""
+
+#: src/project/bindings/php.md:56
+msgid "copies `prqlc.h` into `lib`."
+msgstr ""
+
+#: src/project/bindings/php.md:58
+msgid "Tests"
+msgstr ""
+
+#: src/project/bindings/php.md:65
+msgid "Code style"
+msgstr ""
