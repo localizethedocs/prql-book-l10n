@@ -1,0 +1,210 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:13:49Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/integrations/syntax-highlighting.md:1
+msgid "Grammars / syntax highlighting"
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:3
+msgid ""
+"PRQL contains multiple grammar definitions to enable tools to highlight PRQL "
+"code. These are all intended to provide as good an experience as the grammar "
+"supports. Please raise any shortcomings in a GitHub issue."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:7
+msgid ""
+"The definitions are somewhat scattered around the codebase; this page serves "
+"as an index."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:10
+msgid ""
+"[Ace](https://ace.c9.io/) — supported. The grammar is upstream "
+"([prql_highlight_rules.js](https://github.com/ajaxorg/ace/blob/master/src/"
+"mode/prql_highlight_rules.js)). See the [demo](https://prql-lang.org/demos/"
+"ace-demo)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:14
+msgid ""
+"[chroma](https://github.com/alecthomas/chroma) — Go library used by the "
+"static website generator Hugo. The grammar is upstream ([prql.xml](https://"
+"github.com/alecthomas/chroma/blob/master/lexers/embedded/prql.xml)). See the "
+"[demo](https://swapoff.org/chroma/playground/)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:19
+msgid ""
+"[CotEditor](https://coteditor.com/) — text editor for macOS. File is at "
+"[`grammars/CotEditor/`](https://github.com/PRQL/prql/tree/main/grammars/"
+"CotEditor/)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:22
+msgid ""
+"[Lezer](https://lezer.codemirror.net/) — used by CodeMirror editors. The "
+"PRQL file is at [`grammars/prql-lezer/README.md`](https://github.com/PRQL/"
+"prql/tree/main/grammars/prql-lezer/README.md)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:26
+msgid ""
+"emacs — used by terminal-based text editor GNU Emacs. File is at [`grammars/"
+"emacs/`](https://github.com/PRQL/prql/tree/main/grammars/emacs/)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:29
+msgid ""
+"GtkSourceView — used by GNOME Text Editor, GNOME Builder and other GTK "
+"applications. File is at [`grammars/GtkSourceView/`](https://github.com/PRQL/"
+"prql/tree/main/grammars/GtkSourceView/)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:33
+msgid "[Handlebars](https://handlebarsjs.com/) — currently duplicated:"
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:34
+msgid ""
+"The book: [`book/highlight-prql.js`](https://github.com/PRQL/prql/blob/main/"
+"web/book/highlight-prql.js)"
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:36
+msgid ""
+"The website (outside of the book & playground): [`website/themes/prql-theme/"
+"static/plugins/highlight/prql.js`](https://github.com/PRQL/prql/blob/main/"
+"web/book/highlight-prql.js)"
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:39
+msgid ""
+"[Helix](https://helix-editor.com/) — supported. The grammar is [upstream]"
+"(https://github.com/helix-editor/helix/tree/master/runtime/queries/prql)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:42
+msgid ""
+"[Kakoune](https://kakoune.org/) — supported. The grammar is [upstream]"
+"(https://github.com/mawww/kakoune/blob/master/rc/filetype/prql.kak)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:45
+msgid ""
+"KSyntaxHighlighting — used by Kate, KWrite and KDevelop and other Qt "
+"applications. File is at [`grammars/KSyntaxHighlighting/`](https://github."
+"com/PRQL/prql/tree/main/grammars/KSyntaxHighlighting/)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:49
+msgid ""
+"[micro](https://micro-editor.github.io/) — used by terminal-based text "
+"editor Micro. The grammar is [upstream](https://github.com/zyedidia/micro/"
+"blob/master/runtime/syntax/prql.yaml)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:53
+msgid ""
+"[nano](https://nano-editor.org/) — used by terminal-based text editor GNU "
+"nano. File is at [`grammars/nano/`](https://github.com/PRQL/prql/tree/main/"
+"grammars/nano/)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:57
+msgid ""
+"Sublime Text — in the [`sublime-prql`](https://github.com/PRQL/sublime-"
+"prql/) repository."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:60
+msgid ""
+"TextMate — used by the VS Code extension; in the `prql-vscode` repo in "
+"[`prql-vscode/syntaxes/prql.tmLanguage.json`](https://github.com/PRQL/prql-"
+"vscode/blob/main/syntaxes/prql.tmLanguage.json)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:63
+msgid ""
+"[Monarch](https://microsoft.github.io/monaco-editor/monarch.html) — used by "
+"the Monaco editor, which we use for the Playground. The grammar is at "
+"[`playground/src/workbench/prql-syntax.js`](https://github.com/PRQL/prql/"
+"blob/main/web/playground/src/workbench/prql-syntax.js)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:67
+msgid ""
+"[Pygments](https://pygments.org/) — Python library used by Wikipedia, "
+"Bitbucket, Sphinx and [more](https://pygments.org/faq/#who-uses-pygments). "
+"The grammar is upstream ([prql.py](https://github.com/pygments/pygments/blob/"
+"master/pygments/lexers/prql.py)). See the [demo](https://pygments.org/demo/)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:73
+msgid ""
+"[Raku](https://raku.org/) — Grammar can be found at [`grammars/raku/`]"
+"(https://github.com/PRQL/prql/tree/main/grammars/raku/)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:76
+msgid ""
+"[TEA](https://github.com/psemiletov/tea-qt/) — supported. The grammar is "
+"[upstream](https://github.com/psemiletov/tea-qt/blob/master/hls/prql.xml)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:79
+msgid ""
+"[Tree-Sitter](https://tree-sitter.github.io/tree-sitter) — used by the "
+"neovim and helix. The grammar can be found at [https://github.com/PRQL/tree-"
+"sitter-prql](https://github.com/PRQL/tree-sitter-prql)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:83
+msgid ""
+"[vim](https://www.vim.org/) — used by terminal-based text editor Vim. "
+"Instructions at [`grammars/vim/`](https://github.com/PRQL/prql/tree/main/"
+"grammars/vim/). The grammar is [upstream](https://github.com/vim/vim/blob/"
+"master/runtime/syntax/prql.vim)."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:88
+msgid "[Neovim](https://neovim.io/) supported. Grammar is upstream."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:92
+msgid ""
+"Since the [Elm](https://elm-lang.org/) language coincidentally provides "
+"syntax highlighting suitable for PRQL, it may look better to mark PRQL code "
+"as Elm when the above definition files are not available."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:96
+msgid ""
+"For example, the following Markdown code block will be nicely highlighted on "
+"GitHub, Pandoc, and other Markdown renderers:"
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:106
+msgid ""
+"We hope that in the future these renderers will recognize PRQL code blocks "
+"and have syntax highlighting applied, and we are tracking these with several "
+"issues."
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:109
+msgid "GitHub (Linguist): <https://github.com/PRQL/prql/issues/1636>"
+msgstr ""
+
+#: src/project/integrations/syntax-highlighting.md:110
+msgid "Pandoc (Kate): <https://github.com/PRQL/prql/issues/2213>"
+msgstr ""

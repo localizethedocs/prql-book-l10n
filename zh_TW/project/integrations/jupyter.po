@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:13:49Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/integrations/jupyter.md:1
+msgid "Jupyter"
+msgstr "Jupyter"
+
+#: src/project/integrations/jupyter.md:3
+msgid ""
+"[pyprql](https://pypi.org/project/pyprql/) contains `pyprql.magic`, a thin "
+"wrapper of [`JupySQL`](https://pypi.org/project/jupysql/)'s SQL IPython "
+"magics. This allows us to run PRQL interactively on Jupyter/IPython."
+msgstr ""
+
+#: src/project/integrations/jupyter.md:7
+msgid "Check out <https://pyprql.readthedocs.io/> for more context."
+msgstr ""
+
+#: src/project/integrations/jupyter.md:9
+msgid "Installation"
+msgstr "安裝"
+
+#: src/project/integrations/jupyter.md:15
+msgid "Usage"
+msgstr ""
+
+#: src/project/integrations/jupyter.md:17
+msgid ""
+"When installing pyprql, the [duckdb-engine](https://pypi.org/project/duckdb-"
+"engine/) package is also installed with it, so we can start using PRQL "
+"immediately to query CSV and Parquet files."
+msgstr ""
+
+#: src/project/integrations/jupyter.md:22
+msgid ""
+"For example, running [the example from the JupySQL documentation](https://"
+"jupysql.ploomber.io/en/latest/quick-start.html) on IPython:"
+msgstr ""
