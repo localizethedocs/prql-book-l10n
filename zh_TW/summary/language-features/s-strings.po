@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:40Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/language-features/s-strings.md:1
+msgid "S-Strings"
+msgstr ""
+
+#: src/language-features/s-strings.md:3
+msgid ""
+"An s-string inserts SQL directly, as an escape hatch when there's something "
+"that PRQL doesn't yet implement. For example, there's no `version()` "
+"function in SQL that returns the Postgres version, so if we want to use "
+"that, we use an s-string:"
+msgstr ""
+
+#: src/language-features/s-strings.md:7
+msgid ""
+"```prql\n"
+"derive db_version = s\"version()\"\n"
+"```"
+msgstr ""
+
+#: src/language-features/s-strings.md:11
+msgid ""
+"We can embed columns in an s-string using braces. For example, PRQL's "
+"standard library defines the `average` function as:"
+msgstr ""
+
+#: src/language-features/s-strings.md:14
+msgid ""
+"```prql_no_test\n"
+"func average column -> s\"AVG({column})\"\n"
+"```"
+msgstr ""
+
+#: src/language-features/s-strings.md:18
+msgid "So this compiles using the function:"
+msgstr ""
+
+#: src/language-features/s-strings.md:25
+msgid "Here's an example of a more involved use of an s-string:"
+msgstr ""
+
+#: src/language-features/s-strings.md:27
+msgid ""
+"```prql\n"
+"from de=dept_emp\n"
+"join s=salaries side:left [\n"
+"  (s.emp_no == de.emp_no),\n"
+"  s\"\"\"({s.from_date}, {s.to_date})\n"
+"  OVERLAPS\n"
+"  ({de.from_date}, {de.to_date})\"\"\"\n"
+"]\n"
+"```"
+msgstr ""
+
+#: src/language-features/s-strings.md:37
+msgid ""
+"For those who have used python, s-strings are similar to python's f-strings, "
+"but the result is SQL, rather than a string literal — a python f-string of "
+"`f\"average{col}\"` where `col=\"salary\"` would produce "
+"`\"average(salary)\"`, with the quotes. `s\"average{col}\"` produces "
+"`average(salary)`, without quotes."
+msgstr ""
+
+#: src/language-features/s-strings.md:42
+msgid ""
+"s-strings in user code are intended as an escape-hatch for an unimplemented "
+"feature. If we often need s-strings to express something, that's a sign we "
+"should implement it in PRQL or PRQL's stdlib."
+msgstr ""
