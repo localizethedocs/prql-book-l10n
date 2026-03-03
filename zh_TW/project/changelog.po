@@ -1,0 +1,3486 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:13:49Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/changelog.md:1
+msgid "PRQL Changelog"
+msgstr "PRQL 變更日誌"
+
+#: src/project/changelog.md:3
+msgid "\\[unreleased\\]"
+msgstr ""
+
+#: src/project/changelog.md:5 src/project/changelog.md:263
+#: src/project/changelog.md:479 src/project/changelog.md:565
+#: src/project/changelog.md:654 src/project/changelog.md:800
+msgid "**Language**:"
+msgstr "**語言**："
+
+#: src/project/changelog.md:7 src/project/changelog.md:28
+#: src/project/changelog.md:53 src/project/changelog.md:111
+#: src/project/changelog.md:136 src/project/changelog.md:231
+#: src/project/changelog.md:281 src/project/changelog.md:348
+#: src/project/changelog.md:415 src/project/changelog.md:456
+#: src/project/changelog.md:488 src/project/changelog.md:528
+#: src/project/changelog.md:571 src/project/changelog.md:717
+#: src/project/changelog.md:906 src/project/changelog.md:977
+#: src/project/changelog.md:1046 src/project/changelog.md:1114
+#: src/project/changelog.md:1261 src/project/changelog.md:1296
+#: src/project/changelog.md:1345 src/project/changelog.md:1377
+#: src/project/changelog.md:1538 src/project/changelog.md:1601
+#: src/project/changelog.md:1644
+msgid "**Features**:"
+msgstr "**功能**："
+
+#: src/project/changelog.md:9 src/project/changelog.md:32
+#: src/project/changelog.md:57 src/project/changelog.md:96
+#: src/project/changelog.md:115 src/project/changelog.md:142
+#: src/project/changelog.md:208 src/project/changelog.md:242
+#: src/project/changelog.md:293 src/project/changelog.md:360
+#: src/project/changelog.md:421 src/project/changelog.md:464
+#: src/project/changelog.md:503 src/project/changelog.md:533
+#: src/project/changelog.md:683 src/project/changelog.md:724
+#: src/project/changelog.md:925 src/project/changelog.md:1077
+#: src/project/changelog.md:1174 src/project/changelog.md:1229
+#: src/project/changelog.md:1269 src/project/changelog.md:1482
+#: src/project/changelog.md:1549 src/project/changelog.md:1608
+#: src/project/changelog.md:1649 src/project/changelog.md:1669
+#: src/project/changelog.md:1680 src/project/changelog.md:1726
+#: src/project/changelog.md:1749
+msgid "**Fixes**:"
+msgstr ""
+
+#: src/project/changelog.md:11 src/project/changelog.md:74
+#: src/project/changelog.md:158 src/project/changelog.md:728
+#: src/project/changelog.md:1085 src/project/changelog.md:1180
+#: src/project/changelog.md:1236 src/project/changelog.md:1276
+#: src/project/changelog.md:1488 src/project/changelog.md:1614
+#: src/project/changelog.md:1655 src/project/changelog.md:1693
+#: src/project/changelog.md:1731 src/project/changelog.md:1757
+msgid "**Documentation**:"
+msgstr "**文件**："
+
+#: src/project/changelog.md:13 src/project/changelog.md:103
+#: src/project/changelog.md:365 src/project/changelog.md:510
+#: src/project/changelog.md:596 src/project/changelog.md:693
+#: src/project/changelog.md:732 src/project/changelog.md:1051
+#: src/project/changelog.md:1500 src/project/changelog.md:1698
+msgid "**Web**:"
+msgstr ""
+
+#: src/project/changelog.md:15 src/project/changelog.md:78
+#: src/project/changelog.md:163 src/project/changelog.md:193
+#: src/project/changelog.md:299 src/project/changelog.md:371
+#: src/project/changelog.md:425 src/project/changelog.md:539
+#: src/project/changelog.md:606 src/project/changelog.md:697
+#: src/project/changelog.md:738 src/project/changelog.md:930
+#: src/project/changelog.md:1091 src/project/changelog.md:1186
+#: src/project/changelog.md:1240 src/project/changelog.md:1505
+#: src/project/changelog.md:1702 src/project/changelog.md:1737
+msgid "**Integrations**:"
+msgstr "**整合**："
+
+#: src/project/changelog.md:17
+msgid ""
+"[micro](https://micro-editor.github.io/) 2.0.15 has syntax highlighting for "
+"PRQL. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:20 src/project/changelog.md:36
+#: src/project/changelog.md:45 src/project/changelog.md:82
+#: src/project/changelog.md:121 src/project/changelog.md:170
+#: src/project/changelog.md:304 src/project/changelog.md:402
+#: src/project/changelog.md:433 src/project/changelog.md:514
+#: src/project/changelog.md:702 src/project/changelog.md:744
+#: src/project/changelog.md:934 src/project/changelog.md:1056
+#: src/project/changelog.md:1095 src/project/changelog.md:1198
+#: src/project/changelog.md:1283 src/project/changelog.md:1513
+#: src/project/changelog.md:1619 src/project/changelog.md:1661
+#: src/project/changelog.md:1707 src/project/changelog.md:1742
+#: src/project/changelog.md:1762
+msgid "**Internal changes**:"
+msgstr "**內部變更**："
+
+#: src/project/changelog.md:22 src/project/changelog.md:88
+#: src/project/changelog.md:177 src/project/changelog.md:215
+#: src/project/changelog.md:324 src/project/changelog.md:383
+#: src/project/changelog.md:446 src/project/changelog.md:518
+#: src/project/changelog.md:638 src/project/changelog.md:706
+#: src/project/changelog.md:759 src/project/changelog.md:773
+#: src/project/changelog.md:950 src/project/changelog.md:1066
+#: src/project/changelog.md:1206 src/project/changelog.md:1218
+#: src/project/changelog.md:1249 src/project/changelog.md:1288
+#: src/project/changelog.md:1362
+msgid "**New Contributors**:"
+msgstr ""
+
+#: src/project/changelog.md:24
+msgid "0.13.10 — 2025-12-16"
+msgstr ""
+
+#: src/project/changelog.md:26
+msgid "0.13.10 completes the npm OIDC publishing fix from 0.13.9."
+msgstr ""
+
+#: src/project/changelog.md:30
+msgid "Add `read_json` support for DuckDB and ClickHouse (@adamnemecek, #5608)"
+msgstr ""
+
+#: src/project/changelog.md:34
+msgid "Fix `text.length` on Snowflake (@priithaamer, #5614)"
+msgstr ""
+
+#: src/project/changelog.md:38
+msgid "Fix npm OIDC publishing by upgrading to Node 24 (@max-sixty, #5619)"
+msgstr ""
+
+#: src/project/changelog.md:39
+msgid "Fix push-web-branch workflow permissions (@max-sixty, #5620)"
+msgstr ""
+
+#: src/project/changelog.md:41
+msgid "0.13.9 — 2025-12-12"
+msgstr ""
+
+#: src/project/changelog.md:43
+msgid "0.13.9 is a re-release of 0.13.8 with fixed npm publishing."
+msgstr ""
+
+#: src/project/changelog.md:47
+msgid "Use OIDC for npm publishing (@max-sixty, #5609)"
+msgstr ""
+
+#: src/project/changelog.md:49
+msgid "0.13.8 — 2025-12-12"
+msgstr ""
+
+#: src/project/changelog.md:51
+msgid "0.13.8 has 47 commits from 6 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:55
+msgid "Add named parameter support for DuckDB read_parquet (@max-sixty, #5563)"
+msgstr ""
+
+#: src/project/changelog.md:59
+msgid "Snowflake interval quoting style (@priithaamer, #5604)"
+msgstr ""
+
+#: src/project/changelog.md:60
+msgid ""
+"Return error instead of panicking when window rows/range is not a range "
+"(@max-sixty, #5603)"
+msgstr ""
+
+#: src/project/changelog.md:62
+msgid ""
+"Add ORDER BY fallback for Snowflake window functions (@max-sixty, #5583)"
+msgstr ""
+
+#: src/project/changelog.md:63
+msgid ""
+"DISTINCT ON to include wildcard when projection is empty (@max-sixty, #5562)"
+msgstr ""
+
+#: src/project/changelog.md:64
+msgid "Lineage traces through CTEs to source tables (@nightscape, #5581)"
+msgstr ""
+
+#: src/project/changelog.md:65
+msgid "Lineage works with unions (@nightscape, #5550)"
+msgstr ""
+
+#: src/project/changelog.md:66
+msgid ""
+"Handle lineage correctly when group pipeline simplifies to non-TransformCall "
+"(@max-sixty, #5584)"
+msgstr ""
+
+#: src/project/changelog.md:68
+msgid ""
+"Return error for join referencing inaccessible table (@max-sixty, #5587)"
+msgstr ""
+
+#: src/project/changelog.md:69
+msgid "Error when table variable used in scalar context (@max-sixty, #5585)"
+msgstr ""
+
+#: src/project/changelog.md:70
+msgid "Improve error messages for missing main pipeline (@max-sixty, #5565)"
+msgstr ""
+
+#: src/project/changelog.md:71
+msgid "Provide clear error for empty tuple/array in from (@max-sixty, #5564)"
+msgstr ""
+
+#: src/project/changelog.md:72
+msgid ""
+"Improve error message for negative numbers in transforms (@max-sixty, #5566)"
+msgstr ""
+
+#: src/project/changelog.md:76
+msgid "Close HTML comment in sort.md documentation (@max-sixty, #5597)"
+msgstr ""
+
+#: src/project/changelog.md:80
+msgid "Add grammar file for Raku (@vanillajonathan, #5576)"
+msgstr ""
+
+#: src/project/changelog.md:84
+msgid "Upgrade mdbook to 0.5.0 (#5568)"
+msgstr ""
+
+#: src/project/changelog.md:85
+msgid "Update macOS runners to version 15 (#5596)"
+msgstr ""
+
+#: src/project/changelog.md:86
+msgid "Remove 2nd person from error messages (#5567)"
+msgstr ""
+
+#: src/project/changelog.md:90
+msgid "@nightscape, with #5550"
+msgstr ""
+
+#: src/project/changelog.md:92
+msgid "0.13.7 — 2025-11-08"
+msgstr ""
+
+#: src/project/changelog.md:94
+msgid "0.13.7 has 8 commits from 6 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:98
+msgid "Fix INTERVAL quoting in Redshift (@lukapeschke, #5545)"
+msgstr ""
+
+#: src/project/changelog.md:99
+msgid "Fix support for text.contains in sql.redshift target (@dimtion, #5549)"
+msgstr ""
+
+#: src/project/changelog.md:100
+msgid "Fix division in Redshift produces float (@priithaamer, #5546)"
+msgstr ""
+
+#: src/project/changelog.md:101
+msgid ""
+"Use || operator over CONCAT for std.concat in Redshift (@lukapeschke, #5540)"
+msgstr ""
+
+#: src/project/changelog.md:105
+msgid "Bump vite from 7.1.11 to 7.2.0 in playground (#5547)"
+msgstr ""
+
+#: src/project/changelog.md:107
+msgid "0.13.6 — 2025-11-01"
+msgstr ""
+
+#: src/project/changelog.md:109
+msgid "0.13.6 has 40 commits from 6 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:113
+msgid "Add support for Redshift dialect (@priithaamer, #5537)"
+msgstr ""
+
+#: src/project/changelog.md:117
+msgid "Fix append regression in 0.13.5 (@priithaamer, #5495)"
+msgstr ""
+
+#: src/project/changelog.md:118
+msgid "Fix s-string escaping (@priithaamer, #5497)"
+msgstr ""
+
+#: src/project/changelog.md:119
+msgid ""
+"Filter out attestation manifests in platform verification (@max-sixty, #5509)"
+msgstr ""
+
+#: src/project/changelog.md:123
+msgid ""
+"Migrate devcontainer build from QEMU to native ARM64 runners (@max-sixty, "
+"\\#5506)"
+msgstr ""
+
+#: src/project/changelog.md:125
+msgid "Migrate from markdown-link-check to lychee (@max-sixty, #5519)"
+msgstr ""
+
+#: src/project/changelog.md:126
+msgid ""
+"Use zero-copy slice for binary/hex/octal number parsing (perf improvement, "
+"@max-sixty, #5488)"
+msgstr ""
+
+#: src/project/changelog.md:128
+msgid "Update rust toolchain version (#5536)"
+msgstr ""
+
+#: src/project/changelog.md:129
+msgid "Do not allow incompatible rust-version dependencies (@eitsupi, #5493)"
+msgstr ""
+
+#: src/project/changelog.md:130
+msgid "Pin typos to v1.37.2 (@max-sixty, #5510)"
+msgstr ""
+
+#: src/project/changelog.md:132
+msgid "0.13.5 — 2025-10-09"
+msgstr ""
+
+#: src/project/changelog.md:134
+msgid "0.13.5 has 237 commits from 14 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:138
+msgid "Support for SQL arrays as `s[...]` syntax (@Robert Valek, #5312)"
+msgstr ""
+
+#: src/project/changelog.md:139
+msgid ""
+"Extract SQL column names from s-string tables when possible (@lukapeschke, "
+"\\#5310)"
+msgstr ""
+
+#: src/project/changelog.md:144
+msgid ""
+"Sort step before an aggregate step no longer requires its columns to avoid a "
+"group by clause error (@julien-pinchelimouroux, #5347)"
+msgstr ""
+
+#: src/project/changelog.md:146
+msgid ""
+"Always add quotes on identifiers for Snowflake dialect (@julien-"
+"pinchelimouroux, #5461)"
+msgstr ""
+
+#: src/project/changelog.md:148
+msgid ""
+"Join with table containing column named \"source\" now works correctly "
+"(@Priit Haamer, #5468)"
+msgstr ""
+
+#: src/project/changelog.md:150
+msgid ""
+"Columns required by sorting are properly redirected (@lukapeschke, #5464)"
+msgstr ""
+
+#: src/project/changelog.md:151
+msgid ""
+"Ensure sorts are done on columns of the right table (@lukapeschke, #5338)"
+msgstr ""
+
+#: src/project/changelog.md:152
+msgid "Deduplicate selected items in gen_projection (@lukapeschke, #5305)"
+msgstr ""
+
+#: src/project/changelog.md:153
+msgid "Handle complex append cases (@Elouan Poupard-Cosquer, #5366)"
+msgstr ""
+
+#: src/project/changelog.md:154
+msgid "Improve requirement logic (@Elouan Poupard-Cosquer, #5357)"
+msgstr ""
+
+#: src/project/changelog.md:155
+msgid ""
+"Avoid type mismatch with Postgres in append (@Elouan Poupard-Cosquer, #5343)"
+msgstr ""
+
+#: src/project/changelog.md:156
+msgid "Apply column order on CTEs in append (@Elouan Poupard-Cosquer, #5323)"
+msgstr ""
+
+#: src/project/changelog.md:160
+msgid "Fix binary literal example (@ftsfranklin, #5475)"
+msgstr ""
+
+#: src/project/changelog.md:161
+msgid "Use correct table in grouping tutorial (@fnuttens, #5332)"
+msgstr ""
+
+#: src/project/changelog.md:165
+msgid ""
+"TEA 63.3.1, a Qt-based text editor has syntax highlighting for PRQL "
+"(@vanillajonathan, #5220)"
+msgstr ""
+
+#: src/project/changelog.md:167
+msgid "Micro text editor grammar is now upstream (@vanillajonathan, #5353)"
+msgstr ""
+
+#: src/project/changelog.md:168
+msgid "Add LSP stub (@vanillajonathan, #5197)"
+msgstr ""
+
+#: src/project/changelog.md:172
+msgid ""
+"Upgrade parser and lexer to chumsky 0.11, providing a 7x performance "
+"improvement (#5223, #5476, #5477)"
+msgstr ""
+
+#: src/project/changelog.md:174
+msgid "Set Rust linker on win64, fix build crash (@kgutwin, #5345)"
+msgstr ""
+
+#: src/project/changelog.md:175
+msgid "Integration tests compile all dialects and diff (@kgutwin, #5344)"
+msgstr ""
+
+#: src/project/changelog.md:179
+msgid "@Elouan Poupard-Cosquer, with #5366"
+msgstr ""
+
+#: src/project/changelog.md:180
+msgid "@Priit Haamer, with #5468"
+msgstr ""
+
+#: src/project/changelog.md:181
+msgid "@Robert Valek, with #5312"
+msgstr ""
+
+#: src/project/changelog.md:182
+msgid "@fnuttens, with #5332"
+msgstr ""
+
+#: src/project/changelog.md:183
+msgid "@ftsfranklin, with #5475"
+msgstr ""
+
+#: src/project/changelog.md:184
+msgid "@julien-pinchelimouroux, with #5347"
+msgstr ""
+
+#: src/project/changelog.md:186
+msgid "0.13.4 — 2025-03-26"
+msgstr ""
+
+#: src/project/changelog.md:188
+msgid "0.13.4 is a small bugfix release."
+msgstr ""
+
+#: src/project/changelog.md:190
+msgid ""
+"It has 57 commits from 10 contributors. Selected changes (in particular, a "
+"few bugfixes aren't listed here):"
+msgstr ""
+
+#: src/project/changelog.md:195
+msgid ""
+"Add syntax highlight file for KSyntaxHighlighting. (@vanillajonathan, #5177)"
+msgstr ""
+
+#: src/project/changelog.md:196
+msgid "Add syntax highlight file for Vim. (@vanillajonathan, #5185)"
+msgstr ""
+
+#: src/project/changelog.md:197
+msgid "Add syntax highlight file for GNU Emacs. (@vanillajonathan, #5189)"
+msgstr ""
+
+#: src/project/changelog.md:198
+msgid ""
+"[Kakoune](https://kakoune.org/), a terminal-based text editor has syntax "
+"highlighting for PRQL. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:200
+msgid ""
+"[Neovim](https://neovim.io/) 0.11 has syntax highlighting for PRQL. "
+"(@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:203
+msgid "0.13.3 — 2025-01-25"
+msgstr ""
+
+#: src/project/changelog.md:205
+msgid ""
+"0.13.3 is a small release containing a few bug fixes and improvements. It "
+"has 86 commits from 10 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:210
+msgid ""
+"Sort steps in sub-pipelines no longer cause a column lookup error "
+"(@lukapeschke, #5066)"
+msgstr ""
+
+#: src/project/changelog.md:212
+msgid ""
+"Dereferencing of sort columns when rendering SQL now done in context of main "
+"pipeline (@kgutwin, #5098)"
+msgstr ""
+
+#: src/project/changelog.md:217
+msgid "@lukapeschke, with #5066"
+msgstr ""
+
+#: src/project/changelog.md:219
+msgid "0.13.2"
+msgstr ""
+
+#: src/project/changelog.md:221
+msgid ""
+"0.13.2 is a tiny release to fix an issue publishing 0.13.1 to crates.io."
+msgstr ""
+
+#: src/project/changelog.md:223
+msgid "0.13.1"
+msgstr ""
+
+#: src/project/changelog.md:225
+msgid ""
+"0.13.1 is a small release containing a few bug fixes and improvements. "
+"Velocity has slowed down a bit in recent months, we're still hoping to "
+"finish the new resolver and the new formatter in the near future."
+msgstr ""
+
+#: src/project/changelog.md:229
+msgid "It has 97 commits from 10 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:233
+msgid ""
+"Add a option to the experimental documentation generator to output the docs "
+"in HTML format. The option is given using the `--format=html` option. "
+"(@vanillajonathan, 4791)"
+msgstr ""
+
+#: src/project/changelog.md:237
+msgid ""
+"The version of the library is now read from `git describe`. This doesn't "
+"affect libraries built on git tags (such as our releases), only those built "
+"when developing. When reporting bugs, this helps identify the exact version. "
+"(@max-sixty & @m-span, #4804)"
+msgstr ""
+
+#: src/project/changelog.md:244
+msgid ""
+"Raw strings (`r\"...\"`) are retained through `prqlc fmt` (@max-sixty, #4848)"
+msgstr ""
+
+#: src/project/changelog.md:246
+msgid ""
+"Strings containing an odd contiguous number of quotes are now delimited by "
+"an odd number of quotes when being formatted. The previous implementation "
+"would use an even number, which is invalid PRQL. (@max-sixty, #4850)"
+msgstr ""
+
+#: src/project/changelog.md:250
+msgid ""
+"A few more keywords are quoted, such as `user`, which is a reserved keyword "
+"in PostgreSQL. (@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:253
+msgid "0.13.0 — 2024-07-25"
+msgstr ""
+
+#: src/project/changelog.md:255
+msgid ""
+"0.13.0 brings a new debug logging framework, a big refactor of the parser, a "
+"new highlighter, an `**` operator for exponentiation, a few bug fixes, and "
+"lots of other changes. It has 153 commits from 11 contributors."
+msgstr ""
+
+#: src/project/changelog.md:259
+msgid ""
+"Our work continues on rewriting the resolver and completing `prqlc fmt`."
+msgstr ""
+
+#: src/project/changelog.md:261
+msgid "Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:265
+msgid ""
+"Parentheses are always required around pipelines, even within tuples. For "
+"example:"
+msgstr ""
+
+#: src/project/changelog.md:276
+msgid ""
+"This is a small breaking change. The new behavior matches the existing "
+"documentation. (@max-sixty, #4775)"
+msgstr ""
+
+#: src/project/changelog.md:279
+msgid ""
+"A new `**` operator for exponentiation. (@aljazerzen & @max-sixty, #4125)"
+msgstr ""
+
+#: src/project/changelog.md:283
+msgid ""
+"`prqlc compile --debug-log=log.html` will generate an HTML file with a "
+"detailed log of the compilation process. (@aljazerzen, #4646)"
+msgstr ""
+
+#: src/project/changelog.md:285
+msgid ""
+"Added `prqlc debug json-schema` command to auto-generate JSON Schema "
+"representations of commonly exposed IR types such as PL and RQ. (@kgutwin, "
+"\\#4698)"
+msgstr ""
+
+#: src/project/changelog.md:288
+msgid ""
+"Add documentation comments to the output of the documentation generator. "
+"(@vanillajonathan, #4729)"
+msgstr ""
+
+#: src/project/changelog.md:290
+msgid ""
+"Add CLI syntax highlighting to `prqlc`. You can try it as `prqlc "
+"experimental highlight example.prql`. (@vanillajonathan, #4755)"
+msgstr ""
+
+#: src/project/changelog.md:295
+msgid ""
+"Using `in` with an empty array pattern (e.g. `expr | in []`) will now output "
+"a constant `false` condition instead of an `expr IN ()`, which is "
+"syntactically invalid in some SQL dialects (@Globidev, #4598)"
+msgstr ""
+
+#: src/project/changelog.md:301
+msgid ""
+"The Snap package previously released on the edge channel is now released on "
+"the stable channel. (@vanillajonathan, #4784)"
+msgstr ""
+
+#: src/project/changelog.md:306
+msgid ""
+"Major reorganization of `prqlc-parser` — `prqlc-ast` is merged into `prqlc-"
+"parser`, and `prqlc-parser`'s files are rearranged, including its exports. "
+"This is part of an effort to modularize the compiler by stage, reducing the "
+"amount of context that's required to understand a single stage. There will "
+"likely be some further changes (more detail in the PR description). (@m-"
+"span, #4634)"
+msgstr ""
+
+#: src/project/changelog.md:312
+msgid ""
+"This is a breaking change for any libraries that depend on `prqlc-parser` "
+"(which should be fairly rare)."
+msgstr ""
+
+#: src/project/changelog.md:315
+msgid ""
+"Renamed `prql-compiler-macros` to `prqlc-macros` for consistency with other "
+"crates (@max-sixty, #4565)"
+msgstr ""
+
+#: src/project/changelog.md:318
+msgid ""
+"`prql-compiler`, the old name for `prqlc`, is removed as a facade to "
+"`prqlc`. It had been deprecated for a few versions and will no longer be "
+"updated. (@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:322
+msgid "New benchmarks (@max-sixty, #4654)"
+msgstr ""
+
+#: src/project/changelog.md:326
+msgid "@Globidev, with #4598"
+msgstr ""
+
+#: src/project/changelog.md:328
+msgid "0.12.2 — 2024-06-10"
+msgstr ""
+
+#: src/project/changelog.md:330
+msgid ""
+"0.12.2 is a very small release which renames `prql-js` to `prqlc-js` to "
+"match our standard naming scheme. Within node the package is imported as "
+"`prqlc`."
+msgstr ""
+
+#: src/project/changelog.md:333
+msgid "It also fixes a mistake in the `prqlc-python` release pipeline."
+msgstr ""
+
+#: src/project/changelog.md:335
+msgid "0.12.1 — 2024-06-09"
+msgstr ""
+
+#: src/project/changelog.md:337
+msgid ""
+"0.12.1 is a tiny hotfix release which fixes how intra-prql crate "
+"dependencies were specified."
+msgstr ""
+
+#: src/project/changelog.md:340
+msgid "0.12.0 — 2024-06-08"
+msgstr ""
+
+#: src/project/changelog.md:342
+msgid ""
+"0.12.0 contains a few months of smaller features. Our focus has been on "
+"rewriting the resolver, an effort that is still ongoing."
+msgstr ""
+
+#: src/project/changelog.md:345
+msgid ""
+"It has 239 commits from 12 contributors. Selected changes (most are not "
+"listed here, possibly we should be more conscientious about adding them...):"
+msgstr ""
+
+#: src/project/changelog.md:350
+msgid "Add `prqlc lex` command to the CLI (@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:351
+msgid ""
+"Add `prqlc debug lineage` command to the CLI, creating an expression lineage "
+"graph from a query (@kgutwin, #4533)"
+msgstr ""
+
+#: src/project/changelog.md:353
+msgid ""
+"Initial implementation of an experimental documentation generator that "
+"generates Markdown documentation from `.prql` files. (@vanillajonathan, "
+"\\#4152)."
+msgstr ""
+
+#: src/project/changelog.md:356
+msgid ""
+"Join's `side` parameter can take a reference that resolves to a literal "
+"(note: this is an experimental feature which may change in the future) "
+"(@kgutwin, \\#4499)"
+msgstr ""
+
+#: src/project/changelog.md:362
+msgid ""
+"Support expressions on left hand side of `std.in` operator. (@kgutwin, #4498)"
+msgstr ""
+
+#: src/project/changelog.md:363
+msgid "Prevent panic for `from {}` and `std` (@m-span, #4538)"
+msgstr ""
+
+#: src/project/changelog.md:367
+msgid ""
+"The `browser` dist files are now built with `wasm-pack`'s `web` target. As a "
+"result, they should be usable as ES Modules, through JS CDNs, and for "
+"example with Observable Framework (@srenatus, #4274)."
+msgstr ""
+
+#: src/project/changelog.md:373
+msgid ""
+"The syntax highlighter package for Sublime Text is now [published](https://"
+"packagecontrol.io/packages/PRQL) (@vanillajonathan)."
+msgstr ""
+
+#: src/project/changelog.md:375
+msgid ""
+"The [VSCode Great Icons](https://marketplace.visualstudio.com/items?"
+"itemName=emmanuelbeziat.vscode-great-icons) icon pack extension shows a "
+"database icon for `.prql` files. (@EmmanuelBeziat)"
+msgstr ""
+
+#: src/project/changelog.md:378
+msgid ""
+"[Tokei](https://github.com/XAMPPRocky/tokei), a source lines of code counter "
+"now has support for `.prql` files. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:380
+msgid ""
+"Add syntax highlight file for the [micro](https://micro-editor.github.io/) "
+"text editor. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:385
+msgid "@srenatus, with #4274"
+msgstr ""
+
+#: src/project/changelog.md:386
+msgid "@jacquayj, with #4332"
+msgstr ""
+
+#: src/project/changelog.md:387
+msgid "@pdelewski, with #4337"
+msgstr ""
+
+#: src/project/changelog.md:388
+msgid "@m-span, with #4422"
+msgstr ""
+
+#: src/project/changelog.md:389
+msgid "@kgutwin, with #4498"
+msgstr ""
+
+#: src/project/changelog.md:391
+msgid "0.11.4 — 2024-02-25"
+msgstr ""
+
+#: src/project/changelog.md:393
+msgid ""
+"0.11.4 is a hotfix release, fixing a CI issue that caused the CLI binaries "
+"to be built without the `cli` feature."
+msgstr ""
+
+#: src/project/changelog.md:396
+msgid "0.11.3 — 2024-02-10"
+msgstr ""
+
+#: src/project/changelog.md:398
+msgid "0.11.3 is a very small release, mostly a rename of the Python bindings."
+msgstr ""
+
+#: src/project/changelog.md:400
+msgid "The release has 13 commits from 4 contributors."
+msgstr ""
+
+#: src/project/changelog.md:404
+msgid ""
+"As part of making our names more consistent, the Python bindings are "
+"renamed. `prql-python` becomes a package published and importable as "
+"`prqlc`. The internal Rust crate is named `prqlc-python`."
+msgstr ""
+
+#: src/project/changelog.md:408
+msgid "0.11.2 — 2024-02-07"
+msgstr ""
+
+#: src/project/changelog.md:410
+msgid ""
+"0.11.2 contains lots of internal changes, lots of syntax highlighting, and "
+"the beginning of `lutra`, a query runner."
+msgstr ""
+
+#: src/project/changelog.md:413
+msgid "This release has 122 commits from 9 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:417
+msgid ""
+"Initial implementation of `lutra`, a query runner. (@aljazerzen, #4182, "
+"#4174, \\#4134)"
+msgstr ""
+
+#: src/project/changelog.md:419
+msgid "`prqlc fmt` works on projects with multiple files. (@max-sixty, #4028)"
+msgstr ""
+
+#: src/project/changelog.md:423
+msgid "Reduce stack memory usage (@aljazerzen, #4103)"
+msgstr ""
+
+#: src/project/changelog.md:427
+msgid "Add syntax highlight file for GtkSourceView. (@vanillajonathan, #4062)"
+msgstr ""
+
+#: src/project/changelog.md:428
+msgid "Add syntax highlight file for CotEditor. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:429
+msgid "Add syntax highlight file for Sublime Text. (@vanillajonathan, #4127)"
+msgstr ""
+
+#: src/project/changelog.md:430
+msgid ""
+"[sloc](https://github.com/flosse/sloc), a source lines of code counter now "
+"has support for `.prql` files. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:435
+msgid ""
+"`prql-compiler` has been renamed to `prqlc`, and we've established a more "
+"consistent naming scheme. The existing crate will still be published, re-"
+"exporting `prqlc`, so no dependencies will break. A future version will add "
+"a deprecation warning."
+msgstr ""
+
+#: src/project/changelog.md:439
+msgid ""
+"The `prqlc-clib` crate was renamed to `prqlc-c`, and associated artifacts "
+"were renamed. We're trying to make names consistent (ideally for the final "
+"time!), and have a plan to rename some other bindings. (@max-sixty, #4077)"
+msgstr ""
+
+#: src/project/changelog.md:442
+msgid ""
+"Add lots of whitespace items to the lexer, in preparation for the completion "
+"of `prqlc fmt` (@max-sixty, #4109, #4105)"
+msgstr ""
+
+#: src/project/changelog.md:444
+msgid "Table declarations (@aljazerzen, #4126)"
+msgstr ""
+
+#: src/project/changelog.md:448
+msgid "@kaspermarstal, with #4124"
+msgstr ""
+
+#: src/project/changelog.md:450
+msgid "0.11.1 — 2023-12-26"
+msgstr ""
+
+#: src/project/changelog.md:452
+msgid "0.11.1 fixes a couple of small bugs; it comes a few days after 0.11."
+msgstr ""
+
+#: src/project/changelog.md:454
+msgid "This release has 16 commits from 6 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:458
+msgid ""
+"Infer the type of array literals to be the union of types of its items. "
+"(@aljazerzen, #3989)"
+msgstr ""
+
+#: src/project/changelog.md:460
+msgid ""
+"`prql` module is added and the `prql_version` function is renamed to the "
+"`prql.version` function. The old `prql_version` function is deprecated and "
+"will be removed in the future release. (@eitsupi, #4006)"
+msgstr ""
+
+#: src/project/changelog.md:466
+msgid ""
+"Do not compile to `DISTINCT ON` when `take n` is used with `group` for the "
+"targets `clickhouse`, `duckdb` and `postgres`. (@PrettyWood, #3988)"
+msgstr ""
+
+#: src/project/changelog.md:468
+msgid ""
+"Fix `take` n rows for `mssql` dialect by switching from TOP to FETCH "
+"(@PrettyWood, #3994)"
+msgstr ""
+
+#: src/project/changelog.md:471
+msgid "0.11.0 — 2023-12-19"
+msgstr ""
+
+#: src/project/changelog.md:473
+msgid ""
+"0.11.0 introduces new `date`, `text` & `math` modules with lots of standard "
+"functions, including a new `date.to_text` function. It contains a few bugs "
+"fixes, and lots of internal improvements to the compiler."
+msgstr ""
+
+#: src/project/changelog.md:477
+msgid "This release has 119 commits from 9 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:481
+msgid ""
+"_Breaking_: `group`'s `by` columns are now excluded from the partition. "
+"(#3490)"
+msgstr ""
+
+#: src/project/changelog.md:483
+msgid ""
+"_Breaking_: `round` is now in the `math` module and needs to be called via "
+"`math.round`. (#3928)"
+msgstr ""
+
+#: src/project/changelog.md:485
+msgid ""
+"_Breaking_: `lower` and `upper` are now in the `text` module and need to be "
+"called via `text.lower` and `text.upper`. (#3913, #3973)"
+msgstr ""
+
+#: src/project/changelog.md:490
+msgid ""
+"The `std.in` function now supports a list of values (@PrettyWood, #3883)"
+msgstr ""
+
+#: src/project/changelog.md:491
+msgid ""
+"Most standard mathematical functions are now supported: `abs`, `floor`, "
+"`ceil`, `pi`, `exp`, `ln`, `log10`, `log`, `sqrt`, `degrees`, `radians`, "
+"`cos`, `acos`, `sin`, `asin`, `tan`, `atan`, `pow` and `round`.  \n"
+"Those functions are in the `math` module (@PrettyWood, #3909, #3916 & 3928)"
+msgstr ""
+
+#: src/project/changelog.md:495
+msgid ""
+"Most standard string functions are now supported: `ltrim`, `rtrim`, `trim`, "
+"`length`, `extract`, `replace`. Utility functions `starts_with`, `contains` "
+"and `ends_with` are also available.  \n"
+"Those functions are in the `text` module (@PrettyWood, #3913, #3973)"
+msgstr ""
+
+#: src/project/changelog.md:499
+msgid ""
+"Formatting a date to a text is now available for Clickhouse, DuckDB, MySQL, "
+"MSSQL and Postgres. A new `date` module has been added with the `to_text` "
+"function (@PrettyWood, #3951, #3954 & #3955)"
+msgstr ""
+
+#: src/project/changelog.md:505
+msgid "Fix an issue with arithmetic precedence (@max-sixty, #3846)"
+msgstr ""
+
+#: src/project/changelog.md:506
+msgid "`+` and `-` can be used after a cast (@PrettyWood, #3923)"
+msgstr ""
+
+#: src/project/changelog.md:507
+msgid ""
+"The [Lezer](https://lezer.codemirror.net/) grammar had plenty of "
+"improvements and fixes. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:512
+msgid "The Playground now uses [Vite](https://vitejs.dev/). (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:516
+msgid "Bump `prql-compiler`'s MSRV to 1.70.0 (@eitsupi, #3876)"
+msgstr ""
+
+#: src/project/changelog.md:520
+msgid "@PrettyWood, with #3883"
+msgstr ""
+
+#: src/project/changelog.md:522
+msgid "0.10.1 — 2023-11-14"
+msgstr ""
+
+#: src/project/changelog.md:524
+msgid ""
+"0.10.1 is a small release containing some internal fixes of the compiler."
+msgstr ""
+
+#: src/project/changelog.md:526
+msgid "This release has 36 commits from 7 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:530
+msgid ""
+"The `std.sql.read_csv` function and the `std.sql.read_parquet` function "
+"supports the `sql.glaredb` target. (@eitsupi, #3749)"
+msgstr ""
+
+#: src/project/changelog.md:535
+msgid ""
+"Fix the bug of compiling to `DISTINCT ON` when `take 1` is used with `group "
+"by` for the targets `sql.clickhouse`, `sql.duckdb` and `sql.postgres`. "
+"(@aljazerzen, #3792)"
+msgstr ""
+
+#: src/project/changelog.md:541
+msgid "Enable integration tests for GlareDB. (@eitsupi, #3749)"
+msgstr ""
+
+#: src/project/changelog.md:542
+msgid ""
+"[trapd00r/LS_COLORS](https://github.com/trapd00r/LS_COLORS), a collection of "
+"LS_COLORS definitions colorizes `.prql` files. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:544
+msgid ""
+"[vivid](https://github.com/sharkdp/vivid), a themeable LS_COLORS generator "
+"colorizes `.prql` files. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:546
+msgid ""
+"[colorls](https://github.com/athityakumar/colorls), displays `.prql` files "
+"with a database icon. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:548
+msgid ""
+"[Emoji File Icons](https://marketplace.visualstudio.com/items?"
+"itemName=mightbesimon.emoji-icons), a VS Code extension displays `.prql` "
+"files with a database emoji icon. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:551
+msgid ""
+"[eza](https://eza.rocks/), a modern ls replacement colorizes `.prql` files. "
+"(@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:553
+msgid ""
+"[lsd](https://github.com/lsd-rs/lsd), next gen ls command displays `.prql` "
+"files with a database icon. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:556
+msgid "0.10.0 — 2023-10-26"
+msgstr ""
+
+#: src/project/changelog.md:558
+msgid ""
+"0.10.0 contains lots of small improvements, including support for new types "
+"of literal notation, support for `read_*` functions in more dialects, "
+"playground improvements, and a better Lezer grammar (which we're planning on "
+"using for a Jupyter extension)."
+msgstr ""
+
+#: src/project/changelog.md:563
+msgid "This release has 155 commits from 9 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:567
+msgid ""
+"_Breaking:_ Case syntax now uses brackets `[]` rather than braces `{}`. To "
+"convert previous PRQL queries to this new syntax simply change `case { ... }"
+"` to `case [ ... ]`. (@AaronMoat, #3517)"
+msgstr ""
+
+#: src/project/changelog.md:573
+msgid ""
+"_Breaking_: The `std.sql.read_csv` function is now compiled to `read_csv` by "
+"default. Please set the target `sql.duckdb` to use the DuckDB's "
+"`read_csv_auto` function as previously. (@eitsupi, #3599)"
+msgstr ""
+
+#: src/project/changelog.md:576
+msgid ""
+"_Breaking_: The `std.every` function is renamed to `std.all` (@aljazerzen, "
+"\\#3703)"
+msgstr ""
+
+#: src/project/changelog.md:578
+msgid ""
+"The `std.sql.read_csv` function and the `std.sql.read_parquet` function "
+"supports the `sql.clickhouse` target. (@eitsupi, #1533)"
+msgstr ""
+
+#: src/project/changelog.md:580
+msgid "Add `std.prql_version` function to return PRQL version (@hulxv, #3533)"
+msgstr ""
+
+#: src/project/changelog.md:581
+msgid "A new type `anytype` is added. (@aljazerzen, #3703)"
+msgstr ""
+
+#: src/project/changelog.md:582
+msgid ""
+"Add support for hex escape sequences in strings. Example `\"Hello \\x51\"`. "
+"(@vanillajonathan, #3568)"
+msgstr ""
+
+#: src/project/changelog.md:584
+msgid ""
+"Add support for long Unicode escape sequences. Example `\"Hello "
+"\\u{01F422}\"`. (@vanillajonathan, #3569)"
+msgstr ""
+
+#: src/project/changelog.md:586
+msgid ""
+"Add support for binary numerical notation. Example `filter status == "
+"0b1111000011110000`. (@vanillajonathan, #3661)"
+msgstr ""
+
+#: src/project/changelog.md:588
+msgid ""
+"Add support for hexadecimal numerical notation. Example `filter status == "
+"0xff`. (@vanillajonathan, #3654)"
+msgstr ""
+
+#: src/project/changelog.md:590
+msgid ""
+"Add support for octal numerical notation. Example `filter status == 0o777`. "
+"(@vanillajonathan, #3672)"
+msgstr ""
+
+#: src/project/changelog.md:592
+msgid ""
+"New compile target `sql.glaredb` for [GlareDB](https://docs.glaredb.com/) "
+"and integration tests for it (However, there is a bug in the test and it is "
+"currently not running). (@universalmind303, @scsmithr, @eitsupi, #3669)"
+msgstr ""
+
+#: src/project/changelog.md:598
+msgid ""
+"Allow cmd-/ (Mac) or ctrl-/ (Windows) to toggle comments in the playground "
+"editor (@AaronMoat, #3522)"
+msgstr ""
+
+#: src/project/changelog.md:601
+msgid ""
+"Limit maximum height of the playground editor's error panel to avoid taking "
+"over whole screen (@AaronMoat, #3524)"
+msgstr ""
+
+#: src/project/changelog.md:604
+msgid "The playground now uses [Vite](https://vitejs.dev/) (@vanillajonathan)."
+msgstr ""
+
+#: src/project/changelog.md:608
+msgid ""
+"Add a CLI command `prqlc collect` to collect a project's modules into a "
+"single file (@aljazerzen, #3739)"
+msgstr ""
+
+#: src/project/changelog.md:610
+msgid ""
+"Add a CLI command `prqlc debug expand-pl` to parse & and expand into PL "
+"without resolving (@aljazerzen, #3739)"
+msgstr ""
+
+#: src/project/changelog.md:612
+msgid "Bump `prqlc`'s MSRV to 1.70.0 (@eitsupi, #3521)"
+msgstr ""
+
+#: src/project/changelog.md:613
+msgid ""
+"[Pygments](https://pygments.org/), a syntax highlighting library now has "
+"syntax highlighting for PRQL. (@vanillajonathan, #3564)"
+msgstr ""
+
+#: src/project/changelog.md:615
+msgid ""
+"[chroma](https://github.com/alecthomas/chroma), a syntax highlighting "
+"library written in Go and used by the static website generator [Hugo]"
+"(https://gohugo.io/). (@vanillajonathan, #3597)"
+msgstr ""
+
+#: src/project/changelog.md:618
+msgid ""
+"[scc](https://github.com/boyter/scc), a source lines of code counter now has "
+"support for `.prql` files. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:620
+msgid ""
+"[gcloc](https://github.com/JoaoDanielRufino/gcloc) a source lines of code "
+"counter now has support for `.prql` files. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:622
+msgid ""
+"[cloc](https://github.com/AlDanial/cloc) a source lines of code counter now "
+"has support for `.prql` files. (@AlDanial)"
+msgstr ""
+
+#: src/project/changelog.md:624
+msgid ""
+"[gocloc](https://github.com/hhatto/gocloc) a source lines of code counter "
+"now has support for `.prql` files. (@vanillajonathan)"
+msgstr ""
+
+#: src/project/changelog.md:626
+msgid ""
+"[The Quarto VS Code extension](https://marketplace.visualstudio.com/items?"
+"itemName=quarto.quarto) supports editing PRQL code blocks ([`prqlr`](https://"
+"prql-lang.org/book/project/bindings/r.html) is required to render Quarto "
+"Markdown with PRQL code blocks). (@jjallaire)"
+msgstr ""
+
+#: src/project/changelog.md:631 src/project/changelog.md:1555
+msgid "**Internal**:"
+msgstr ""
+
+#: src/project/changelog.md:633
+msgid ""
+"Rename some of the internal crates, and refactored their paths in the repo. "
+"(@aljazerzen, #3683)."
+msgstr ""
+
+#: src/project/changelog.md:635
+msgid ""
+"Add a `justfile` for developers who prefer that above our `Taskfile.yaml` "
+"(@aljazerzen, #3681)"
+msgstr ""
+
+#: src/project/changelog.md:640
+msgid "@hulxv, with #3533"
+msgstr ""
+
+#: src/project/changelog.md:641
+msgid "@AaronMoat, with #3522"
+msgstr ""
+
+#: src/project/changelog.md:642
+msgid "@jangorecki, with #3634"
+msgstr ""
+
+#: src/project/changelog.md:644
+msgid "0.9.5 — 2023-09-16"
+msgstr ""
+
+#: src/project/changelog.md:646
+msgid ""
+"0.9.5 adds a line-wrapping character, fixes a few bugs, and improves our CI. "
+"The release has 77 commits from 8 contributors. Selected changes are below."
+msgstr ""
+
+#: src/project/changelog.md:649
+msgid ""
+"Look out for some conference talks coming up over the next few weeks, "
+"including [QCon SF on Oct 2](https://qconsf.com/presentation/oct2023/prql-"
+"simple-powerful-pipelined-sql-replacement) and [date2day on Oct 12](https://"
+"www.data2day.de/veranstaltung-21353-0-prql-a-modern-language-for-data-"
+"transformation.html)."
+msgstr ""
+
+#: src/project/changelog.md:656
+msgid ""
+"A new line-wrapping character, for lines that are long and we want to break "
+"up into multiple physical lines. This is slightly different from from many "
+"languages — it's on the subsequent line:"
+msgstr ""
+
+#: src/project/changelog.md:660
+msgid ""
+"```prql no-eval\n"
+"from artists\n"
+"select is_europe =\n"
+"\\ country == \"DE\"\n"
+"\\ || country == \"FR\"\n"
+"\\ || country == \"ES\"\n"
+"```"
+msgstr ""
+
+#: src/project/changelog.md:668
+msgid ""
+"This allows for easily commenting out physical lines while maintaining a "
+"correct logical line; for example:"
+msgstr ""
+
+#: src/project/changelog.md:681
+msgid "(@max-sixty, #3408)"
+msgstr ""
+
+#: src/project/changelog.md:685
+msgid ""
+"Fix stack overflow on very long queries in Windows debug builds (@max-sixty, "
+"\\#2908)"
+msgstr ""
+
+#: src/project/changelog.md:688
+msgid ""
+"Fix panic when unresolved lineage appears in group or window (@davidot, "
+"#3266)"
+msgstr ""
+
+#: src/project/changelog.md:690
+msgid ""
+"Fix a corner-case in handling precedence, and remove unneeded parentheses in "
+"some outputs (@max-sixty, #3472)"
+msgstr ""
+
+#: src/project/changelog.md:695
+msgid "Compiler panics are now printed to the console (@max-sixty, #3446)"
+msgstr ""
+
+#: src/project/changelog.md:699
+msgid ""
+"[Ace](https://ace.c9.io/), the JavaScript code editor now has syntax "
+"highlighting for PRQL. (@vanillajonathan, #3493)"
+msgstr ""
+
+#: src/project/changelog.md:704
+msgid "Simplify & speed up lexer (@max-sixty, #3426, #3418)"
+msgstr ""
+
+#: src/project/changelog.md:708
+msgid "@davidot, with #3450"
+msgstr ""
+
+#: src/project/changelog.md:710
+msgid "0.9.4 — 2023-08-24"
+msgstr ""
+
+#: src/project/changelog.md:712
+msgid ""
+"0.9.4 is a small release with some improvements and bug fixes in the "
+"compiler and `prqlc`. And, the documentation and CI are continually being "
+"improved."
+msgstr ""
+
+#: src/project/changelog.md:715
+msgid "This release has 110 commits from 9 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:719
+msgid ""
+"Strings can be delimited with any odd number of quote characters. The logic "
+"for lexing quotes is now simpler and slightly faster. Escapes in single-"
+"quote-delimited strings escape single-quotes rather than double-quotes. "
+"(@max-sixty, #3274)"
+msgstr ""
+
+#: src/project/changelog.md:726
+msgid "S-strings within double braces now parse correctly (@max-sixty, #3265)"
+msgstr ""
+
+#: src/project/changelog.md:730
+msgid "New docs for strings (@max-sixty, #3281)"
+msgstr ""
+
+#: src/project/changelog.md:734
+msgid ""
+"Improve syntax highlighting for numbers in the book & website (@max-sixty, "
+"\\#3261)"
+msgstr ""
+
+#: src/project/changelog.md:736
+msgid "Add ClickHouse integration to docs (@max-sixty, #3251)"
+msgstr ""
+
+#: src/project/changelog.md:740
+msgid ""
+"`prqlc` no longer displays a prompt when piping a query into its stdin (@max-"
+"sixty, #3248)."
+msgstr ""
+
+#: src/project/changelog.md:742
+msgid ""
+"Add a minimal example for use `prql-lib` with Zig (@vanillajonathan, #3372)"
+msgstr ""
+
+#: src/project/changelog.md:746
+msgid ""
+"Overhaul our CI to run a cohesive set of tests depending on the specific "
+"changes in the PR, and elide all others. This cuts CI latency to less than "
+"three minutes for most changes, and enables GitHub's auto-merge to wait for "
+"all relevant tests. It also reduces the CI time on merging to main, by "
+"moving some tests to only run on specific path changes or on our nightly run."
+msgstr ""
+
+#: src/project/changelog.md:752
+msgid ""
+"We now have one label we can add to PRs to run more tests — `pr-nightly`. "
+"(@max-sixty, #3317 & others)."
+msgstr ""
+
+#: src/project/changelog.md:755
+msgid "Auto-merge PRs for backports or pre-commit updates (@max-sixty, #3246)"
+msgstr ""
+
+#: src/project/changelog.md:756
+msgid ""
+"Add a workflow to create an issue when the scheduled nightly workflow fails "
+"(@max-sixty, #3304)"
+msgstr ""
+
+#: src/project/changelog.md:761
+msgid "@FinnRG, with #3292"
+msgstr ""
+
+#: src/project/changelog.md:762
+msgid "@sitiom, with #3353"
+msgstr ""
+
+#: src/project/changelog.md:764
+msgid "0.9.3 — 2023-08-02"
+msgstr ""
+
+#: src/project/changelog.md:766
+msgid ""
+"0.9.3 is a small release, with mostly documentation, internal, and CI "
+"changes."
+msgstr ""
+
+#: src/project/changelog.md:768
+msgid "This release has 85 commits from 10 contributors."
+msgstr ""
+
+#: src/project/changelog.md:770
+msgid ""
+"We'd like to welcome @not-my-profile as someone who has helped with lots of "
+"internal refactoring in the past couple of weeks."
+msgstr ""
+
+#: src/project/changelog.md:775
+msgid "@vthriller, with #3171"
+msgstr ""
+
+#: src/project/changelog.md:776
+msgid "@postmeback, with #3216"
+msgstr ""
+
+#: src/project/changelog.md:778
+msgid "0.9.2 — 2023-07-25"
+msgstr ""
+
+#: src/project/changelog.md:780
+msgid ""
+"0.9.2 is a hotfix release to fix an issue in the 0.9.0 & 0.9.1 release "
+"pipelines."
+msgstr ""
+
+#: src/project/changelog.md:783
+msgid "0.9.1 — 2023-07-25"
+msgstr ""
+
+#: src/project/changelog.md:785
+msgid ""
+"0.9.1 is a hotfix release to fix an issue in the 0.9.0 release pipeline."
+msgstr ""
+
+#: src/project/changelog.md:787
+msgid "0.9.0 — 2023-07-24"
+msgstr ""
+
+#: src/project/changelog.md:789
+msgid ""
+"0.9.0 is probably PRQL's biggest ever release. We have dialect-specific "
+"standard-libraries, a regex operator, an initial implementation of multiple-"
+"file projects & modules, lots of bug fixes, and many many internal changes."
+msgstr ""
+
+#: src/project/changelog.md:793
+msgid ""
+"We've made a few backward incompatible syntax changes. Most queries will "
+"work with a simple find/replace; see below for details."
+msgstr ""
+
+#: src/project/changelog.md:796
+msgid "The release has 421 commits from 12 contributors."
+msgstr ""
+
+#: src/project/changelog.md:798 src/project/changelog.md:1044
+msgid "A small selection of the changes:"
+msgstr ""
+
+#: src/project/changelog.md:802
+msgid ""
+"The major breaking change is a new syntax for lists, which have been renamed "
+"to _tuples_, and are now represented with braces `{}` rather than brackets "
+"`[]`."
+msgstr ""
+
+#: src/project/changelog.md:806
+msgid ""
+"To convert previous PRQL queries to this new syntax simply change `[ ... ]` "
+"to `{ ... }`."
+msgstr ""
+
+#: src/project/changelog.md:809
+msgid ""
+"We made the syntax change to incorporate arrays. Almost every major language "
+"uses `[]` for arrays. We are adopting that convention — arrays use `[]`, "
+"tuples will use `{}`. (Though we recognize that `{}` for tuples is also rare "
+"(Hi, Erlang!), but didn't want to further load parentheses with meaning.)"
+msgstr ""
+
+#: src/project/changelog.md:814
+msgid ""
+"Arrays are conceptually similar to columns — their elements have a single "
+"type. Array syntax can't contain assignments."
+msgstr ""
+
+#: src/project/changelog.md:817
+msgid ""
+"As part of this, we've also formalized tuples as containing both individual "
+"items (`select {foo, baz}`), and assignments (`select {foo=bar, baz=fuz}`)."
+msgstr ""
+
+#: src/project/changelog.md:820
+msgid "Some significant changes regarding SQL dialects:"
+msgstr ""
+
+#: src/project/changelog.md:821
+msgid ""
+"Operators and functions can be defined on per-dialect basis. (@aljazerzen, "
+"\\#2681)"
+msgstr ""
+
+#: src/project/changelog.md:823
+msgid ""
+"_Breaking_: The `sql.duckdb` target supports DuckDB 0.8 (@eitsupi, #2810)."
+msgstr ""
+
+#: src/project/changelog.md:824
+msgid "_Breaking_: The `sql.hive` target is removed (@eitsupi, #2837)."
+msgstr ""
+
+#: src/project/changelog.md:826
+msgid ""
+"New arithmetic operators. These compile to different function or operator "
+"depending on the target."
+msgstr ""
+
+#: src/project/changelog.md:828
+msgid ""
+"_Breaking_: Operator `/` now always performs floating division (@aljazerzen, "
+"\\#2684). See the [Division docs](https://prql-lang.org/book/reference/"
+"syntax/operators.html#division-and-integer-division) for details."
+msgstr ""
+
+#: src/project/changelog.md:833
+msgid ""
+"Truncated integer division operator `//` (@aljazerzen, #2684). See the "
+"[Division docs](https://prql-lang.org/book/reference/syntax/operators."
+"html#division-and-integer-division) for details."
+msgstr ""
+
+#: src/project/changelog.md:837
+msgid "Regex search operator `~=` (@max-sixty, #2458). An example:"
+msgstr ""
+
+#: src/project/changelog.md:839
+msgid ""
+"```prql no-eval\n"
+"from tracks\n"
+"filter (name ~= \"Love\")\n"
+"```"
+msgstr ""
+
+#: src/project/changelog.md:844
+msgid "...compiles to;"
+msgstr ""
+
+#: src/project/changelog.md:852
+msgid "'Love'"
+msgstr ""
+
+#: src/project/changelog.md:855
+msgid ""
+"...though the exact form differs by dialect; see the [Regex docs](https://"
+"prql-lang.org/book/reference/syntax/operators.html#regex) for more details."
+msgstr ""
+
+#: src/project/changelog.md:859
+msgid ""
+"New aggregation functions: `every`, `any`, `average`, and `concat_array`. "
+"_Breaking:_ Remove `avg` in favor of `average`."
+msgstr ""
+
+#: src/project/changelog.md:862
+msgid ""
+"_Breaking:_ We've changed our function declaration syntax to match other "
+"declarations. Functions were one of the first language constructs in PRQL, "
+"and since then we've added normal declarations there's no compelling reason "
+"for functions to be different."
+msgstr ""
+
+#: src/project/changelog.md:871
+msgid "Previously, this was:"
+msgstr ""
+
+#: src/project/changelog.md:877
+msgid ""
+"Experimental modules, which allow importing declarations from other files. "
+"Docs are forthcoming."
+msgstr ""
+
+#: src/project/changelog.md:880
+msgid ""
+"Relation literals create a relation (a \"table\") as an _array_ of _tuples_. "
+"This example demonstrates the new syntax for arrays `[]` and tuples `{}`. "
+"(@aljazerzen, #2605)"
+msgstr ""
+
+#: src/project/changelog.md:890
+msgid ""
+"`this` can be used to refer to the current pipeline, for situations where "
+"plain column name would be ambiguous:"
+msgstr ""
+
+#: src/project/changelog.md:899
+msgid ""
+"Within a `join` transform, there is also a reference to the right relation: "
+"`that`."
+msgstr ""
+
+#: src/project/changelog.md:902
+msgid ""
+"_Breaking:_ functions `count`, `rank` and `row_number` now require an "
+"argument of the array to operate on. In most cases you can directly replace "
+"`count` with `count this`. The `non_null` argument of `count` has been "
+"removed."
+msgstr ""
+
+#: src/project/changelog.md:908
+msgid "We've changed how we handle colors."
+msgstr ""
+
+#: src/project/changelog.md:910
+msgid ""
+"`Options::color` is deprecated and has no effect. Code which consumes "
+"`prql_compiler::compile` should instead accept the output with colors and "
+"use a library such as `anstream` to handle the presentation of colors. To "
+"ensure minimal disruption, `prql_compiler` will currently strip color codes "
+"when a standard environment variable such as `CLI_COLOR=0` is set or when it "
+"detects `stderr` is not a TTY."
+msgstr ""
+
+#: src/project/changelog.md:917
+msgid ""
+"We now use the [`anstream`](https://github.com/rust-cli/anstyle) library in "
+"`prqlc` & `prql-compiler`."
+msgstr ""
+
+#: src/project/changelog.md:920
+msgid "(@max-sixty, #2773)"
+msgstr ""
+
+#: src/project/changelog.md:922
+msgid ""
+"`prqlc` can now show backtraces when the standard backtrace env var "
+"(`RUST_BACKTRACE`) is active. (@max-sixty, #2751)"
+msgstr ""
+
+#: src/project/changelog.md:927
+msgid ""
+"Numbers expressed with scientific notation — `1e9` — are now handled "
+"correctly by the compiler (@max-sixty, #2865)."
+msgstr ""
+
+#: src/project/changelog.md:932
+msgid "prql-python now provides type hints (@philpep, #2912)"
+msgstr ""
+
+#: src/project/changelog.md:936
+msgid ""
+"Annotations in PRQL. These have limited support but are currently used to "
+"specify binding strengths. They're modeled after Rust's annotations, but "
+"with `@` syntax, more similar to traditional decorators. (#2729)"
+msgstr ""
+
+#: src/project/changelog.md:940
+msgid ""
+"```prql no-eval\n"
+"@{binding_strength=11}\n"
+"let mod = l r -> s\"{l} % {r}\"\n"
+"```"
+msgstr ""
+
+#: src/project/changelog.md:945
+msgid ""
+"Remove BigQuery's special handling of quoted identifiers, now that our "
+"module system handles its semantics (@max-sixty, #2609)."
+msgstr ""
+
+#: src/project/changelog.md:948
+msgid "ClickHouse is tested in CI (@eitsupi, #2815)."
+msgstr ""
+
+#: src/project/changelog.md:952
+msgid "@maxmcd, with #2533"
+msgstr ""
+
+#: src/project/changelog.md:953
+msgid "@khoa165, with #2876"
+msgstr ""
+
+#: src/project/changelog.md:954
+msgid "@philpep, with #2912"
+msgstr ""
+
+#: src/project/changelog.md:955
+msgid "@not-my-profile, with #2971"
+msgstr ""
+
+#: src/project/changelog.md:957
+msgid "0.8.1 — 2023-04-29"
+msgstr ""
+
+#: src/project/changelog.md:959
+msgid ""
+"0.8.1 is a small release with a new `list-targets` command in `prqlc`, some "
+"documentation improvements, and some internal improvements."
+msgstr ""
+
+#: src/project/changelog.md:962
+msgid "This release has 41 commits from 8 contributors."
+msgstr ""
+
+#: src/project/changelog.md:964
+msgid ""
+"From the broader perspective of the project, we're increasing the relative "
+"prioritization of it being easy for folks to actually use PRQL — either with "
+"existing tools, or a tool we'd build. We'll be thinking about & discussing "
+"the best way to do that over the next few weeks."
+msgstr ""
+
+#: src/project/changelog.md:969
+msgid "0.8.0 — 2023-04-14"
+msgstr ""
+
+#: src/project/changelog.md:971
+msgid ""
+"0.8.0 renames the `and` & `or` operators to `&&` & `||` respectively, "
+"reorganizes the Syntax section in the book, and introduces `read_parquet` & "
+"`read_csv` functions for reading files with DuckDB."
+msgstr ""
+
+#: src/project/changelog.md:975
+msgid "This release has 38 commits from 8 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:979
+msgid ""
+"Rename `and` to `&&` and `or` to `||`. Operators which are symbols are now "
+"consistently infix, while \"words\" are now consistently functions "
+"(@aljazerzen, \\#2422)."
+msgstr ""
+
+#: src/project/changelog.md:983
+msgid ""
+"New functions `read_parquet` and `read_csv`, which mirror the DuckDB "
+"functions, instructing the database to read from files (@max-sixty, #2409)."
+msgstr ""
+
+#: src/project/changelog.md:986
+msgid "0.7.1 — 2023-04-03"
+msgstr ""
+
+#: src/project/changelog.md:988
+msgid ""
+"0.7.1 is a hotfix release to fix `prql-js`'s `npm install` behavior when "
+"being installed as a dependency."
+msgstr ""
+
+#: src/project/changelog.md:991
+msgid "This release has 17 commits from 4 contributors."
+msgstr ""
+
+#: src/project/changelog.md:993
+msgid "0.7.0 — 2023-04-01"
+msgstr ""
+
+#: src/project/changelog.md:995
+msgid ""
+"0.7.0 is a fairly small release in terms of new features, with lots of "
+"internal improvements, such as integration tests with a whole range of DBs, "
+"a blog post on Pi day, RFCs for a type system, and more robust language "
+"bindings."
+msgstr ""
+
+#: src/project/changelog.md:999
+msgid ""
+"There's a very small breaking change to the Rust API, hence the minor "
+"version bump."
+msgstr ""
+
+#: src/project/changelog.md:1002
+msgid ""
+"Here's our April 2023 Update, from our [Readme](https://github.com/PRQL/prql/"
+"blob/main/README.md):"
+msgstr ""
+
+#: src/project/changelog.md:1005
+msgid "April 2023 update"
+msgstr ""
+
+#: src/project/changelog.md:1007
+msgid ""
+"PRQL is being actively developed by a growing community. It's ready to use "
+"by the intrepid, either as part of one of our supported extensions, or "
+"within your own tools, using one of our supported language bindings."
+msgstr ""
+
+#: src/project/changelog.md:1011
+msgid ""
+"PRQL still has some minor bugs and some missing features, and probably is "
+"only ready to be rolled out to non-technical teams for fairly simple queries."
+msgstr ""
+
+#: src/project/changelog.md:1014
+msgid ""
+"Here's our current [Roadmap](https://prql-lang.org/roadmap/) and our "
+"[Milestones.](https://github.com/PRQL/prql/milestones)"
+msgstr ""
+
+#: src/project/changelog.md:1017
+msgid "Our immediate focus for the code is on:"
+msgstr ""
+
+#: src/project/changelog.md:1019
+msgid ""
+"Building out the next few big features, including [types](https://github.com/"
+"PRQL/prql/pull/1964) and [modules](https://github.com/PRQL/prql/pull/2129)."
+msgstr ""
+
+#: src/project/changelog.md:1022
+msgid ""
+"Ensuring our supported features feel extremely robust; resolving any "
+"[priority bugs](https://github.com/PRQL/prql/issues?"
+"q=is%3Aissue+is%3Aopen+label%3Abug+label%3Apriority)."
+msgstr ""
+
+#: src/project/changelog.md:1025
+msgid "We're also spending time thinking about:"
+msgstr ""
+
+#: src/project/changelog.md:1027
+msgid ""
+"Making it really easy to start using PRQL. We're doing that by building "
+"integrations with tools that folks already use; for example our VS Code "
+"extension & Jupyter integration. If there are tools you're familiar with "
+"that you think would be open to integrating with PRQL, please let us know in "
+"an issue."
+msgstr ""
+
+#: src/project/changelog.md:1032
+msgid ""
+"Making it easier to contribute to the compiler. We have a wide group of "
+"contributors to the project, but contributions to the compiler itself are "
+"quite concentrated. We're keen to expand this; [\\#1840](https://github.com/"
+"PRQL/prql/issues/1840) for feedback."
+msgstr ""
+
+#: src/project/changelog.md:1039
+msgid ""
+"The release has 131 commits from 10 contributors. Particular credit goes to "
+"to @eitsupi & @jelenkee, who have made significant contributions, and "
+"@vanillajonathan, whose prolific contribution include our growing language "
+"bindings."
+msgstr ""
+
+#: src/project/changelog.md:1048
+msgid ""
+"`prqlc compile` adds `--color` & `--include-signature-comment` options. "
+"(@max-sixty, #2267)"
+msgstr ""
+
+#: src/project/changelog.md:1053
+msgid ""
+"Added the PRQL snippets from the book to the [Playground](https://prql-lang."
+"org/playground/) (@jelenkee, #2197)"
+msgstr ""
+
+#: src/project/changelog.md:1058
+msgid ""
+"_Breaking_: The `compile` function's `Options` now includes a `color` "
+"member, which determines whether error messages use ANSI color codes. This "
+"is technically a breaking change to the API. (@max-sixty, #2251)"
+msgstr ""
+
+#: src/project/changelog.md:1061
+msgid ""
+"The `Error` struct now exposes the `MessageKind` enum. (@vanillajonathan, "
+"\\#2307)"
+msgstr ""
+
+#: src/project/changelog.md:1063
+msgid ""
+"Integration tests run in CI with DuckDB, SQLite, PostgreSQL, MySQL and SQL "
+"Server (@jelenkee, #2286)"
+msgstr ""
+
+#: src/project/changelog.md:1068
+msgid "@k-nut, with #2294"
+msgstr ""
+
+#: src/project/changelog.md:1070
+msgid "0.6.1 — 2023-03-12"
+msgstr ""
+
+#: src/project/changelog.md:1072
+msgid ""
+"0.6.1 is a small release containing an internal refactoring and improved "
+"bindings for C, PHP & .NET."
+msgstr ""
+
+#: src/project/changelog.md:1075
+msgid "This release has 54 commits from 6 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:1079
+msgid ""
+"No longer incorrectly compile to `DISTINCT` when a `take 1` refers to a "
+"different set of columns than are in the `group`. (@max-sixty, with thanks "
+"to @cottrell, #2109)"
+msgstr ""
+
+#: src/project/changelog.md:1082
+msgid ""
+"The version specification of the dependency Chumsky was bumped from `0.9.0` "
+"to `0.9.2`. `0.9.0` has a bug that causes an infinite loop. (@eitsupi, #2110)"
+msgstr ""
+
+#: src/project/changelog.md:1087
+msgid ""
+"Add a policy for which bindings are supported / unsupported / nascent. See "
+"<https://prql-lang.org/book/project/bindings/index.html> for more details "
+"(@max-sixty, #2062) (@max-sixty, #2062)"
+msgstr ""
+
+#: src/project/changelog.md:1093
+msgid "\\[prql-lib\\] Added C++ header file. (@vanillajonathan, #2126)"
+msgstr ""
+
+#: src/project/changelog.md:1097
+msgid ""
+"Many of the items that were in the root of the repo have been aggregated "
+"into `web` & `bindings`, simplifying the repo's structure. There's also "
+"`grammars` & `packages` (@max-sixty, #2135, #2117, #2121)."
+msgstr ""
+
+#: src/project/changelog.md:1101
+msgid "0.6.0 — 2023-03-08"
+msgstr ""
+
+#: src/project/changelog.md:1103
+msgid ""
+"0.6.0 introduces a rewritten parser, giving us the ability to dramatically "
+"improve error messages, renames `switch` to `case` and includes lots of "
+"minor improvements and fixes. It also introduces `loop`, which compiles to "
+"`WITH RECURSIVE`, as a highly experimental feature."
+msgstr ""
+
+#: src/project/changelog.md:1108
+msgid ""
+"There are a few cases of breaking changes, including switching `switch` to "
+"`case`, in case that's confusing. There are also some minor parsing changes "
+"outlined below."
+msgstr ""
+
+#: src/project/changelog.md:1112
+msgid "This release has 108 commits from 11 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:1116
+msgid ""
+"Add a (highly experimental) `loop` language feature, which translates to "
+"`WITH RECURSIVE`. We expect changes and refinements in upcoming releases. "
+"(#1642, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1119
+msgid ""
+"Rename the experimental `switch` function to `case` given it more closely "
+"matches the traditional semantics of `case`. (@max-sixty, #2036)"
+msgstr ""
+
+#: src/project/changelog.md:1121
+msgid ""
+"Change the `case` syntax to use `=>` instead of `->` to distinguish it from "
+"function syntax."
+msgstr ""
+
+#: src/project/changelog.md:1123
+msgid "Convert parser from pest to Chumsky (@aljazerzen, #1818)"
+msgstr ""
+
+#: src/project/changelog.md:1124
+msgid ""
+"Improved error messages, and the potential to make even better in the "
+"future. Many of these improvements come from error recovery."
+msgstr ""
+
+#: src/project/changelog.md:1126
+msgid "String escapes (`\\n \\t`)."
+msgstr ""
+
+#: src/project/changelog.md:1127
+msgid "Raw strings that don't escape backslashes."
+msgstr ""
+
+#: src/project/changelog.md:1128
+msgid ""
+"String interpolations can only contain identifiers and not any expression."
+msgstr ""
+
+#: src/project/changelog.md:1129
+msgid ""
+"Operator associativity has been changed from right-to-left to left-to-right "
+"to be more similar to other conventional languages."
+msgstr ""
+
+#: src/project/changelog.md:1131
+msgid ""
+"`and` now has a higher precedence than `or` (of same reason as the previous "
+"point)."
+msgstr ""
+
+#: src/project/changelog.md:1133
+msgid "Dates, times and timestamps have stricter parsing rules."
+msgstr ""
+
+#: src/project/changelog.md:1134
+msgid "`let`, `func`, `prql`, `case` are now treated as keywords."
+msgstr ""
+
+#: src/project/changelog.md:1135
+msgid "Float literals without fraction part are not allowed anymore (`1.`)."
+msgstr ""
+
+#: src/project/changelog.md:1136
+msgid ""
+"Add a `--format` option to `prqlc parse` which can return the AST in YAML "
+"(@max-sixty, #1962)"
+msgstr ""
+
+#: src/project/changelog.md:1138
+msgid "Add a new subcommand `prqlc jinja`. (@aljazerzen, #1722)"
+msgstr ""
+
+#: src/project/changelog.md:1139
+msgid ""
+"_Breaking_: prql-compiler no longer passes text containing `{{` & `}}` "
+"through to the output. (@aljazerzen, #1722)"
+msgstr ""
+
+#: src/project/changelog.md:1142
+msgid "For example, the following PRQL query"
+msgstr ""
+
+#: src/project/changelog.md:1148
+msgid ""
+"was compiled to the following SQL previously, but now it raises an error."
+msgstr ""
+
+#: src/project/changelog.md:1157
+msgid "This pass-through feature existed for integration with dbt."
+msgstr ""
+
+#: src/project/changelog.md:1159
+msgid ""
+"We're again considering how to best integrate with dbt, and this change is "
+"based on the idea that the jinja macro should run before the PRQL compiler."
+msgstr ""
+
+#: src/project/changelog.md:1162
+msgid ""
+"If you're interested in dbt integration, subscribe or 👍 to <https://github."
+"com/dbt-labs/dbt-core/pull/5982>."
+msgstr ""
+
+#: src/project/changelog.md:1165
+msgid ""
+"A new compile target `\"sql.any\"`. When `\"sql.any\"` is used as the target "
+"of the compile function's option, the target contained in the query header "
+"will be used. (@aljazerzen, #1995)"
+msgstr ""
+
+#: src/project/changelog.md:1168
+msgid "Support for SQL parameters with similar syntax (#1957, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1169
+msgid ""
+"Allow `:` to be elided in timezones, such as `0800` in "
+"`@2020-01-01T13:19:55-0800` (@max-sixty, #1991)."
+msgstr ""
+
+#: src/project/changelog.md:1171
+msgid ""
+"Add `std.upper` and `std.lower` functions for changing string casing "
+"(@Jelenkee, #2019)."
+msgstr ""
+
+#: src/project/changelog.md:1176
+msgid ""
+"`prqlc compile` returns a non-zero exit code for invalid queries. (@max-"
+"sixty, \\#1924)"
+msgstr ""
+
+#: src/project/changelog.md:1178
+msgid ""
+"Identifiers can contain any alphabetic unicode characters (@max-sixty, #2003)"
+msgstr ""
+
+#: src/project/changelog.md:1182
+msgid "Operator precedence (@aljazerzen, #1818)"
+msgstr ""
+
+#: src/project/changelog.md:1183
+msgid ""
+"Error messages for invalid queries are displayed in the book (@max-sixty, "
+"\\#2015)"
+msgstr ""
+
+#: src/project/changelog.md:1188
+msgid "\\[prql-php\\] Added PHP bindings. (@vanillajonathan, #1860)"
+msgstr ""
+
+#: src/project/changelog.md:1189
+msgid "\\[prql-dotnet\\] Added .NET bindings. (@vanillajonathan, #1917)"
+msgstr ""
+
+#: src/project/changelog.md:1190
+msgid "\\[prql-lib\\] Added C header file. (@vanillajonathan, #1879)"
+msgstr ""
+
+#: src/project/changelog.md:1191
+msgid ""
+"Added a workflow building a `.deb` on each release. (Note that it's not yet "
+"published on each release). (@vanillajonathan, #1883)"
+msgstr ""
+
+#: src/project/changelog.md:1193
+msgid ""
+"Added a workflow building a `.rpm` on each release. (Note that it's not yet "
+"published on each release). (@vanillajonathan, #1918)"
+msgstr ""
+
+#: src/project/changelog.md:1195
+msgid ""
+"Added a workflow building a Snap package on each release. (@vanillajonathan, "
+"\\#1881)"
+msgstr ""
+
+#: src/project/changelog.md:1200
+msgid ""
+"Test that the output of our nascent autoformatter can be successfully "
+"compiled into SQL. Failing examples are now clearly labeled. (@max-sixty, "
+"#2016)"
+msgstr ""
+
+#: src/project/changelog.md:1202
+msgid ""
+"Definition files have been added to configure [Dev Containers](https://"
+"containers.dev/) for Rust development environment. (@eitsupi, #1893, #2025, "
+"#2028)"
+msgstr ""
+
+#: src/project/changelog.md:1208
+msgid "@linux-china, with #1971"
+msgstr ""
+
+#: src/project/changelog.md:1209
+msgid "@Jelenkee, with #2019"
+msgstr ""
+
+#: src/project/changelog.md:1211
+msgid "0.5.2 — 2023-02-18"
+msgstr ""
+
+#: src/project/changelog.md:1213
+msgid ""
+"0.5.2 is a tiny release to fix an build issue in yesterday's `prql-js` 0.5.1 "
+"release."
+msgstr ""
+
+#: src/project/changelog.md:1216
+msgid "This release has 7 commits from 2 contributors."
+msgstr ""
+
+#: src/project/changelog.md:1220
+msgid "@matthias-Q, with #1873"
+msgstr ""
+
+#: src/project/changelog.md:1222
+msgid "0.5.1 — 2023-02-17"
+msgstr ""
+
+#: src/project/changelog.md:1224
+msgid ""
+"0.5.1 contains a few fixes, and another change to how bindings handle "
+"default target / dialects."
+msgstr ""
+
+#: src/project/changelog.md:1227
+msgid "This release has 53 commits from 7 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:1231
+msgid ""
+"Delegate dividing literal integers to the DB. Previously integer division "
+"was executed during PRQL compilation, which could be confusing given that "
+"behavior is different across DBs. Other arithmetic operations are still "
+"executed during compilation. (@max-sixty, #1747)"
+msgstr ""
+
+#: src/project/changelog.md:1238
+msgid "Add docs on the `from_text` transform (@max-sixty, #1756)"
+msgstr ""
+
+#: src/project/changelog.md:1242
+msgid ""
+"\\[prql-js\\] Default compile target changed from `Sql(Generic)` to "
+"`Sql(None)`. (@eitsupi, #1856)"
+msgstr ""
+
+#: src/project/changelog.md:1244
+msgid ""
+"\\[prql-python\\] Compilation options can now be specified from Python. "
+"(@eitsupi, \\#1807)"
+msgstr ""
+
+#: src/project/changelog.md:1246
+msgid ""
+"\\[prql-python\\] Default compile target changed from `Sql(Generic)` to "
+"`Sql(None)`. (@eitsupi, #1861)"
+msgstr ""
+
+#: src/project/changelog.md:1251
+msgid "@vanillajonathan, with #1766"
+msgstr ""
+
+#: src/project/changelog.md:1253
+msgid "0.5.0 — 2023-02-08"
+msgstr ""
+
+#: src/project/changelog.md:1255
+msgid ""
+"0.5.0 contains a few fixes, some improvements to bindings, lots of docs "
+"improvements, and some work on forthcoming features. It contains one "
+"breaking change in the compiler's `Options` interface."
+msgstr ""
+
+#: src/project/changelog.md:1259
+msgid "This release has 74 commits from 12 contributors. Selected changes:"
+msgstr ""
+
+#: src/project/changelog.md:1263
+msgid ""
+"Change public API to use target instead of dialect in preparation for "
+"feature work (@aljazerzen, #1684)"
+msgstr ""
+
+#: src/project/changelog.md:1266
+msgid ""
+"`prqlc watch` command which watches filesystem for changes and compiles ."
+"prql files to .sql (@aljazerzen, #1708)"
+msgstr ""
+
+#: src/project/changelog.md:1271
+msgid ""
+"Support double brackets in s-strings which aren't symmetric (@max-sixty, "
+"\\#1650)"
+msgstr ""
+
+#: src/project/changelog.md:1273
+msgid "Support Postgres's Interval syntax (@max-sixty, #1649)"
+msgstr ""
+
+#: src/project/changelog.md:1274
+msgid "Fixed tests for `prql-elixir` with macOS (@kasvith, #1707)"
+msgstr ""
+
+#: src/project/changelog.md:1278
+msgid ""
+"Add a documentation test for prql-compiler, update prql-compiler README, and "
+"include the README in the prql book section for Rust bindings. The code "
+"examples in the README are included and tested as doctests in the prql-"
+"compiler (@nkicg6, #1679)"
+msgstr ""
+
+#: src/project/changelog.md:1285
+msgid ""
+"Add tests for all PRQL website examples to prql-python to ensure compiled "
+"results match expected SQL (@nkicg6, #1719)"
+msgstr ""
+
+#: src/project/changelog.md:1290
+msgid "@ruslandoga, with #1628"
+msgstr ""
+
+#: src/project/changelog.md:1291
+msgid "@RalfNorthman, with #1632"
+msgstr ""
+
+#: src/project/changelog.md:1292
+msgid "@nicot, with #1662"
+msgstr ""
+
+#: src/project/changelog.md:1294
+msgid "0.4.2 — 2023-01-25"
+msgstr ""
+
+#: src/project/changelog.md:1298
+msgid ""
+"New `from_text format-arg string-arg` function that supports JSON and CSV "
+"formats. _format-arg_ can be `format:csv` or `format:json`. _string-arg_ can "
+"be a string in any format. (@aljazerzen & @snth, #1514)"
+msgstr ""
+
+#: src/project/changelog.md:1302
+msgid ""
+"```prql no-eval\n"
+"from_text format:csv \"\"\"\n"
+"a,b,c\n"
+"1,2,3\n"
+"4,5,6\n"
+"\"\"\"\n"
+"```"
+msgstr ""
+
+#: src/project/changelog.md:1310
+msgid ""
+"```prql no-eval\n"
+"from_text format:json '''\n"
+"    [{\"a\": 1, \"b\": \"x\", \"c\": false }, {\"a\": 4, \"b\": \"y\", "
+"\"c\": null }]\n"
+"'''\n"
+"```"
+msgstr ""
+
+#: src/project/changelog.md:1316
+msgid ""
+"```prql no-eval\n"
+"from_text format:json '''{\n"
+"    \"columns\": [\"a\", \"b\", \"c\"],\n"
+"    \"data\": [\n"
+"        [1, \"x\", false],\n"
+"        [4, \"y\", null]\n"
+"    ]\n"
+"}'''\n"
+"```"
+msgstr ""
+
+#: src/project/changelog.md:1326
+msgid "For now, the argument is limited to string constants."
+msgstr ""
+
+#: src/project/changelog.md:1328
+msgid "**Fixes**"
+msgstr ""
+
+#: src/project/changelog.md:1330
+msgid "Export constructor for SQLCompileOptions (@bcho, #1621)"
+msgstr ""
+
+#: src/project/changelog.md:1331
+msgid "Remove backticks in count_distinct (@aljazerzen, #1611)"
+msgstr ""
+
+#: src/project/changelog.md:1333
+msgid "**New Contributors**"
+msgstr ""
+
+#: src/project/changelog.md:1335
+msgid "@1Kinoti, with #1596"
+msgstr ""
+
+#: src/project/changelog.md:1336
+msgid "@veenaamb, with #1614"
+msgstr ""
+
+#: src/project/changelog.md:1338
+msgid "0.4.1 — 2023-01-18"
+msgstr ""
+
+#: src/project/changelog.md:1340
+msgid ""
+"0.4.1 comes a few days after 0.4.0, with a couple of features and the "
+"release of `prqlc`, the CLI crate."
+msgstr ""
+
+#: src/project/changelog.md:1343
+msgid "0.4.1 has 35 commits from 6 contributors."
+msgstr ""
+
+#: src/project/changelog.md:1347
+msgid "Inferred column names include the relation name (@aljazerzen, #1550):"
+msgstr ""
+
+#: src/project/changelog.md:1355
+msgid ""
+"Quoted identifiers such as `dir/*.parquet` are passed through to SQL. (@max-"
+"sixty, #1516)."
+msgstr ""
+
+#: src/project/changelog.md:1358
+msgid ""
+"The CLI is installed with `cargo install prqlc`. The binary was renamed in "
+"0.4.0 but required an additional `--features` flag, which has been removed "
+"in favor of this new crate (@max-sixty & @aljazerzen, #1549)."
+msgstr ""
+
+#: src/project/changelog.md:1364
+msgid "@fool1280, with #1554"
+msgstr ""
+
+#: src/project/changelog.md:1365
+msgid "@nkicg6, with #1567"
+msgstr ""
+
+#: src/project/changelog.md:1367
+msgid "0.4.0 — 2023-01-15"
+msgstr ""
+
+#: src/project/changelog.md:1369
+msgid ""
+"0.4.0 brings lots of new features including `case`, `select ![]` and numbers "
+"with underscores. We have initial (unpublished) bindings to Elixir. And "
+"there's the usual improvements to fixes & documentation (only a minority are "
+"listed below in this release)."
+msgstr ""
+
+#: src/project/changelog.md:1374
+msgid ""
+"0.4.0 also has some breaking changes: `table` is `let`, `dialect` is renamed "
+"to `target`, and the compiler's API has changed. Full details below."
+msgstr ""
+
+#: src/project/changelog.md:1379
+msgid ""
+"Defining a temporary table is now expressed as `let` rather than `table` "
+"(@aljazerzen, #1315). See the [tables docs](https://prql-lang.org/book/"
+"reference/declarations/variables.html) for details."
+msgstr ""
+
+#: src/project/changelog.md:1384
+msgid ""
+"_Experimental:_ The [`case`](https://prql-lang.org/book/reference/syntax/"
+"case.html) function sets a variable to a value based on one of several "
+"expressions (@aljazerzen, \\#1278)."
+msgstr ""
+
+#: src/project/changelog.md:1389
+msgid ""
+"```prql no-eval\n"
+"derive var = case [\n"
+"  score <= 10 -> \"low\",\n"
+"  score <= 30 -> \"medium\",\n"
+"  score <= 70 -> \"high\",\n"
+"  true -> \"very high\",\n"
+"]\n"
+"```"
+msgstr ""
+
+#: src/project/changelog.md:1398
+msgid "...compiles to:"
+msgstr ""
+
+#: src/project/changelog.md:1404
+msgid "'low'"
+msgstr ""
+
+#: src/project/changelog.md:1405
+msgid "'medium'"
+msgstr ""
+
+#: src/project/changelog.md:1406
+msgid "'high'"
+msgstr ""
+
+#: src/project/changelog.md:1407
+msgid "'very high'"
+msgstr ""
+
+#: src/project/changelog.md:1413
+msgid ""
+"Check out the [`case` docs](https://prql-lang.org/book/reference/syntax/case."
+"html) for more details."
+msgstr ""
+
+#: src/project/changelog.md:1417
+msgid ""
+"_Experimental:_ Columns can be excluded by name with `select` (@aljazerzen, "
+"\\#1329)"
+msgstr ""
+
+#: src/project/changelog.md:1425
+msgid ""
+"_Experimental:_ `append` transform, equivalent to `UNION ALL` in SQL. "
+"(@aljazerzen, #894)"
+msgstr ""
+
+#: src/project/changelog.md:1433
+msgid ""
+"Check out the [`append` docs](https://prql-lang.org/book/reference/stdlib/"
+"transforms/append.html) for more details."
+msgstr ""
+
+#: src/project/changelog.md:1437
+msgid ""
+"Numbers can contain underscores, which can make reading long numbers easier "
+"(@max-sixty, #1467):"
+msgstr ""
+
+#: src/project/changelog.md:1448
+msgid ""
+"The SQL output contains a comment with the PRQL compiler version "
+"(@aljazerzen, \\#1322)"
+msgstr ""
+
+#: src/project/changelog.md:1450
+msgid ""
+"`dialect` is renamed to `target`, and its values are prefixed with `sql.` "
+"(@max-sixty, #1388); for example:"
+msgstr ""
+
+#: src/project/changelog.md:1459
+msgid ""
+"This gives us the flexibility to target other languages than SQL in the long "
+"term."
+msgstr ""
+
+#: src/project/changelog.md:1462
+msgid ""
+"Tables definitions can contain a bare s-string (@max-sixty, #1422), which "
+"enables us to include a full CTE of SQL, for example:"
+msgstr ""
+
+#: src/project/changelog.md:1465
+msgid ""
+"```prql no-eval\n"
+"let grouping = s\"\"\"\n"
+"  SELECT SUM(a)\n"
+"  FROM tbl\n"
+"  GROUP BY\n"
+"    GROUPING SETS\n"
+"    ((b, c, d), (d), (b, d))\n"
+"\"\"\"\n"
+"```"
+msgstr ""
+
+#: src/project/changelog.md:1475
+msgid "Ranges supplied to `in` can be half-open (@aljazerzen, #1330)."
+msgstr ""
+
+#: src/project/changelog.md:1477
+msgid ""
+"The crate's external API has changed to allow for compiling to intermediate "
+"representation. This also affects bindings. See [`prql-compiler` docs]"
+"(https://docs.rs/prql-compiler/latest/prql_compiler/) for more details."
+msgstr ""
+
+#: src/project/changelog.md:1484
+msgid "\\[This release, the changelog only contains a subset of fixes\\]"
+msgstr ""
+
+#: src/project/changelog.md:1486
+msgid "Allow interpolations in table s-strings (@aljazerzen, #1337)"
+msgstr ""
+
+#: src/project/changelog.md:1490
+msgid ""
+"\\[This release, the changelog only contains a subset of documentation "
+"improvements\\]"
+msgstr ""
+
+#: src/project/changelog.md:1493
+msgid ""
+"Add docs on aliases in [Select](https://prql-lang.org/book/reference/stdlib/"
+"transforms/select.html)"
+msgstr ""
+
+#: src/project/changelog.md:1495
+msgid "Add JS template literal and multiline example (@BCsabaEngine, #1432)"
+msgstr ""
+
+#: src/project/changelog.md:1496
+msgid "JS template literal and multiline example (@BCsabaEngine, #1432)"
+msgstr ""
+
+#: src/project/changelog.md:1497
+msgid "Improve prql-compiler docs & examples (@aljazerzen, #1515)"
+msgstr ""
+
+#: src/project/changelog.md:1498
+msgid "Fix string highlighting in book (@max-sixty, #1264)"
+msgstr ""
+
+#: src/project/changelog.md:1502
+msgid ""
+"The playground allows querying some sample data. As before, the result "
+"updates on every keystroke. (@aljazerzen, #1305)"
+msgstr ""
+
+#: src/project/changelog.md:1507
+msgid ""
+"\\[This release, the changelog only contains a subset of integration "
+"improvements\\]"
+msgstr ""
+
+#: src/project/changelog.md:1509
+msgid ""
+"Added Elixir integration exposing PRQL functions as NIFs (#1500, @kasvith)"
+msgstr ""
+
+#: src/project/changelog.md:1510
+msgid "Exposed Elixir flavor with exceptions (#1513, @kasvith)"
+msgstr ""
+
+#: src/project/changelog.md:1511
+msgid "Rename `prql-compiler` binary to `prqlc` (@aljazerzen #1515)"
+msgstr ""
+
+#: src/project/changelog.md:1515
+msgid ""
+"\\[This release, the changelog only contains a subset of internal changes\\]"
+msgstr ""
+
+#: src/project/changelog.md:1517
+msgid "Add parsing for negative select (@max-sixty, #1317)"
+msgstr ""
+
+#: src/project/changelog.md:1518
+msgid "Allow for additional builtin functions (@aljazerzen, #1325)"
+msgstr ""
+
+#: src/project/changelog.md:1519
+msgid "Add an automated check for typos (@max-sixty, #1421)"
+msgstr ""
+
+#: src/project/changelog.md:1520
+msgid "Add tasks for running playground & book (@max-sixty, #1265)"
+msgstr ""
+
+#: src/project/changelog.md:1521
+msgid "Add tasks for running tests on every file change (@max-sixty, #1380)"
+msgstr ""
+
+#: src/project/changelog.md:1523
+msgid "**New contributors**:"
+msgstr ""
+
+#: src/project/changelog.md:1525
+msgid "@EArazli, with #1359"
+msgstr ""
+
+#: src/project/changelog.md:1526
+msgid "@boramalper, with #1362"
+msgstr ""
+
+#: src/project/changelog.md:1527
+msgid "@allurefx, with #1377"
+msgstr ""
+
+#: src/project/changelog.md:1528
+msgid "@bcho, with #1375"
+msgstr ""
+
+#: src/project/changelog.md:1529
+msgid "@JettChenT, with #1385"
+msgstr ""
+
+#: src/project/changelog.md:1530
+msgid "@BlurrechDev, with #1411"
+msgstr ""
+
+#: src/project/changelog.md:1531
+msgid "@BCsabaEngine, with #1432"
+msgstr ""
+
+#: src/project/changelog.md:1532
+msgid "@kasvith, with #1500"
+msgstr ""
+
+#: src/project/changelog.md:1534
+msgid "0.3.1 - 2022-12-03"
+msgstr ""
+
+#: src/project/changelog.md:1536
+msgid "0.3.1 brings a couple of small improvements and fixes."
+msgstr ""
+
+#: src/project/changelog.md:1540
+msgid "Support for using s-strings for `from` (#1197, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1542
+msgid ""
+"```prql no-eval\n"
+"from s\"SELECT * FROM employees WHERE foo > 5\"\n"
+"```"
+msgstr ""
+
+#: src/project/changelog.md:1546
+msgid ""
+"Helpful error message when referencing a table in an s-string (#1203, "
+"@aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1551
+msgid "Multiple columns with same name created (#1211, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1552
+msgid "Renaming via select breaks preceding sorting (#1204, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1553
+msgid "Same column gets selected multiple times (#1186, @mklopets)"
+msgstr ""
+
+#: src/project/changelog.md:1557
+msgid ""
+"Update Github Actions and Workflows to current version numbers (and avoid "
+"using Node 12)"
+msgstr ""
+
+#: src/project/changelog.md:1560
+msgid "0.3.0 — 2022-11-29"
+msgstr ""
+
+#: src/project/changelog.md:1562
+msgid ""
+"🎉 0.3.0 is the biggest ever change in PRQL's compiler, rewriting much of "
+"the internals: the compiler now has a semantic understanding of expressions, "
+"including resolving names & building a DAG of column lineage 🎉."
+msgstr ""
+
+#: src/project/changelog.md:1566
+msgid ""
+"While the immediate changes to the language are modest — some long-running "
+"bugs are fixed — this unlocks the development of many of the project's long-"
+"term priorities, such as type-checking & auto-complete. And it simplifies "
+"the building of our next language features, such as match-case expressions, "
+"unions & table expressions."
+msgstr ""
+
+#: src/project/changelog.md:1572
+msgid ""
+"@aljazerzen has (mostly single-handedly) done this work over the past few "
+"months. The project owes him immense appreciation."
+msgstr ""
+
+#: src/project/changelog.md:1575
+msgid "**Breaking changes**:"
+msgstr ""
+
+#: src/project/changelog.md:1577
+msgid "We've had to make some modest breaking changes for 0.3:"
+msgstr ""
+
+#: src/project/changelog.md:1579
+msgid ""
+"_Pipelines must start with `from`_. For example, a pipeline with only "
+"`derive foo = 5`, with no `from` transform, is no longer valid. Depending on "
+"demand for this feature, it would be possible to add this back."
+msgstr ""
+
+#: src/project/changelog.md:1583
+msgid ""
+"_Shared column names now require `==` in a join_. The existing approach is "
+"ambiguous to the compiler — `id` in the following example could be a boolean "
+"column."
+msgstr ""
+
+#: src/project/changelog.md:1593
+msgid ""
+"_Table references containing periods must be surrounded by backticks_. For "
+"example, when referencing a schema name:"
+msgstr ""
+
+#: src/project/changelog.md:1603
+msgid "Change self equality op to `==` (#1176, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1604
+msgid "Add logging (@aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1605
+msgid "Add clickhouse dialect (#1090, @max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1606
+msgid "Allow namespaces & tables to contain `.` (#1079, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1610
+msgid ""
+"Deduplicate column appearing in `SELECT` multiple times (#1186, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1611
+msgid "Fix uppercase table names (#1184, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1612
+msgid "Omit table name when only one ident in SELECT (#1094, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1616
+msgid "Add chapter on semantics' internals (@aljazerzen, #1028)"
+msgstr ""
+
+#: src/project/changelog.md:1617
+msgid "Add note about nesting variables in s-strings (@max-sixty, #1163)"
+msgstr ""
+
+#: src/project/changelog.md:1621
+msgid "Flatten group and window (#1120, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1622
+msgid "Split ast into expr and stmt (@aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1623
+msgid "Refactor associativity (#1156, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1624
+msgid "Rename Ident constructor to `from_name` (#1084, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1625
+msgid "Refactor rq folding (#1177, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1626
+msgid "Add tests for reported bugs fixes in semantic (#1174, @aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1627
+msgid "Bump duckdb from 0.5.0 to 0.6.0 (#1132)"
+msgstr ""
+
+#: src/project/changelog.md:1628
+msgid "Bump once_cell from 1.15.0 to 1.16.0 (#1101)"
+msgstr ""
+
+#: src/project/changelog.md:1629
+msgid "Bump pest from 2.4.0 to 2.5.0 (#1161)"
+msgstr ""
+
+#: src/project/changelog.md:1630
+msgid "Bump pest_derive from 2.4.0 to 2.5.0 (#1179)"
+msgstr ""
+
+#: src/project/changelog.md:1631
+msgid "Bump sqlparser from 0.25.0 to 0.27.0 (#1131)"
+msgstr ""
+
+#: src/project/changelog.md:1632
+msgid "Bump trash from 2.1.5 to 3.0.0 (#1178)"
+msgstr ""
+
+#: src/project/changelog.md:1634
+msgid "0.2.11 — 2022-11-20"
+msgstr ""
+
+#: src/project/changelog.md:1636
+msgid "0.2.11 contains a few helpful fixes."
+msgstr ""
+
+#: src/project/changelog.md:1638
+msgid ""
+"Work continues on our `semantic` refactor — look out for 0.3.0 soon! Many "
+"thanks to @aljazerzen for his continued contributions to this."
+msgstr ""
+
+#: src/project/changelog.md:1641
+msgid ""
+"Note: 0.2.10 was skipped due to this maintainer's inability to read his own "
+"docs on bumping versions..."
+msgstr ""
+
+#: src/project/changelog.md:1646
+msgid ""
+"Detect when compiler version is behind query version (@MarinPostma, #1058)"
+msgstr ""
+
+#: src/project/changelog.md:1647
+msgid "Add `__version__` to prql-python package (@max-sixty, #1034)"
+msgstr ""
+
+#: src/project/changelog.md:1651
+msgid ""
+"Fix nesting of expressions with equal binding strength and left "
+"associativity, such as `a - (b - c)` (@max-sixty, #1136)"
+msgstr ""
+
+#: src/project/changelog.md:1653
+msgid "Retain floats without significant digits as floats (@max-sixty, #1141)"
+msgstr ""
+
+#: src/project/changelog.md:1657
+msgid "Add documentation of `prqlr` bindings (@eitsupi, #1091)"
+msgstr ""
+
+#: src/project/changelog.md:1658
+msgid "Add a 'Why PRQL' section to the website (@max-sixty, #1098)"
+msgstr ""
+
+#: src/project/changelog.md:1659
+msgid "Add @snth to core-devs (@max-sixty, #1050)"
+msgstr ""
+
+#: src/project/changelog.md:1663
+msgid "Use workspace versioning (@max-sixty, #1065)"
+msgstr ""
+
+#: src/project/changelog.md:1665
+msgid "0.2.9 — 2022-10-14"
+msgstr ""
+
+#: src/project/changelog.md:1667
+msgid "0.2.9 is a small release containing a bug fix for empty strings."
+msgstr ""
+
+#: src/project/changelog.md:1671
+msgid "Fix parsing of empty strings (@aljazerzen, #1024)"
+msgstr ""
+
+#: src/project/changelog.md:1673
+msgid "0.2.8 — 2022-10-10"
+msgstr ""
+
+#: src/project/changelog.md:1675
+msgid ""
+"0.2.8 is another modest release with some fixes, doc improvements, bindings "
+"improvements, and lots of internal changes. Note that one of the fixes "
+"causes the behavior of `round` and `cast` to change slightly — though it's "
+"handled as a fix rather than a breaking change in semantic versioning."
+msgstr ""
+
+#: src/project/changelog.md:1682
+msgid ""
+"Change order of the `round` & `cast` function parameters to have the column "
+"last; for example `round 2 foo_col` / `cast int foo`. This is consistent "
+"with other functions, and makes piping possible:"
+msgstr ""
+
+#: src/project/changelog.md:1695
+msgid "Split `DEVELOPMENT.md` from `CONTRIBUTING.md` (@richb-hanover, #1010)"
+msgstr ""
+
+#: src/project/changelog.md:1696
+msgid "Make s-strings more prominent in website intro (@max-sixty, #982)"
+msgstr ""
+
+#: src/project/changelog.md:1700
+msgid "Add GitHub star count to website (@max-sixty, #990)"
+msgstr ""
+
+#: src/project/changelog.md:1704
+msgid ""
+"Expose a shortened error message, in particular for the VS Code extension "
+"(@aljazerzen, #1005)"
+msgstr ""
+
+#: src/project/changelog.md:1709
+msgid "Specify 1.60.0 as minimum Rust version (@max-sixty, #1011)"
+msgstr ""
+
+#: src/project/changelog.md:1710
+msgid "Remove old `wee-alloc` code (@max-sixty, #1013)"
+msgstr ""
+
+#: src/project/changelog.md:1711
+msgid "Upgrade clap to version 4 (@aj-bagwell, #1004)"
+msgstr ""
+
+#: src/project/changelog.md:1712
+msgid "Improve book-building script in Taskfile (@max-sixty, #989)"
+msgstr ""
+
+#: src/project/changelog.md:1713
+msgid ""
+"Publish website using an artifact rather than a long-lived branch (@max-"
+"sixty, \\#1009)"
+msgstr ""
+
+#: src/project/changelog.md:1716
+msgid "0.2.7 — 2022-09-17"
+msgstr ""
+
+#: src/project/changelog.md:1718
+msgid ""
+"0.2.7 is a fairly modest release, six weeks after 0.2.6. We have some more "
+"significant features, including a `union` operator and an overhaul of our "
+"type system, as open PRs which will follow in future releases."
+msgstr ""
+
+#: src/project/changelog.md:1722
+msgid ""
+"We also have new features in the [VS Code extension](https://github.com/PRQL/"
+"prql-code), courtesy of @jiripospisil, including a live output panel."
+msgstr ""
+
+#: src/project/changelog.md:1728
+msgid ""
+"`range_of_ranges` checks the Range end is smaller than its start (@shuozeli, "
+"\\#946)"
+msgstr ""
+
+#: src/project/changelog.md:1733
+msgid "Improve various docs (@max-sixty, #974, #971, #972, #970, #925)"
+msgstr ""
+
+#: src/project/changelog.md:1734
+msgid "Add reference to EdgeDB's blog post in our FAQ (@max-sixty, #922)"
+msgstr ""
+
+#: src/project/changelog.md:1735
+msgid "Fix typos (@kianmeng, #943)"
+msgstr ""
+
+#: src/project/changelog.md:1739
+msgid "Add `prql-lib`, enabling language bindings with `go` (@sigxcpu76, #923)"
+msgstr ""
+
+#: src/project/changelog.md:1740
+msgid "Fix line numbers in JS exceptions (@charlie-sanders, #929)"
+msgstr ""
+
+#: src/project/changelog.md:1744
+msgid ""
+"Lock the version of the rust-toolchain, with auto-updates (@max-sixty, #926, "
+"\\#927)"
+msgstr ""
+
+#: src/project/changelog.md:1747
+msgid "0.2.6 — 2022-08-05"
+msgstr ""
+
+#: src/project/changelog.md:1751
+msgid "Adjust `fmt` to only escape names when needed (@aljazerzen, #907)"
+msgstr ""
+
+#: src/project/changelog.md:1752
+msgid "Fix quoting on upper case `table` names (@max-sixty, #893)"
+msgstr ""
+
+#: src/project/changelog.md:1753
+msgid ""
+"Fix scoping of identical column names from multiple tables (@max-sixty, #908)"
+msgstr ""
+
+#: src/project/changelog.md:1754
+msgid "Fix parse error on newlines in a `table` (@sebastiantoh 🆕, #902)"
+msgstr ""
+
+#: src/project/changelog.md:1755
+msgid "Fix quoting of upper case table names (@max-sixty, #893)"
+msgstr ""
+
+#: src/project/changelog.md:1759
+msgid "Add docs on Architecture (@aljazerzen, #904)"
+msgstr ""
+
+#: src/project/changelog.md:1760
+msgid "Add Changelog (@max-sixty, #890 #891)"
+msgstr ""
+
+#: src/project/changelog.md:1764
+msgid "Start trial using Conventional Commits (@max-sixty, #889)"
+msgstr ""
+
+#: src/project/changelog.md:1765
+msgid "Add crates.io release workflow, docs (@max-sixty, #887)"
+msgstr ""
+
+#: src/project/changelog.md:1767
+msgid "0.2.5 - 2022-07-29"
+msgstr ""
+
+#: src/project/changelog.md:1769
+msgid "0.2.5 is a very small release following 0.2.4 yesterday. It includes:"
+msgstr ""
+
+#: src/project/changelog.md:1771
+msgid ""
+"Add the ability to represent single brackets in an s-string, with two "
+"brackets (#752, @max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1773
+msgid ""
+"Fix the \"Copy to Clipboard\" command in the Playground, for Firefox (#880, "
+"@mklopets)"
+msgstr ""
+
+#: src/project/changelog.md:1776
+msgid "0.2.4 - 2022-07-28"
+msgstr ""
+
+#: src/project/changelog.md:1778
+msgid ""
+"0.2.4 is a small release following 0.2.3 a few days ago. The 0.2.4 release "
+"includes:"
+msgstr ""
+
+#: src/project/changelog.md:1781
+msgid ""
+"Enrich our CLI, adding commands to get different stages of the compilation "
+"process (@aljazerzen , #863)"
+msgstr ""
+
+#: src/project/changelog.md:1783
+msgid ""
+"Fix multiple `take n` statements in a query, leading to duplicate proxy "
+"columns in generated SQL (@charlie-sanders)"
+msgstr ""
+
+#: src/project/changelog.md:1785
+msgid "Fix BigQuery quoting of identifiers in `SELECT` statements (@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1786
+msgid ""
+"Some internal changes — reorganize top-level functions (@aljazerzen), add a "
+"workflow to track our Rust compilation time (@max-sixty), simplify our "
+"simple prql-to-sql tests (@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1790
+msgid ""
+"Thanks to @ankane, `prql-compiler` is now available from homebrew core; "
+"`brew install prql-compiler`[^1]."
+msgstr ""
+
+#: src/project/changelog.md:1794
+msgid ""
+"    we still need to update docs and add a release workflow for this:\n"
+"    <https://github.com/PRQL/prql/issues/866>\n"
+"    "
+msgstr ""
+
+#: src/project/changelog.md:1797
+msgid "0.2.3 - 2022-07-24"
+msgstr ""
+
+#: src/project/changelog.md:1799
+msgid ""
+"A couple of weeks since the 0.2.2 release: we've squashed a few bugs, added "
+"some mid-sized features to the language, and made a bunch of internal "
+"improvements."
+msgstr ""
+
+#: src/project/changelog.md:1802
+msgid "The 0.2.3 release includes:"
+msgstr ""
+
+#: src/project/changelog.md:1804
+msgid ""
+"Allow for escaping otherwise-invalid identifiers (@aljazerzen & @max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1805
+msgid "Fix a bug around operator precedence (@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1806
+msgid "Add a section the book on the language bindings (@charlie-sanders)"
+msgstr ""
+
+#: src/project/changelog.md:1807
+msgid ""
+"Add tests for our `Display` representation while fixing some existing bugs. "
+"This is gradually becoming our code formatter (@arrizalamin)"
+msgstr ""
+
+#: src/project/changelog.md:1809
+msgid "Add a \"copy to clipboard\" button in the Playground (@mklopets)"
+msgstr ""
+
+#: src/project/changelog.md:1810
+msgid ""
+"Add lots of guidance to our `CONTRIBUTING.md` around our tests and process "
+"for merging (@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1812
+msgid ""
+"Add a `prql!` macro for parsing a prql query at compile time (@aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1813
+msgid "Add tests for `prql-js` (@charlie-sanders)"
+msgstr ""
+
+#: src/project/changelog.md:1814
+msgid ""
+"Add a `from_json` method for transforming json to a PRQL string "
+"(@arrizalamin)"
+msgstr ""
+
+#: src/project/changelog.md:1815
+msgid "Add a workflow to release `prql-java` to Maven (@doki23)"
+msgstr ""
+
+#: src/project/changelog.md:1816
+msgid ""
+"Enable running all tests from a PR by adding a `pr-run-all-tests` label "
+"(@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1818
+msgid "Have `cargo-release` to bump all crate & npm versions (@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1819
+msgid "Update `prql-js` to use the bundler build of `prql-js` (@mklopets)"
+msgstr ""
+
+#: src/project/changelog.md:1821
+msgid ""
+"As well as those contribution changes, thanks to those who've reported "
+"issues, such as @mklopets @huw @mm444 @ajfriend."
+msgstr ""
+
+#: src/project/changelog.md:1824
+msgid ""
+"From here, we're planning to continue squashing bugs (albeit more minor than "
+"those in this release), adding some features like `union`, while working on "
+"bigger issues such as type-inference."
+msgstr ""
+
+#: src/project/changelog.md:1828
+msgid ""
+"We're also going to document and modularize the compiler further. It's "
+"important that we give more people an opportunity to contribute to the guts "
+"of PRQL, especially given the number and enthusiasm of contributions to "
+"project in general — and it's not that easy to do so at the moment. While "
+"this is ongoing if anyone has something they'd like to work on in the more "
+"difficult parts of the compiler, let us know on GitHub or Discord, and we'd "
+"be happy to work together on it."
+msgstr ""
+
+#: src/project/changelog.md:1836
+msgid "Thank you!"
+msgstr ""
+
+#: src/project/changelog.md:1838
+msgid "0.2.2 - 2022-07-10"
+msgstr ""
+
+#: src/project/changelog.md:1840
+msgid ""
+"We're a couple of weeks since our 0.2.0 release. Thanks for the surge in "
+"interest and contributions! 0.2.2 has some fixes & some internal "
+"improvements:"
+msgstr ""
+
+#: src/project/changelog.md:1843
+msgid ""
+"We now test against SQLite & DuckDB on every commit, to ensure we're "
+"producing correct SQL. (@aljazerzen)"
+msgstr ""
+
+#: src/project/changelog.md:1845
+msgid "We have the beginning of Java bindings! (@doki23)"
+msgstr ""
+
+#: src/project/changelog.md:1846
+msgid "Idents surrounded by backticks are passed through to SQL (@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1847
+msgid ""
+"More examples on homepage; e.g. `join` & `window`, lots of small docs "
+"improvements"
+msgstr ""
+
+#: src/project/changelog.md:1849
+msgid "Automated releases to homebrew (@roG0d)"
+msgstr ""
+
+#: src/project/changelog.md:1850
+msgid ""
+"[prql-js](https://github.com/PRQL/prql/tree/main/prqlc/bindings/js) is now a "
+"single package for Node, browsers & webpack (@charlie-sanders)"
+msgstr ""
+
+#: src/project/changelog.md:1852
+msgid ""
+"Parsing has some fixes, including `>=` and leading underscores in idents "
+"(@mklopets)"
+msgstr ""
+
+#: src/project/changelog.md:1854
+msgid "Ranges receive correct syntax highlighting (@max-sixty)"
+msgstr ""
+
+#: src/project/changelog.md:1856
+msgid ""
+"Thanks to Aljaž Mur Eržen @aljazerzen , George Roldugin @roldugin , Jasper "
+"McCulloch @Jaspooky , Jie Han @doki23 , Marko Klopets @mklopets , Maximilian "
+"Roos @max-sixty , Rodrigo Garcia @roG0d , Ryan Russell @ryanrussell , Steven "
+"Maude @StevenMaude , Charlie Sanders @charlie-sanders ."
+msgstr ""
+
+#: src/project/changelog.md:1861
+msgid ""
+"We're planning to continue collecting bugs & feature requests from users, as "
+"well as working on some of the bigger features, like type-inference."
+msgstr ""
+
+#: src/project/changelog.md:1864
+msgid ""
+"For those interesting in joining, we also have a new [Contributing page]"
+"(https://github.com/PRQL/prql/blob/main/.github/CONTRIBUTING.md)."
+msgstr ""
+
+#: src/project/changelog.md:1867
+msgid "0.2.0 - 2022-06-27"
+msgstr ""
+
+#: src/project/changelog.md:1869
+msgid "🎉 🎉 **After several months of building, PRQL is ready to use!** 🎉 🎉"
+msgstr ""
+
+#: src/project/changelog.md:1873
+msgid "How we got here:"
+msgstr ""
+
+#: src/project/changelog.md:1875
+msgid ""
+"At the end of January, we published a proposal of a better language for data "
+"transformation: PRQL. The reception was better than I could have hoped for — "
+"we were no. 2 on HackerNews for a day, and gained 2.5K GitHub stars over the "
+"next few days."
+msgstr ""
+
+#: src/project/changelog.md:1880
+msgid ""
+"But man cannot live on GitHub Stars alone — we had to do the work to build "
+"it. So over the next several months, during many evenings & weekends, a "
+"growing group of us gradually built the compiler, evolved the language, and "
+"wrote some integrations."
+msgstr ""
+
+#: src/project/changelog.md:1885
+msgid ""
+"We want to double-down on the community and its roots in open source — it's "
+"incredible that a few of us from all over the globe have collaborated on a "
+"project without ever having met. We decided early-on that PRQL would always "
+"be open-source and would never have a commercial product (despite lots of "
+"outside interest to fund a seed round!). Because languages are so deep in "
+"the stack, and the data stack has so many players, the best chance of "
+"building a great language is to build an open language."
+msgstr ""
+
+#: src/project/changelog.md:1895
+msgid ""
+"We still have a long way to go. While PRQL is usable, it has lots of missing "
+"features, and an incredible amount of unfulfilled potential, including a "
+"language server, cohesion with databases, and type inference. Over the "
+"coming weeks, we'd like to grow the number of intrepid users experimenting "
+"PRQL in their projects, prioritize features that will unblock them, and then "
+"start fulfilling PRQL's potential by working through our [roadmap](https://"
+"prql-lang.org/roadmap/)."
+msgstr ""
+
+#: src/project/changelog.md:1903
+msgid ""
+"The best way to experience PRQL is to try it. Check out our [website]"
+"(https://prql-lang.org) and the [Playground](https://prql-lang.org/"
+"playground). Start using PRQL for your own projects in [dbt](https://github."
+"com/prql/dbt-prql), [Jupyter notebooks](https://pyprql.readthedocs.io/en/"
+"latest/magic_readme.html) and Prefect workflows."
+msgstr ""
+
+#: src/project/changelog.md:1910
+msgid ""
+"Keep in touch with PRQL by following the project on [Twitter](https://"
+"twitter.com/prql_lang), joining us on [Discord](https://discord.gg/"
+"eQcfaCmsNc), starring the [repo](https://github.com/PRQL/prql)."
+msgstr ""
+
+#: src/project/changelog.md:1915
+msgid ""
+"[Contribute](https://github.com/PRQL/prql/blob/main/.github/CONTRIBUTING.md) "
+"to the project — we're a really friendly community, whether you're a recent "
+"SQL user or an advanced Rust programmer. We need bug reports, documentation "
+"tweaks & feature requests — just as much as we need compiler improvements "
+"written in Rust."
+msgstr ""
+
+#: src/project/changelog.md:1923
+msgid ""
+"I especially want to give [Aljaž Mur Eržen](https://github.com/aljazerzen) "
+"(@aljazerzen) the credit he deserves, who has contributed the majority of "
+"the difficult work of building out the compiler. Much credit also goes to "
+"@charlie-sanders, one of PRQL's earliest supporters and the author of "
+"pyprql, and [Ryan Patterson-Cross](https://github.com/rbpatt2019) "
+"(@rbpatt2019), who built the Jupyter integration among other Python "
+"contributions."
+msgstr ""
+
+#: src/project/changelog.md:1930
+msgid ""
+"Other contributors who deserve a special mention include: @roG0d, @snth, "
+"@kwigley"
+msgstr ""
+
+#: src/project/changelog.md:1935
+msgid "Thank you, and we look forward to your feedback!"
+msgstr ""

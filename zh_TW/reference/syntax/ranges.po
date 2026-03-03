@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:13:48Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/ranges.md:1
+msgid "Ranges"
+msgstr "範圍"
+
+#: src/reference/syntax/ranges.md:3
+msgid ""
+"Range `start..end` represents as set of values between `start` and `end`, "
+"inclusive (greater of equal to `start` and less than or equal to `end`)."
+msgstr ""
+"範圍 `start..end` 表示 `start` 和 `end` 之間的一組值（含括，大於等於 `start` "
+"且小於等於 `end`）。"
+
+#: src/reference/syntax/ranges.md:6
+msgid ""
+"To express a range that is open on one side, either `start` or `end` can be "
+"omitted."
+msgstr "若要表示在一側開放的範圍，可以省略 `start` 或 `end`。"
+
+#: src/reference/syntax/ranges.md:9
+msgid ""
+"Ranges can be used in filters with the `in` function, with any type of "
+"literal, including dates:"
+msgstr "範圍可以在 `in` 函式的篩選器中使用，具有任何型別的字面值，包括日期："
+
+#: src/reference/syntax/ranges.md:19
+msgid "Ranges can also be used in `take`:"
+msgstr "範圍也可以在 `take` 中使用："
+
+#: src/reference/syntax/ranges.md:28
+msgid ""
+"\\[!NOTE\\] Half-open ranges are generally less intuitive to read than a "
+"simple `>=` or `<=` operator."
+msgstr "\\[!NOTE\\] 半開式範圍通常不如簡單的 `>=` 或 `<=` 運算子那樣直觀易讀。"
+
+#: src/reference/syntax/ranges.md:32
+msgid "See also"
+msgstr "另請參見"
+
+#: src/reference/syntax/ranges.md:34
+msgid "[take transform](../stdlib/transforms/take.md)"
+msgstr "[take 變換](../stdlib/transforms/take.md)"
+
+#: src/reference/syntax/ranges.md:36
+msgid "Roadmap"
+msgstr "路線圖"
+
+#: src/reference/syntax/ranges.md:38
+msgid ""
+"We'd like to use ranges for other types, such as whether an object is in an "
+"array or list literal."
+msgstr "我們想將範圍用於其他型別，例如物件是否在陣列或列表字面值中。"

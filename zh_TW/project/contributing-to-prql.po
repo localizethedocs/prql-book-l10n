@@ -1,0 +1,240 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:13:49Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project/contributing/index.md:1
+msgid "Contributing"
+msgstr ""
+
+#: src/project/contributing/index.md:3
+msgid ""
+"If you're interested in joining the community to build a better SQL, here "
+"are ways to start:"
+msgstr ""
+
+#: src/project/contributing/index.md:6
+msgid "Star the [repo](https://github.com/PRQL/prql)."
+msgstr "星標收藏[儲存庫](https://github.com/PRQL/prql)。"
+
+#: src/project/contributing/index.md:7
+msgid "Send a link to PRQL to a couple of people whose opinion you respect."
+msgstr ""
+
+#: src/project/contributing/index.md:8
+msgid ""
+"Subscribe to [new releases](https://www.jessesquires.com/blog/2020/07/30/"
+"github-tip-watching-releases/) for updates."
+msgstr ""
+
+#: src/project/contributing/index.md:11
+msgid "Follow us on [Twitter](https://twitter.com/prql_lang)."
+msgstr "在 [Twitter](https://twitter.com/prql_lang) 上關注我們。"
+
+#: src/project/contributing/index.md:12
+msgid "Join our [Discord](https://discord.gg/eQcfaCmsNc)."
+msgstr "加入我們的 [Discord](https://discord.gg/eQcfaCmsNc)。"
+
+#: src/project/contributing/index.md:13
+msgid ""
+"Find an issue labeled [Good First Issue](https://github.com/prql/prql/issues?"
+"q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) and start "
+"contributing to the code."
+msgstr ""
+
+#: src/project/contributing/index.md:16
+msgid ""
+"Join our [fortnightly Developer Call](https://github.com/PRQL/prql/"
+"issues/1083); ([iCal file](./fortnightly-dev-call.ics))."
+msgstr ""
+
+#: src/project/contributing/index.md:20
+msgid ""
+"PRQL is evolving from a project with lots of excitement into a project that "
+"folks are using in their work and integrating into their tools. We're "
+"actively looking for collaborators to lead that growth with us."
+msgstr ""
+
+#: src/project/contributing/index.md:24
+msgid "Areas for larger contributions"
+msgstr ""
+
+#: src/project/contributing/index.md:26
+msgid "Compiler"
+msgstr "編譯器"
+
+#: src/project/contributing/index.md:28
+msgid ""
+"The compiler is written in Rust, and there's enough to do such that any "
+"level of experience with Rust is sufficient."
+msgstr ""
+
+#: src/project/contributing/index.md:31
+msgid ""
+"We try to keep a few onboarding issues on hand under the [\"good first "
+"issue\" label](https://github.com/PRQL/prql/labels/good%20first%20issue). "
+"These have been screened to have sufficient context to get started (and we "
+"very much welcome questions where there's some context missing)."
+msgstr ""
+
+#: src/project/contributing/index.md:36
+msgid ""
+"To get started, check out the docs on [Development](./development.md) and "
+"the [Compiler architecture](https://github.com/PRQL/prql/blob/main/prqlc/"
+"prqlc/ARCHITECTURE.md)"
+msgstr ""
+
+#: src/project/contributing/index.md:39
+msgid ""
+"And if you have questions, there are lots of friendly people on the Discord "
+"who will patiently help you."
+msgstr ""
+
+#: src/project/contributing/index.md:42
+msgid "Bindings & integrations"
+msgstr ""
+
+#: src/project/contributing/index.md:44
+msgid ""
+"For PRQL to be successful, it needs to be available for the languages & "
+"tools that people already use."
+msgstr ""
+
+#: src/project/contributing/index.md:47
+msgid ""
+"We currently have bindings to the PRQL compiler in a few different "
+"languages; many of these can be improved, documented, and packaged in a "
+"better way."
+msgstr ""
+
+#: src/project/contributing/index.md:49
+msgid ""
+"If you have experience with packaging in an ecosystem that doesn't currently "
+"have bindings, then creating PRQL bindings for that language we don't "
+"currently support would be valuable to the project."
+msgstr ""
+
+#: src/project/contributing/index.md:52
+msgid ""
+"If there's a tool that you use yourself to run data queries which you think "
+"would benefit from a PRQL integration, suggest one to us or the tool. If "
+"it's open-source, build & share a prototype."
+msgstr ""
+
+#: src/project/contributing/index.md:56
+msgid ""
+"Relevant issues are labeled [Integrations](https://github.com/PRQL/prql/"
+"labels/integrations)."
+msgstr ""
+
+#: src/project/contributing/index.md:59
+msgid "Language design"
+msgstr "語言設計"
+
+#: src/project/contributing/index.md:61
+msgid ""
+"We decide on new language features in GitHub issues, usually under "
+"[\"language design\" label](https://github.com/PRQL/prql/issues?"
+"q=is%3Aopen+label%3Alanguage-design+sort%3Aupdated-desc)."
+msgstr ""
+
+#: src/project/contributing/index.md:64
+msgid "You can also contribute by:"
+msgstr ""
+
+#: src/project/contributing/index.md:66
+msgid ""
+"Finding instances where the compiler produces incorrect results, and post a "
+"bug report — feel free to use the [playground](https://prql-lang.org/"
+"playground)."
+msgstr ""
+
+#: src/project/contributing/index.md:69
+msgid ""
+"Opening an issue / append to an existing issue with examples of queries that "
+"are difficult to express in PRQL — especially if more difficult than SQL."
+msgstr ""
+
+#: src/project/contributing/index.md:72
+msgid ""
+"With sufficient examples, suggest a change to the language! (Though "
+"suggestions _without_ examples are difficult to engage with, so please do "
+"anchor suggestions in examples.)"
+msgstr ""
+"提供充足的範例來建議語言變更！（由於沒有範例的建議很難進行討論，因此請務必將"
+"建議建立在具體範例之上。）"
+
+#: src/project/contributing/index.md:76
+msgid "Marketing"
+msgstr ""
+
+#: src/project/contributing/index.md:78
+msgid ""
+"Improve our website. We have [a few issues open](https://github.com/PRQL/"
+"prql/labels/web) on this front and are looking for anyone with at least some "
+"design skills."
+msgstr ""
+
+#: src/project/contributing/index.md:81
+msgid ""
+"Contribute towards the docs. Anything from shaping a whole section of the "
+"docs, to simply improving a confusing paragraph or fixing a typo."
+msgstr ""
+
+#: src/project/contributing/index.md:83
+msgid "Tell people about PRQL."
+msgstr ""
+
+#: src/project/contributing/index.md:84
+msgid ""
+"Find a group of users who would be interested in PRQL, help them get up to "
+"speed, help the project understand what they need."
+msgstr ""
+
+#: src/project/contributing/index.md:87
+msgid "Core team"
+msgstr "核心團隊"
+
+#: src/project/contributing/index.md:89
+msgid ""
+"If you have any questions or feedback and don't receive a response on one of "
+"the general channels such as GitHub or Discord, feel free to reach out to:"
+msgstr ""
+"如果您有任何問題或意見反饋，並且在 GitHub 或 Discord 等公開頻道未收到回覆，歡"
+"迎隨時聯繫："
+
+#: src/project/contributing/index.md:92
+msgid "[**@aljazerzen**](https://github.com/aljazerzen) — Aljaž Mur Eržen"
+msgstr "[**@aljazerzen**](https://github.com/aljazerzen) — Aljaž Mur Eržen"
+
+#: src/project/contributing/index.md:93
+msgid "[**@max-sixty**](https://github.com/max-sixty) — Maximilian Roos"
+msgstr "[**@max-sixty**](https://github.com/max-sixty) — Maximilian Roos"
+
+#: src/project/contributing/index.md:94
+msgid "[**@eitsupi**](https://github.com/eitsupi) — SHIMA Tatsuya"
+msgstr "[**@eitsupi**](https://github.com/eitsupi) — SHIMA Tatsuya"
+
+#: src/project/contributing/index.md:95
+msgid "[**@snth**](https://github.com/snth) — Tobias Brandt"
+msgstr "[**@snth**](https://github.com/snth) — Tobias Brandt"
+
+#: src/project/contributing/index.md:97
+msgid "Core team Emeritus"
+msgstr "核心團隊榮譽成員"
+
+#: src/project/contributing/index.md:99
+msgid "Thank you to those who have previously served on the core team:"
+msgstr ""
+
+#: src/project/contributing/index.md:101
+msgid "**@charlie-sanders** — Charlie Sanders"
+msgstr ""
