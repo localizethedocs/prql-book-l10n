@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:45Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/integrations/duckdb.md:1
+msgid "DuckDB"
+msgstr "DuckDB"
+
+#: src/integrations/duckdb.md:3
+msgid ""
+"There's an experimental [DuckDB](https://duckdb.org/) extension from "
+"**[@ywelsch](https://github.com/ywelsch)** at [ywelsch/duckdb-prql](https://"
+"github.com/ywelsch/duckdb-prql)."
+msgstr ""
+
+#: src/integrations/duckdb.md:7
+msgid "Check out the Readme for more details."
+msgstr ""
