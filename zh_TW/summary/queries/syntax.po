@@ -1,0 +1,311 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/queries/syntax.md:1 src/queries/syntax.md:11
+msgid "Syntax"
+msgstr "語法"
+
+#: src/queries/syntax.md:3
+msgid "Summary"
+msgstr "摘要"
+
+#: src/queries/syntax.md:5
+msgid "A summary of PRQL syntax"
+msgstr ""
+
+#: src/queries/syntax.md:11
+msgid "Usage"
+msgstr "用法"
+
+#: src/queries/syntax.md:11
+msgid "Example"
+msgstr "範例"
+
+#: src/queries/syntax.md:13
+msgid "<code>\\|</code>"
+msgstr ""
+
+#: src/queries/syntax.md:13
+msgid "Pipe"
+msgstr ""
+
+#: src/queries/syntax.md:13
+msgid "<code>from employees \\| select first_name</code>"
+msgstr ""
+
+#: src/queries/syntax.md:14
+msgid "`=`"
+msgstr ""
+
+#: src/queries/syntax.md:14
+msgid "Assigns & Aliases"
+msgstr ""
+
+#: src/queries/syntax.md:14
+msgid "`from e = employees` <br> `derive total = (sum salary)`"
+msgstr ""
+
+#: src/queries/syntax.md:15
+msgid "`:`"
+msgstr ""
+
+#: src/queries/syntax.md:15
+msgid "Named args & Parameters"
+msgstr ""
+
+#: src/queries/syntax.md:15
+msgid "`interp lower:0 1600 sat_score`"
+msgstr ""
+
+#: src/queries/syntax.md:16
+msgid "`[]`"
+msgstr ""
+
+#: src/queries/syntax.md:16
+msgid "List"
+msgstr ""
+
+#: src/queries/syntax.md:16
+msgid "`select [id, amount]`"
+msgstr ""
+
+#: src/queries/syntax.md:17
+msgid "`()`"
+msgstr ""
+
+#: src/queries/syntax.md:17
+msgid "Precedence"
+msgstr "優先級"
+
+#: src/queries/syntax.md:17
+msgid "`derive fahrenheit = (celsius - 32) * 1.8`"
+msgstr ""
+
+#: src/queries/syntax.md:18
+msgid "`''` & `\"\"`"
+msgstr ""
+
+#: src/queries/syntax.md:18
+msgid "Strings"
+msgstr "字串"
+
+#: src/queries/syntax.md:18
+msgid "`derive name = \"Mary\"`"
+msgstr ""
+
+#: src/queries/syntax.md:19
+msgid "`` ` ` ``"
+msgstr ""
+
+#: src/queries/syntax.md:19 src/queries/syntax.md:118
+msgid "Quoted identifiers"
+msgstr ""
+
+#: src/queries/syntax.md:19
+msgid "``select `first name` ``"
+msgstr ""
+
+#: src/queries/syntax.md:20
+msgid "`#`"
+msgstr ""
+
+#: src/queries/syntax.md:20
+msgid "Comment"
+msgstr ""
+
+#: src/queries/syntax.md:20
+msgid "`# A comment`"
+msgstr ""
+
+#: src/queries/syntax.md:21
+msgid "`@`"
+msgstr ""
+
+#: src/queries/syntax.md:21
+msgid "Date & Times"
+msgstr ""
+
+#: src/queries/syntax.md:21
+msgid "`@2021-01-01`"
+msgstr ""
+
+#: src/queries/syntax.md:22
+msgid "`==`"
+msgstr ""
+
+#: src/queries/syntax.md:22
+msgid "Equality comparison"
+msgstr ""
+
+#: src/queries/syntax.md:22
+msgid "`join s=salaries [s.emp_id == e.id]`"
+msgstr ""
+
+#: src/queries/syntax.md:23
+msgid "`->`"
+msgstr ""
+
+#: src/queries/syntax.md:23
+msgid "Function definitions"
+msgstr ""
+
+#: src/queries/syntax.md:23
+msgid "`func add a b -> a + b`"
+msgstr ""
+
+#: src/queries/syntax.md:24
+msgid "`+`/`-`"
+msgstr ""
+
+#: src/queries/syntax.md:24
+msgid "Sort order"
+msgstr ""
+
+#: src/queries/syntax.md:24
+msgid "`sort [-amount, +date]`"
+msgstr ""
+
+#: src/queries/syntax.md:25
+msgid "`??`"
+msgstr ""
+
+#: src/queries/syntax.md:25
+msgid "Coalesce"
+msgstr "合併"
+
+#: src/queries/syntax.md:25
+msgid "`amount ?? 0`"
+msgstr ""
+
+#: src/queries/syntax.md:26
+msgid "`<type>`"
+msgstr ""
+
+#: src/queries/syntax.md:26
+msgid "Annotations"
+msgstr ""
+
+#: src/queries/syntax.md:26
+msgid "`@2021-01-01<datetime>`"
+msgstr ""
+
+#: src/queries/syntax.md:30
+msgid "Pipes"
+msgstr "管道"
+
+#: src/queries/syntax.md:32
+msgid ""
+"Pipes — the connection between [transforms](../transforms.md) that make up a "
+"pipeline — can be either line breaks or a pipe character (`|`)."
+msgstr ""
+
+#: src/queries/syntax.md:35
+msgid ""
+"In almost all situations, line-breaks pipe the result of a line's transform "
+"into the transform on the following line. For example, the `filter` "
+"transform operates on the result of `from employees` (which is just the "
+"`employees` table), and the `select` transform operates on the result of the "
+"`filter` transform."
+msgstr ""
+
+#: src/queries/syntax.md:40
+msgid ""
+"```prql\n"
+"from employees\n"
+"filter department == \"Product\"\n"
+"select [first_name, last_name]\n"
+"```"
+msgstr ""
+
+#: src/queries/syntax.md:46
+msgid ""
+"In the place of a line-break, it's also possible to use the `|` character to "
+"pipe results, such that this is equivalent:"
+msgstr ""
+
+#: src/queries/syntax.md:49
+msgid ""
+"```prql\n"
+"from employees | filter department == \"Product\" | select [first_name, "
+"last_name]\n"
+"```"
+msgstr ""
+
+#: src/queries/syntax.md:53
+msgid "A line-break doesn't create a pipeline in a couple of cases:"
+msgstr ""
+
+#: src/queries/syntax.md:55
+msgid "within a list (e.g. the `derive` examples below),"
+msgstr ""
+
+#: src/queries/syntax.md:56
+msgid ""
+"when the following line is a new statement, which starts with a keyword of "
+"`func`, `table` or `from`."
+msgstr ""
+
+#: src/queries/syntax.md:59
+msgid "Lists"
+msgstr ""
+
+#: src/queries/syntax.md:61
+msgid ""
+"Lists are represented with `[]`, and can span multiple lines. A final "
+"trailing comma is optional."
+msgstr ""
+
+#: src/queries/syntax.md:76
+msgid ""
+"Most transforms can take either a list or a single item, so these are "
+"equivalent:"
+msgstr ""
+
+#: src/queries/syntax.md:89
+msgid "Parentheses"
+msgstr "括號"
+
+#: src/queries/syntax.md:91
+msgid ""
+"Parentheses — `()` — are used to give precedence to inner expressions, as is "
+"the case in almost all languages / math."
+msgstr ""
+
+#: src/queries/syntax.md:94
+msgid ""
+"In particular, parentheses are used to nest pipelines for transforms such as "
+"`group` and `window`, which take a pipeline. Here, the `aggregate` pipeline "
+"is applied to each group of unique `title` and `country` values."
+msgstr ""
+
+#: src/queries/syntax.md:108
+msgid "Comments"
+msgstr "註釋"
+
+#: src/queries/syntax.md:110
+msgid ""
+"Comments are represented by `#`. Currently only single line comments exist."
+msgstr ""
+
+#: src/queries/syntax.md:120
+msgid ""
+"To use identifiers that are otherwise invalid, surround them with backticks. "
+"Depending on the dialect, these will remain as backticks or be converted to "
+"double-quotes."
+msgstr ""
+
+#: src/queries/syntax.md:136
+msgid ""
+"BigQuery also uses backticks to surround project & dataset names (even if "
+"valid identifiers) in the `SELECT` statement:"
+msgstr ""
