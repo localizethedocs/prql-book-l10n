@@ -1,0 +1,461 @@
+<!DOCTYPE HTML>
+<html lang="zh_TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>模組 - PRQL language book</title>
+
+
+        <!-- Custom HTML head -->
+        <script type="text/javascript" src="../../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="Modern language for transforming data — a simple, powerful, pipelined SQL replacement">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../comparison-table.css">
+        <link rel="stylesheet" href="../../mdbook-admonish.css">
+        <link rel="stylesheet" href="../.././mdbook-admonish.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">PRQL language book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/PRQL/prql" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="模組"><a class="header" href="#模組">模組</a></h1>
+<blockquote>
+<p>This is a technical document. For a “how to use” or a TLDR; skip to the <a href="#example">Example</a> section.</p>
+</blockquote>
+<p>Design goals:</p>
+<ol>
+<li>
+<p>Allow importing declarations from other files.</p>
+</li>
+<li>
+<p>Have namespaces for things like <code>std</code>.</p>
+</li>
+<li>
+<p>Have a hierarchical structure so we can represent files in directories.</p>
+</li>
+<li>
+<p>Have an unambiguous module structure within a project.</p>
+</li>
+</ol>
+<h2 id="定義"><a class="header" href="#定義">定義</a></h2>
+<p>A module is a namespace that contains declarations. A module is itself a declaration, which means that it can contain nested child modules.</p>
+<p>This means that modules form a <a href="https://en.wikipedia.org/wiki/Tree_(graph_theory)">tree graph</a>, which we call “the module structure”.</p>
+<p>For the sake of this document, we will express the module structure with <code>module</code> keyword and a code block encased in curly braces:</p>
+<pre><code>module my_playlists {
+    let bangers = ... # a declaration
+
+    module soundtracks {
+        let movie_albums = ... # another declaration
+    }
+}
+</code></pre>
+<blockquote>
+<p>The syntax <code>module name { ...decls... }</code> is not part of PRQL language, with the objection that it is unnecessary as it only adds more ways of defining modules. If a significant upside of this syntax is found, it may be added in the future.</p>
+</blockquote>
+<h2 id="名稱解析"><a class="header" href="#名稱解析">名稱解析</a></h2>
+<p>Any declarations within a module can be referenced from the outside of the module:</p>
+<pre><code class="language-prql no-eval"># using module structure declared above
+module my_playlists
+
+let great_tracks = my_playlists.bangers
+
+let movie_scores = my_playlists.soundtracks.movie_albums
+</code></pre>
+<p>Identifiers are resolved relative to current module.</p>
+<pre><code class="language-prql no-eval">module my_playlists {
+    module soundtracks {
+        let movie_albums = (from albums | filter id == 3)
+    }
+
+    from soundtracks.movie_albums
+}
+from my_playlists.soundtracks.movie_albums
+</code></pre>
+<p>If an identifier cannot be resolved relative to the current module, it tries to resolve relative to the parent module. This is repeated, stepping up the module hierarchy until a match is found or root of the module structure is reached.</p>
+<pre><code class="language-prql no-eval">module my_playlists {
+    let decl_1 = ...
+
+    module soundtracks {
+        let decl_2 = ...
+    }
+
+    module upbeat_rock {
+        let decl_3 = ...
+
+        from decl_1 | join soundtracks.decl2 | join decl_3
+    }
+}
+</code></pre>
+<h2 id="main-var-declaration"><a class="header" href="#main-var-declaration">Main var declaration</a></h2>
+<p>The final variable declaration in a module can omit the leading <code>let main =</code> and acquire an implicit name main.</p>
+<pre><code>module my_playlists {
+    let bangers = (from tracks | take 10)
+
+    from playlists | take 10
+}
+
+let album_titles = my_playlists.main
+</code></pre>
+<p>When a module is referenced as a value, the <code>main</code> variable is used instead. This is especially useful when referring to a module which is to be compiled to RQ (and later SQL).</p>
+<pre><code># last line from previous example could thus be shortened to:
+let album_titles = my_playlists
+</code></pre>
+<h2 id="file-importing"><a class="header" href="#file-importing">File importing</a></h2>
+<blockquote>
+<p>This section is under discussion. Current implementation plans do not include <code>module</code> declarations, but loading of all files under the compilation path.</p>
+</blockquote>
+<p>To include PRQL source code from other files, we can use the following syntax:</p>
+<pre><code>module my_playlists
+</code></pre>
+<p>This loads either <code>./my_playlists.prql</code> (a leaf module) or <code>./my_playlists/_my_playlists.prql</code> (a directory module) and uses its contents as module <code>my_playlists</code>. If none or both of the files are present, a compilation error is raised.</p>
+<p>Only directory modules can contain module declarations. If a leaf module contains a module declaration, a compilation error is raised, suggesting the leaf module to be converted into a directory module. This is a step toward any module structure having a single “normalized” representation in the file system. Such normalization is desired because it restrains the possible file system layouts to a comprehensible and predictable layout, while not sacrificing any functionality.</p>
+<p>Described importing rules don’t achieve this “single normalized representation” in full, since any leaf modules could be replaced by a directory module with zero submodules, without any semantic changes. Restricting directory modules to have at least one sub-module would not improve approachability enough to justify adding this restriction.</p>
+<p>For example, the following module structure is annotated with files names in which the modules would reside:</p>
+<pre><code class="language-prql no-eval">
+module my_project {
+    # _my_project.prql
+
+    module sales {
+        # sales.prql
+    }
+
+    module projections {
+        # projections/_projections.prql
+
+        module year_2023 {
+            # projections/year_2023.prql
+        }
+
+        module year_2024 {
+            # projections/year_2024.prql
+        }
+    }
+}
+</code></pre>
+<p>If module <code>my_project.sales</code> wants to add a submodule <code>util</code>, it has to be converted to a directory modules. This means that it has to be moved to <code>sales/_sales.prql</code>. The new module would reside in <code>sales/util.prql</code>.</p>
+<p>The annotated layout is not the only possible layout for this module structure, since any of the modules <code>sales</code>, <code>year_2023</code> or <code>year_2024</code> could be converted into a directory module with zero sub-modules.</p>
+<p>Point 4 of design goals means that each declaration within a project has a single fully-qualified name within this project. This is ensured by strict rules regarding importing files and the fact that the module structure is a tree.</p>
+<h2 id="declaration-order"><a class="header" href="#declaration-order">Declaration order</a></h2>
+<p>The order of declarations in a module holds no semantic value, except the “last <code>main</code> variable”.</p>
+<p>References between modules can be cyclic.</p>
+<pre><code>module mod_a {
+    let decl_a_1 = ...
+    let decl_a_2 = (from mod_b.decl_b | take 10)
+}
+module mod_b {
+    let decl_b = (from mod_a.decl_a | take 10)
+}
+</code></pre>
+<p>References between variable declarations cannot be cyclic.</p>
+<pre><code>let decl_a = (from decl_b)
+let decl_b = (from decl_a) # error: cyclic reference
+</code></pre>
+<pre><code>module mod_a {
+    let decl_a = (from mod_b.decl_b)
+}
+module mod_b {
+    let decl_b = (from mod_a.decl_a) # error: cyclic reference
+}
+</code></pre>
+<h2 id="compiler-interface"><a class="header" href="#compiler-interface">Compiler interface</a></h2>
+<p><code>prqlc</code> provides two interfaces for compiling files.</p>
+<p><strong>Multi-file interface</strong> requires three arguments:</p>
+<ul>
+<li>path to the file containing the module which is the root of the module structure,</li>
+<li>identifier of the pipeline that should be compiled to RQ (this can also be an identifier of a module that has a <code>main</code> pipeline) and,</li>
+<li>a “file loader”, which can load files on-demand.</li>
+</ul>
+<p>The path to the root module can be automatically detected by searching for <code>.prql</code> files starting with <code>_</code> in the current working directory.</p>
+<p>Example prqlc usage:</p>
+<pre><code>$ prqlc compile _project.prql sales.projections.orders_2024
+$ prqlc compile sales.projections.orders_2024
+</code></pre>
+<p><strong>Single-file interface</strong> requires a single argument; the PRQL source. Any attempts to load modules in this mode result in compilation errors. This interface is needed, for example, when integrating the compiler with a database connector (i.e. JDBC) where no other files can be loaded.</p>
+<h2 id="built-in-module-structure"><a class="header" href="#built-in-module-structure">Built-in module structure</a></h2>
+<blockquote>
+<p>Work In Progress</p>
+</blockquote>
+<pre><code># root module of every project
+module project {
+	module std {
+		let sum = a -&gt; ...
+		let mean = a -&gt; ...
+	}
+
+	module default_db {
+		# all inferred tables and defined CTEs
+	}
+
+	let main = (
+		from t = tracks
+		select [track_id, title]
+	)
+}
+</code></pre>
+<h2 id="範例"><a class="header" href="#範例">範例</a></h2>
+<p>This is an example project, where each of code block is a separate file.</p>
+<pre><code># _project.prql
+
+module employees
+module sales
+module util
+</code></pre>
+<pre><code># employees.prql
+
+let employees = (...)
+
+let salaries = (...)
+
+let departments = (...)
+</code></pre>
+<pre><code># sales/_sales.prql
+
+module orders
+module projections
+
+let revenue_by_source = (...)
+</code></pre>
+<pre><code># sales/orders.prql
+
+let current_year = (...)
+
+let archived = (...)
+
+let by_employee = (from orders | join employees.employees ...)
+</code></pre>
+<pre><code># sales/projections.prql
+
+let orders_2023 = (from orders.current_year | append orders.archived)
+
+let orders_2024 = (...)
+</code></pre>
+<pre><code># util.prql
+
+let pretty_print_num = col -&gt; (...)
+</code></pre>
+<hr />
+<p>Sources:</p>
+<ul>
+<li><a href="https://matklad.github.io/2021/11/27/notes-on-module-system.html">Notes On Module System</a>, by @matklad.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../reference/spec/name-resolution.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../reference/spec/type-system.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../reference/spec/name-resolution.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../reference/spec/type-system.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../highlight-prql.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
