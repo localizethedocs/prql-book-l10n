@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:34Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/transforms/loop.md:1
+msgid "Loop"
+msgstr "循環"
+
+#: src/reference/stdlib/transforms/loop.md:3
+msgid "_Experimental_"
+msgstr ""
+
+#: src/reference/stdlib/transforms/loop.md:9
+msgid ""
+"Iteratively applies `step` function to `initial` relation until the `step` "
+"returns an empty table. Returns a relation that contains rows of initial "
+"relation and all intermediate relations."
+msgstr ""
+
+#: src/reference/stdlib/transforms/loop.md:13
+msgid "This behavior could be expressed with following pseudo-code:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/loop.md:26
+msgid "Examples"
+msgstr "範例"
+
+#: src/reference/stdlib/transforms/loop.md:38
+msgid ""
+"```admonish note\n"
+"The behavior of `WITH RECURSIVE` may depend on the database configuration in "
+"MySQL.\n"
+"The compiler assumes the behavior described by\n"
+"the [Postgres documentation](https://www.postgresql.org/docs/15/queries-with."
+"html#QUERIES-WITH-RECURSIVE)\n"
+"and will not produce correct results for\n"
+"[alternative configurations of MySQL](https://dev.mysql.com/doc/refman/8.0/"
+"en/with.html#common-table-expressions-recursive).\n"
+"```"
+msgstr ""
