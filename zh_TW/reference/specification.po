@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:36Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/spec/index.md:1
+msgid "Specification"
+msgstr "規範"
+
+#: src/reference/spec/index.md:3
+msgid ""
+"This chapter explains PRQL's semantics: how expressions are interpreted and "
+"their meaning. It's intended for advanced users and compiler contributors."
+msgstr ""
+"本章解釋了 PRQL 的語義：表達式如何被解釋及其含義。它適用於進階使用者和編譯器"
+"貢獻者。"
