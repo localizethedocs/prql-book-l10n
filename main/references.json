@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-01-06 13:46:28 -0800",
-      "hash" : "a1c3f4ca42c26850394420b58c6ef1e8607cb3c7",
-      "title" : "fix: handle partial application of transforms in user-defined functions (#5663)"
+      "date" : "2026-03-02 20:20:23 +0000",
+      "hash" : "6e6e067acbb2e474856e9fff335ccc8fe0be73d3",
+      "title" : "chore: bump minimatch from 9.0.5 to 9.0.9 in /prqlc/bindings/js (#5704)"
     }
   },
   "type" : "branch",
