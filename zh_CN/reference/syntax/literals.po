@@ -1,0 +1,239 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:28Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/literals.md:1
+msgid "Literals"
+msgstr ""
+
+#: src/reference/syntax/literals.md:3
+msgid ""
+"A literal is a constant value expression, with special syntax rules for each "
+"data type."
+msgstr ""
+
+#: src/reference/syntax/literals.md:6
+msgid "Numbers"
+msgstr ""
+
+#: src/reference/syntax/literals.md:8
+msgid ""
+"Number literals can contain number characters as well as a period, "
+"underscores and char `e`."
+msgstr ""
+
+#: src/reference/syntax/literals.md:11
+msgid ""
+"If a number literal contains a dot or character `e`, it is treated as "
+"floating point number (or just _float_), otherwise it is treated as integer "
+"number."
+msgstr ""
+
+#: src/reference/syntax/literals.md:14
+msgid ""
+"Character `e` denotes [\"scientific notation\"](https://en.wikipedia.org/"
+"wiki/Scientific_notation), where the number after `e` is the exponent in 10-"
+"base."
+msgstr ""
+
+#: src/reference/syntax/literals.md:18
+msgid ""
+"Underscores are ignored, so they can be placed at arbitrary positions, but "
+"it is advised to use them as thousand separators."
+msgstr ""
+
+#: src/reference/syntax/literals.md:21
+msgid ""
+"Integers can, alternatively, be expressed using hexadecimal, octal or binary "
+"notation using these prefixes respectively: `0x`, `0o` or `0b`."
+msgstr ""
+
+#: src/reference/syntax/literals.md:36
+msgid "Strings"
+msgstr ""
+
+#: src/reference/syntax/literals.md:38
+msgid ""
+"PRQL supports string literals and several other formats of strings. See the "
+"[Strings](./strings.md) page for more information."
+msgstr ""
+
+#: src/reference/syntax/literals.md:41
+msgid "Booleans"
+msgstr ""
+
+#: src/reference/syntax/literals.md:43
+msgid "Boolean values can be expressed with `true` or `false` keyword."
+msgstr ""
+
+#: src/reference/syntax/literals.md:45
+msgid "Null"
+msgstr ""
+
+#: src/reference/syntax/literals.md:47
+msgid ""
+"The null value can be expressed with `null` keyword. See also the discussion "
+"of how [PRQL handles nulls](../spec/null.md)."
+msgstr ""
+
+#: src/reference/syntax/literals.md:50
+msgid "Date and time"
+msgstr ""
+
+#: src/reference/syntax/literals.md:52
+msgid ""
+"Date and time literals are expressed with character `@`, followed by a "
+"string that encodes the date & time."
+msgstr ""
+
+#: src/reference/syntax/literals.md:61
+msgid "Dates"
+msgstr ""
+
+#: src/reference/syntax/literals.md:63
+msgid ""
+"Dates are represented by `@{yyyy-mm-dd}` — a `@` followed by the date format."
+msgstr ""
+
+#: src/reference/syntax/literals.md:70
+msgid "Times"
+msgstr ""
+
+#: src/reference/syntax/literals.md:72
+msgid ""
+"Times are represented by `@{HH:mm:ss.SSS±Z}` with any parts not supplied "
+"defaulting to zero. This includes the timezone, which is represented by `+HH:"
+"mm`, `-HH:mm` or `Z`. This is consistent with the ISO8601 time format."
+msgstr ""
+
+#: src/reference/syntax/literals.md:81
+msgid "Timestamps"
+msgstr ""
+
+#: src/reference/syntax/literals.md:83
+msgid ""
+"Timestamps are represented by `@{yyyy-mm-ddTHH:mm:ss.SSS±Z}` / `@{date}"
+"T{time}`, with any time parts not supplied being rounded to zero, including "
+"the timezone, which is represented by `+HH:mm`, `-HH:mm` or `Z` (`:` is "
+"optional). This is `@` followed by the ISO8601 datetime format, which uses "
+"`T` to separate date & time."
+msgstr ""
+
+#: src/reference/syntax/literals.md:94
+msgid "Durations"
+msgstr ""
+
+#: src/reference/syntax/literals.md:96
+msgid ""
+"Durations are represented by `{N}{periods}`, such as `2years` or "
+"`10minutes`, without a space."
+msgstr ""
+
+#: src/reference/syntax/literals.md:112
+msgid "Examples"
+msgstr ""
+
+#: src/reference/syntax/literals.md:114
+msgid "Here's a larger list of date and time examples:"
+msgstr ""
+
+#: src/reference/syntax/literals.md:116
+msgid ""
+"`@20221231` is invalid — it must contain full punctuation (`-` and `:`),"
+msgstr ""
+
+#: src/reference/syntax/literals.md:117
+msgid "`@2022-12-31` is a date"
+msgstr ""
+
+#: src/reference/syntax/literals.md:118
+msgid ""
+"`@2022-12` or `@2022` are invalid — SQL can't express a month, only a date"
+msgstr ""
+
+#: src/reference/syntax/literals.md:119
+msgid "`@16:54:32.123456` is a time"
+msgstr ""
+
+#: src/reference/syntax/literals.md:120
+msgid ""
+"`@16:54:32`, `@16:54`, `@16` are all allowed, expressing `@16:54:32.000000`, "
+"`@16:54:00.000000`, `@16:00:00.000000` respectively"
+msgstr ""
+
+#: src/reference/syntax/literals.md:122
+msgid "`@2022-12-31T16:54:32.123456` is a timestamp without timezone"
+msgstr ""
+
+#: src/reference/syntax/literals.md:123
+msgid "`@2022-12-31T16:54:32.123456Z` is a timestamp in UTC"
+msgstr ""
+
+#: src/reference/syntax/literals.md:124
+msgid "`@2022-12-31T16:54+02` is timestamp in UTC+2"
+msgstr ""
+
+#: src/reference/syntax/literals.md:125
+msgid ""
+"`@2022-12-31T16:54+02:00` and `@2022-12-31T16:54+02` are datetimes in UTC+2"
+msgstr ""
+
+#: src/reference/syntax/literals.md:126
+msgid ""
+"`@16:54+02` is invalid — time is always local, so it cannot have a timezone"
+msgstr ""
+
+#: src/reference/syntax/literals.md:127
+msgid ""
+"`@2022-12-31+02` is invalid — date is always local, so it cannot have a "
+"timezone"
+msgstr ""
+
+#: src/reference/syntax/literals.md:130
+msgid ""
+"```admonish note\n"
+"Currently prqlc does not parse or validate any of the datetime strings\n"
+"and will pass them to the database engine without adjustment. This might be\n"
+"refined in the future to aid in compatibility across databases. We'll "
+"always\n"
+"support the canonical [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) "
+"format\n"
+"described above.\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/literals.md:138
+msgid "Roadmap"
+msgstr ""
+
+#: src/reference/syntax/literals.md:140
+msgid ""
+"Datetimes (as a distinct datatype from the timestamps) are supported by some "
+"databases (e.g. MySql, BigQuery). With the addition of type casts, these "
+"could be represented by a timestamp cast to a datetime:"
+msgstr ""
+
+#: src/reference/syntax/literals.md:148
+msgid "These are some examples we can then add:"
+msgstr ""
+
+#: src/reference/syntax/literals.md:150
+msgid "`@2022-12-31T16:54<datetime>` is datetime without timezone"
+msgstr ""
+
+#: src/reference/syntax/literals.md:151
+msgid "`@2022-12-31<datetime>` is forbidden — datetime must specify time"
+msgstr ""
+
+#: src/reference/syntax/literals.md:152
+msgid "`@16:54<datetime>` is forbidden — datetime must specify date"
+msgstr ""
