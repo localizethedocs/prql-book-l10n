@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/syntax/lists.md:1
+msgid "Lists"
+msgstr ""
+
+#: src/syntax/lists.md:3
+msgid ""
+"Lists are represented with `[]`, and can span multiple lines. A final "
+"trailing comma is optional."
+msgstr ""
+
+#: src/syntax/lists.md:19
+msgid ""
+"Most transforms can take either a list or a single item, so these are "
+"equivalent:"
+msgstr ""

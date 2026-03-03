@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/language-features/strings.md:1
+msgid "Strings"
+msgstr "字串"
+
+#: src/language-features/strings.md:3
+msgid "Strings in PRQL can use either single or double quotes:"
+msgstr ""
+
+#: src/language-features/strings.md:5
+msgid ""
+"```prql\n"
+"from my_table\n"
+"select x = \"hello world\"\n"
+"```"
+msgstr ""
+
+#: src/language-features/strings.md:15
+msgid ""
+"To quote a string containing quotes, either use the \"other\" type of quote, "
+"or use 3, 4, 5 or 6 quotes, and close with the same number."
+msgstr ""
+
+#: src/language-features/strings.md:18
+msgid ""
+"```prql\n"
+"from my_table\n"
+"select x = '\"hello world\"'\n"
+"```"
+msgstr ""
+
+#: src/language-features/strings.md:23
+msgid ""
+"```prql\n"
+"from my_table\n"
+"select x = \"\"\"I said \"hello world\"!\"\"\"\n"
+"```"
+msgstr ""
+
+#: src/language-features/strings.md:28
+msgid ""
+"```prql\n"
+"from my_table\n"
+"select x = \"\"\"\"\"I said \"\"\"hello world\"\"\"!\"\"\"\"\"\n"
+"```"
+msgstr ""
+
+#: src/language-features/strings.md:33
+msgid ""
+"Strings can also contain any escape defined by [JSON standard](https://www."
+"ecma-international.org/publications-and-standards/standards/ecma-404/)."
+msgstr ""
+
+#: src/language-features/strings.md:36
+msgid ""
+"```prql no-fmt\n"
+"from my_table\n"
+"select x = \"\\t\\tline ends here\\n \\\\ \"\n"
+"```"
+msgstr ""
+
+#: src/language-features/strings.md:41
+msgid "F-Strings and S-Strings"
+msgstr ""
+
+#: src/language-features/strings.md:43
+msgid "These special case strings can be used to:"
+msgstr ""
+
+#: src/language-features/strings.md:45
+msgid ""
+"[F-strings](./f-strings.md) - Build up a new string from a set of columns or "
+"values"
+msgstr ""
+
+#: src/language-features/strings.md:48
+msgid ""
+"[S-strings](./s-strings.md) - Insert SQL statements directly into the query. "
+"Use when PRQL doesn't have an equivalent facility."
+msgstr ""

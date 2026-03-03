@@ -1,0 +1,107 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/transforms/sort.md:1
+msgid "Sort"
+msgstr "排序"
+
+#: src/transforms/sort.md:3
+msgid "Orders rows based on the values of one or more columns."
+msgstr ""
+
+#: src/transforms/sort.md:9
+msgid "Parameters"
+msgstr "參數"
+
+#: src/transforms/sort.md:11
+msgid "One column or a list of columns to sort by"
+msgstr ""
+
+#: src/transforms/sort.md:12
+msgid "Each column can be prefixed with:"
+msgstr ""
+
+#: src/transforms/sort.md:13
+msgid "`+`, for ascending order, the default"
+msgstr ""
+
+#: src/transforms/sort.md:14
+msgid "`-`, for descending order"
+msgstr ""
+
+#: src/transforms/sort.md:15
+msgid ""
+"When using prefixes, even a single column needs to be in a list or "
+"parentheses. (Otherwise, `sort -foo` is parsed as a subtraction between "
+"`sort` and `foo`.)"
+msgstr ""
+
+#: src/transforms/sort.md:19
+msgid "Examples"
+msgstr "範例"
+
+#: src/transforms/sort.md:36
+msgid "We can also use expressions:"
+msgstr ""
+
+#: src/transforms/sort.md:38
+msgid ""
+"```prql\n"
+"from employees\n"
+"sort [s\"substr({first_name}, 2, 5)\"]\n"
+"```"
+msgstr ""
+
+#: src/transforms/sort.md:43
+msgid "Notes"
+msgstr ""
+
+#: src/transforms/sort.md:45
+msgid "Ordering guarantees"
+msgstr ""
+
+#: src/transforms/sort.md:47
+msgid ""
+"Most DBs will persist ordering through most transforms; for example, you can "
+"expect this result to be ordered by `tenure`."
+msgstr ""
+
+#: src/transforms/sort.md:50
+msgid ""
+"```prql\n"
+"from employees\n"
+"sort tenure\n"
+"derive name = f\"{first_name} {last_name}\"\n"
+"```"
+msgstr ""
+
+#: src/transforms/sort.md:56
+msgid "But:"
+msgstr ""
+
+#: src/transforms/sort.md:58
+msgid ""
+"This is an implementation detail of the DB. If there are instances where "
+"this doesn't hold, please open an issue, and we'll consider how to manage it."
+msgstr ""
+
+#: src/transforms/sort.md:60
+msgid ""
+"Some transforms which change the existence of rows, such as `join` or "
+"`group`, won't persist ordering; for example:"
+msgstr ""
+
+#: src/transforms/sort.md:69
+msgid ""
+"See [Issue #1363](https://github.com/PRQL/prql/issues/1363) for more details."
+msgstr ""
