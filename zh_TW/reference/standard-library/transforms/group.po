@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:28Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/transforms/group.md:1
+msgid "Group"
+msgstr "群組"
+
+#: src/reference/stdlib/transforms/group.md:3
+msgid ""
+"Partitions the rows into groups and applies a pipeline to each of the groups."
+msgstr ""
+
+#: src/reference/stdlib/transforms/group.md:9
+msgid ""
+"The partitioning of groups are determined by the `key_column`s (first "
+"argument)."
+msgstr ""
+
+#: src/reference/stdlib/transforms/group.md:11
+msgid "The most conventional use of `group` is with `aggregate`:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/group.md:23
+msgid ""
+"In concept, a transform in context of a `group` does the same transformation "
+"to the group as it would to the table — for example finding the employee who "
+"joined first across the whole table:"
+msgstr ""
+
+#: src/reference/stdlib/transforms/group.md:33
+msgid ""
+"To find the employee who joined first in each department, it's exactly the "
+"same pipeline, but within a `group` expression:"
+msgstr ""
