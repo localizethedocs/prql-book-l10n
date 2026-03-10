@@ -1,0 +1,330 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:45Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/integrations/dbt.md:1
+msgid "dbt-prql"
+msgstr ""
+
+#: src/integrations/dbt.md:3
+msgid "Original docs at <https://github.com/prql/dbt-prql>"
+msgstr ""
+
+#: src/integrations/dbt.md:5
+msgid ""
+"```admonish note\n"
+"As of Feb 2023, we're again considering how to best integrate with\n"
+"dbt more closely. Ideally a file with a `.prql` extension will just work™.\n"
+"\n"
+"If you're interested in this, subscribe or 👍 to\n"
+"<https://github.com/dbt-labs/dbt-core/pull/5982>.\n"
+"\n"
+"The original plugin is hosted at <https://github.com/prql/dbt-prql>, but "
+"only works with a minority of\n"
+"dialects, and isn't a focus of development at the moment.\n"
+"```"
+msgstr ""
+
+#: src/integrations/dbt.md:16
+msgid ""
+"dbt-prql allows writing PRQL in [dbt](https://www.getdbt.com/) models. This "
+"combines the benefits of PRQL's power & simplicity _within_ queries, with "
+"dbt's version control, lineage & testing _across_ queries."
+msgstr ""
+
+#: src/integrations/dbt.md:20
+msgid ""
+"Once `dbt-prql` in installed, dbt commands compile PRQL between `{% prql %}` "
+"& `{% endprql %}` Jinja tags to SQL as part of dbt's compilation. No "
+"additional config is required."
+msgstr ""
+
+#: src/integrations/dbt.md:24
+msgid "Examples"
+msgstr ""
+
+#: src/integrations/dbt.md:26
+msgid "Simple example"
+msgstr ""
+
+#: src/integrations/dbt.md:35 src/integrations/dbt.md:60
+msgid "...would appear to dbt as:"
+msgstr ""
+
+#: src/integrations/dbt.md:47
+msgid "Less simple example"
+msgstr ""
+
+#: src/integrations/dbt.md:67
+msgid "'salesforce'"
+msgstr ""
+
+#: src/integrations/dbt.md:67
+msgid "'in_process'"
+msgstr ""
+
+#: src/integrations/dbt.md:68
+msgid "'team'"
+msgstr ""
+
+#: src/integrations/dbt.md:68
+msgid "'team_sales'"
+msgstr ""
+
+#: src/integrations/dbt.md:73
+msgid ""
+"...and then dbt will compile the `source` and `ref`s to a full SQL query."
+msgstr ""
+
+#: src/integrations/dbt.md:75
+msgid "Replacing macros"
+msgstr ""
+
+#: src/integrations/dbt.md:77
+msgid ""
+"dbt's use of macros has saved many of us many lines of code, and even saved "
+"some people some time. But imperatively programming text generation with "
+"code like `if not loop.last` is not our highest calling. It's the "
+"\"necessary\" part rather than beautiful part of dbt."
+msgstr ""
+
+#: src/integrations/dbt.md:82
+msgid ""
+"Here's the canonical example of macros in the [dbt documentation](https://"
+"docs.getdbt.com/docs/build/jinja-macros):"
+msgstr ""
+
+#: src/integrations/dbt.md:86
+msgid "\"bank_transfer\""
+msgstr ""
+
+#: src/integrations/dbt.md:86
+msgid "\"credit_card\""
+msgstr ""
+
+#: src/integrations/dbt.md:86
+msgid "\"gift_card\""
+msgstr ""
+
+#: src/integrations/dbt.md:91
+msgid "'{{payment_method}}'"
+msgstr ""
+
+#: src/integrations/dbt.md:94
+msgid "'raw_payments'"
+msgstr ""
+
+#: src/integrations/dbt.md:98
+msgid "Here's that model using PRQL[^1], including the prql Jinja tags."
+msgstr ""
+
+#: src/integrations/dbt.md:100
+msgid ""
+"```elm\n"
+"{% prql %}\n"
+"func filter_amount method -> s\"sum(case when payment_method = '{method}' "
+"then amount end) as {method}_amount\"\n"
+"\n"
+"from {{ ref('raw_payments') }}\n"
+"group order_id (\n"
+"  aggregate [\n"
+"    filter_amount bank_transfer,\n"
+"    filter_amount credit_card,\n"
+"    filter_amount gift_card,\n"
+"  ]\n"
+")\n"
+"{% endprql %}\n"
+"```"
+msgstr ""
+
+#: src/integrations/dbt.md:115
+msgid ""
+"As well the query being simpler in its final form, writing in PRQL also "
+"gives us live feedback around any errors, on every keystroke. Though there's "
+"much more to come, check out the current version on [PRQL Playground]"
+"(https://prql-lang.org/playground/)."
+msgstr ""
+
+#: src/integrations/dbt.md:121
+msgid ""
+"    Note that when <https://github.com/prql/prql/issues/82> is implemented, "
+"we\n"
+"    can dispense with the s-string, and optionally dispense with the "
+"function.\n"
+"    \n"
+"    ```elm\n"
+"    from {{ ref('raw_payments') }}\n"
+"    group order_id (\n"
+"      aggregate [\n"
+"        bank_transfer_amount = amount | filter payment_method == "
+"'bank'        | sum,\n"
+"        credit_card_amount = amount   | filter payment_method == "
+"'credit_card' | sum,\n"
+"        gift_amount = amount          | filter payment_method == "
+"'gift_card'   | sum,\n"
+"      ]\n"
+"    )\n"
+"    ```\n"
+"    \n"
+"    or\n"
+"    \n"
+"    ```elm\n"
+"    func filter_amount method -> amount | filter payment_method == method | "
+"sum\n"
+"    \n"
+"    from {{ ref('raw_payments') }}\n"
+"    group order_id (\n"
+"      aggregate [\n"
+"        bank_transfer_amount = filter_amount 'bank'\n"
+"        credit_card_amount   = filter_amount 'credit_card'\n"
+"        gift_amount          = filter_amount 'gift_card'\n"
+"      ]\n"
+"    )\n"
+"    ```\n"
+"    "
+msgstr ""
+
+#: src/integrations/dbt.md:150
+msgid "What it does"
+msgstr ""
+
+#: src/integrations/dbt.md:152
+msgid "When dbt compiles models to SQL queries:"
+msgstr ""
+
+#: src/integrations/dbt.md:154
+msgid ""
+"Any text in a dbt model between `{% prql %}` and `{% endprql %}` tags is "
+"compiled from PRQL to SQL before being passed to dbt."
+msgstr ""
+
+#: src/integrations/dbt.md:156
+msgid ""
+"The PRQL compiler passes text that's containing `{{` & `}}` through to dbt "
+"without modification, which allows us to embed Jinja expressions in PRQL. "
+"(This was added to PRQL specifically for this use-case.)"
+msgstr ""
+
+#: src/integrations/dbt.md:159
+msgid ""
+"dbt will then compile the resulting model into its final form of raw SQL, "
+"and dispatch it to the database, as per usual."
+msgstr ""
+
+#: src/integrations/dbt.md:162
+msgid ""
+"There's no config needed in the dbt project; this works automatically on any "
+"dbt command (e.g. `dbt run`) assuming `dbt-prql` is installed."
+msgstr ""
+
+#: src/integrations/dbt.md:165
+msgid "Installation"
+msgstr ""
+
+#: src/integrations/dbt.md:171
+msgid "Current state"
+msgstr ""
+
+#: src/integrations/dbt.md:173
+msgid ""
+"Currently this is new, but fairly feature-complete. It's enthusiastically "
+"supported — if there are any problems, please open an issue."
+msgstr ""
+
+#: src/integrations/dbt.md:176
+msgid "How does it work?"
+msgstr ""
+
+#: src/integrations/dbt.md:178
+msgid "It's some dark magic, unfortunately."
+msgstr ""
+
+#: src/integrations/dbt.md:180
+msgid ""
+"dbt doesn't allow adding behavior beyond the database adapters (e.g. `dbt-"
+"bigquery`) or Jinja-only plugins (e.g. `dbt-utils`). So this library hacks "
+"the Python import system to monkeypatch dbt's Jinja environment with an "
+"additional Jinja extension on Python's startup[^2]."
+msgstr ""
+
+#: src/integrations/dbt.md:186
+msgid ""
+"    Thanks to\n"
+"    [mtkennerly/poetry-dynamic-versioning](https://github.com/mtkennerly/"
+"poetry-dynamic-versioning)\n"
+"    for the technique.\n"
+"    "
+msgstr ""
+
+#: src/integrations/dbt.md:190
+msgid ""
+"This approach was discussed with the dbt team [here](https://github.com/prql/"
+"prql/issues/375) and [here](https://github.com/prql/prql/issues/13)."
+msgstr ""
+
+#: src/integrations/dbt.md:194
+msgid ""
+"This isn't stable between dbt versions, since it relies on internal dbt "
+"APIs. The technique is also normatively bad — it runs a few lines of code "
+"every time the Python interpreter starts — whose errors could lead to very "
+"confusing bugs beyond the domain of the problem (though in the case of this "
+"library, it's small and well-constructed™)."
+msgstr ""
+
+#: src/integrations/dbt.md:200
+msgid ""
+"If there's ever any concern that the library might be causing a problem, "
+"just set an environment variable `DBT_PRQL_DISABLE=1`, and this library "
+"won't monkeypatch anything. It's also fully uninstallable with `pip "
+"uninstall dbt-prql`."
+msgstr ""
+
+#: src/integrations/dbt.md:205
+msgid "Roadmap"
+msgstr ""
+
+#: src/integrations/dbt.md:207
+msgid ""
+"Open to ideas; at the moment it's fairly feature-complete. If we were "
+"unconstrained in dbt functionality:"
+msgstr ""
+
+#: src/integrations/dbt.md:210
+msgid ""
+"If dbt allowed for external plugins, we'd enthusiastically move to that."
+msgstr ""
+
+#: src/integrations/dbt.md:211
+msgid ""
+"We'd love to have this work on `.prql` files without the `{% prql %}` tags; "
+"but with the current approach that would require quite invasive "
+"monkeypatching."
+msgstr ""
+
+#: src/integrations/dbt.md:214
+msgid ""
+"If we could add the dialect in automatically (i.e. `prql dialect:"
+"snowflake`), that would save a line per model."
+msgstr ""
+
+#: src/integrations/dbt.md:216
+msgid ""
+"If we could upstream this into dbt-core, that would be awesome. It may be on "
+"PRQL to demonstrate its staying power before that, though."
+msgstr ""
+
+#: src/integrations/dbt.md:219
+msgid ""
+"We may move this library to the <https://github.com/prql/PyPrql> or <https://"
+"github.com/prql/prql> repos. We'd prefer to keep it as its own package given "
+"the hackery above, but there's no need for it to be its own repo."
+msgstr ""
