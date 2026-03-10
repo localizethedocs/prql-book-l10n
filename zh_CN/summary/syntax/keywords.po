@@ -1,0 +1,47 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/syntax/keywords.md:1
+msgid "Keywords"
+msgstr ""
+
+#: src/syntax/keywords.md:3
+msgid "At the moment, PRQL uses only four keywords:"
+msgstr ""
+
+#: src/syntax/keywords.md:5
+msgid "`prql`"
+msgstr ""
+
+#: src/syntax/keywords.md:6
+msgid "`let`"
+msgstr ""
+
+#: src/syntax/keywords.md:7
+msgid "`func`"
+msgstr ""
+
+#: src/syntax/keywords.md:8
+msgid "`case`"
+msgstr ""
+
+#: src/syntax/keywords.md:10
+msgid ""
+"To use these names as columns or relations, use backticks: `` `case` ``."
+msgstr ""
+
+#: src/syntax/keywords.md:12
+msgid ""
+"It may seem that transforms are also keywords, but they are normal function "
+"within std namespace:"
+msgstr ""
