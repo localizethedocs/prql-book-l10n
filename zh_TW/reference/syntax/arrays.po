@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:16:36Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/syntax/arrays.md:1
+msgid "Arrays"
+msgstr "陣列"
+
+#: src/reference/syntax/arrays.md:3
+msgid ""
+"Array is a container type, composed of multiple items. All items must be of "
+"the same type. Number of fields can be vary."
+msgstr ""
+"陣列是一個容器型別，由多個項目組成。所有項目必須是相同型別。欄位數量可以變"
+"化。"
