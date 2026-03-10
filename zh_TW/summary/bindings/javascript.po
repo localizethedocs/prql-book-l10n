@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL Language Book\n"
+"POT-Creation-Date: 2026-01-10T16:16:24Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/bindings/javascript.md:1
+msgid "Javascript (prql-js)"
+msgstr ""
+
+#: src/bindings/javascript.md:3
+msgid ""
+"JavaScript bindings for [`prql-compiler`](https://github.com/prql/prql/). "
+"Check out <https://prql-lang.org> for more context."
+msgstr ""
+
+#: src/bindings/javascript.md:6
+msgid "Installation"
+msgstr "安裝"
+
+#: src/bindings/javascript.md:12
+msgid "Usage"
+msgstr "用法"
+
+#: src/bindings/javascript.md:14
+msgid "Currently these functions are exposed"
+msgstr ""
+
+#: src/bindings/javascript.md:22
+msgid "From NodeJS"
+msgstr ""
+
+#: src/bindings/javascript.md:25
+msgid "\"prql-js\""
+msgstr ""
+
+#: src/bindings/javascript.md:27
+msgid "`from employees | select first_name`"
+msgstr ""
+
+#: src/bindings/javascript.md:28 src/bindings/javascript.md:46
+msgid "// handle error as well...\n"
+msgstr ""
+
+#: src/bindings/javascript.md:32
+msgid "From a Browser"
+msgstr ""
+
+#: src/bindings/javascript.md:37
+msgid "\"./node_modules/prql-js/dist/web/prql_js.js\""
+msgstr ""
+
+#: src/bindings/javascript.md:42
+msgid "\"./node_modules/prql-js/dist/web/prql_js_bg.wasm\""
+msgstr ""
+
+#: src/bindings/javascript.md:43
+msgid "\"from employees | select first_name\""
+msgstr ""
+
+#: src/bindings/javascript.md:57
+msgid "From a Framework or a Bundler"
+msgstr ""
+
+#: src/bindings/javascript.md:59
+msgid ""
+"```typescript\n"
+"import compile from \"prql-js/dist/bundler\";\n"
+"\n"
+"const { sql, error } = compile(`from employees | select first_name`);\n"
+"console.log(sql);\n"
+"// handle error as well...\n"
+"```"
+msgstr ""
+
+#: src/bindings/javascript.md:67
+msgid "Notes"
+msgstr ""
+
+#: src/bindings/javascript.md:69
+msgid ""
+"This uses [`wasm-pack`](https://rustwasm.github.io/docs/wasm-pack/tutorials/"
+"npm-browser-packages/index.html) to generate bindings[^1]."
+msgstr ""
+
+#: src/bindings/javascript.md:75
+msgid ""
+"though we would be very open to other approaches, and used `trunk` "
+"successfully in a rust-driven approach to this, RIP `prql-web`."
+msgstr ""
+
+#: src/bindings/javascript.md:78
+msgid "Development"
+msgstr "開發"
+
+#: src/bindings/javascript.md:80
+msgid "Build:"
+msgstr ""
+
+#: src/bindings/javascript.md:86
+msgid "This builds Node, bundler and web packages in the `dist` path."
+msgstr ""
+
+#: src/bindings/javascript.md:88
+msgid "Test:"
+msgstr "測試："
