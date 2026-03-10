@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-01-06 13:46:28 -0800",
-      "hash" : "a1c3f4ca42c26850394420b58c6ef1e8607cb3c7",
-      "title" : "fix: handle partial application of transforms in user-defined functions (#5663)"
+      "date" : "2026-03-10 03:15:32 +0000",
+      "hash" : "6c58bed95b2e8bb64bf5bcb774cb60c784599179",
+      "title" : "chore: bump the patch group across 1 directory with 2 updates (#5707)"
     }
   },
   "type" : "branch",
