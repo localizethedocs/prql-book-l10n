@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-01-10T16:13:49Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/spec/name-resolution.md:1
+msgid "Name resolution"
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:3
+msgid ""
+"Because PRQL primarily handles relational data, it has specialized scoping "
+"rules for referencing columns."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:6
+msgid "Scopes"
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:8
+msgid ""
+"In PRQL's compiler, a scope is the collection of all names one can reference "
+"from a specific point in the program."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:11
+msgid ""
+"In PRQL, names in the scope are composed from namespace and variable name "
+"which are separated by a dot, similar to SQL. Namespaces can contain many "
+"dots, but variable names cannot."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:16
+msgid ""
+"\\[!NOTE\\] For example, name `my_table.some_column` is a variable "
+"`some_column` from namespace `my_table`."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:20
+msgid "Name `foo.bar.baz` is a variable `baz` from namespace `foo.bar`."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:22
+msgid ""
+"When processing a query, a scope is maintained and updated for each point in "
+"the query."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:25
+msgid ""
+"It start with only namespace `std`, which is the standard library. It "
+"contains common functions like `sum` or `count`, along with all transform "
+"functions such as `derive` and `group`."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:29
+msgid ""
+"In pipelines (or rather in transform functions), scope is also injected with "
+"namespaces of tables which may have been referenced with `from` or `join` "
+"transforms. These namespaces contain simply all the columns of the table and "
+"possibly a wildcard variable, which matches any variable (see the algorithm "
+"below). Within transforms, there is also a special namespace that does not "
+"have a name. It is called a _\"frame\"_ and it contains columns of the "
+"current table the transform is operating on."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:37
+msgid "Resolving"
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:39
+msgid ""
+"For each ident we want to resolve, we search the scope's items in order. One "
+"of three things can happen:"
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:42
+msgid ""
+"Scope contains an exact match, e.g. a name that matches in namespace and the "
+"variable name."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:45
+msgid ""
+"Scope does not contain an exact match, but the ident did not specify a "
+"namespace, so we can match a namespace that contains a `*` wildcard. If "
+"there's a single namespace, the matched namespace is also updated to contain "
+"this new variable name."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:50
+msgid "Otherwise, the nothing is matched and an error is raised."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:52
+msgid "Translating to SQL"
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:54
+msgid ""
+"When translating into an SQL statement which references only one table, "
+"there is no need to reference column names with table prefix."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:62
+msgid ""
+"But when there are multiple tables and we don't have complete knowledge of "
+"all table columns, a column without a prefix (i.e. `first_name`) may "
+"actually reside in multiple tables. Because of this, we have to use table "
+"prefixes for all column names."
+msgstr ""
+
+#: src/reference/spec/name-resolution.md:74
+msgid ""
+"As you can see, `employees.first_name` now needs table prefix, to prevent "
+"conflicts with potential column with the same name in `departments` table. "
+"Similarly, `d.title` needs the table prefix."
+msgstr ""
