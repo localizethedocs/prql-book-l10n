@@ -16,9 +16,9 @@
       "branch" : "main",
       "commit" : 
       {
-        "date" : "2026-01-06 13:46:28 -0800",
-        "hash" : "a1c3f4ca42c26850394420b58c6ef1e8607cb3c7",
-        "title" : "fix: handle partial application of transforms in user-defined functions (#5663)"
+        "date" : "2026-03-16 22:33:49 -0700",
+        "hash" : "92095f9440789992465362d1d41008ede3b5c1a1",
+        "title" : "feat: Add support for date.to_text for BigQuery (#5712)"
       }
     },
     "zh_TW" : 
@@ -26,9 +26,9 @@
       "branch" : "main",
       "commit" : 
       {
-        "date" : "2026-01-06 13:46:28 -0800",
-        "hash" : "a1c3f4ca42c26850394420b58c6ef1e8607cb3c7",
-        "title" : "fix: handle partial application of transforms in user-defined functions (#5663)"
+        "date" : "2026-03-16 22:33:49 -0700",
+        "hash" : "92095f9440789992465362d1d41008ede3b5c1a1",
+        "title" : "feat: Add support for date.to_text for BigQuery (#5712)"
       }
     }
   },
