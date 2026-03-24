@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-01-10T16:14:12Z\n"
+"POT-Creation-Date: 2026-03-24T09:48:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/project/contributing/development.md:1
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Setting up a full dev environment"
 msgstr ""
 
-#: src/project/contributing/development.md:38
+#: src/project/contributing/development.md:39
 msgid ""
 "\\[!NOTE\\] We really care about this process being easy, both because the "
 "project benefits from more contributors like you, and to reciprocate your "
@@ -68,27 +68,27 @@ msgid ""
 "scripts & instructions."
 msgstr ""
 
-#: src/project/contributing/development.md:44
+#: src/project/contributing/development.md:46
 msgid ""
 "For more advanced development; for example compiling for wasm or previewing "
 "the website, we have two options:"
 msgstr ""
 
-#: src/project/contributing/development.md:47
+#: src/project/contributing/development.md:49
 msgid "Option 1: Use the project's `task`"
 msgstr ""
 
-#: src/project/contributing/development.md:49
+#: src/project/contributing/development.md:52
 msgid ""
 "\\[!NOTE\\] This is tested on macOS, should work on amd64 Linux, but won't "
 "work on others (include Windows), since it relies on `brew`."
 msgstr ""
 
-#: src/project/contributing/development.md:52
+#: src/project/contributing/development.md:56
 msgid "[Install Task](https://taskfile.dev/installation/)."
 msgstr ""
 
-#: src/project/contributing/development.md:53
+#: src/project/contributing/development.md:57
 msgid ""
 "Then run the `setup-dev` task. This runs commands from our [Taskfile.yaml]"
 "(https://github.com/PRQL/prql/blob/main/Taskfile.yaml), installing "
@@ -96,27 +96,27 @@ msgid ""
 "extensions."
 msgstr ""
 
-#: src/project/contributing/development.md:62
+#: src/project/contributing/development.md:66
 msgid "Option 2: Install tools individually"
 msgstr ""
 
-#: src/project/contributing/development.md:64
+#: src/project/contributing/development.md:68
 msgid "We'll need `cargo-insta`, to update snapshot tests:"
 msgstr ""
 
-#: src/project/contributing/development.md:70
+#: src/project/contributing/development.md:74
 msgid ""
 "We'll need Python, which most systems will have already. The easiest way to "
 "check is to try running the full tests:"
 msgstr ""
 
-#: src/project/contributing/development.md:77
+#: src/project/contributing/development.md:81
 msgid ""
 "...and if that doesn't complete successfully, ensure we have Python >= 3.7, "
 "to compile `prqlc-python`."
 msgstr ""
 
-#: src/project/contributing/development.md:80
+#: src/project/contributing/development.md:84
 msgid ""
 "For more involved contributions, such as building the website, playground, "
 "book, or some release artifacts, we'll need some additional tools. But we "
@@ -126,11 +126,11 @@ msgid ""
 "be a good source to copy & paste instructions from."
 msgstr ""
 
-#: src/project/contributing/development.md:87
+#: src/project/contributing/development.md:91
 msgid "Option 3: Use a Dev Container"
 msgstr ""
 
-#: src/project/contributing/development.md:89
+#: src/project/contributing/development.md:93
 msgid ""
 "This project has a [devcontainer.json file](https://github.com/PRQL/prql/"
 "blob/main/.devcontainer/devcontainer.json) and a [pre-built dev container "
@@ -139,14 +139,14 @@ msgid ""
 "dev/](https://containers.dev/)"
 msgstr ""
 
-#: src/project/contributing/development.md:96
+#: src/project/contributing/development.md:100
 msgid ""
 "Currently, the tools for Rust are already installed in the pre-built image, "
 "and, Node.js, Python and others are configured to be installed when build "
 "the container."
 msgstr ""
 
-#: src/project/contributing/development.md:100
+#: src/project/contributing/development.md:104
 msgid ""
 "While there are a variety of tools that support Dev Containers, the focus "
 "here is on developing with VS Code in a container by [GitHub Codespaces]"
@@ -155,7 +155,7 @@ msgid ""
 "remote.remote-containers)."
 msgstr ""
 
-#: src/project/contributing/development.md:105
+#: src/project/contributing/development.md:109
 msgid ""
 "To use a Dev Container on a local computer with VS Code, install the [VS "
 "Code Dev Containers extension](https://marketplace.visualstudio.com/items?"
@@ -163,72 +163,72 @@ msgid ""
 "Then refer to the links above to get started."
 msgstr ""
 
-#: src/project/contributing/development.md:109
+#: src/project/contributing/development.md:113
 msgid "Option 4: Use nix development environment"
 msgstr ""
 
-#: src/project/contributing/development.md:111
+#: src/project/contributing/development.md:116
 msgid ""
 "\\[!NOTE\\] This is used by a member of the core team on Linux, but doesn't "
 "currently work on Mac. We're open to contributions to improve support."
 msgstr ""
 
-#: src/project/contributing/development.md:114
+#: src/project/contributing/development.md:120
 msgid ""
 "A [nix](https://nixos.org/) flake `flake.nix` provides 3 development "
 "environments:"
 msgstr ""
 
-#: src/project/contributing/development.md:117
+#: src/project/contributing/development.md:123
 msgid "**default**, for building the compiler"
 msgstr ""
 
-#: src/project/contributing/development.md:118
+#: src/project/contributing/development.md:124
 msgid "**web**, for the compiler and the website,"
 msgstr ""
 
-#: src/project/contributing/development.md:119
+#: src/project/contributing/development.md:125
 msgid "**full**, for the compiler, the website and the compiler bindings."
 msgstr ""
 
-#: src/project/contributing/development.md:121
+#: src/project/contributing/development.md:127
 msgid "To load the shell:"
 msgstr ""
 
-#: src/project/contributing/development.md:123
+#: src/project/contributing/development.md:129
 msgid ""
 "[Install nix (the package manager)](https://nixos.org/download). (only first "
 "time)"
 msgstr ""
 
-#: src/project/contributing/development.md:126
+#: src/project/contributing/development.md:132
 msgid ""
 "Enable flakes, which are a (pretty stable) experimental feature of nix. "
 "(only first time)"
 msgstr ""
 
-#: src/project/contributing/development.md:129
+#: src/project/contributing/development.md:135
 msgid "For non-NixOS users:"
 msgstr ""
 
-#: src/project/contributing/development.md:133
+#: src/project/contributing/development.md:139
 msgid "'experimental-features = nix-command flakes'"
 msgstr ""
 
-#: src/project/contributing/development.md:136
+#: src/project/contributing/development.md:142
 msgid ""
 "For NixOS users, follow instructions [here](https://nixos.wiki/wiki/Flakes)."
 msgstr ""
 
-#: src/project/contributing/development.md:138
+#: src/project/contributing/development.md:144
 msgid "Run:"
 msgstr ""
 
-#: src/project/contributing/development.md:144
+#: src/project/contributing/development.md:150
 msgid "To use the \"web\" or \"full\" shell, run:"
 msgstr ""
 
-#: src/project/contributing/development.md:150
+#: src/project/contributing/development.md:156
 msgid ""
 "Optionally, you can install [direnv](https://direnv.net/), to automatically "
 "load the shell when you enter this repo. The easiest way is to also install "
@@ -236,118 +236,118 @@ msgid ""
 "`.envrc` with:"
 msgstr ""
 
-#: src/project/contributing/development.md:156
+#: src/project/contributing/development.md:162
 msgid "# .envrc\n"
 msgstr ""
 
-#: src/project/contributing/development.md:162
+#: src/project/contributing/development.md:168
 msgid "Contribution workflow"
 msgstr ""
 
-#: src/project/contributing/development.md:164
+#: src/project/contributing/development.md:170
 msgid ""
 "We're similar to most projects on GitHub — open a Pull Request with a "
 "suggested change!"
 msgstr ""
 
-#: src/project/contributing/development.md:167
+#: src/project/contributing/development.md:173
 msgid "Commits"
 msgstr ""
 
-#: src/project/contributing/development.md:169
+#: src/project/contributing/development.md:175
 msgid ""
 "If a change is user-facing, please add a line in [**`CHANGELOG.md`**]"
 "(https://github.com/PRQL/prql/blob/main/CHANGELOG.md), with `{message}, "
 "({@contributor, #X})` where `X` is the PR number."
 msgstr ""
 
-#: src/project/contributing/development.md:172
+#: src/project/contributing/development.md:178
 msgid ""
 "If there's a missing entry, a follow-up PR containing just the changelog "
 "entry is welcome."
 msgstr ""
 
-#: src/project/contributing/development.md:174
+#: src/project/contributing/development.md:180
 msgid ""
 "We're using [Conventional Commits](https://www.conventionalcommits.org) "
 "message format, enforced through [action-semantic-pull-request](https://"
 "github.com/amannn/action-semantic-pull-request)."
 msgstr ""
 
-#: src/project/contributing/development.md:178
+#: src/project/contributing/development.md:184
 msgid "Merges"
 msgstr ""
 
-#: src/project/contributing/development.md:180
+#: src/project/contributing/development.md:186
 msgid "**We merge any code that makes PRQL better**"
 msgstr ""
 
-#: src/project/contributing/development.md:181
+#: src/project/contributing/development.md:187
 msgid ""
 "A PR doesn't need to be perfect to be merged; it doesn't need to solve a big "
 "problem. It needs to:"
 msgstr ""
 
-#: src/project/contributing/development.md:183
+#: src/project/contributing/development.md:189
 msgid "be in the right direction,"
 msgstr ""
 
-#: src/project/contributing/development.md:184
+#: src/project/contributing/development.md:190
 msgid "make incremental progress,"
 msgstr ""
 
-#: src/project/contributing/development.md:185
+#: src/project/contributing/development.md:191
 msgid "be explicit on its current state, so others can continue the progress."
 msgstr ""
 
-#: src/project/contributing/development.md:186
+#: src/project/contributing/development.md:192
 msgid ""
 "That said, there are a few instances when we need to ensure we have some "
 "consensus before merging code — for example non-trivial changes to the "
 "language, or large refactorings to the library."
 msgstr ""
 
-#: src/project/contributing/development.md:189
+#: src/project/contributing/development.md:195
 msgid ""
 "If you have merge permissions, and are reasonably confident that a PR is "
 "suitable to merge (whether or not you're the author), feel free to merge."
 msgstr ""
 
-#: src/project/contributing/development.md:191
+#: src/project/contributing/development.md:197
 msgid ""
 "If you don't have merge permissions and have authored a few PRs, ask and ye "
 "shall receive."
 msgstr ""
 
-#: src/project/contributing/development.md:193
+#: src/project/contributing/development.md:199
 msgid "The primary way we ratchet the code quality is through automated tests."
 msgstr ""
 
-#: src/project/contributing/development.md:194
+#: src/project/contributing/development.md:200
 msgid ""
 "This means PRs almost always need a test to demonstrate incremental progress."
 msgstr ""
 
-#: src/project/contributing/development.md:196
+#: src/project/contributing/development.md:202
 msgid ""
 "If a change breaks functionality without breaking tests, our tests were "
 "probably insufficient."
 msgstr ""
 
-#: src/project/contributing/development.md:198
+#: src/project/contributing/development.md:204
 msgid ""
 "If a change breaks existing tests (for example, changing an external API), "
 "that indicates we should be careful about merging a change, including "
 "soliciting others' views."
 msgstr ""
 
-#: src/project/contributing/development.md:201
+#: src/project/contributing/development.md:207
 msgid ""
 "We use PR reviews to give general context, offer specific assistance, and "
 "collaborate on larger decisions."
 msgstr ""
 
-#: src/project/contributing/development.md:203
+#: src/project/contributing/development.md:209
 msgid ""
 "Reviews around 'nits' like code formatting / idioms / etc are very welcome. "
 "But the norm is for them to be received as helpful advice, rather than as "
@@ -355,26 +355,26 @@ msgid ""
 "these suggestions is welcome."
 msgstr ""
 
-#: src/project/contributing/development.md:207
+#: src/project/contributing/development.md:213
 msgid ""
 "If you have merge permissions and would like a PR to be reviewed before it "
 "merges, that's great — ask or assign a reviewer."
 msgstr ""
 
-#: src/project/contributing/development.md:209
+#: src/project/contributing/development.md:215
 msgid ""
 "If a PR hasn't received attention after a day, please feel free to ping the "
 "pull request."
 msgstr ""
 
-#: src/project/contributing/development.md:211
+#: src/project/contributing/development.md:217
 msgid ""
 "People may review a PR after it's merged. As part of the understanding that "
 "we can merge quickly, contributors are expected to incorporate substantive "
 "feedback into a future PR."
 msgstr ""
 
-#: src/project/contributing/development.md:214
+#: src/project/contributing/development.md:220
 msgid ""
 "We should revert quickly if the impact of a PR turns out not to be "
 "consistent with our expectations, or there isn't as much consensus on a "
@@ -384,15 +384,15 @@ msgid ""
 "incorrect test or adding a quick fix for the underlying issue."
 msgstr ""
 
-#: src/project/contributing/development.md:221
+#: src/project/contributing/development.md:227
 msgid "Docs"
 msgstr ""
 
-#: src/project/contributing/development.md:223
+#: src/project/contributing/development.md:229
 msgid "We're very keen on contributions to improve our documentation."
 msgstr ""
 
-#: src/project/contributing/development.md:225
+#: src/project/contributing/development.md:231
 msgid ""
 "This includes our docs in the book, on the website, in our code, or in a "
 "Readme. We also appreciate issues pointing out that our documentation was "
@@ -400,11 +400,11 @@ msgid ""
 "confusing for others."
 msgstr ""
 
-#: src/project/contributing/development.md:230
+#: src/project/contributing/development.md:236
 msgid "Some principles for ensuring our docs remain maintainable:"
 msgstr ""
 
-#: src/project/contributing/development.md:232
+#: src/project/contributing/development.md:238
 msgid ""
 "Docs should be as close as possible to the code. Doctests are ideal on this "
 "dimension — they're literally very close to the code and they can't drift "
@@ -413,7 +413,7 @@ msgid ""
 "explaining the CLI."
 msgstr ""
 
-#: src/project/contributing/development.md:237
+#: src/project/contributing/development.md:243
 msgid ""
 "We should have some visualization of how to maintain docs when we add them. "
 "Docs have a habit of falling out of date — the folks reading them are often "
@@ -422,24 +422,24 @@ msgid ""
 "Docs that are concise & specific are easier to maintain."
 msgstr ""
 
-#: src/project/contributing/development.md:242
+#: src/project/contributing/development.md:248
 msgid ""
 "Docs should be specifically relevant to PRQL; anything else we can instead "
 "link to."
 msgstr ""
 
-#: src/project/contributing/development.md:245
+#: src/project/contributing/development.md:251
 msgid ""
 "If something doesn't fit into one of these categories, there are still lots "
 "of ways of getting the word out there — a blog post / gist / etc. Let us "
 "know and we're happy to link to it / tweet it."
 msgstr ""
 
-#: src/project/contributing/development.md:249
+#: src/project/contributing/development.md:255
 msgid "How we test"
 msgstr ""
 
-#: src/project/contributing/development.md:251
+#: src/project/contributing/development.md:257
 msgid ""
 "We use a pyramid of tests — we have fast, focused tests at the bottom of the "
 "pyramid, which give us low latency feedback when developing, and then "
@@ -447,7 +447,7 @@ msgid ""
 "develops<sup><a name=\"to-footnote-1\">[1](#footnote-1)</a></sup>."
 msgstr ""
 
-#: src/project/contributing/development.md:258
+#: src/project/contributing/development.md:265
 msgid ""
 "\\[!NOTE\\] If you're making your first contribution, you don't need to "
 "engage with all this — it's fine to just make a change and push the results; "
@@ -455,11 +455,11 @@ msgid ""
 "then be run locally if needed. We're always around to help out."
 msgstr ""
 
-#: src/project/contributing/development.md:263
+#: src/project/contributing/development.md:271
 msgid "Our tests, from the bottom of the pyramid to the top:"
 msgstr ""
 
-#: src/project/contributing/development.md:265
+#: src/project/contributing/development.md:273
 msgid ""
 "**[Static checks](https://github.com/PRQL/prql/blob/main/.pre-commit-config."
 "yaml)** — we run a few static checks to ensure the code stays healthy and "
@@ -468,26 +468,26 @@ msgid ""
 "(https://pre-commit.com). They can be run locally with"
 msgstr ""
 
-#: src/project/contributing/development.md:273
-#: src/project/contributing/development.md:294
-#: src/project/contributing/development.md:344
+#: src/project/contributing/development.md:281
+#: src/project/contributing/development.md:302
+#: src/project/contributing/development.md:352
 msgid "# or\n"
 msgstr ""
 
-#: src/project/contributing/development.md:277
+#: src/project/contributing/development.md:285
 msgid ""
 "The tests fix most of the issues they find themselves. Most of them also run "
 "on GitHub on every commit; any changes they make are added onto the branch "
 "automatically in an additional commit."
 msgstr ""
 
-#: src/project/contributing/development.md:280
+#: src/project/contributing/development.md:288
 msgid ""
 "Checking by [MegaLinter](https://megalinter.io/latest/), which includes more "
 "Linters, is also done automatically on GitHub. (experimental)"
 msgstr ""
 
-#: src/project/contributing/development.md:283
+#: src/project/contributing/development.md:291
 msgid ""
 "**Unit tests & inline insta snapshots** — we rely on unit tests to rapidly "
 "check that our code basically works. We extensively use [Insta](https://"
@@ -496,13 +496,13 @@ msgid ""
 "footnote-2\">[2](#footnote-2)</a></sup>"
 msgstr ""
 
-#: src/project/contributing/development.md:289
+#: src/project/contributing/development.md:297
 msgid ""
 "These are the fastest tests which run our code; they're designed to run on "
 "every save while you're developing. We include a `task` which does this:"
 msgstr ""
 
-#: src/project/contributing/development.md:328
+#: src/project/contributing/development.md:336
 msgid ""
 "**[Documentation](https://github.com/PRQL/prql/tree/main/web/book/tests/"
 "documentation)** — we compile all examples from our documentation in the "
@@ -511,7 +511,7 @@ msgid ""
 "are included in:"
 msgstr ""
 
-#: src/project/contributing/development.md:337
+#: src/project/contributing/development.md:345
 msgid ""
 "**[Database integration tests](https://github.com/PRQL/prql/tree/main/prqlc/"
 "prqlc/tests/integration/dbs)** — we run tests with example queries against "
@@ -519,13 +519,13 @@ msgid ""
 "supported dialects. The in-process tests can be run locally with:"
 msgstr ""
 
-#: src/project/contributing/development.md:348
+#: src/project/contributing/development.md:356
 msgid ""
 "More details on running with external databases are in the [Readme](https://"
 "github.com/PRQL/prql/tree/main/prqlc/prqlc/tests/integration/dbs)."
 msgstr ""
 
-#: src/project/contributing/development.md:351
+#: src/project/contributing/development.md:360
 msgid ""
 "\\[!NOTE\\] Integration tests use DuckDB, and so require a clang compiler to "
 "compile [`duckdb-rs`](https://github.com/wangfenjin/duckdb-rs). Most "
@@ -533,19 +533,19 @@ msgid ""
 "clang compiler with:"
 msgstr ""
 
-#: src/project/contributing/development.md:356
+#: src/project/contributing/development.md:366
 msgid "On macOS, install xcode with `xcode-select --install`"
 msgstr ""
 
-#: src/project/contributing/development.md:357
+#: src/project/contributing/development.md:367
 msgid "On Debian Linux, `apt-get update && apt-get install clang`"
 msgstr ""
 
-#: src/project/contributing/development.md:358
+#: src/project/contributing/development.md:368
 msgid "On Windows, `duckdb-rs` isn't supported, so these tests are excluded"
 msgstr ""
 
-#: src/project/contributing/development.md:360
+#: src/project/contributing/development.md:370
 msgid ""
 "**[GitHub Actions on every commit](https://github.com/PRQL/prql/blob/main/."
 "github/workflows/tests.yaml)** — we run tests relevant to a PR's changes in "
@@ -556,7 +556,7 @@ msgid ""
 "can be merged."
 msgstr ""
 
-#: src/project/contributing/development.md:367
+#: src/project/contributing/development.md:377
 msgid ""
 "**[GitHub Actions on merge](https://github.com/PRQL/prql/blob/"
 "c042eef48709e2c1af577161554fd09f14e67e0f/.github/workflows/pull-request."
@@ -565,17 +565,17 @@ msgid ""
 "code coverage, and some performance benchmarks."
 msgstr ""
 
-#: src/project/contributing/development.md:372
+#: src/project/contributing/development.md:382
 msgid ""
 "If these tests fail after merging, we should revert the commit before fixing "
 "the test and then re-reverting."
 msgstr ""
 
-#: src/project/contributing/development.md:375
+#: src/project/contributing/development.md:385
 msgid "Most of these will run locally with:"
 msgstr ""
 
-#: src/project/contributing/development.md:381
+#: src/project/contributing/development.md:391
 msgid ""
 "**[GitHub Actions nightly](https://github.com/PRQL/prql/blob/main/.github/"
 "workflows/nightly.yaml)** — every night, we run tests that take longer, are "
@@ -583,30 +583,30 @@ msgid ""
 "checks, bindings' tests on multiple OSs, or expensive timing benchmarks."
 msgstr ""
 
-#: src/project/contributing/development.md:386
+#: src/project/contributing/development.md:396
 msgid ""
 "We can run these tests before a merge by adding a label `pr-nightly` to the "
 "PR."
 msgstr ""
 
-#: src/project/contributing/development.md:389
+#: src/project/contributing/development.md:399
 msgid ""
 "The goal of our tests is to allow us to make changes quickly. If they're "
 "making it more difficult to make changes, or there are missing tests that "
 "would offer the confidence to make changes faster, please raise an issue."
 msgstr ""
 
-#: src/project/contributing/development.md:395
+#: src/project/contributing/development.md:405
 msgid "Website"
 msgstr ""
 
-#: src/project/contributing/development.md:397
+#: src/project/contributing/development.md:407
 msgid ""
 "The website is published together with the book and the playground, and is "
 "automatically built and released on any push to the `web` branch."
 msgstr ""
 
-#: src/project/contributing/development.md:400
+#: src/project/contributing/development.md:410
 msgid ""
 "The `web` branch points to the latest release plus any website-specific "
 "fixes. That way, the compiler behavior in the playground matches the latest "
@@ -614,34 +614,34 @@ msgid ""
 "than every release."
 msgstr ""
 
-#: src/project/contributing/development.md:405
+#: src/project/contributing/development.md:415
 msgid ""
 "Fixes to the playground, book, or website should have a `pr-backport-web` "
 "label added to their PR — a bot will then open & merge another PR onto the "
 "`web` branch once the initial branch merges."
 msgstr ""
 
-#: src/project/contributing/development.md:409
+#: src/project/contributing/development.md:419
 msgid "The website components will run locally with:"
 msgstr ""
 
-#: src/project/contributing/development.md:412
+#: src/project/contributing/development.md:422
 msgid "# Run the main website\n"
 msgstr ""
 
-#: src/project/contributing/development.md:413
+#: src/project/contributing/development.md:423
 msgid "# Run the PRQL online book\n"
 msgstr ""
 
-#: src/project/contributing/development.md:415
+#: src/project/contributing/development.md:425
 msgid "# Run the PRQL playground\n"
 msgstr ""
 
-#: src/project/contributing/development.md:420
+#: src/project/contributing/development.md:430
 msgid "Bindings"
 msgstr ""
 
-#: src/project/contributing/development.md:422
+#: src/project/contributing/development.md:432
 msgid ""
 "We have a number of language bindings, as documented at <https://prql-lang."
 "org/book/project/bindings/index.html>. Some of these are within our "
@@ -649,97 +649,104 @@ msgid ""
 "when we use the main prql repo vs separate repos for bindings:"
 msgstr ""
 
-#: src/project/contributing/development.md:427
+#: src/project/contributing/development.md:437
 msgid "Factor"
 msgstr ""
 
-#: src/project/contributing/development.md:427
+#: src/project/contributing/development.md:437
 msgid "Rationale"
 msgstr ""
 
-#: src/project/contributing/development.md:427
+#: src/project/contributing/development.md:437
 msgid "Example"
 msgstr ""
 
-#: src/project/contributing/development.md:429
+#: src/project/contributing/development.md:439
 msgid "Does someone want to sign up to maintain a repo?"
 msgstr ""
 
-#: src/project/contributing/development.md:429
+#: src/project/contributing/development.md:439
 msgid "A different repo is harder for the core team to maintain"
 msgstr ""
 
-#: src/project/contributing/development.md:429
+#: src/project/contributing/development.md:439
 msgid "`tree-sitter-prql` is well maintained"
 msgstr ""
 
-#: src/project/contributing/development.md:430
+#: src/project/contributing/development.md:440
 msgid "Can it change independently from the compiler?"
 msgstr ""
 
-#: src/project/contributing/development.md:430
+#: src/project/contributing/development.md:440
 msgid ""
 "If it's in a different repo, it can't be changed in lockstep with the "
 "compiler"
 msgstr ""
 
-#: src/project/contributing/development.md:430
+#: src/project/contributing/development.md:440
 msgid "`prql-vscode` is fine to change \"behind\" the language"
 msgstr ""
 
-#: src/project/contributing/development.md:431
+#: src/project/contributing/development.md:441
 msgid "Would a separate repo invite new contributors?"
 msgstr ""
 
-#: src/project/contributing/development.md:431
+#: src/project/contributing/development.md:441
 msgid ""
 "A monorepo with all the rust code can be less inviting for those familiar "
 "with other langs"
 msgstr ""
 
-#: src/project/contributing/development.md:431
+#: src/project/contributing/development.md:441
 msgid "`prql-vscode` had some JS-only contributors"
 msgstr ""
 
-#: src/project/contributing/development.md:432
+#: src/project/contributing/development.md:442
 msgid "Is there an convention for a stand-alone repo?"
 msgstr ""
 
-#: src/project/contributing/development.md:432
+#: src/project/contributing/development.md:442
 msgid "A small number of ecosystems require a separate repo"
 msgstr ""
 
-#: src/project/contributing/development.md:432
+#: src/project/contributing/development.md:442
 msgid "`homebrew-prql` needs to be named that way for a Homebrew tap"
 msgstr ""
 
-#: src/project/contributing/development.md:436
+#: src/project/contributing/development.md:446
 msgid "Releasing"
 msgstr ""
 
-#: src/project/contributing/development.md:438
+#: src/project/contributing/development.md:448
 msgid "Currently we release in a semi-automated way:"
 msgstr ""
 
-#: src/project/contributing/development.md:440
+#: src/project/contributing/development.md:450
 msgid ""
 "PR & merge an updated [Changelog](https://github.com/PRQL/prql/blob/main/"
 "CHANGELOG.md). GitHub will produce a draft version at <https://github.com/"
 "PRQL/prql/releases/new>, including \"New Contributors\"."
 msgstr ""
 
-#: src/project/contributing/development.md:445
+#: src/project/contributing/development.md:455
 msgid "Use this script to generate a line introducing the enumerated changes:"
 msgstr ""
 
-#: src/project/contributing/development.md:448
+#: src/project/contributing/development.md:458
 msgid ""
 "\"It has $(git rev-list --count $(git rev-list --tags --max-count=1)..) "
 "commits from $(git shortlog --summary $(git rev-list --tags --max-count=1).. "
 "| wc -l | tr -d '[:space:]') contributors. Selected changes:\""
 msgstr ""
 
-#: src/project/contributing/development.md:451
+#: src/project/contributing/development.md:461
+msgid ""
+"When a fix closes an issue reported by someone other than the PR author, "
+"thank them in the changelog entry, e.g. `(@pr-author, #5639; reported by "
+"@issue-reporter)`."
+msgstr ""
+
+#: src/project/contributing/development.md:465
 msgid ""
 "If the current version is correct, then skip ahead. But if the version needs "
 "to be changed — for example, we had planned on a patch release, but instead "
@@ -748,13 +755,13 @@ msgid ""
 "the resulting commit."
 msgstr ""
 
-#: src/project/contributing/development.md:457
+#: src/project/contributing/development.md:471
 msgid ""
 "Ensure all changes intended for the release are merged to `main`. Then "
 "create the release (which creates the tag on the latest commit on `main`):"
 msgstr ""
 
-#: src/project/contributing/development.md:460
+#: src/project/contributing/development.md:474
 msgid ""
 "**Web UI:** Go to [Draft a new release](https://github.com/PRQL/prql/"
 "releases/new)<sup><a name=\"to-footnote-3\">[3](#footnote-3)</a></sup>, copy "
@@ -763,26 +770,26 @@ msgid ""
 "hit \"Publish\"."
 msgstr ""
 
-#: src/project/contributing/development.md:466
+#: src/project/contributing/development.md:480
 msgid "**CLI:**"
 msgstr ""
 
-#: src/project/contributing/development.md:469
+#: src/project/contributing/development.md:483
 msgid "\"$version\""
 msgstr ""
 
-#: src/project/contributing/development.md:469
+#: src/project/contributing/development.md:483
 msgid "\"$(cat <<'EOF'\n"
 msgstr ""
 
-#: src/project/contributing/development.md:475
+#: src/project/contributing/development.md:489
 msgid ""
 "From there, both the tag and release is created and all packages are "
 "published automatically based on our [release workflow](https://github.com/"
 "PRQL/prql/blob/main/.github/workflows/release.yaml)."
 msgstr ""
 
-#: src/project/contributing/development.md:479
+#: src/project/contributing/development.md:493
 msgid ""
 "Run `cargo release patch --no-publish --no-push --execute --no-verify --no-"
 "confirm --no-tag && task prqlc:test-all` to bump the versions and add a new "
@@ -791,24 +798,24 @@ msgid ""
 "version."
 msgstr ""
 
-#: src/project/contributing/development.md:487
+#: src/project/contributing/development.md:501
 msgid ""
 "Check whether there are [milestones](https://github.com/PRQL/prql/"
 "milestones) that need to be pushed out."
 msgstr ""
 
-#: src/project/contributing/development.md:490
+#: src/project/contributing/development.md:504
 msgid ""
 "Review the **Current Status** on the README.md to ensure it reflects the "
 "project state."
 msgstr ""
 
-#: src/project/contributing/development.md:493
+#: src/project/contributing/development.md:507
 msgid ""
 "We may make this more automated in future; e.g. automatic changelog creation."
 msgstr ""
 
-#: src/project/contributing/development.md:497
+#: src/project/contributing/development.md:511
 msgid ""
 "<a name=\"footnote-1\">[1](#to-footnote-1)</a>: Our approach is very "
 "consistent with **[@matklad](https://github.com/matklad)**'s advice, in his "
@@ -816,7 +823,7 @@ msgid ""
 "to-test.html)."
 msgstr ""
 
-#: src/project/contributing/development.md:502
+#: src/project/contributing/development.md:516
 msgid ""
 "<a name=\"footnote-2\">[2](#to-footnote-2)</a>: [Here's an example of an "
 "insta test](https://github.com/PRQL/prql/blob/0.2.2/prql-compiler/src/parser."
@@ -824,13 +831,13 @@ msgid ""
 "us; the remainder is filled in by insta."
 msgstr ""
 
-#: src/project/contributing/development.md:506
+#: src/project/contributing/development.md:520
 msgid ""
 "<a name=\"footnote-3\">[3](#to-footnote-3)</a>: Only maintainers have access "
 "to this page."
 msgstr ""
 
-#: src/project/contributing/development.md:509
+#: src/project/contributing/development.md:523
 msgid ""
 "<a name=\"footnote-4\">[4](#to-footnote-4)</a>: Unfortunately GitHub's "
 "markdown parser interprets linebreaks as newlines. I haven't found a better "

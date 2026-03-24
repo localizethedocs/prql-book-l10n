@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"POT-Creation-Date: 2026-03-24T09:48:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/tutorial/filtering.md:1
@@ -100,10 +100,11 @@ msgid ""
 "took the first 3 rows from that result."
 msgstr ""
 
-#: src/tutorial/filtering.md:59
+#: src/tutorial/filtering.md:60
 msgid ""
 "\\[!NOTE\\] Note that a single transform `take 11..13` would have produced "
-"the same SQL. The example serves an example of how PRQL allows fast data "
-"exploration by \"stacking\" transforms in the pipeline, reducing the "
-"cognitive burden of how a new transform with the previous query."
+"the same SQL. The example shows how PRQL allows fast data exploration by "
+"\"stacking\" transforms in the pipeline. This reduces the cognitive burden: "
+"unlike SQL, each new transform interacts _only_ with the results of the "
+"previous query."
 msgstr ""

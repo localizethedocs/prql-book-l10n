@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"POT-Creation-Date: 2026-03-24T09:48:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/reference/declarations/functions.md:1
@@ -37,10 +37,10 @@ msgstr ""
 
 #: src/reference/declarations/functions.md:22
 msgid ""
-"This function is named `interp`, and has two positional parameters named "
-"`high` and `x`, and one named parameter named `low` which takes a default "
-"argument of `0`. It calculates the proportion of the distance that `x` is "
-"between `low` and `high`."
+"The function below is named `interp`, and has two positional parameters "
+"named `high` and `x`, and one named parameter named `low` which takes a "
+"default argument of `0`. It calculates the proportion of the distance that "
+"`x` is between `low` and `high`."
 msgstr ""
 
 #: src/reference/declarations/functions.md:37
@@ -97,4 +97,34 @@ msgid ""
 "Functions can bind to any variable that is in scope when the function is "
 "executed. For example, here `cost_total` refers to the column that's "
 "introduced in the `from`."
+msgstr ""
+
+#: src/reference/declarations/functions.md:111
+msgid "Partial application"
+msgstr ""
+
+#: src/reference/declarations/functions.md:113
+msgid ""
+"Functions can be partially applied, which is useful for creating reusable "
+"transform wrappers. When a function returns a partially-applied transform, "
+"the missing parameters are automatically propagated."
+msgstr ""
+
+#: src/reference/declarations/functions.md:117
+msgid "For example, we can create a `top_n` function that wraps `take`:"
+msgstr ""
+
+#: src/reference/declarations/functions.md:126
+msgid ""
+"This works because `take` requires two arguments (the count and the "
+"relation), but `top_n` only provides one. The relation parameter is "
+"automatically filled in from the pipeline."
+msgstr ""
+
+#: src/reference/declarations/functions.md:130
+msgid "We can also compose multiple partial applications:"
+msgstr ""
+
+#: src/reference/declarations/functions.md:142
+msgid "Or store a fully-configured transform for reuse:"
 msgstr ""

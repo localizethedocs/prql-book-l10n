@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"POT-Creation-Date: 2026-03-24T09:48:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/project/target.md:1
@@ -177,13 +177,13 @@ msgid ""
 "function `std.prql.version` in PRQL."
 msgstr ""
 
-#: src/project/target.md:105
+#: src/project/target.md:106
 msgid ""
 "\\[!NOTE\\] This function was renamed from `std.prql_version` to `prql."
 "version` in PRQL 0.11.1. `std.prql_version` will be removed in PRQL 0.12.0."
 msgstr ""
 
-#: src/project/target.md:110
+#: src/project/target.md:112
 msgid ""
 "<a name=\"footnote-1\">[1](#to-footnote-1)</a>: while there's no \"generic\" "
 "DB to test `sql.generic` against, we still count it as supported."

@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"POT-Creation-Date: 2026-03-24T09:48:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/reference/stdlib/index.md:1
@@ -35,14 +35,14 @@ msgid ""
 "blob/main/prqlc/prqlc/src/semantic/std.prql):"
 msgstr ""
 
-#: src/reference/stdlib/index.md:13
+#: src/reference/stdlib/index.md:14
 msgid ""
 "\\[!NOTE\\] PRQL 0.9.0 has started supporting different DB implementations "
 "for standard library functions. The source is the [`std.sql`](https://github."
 "com/PRQL/prql/blob/main/prqlc/prqlc/src/sql/std.sql.prql)."
 msgstr ""
 
-#: src/reference/stdlib/index.md:17
+#: src/reference/stdlib/index.md:19
 msgid ""
 "````prql no-eval\n"
 "# The PRQL standard library defines the following functions and transforms.\n"
@@ -307,11 +307,11 @@ msgid ""
 "````"
 msgstr ""
 
-#: src/reference/stdlib/index.md:269
+#: src/reference/stdlib/index.md:271
 msgid "And a couple of examples:"
 msgstr ""
 
-#: src/reference/stdlib/index.md:271
+#: src/reference/stdlib/index.md:273
 msgid ""
 "```prql\n"
 "from employees\n"
@@ -323,11 +323,11 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/reference/stdlib/index.md:280
+#: src/reference/stdlib/index.md:282
 msgid "Example of different implementations of division and integer division:"
 msgstr ""
 
-#: src/reference/stdlib/index.md:282
+#: src/reference/stdlib/index.md:284
 msgid ""
 "```prql\n"
 "prql target:sql.sqlite\n"
@@ -340,7 +340,7 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/reference/stdlib/index.md:292
+#: src/reference/stdlib/index.md:294
 msgid ""
 "```prql\n"
 "prql target:sql.mysql\n"

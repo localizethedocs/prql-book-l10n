@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"POT-Creation-Date: 2026-03-24T09:48:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/reference/syntax/s-strings.md:1
@@ -48,7 +48,7 @@ msgstr ""
 msgid "So this compiles using the function:"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:27
+#: src/reference/syntax/s-strings.md:28
 msgid ""
 "\\[!NOTE\\] Because S-string contents are SQL, double-quotes (`\"`) will "
 "denote a _column name_. To avoid that, use single-quotes (`'`) around the "
@@ -56,11 +56,11 @@ msgid ""
 "`s'CONCAT(\"hello\", \"world\")'` use `s\"CONCAT('hello', 'world')\"`"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:32
+#: src/reference/syntax/s-strings.md:34
 msgid "Here's an example of a more involved use of an s-string:"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:34
+#: src/reference/syntax/s-strings.md:36
 msgid ""
 "```prql\n"
 "from de=dept_emp\n"
@@ -72,7 +72,7 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:43
+#: src/reference/syntax/s-strings.md:45
 msgid ""
 "For those who have used Python, s-strings are similar to Python's f-strings, "
 "but the result is SQL code, rather than a string literal. For example, a "
@@ -81,17 +81,17 @@ msgid ""
 "produces `average(salary)`, without quotes."
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:48
+#: src/reference/syntax/s-strings.md:50
 msgid ""
 "Note that interpolations can only contain plain variable names and not whole "
 "expression like Python."
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:51
+#: src/reference/syntax/s-strings.md:53
 msgid "We can also use s-strings to produce a full table:"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:53
+#: src/reference/syntax/s-strings.md:55
 msgid ""
 "```prql\n"
 "from s\"SELECT DISTINCT ON first_name, id, age FROM employees ORDER BY age "
@@ -100,7 +100,7 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:58
+#: src/reference/syntax/s-strings.md:61
 msgid ""
 "\\[!NOTE\\] S-strings in user code are intended as an escape hatch for an "
 "unimplemented feature. If we often need s-strings to express something, "
@@ -109,15 +109,15 @@ msgid ""
 "PRQL/prql/issues/new/choose)."
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:64
+#: src/reference/syntax/s-strings.md:68
 msgid "Braces"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:66
+#: src/reference/syntax/s-strings.md:70
 msgid "To output braces from an s-string, use double braces:"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:68
+#: src/reference/syntax/s-strings.md:72
 msgid ""
 "```prql\n"
 "from employees\n"
@@ -127,25 +127,25 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:75
+#: src/reference/syntax/s-strings.md:79
 msgid "Precedence within s-strings"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:77
+#: src/reference/syntax/s-strings.md:81
 msgid ""
 "Variables in s-strings are inserted into the SQL source as-is, which means "
 "we may get surprising behavior when the variable has multiple terms and the "
 "s-string isn't parenthesized."
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:81
+#: src/reference/syntax/s-strings.md:85
 msgid ""
 "In this toy example, the expression `salary + benefits / 365` gets "
 "precedence wrong. The generated SQL code is as if we had written `salary + "
 "(benefits / 365)`."
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:85
+#: src/reference/syntax/s-strings.md:89
 msgid ""
 "```prql\n"
 "from employees\n"
@@ -156,11 +156,11 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:93
+#: src/reference/syntax/s-strings.md:97
 msgid "Instead, the numerator `{gross_salary}` must be encased in parentheses:"
 msgstr ""
 
-#: src/reference/syntax/s-strings.md:95
+#: src/reference/syntax/s-strings.md:99
 msgid ""
 "```prql\n"
 "from employees\n"

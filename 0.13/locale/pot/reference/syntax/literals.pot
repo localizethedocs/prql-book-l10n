@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-01-10T16:14:11Z\n"
+"POT-Creation-Date: 2026-03-24T09:48:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/reference/syntax/literals.md:1
@@ -95,38 +95,38 @@ msgid ""
 "string that encodes the date & time."
 msgstr ""
 
-#: src/reference/syntax/literals.md:55
+#: src/reference/syntax/literals.md:56
 msgid ""
 "\\[!NOTE\\] PRQL's notation is designed to be less verbose than SQL's "
 "`TIMESTAMP '2004-10-19 10:23:54'` and more explicit than SQL's implicit "
 "option that just uses a string `'2004-10-19 10:23:54'`."
 msgstr ""
 
-#: src/reference/syntax/literals.md:59
+#: src/reference/syntax/literals.md:61
 msgid "Dates"
 msgstr ""
 
-#: src/reference/syntax/literals.md:61
+#: src/reference/syntax/literals.md:63
 msgid ""
 "Dates are represented by `@{yyyy-mm-dd}` — a `@` followed by the date format."
 msgstr ""
 
-#: src/reference/syntax/literals.md:68
+#: src/reference/syntax/literals.md:70
 msgid "Times"
 msgstr ""
 
-#: src/reference/syntax/literals.md:70
+#: src/reference/syntax/literals.md:72
 msgid ""
 "Times are represented by `@{HH:mm:ss.SSS±Z}` with any parts not supplied "
 "defaulting to zero. This includes the timezone, which is represented by `+HH:"
 "mm`, `-HH:mm` or `Z`. This is consistent with the ISO8601 time format."
 msgstr ""
 
-#: src/reference/syntax/literals.md:79
+#: src/reference/syntax/literals.md:81
 msgid "Timestamps"
 msgstr ""
 
-#: src/reference/syntax/literals.md:81
+#: src/reference/syntax/literals.md:83
 msgid ""
 "Timestamps are represented by `@{yyyy-mm-ddTHH:mm:ss.SSS±Z}` / `@{date}"
 "T{time}`, with any time parts not supplied being rounded to zero, including "
@@ -135,17 +135,17 @@ msgid ""
 "`T` to separate date & time."
 msgstr ""
 
-#: src/reference/syntax/literals.md:92
+#: src/reference/syntax/literals.md:94
 msgid "Durations"
 msgstr ""
 
-#: src/reference/syntax/literals.md:94
+#: src/reference/syntax/literals.md:96
 msgid ""
 "Durations are represented by `{N}{periods}`, such as `2years` or "
 "`10minutes`, without a space."
 msgstr ""
 
-#: src/reference/syntax/literals.md:97
+#: src/reference/syntax/literals.md:100
 msgid ""
 "\\[!NOTE\\] These aren't the same as ISO8601, because we evaluated "
 "`P3Y6M4DT12H30M5S` to be difficult to understand, but we could support a "
@@ -154,67 +154,67 @@ msgid ""
 "`2years + 10months`. Please raise an issue if this is inconvenient."
 msgstr ""
 
-#: src/reference/syntax/literals.md:108
+#: src/reference/syntax/literals.md:112
 msgid "Examples"
 msgstr ""
 
-#: src/reference/syntax/literals.md:110
+#: src/reference/syntax/literals.md:114
 msgid "Here's a larger list of date and time examples:"
 msgstr ""
 
-#: src/reference/syntax/literals.md:112
+#: src/reference/syntax/literals.md:116
 msgid ""
 "`@20221231` is invalid — it must contain full punctuation (`-` and `:`),"
 msgstr ""
 
-#: src/reference/syntax/literals.md:113
+#: src/reference/syntax/literals.md:117
 msgid "`@2022-12-31` is a date"
 msgstr ""
 
-#: src/reference/syntax/literals.md:114
+#: src/reference/syntax/literals.md:118
 msgid ""
 "`@2022-12` or `@2022` are invalid — SQL can't express a month, only a date"
 msgstr ""
 
-#: src/reference/syntax/literals.md:115
+#: src/reference/syntax/literals.md:119
 msgid "`@16:54:32.123456` is a time"
 msgstr ""
 
-#: src/reference/syntax/literals.md:116
+#: src/reference/syntax/literals.md:120
 msgid ""
 "`@16:54:32`, `@16:54`, `@16` are all allowed, expressing `@16:54:32.000000`, "
 "`@16:54:00.000000`, `@16:00:00.000000` respectively"
 msgstr ""
 
-#: src/reference/syntax/literals.md:118
+#: src/reference/syntax/literals.md:122
 msgid "`@2022-12-31T16:54:32.123456` is a timestamp without timezone"
 msgstr ""
 
-#: src/reference/syntax/literals.md:119
+#: src/reference/syntax/literals.md:123
 msgid "`@2022-12-31T16:54:32.123456Z` is a timestamp in UTC"
 msgstr ""
 
-#: src/reference/syntax/literals.md:120
+#: src/reference/syntax/literals.md:124
 msgid "`@2022-12-31T16:54+02` is timestamp in UTC+2"
 msgstr ""
 
-#: src/reference/syntax/literals.md:121
+#: src/reference/syntax/literals.md:125
 msgid ""
 "`@2022-12-31T16:54+02:00` and `@2022-12-31T16:54+02` are datetimes in UTC+2"
 msgstr ""
 
-#: src/reference/syntax/literals.md:122
+#: src/reference/syntax/literals.md:126
 msgid ""
 "`@16:54+02` is invalid — time is always local, so it cannot have a timezone"
 msgstr ""
 
-#: src/reference/syntax/literals.md:123
+#: src/reference/syntax/literals.md:127
 msgid ""
 "`@2022-12-31+02` is invalid — date is always local, so it cannot have a "
 "timezone"
 msgstr ""
 
-#: src/reference/syntax/literals.md:126
+#: src/reference/syntax/literals.md:131
 msgid ""
 "\\[!NOTE\\] Currently prqlc does not parse or validate any of the datetime "
 "strings and will pass them to the database engine without adjustment. This "
@@ -223,29 +223,29 @@ msgid ""
 "ISO_8601) format described above."
 msgstr ""
 
-#: src/reference/syntax/literals.md:132
+#: src/reference/syntax/literals.md:138
 msgid "Roadmap"
 msgstr ""
 
-#: src/reference/syntax/literals.md:134
+#: src/reference/syntax/literals.md:140
 msgid ""
 "Datetimes (as a distinct datatype from the timestamps) are supported by some "
 "databases (e.g. MySql, BigQuery). With the addition of type casts, these "
 "could be represented by a timestamp cast to a datetime:"
 msgstr ""
 
-#: src/reference/syntax/literals.md:142
+#: src/reference/syntax/literals.md:148
 msgid "These are some examples we can then add:"
 msgstr ""
 
-#: src/reference/syntax/literals.md:144
+#: src/reference/syntax/literals.md:150
 msgid "`@2022-12-31T16:54<datetime>` is datetime without timezone"
 msgstr ""
 
-#: src/reference/syntax/literals.md:145
+#: src/reference/syntax/literals.md:151
 msgid "`@2022-12-31<datetime>` is forbidden — datetime must specify time"
 msgstr ""
 
-#: src/reference/syntax/literals.md:146
+#: src/reference/syntax/literals.md:152
 msgid "`@16:54<datetime>` is forbidden — datetime must specify date"
 msgstr ""
