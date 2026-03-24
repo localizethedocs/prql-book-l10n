@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-03-24T11:21:20Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -741,6 +741,13 @@ msgstr ""
 
 #: src/project/contributing/development.md:461
 msgid ""
+"When a fix closes an issue reported by someone other than the PR author, "
+"thank them in the changelog entry, e.g. `(@pr-author, #5639; reported by "
+"@issue-reporter)`."
+msgstr ""
+
+#: src/project/contributing/development.md:465
+msgid ""
 "If the current version is correct, then skip ahead. But if the version needs "
 "to be changed — for example, we had planned on a patch release, but instead "
 "require a minor release — then run `cargo release version $version -x && "
@@ -748,13 +755,13 @@ msgid ""
 "the resulting commit."
 msgstr ""
 
-#: src/project/contributing/development.md:467
+#: src/project/contributing/development.md:471
 msgid ""
 "Ensure all changes intended for the release are merged to `main`. Then "
 "create the release (which creates the tag on the latest commit on `main`):"
 msgstr ""
 
-#: src/project/contributing/development.md:470
+#: src/project/contributing/development.md:474
 msgid ""
 "**Web UI:** Go to [Draft a new release](https://github.com/PRQL/prql/"
 "releases/new)<sup><a name=\"to-footnote-3\">[3](#footnote-3)</a></sup>, copy "
@@ -763,26 +770,26 @@ msgid ""
 "hit \"Publish\"."
 msgstr ""
 
-#: src/project/contributing/development.md:476
+#: src/project/contributing/development.md:480
 msgid "**CLI:**"
 msgstr ""
 
-#: src/project/contributing/development.md:479
+#: src/project/contributing/development.md:483
 msgid "\"$version\""
 msgstr ""
 
-#: src/project/contributing/development.md:479
+#: src/project/contributing/development.md:483
 msgid "\"$(cat <<'EOF'\n"
 msgstr ""
 
-#: src/project/contributing/development.md:485
+#: src/project/contributing/development.md:489
 msgid ""
 "From there, both the tag and release is created and all packages are "
 "published automatically based on our [release workflow](https://github.com/"
 "PRQL/prql/blob/main/.github/workflows/release.yaml)."
 msgstr ""
 
-#: src/project/contributing/development.md:489
+#: src/project/contributing/development.md:493
 msgid ""
 "Run `cargo release patch --no-publish --no-push --execute --no-verify --no-"
 "confirm --no-tag && task prqlc:test-all` to bump the versions and add a new "
@@ -791,24 +798,24 @@ msgid ""
 "version."
 msgstr ""
 
-#: src/project/contributing/development.md:497
+#: src/project/contributing/development.md:501
 msgid ""
 "Check whether there are [milestones](https://github.com/PRQL/prql/"
 "milestones) that need to be pushed out."
 msgstr ""
 
-#: src/project/contributing/development.md:500
+#: src/project/contributing/development.md:504
 msgid ""
 "Review the **Current Status** on the README.md to ensure it reflects the "
 "project state."
 msgstr ""
 
-#: src/project/contributing/development.md:503
+#: src/project/contributing/development.md:507
 msgid ""
 "We may make this more automated in future; e.g. automatic changelog creation."
 msgstr ""
 
-#: src/project/contributing/development.md:507
+#: src/project/contributing/development.md:511
 msgid ""
 "<a name=\"footnote-1\">[1](#to-footnote-1)</a>: Our approach is very "
 "consistent with **[@matklad](https://github.com/matklad)**'s advice, in his "
@@ -816,7 +823,7 @@ msgid ""
 "to-test.html)."
 msgstr ""
 
-#: src/project/contributing/development.md:512
+#: src/project/contributing/development.md:516
 msgid ""
 "<a name=\"footnote-2\">[2](#to-footnote-2)</a>: [Here's an example of an "
 "insta test](https://github.com/PRQL/prql/blob/0.2.2/prql-compiler/src/parser."
@@ -824,13 +831,13 @@ msgid ""
 "us; the remainder is filled in by insta."
 msgstr ""
 
-#: src/project/contributing/development.md:516
+#: src/project/contributing/development.md:520
 msgid ""
 "<a name=\"footnote-3\">[3](#to-footnote-3)</a>: Only maintainers have access "
 "to this page."
 msgstr ""
 
-#: src/project/contributing/development.md:519
+#: src/project/contributing/development.md:523
 msgid ""
 "<a name=\"footnote-4\">[4](#to-footnote-4)</a>: Unfortunately GitHub's "
 "markdown parser interprets linebreaks as newlines. I haven't found a better "
