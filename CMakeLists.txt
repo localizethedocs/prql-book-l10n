@@ -103,9 +103,6 @@ set(VERSION_OF_MDBOOK "[default]"
 set(VERSION_OF_MDBOOK_I18N_HELPERS "[default]"
     CACHE STRING "The version of mdbook-i18n-helpers to install.")
 
-set(VERSION_OF_MDBOOK_ADMONISH "[default]"
-    CACHE STRING "The version of mdbook-admonish to install.")
-
 set(VERSION_OF_MDBOOK_FOOTNOTE "[default]"
     CACHE STRING "The version of mdbook-footnote to install.")
 
@@ -122,19 +119,7 @@ set(PROJ_CMAKE_TARGETS_DIR          "${PROJ_SOURCE_DIR}/cmake/targets")
 set(PROJ_CONDA_DIR                  "${PROJ_SOURCE_DIR}/.conda")
 set(PROJ_OUT_DIR                    "${PROJ_SOURCE_DIR}/out")
 set(PROJ_OUT_REPO_DIR               "${PROJ_OUT_DIR}/repo")
-if     (VERSION MATCHES "^(main)$")
-    set(PROJ_OUT_REPO_DOCS_DIR      "${PROJ_OUT_REPO_DIR}/web/book")
-elseif (VERSION MATCHES "^([0-9]+)\\.([0-9]+)$" AND
-        VERSION VERSION_LESS_EQUAL    "0.13"    AND
-        VERSION VERSION_GREATER_EQUAL "0.6")
-    set(PROJ_OUT_REPO_DOCS_DIR      "${PROJ_OUT_REPO_DIR}/web/book")
-elseif (VERSION MATCHES "^([0-9]+)\\.([0-9]+)$" AND
-        VERSION VERSION_LESS_EQUAL    "0.5"     AND
-        VERSION VERSION_GREATER_EQUAL "0.1")
-    set(PROJ_OUT_REPO_DOCS_DIR      "${PROJ_OUT_REPO_DIR}/book")
-else()
-    message(FATAL_ERROR "Invalid VERSION value. (${VERSION})")
-endif()
+set(PROJ_OUT_REPO_DOCS_DIR          "${PROJ_OUT_REPO_DIR}/web/book")
 set(PROJ_OUT_REPO_DOCS_BOOK_DIR     "${PROJ_OUT_REPO_DOCS_DIR}")
 set(PROJ_OUT_REPO_DOCS_SRC_DIR      "${PROJ_OUT_REPO_DOCS_DIR}/src")
 set(PROJ_OUT_REPO_DOCS_THEME_DIR    "${PROJ_OUT_REPO_DOCS_DIR}/theme")
@@ -181,20 +166,19 @@ get_members_of_json_object(
 # - For "main":
 #   - Set VERSION_TYPE    to "branch"
 #   - Set BRANCH_NAME     to "main"
-# - For "[MAJOR].[MINOR]":
+# - For "[MAJOR]":
 #   - Set VERSION_TYPE    to "tag"
-#   - Set TAG_PATTERN     to "^([MAJOR])\\.([MINOR])\\.([0-9]+)$"
+#   - Set TAG_PATTERN     to "^([MAJOR])\\.([0-9]+)\\.([0-9]+)$"
 #   - Set TAG_SUFFIX      to ""
 #]============================================================]
 
 if     (VERSION MATCHES "^(main)$")
     set(VERSION_TYPE    "branch")
     set(BRANCH_NAME     "main")
-elseif (VERSION MATCHES "^([0-9]+)\\.([0-9]+)$")
+elseif (VERSION MATCHES "^([0-9]+)$")
     set(MAJOR           "${CMAKE_MATCH_1}")
-    set(MINOR           "${CMAKE_MATCH_2}")
     set(VERSION_TYPE    "tag")
-    set(TAG_PATTERN     "^(${MAJOR})\\.(${MINOR})\\.([0-9]+)$")
+    set(TAG_PATTERN     "^(${MAJOR})\\.([0-9]+)\\.([0-9]+)$")
     set(TAG_SUFFIX      "")
 else()
     message(FATAL_ERROR "Invalid VERSION value. (${VERSION})")
@@ -257,25 +241,15 @@ if     (VERSION MATCHES "^(main)$")
     set(VERSION_OF_DASEL                "2")
     set(VERSION_OF_MDBOOK               "^0.5")
     set(VERSION_OF_MDBOOK_I18N_HELPERS  "^0.4")
-    set(VERSION_OF_MDBOOK_ADMONISH      "[none]")
     set(VERSION_OF_MDBOOK_FOOTNOTE      "^0.2")
-elseif (VERSION MATCHES "^([0-9]+)\\.([0-9]+)$")
-    if     (VERSION VERSION_LESS_EQUAL    "0.13" AND
-            VERSION VERSION_GREATER_EQUAL "0.13")
+elseif (VERSION MATCHES "^([0-9]+)$")
+    if     (VERSION VERSION_LESS_EQUAL    "0" AND
+            VERSION VERSION_GREATER_EQUAL "0")
         set(VERSION_OF_RUST                 "1.90")
         set(VERSION_OF_DASEL                "2")
         set(VERSION_OF_MDBOOK               "^0.5")
         set(VERSION_OF_MDBOOK_I18N_HELPERS  "^0.4")
-        set(VERSION_OF_MDBOOK_ADMONISH      "[none]")
         set(VERSION_OF_MDBOOK_FOOTNOTE      "^0.2")
-    elseif (VERSION VERSION_LESS_EQUAL    "0.12" AND
-            VERSION VERSION_GREATER_EQUAL "0.1")
-        set(VERSION_OF_RUST                 "1.90")
-        set(VERSION_OF_DASEL                "2")
-        set(VERSION_OF_MDBOOK               "^0.4")
-        set(VERSION_OF_MDBOOK_I18N_HELPERS  "^0.3")
-        set(VERSION_OF_MDBOOK_ADMONISH      "^1.20")
-        set(VERSION_OF_MDBOOK_FOOTNOTE      "^0.1")
     else()
         message(FATAL_ERROR "Invalid VERSION value. (${VERSION})")
     endif()
@@ -293,9 +267,6 @@ if (NOT "$CACHE{VERSION_OF_MDBOOK}" STREQUAL "[default]")
 endif()
 if (NOT "$CACHE{VERSION_OF_MDBOOK_I18N_HELPERS}" STREQUAL "[default]")
     set(VERSION_OF_MDBOOK_I18N_HELPERS "$CACHE{VERSION_OF_MDBOOK_I18N_HELPERS}")
-endif()
-if (NOT "$CACHE{VERSION_OF_MDBOOK_ADMONISH}" STREQUAL "[default]")
-    set(VERSION_OF_MDBOOK_ADMONISH "$CACHE{VERSION_OF_MDBOOK_ADMONISH}")
 endif()
 if (NOT "$CACHE{VERSION_OF_MDBOOK_FOOTNOTE}" STREQUAL "[default]")
     set(VERSION_OF_MDBOOK_FOOTNOTE "$CACHE{VERSION_OF_MDBOOK_FOOTNOTE}")
@@ -387,7 +358,6 @@ message(STATUS "VERSION_OF_RUST                 = ${VERSION_OF_RUST} (CACHE: $CA
 message(STATUS "VERSION_OF_DASEL                = ${VERSION_OF_DASEL} (CACHE: $CACHE{VERSION_OF_DASEL})")
 message(STATUS "VERSION_OF_MDBOOK               = ${VERSION_OF_MDBOOK} (CACHE: $CACHE{VERSION_OF_MDBOOK})")
 message(STATUS "VERSION_OF_MDBOOK_I18N_HELPERS  = ${VERSION_OF_MDBOOK_I18N_HELPERS} (CACHE: $CACHE{VERSION_OF_MDBOOK_I18N_HELPERS})")
-message(STATUS "VERSION_OF_MDBOOK_ADMONISH      = ${VERSION_OF_MDBOOK_ADMONISH} (CACHE: $CACHE{VERSION_OF_MDBOOK_ADMONISH})")
 message(STATUS "VERSION_OF_MDBOOK_FOOTNOTE      = ${VERSION_OF_MDBOOK_FOOTNOTE} (CACHE: $CACHE{VERSION_OF_MDBOOK_FOOTNOTE})")
 message(STATUS "---------- Directory-Related Variables ----------")
 message(STATUS "PROJ_SOURCE_DIR                 = ${PROJ_SOURCE_DIR}")
@@ -486,7 +456,6 @@ set(SCRIPT_MODE_CACHE
     -D VERSION_OF_DASEL=${VERSION_OF_DASEL}
     -D VERSION_OF_MDBOOK=${VERSION_OF_MDBOOK}
     -D VERSION_OF_MDBOOK_I18N_HELPERS=${VERSION_OF_MDBOOK_I18N_HELPERS}
-    -D VERSION_OF_MDBOOK_ADMONISH=${VERSION_OF_MDBOOK_ADMONISH}
     -D VERSION_OF_MDBOOK_FOOTNOTE=${VERSION_OF_MDBOOK_FOOTNOTE}
     # [Directory-Related Variables]
     -D PROJ_SOURCE_DIR=${PROJ_SOURCE_DIR}

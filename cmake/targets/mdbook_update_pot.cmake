@@ -64,36 +64,6 @@ message("")
 restore_cmake_message_indent()
 
 
-if (VERSION VERSION_LESS_EQUAL    "0.12" AND
-    VERSION VERSION_GREATER_EQUAL "0.1")
-    find_package(mdBook     MODULE REQUIRED COMPONENTS Admonish)
-    message(STATUS "Running 'mdbook-admonish install' command to update assets...")
-    remove_cmake_message_indent()
-    message("")
-    execute_process(
-        COMMAND ${CMAKE_COMMAND} -E env
-                ${ENV_VARS_OF_SYSTEM}
-                ${ENV_VARS_OF_COMMON}
-                ${mdBook_ADMONISH_EXECUTABLE} install
-        WORKING_DIRECTORY ${PROJ_OUT_REPO_DOCS_BOOK_DIR}
-        ECHO_OUTPUT_VARIABLE
-        ECHO_ERROR_VARIABLE
-        RESULT_VARIABLE RES_VAR
-        OUTPUT_VARIABLE OUT_VAR OUTPUT_STRIP_TRAILING_WHITESPACE
-        ERROR_VARIABLE  ERR_VAR ERROR_STRIP_TRAILING_WHITESPACE)
-    if (RES_VAR EQUAL 0)
-    else()
-        string(APPEND FAILURE_REASON
-        "The command failed with fatal errors.\n"
-        "    result:\n${RES_VAR}\n"
-        "    stderr:\n${ERR_VAR}")
-        message(FATAL_ERROR "${FAILURE_REASON}")
-    endif()
-    message("")
-    restore_cmake_message_indent()
-endif()
-
-
 message(STATUS "Copying 'head.hbs' file to the mdbook theme directory...")
 file(MAKE_DIRECTORY "${PROJ_OUT_REPO_DOCS_THEME_DIR}")
 file(COPY_FILE
