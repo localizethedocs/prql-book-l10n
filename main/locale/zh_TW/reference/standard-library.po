@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-03-24T11:21:19Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -292,6 +292,7 @@ msgid ""
 "## Date functions\n"
 "module date {\n"
 "  let to_text = format<text> column -> <text> internal std.date.to_text\n"
+"  let diff = `noresolve.unit` start end -> <int> internal std.date.diff\n"
 "}\n"
 "\n"
 "## File-reading functions, primarily for DuckDB\n"
@@ -316,11 +317,11 @@ msgid ""
 "````"
 msgstr ""
 
-#: src/reference/stdlib/index.md:271
+#: src/reference/stdlib/index.md:272
 msgid "And a couple of examples:"
 msgstr "以下是幾個示例："
 
-#: src/reference/stdlib/index.md:273
+#: src/reference/stdlib/index.md:274
 msgid ""
 "```prql\n"
 "from employees\n"
@@ -332,11 +333,11 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/reference/stdlib/index.md:282
+#: src/reference/stdlib/index.md:283
 msgid "Example of different implementations of division and integer division:"
 msgstr "不同實現的除法和整數除法的示例："
 
-#: src/reference/stdlib/index.md:284
+#: src/reference/stdlib/index.md:285
 msgid ""
 "```prql\n"
 "prql target:sql.sqlite\n"
@@ -349,7 +350,7 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/reference/stdlib/index.md:294
+#: src/reference/stdlib/index.md:295
 msgid ""
 "```prql\n"
 "prql target:sql.mysql\n"
