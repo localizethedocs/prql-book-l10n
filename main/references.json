@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-03-16 22:33:49 -0700",
-      "hash" : "92095f9440789992465362d1d41008ede3b5c1a1",
-      "title" : "feat: Add support for date.to_text for BigQuery (#5712)"
+      "date" : "2026-03-24 00:21:47 -0700",
+      "hash" : "50fbd19c34050e2e070ff1163b4fa2c406e860ec",
+      "title" : "feat: add 'date.diff' function for date diff support (#5726)"
     }
   },
   "type" : "branch",
