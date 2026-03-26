@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/project/integrations/syntax-highlighting.md:1
 msgid "Grammars / syntax highlighting"
-msgstr ""
+msgstr "文法/語法標明"
 
 #: src/project/integrations/syntax-highlighting.md:3
 msgid ""
@@ -50,6 +50,9 @@ msgid ""
 "[`grammars/CotEditor/`](https://github.com/PRQL/prql/tree/main/grammars/"
 "CotEditor/)."
 msgstr ""
+"[CotEditor](https://coteditor.com/) — macOS 的文字編輯器。檔案位於 "
+"[`grammars/CotEditor/`](https://github.com/PRQL/prql/tree/main/grammars/"
+"CotEditor/)。"
 
 #: src/project/integrations/syntax-highlighting.md:22
 msgid ""

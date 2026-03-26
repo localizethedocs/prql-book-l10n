@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/reference/declarations/functions.md:1
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/reference/declarations/functions.md:7
 msgid "Functions have two types of parameters:"
@@ -45,7 +45,7 @@ msgstr ""
 
 #: src/reference/declarations/functions.md:37
 msgid "Other examples"
-msgstr ""
+msgstr "其他範例"
 
 #: src/reference/declarations/functions.md:39
 msgid ""
@@ -82,7 +82,7 @@ msgstr ""
 
 #: src/reference/declarations/functions.md:74
 msgid "and"
-msgstr ""
+msgstr "且"
 
 #: src/reference/declarations/functions.md:83
 msgid "We can combine a chain of functions, which makes logic more readable:"

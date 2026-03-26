@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/project/integrations/prqlc-cli.md:1
 msgid "PRQL compiler"
-msgstr ""
+msgstr "PRQL 編譯器"
 
 #: src/project/integrations/prqlc-cli.md:3
 msgid ""
@@ -36,6 +36,8 @@ msgid ""
 "`prqlc` serves as a CLI for the PRQL compiler. It is a single, dependency-"
 "free binary that compiles PRQL into SQL."
 msgstr ""
+"`prqlc` 是 PRQL 編譯器的 CLI。它是一個無相依項的二進位檔，可以將 PRQL 編譯為 "
+"SQL。"
 
 #: src/project/integrations/prqlc-cli.md:14
 msgid "Usage"
@@ -81,7 +83,7 @@ msgstr ""
 
 #: src/project/integrations/prqlc-cli.md:75
 msgid "Installation"
-msgstr ""
+msgstr "安裝"
 
 #: src/project/integrations/prqlc-cli.md:77
 msgid ""
@@ -198,7 +200,7 @@ msgstr ""
 
 #: src/project/integrations/prqlc-cli.md:177
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/project/integrations/prqlc-cli.md:179
 msgid "Compile a PRQL string to a SQLite dialect string:"

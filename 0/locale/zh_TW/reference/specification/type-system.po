@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/reference/spec/type-system.md:1
 msgid "Type system"
-msgstr ""
+msgstr "型別系統"
 
 #: src/reference/spec/type-system.md:3
 msgid "Status: under development"
@@ -239,7 +239,7 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:130
 msgid "Definition"
-msgstr ""
+msgstr "定義"
 
 #: src/reference/spec/type-system.md:132
 msgid ""
@@ -267,7 +267,7 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:144
 msgid "Tuples"
-msgstr ""
+msgstr "元組"
 
 #: src/reference/spec/type-system.md:146
 msgid "Tuple type is a product type."
@@ -288,7 +288,7 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:158
 msgid "Arrays"
-msgstr ""
+msgstr "陣列"
 
 #: src/reference/spec/type-system.md:160
 msgid ""
@@ -298,7 +298,7 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:167
 msgid "Functions"
-msgstr ""
+msgstr "函式"
 
 #: src/reference/spec/type-system.md:173
 msgid "Union"
@@ -381,11 +381,11 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:238
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/reference/spec/type-system.md:261
 msgid "Appendix"
-msgstr ""
+msgstr "附錄"
 
 #: src/reference/spec/type-system.md:263
 msgid "Splitting primitives"
@@ -536,7 +536,7 @@ msgstr ""
 
 #: src/reference/spec/type-system.md:356
 msgid "Example"
-msgstr ""
+msgstr "範例"
 
 #: src/reference/spec/type-system.md:358
 msgid ""
