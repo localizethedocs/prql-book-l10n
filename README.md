@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-<h1 id="localization-of-prql-language-book">Localization of PRQL Language Book</h1>
+<h1 id="localization-of-the-prql-language-book">Localization of The PRQL Language Book</h1>
 </div>
 
 <details><summary><strong>Switch Languages</strong></summary>
@@ -67,7 +67,7 @@
 
 <p></p>
 
-The goal of this project is to translate the PRQL Language Book into multiple languages. Translations are contributed via the Crowdin platform, automatically synchronized with the GitHub repository, and can be previewed on GitHub Pages.
+The goal of this project is to translate The PRQL Language Book into multiple languages. Translations are contributed via the Crowdin platform, automatically synchronized with the GitHub repository, and can be previewed on GitHub Pages.
 
 > [!NOTE]
 > The translation is <strong>unofficial</strong> and <strong>community-driven</strong>. If you find any inaccuracies, always refer to the <a href="https://prql-lang.org/book">official documentation</a> or the <a href="https://github.com/PRQL/prql">source repository</a> of the upstream project for the most reliable information.
