@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -144,7 +144,7 @@ msgid ""
 "A relation is composed of rows. Each row in a relation contains a value for "
 "each of the relation's columns. Each column in a relation has a unique name "
 "and a designated data type. The table above is a relation, and has columns "
-"named `invoice_id`and `customer_id` each with a data type of \"integer "
+"named `invoice_id` and `customer_id` each with a data type of \"integer "
 "number\", a `billing_city` column with a data type of \"text\", several "
 "other columns, and a `total` column that contains floating-point numbers."
 msgstr ""
@@ -186,7 +186,7 @@ msgstr ""
 
 #: src/tutorial/relations.md:51
 msgid ""
-"Suppose we only need the `order_id` and `total` columns. Use `select` to "
+"Suppose we only need the `invoice_id` and `total` columns. Use `select` to "
 "choose the columns to pass through. _(Try it in the [Playground.](https://"
 "prql-lang.org/playground/))_"
 msgstr ""
@@ -220,49 +220,49 @@ msgid ""
 "a new column for Value Added Tax, set at 19% of the invoice total."
 msgstr ""
 
-#: src/tutorial/relations.md:90
+#: src/tutorial/relations.md:88
 msgid ""
 "The value of the new column can be a constant (such as a number or a "
 "string), or can be computed from the value of an existing column. Note that "
 "the value of the new column is assigned the name `VAT`."
 msgstr ""
 
-#: src/tutorial/relations.md:94
+#: src/tutorial/relations.md:92
 msgid "`join` transform"
 msgstr ""
 
-#: src/tutorial/relations.md:96
+#: src/tutorial/relations.md:94
 msgid ""
 "The `join` transform also adds columns to the relation by combining the rows "
 "from two relations \"side by side\". To determine which rows from each "
 "relation should be joined, `join` has match criteria, written in `( ... )`."
 msgstr ""
 
-#: src/tutorial/relations.md:105
+#: src/tutorial/relations.md:103
 msgid ""
 "This example \"connects\" the customer information from the `customers` "
 "relation with the information from the `invoices` relation, using identical "
 "values of the `customer_id` column from each relation to match the rows."
 msgstr ""
 
-#: src/tutorial/relations.md:109
+#: src/tutorial/relations.md:107
 msgid ""
 "It is frequently useful to assign an alias to both relations being joined "
 "together so that each relation's columns can be referred to uniquely."
 msgstr ""
 
-#: src/tutorial/relations.md:117
+#: src/tutorial/relations.md:115
 msgid ""
 "In the example above, the alias `inv` represents the `invoices` relation and "
 "`cust` represents the `customers` relation. It then becomes possible to "
 "refer to `inv.billing_city` and `cust.last_name` unambiguously."
 msgstr ""
 
-#: src/tutorial/relations.md:121
+#: src/tutorial/relations.md:119
 msgid "Summary"
 msgstr ""
 
-#: src/tutorial/relations.md:123
+#: src/tutorial/relations.md:121
 msgid ""
 "PRQL manipulates relations (tables) of data. The `derive`, `select`, and "
 "`join` transforms change the number of columns in a table. The first two "
@@ -270,7 +270,7 @@ msgid ""
 "rows, depending on the chosen type of join."
 msgstr ""
 
-#: src/tutorial/relations.md:128
+#: src/tutorial/relations.md:126
 msgid ""
 "This final example combines the above into a single query. It illustrates _a "
 "pipeline_ - the fundamental basis of PRQL. We simply add new lines "

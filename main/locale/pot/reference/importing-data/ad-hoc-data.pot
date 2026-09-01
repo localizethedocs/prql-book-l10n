@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -59,8 +59,8 @@ msgstr ""
 
 #: src/reference/data/relation-literals.md:38
 msgid ""
-"`from_text` takes a string in a common format, and converts it to table. It "
-"accepts a few formats:"
+"`from_text` takes a string in a common format, and converts it to a table. "
+"It accepts a few formats:"
 msgstr ""
 
 #: src/reference/data/relation-literals.md:41

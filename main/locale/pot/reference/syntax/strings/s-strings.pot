@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -84,7 +84,7 @@ msgstr ""
 #: src/reference/syntax/s-strings.md:50
 msgid ""
 "Note that interpolations can only contain plain variable names and not whole "
-"expression like Python."
+"expressions like in Python."
 msgstr ""
 
 #: src/reference/syntax/s-strings.md:53
@@ -94,8 +94,8 @@ msgstr ""
 #: src/reference/syntax/s-strings.md:55
 msgid ""
 "```prql\n"
-"from s\"SELECT DISTINCT ON first_name, id, age FROM employees ORDER BY age "
-"ASC\"\n"
+"from s\"SELECT DISTINCT ON (first_name) first_name, id, age FROM employees "
+"ORDER BY first_name, age ASC\"\n"
 "join s = s\"SELECT * FROM salaries\" (==id)\n"
 "```"
 msgstr ""

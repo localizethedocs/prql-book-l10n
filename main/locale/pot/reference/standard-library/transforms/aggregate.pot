@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -34,8 +34,8 @@ msgstr ""
 #: src/reference/stdlib/transforms/aggregate.md:15
 msgid ""
 "\\[!NOTE\\] Currently, all declared aggregation functions are `min`, `max`, "
-"`count`, `average`, `stddev`, `avg`, `sum` and `count_distinct`. We are in "
-"the process of filling out [std lib](../)."
+"`count`, `count_distinct`, `average`, `stddev`, `sum`, `all`, `any` and "
+"`concat_array`. We are in the process of filling out [std lib](../)."
 msgstr ""
 
 #: src/reference/stdlib/transforms/aggregate.md:20
@@ -50,7 +50,7 @@ msgstr ""
 msgid ""
 "Unlike in SQL, using an aggregation function in `derive` or `select` (or any "
 "other transform except `aggregate`) will not trigger aggregation. By "
-"default, PRQL will interpret such attempts functions as window functions:"
+"default, PRQL will interpret such attempts as window functions:"
 msgstr ""
 
 #: src/reference/stdlib/transforms/aggregate.md:51

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-24T11:21:19Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -56,15 +56,15 @@ msgid "`sql.generic` <sup><a name=\"to-footnote-1\">[1](#footnote-1)</a></sup>"
 msgstr ""
 
 #: src/project/target.md:37
-msgid "`sql.glaredb`"
-msgstr ""
-
-#: src/project/target.md:38
 msgid "`sql.mysql`"
 msgstr ""
 
-#: src/project/target.md:39
+#: src/project/target.md:38
 msgid "`sql.postgres`"
+msgstr ""
+
+#: src/project/target.md:39
+msgid "`sql.redshift`"
 msgstr ""
 
 #: src/project/target.md:40
@@ -103,18 +103,24 @@ msgstr ""
 msgid "`sql.snowflake`"
 msgstr ""
 
-#: src/project/target.md:55
+#: src/project/target.md:54
+msgid ""
+"`sql.oracle` — very early; currently only ensures identifiers are quoted to "
+"accommodate Oracle's case-folding rules. Most other language features fall "
+"back to generic SQL and may not execute correctly against Oracle."
+msgstr ""
+
+#: src/project/target.md:58
 msgid "Priority of targets"
 msgstr ""
 
-#: src/project/target.md:57
+#: src/project/target.md:60
 msgid ""
 "The compile target of a query is defined in the query's header or as an "
-"argument to the compiler. option. The argument to the compiler takes "
-"precedence."
+"argument to the compiler. The argument to the compiler takes precedence."
 msgstr ""
 
-#: src/project/target.md:60
+#: src/project/target.md:63
 msgid ""
 "For example, the following shell example specifies `sql.generic` in the "
 "query and `sql.duckdb` in the `--target` option of the `prqlc compile` "
@@ -122,48 +128,48 @@ msgid ""
 "based on the DuckDB dialect."
 msgstr ""
 
-#: src/project/target.md:66 src/project/target.md:74
+#: src/project/target.md:69 src/project/target.md:77
 msgid ""
 "'prql target:sql.generic\n"
 "      from foo'"
 msgstr ""
 
-#: src/project/target.md:70
+#: src/project/target.md:73
 msgid ""
 "To use the target described in the query, a special target `sql.any` can be "
 "specified in the compiler option."
 msgstr ""
 
-#: src/project/target.md:78
+#: src/project/target.md:81
 msgid "Version"
 msgstr ""
 
-#: src/project/target.md:80
+#: src/project/target.md:83
 msgid ""
 "PRQL allows specifying a version of the language in the PRQL header, like:"
 msgstr ""
 
-#: src/project/target.md:82
+#: src/project/target.md:85
 msgid ""
 "```prql\n"
-"prql version:\"0.13.12\"\n"
+"prql version:\"0.13.14\"\n"
 "\n"
 "from employees\n"
 "```"
 msgstr ""
 
-#: src/project/target.md:88
+#: src/project/target.md:91
 msgid "This has two roles, one of which is implemented:"
 msgstr ""
 
-#: src/project/target.md:90
+#: src/project/target.md:93
 msgid ""
 "The compiler will raise an error if the compiler is older than the query "
 "version. This prevents confusing errors when queries use newer features of "
 "the language but the compiler hasn't yet been upgraded."
 msgstr ""
 
-#: src/project/target.md:93
+#: src/project/target.md:96
 msgid ""
 "The compiler will compile for the major version of the query. This allows "
 "the language to evolve without breaking existing queries, or forcing "
@@ -171,19 +177,13 @@ msgid ""
 "gating feature for PRQL 1.0."
 msgstr ""
 
-#: src/project/target.md:98
+#: src/project/target.md:101
 msgid ""
 "The version of the compiler currently in use can be called using the special "
 "function `std.prql.version` in PRQL."
 msgstr ""
 
-#: src/project/target.md:106
-msgid ""
-"\\[!NOTE\\] This function was renamed from `std.prql_version` to `prql."
-"version` in PRQL 0.11.1. `std.prql_version` will be removed in PRQL 0.12.0."
-msgstr ""
-
-#: src/project/target.md:112
+#: src/project/target.md:110
 msgid ""
 "<a name=\"footnote-1\">[1](#to-footnote-1)</a>: while there's no \"generic\" "
 "DB to test `sql.generic` against, we still count it as supported."

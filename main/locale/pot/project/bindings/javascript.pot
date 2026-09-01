@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -119,7 +119,8 @@ msgid "Errors"
 msgstr ""
 
 #: src/project/bindings/javascript.md:102
-msgid "Errors are returned as following object, serialized as a JSON array:"
+msgid ""
+"Errors are returned as the following object, serialized as a JSON array:"
 msgstr ""
 
 #: src/project/bindings/javascript.md:104
@@ -133,7 +134,7 @@ msgid ""
 "  /// Plain text of the error\n"
 "  reason: string;\n"
 "  /// A list of suggestions of how to fix the error\n"
-"  hint: string | null;\n"
+"  hints: string[];\n"
 "  /// Character offset of error origin within a source file\n"
 "  span: [number, number] | null;\n"
 "\n"
@@ -183,8 +184,12 @@ msgstr ""
 msgid ""
 "By default the `wasm` binaries are optimized on each run, even if the "
 "underlying code hasn't changed, which can be slow. For a lower-latency dev "
-"loop, pass `--profile=dev` to `npm install` for a faster, less optimized "
-"build."
+"loop, set the `PROFILE` environment variable to `dev` for a faster, less "
+"optimized build."
+msgstr ""
+
+#: src/project/bindings/javascript.md:168
+msgid "dev"
 msgstr ""
 
 #: src/project/bindings/javascript.md:171

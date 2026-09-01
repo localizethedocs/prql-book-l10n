@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -79,7 +79,7 @@ msgid "ceil"
 msgstr ""
 
 #: src/reference/stdlib/math.md:11
-msgid "Rounds the number up of `col`"
+msgid "Rounds `col` up"
 msgstr ""
 
 #: src/reference/stdlib/math.md:12
@@ -111,7 +111,7 @@ msgid "floor"
 msgstr ""
 
 #: src/reference/stdlib/math.md:15
-msgid "Rounds the number down"
+msgid "Rounds `col` down"
 msgstr ""
 
 #: src/reference/stdlib/math.md:16

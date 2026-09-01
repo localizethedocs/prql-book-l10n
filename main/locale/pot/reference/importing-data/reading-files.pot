@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid ""
 "When specifying file names directly in the `FROM` clause without using "
 "functions, which is allowed in DuckDB, enclose the file names in backticks "
-"``` `` ``` as follows:"
+"`` ` `` as follows:"
 msgstr ""
 
 #: src/reference/data/read-files.md:31

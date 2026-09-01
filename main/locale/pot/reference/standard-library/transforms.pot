@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -145,8 +145,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:32
 msgid ""
-"[Partition rows into groups and applies a pipeline to each of them](./group."
-"md)"
+"[Partition rows into groups and apply a pipeline to each of them](./group.md)"
 msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:32

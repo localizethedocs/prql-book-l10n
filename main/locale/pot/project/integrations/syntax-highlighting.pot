@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -83,9 +83,9 @@ msgstr ""
 
 #: src/project/integrations/syntax-highlighting.md:36
 msgid ""
-"The website (outside of the book & playground): [`website/themes/prql-theme/"
-"static/plugins/highlight/prql.js`](https://github.com/PRQL/prql/blob/main/"
-"web/book/highlight-prql.js)"
+"The website (outside of the book & playground): [`web/website/themes/prql-"
+"theme/static/plugins/highlight/prql.js`](https://github.com/PRQL/prql/blob/"
+"main/web/website/themes/prql-theme/static/plugins/highlight/prql.js)"
 msgstr ""
 
 #: src/project/integrations/syntax-highlighting.md:39
@@ -171,40 +171,39 @@ msgstr ""
 
 #: src/project/integrations/syntax-highlighting.md:83
 msgid ""
-"[vim](https://www.vim.org/) — used by terminal-based text editor Vim. "
-"Instructions at [`grammars/vim/`](https://github.com/PRQL/prql/tree/main/"
-"grammars/vim/). The grammar is [upstream](https://github.com/vim/vim/blob/"
-"master/runtime/syntax/prql.vim)."
+"[vim](https://www.vim.org/) — used by terminal-based text editor Vim. The "
+"grammar is [upstream](https://github.com/vim/vim/blob/master/runtime/syntax/"
+"prql.vim)."
 msgstr ""
 
-#: src/project/integrations/syntax-highlighting.md:88
+#: src/project/integrations/syntax-highlighting.md:86
 msgid "[Neovim](https://neovim.io/) supported. Grammar is upstream."
 msgstr ""
 
-#: src/project/integrations/syntax-highlighting.md:92
+#: src/project/integrations/syntax-highlighting.md:90
 msgid ""
 "Since the [Elm](https://elm-lang.org/) language coincidentally provides "
 "syntax highlighting suitable for PRQL, it may look better to mark PRQL code "
 "as Elm when the above definition files are not available."
 msgstr ""
 
-#: src/project/integrations/syntax-highlighting.md:96
+#: src/project/integrations/syntax-highlighting.md:94
 msgid ""
 "For example, the following Markdown code block will be nicely highlighted on "
 "GitHub, Pandoc, and other Markdown renderers:"
 msgstr ""
 
-#: src/project/integrations/syntax-highlighting.md:106
+#: src/project/integrations/syntax-highlighting.md:104
 msgid ""
 "We hope that in the future these renderers will recognize PRQL code blocks "
 "and have syntax highlighting applied, and we are tracking these with several "
 "issues."
 msgstr ""
 
-#: src/project/integrations/syntax-highlighting.md:109
+#: src/project/integrations/syntax-highlighting.md:107
 msgid "GitHub (Linguist): <https://github.com/PRQL/prql/issues/1636>"
 msgstr ""
 
-#: src/project/integrations/syntax-highlighting.md:110
+#: src/project/integrations/syntax-highlighting.md:108
 msgid "Pandoc (Kate): <https://github.com/PRQL/prql/issues/2213>"
 msgstr ""
