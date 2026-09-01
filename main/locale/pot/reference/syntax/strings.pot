@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -57,9 +57,8 @@ msgstr ""
 
 #: src/reference/syntax/strings.md:29
 msgid ""
-"Strings can contain any escape character sequences defined by the [JSON "
-"standard](https://www.ecma-international.org/publications-and-standards/"
-"standards/ecma-404/)."
+"Strings can contain [escape sequences](#escape-sequences), interpreted "
+"according to rules similar to those used by Standard C."
 msgstr ""
 
 #: src/reference/syntax/strings.md:32
@@ -98,14 +97,14 @@ msgid ""
 "query. Use when PRQL doesn't have an equivalent facility."
 msgstr ""
 
-#: src/reference/syntax/strings.md:51
+#: src/reference/syntax/strings.md:50
 msgid ""
 "\\[!WARNING\\] Currently PRQL allows multiline strings with either a single "
 "character or multiple character quotes. This may change for strings using a "
 "single character quote in future versions."
 msgstr ""
 
-#: src/reference/syntax/strings.md:58
+#: src/reference/syntax/strings.md:56
 msgid ""
 "\\[!NOTE\\] These escape rules specify how PRQL interprets escape characters "
 "when compiling strings to SQL, not necessarily how the database will "
@@ -114,101 +113,101 @@ msgid ""
 "with any difficulties in the current implementation."
 msgstr ""
 
-#: src/reference/syntax/strings.md:65
+#: src/reference/syntax/strings.md:63
 msgid "Escape sequences"
 msgstr ""
 
-#: src/reference/syntax/strings.md:67
+#: src/reference/syntax/strings.md:65
 msgid ""
 "Unless an `r` prefix is present, escape sequences in string literals are "
 "interpreted according to rules similar to those used by Standard C. The "
 "recognized escape sequences are:"
 msgstr ""
 
-#: src/reference/syntax/strings.md:71
+#: src/reference/syntax/strings.md:69
 msgid "Escape Sequence"
 msgstr ""
 
-#: src/reference/syntax/strings.md:71
+#: src/reference/syntax/strings.md:69
 msgid "Meaning"
 msgstr ""
 
-#: src/reference/syntax/strings.md:73
+#: src/reference/syntax/strings.md:71
 msgid "`\\\\`"
 msgstr ""
 
-#: src/reference/syntax/strings.md:73
+#: src/reference/syntax/strings.md:71
 msgid "Backslash ()"
 msgstr ""
 
-#: src/reference/syntax/strings.md:74
+#: src/reference/syntax/strings.md:72
 msgid "`\\'`"
 msgstr ""
 
-#: src/reference/syntax/strings.md:74
+#: src/reference/syntax/strings.md:72
 msgid "Single quote (')"
 msgstr ""
 
-#: src/reference/syntax/strings.md:75
+#: src/reference/syntax/strings.md:73
 msgid "`\\\"`"
 msgstr ""
 
-#: src/reference/syntax/strings.md:75
+#: src/reference/syntax/strings.md:73
 msgid "Double quote (\")"
 msgstr ""
 
-#: src/reference/syntax/strings.md:76
+#: src/reference/syntax/strings.md:74
 msgid "`\\b`"
 msgstr ""
 
-#: src/reference/syntax/strings.md:76
+#: src/reference/syntax/strings.md:74
 msgid "Backspace"
 msgstr ""
 
-#: src/reference/syntax/strings.md:77
+#: src/reference/syntax/strings.md:75
 msgid "`\\f`"
 msgstr ""
 
-#: src/reference/syntax/strings.md:77
+#: src/reference/syntax/strings.md:75
 msgid "Formfeed"
 msgstr ""
 
-#: src/reference/syntax/strings.md:78
+#: src/reference/syntax/strings.md:76
 msgid "`\\n`"
 msgstr ""
 
-#: src/reference/syntax/strings.md:78
+#: src/reference/syntax/strings.md:76
 msgid "ASCII Linefeed (LF)"
 msgstr ""
 
-#: src/reference/syntax/strings.md:79
+#: src/reference/syntax/strings.md:77
 msgid "`\\r`"
 msgstr ""
 
-#: src/reference/syntax/strings.md:79
+#: src/reference/syntax/strings.md:77
 msgid "ASCII Carriage Return (CR)"
 msgstr ""
 
-#: src/reference/syntax/strings.md:80
+#: src/reference/syntax/strings.md:78
 msgid "`\\t`"
 msgstr ""
 
-#: src/reference/syntax/strings.md:80
+#: src/reference/syntax/strings.md:78
 msgid "ASCII Horizontal Tab (TAB)"
 msgstr ""
 
-#: src/reference/syntax/strings.md:81
+#: src/reference/syntax/strings.md:79
 msgid "`\\xhh`"
 msgstr ""
 
-#: src/reference/syntax/strings.md:81
+#: src/reference/syntax/strings.md:79
 msgid "Character with hex value hh"
 msgstr ""
 
-#: src/reference/syntax/strings.md:82
+#: src/reference/syntax/strings.md:80
 msgid "`\\u{xxxx}`"
 msgstr ""
 
-#: src/reference/syntax/strings.md:82
+#: src/reference/syntax/strings.md:80
 msgid "Character with hex value xxxx"
 msgstr ""

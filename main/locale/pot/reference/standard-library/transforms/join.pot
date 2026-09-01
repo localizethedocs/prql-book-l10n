@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -43,9 +43,9 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/join.md:18
 msgid ""
-"_Names [`this` & `that`](../../syntax/keywords.md#this--that)_: Along name "
-"`this`, which refers to the first input relation, `condition` can use name "
-"`that`, which refers to the second input relation."
+"_Names [`this` & `that`](../../syntax/keywords.md#this--that)_: Alongside "
+"name `this`, which refers to the first input relation, `condition` can use "
+"name `that`, which refers to the second input relation."
 msgstr ""
 
 #: src/reference/stdlib/transforms/join.md:21

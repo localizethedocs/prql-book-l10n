@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,9 +25,9 @@ msgstr ""
 
 #: src/reference/spec/modules.md:10
 msgid ""
-"However, at this time (Spring 2024), the `module` facility does not work "
-"within a PRQL query itself. That is, a `module` statement in a query cannot "
-"import files from the local file system."
+"Currently, the `module` facility does not work within a PRQL query itself. "
+"That is, a `module` statement in a query cannot import files from the local "
+"file system."
 msgstr ""
 
 #: src/reference/spec/modules.md:14
@@ -125,10 +125,9 @@ msgstr ""
 
 #: src/reference/spec/modules.md:125 src/reference/spec/modules.md:279
 msgid ""
-"\\[!WARNING\\] The examples below do **not** work. At this time (Spring "
-"2024), the `module` facility does not work within a PRQL query itself. That "
-"is, a `module` statement in a query cannot import files from the local file "
-"system."
+"\\[!WARNING\\] The examples below do **not** work. Currently, the `module` "
+"facility does not work within a PRQL query itself. That is, a `module` "
+"statement in a query cannot import files from the local file system."
 msgstr ""
 
 #: src/reference/spec/modules.md:130

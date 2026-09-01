@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -74,11 +74,11 @@ msgstr ""
 
 #: src/tutorial/filtering.md:41
 msgid ""
-"Of course, it is possible combine all these transforms into a single "
+"Of course, it is possible to combine all these transforms into a single "
 "pipeline:"
 msgstr ""
 
-#: src/tutorial/filtering.md:43
+#: src/tutorial/filtering.md:44
 msgid ""
 "```prql no-eval\n"
 "from invoices\n"
@@ -94,13 +94,13 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/tutorial/filtering.md:56
+#: src/tutorial/filtering.md:57
 msgid ""
 "We did something a bit odd at the end: first we took rows `11..20` and then "
 "took the first 3 rows from that result."
 msgstr ""
 
-#: src/tutorial/filtering.md:60
+#: src/tutorial/filtering.md:61
 msgid ""
 "\\[!NOTE\\] Note that a single transform `take 11..13` would have produced "
 "the same SQL. The example shows how PRQL allows fast data exploration by "

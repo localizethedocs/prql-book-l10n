@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -70,7 +70,7 @@ msgid "\"experimental-features = nix-command flakes\""
 msgstr ""
 
 #: src/project/bindings/php.md:42
-msgid "Now you can spawn a shell from `prql-php/`:"
+msgid "Now you can spawn a shell from `prqlc/bindings/php/`:"
 msgstr ""
 
 #: src/project/bindings/php.md:48

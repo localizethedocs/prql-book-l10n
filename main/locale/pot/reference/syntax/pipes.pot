@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -68,11 +68,11 @@ msgid "before or after tuple items"
 msgstr ""
 
 #: src/reference/syntax/pipes.md:31
-msgid "before or after list items"
+msgid "before or after array items"
 msgstr ""
 
 #: src/reference/syntax/pipes.md:32
-msgid "before a new statement, which starts with `let` or `from` (or `func`)"
+msgid "before a new statement, which starts with `let` or `from`"
 msgstr ""
 
 #: src/reference/syntax/pipes.md:33

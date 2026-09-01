@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,9 +16,7 @@ msgid "prql-dotnet"
 msgstr ""
 
 #: src/project/bindings/dotnet.md:3
-msgid ""
-"`prql-net` offers PRQL bindings for .NET bindings as a `netstandard2.0` "
-"library."
+msgid "`prql-net` offers PRQL bindings for .NET as a `net10.0` library."
 msgstr ""
 
 #: src/project/bindings/dotnet.md:5
@@ -42,7 +40,7 @@ msgid ""
 "Make sure that `libprqlc_c.so` (Linux), `libprqlc_c.dylib` (macOS) or "
 "`libprqlc_c.dll` (Windows) is in the project's `bin` directory together with "
 "`PrqlCompiler.dll` and the rest of the project's compiled files. I.e. "
-"`{your_project}/bin/Debug/net7.0/`."
+"`{your_project}/bin/Debug/net10.0/`."
 msgstr ""
 
 #: src/project/bindings/dotnet.md:18

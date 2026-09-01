@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -161,7 +161,7 @@ msgid "compare"
 msgstr ""
 
 #: src/reference/syntax/operators.md:33
-msgid "`==` `!=` `<=` `>=` `<` `>`"
+msgid "`==` `!=` `<=` `>=` `~=` `<` `>`"
 msgstr ""
 
 #: src/reference/syntax/operators.md:33
@@ -373,7 +373,7 @@ msgid ""
 msgstr ""
 
 #: src/reference/syntax/operators.md:179
-msgid "...while with parentheses, it works at expected:"
+msgid "...while with parentheses, it works as expected:"
 msgstr ""
 
 #: src/reference/syntax/operators.md:187

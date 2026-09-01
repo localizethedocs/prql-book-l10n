@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,5 +25,19 @@ msgid ""
 "from artists\n"
 "derive normal_string =  \"\\\\\\t\"   #  two characters - \\ and tab (\\t)\n"
 "derive raw_string    = r\"\\\\\\t\"   # four characters - \\, \\, \\, and t\n"
+"```"
+msgstr ""
+
+#: src/reference/syntax/r-strings.md:11
+msgid ""
+"An r-string is closed by the same quote character that opened it, so the "
+"other quote character is ordinary content:"
+msgstr ""
+
+#: src/reference/syntax/r-strings.md:14
+msgid ""
+"```prql\n"
+"from artists\n"
+"derive quoted = r\"it's\"\n"
 "```"
 msgstr ""

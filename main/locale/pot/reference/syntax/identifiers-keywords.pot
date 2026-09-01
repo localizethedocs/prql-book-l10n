@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -54,7 +54,7 @@ msgstr ""
 #: src/reference/syntax/keywords.md:51
 msgid ""
 "To use characters that would be otherwise invalid, identifiers can be "
-"surrounded by with backticks."
+"surrounded with backticks."
 msgstr ""
 
 #: src/reference/syntax/keywords.md:54
@@ -75,7 +75,7 @@ msgstr ""
 
 #: src/reference/syntax/keywords.md:84
 msgid ""
-"Note that all of following identifiers will be treated as separate table "
+"Note that all of the following identifiers will be treated as separate table "
 "definitions: `tracks`, `public.tracks`, `my_database.public.tracks`."
 msgstr ""
 
@@ -110,38 +110,46 @@ msgid "**`type`** - type declaration"
 msgstr ""
 
 #: src/reference/syntax/keywords.md:96
+msgid "**`enum`** - enumeration type declaration"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:97
 msgid ""
 "**`func`** - explicit function declaration [_more..._](../declarations/"
 "functions.md)"
 msgstr ""
 
-#: src/reference/syntax/keywords.md:98
+#: src/reference/syntax/keywords.md:99
 msgid "**`module`** - used internally"
 msgstr ""
 
-#: src/reference/syntax/keywords.md:99
-msgid "**`internal`** - used internally"
-msgstr ""
-
 #: src/reference/syntax/keywords.md:100
-msgid "**`true`** - boolean [_more..._](./literals.md#booleans)"
+msgid "**`import`** - used internally"
 msgstr ""
 
 #: src/reference/syntax/keywords.md:101
-msgid "**`false`** - boolean [_more..._](./literals.md#booleans)"
+msgid "**`internal`** - used internally"
 msgstr ""
 
 #: src/reference/syntax/keywords.md:102
-msgid "**`null`** - NULL [_more..._](./literals.md#null)"
+msgid "**`true`** - boolean [_more..._](./literals.md#booleans)"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:103
+msgid "**`false`** - boolean [_more..._](./literals.md#booleans)"
 msgstr ""
 
 #: src/reference/syntax/keywords.md:104
+msgid "**`null`** - NULL [_more..._](./literals.md#null)"
+msgstr ""
+
+#: src/reference/syntax/keywords.md:106
 msgid ""
 "Keywords can be used as identifiers (of columns or variables) when encased "
 "in backticks: `` `case` ``."
 msgstr ""
 
-#: src/reference/syntax/keywords.md:107
+#: src/reference/syntax/keywords.md:109
 msgid ""
 "Transforms are normal functions within the `std` namespace, not keywords. "
 "That is, `std.from` is the same function as `from`. In the example below, "

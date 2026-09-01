@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -211,137 +211,141 @@ msgid "Text functions"
 msgstr ""
 
 #: src/SUMMARY.md:71
+msgid "Tuple functions"
+msgstr ""
+
+#: src/SUMMARY.md:72
 msgid "Removing duplicates"
 msgstr ""
 
-#: src/SUMMARY.md:73
+#: src/SUMMARY.md:74
 msgid "Specification"
 msgstr ""
 
-#: src/SUMMARY.md:74
+#: src/SUMMARY.md:75
 msgid "Null handling"
 msgstr ""
 
-#: src/SUMMARY.md:75
+#: src/SUMMARY.md:76
 msgid "Name resolution"
 msgstr ""
 
-#: src/SUMMARY.md:76
+#: src/SUMMARY.md:77
 msgid "Modules"
 msgstr ""
 
-#: src/SUMMARY.md:77
+#: src/SUMMARY.md:78
 msgid "Type system"
 msgstr ""
 
-#: src/SUMMARY.md:79
+#: src/SUMMARY.md:80
 msgid "Project"
 msgstr ""
 
-#: src/SUMMARY.md:81
+#: src/SUMMARY.md:82
 msgid "General information about the project, tooling and development."
 msgstr ""
 
-#: src/SUMMARY.md:83
+#: src/SUMMARY.md:84
 msgid "Changelog"
 msgstr ""
 
-#: src/SUMMARY.md:85
+#: src/SUMMARY.md:86
 msgid "Target & version"
 msgstr ""
 
-#: src/SUMMARY.md:87
+#: src/SUMMARY.md:88
 msgid "Bindings"
 msgstr ""
 
-#: src/SUMMARY.md:88
+#: src/SUMMARY.md:89
 msgid ".NET"
 msgstr ""
 
-#: src/SUMMARY.md:89
+#: src/SUMMARY.md:90
 msgid "Elixir"
 msgstr ""
 
-#: src/SUMMARY.md:90
+#: src/SUMMARY.md:91
 msgid "Java"
 msgstr ""
 
-#: src/SUMMARY.md:91
+#: src/SUMMARY.md:92
 msgid "JavaScript"
 msgstr ""
 
-#: src/SUMMARY.md:92
+#: src/SUMMARY.md:93
 msgid "PHP"
 msgstr ""
 
-#: src/SUMMARY.md:93
+#: src/SUMMARY.md:94
 msgid "Python"
 msgstr ""
 
-#: src/SUMMARY.md:94
+#: src/SUMMARY.md:95
 msgid "R"
 msgstr ""
 
-#: src/SUMMARY.md:95
+#: src/SUMMARY.md:96
 msgid "Rust"
 msgstr ""
 
-#: src/SUMMARY.md:97
+#: src/SUMMARY.md:98
 msgid "Integrations"
 msgstr ""
 
-#: src/SUMMARY.md:98
+#: src/SUMMARY.md:99
 msgid "`prqlc CLI`"
 msgstr ""
 
-#: src/SUMMARY.md:99
+#: src/SUMMARY.md:100
 msgid "ClickHouse"
 msgstr ""
 
-#: src/SUMMARY.md:100
+#: src/SUMMARY.md:101
 msgid "Jupyter"
 msgstr ""
 
-#: src/SUMMARY.md:101
+#: src/SUMMARY.md:102
 msgid "DuckDB"
 msgstr ""
 
-#: src/SUMMARY.md:102
+#: src/SUMMARY.md:103
 msgid "QStudio"
 msgstr ""
 
-#: src/SUMMARY.md:103
+#: src/SUMMARY.md:104
 msgid "Prefect"
 msgstr ""
 
-#: src/SUMMARY.md:104
+#: src/SUMMARY.md:105
 msgid "VS Code"
 msgstr ""
 
-#: src/SUMMARY.md:105
+#: src/SUMMARY.md:106
 msgid "PostgreSQL"
 msgstr ""
 
-#: src/SUMMARY.md:106
+#: src/SUMMARY.md:107
 msgid "Databend"
 msgstr ""
 
-#: src/SUMMARY.md:107
+#: src/SUMMARY.md:108
 msgid "Rill"
 msgstr ""
 
-#: src/SUMMARY.md:108
+#: src/SUMMARY.md:109
 msgid "Syntax highlighting"
 msgstr ""
 
-#: src/SUMMARY.md:110
+#: src/SUMMARY.md:111
 msgid "Contributing to PRQL"
 msgstr ""
 
-#: src/SUMMARY.md:111
+#: src/SUMMARY.md:112
 msgid "Development"
 msgstr ""
 
-#: src/SUMMARY.md:112
+#: src/SUMMARY.md:113
 msgid "Language design"
 msgstr ""

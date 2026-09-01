@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,45 +19,66 @@ msgstr ""
 msgid "Concatenates two tables together."
 msgstr ""
 
-#: src/reference/stdlib/transforms/append.md:5
+#: src/reference/stdlib/transforms/append.md:9
 msgid ""
 "Equivalent to `UNION ALL` in SQL. The number of rows is always the sum of "
-"the number of rows from the two input tables. To replicate `UNION DISTINCT`, "
-"see [set operations](#set-operations)."
-msgstr ""
-
-#: src/reference/stdlib/transforms/append.md:14
-msgid "Remove"
-msgstr ""
-
-#: src/reference/stdlib/transforms/append.md:16
-#: src/reference/stdlib/transforms/append.md:28
-#: src/reference/stdlib/transforms/append.md:37
-msgid "_experimental_"
+"the number of rows from the two input tables. The number of columns in each "
+"input table must be the same, and the columns will align by position by "
+"default."
 msgstr ""
 
 #: src/reference/stdlib/transforms/append.md:18
+msgid "To replicate `UNION DISTINCT`, see [set operations](#set-operations)."
+msgstr ""
+
+#: src/reference/stdlib/transforms/append.md:20
+msgid ""
+"Tables can also be combined by column name rather than column position by "
+"adding the `by:name` argument to `append`. When appending by name, the "
+"number of columns in each table does not need to be the same; columns "
+"present in one relation but missing from the other will have NULL values "
+"added. This mode currently only works if the set of columns on both sides is "
+"fully defined."
+msgstr ""
+
+#: src/reference/stdlib/transforms/append.md:35
+msgid ""
+"Support for generating dialect-specific `UNION ALL BY NAME` queries is "
+"pending."
+msgstr ""
+
+#: src/reference/stdlib/transforms/append.md:38
+msgid "Remove"
+msgstr ""
+
+#: src/reference/stdlib/transforms/append.md:40
+#: src/reference/stdlib/transforms/append.md:52
+#: src/reference/stdlib/transforms/append.md:61
+msgid "_experimental_"
+msgstr ""
+
+#: src/reference/stdlib/transforms/append.md:42
 msgid ""
 "Removes rows that appear in another relation, like `EXCEPT ALL`. Duplicate "
 "rows are removed one-for-one."
 msgstr ""
 
-#: src/reference/stdlib/transforms/append.md:26
+#: src/reference/stdlib/transforms/append.md:50
 msgid "Intersection"
 msgstr ""
 
-#: src/reference/stdlib/transforms/append.md:35
+#: src/reference/stdlib/transforms/append.md:59
 msgid "Set operations"
 msgstr ""
 
-#: src/reference/stdlib/transforms/append.md:39
+#: src/reference/stdlib/transforms/append.md:63
 msgid ""
 "To imitate set operations i.e. (`UNION`, `EXCEPT` and `INTERSECT`), you can "
 "use the following functions:"
 msgstr ""
 
-#: src/reference/stdlib/transforms/append.md:49
+#: src/reference/stdlib/transforms/append.md:73
 msgid ""
-"Don't mind the `default_db.` and `noop`, these are compiler implementation "
-"detail for now."
+"Don't mind the `default_db.`; this is a compiler implementation detail for "
+"now."
 msgstr ""

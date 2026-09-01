@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-01T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -158,47 +158,47 @@ msgid ""
 "    \"\"\""
 msgstr ""
 
-#: src/project/bindings/python.md:120
+#: src/project/bindings/python.md:121
 msgid "\"\"\"Computes a column-level lineage graph from PL AST (JSON).\"\"\""
 msgstr ""
 
-#: src/project/bindings/python.md:124
+#: src/project/bindings/python.md:125
 msgid "Development"
 msgstr ""
 
-#: src/project/bindings/python.md:126
+#: src/project/bindings/python.md:127
 msgid "For development, we use `uv` for fast dependency management:"
 msgstr ""
 
-#: src/project/bindings/python.md:129
+#: src/project/bindings/python.md:130
 msgid "# Install development dependencies and run tests\n"
 msgstr ""
 
-#: src/project/bindings/python.md:131
+#: src/project/bindings/python.md:132
 msgid "# Run type checking\n"
 msgstr ""
 
-#: src/project/bindings/python.md:134
+#: src/project/bindings/python.md:135
 msgid "# Or use the task runner\n"
 msgstr ""
 
-#: src/project/bindings/python.md:139
+#: src/project/bindings/python.md:140
 msgid "Notes"
 msgstr ""
 
-#: src/project/bindings/python.md:141
+#: src/project/bindings/python.md:142
 msgid ""
 "These bindings are in a crate named `prqlc-python` and published to a Python "
 "package on PyPI named `prqlc`, available at <https://pypi.org/project/"
 "prqlc>. This crate is not published to crates.io."
 msgstr ""
 
-#: src/project/bindings/python.md:145
+#: src/project/bindings/python.md:146
 msgid ""
 "The package is consumed by [pyprql](https://github.com/prql/pyprql) & [dbt-"
 "prql](https://github.com/prql/dbt-prql)."
 msgstr ""
 
-#: src/project/bindings/python.md:148
+#: src/project/bindings/python.md:149
 msgid "Relies on [pyo3](https://github.com/PyO3/pyo3) for all the magic."
 msgstr ""
