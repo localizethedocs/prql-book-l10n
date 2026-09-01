@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-26T14:14:42Z\n"
+"POT-Creation-Date: 2026-09-01T13:21:06Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/project/contributing/development.md:1
@@ -723,45 +723,48 @@ msgstr ""
 
 #: src/project/contributing/development.md:450
 msgid ""
-"PR & merge an updated [Changelog](https://github.com/PRQL/prql/blob/main/"
-"CHANGELOG.md). GitHub will produce a draft version at <https://github.com/"
-"PRQL/prql/releases/new>, including \"New Contributors\"."
+"If the version needs changing (for example, a planned patch release that "
+"should instead be a minor release), run `cargo release $version --no-publish "
+"--no-push --execute --no-verify --no-confirm --no-tag && task prqlc:test-"
+"all` to set it, then PR the resulting commit. Otherwise the version is "
+"already correct, set by the previous release's patch bump."
 msgstr ""
 
-#: src/project/contributing/development.md:455
-msgid "Use this script to generate a line introducing the enumerated changes:"
-msgstr ""
-
-#: src/project/contributing/development.md:458
+#: src/project/contributing/development.md:456
 msgid ""
-"\"It has $(git rev-list --count $(git rev-list --tags --max-count=1)..) "
-"commits from $(git shortlog --summary $(git rev-list --tags --max-count=1).. "
-"| wc -l | tr -d '[:space:]') contributors. Selected changes:\""
+"PR & merge an updated [Changelog](https://github.com/PRQL/prql/blob/main/"
+"CHANGELOG.md). Rename the `## [unreleased]` heading to the new version and "
+"date (matching the format of the entries below it) and curate its entries. "
+"Leave no `## [unreleased]` section; step 5 recreates it. GitHub will produce "
+"a draft at <https://github.com/PRQL/prql/releases/new>, including \"New "
+"Contributors\"."
 msgstr ""
 
-#: src/project/contributing/development.md:461
+#: src/project/contributing/development.md:463
+msgid "Generate the line that introduces the enumerated changes with:"
+msgstr ""
+
+#: src/project/contributing/development.md:466
+msgid ""
+"\"$version has $(git rev-list --count $(git rev-list --tags --max-"
+"count=1)..) commits from $(git shortlog --summary $(git rev-list --tags --"
+"max-count=1).. | wc -l | tr -d '[:space:]') contributors. Selected changes:\""
+msgstr ""
+
+#: src/project/contributing/development.md:469
 msgid ""
 "When a fix closes an issue reported by someone other than the PR author, "
 "thank them in the changelog entry, e.g. `(@pr-author, #5639; reported by "
 "@issue-reporter)`."
 msgstr ""
 
-#: src/project/contributing/development.md:465
-msgid ""
-"If the current version is correct, then skip ahead. But if the version needs "
-"to be changed — for example, we had planned on a patch release, but instead "
-"require a minor release — then run `cargo release version $version -x && "
-"cargo release replace -x && task prqlc:test-all` to bump the version, and PR "
-"the resulting commit."
-msgstr ""
-
-#: src/project/contributing/development.md:471
+#: src/project/contributing/development.md:473
 msgid ""
 "Ensure all changes intended for the release are merged to `main`. Then "
 "create the release (which creates the tag on the latest commit on `main`):"
 msgstr ""
 
-#: src/project/contributing/development.md:474
+#: src/project/contributing/development.md:476
 msgid ""
 "**Web UI:** Go to [Draft a new release](https://github.com/PRQL/prql/"
 "releases/new)<sup><a name=\"to-footnote-3\">[3](#footnote-3)</a></sup>, copy "
@@ -770,52 +773,52 @@ msgid ""
 "hit \"Publish\"."
 msgstr ""
 
-#: src/project/contributing/development.md:480
+#: src/project/contributing/development.md:482
 msgid "**CLI:**"
 msgstr ""
 
-#: src/project/contributing/development.md:483
+#: src/project/contributing/development.md:485
 msgid "\"$version\""
 msgstr ""
 
-#: src/project/contributing/development.md:483
+#: src/project/contributing/development.md:485
 msgid "\"$(cat <<'EOF'\n"
 msgstr ""
 
-#: src/project/contributing/development.md:489
+#: src/project/contributing/development.md:491
 msgid ""
 "From there, both the tag and release is created and all packages are "
 "published automatically based on our [release workflow](https://github.com/"
 "PRQL/prql/blob/main/.github/workflows/release.yaml)."
 msgstr ""
 
-#: src/project/contributing/development.md:493
+#: src/project/contributing/development.md:495
 msgid ""
 "Run `cargo release patch --no-publish --no-push --execute --no-verify --no-"
-"confirm --no-tag && task prqlc:test-all` to bump the versions and add a new "
-"Changelog section; then PR the resulting commit. Note this currently "
-"contains `task prqlc:test-all` to update snapshot tests which contain the "
-"version."
+"confirm --no-tag && task prqlc:test-all` to bump to the next development "
+"version, then PR the resulting commit. This recreates the `## [unreleased]` "
+"section for the next cycle, and `task prqlc:test-all` refreshes the snapshot "
+"tests that embed the version."
 msgstr ""
 
-#: src/project/contributing/development.md:501
+#: src/project/contributing/development.md:503
 msgid ""
 "Check whether there are [milestones](https://github.com/PRQL/prql/"
 "milestones) that need to be pushed out."
 msgstr ""
 
-#: src/project/contributing/development.md:504
+#: src/project/contributing/development.md:506
 msgid ""
 "Review the **Current Status** on the README.md to ensure it reflects the "
 "project state."
 msgstr ""
 
-#: src/project/contributing/development.md:507
+#: src/project/contributing/development.md:509
 msgid ""
 "We may make this more automated in future; e.g. automatic changelog creation."
 msgstr ""
 
-#: src/project/contributing/development.md:511
+#: src/project/contributing/development.md:513
 msgid ""
 "<a name=\"footnote-1\">[1](#to-footnote-1)</a>: Our approach is very "
 "consistent with **[@matklad](https://github.com/matklad)**'s advice, in his "
@@ -823,7 +826,7 @@ msgid ""
 "to-test.html)."
 msgstr ""
 
-#: src/project/contributing/development.md:516
+#: src/project/contributing/development.md:518
 msgid ""
 "<a name=\"footnote-2\">[2](#to-footnote-2)</a>: [Here's an example of an "
 "insta test](https://github.com/PRQL/prql/blob/0.2.2/prql-compiler/src/parser."
@@ -831,13 +834,13 @@ msgid ""
 "us; the remainder is filled in by insta."
 msgstr ""
 
-#: src/project/contributing/development.md:520
+#: src/project/contributing/development.md:522
 msgid ""
 "<a name=\"footnote-3\">[3](#to-footnote-3)</a>: Only maintainers have access "
 "to this page."
 msgstr ""
 
-#: src/project/contributing/development.md:523
+#: src/project/contributing/development.md:525
 msgid ""
 "<a name=\"footnote-4\">[4](#to-footnote-4)</a>: Unfortunately GitHub's "
 "markdown parser interprets linebreaks as newlines. I haven't found a better "

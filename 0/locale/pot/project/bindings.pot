@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-26T14:14:41Z\n"
+"POT-Creation-Date: 2026-09-01T13:21:06Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/project/bindings/index.md:1
@@ -16,126 +16,122 @@ msgid "Bindings"
 msgstr ""
 
 #: src/project/bindings/index.md:3
-msgid "PRQL has bindings for many languages. These include:"
+msgid "PRQL has bindings for many languages, in three tiers:"
 msgstr ""
 
-#: src/project/bindings/index.md:5
-msgid "We have three tiers of bindings:"
-msgstr ""
-
-#: src/project/bindings/index.md:7 src/project/bindings/index.md:11
+#: src/project/bindings/index.md:5 src/project/bindings/index.md:9
 msgid "Supported"
 msgstr ""
 
-#: src/project/bindings/index.md:8 src/project/bindings/index.md:33
+#: src/project/bindings/index.md:6 src/project/bindings/index.md:31
 msgid "Unsupported"
 msgstr ""
 
-#: src/project/bindings/index.md:9 src/project/bindings/index.md:43
+#: src/project/bindings/index.md:7 src/project/bindings/index.md:41
 msgid "Nascent"
 msgstr ""
 
-#: src/project/bindings/index.md:13
+#: src/project/bindings/index.md:11
 msgid "Supported bindings require:"
 msgstr ""
 
-#: src/project/bindings/index.md:15
+#: src/project/bindings/index.md:13
 msgid "A maintainer."
 msgstr ""
 
-#: src/project/bindings/index.md:16
+#: src/project/bindings/index.md:14
 msgid ""
 "Implementations of the [core compile functions](https://docs.rs/prqlc/latest/"
 "prqlc/#functions)."
 msgstr ""
 
-#: src/project/bindings/index.md:18
+#: src/project/bindings/index.md:16
 msgid "Test coverage for these functions."
 msgstr ""
 
-#: src/project/bindings/index.md:19
+#: src/project/bindings/index.md:17
 msgid "A published package to the language's standard package repository."
 msgstr ""
 
-#: src/project/bindings/index.md:20
+#: src/project/bindings/index.md:18
 msgid "A script in `Taskfile.yaml` to bootstrap a development environment."
 msgstr ""
 
-#: src/project/bindings/index.md:21
+#: src/project/bindings/index.md:19
 msgid ""
 "Any dev tools, such as a linter & formatter, in pre-commit or MegaLinter."
 msgstr ""
 
-#: src/project/bindings/index.md:23
+#: src/project/bindings/index.md:21
 msgid "The currently supported bindings are:"
 msgstr ""
 
-#: src/project/bindings/index.md:25
+#: src/project/bindings/index.md:23
 msgid "[JavaScript](./javascript.md)"
 msgstr ""
 
-#: src/project/bindings/index.md:26
+#: src/project/bindings/index.md:24
 msgid "[Python](./python.md)"
 msgstr ""
 
-#: src/project/bindings/index.md:27
+#: src/project/bindings/index.md:25
 msgid "[R](./r.md)"
 msgstr ""
 
-#: src/project/bindings/index.md:28
+#: src/project/bindings/index.md:26
 msgid "[Rust](./rust.md)"
 msgstr ""
 
-#: src/project/bindings/index.md:30
+#: src/project/bindings/index.md:28
 msgid ""
 "Most of these are in the main PRQL repo, and we gate any changes to the "
 "compiler's API on compatible changes to the bindings."
 msgstr ""
 
-#: src/project/bindings/index.md:35
+#: src/project/bindings/index.md:33
 msgid ""
 "Unsupported bindings work, but don't fulfil all of the above criteria. We "
 "don't gate changes to the compiler's API. If they stop working, we'll demote "
 "them to nascent."
 msgstr ""
 
-#: src/project/bindings/index.md:39
+#: src/project/bindings/index.md:37
 msgid "[Java](./java.md)"
 msgstr ""
 
-#: src/project/bindings/index.md:40
+#: src/project/bindings/index.md:38
 msgid "[Elixir](./elixir.md)"
 msgstr ""
 
-#: src/project/bindings/index.md:41
+#: src/project/bindings/index.md:39
 msgid "`prqlc-c`, the C bindings"
 msgstr ""
 
-#: src/project/bindings/index.md:45
+#: src/project/bindings/index.md:43
 msgid "Nascent bindings are in development, and may not yet fully work."
 msgstr ""
 
-#: src/project/bindings/index.md:47
+#: src/project/bindings/index.md:45
 msgid "[.NET](./dotnet.md)"
 msgstr ""
 
-#: src/project/bindings/index.md:48
+#: src/project/bindings/index.md:46
 msgid "[PHP](./php.md)"
 msgstr ""
 
-#: src/project/bindings/index.md:50
+#: src/project/bindings/index.md:48
 msgid "Naming"
 msgstr ""
 
-#: src/project/bindings/index.md:52
+#: src/project/bindings/index.md:50
 msgid "Over time, we're trying to move to a consistent naming scheme:"
 msgstr ""
 
-#: src/project/bindings/index.md:54
+#: src/project/bindings/index.md:52
 msgid "Crates are named `prqlc-$lang`."
 msgstr ""
 
-#: src/project/bindings/index.md:55
+#: src/project/bindings/index.md:53
 msgid ""
 "Where possible, packages are published to each language's package repository "
 "as `prqlc`."

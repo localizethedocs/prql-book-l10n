@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-26T14:14:41Z\n"
+"POT-Creation-Date: 2026-09-01T13:21:06Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/reference/spec/name-resolution.md:1
@@ -56,7 +56,7 @@ msgstr ""
 
 #: src/reference/spec/name-resolution.md:25
 msgid ""
-"It start with only namespace `std`, which is the standard library. It "
+"It starts with only namespace `std`, which is the standard library. It "
 "contains common functions like `sum` or `count`, along with all transform "
 "functions such as `derive` and `group`."
 msgstr ""
@@ -97,7 +97,7 @@ msgid ""
 msgstr ""
 
 #: src/reference/spec/name-resolution.md:50
-msgid "Otherwise, the nothing is matched and an error is raised."
+msgid "Otherwise, nothing is matched and an error is raised."
 msgstr ""
 
 #: src/reference/spec/name-resolution.md:52

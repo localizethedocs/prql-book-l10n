@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PRQL language book\n"
+"POT-Creation-Date: 2026-09-01T13:21:06Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/reference/stdlib/tuple.md:1
+msgid "Tuple functions"
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:3
+msgid ""
+"The standard library defines the following functions for manipulating tuples:"
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:5
+msgid "`tuple_reduce`"
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:7
+msgid ""
+"Applies a two-parameter function cumulatively across a tuple, in order to "
+"reduce the tuple to a single value."
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:19
+msgid ""
+"When the `initial:` named parameter is provided, its value will be used to "
+"initialize the reduction operation, and will be the default value if the "
+"tuple is empty."
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:30
+msgid ""
+"If `initial` is not provided, when the tuple has exactly one entry, its "
+"value will be returned; when the tuple is empty, an error will be raised."
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:33
+msgid "`tuple_map`"
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:35
+msgid ""
+"Applies a function to each entry in a tuple, returning a tuple. Aliases "
+"defined in the tuple will be passed through to the output."
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:38
+msgid ""
+"```prql\n"
+"prql target:sql.duckdb\n"
+"\n"
+"from invoices\n"
+"select (\n"
+"  tuple_map (date.to_text \"%d/%m/%Y\") {\n"
+"    rcv_txt = received_on,\n"
+"    prc_txt = processed_on,\n"
+"  }\n"
+")\n"
+"```"
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:50
+msgid "`tuple_zip`"
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:52
+msgid ""
+"Combines two tuples into one tuple by aligning them in parallel and creating "
+"tuples out of each aligned pair. This can be used in conjunction with "
+"`tuple_map` and `tuple_reduce` in various ways:"
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:64
+msgid "`tuple_uniq`"
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:66
+msgid ""
+"Iteratively deduplicates a tuple by alias (or, when an alias is not defined, "
+"by its referenced column name). This can help to have more control over "
+"situations when a column may be being overwritten."
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:70
+msgid ""
+"For example, the following includes all columns from both `invoices` and "
+"`shipments` in the final result, even those that have overlapping names:"
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:81
+msgid ""
+"Adding `select (tuple_uniq take:late {invoices.*, shipments.*})` will allow "
+"the columns from `shipments` to appear in the output taking precedence over "
+"those from `invoices`."
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:94
+msgid "Using `take:early` rather than `take:late` flips the priority."
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:105
+msgid "Items in a tuple without a name or an alias will be dropped."
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:112
+msgid "`tuple_reverse`"
+msgstr ""
+
+#: src/reference/stdlib/tuple.md:114
+msgid "Reverses the order of a tuple."
+msgstr ""
