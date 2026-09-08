@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-08T13:18:28Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -140,10 +140,25 @@ msgid "Converts `col` to upper case"
 msgstr ""
 
 #: src/reference/stdlib/text.md:19
-msgid "Example"
+msgid "Pattern matching"
 msgstr ""
 
 #: src/reference/stdlib/text.md:21
+msgid ""
+"`contains`, `starts_with` and `ends_with` compile to SQL `LIKE`, and their "
+"argument becomes the `LIKE` pattern rather than a literal string. `%` and "
+"`_` in the argument therefore keep their wildcard meaning — `text.contains "
+"\"a_b\"` matches `axb` as well as `a_b` — and PRQL does not escape them. "
+"Case sensitivity follows the target database's `LIKE` semantics, so lower-"
+"case the column and use a lower-case pattern for matching that is case-"
+"insensitive everywhere, as in the example below."
+msgstr ""
+
+#: src/reference/stdlib/text.md:29
+msgid "Example"
+msgstr ""
+
+#: src/reference/stdlib/text.md:31
 msgid ""
 "```prql\n"
 "from employees\n"
