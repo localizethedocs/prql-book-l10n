@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-15T13:55:16Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -40,7 +40,6 @@ msgid "Direct usage"
 msgstr ""
 
 #: src/project/bindings/javascript.md:32 src/project/bindings/javascript.md:53
-#: src/project/bindings/javascript.md:63
 msgid "\"prqlc\""
 msgstr ""
 
@@ -61,68 +60,57 @@ msgid "`from employees | take 10`"
 msgstr ""
 
 #: src/project/bindings/javascript.md:50
-msgid "Template literal"
+msgid "A query over several lines"
 msgstr ""
 
-#: src/project/bindings/javascript.md:54 src/project/bindings/javascript.md:64
-msgid "\"\""
-msgstr ""
-
-#: src/project/bindings/javascript.md:56
-msgid "prql`from employees | select first_name`"
-msgstr ""
-
-#: src/project/bindings/javascript.md:60
-msgid "Template literal with newlines"
-msgstr ""
-
-#: src/project/bindings/javascript.md:66
+#: src/project/bindings/javascript.md:55
 msgid ""
-"prql`\n"
-"    from employees\n"
-"    select first_name\n"
+"`\n"
+"  from employees\n"
+"  select first_name\n"
 "`"
 msgstr ""
 
-#: src/project/bindings/javascript.md:73
+#: src/project/bindings/javascript.md:62
 msgid "From a browser"
 msgstr ""
 
-#: src/project/bindings/javascript.md:78
+#: src/project/bindings/javascript.md:67
 msgid "\"module\""
 msgstr ""
 
-#: src/project/bindings/javascript.md:79
-msgid "\"./dist/web/prql_js.js\""
+#: src/project/bindings/javascript.md:68
+msgid "\"./dist/web/prqlc_js.js\""
 msgstr ""
 
-#: src/project/bindings/javascript.md:82
+#: src/project/bindings/javascript.md:71
 msgid "\"from employees | select first_name\""
 msgstr ""
 
-#: src/project/bindings/javascript.md:91
+#: src/project/bindings/javascript.md:80
 msgid "From a framework or a bundler"
 msgstr ""
 
-#: src/project/bindings/javascript.md:93
+#: src/project/bindings/javascript.md:82
 msgid ""
 "```typescript\n"
-"import compile from \"prqlc/dist/bundler\";\n"
+"import { compile } from \"prqlc/dist/bundler\";\n"
 "\n"
 "const sql = compile(`from employees | select first_name`);\n"
 "console.log(sql);\n"
 "```"
 msgstr ""
 
-#: src/project/bindings/javascript.md:100
+#: src/project/bindings/javascript.md:89
 msgid "Errors"
 msgstr ""
 
-#: src/project/bindings/javascript.md:102
-msgid "Errors are returned as following object, serialized as a JSON array:"
+#: src/project/bindings/javascript.md:91
+msgid ""
+"Errors are returned as the following object, serialized as a JSON array:"
 msgstr ""
 
-#: src/project/bindings/javascript.md:104
+#: src/project/bindings/javascript.md:93
 msgid ""
 "```typescript\n"
 "interface ErrorMessage {\n"
@@ -133,7 +121,7 @@ msgid ""
 "  /// Plain text of the error\n"
 "  reason: string;\n"
 "  /// A list of suggestions of how to fix the error\n"
-"  hint: string | null;\n"
+"  hints: string[];\n"
 "  /// Character offset of error origin within a source file\n"
 "  span: [number, number] | null;\n"
 "\n"
@@ -155,58 +143,62 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/project/bindings/javascript.md:134
+#: src/project/bindings/javascript.md:123
 msgid "These errors can be caught as such:"
 msgstr ""
 
-#: src/project/bindings/javascript.md:138
+#: src/project/bindings/javascript.md:127
 msgid "`from employees | foo first_name`"
 msgstr ""
 
-#: src/project/bindings/javascript.md:147
+#: src/project/bindings/javascript.md:136
 msgid "Development"
 msgstr ""
 
-#: src/project/bindings/javascript.md:149
+#: src/project/bindings/javascript.md:138
 msgid "Build:"
 msgstr ""
 
-#: src/project/bindings/javascript.md:155
+#: src/project/bindings/javascript.md:144
 msgid "This builds Node, bundler and web packages in the `dist` path."
 msgstr ""
 
-#: src/project/bindings/javascript.md:157
+#: src/project/bindings/javascript.md:146
 msgid "Test:"
 msgstr ""
 
-#: src/project/bindings/javascript.md:163
+#: src/project/bindings/javascript.md:152
 msgid ""
 "By default the `wasm` binaries are optimized on each run, even if the "
 "underlying code hasn't changed, which can be slow. For a lower-latency dev "
-"loop, pass `--profile=dev` to `npm install` for a faster, less optimized "
-"build."
+"loop, set the `PROFILE` environment variable to `dev` for a faster, less "
+"optimized build."
 msgstr ""
 
-#: src/project/bindings/javascript.md:171
+#: src/project/bindings/javascript.md:157
+msgid "dev"
+msgstr ""
+
+#: src/project/bindings/javascript.md:160
 msgid "Notes"
 msgstr ""
 
-#: src/project/bindings/javascript.md:173
+#: src/project/bindings/javascript.md:162
 msgid ""
 "This uses [`wasm-pack`](https://rustwasm.github.io/docs/wasm-pack/) to "
 "generate bindings[^1]."
 msgstr ""
 
-#: src/project/bindings/javascript.md:175
+#: src/project/bindings/javascript.md:164
 msgid ""
 "We've added an `npm` layer on top of the usual approach of just using `wasm-"
 "pack`, so we can distribute a single package with targets of `node`, "
-"`bundler` and `no-modules` — somewhat inverting the approach recommended by "
-"`wasm-pack`. The build instruction goes in a `build` script, rather than a "
-"`pack` script."
+"`bundler` and `web` — somewhat inverting the approach recommended by `wasm-"
+"pack`. The build instruction goes in a `build` script, rather than a `pack` "
+"script."
 msgstr ""
 
-#: src/project/bindings/javascript.md:182
+#: src/project/bindings/javascript.md:171
 msgid ""
 "    Though we would be very open to other approaches, given wasm-pack does "
 "not\n"
