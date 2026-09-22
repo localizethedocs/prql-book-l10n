@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-09-22T13:46:12Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -77,364 +77,550 @@ msgid ""
 msgstr ""
 
 #: src/reference/stdlib/date.md:46
-msgid "Date & time format specifiers"
+msgid "`now`"
 msgstr ""
 
 #: src/reference/stdlib/date.md:48
+msgid "Returns the current date and time as a timestamp."
+msgstr ""
+
+#: src/reference/stdlib/date.md:55
+msgid "The SQL output varies by dialect:"
+msgstr ""
+
+#: src/reference/stdlib/date.md:57 src/reference/stdlib/date.md:83
+#: src/reference/stdlib/date.md:115
+msgid "Dialect"
+msgstr ""
+
+#: src/reference/stdlib/date.md:57 src/reference/stdlib/date.md:83
+#: src/reference/stdlib/date.md:115
+msgid "SQL output"
+msgstr ""
+
+#: src/reference/stdlib/date.md:59 src/reference/stdlib/date.md:85
+#: src/reference/stdlib/date.md:117
+msgid "Generic"
+msgstr ""
+
+#: src/reference/stdlib/date.md:59 src/reference/stdlib/date.md:63
+msgid "`CURRENT_TIMESTAMP`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:60 src/reference/stdlib/date.md:88
+#: src/reference/stdlib/date.md:120
+msgid "MySQL"
+msgstr ""
+
+#: src/reference/stdlib/date.md:60
+msgid "`NOW()`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:61 src/reference/stdlib/date.md:92
+#: src/reference/stdlib/date.md:122
+msgid "BigQuery"
+msgstr ""
+
+#: src/reference/stdlib/date.md:61
+msgid "`CURRENT_TIMESTAMP()`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:62 src/reference/stdlib/date.md:89
+#: src/reference/stdlib/date.md:121
+msgid "Clickhouse"
+msgstr ""
+
+#: src/reference/stdlib/date.md:62
+msgid "`now()`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:63
+msgid "Others"
+msgstr ""
+
+#: src/reference/stdlib/date.md:65
+msgid "`trunc`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:67
+msgid ""
+"Truncates a date or timestamp to a given unit. The unit is written as a "
+"string literal, unlike `date.diff`, which takes it as a bare keyword; which "
+"units are accepted follows the target database. The unit has to be known at "
+"compile time, so a column or expression in its place is an error."
+msgstr ""
+
+#: src/reference/stdlib/date.md:72
+msgid ""
+"```prql\n"
+"prql target:sql.postgres\n"
+"\n"
+"from events\n"
+"select (event_time | date.trunc \"day\")\n"
+"\n"
+"```"
+msgstr ""
+
+#: src/reference/stdlib/date.md:80
+msgid ""
+"Most dialects take the unit as a quoted first argument, but MSSQL and "
+"BigQuery each use their own form:"
+msgstr ""
+
+#: src/reference/stdlib/date.md:85 src/reference/stdlib/date.md:86
+#: src/reference/stdlib/date.md:87 src/reference/stdlib/date.md:88
+#: src/reference/stdlib/date.md:89
+msgid "`DATE_TRUNC('day', event_time)`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:86 src/reference/stdlib/date.md:118
+msgid "DuckDB"
+msgstr ""
+
+#: src/reference/stdlib/date.md:87
+msgid "Postgres"
+msgstr ""
+
+#: src/reference/stdlib/date.md:90 src/reference/stdlib/date.md:123
+msgid "Snowflake"
+msgstr ""
+
+#: src/reference/stdlib/date.md:90
+msgid "`DATE_TRUNC('day', \"event_time\")`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:91 src/reference/stdlib/date.md:119
+msgid "MSSQL"
+msgstr ""
+
+#: src/reference/stdlib/date.md:91
+msgid "`DATETRUNC(day, event_time)`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:92
+msgid "`DATE_TRUNC(event_time, DAY)`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:95
+msgid ""
+"\\[!NOTE\\] SQLite has no date-truncation function, so `date.trunc` raises "
+"an error when compiling for that dialect."
+msgstr ""
+
+#: src/reference/stdlib/date.md:99
+msgid "`diff`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:101
+msgid ""
+"Returns `end` minus `start`, measured in `unit` — so `date.diff unit start "
+"end` is positive when `end` is later. The unit is written as a bare keyword, "
+"unlike `date.trunc`, which takes it as a string; which units are accepted "
+"follows the target database."
+msgstr ""
+
+#: src/reference/stdlib/date.md:111
+msgid ""
+"`date.diff` compiles to the target database's own date-difference function, "
+"so the exact rounding behavior — whether a partial unit counts — follows "
+"that database rather than being normalized by PRQL:"
+msgstr ""
+
+#: src/reference/stdlib/date.md:117 src/reference/stdlib/date.md:119
+msgid "`DATEDIFF(day, start_date, end_date)`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:118
+msgid "`datediff('day', start_date, end_date)`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:120
+msgid "`TIMESTAMPDIFF(day, start_date, end_date)`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:121
+msgid "`dateDiff('day', start_date, end_date)`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:122
+msgid "`DATE_DIFF(end_date, start_date, day)`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:123
+msgid "`DATEDIFF(day, \"start_date\", \"end_date\")`"
+msgstr ""
+
+#: src/reference/stdlib/date.md:126
+msgid ""
+"\\[!NOTE\\] Postgres and SQLite have no `DATEDIFF` equivalent, so `date."
+"diff` raises an error when compiling for those dialects."
+msgstr ""
+
+#: src/reference/stdlib/date.md:130
+msgid "Date & time format specifiers"
+msgstr ""
+
+#: src/reference/stdlib/date.md:132
 msgid ""
 "PRQL specifiers for date and time formatting is a subset of specifiers used "
 "by [`chrono`](https://docs.rs/chrono/latest/chrono/format/strftime/index."
 "html)."
 msgstr ""
 
-#: src/reference/stdlib/date.md:51
+#: src/reference/stdlib/date.md:135
 msgid "Here is the list of the specifiers currently supported:"
 msgstr ""
 
-#: src/reference/stdlib/date.md:53
+#: src/reference/stdlib/date.md:137
 msgid "Spec."
 msgstr ""
 
-#: src/reference/stdlib/date.md:53
+#: src/reference/stdlib/date.md:137
 msgid "Example"
 msgstr ""
 
-#: src/reference/stdlib/date.md:53
+#: src/reference/stdlib/date.md:137
 msgid "Description"
 msgstr ""
 
-#: src/reference/stdlib/date.md:56
+#: src/reference/stdlib/date.md:140
 msgid "**DATE SPECIFIERS:**"
 msgstr ""
 
-#: src/reference/stdlib/date.md:57
+#: src/reference/stdlib/date.md:141
 msgid "`%Y`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:57
+#: src/reference/stdlib/date.md:141
 msgid "`2001`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:57
+#: src/reference/stdlib/date.md:141
 msgid "Year number, zero-padded to 4 digits"
 msgstr ""
 
-#: src/reference/stdlib/date.md:58
+#: src/reference/stdlib/date.md:142
 msgid "`%y`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:58
+#: src/reference/stdlib/date.md:142
 msgid "`01`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:58
+#: src/reference/stdlib/date.md:142
 msgid "Year number, zero-padded to 2 digits"
 msgstr ""
 
-#: src/reference/stdlib/date.md:59
+#: src/reference/stdlib/date.md:143
 msgid "`%m`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:59
+#: src/reference/stdlib/date.md:143
 msgid "`07`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:59
+#: src/reference/stdlib/date.md:143
 msgid "Month number (01–12), zero-padded to 2 digits"
 msgstr ""
 
-#: src/reference/stdlib/date.md:60
+#: src/reference/stdlib/date.md:144
 msgid "`%-m`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:60
+#: src/reference/stdlib/date.md:144
 msgid "`7`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:60
+#: src/reference/stdlib/date.md:144
 msgid "Month number (1-12)"
 msgstr ""
 
-#: src/reference/stdlib/date.md:61
+#: src/reference/stdlib/date.md:145
 msgid "`%b`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:61
+#: src/reference/stdlib/date.md:145
 msgid "`Jul`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:61
+#: src/reference/stdlib/date.md:145
 msgid "Abbreviated month name. Always 3 letters."
 msgstr ""
 
-#: src/reference/stdlib/date.md:62
+#: src/reference/stdlib/date.md:146
 msgid "`%B`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:62
+#: src/reference/stdlib/date.md:146
 msgid "`July`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:62
+#: src/reference/stdlib/date.md:146
 msgid "Full month name"
 msgstr ""
 
-#: src/reference/stdlib/date.md:63
+#: src/reference/stdlib/date.md:147
 msgid "`%d`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:63
+#: src/reference/stdlib/date.md:147
 msgid "`08`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:63
+#: src/reference/stdlib/date.md:147
 msgid "Day number (01-31), zero-padded to 2 digits"
 msgstr ""
 
-#: src/reference/stdlib/date.md:64
+#: src/reference/stdlib/date.md:148
 msgid "`%-d`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:64
-msgid "` 8`"
+#: src/reference/stdlib/date.md:148
+msgid "`8`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:64
+#: src/reference/stdlib/date.md:148
 msgid "Day number (1-31)"
 msgstr ""
 
-#: src/reference/stdlib/date.md:65
+#: src/reference/stdlib/date.md:149
 msgid "`%a`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:65
+#: src/reference/stdlib/date.md:149
 msgid "`Sun`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:65
+#: src/reference/stdlib/date.md:149
 msgid "Abbreviated weekday name. Always 3 letters"
 msgstr ""
 
-#: src/reference/stdlib/date.md:66
+#: src/reference/stdlib/date.md:150
 msgid "`%A`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:66
+#: src/reference/stdlib/date.md:150
 msgid "`Sunday`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:66
+#: src/reference/stdlib/date.md:150
 msgid "Full weekday name"
 msgstr ""
 
-#: src/reference/stdlib/date.md:67
+#: src/reference/stdlib/date.md:151
 msgid "`%D`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:67 src/reference/stdlib/date.md:68
+#: src/reference/stdlib/date.md:151 src/reference/stdlib/date.md:152
 msgid "`07/08/01`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:67
+#: src/reference/stdlib/date.md:151
 msgid "Month-day-year format. Same as `%m/%d/%y`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:68
+#: src/reference/stdlib/date.md:152
 msgid "`%x`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:68
+#: src/reference/stdlib/date.md:152
 msgid "Locale's date representation"
 msgstr ""
 
-#: src/reference/stdlib/date.md:69
+#: src/reference/stdlib/date.md:153
 msgid "`%F`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:69
+#: src/reference/stdlib/date.md:153
 msgid "`2001-07-08`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:69
+#: src/reference/stdlib/date.md:153
 msgid "Year-month-day format (ISO 8601). Same as `%Y-%m-%d`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:71
+#: src/reference/stdlib/date.md:155
 msgid "**TIME SPECIFIERS:**"
 msgstr ""
 
-#: src/reference/stdlib/date.md:72
+#: src/reference/stdlib/date.md:156
 msgid "`%H`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:72
+#: src/reference/stdlib/date.md:156
 msgid "`00`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:72
+#: src/reference/stdlib/date.md:156
 msgid "Hour number (00-23)"
 msgstr ""
 
-#: src/reference/stdlib/date.md:73
-msgid "`%k`"
+#: src/reference/stdlib/date.md:157
+msgid "`%-H`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:73
-msgid "` 0`"
+#: src/reference/stdlib/date.md:157
+msgid "`0`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:73
-msgid "Same as `%H` but space-padded. Same as `%_H`."
+#: src/reference/stdlib/date.md:157
+msgid "Hour number (0-23)"
 msgstr ""
 
-#: src/reference/stdlib/date.md:74
+#: src/reference/stdlib/date.md:158
 msgid "`%I`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:74
+#: src/reference/stdlib/date.md:158
 msgid "`12`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:74
+#: src/reference/stdlib/date.md:158
 msgid "Hour number in 12-hour clocks (01--12), zero-padded to 2 digits."
 msgstr ""
 
-#: src/reference/stdlib/date.md:75
+#: src/reference/stdlib/date.md:159
 msgid "`%p`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:75
+#: src/reference/stdlib/date.md:159
 msgid "`AM`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:75
+#: src/reference/stdlib/date.md:159
 msgid "`AM` or `PM` in 12-hour clocks."
 msgstr ""
 
-#: src/reference/stdlib/date.md:76
+#: src/reference/stdlib/date.md:160
 msgid "`%M`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:76
+#: src/reference/stdlib/date.md:160
 msgid "`34`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:76
+#: src/reference/stdlib/date.md:160
 msgid "Minute number (00-59), zero-padded to 2 digits."
 msgstr ""
 
-#: src/reference/stdlib/date.md:77
+#: src/reference/stdlib/date.md:161
 msgid "`%S`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:77
+#: src/reference/stdlib/date.md:161
 msgid "`60`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:77
-msgid "Second number (00-59), zero-padded to 2 digits."
+#: src/reference/stdlib/date.md:161
+msgid "Second number (00-60), zero-padded to 2 digits."
 msgstr ""
 
-#: src/reference/stdlib/date.md:78
+#: src/reference/stdlib/date.md:162
 msgid "`%f`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:78
+#: src/reference/stdlib/date.md:162
 msgid "`264900`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:78
+#: src/reference/stdlib/date.md:162
 msgid "Number of microseconds[^1] since last whole second"
 msgstr ""
 
-#: src/reference/stdlib/date.md:79
+#: src/reference/stdlib/date.md:163
 msgid "`%R`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:79
+#: src/reference/stdlib/date.md:163
 msgid "`00:34`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:79
+#: src/reference/stdlib/date.md:163
 msgid "Hour-minute format. Same as `%H:%M`."
 msgstr ""
 
-#: src/reference/stdlib/date.md:80
+#: src/reference/stdlib/date.md:164
 msgid "`%T`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:80 src/reference/stdlib/date.md:81
+#: src/reference/stdlib/date.md:164 src/reference/stdlib/date.md:165
 msgid "`00:34:60`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:80
+#: src/reference/stdlib/date.md:164
 msgid "Hour-minute-second format. Same as `%H:%M:%S`."
 msgstr ""
 
-#: src/reference/stdlib/date.md:81
+#: src/reference/stdlib/date.md:165
 msgid "`%X`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:81
+#: src/reference/stdlib/date.md:165
 msgid "Locale's time representation (e.g., 23:13:48)."
 msgstr ""
 
-#: src/reference/stdlib/date.md:82
+#: src/reference/stdlib/date.md:166
 msgid "`%r`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:82
+#: src/reference/stdlib/date.md:166
 msgid "`12:34:60 AM`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:82
+#: src/reference/stdlib/date.md:166
 msgid "Locale's 12 hour clock time. (e.g., 11:11:04 PM)"
 msgstr ""
 
-#: src/reference/stdlib/date.md:84
+#: src/reference/stdlib/date.md:168
 msgid "**DATE & TIME SPECIFIERS:**"
 msgstr ""
 
-#: src/reference/stdlib/date.md:85
+#: src/reference/stdlib/date.md:169
 msgid "`%+`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:85
+#: src/reference/stdlib/date.md:169
 msgid "`2001-07-08T00:34:60.026490Z`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:85
+#: src/reference/stdlib/date.md:169
 msgid "ISO 8601 / RFC 3339 date & time format."
 msgstr ""
 
-#: src/reference/stdlib/date.md:87
+#: src/reference/stdlib/date.md:171
 msgid "**SPECIAL SPECIFIERS:**"
 msgstr ""
 
-#: src/reference/stdlib/date.md:88
+#: src/reference/stdlib/date.md:172
 msgid "`%t`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:88
+#: src/reference/stdlib/date.md:172
 msgid "Literal tab (`\\t`)."
 msgstr ""
 
-#: src/reference/stdlib/date.md:89
+#: src/reference/stdlib/date.md:173
 msgid "`%n`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:89
+#: src/reference/stdlib/date.md:173
 msgid "Literal newline (`\\n`)."
 msgstr ""
 
-#: src/reference/stdlib/date.md:90
+#: src/reference/stdlib/date.md:174
 msgid "`%%`"
 msgstr ""
 
-#: src/reference/stdlib/date.md:90
+#: src/reference/stdlib/date.md:174
 msgid "Literal percent sign."
 msgstr ""
 
-#: src/reference/stdlib/date.md:92
+#: src/reference/stdlib/date.md:176
+msgid ""
+"Space-padded specifiers — chrono's `%_`\\-prefixed forms and their `%k` / "
+"`%l` aliases — are not supported by any dialect."
+msgstr ""
+
+#: src/reference/stdlib/date.md:179
 msgid "This is different from chrono, for which `%f` represents nanoseconds"
 msgstr ""
