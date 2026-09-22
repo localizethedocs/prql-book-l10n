@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-03-24 00:21:47 -0700",
-      "hash" : "50fbd19c34050e2e070ff1163b4fa2c406e860ec",
-      "title" : "feat: add 'date.diff' function for date diff support (#5726)"
+      "date" : "2026-09-22 01:29:49 -0700",
+      "hash" : "42639fd34b968c7f39d143c7cb86ab3d681a5ace",
+      "title" : "docs: correct the changelog entry format and option count in the contributor guide (#6362)"
     }
   },
   "type" : "branch",
