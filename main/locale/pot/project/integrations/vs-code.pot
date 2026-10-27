@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-10-27T14:44:37Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,9 +25,10 @@ msgstr ""
 
 #: src/project/integrations/vscode.md:7
 msgid ""
-"To install the VS Code extension, open VS Code and type <kbd>Ctrl</kbd>\\-"
-"<kbd>Shift</kbd>\\-<kbd>P</kbd> (<kbd>Cmd</kbd>\\-<kbd>Shift</kbd>\\-<kbd>P</"
-"kbd> on a Mac) and type `PRQL`. Install the extension as usual."
+"To install the VS Code extension, open the Extensions view in VS Code with "
+"<kbd>Ctrl</kbd>\\-<kbd>Shift</kbd>\\-<kbd>X</kbd> (<kbd>Cmd</kbd>\\-"
+"<kbd>Shift</kbd>\\-<kbd>X</kbd> on a Mac), search for `PRQL`, and install "
+"the extension as usual."
 msgstr ""
 
 #: src/project/integrations/vscode.md:12
