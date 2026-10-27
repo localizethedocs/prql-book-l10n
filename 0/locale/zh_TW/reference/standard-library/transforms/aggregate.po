@@ -56,6 +56,6 @@ msgstr ""
 #: src/reference/stdlib/transforms/aggregate.md:51
 msgid ""
 "This ensures that `derive` does not manipulate the number of rows, but only "
-"ever adds a column. For more information, see [window transform](./window."
-"md)."
+"ever adds a column. For more information, see [window transform](./"
+"window.md)."
 msgstr ""

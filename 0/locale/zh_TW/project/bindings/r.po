@@ -32,8 +32,9 @@ msgstr ""
 
 #: src/project/bindings/r.md:11
 msgid ""
-"\\[!NOTE\\] `prqlr` is generously maintained by [@eitsupi](https://github."
-"com/eitsupi) in the [PRQL/prqlc-r](https://github.com/PRQL/prqlc-r) repo."
+"\\[!NOTE\\] `prqlr` is generously maintained by [@eitsupi](https://"
+"github.com/eitsupi) in the [PRQL/prqlc-r](https://github.com/PRQL/prqlc-r) "
+"repo."
 msgstr ""
 
 #: src/project/bindings/r.md:16

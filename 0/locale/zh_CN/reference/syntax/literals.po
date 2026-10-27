@@ -118,8 +118,8 @@ msgstr ""
 #: src/reference/syntax/literals.md:72
 msgid ""
 "Times are represented by `@{HH:mm:ss.SSS±Z}` with any parts not supplied "
-"defaulting to zero. This includes the timezone, which is represented by `+HH:"
-"mm`, `-HH:mm` or `Z`. This is consistent with the ISO8601 time format."
+"defaulting to zero. This includes the timezone, which is represented by "
+"`+HH:mm`, `-HH:mm` or `Z`. This is consistent with the ISO8601 time format."
 msgstr ""
 
 #: src/reference/syntax/literals.md:81

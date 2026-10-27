@@ -241,8 +241,8 @@ msgstr ""
 
 #: src/reference/spec/modules.md:238
 msgid ""
-"The path to the root module can be automatically detected by searching for `."
-"prql` files starting with `_` in the current working directory."
+"The path to the root module can be automatically detected by searching for "
+"`.prql` files starting with `_` in the current working directory."
 msgstr ""
 
 #: src/reference/spec/modules.md:241

@@ -119,8 +119,8 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:30
 msgid ""
-"[Add columns from another table, matching rows based on a condition](./join."
-"md)"
+"[Add columns from another table, matching rows based on a condition](./"
+"join.md)"
 msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:30
@@ -145,8 +145,8 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:32
 msgid ""
-"[Partition rows into groups and applies a pipeline to each of them](./group."
-"md)"
+"[Partition rows into groups and applies a pipeline to each of them](./"
+"group.md)"
 msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:32
