@@ -72,8 +72,8 @@ msgid ""
 "PRQL supports string literals and several other formats of strings. See the "
 "[Strings](./strings.md) page for more information."
 msgstr ""
-"PRQL 支援字串字面值和多種其他字串格式。如需詳細資訊，請參閱[字串](./strings."
-"md)頁面。"
+"PRQL 支援字串字面值和多種其他字串格式。如需詳細資訊，請參閱[字串](./"
+"strings.md)頁面。"
 
 #: src/reference/syntax/literals.md:41
 msgid "Booleans"
@@ -130,11 +130,11 @@ msgstr "時間"
 #: src/reference/syntax/literals.md:72
 msgid ""
 "Times are represented by `@{HH:mm:ss.SSS±Z}` with any parts not supplied "
-"defaulting to zero. This includes the timezone, which is represented by `+HH:"
-"mm`, `-HH:mm` or `Z`. This is consistent with the ISO8601 time format."
+"defaulting to zero. This includes the timezone, which is represented by "
+"`+HH:mm`, `-HH:mm` or `Z`. This is consistent with the ISO8601 time format."
 msgstr ""
-"時間由 `@{HH:mm:ss.SSS±Z}` 表示，任何未提供的部分預設為零。這包括由 `+HH:"
-"mm`、`-HH:mm` 或 `Z` 表示的時區。這符合 ISO8601 時間格式。"
+"時間由 `@{HH:mm:ss.SSS±Z}` 表示，任何未提供的部分預設為零。這包括由 "
+"`+HH:mm`、`-HH:mm` 或 `Z` 表示的時區。這符合 ISO8601 時間格式。"
 
 #: src/reference/syntax/literals.md:81
 msgid "Timestamps"

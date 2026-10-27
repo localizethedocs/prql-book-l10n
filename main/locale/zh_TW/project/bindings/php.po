@@ -75,8 +75,8 @@ msgstr ""
 
 #: src/project/bindings/php.md:48
 msgid ""
-"This will pull-in ext-ffi extension, because it's declared in `composer."
-"json`."
+"This will pull-in ext-ffi extension, because it's declared in "
+"`composer.json`."
 msgstr ""
 
 #: src/project/bindings/php.md:50

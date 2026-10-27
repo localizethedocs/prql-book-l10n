@@ -49,8 +49,8 @@ msgstr ""
 
 #: src/reference/spec/null.md:15
 msgid ""
-"For more information, check out the [Postgres documentation](https://www."
-"postgresql.org/docs/current/functions-comparison.html)."
+"For more information, check out the [Postgres documentation](https://"
+"www.postgresql.org/docs/current/functions-comparison.html)."
 msgstr ""
 
 #: src/reference/spec/null.md:18

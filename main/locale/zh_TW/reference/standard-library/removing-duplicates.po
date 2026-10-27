@@ -31,9 +31,9 @@ msgstr ""
 
 #: src/reference/stdlib/distinct.md:23
 msgid ""
-"To [select a single row from each group](https://stackoverflow.com/"
-"questions/3800551/select-first-row-in-each-group-by-group) `group` can be "
-"combined with `sort` and `take`:"
+"To [select a single row from each group](https://stackoverflow.com/questions/"
+"3800551/select-first-row-in-each-group-by-group) `group` can be combined "
+"with `sort` and `take`:"
 msgstr ""
 
 #: src/reference/stdlib/distinct.md:36

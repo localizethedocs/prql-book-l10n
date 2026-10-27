@@ -106,8 +106,8 @@ msgstr ""
 #: src/project/integrations/syntax-highlighting.md:45
 msgid ""
 "KSyntaxHighlighting — used by Kate, KWrite and KDevelop and other Qt "
-"applications. File is at [`grammars/KSyntaxHighlighting/`](https://github."
-"com/PRQL/prql/tree/main/grammars/KSyntaxHighlighting/)."
+"applications. File is at [`grammars/KSyntaxHighlighting/`](https://"
+"github.com/PRQL/prql/tree/main/grammars/KSyntaxHighlighting/)."
 msgstr ""
 
 #: src/project/integrations/syntax-highlighting.md:49

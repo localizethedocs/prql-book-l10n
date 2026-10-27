@@ -33,6 +33,6 @@ msgstr ""
 
 #: src/project/integrations/duckdb.md:16
 msgid ""
-"Check out the [extension's documentation](https://community-extensions."
-"duckdb.org/extensions/prql.html) for more details."
+"Check out the [extension's documentation](https://community-"
+"extensions.duckdb.org/extensions/prql.html) for more details."
 msgstr ""

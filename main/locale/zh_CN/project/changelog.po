@@ -1691,8 +1691,8 @@ msgstr ""
 #: src/project/changelog.md:871
 msgid ""
 "Truncated integer division operator `//` (@aljazerzen, #2684). See the "
-"[Division docs](https://prql-lang.org/book/reference/syntax/operators."
-"html#division-and-integer-division) for details."
+"[Division docs](https://prql-lang.org/book/reference/syntax/"
+"operators.html#division-and-integer-division) for details."
 msgstr ""
 
 #: src/project/changelog.md:875
@@ -2018,8 +2018,8 @@ msgstr ""
 
 #: src/project/changelog.md:1091
 msgid ""
-"Added the PRQL snippets from the book to the [Playground](https://prql-lang."
-"org/playground/) (@jelenkee, #2197)"
+"Added the PRQL snippets from the book to the [Playground](https://prql-"
+"lang.org/playground/) (@jelenkee, #2197)"
 msgstr ""
 
 #: src/project/changelog.md:1096
@@ -2216,8 +2216,8 @@ msgstr ""
 
 #: src/project/changelog.md:1200
 msgid ""
-"If you're interested in dbt integration, subscribe or 👍 to <https://github."
-"com/dbt-labs/dbt-core/pull/5982>."
+"If you're interested in dbt integration, subscribe or 👍 to <https://"
+"github.com/dbt-labs/dbt-core/pull/5982>."
 msgstr ""
 
 #: src/project/changelog.md:1203
@@ -2405,8 +2405,8 @@ msgstr ""
 
 #: src/project/changelog.md:1304
 msgid ""
-"`prqlc watch` command which watches filesystem for changes and compiles ."
-"prql files to .sql (@aljazerzen, #1708)"
+"`prqlc watch` command which watches filesystem for changes and "
+"compiles .prql files to .sql (@aljazerzen, #1708)"
 msgstr ""
 
 #: src/project/changelog.md:1309
@@ -2627,8 +2627,8 @@ msgstr ""
 
 #: src/project/changelog.md:1451
 msgid ""
-"Check out the [`case` docs](https://prql-lang.org/book/reference/syntax/case."
-"html) for more details."
+"Check out the [`case` docs](https://prql-lang.org/book/reference/syntax/"
+"case.html) for more details."
 msgstr ""
 
 #: src/project/changelog.md:1455
@@ -3519,9 +3519,9 @@ msgstr ""
 msgid ""
 "The best way to experience PRQL is to try it. Check out our [website]"
 "(https://prql-lang.org) and the [Playground](https://prql-lang.org/"
-"playground). Start using PRQL for your own projects in [dbt](https://github."
-"com/prql/dbt-prql), [Jupyter notebooks](https://pyprql.readthedocs.io/en/"
-"latest/magic_readme.html) and Prefect workflows."
+"playground). Start using PRQL for your own projects in [dbt](https://"
+"github.com/prql/dbt-prql), [Jupyter notebooks](https://pyprql.readthedocs.io/"
+"en/latest/magic_readme.html) and Prefect workflows."
 msgstr ""
 
 #: src/project/changelog.md:1948

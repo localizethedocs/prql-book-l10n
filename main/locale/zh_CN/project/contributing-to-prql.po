@@ -52,8 +52,8 @@ msgstr ""
 
 #: src/project/contributing/index.md:16
 msgid ""
-"Join our [fortnightly Developer Call](https://github.com/PRQL/prql/"
-"issues/1083); ([iCal file](./fortnightly-dev-call.ics))."
+"Join our [fortnightly Developer Call](https://github.com/PRQL/prql/issues/"
+"1083); ([iCal file](./fortnightly-dev-call.ics))."
 msgstr ""
 
 #: src/project/contributing/index.md:20

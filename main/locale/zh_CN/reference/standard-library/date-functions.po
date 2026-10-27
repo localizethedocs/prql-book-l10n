@@ -83,8 +83,8 @@ msgstr ""
 #: src/reference/stdlib/date.md:48
 msgid ""
 "PRQL specifiers for date and time formatting is a subset of specifiers used "
-"by [`chrono`](https://docs.rs/chrono/latest/chrono/format/strftime/index."
-"html)."
+"by [`chrono`](https://docs.rs/chrono/latest/chrono/format/strftime/"
+"index.html)."
 msgstr ""
 
 #: src/reference/stdlib/date.md:51
