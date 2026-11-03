@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-11-03T16:16:57Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -112,6 +112,10 @@ msgid "\"sql.any\""
 msgstr ""
 
 #: src/project/bindings/python.md:84
+msgid "\"plain\""
+msgstr ""
+
+#: src/project/bindings/python.md:86
 msgid ""
 "\"\"\"Compilation options for SQL backend of the compiler.\n"
 "\n"
@@ -130,25 +134,30 @@ msgid ""
 "        signature_comment (bool): Emits the compiler signature as a comment "
 "after\n"
 "            the generated SQL. Defaults to True.\n"
+"        color (bool): Deprecated and has no effect; use `display` instead.\n"
+"        display (str): How error messages are rendered: \"plain\" for plain "
+"text\n"
+"            or \"ansi_color\" for text with ANSI colors. Defaults to "
+"\"plain\".\n"
 "\n"
 "    \"\"\""
 msgstr ""
 
-#: src/project/bindings/python.md:101
+#: src/project/bindings/python.md:106
 msgid "\"\"\"List available target dialects for compilation.\"\"\""
 msgstr ""
 
-#: src/project/bindings/python.md:105
+#: src/project/bindings/python.md:110
 msgid "Debugging functions"
 msgstr ""
 
-#: src/project/bindings/python.md:107
+#: src/project/bindings/python.md:112
 msgid ""
 "The following functions are available within the `prqlc.debug` module. They "
 "are for experimental purposes and may be unstable."
 msgstr ""
 
-#: src/project/bindings/python.md:112
+#: src/project/bindings/python.md:117
 msgid ""
 "\"\"\"Computes a column-level lineage graph from a PRQL query.\n"
 "\n"
@@ -158,47 +167,47 @@ msgid ""
 "    \"\"\""
 msgstr ""
 
-#: src/project/bindings/python.md:120
+#: src/project/bindings/python.md:126
 msgid "\"\"\"Computes a column-level lineage graph from PL AST (JSON).\"\"\""
 msgstr ""
 
-#: src/project/bindings/python.md:124
+#: src/project/bindings/python.md:130
 msgid "Development"
 msgstr ""
 
-#: src/project/bindings/python.md:126
+#: src/project/bindings/python.md:132
 msgid "For development, we use `uv` for fast dependency management:"
 msgstr ""
 
-#: src/project/bindings/python.md:129
+#: src/project/bindings/python.md:135
 msgid "# Install development dependencies and run tests\n"
 msgstr ""
 
-#: src/project/bindings/python.md:131
+#: src/project/bindings/python.md:137
 msgid "# Run type checking\n"
 msgstr ""
 
-#: src/project/bindings/python.md:134
+#: src/project/bindings/python.md:140
 msgid "# Or use the task runner\n"
 msgstr ""
 
-#: src/project/bindings/python.md:139
+#: src/project/bindings/python.md:145
 msgid "Notes"
 msgstr ""
 
-#: src/project/bindings/python.md:141
+#: src/project/bindings/python.md:147
 msgid ""
 "These bindings are in a crate named `prqlc-python` and published to a Python "
 "package on PyPI named `prqlc`, available at <https://pypi.org/project/"
 "prqlc>. This crate is not published to crates.io."
 msgstr ""
 
-#: src/project/bindings/python.md:145
+#: src/project/bindings/python.md:151
 msgid ""
 "The package is consumed by [pyprql](https://github.com/prql/pyprql) & [dbt-"
 "prql](https://github.com/prql/dbt-prql)."
 msgstr ""
 
-#: src/project/bindings/python.md:148
+#: src/project/bindings/python.md:154
 msgid "Relies on [pyo3](https://github.com/PyO3/pyo3) for all the magic."
 msgstr ""

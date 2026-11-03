@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-11-03T16:16:57Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,9 +25,9 @@ msgstr ""
 
 #: src/reference/spec/modules.md:10
 msgid ""
-"However, at this time (Spring 2024), the `module` facility does not work "
-"within a PRQL query itself. That is, a `module` statement in a query cannot "
-"import files from the local file system."
+"Currently, the `module` facility does not work within a PRQL query itself. "
+"That is, a `module` statement in a query cannot import files from the local "
+"file system."
 msgstr ""
 
 #: src/reference/spec/modules.md:14
@@ -123,12 +123,11 @@ msgstr ""
 msgid "File importing"
 msgstr ""
 
-#: src/reference/spec/modules.md:125 src/reference/spec/modules.md:279
+#: src/reference/spec/modules.md:125 src/reference/spec/modules.md:281
 msgid ""
-"\\[!WARNING\\] The examples below do **not** work. At this time (Spring "
-"2024), the `module` facility does not work within a PRQL query itself. That "
-"is, a `module` statement in a query cannot import files from the local file "
-"system."
+"\\[!WARNING\\] The examples below do **not** work. Currently, the `module` "
+"facility does not work within a PRQL query itself. That is, a `module` "
+"statement in a query cannot import files from the local file system."
 msgstr ""
 
 #: src/reference/spec/modules.md:130
@@ -241,15 +240,20 @@ msgstr ""
 
 #: src/reference/spec/modules.md:238
 msgid ""
-"The path to the root module can be automatically detected by searching for `."
-"prql` files starting with `_` in the current working directory."
+"When `prqlc compile` is given a directory, it loads every `.prql` file in "
+"it. The root module is the file whose name starts with an uppercase letter "
+"(for example `Project.prql`), and every other file becomes a module named "
+"after its path, so `sales/projections.prql` is the module "
+"`sales.projections`."
 msgstr ""
 
-#: src/reference/spec/modules.md:241
-msgid "Example prqlc usage:"
+#: src/reference/spec/modules.md:243
+msgid ""
+"Example prqlc usage, where the second argument is the output (`-` for "
+"stdout) and the third is the identifier of the pipeline to compile:"
 msgstr ""
 
-#: src/reference/spec/modules.md:248
+#: src/reference/spec/modules.md:250
 msgid ""
 "**Single-file interface** requires a single argument; the PRQL source. Any "
 "attempts to load modules in this mode result in compilation errors. This "
@@ -257,28 +261,28 @@ msgid ""
 "database connector (i.e. JDBC) where no other files can be loaded."
 msgstr ""
 
-#: src/reference/spec/modules.md:253
+#: src/reference/spec/modules.md:255
 msgid "Built-in module structure"
 msgstr ""
 
-#: src/reference/spec/modules.md:255
+#: src/reference/spec/modules.md:257
 msgid "As noted above, this facility is in discussion."
 msgstr ""
 
-#: src/reference/spec/modules.md:276
+#: src/reference/spec/modules.md:278
 msgid "Example"
 msgstr ""
 
-#: src/reference/spec/modules.md:284
+#: src/reference/spec/modules.md:286
 msgid ""
 "This is an example project, where each of code block is a separate file."
 msgstr ""
 
-#: src/reference/spec/modules.md:339
+#: src/reference/spec/modules.md:341
 msgid "Sources:"
 msgstr ""
 
-#: src/reference/spec/modules.md:341
+#: src/reference/spec/modules.md:343
 msgid ""
 "[Notes On Module System](https://matklad.github.io/2021/11/27/notes-on-"
 "module-system.html), by @matklad."
