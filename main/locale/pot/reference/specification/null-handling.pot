@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-11-03T16:16:57Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -40,43 +40,35 @@ msgstr ""
 #: src/reference/spec/null.md:11
 msgid ""
 "to check if a value is `NULL`, SQL introduces `IS NULL` and `IS NOT NULL` "
-"operators,"
+"operators."
 msgstr ""
 
-#: src/reference/spec/null.md:13
-msgid "`DISTINCT column` may return multiple `NULL` values."
-msgstr ""
-
-#: src/reference/spec/null.md:15
+#: src/reference/spec/null.md:14
 msgid ""
-"For more information, check out the [Postgres documentation](https://www."
-"postgresql.org/docs/current/functions-comparison.html)."
+"For more information, check out the [Postgres documentation](https://"
+"www.postgresql.org/docs/current/functions-comparison.html)."
 msgstr ""
 
-#: src/reference/spec/null.md:18
+#: src/reference/spec/null.md:17
 msgid "PRQL, on the other hand, treats `null` as a value, which means that:"
 msgstr ""
 
-#: src/reference/spec/null.md:20
+#: src/reference/spec/null.md:19
 msgid "`null == null` evaluates to `true`,"
 msgstr ""
 
-#: src/reference/spec/null.md:21
-msgid "`null != null` evaluates to `false`,"
+#: src/reference/spec/null.md:20
+msgid "`null != null` evaluates to `false`."
 msgstr ""
 
-#: src/reference/spec/null.md:22
-msgid "distinct column cannot contain multiple `null` values."
-msgstr ""
-
-#: src/reference/spec/null.md:30
+#: src/reference/spec/null.md:28
 msgid ""
 "Note that PRQL doesn't change how `NULL` is compared between columns, for "
 "example in joins. (PRQL compiles to SQL and so can't change the behavior of "
 "the database)."
 msgstr ""
 
-#: src/reference/spec/null.md:34
+#: src/reference/spec/null.md:32
 msgid ""
 "For more context or to provide feedback check out the discussion on [issue "
 "#99](https://github.com/PRQL/prql/issues/99)."

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PRQL language book\n"
-"POT-Creation-Date: 2026-03-17T12:02:02Z\n"
+"POT-Creation-Date: 2026-11-03T16:16:57Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -119,8 +119,8 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:30
 msgid ""
-"[Add columns from another table, matching rows based on a condition](./join."
-"md)"
+"[Add columns from another table, matching rows based on a condition](./"
+"join.md)"
 msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:30
@@ -145,8 +145,7 @@ msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:32
 msgid ""
-"[Partition rows into groups and applies a pipeline to each of them](./group."
-"md)"
+"[Partition rows into groups and apply a pipeline to each of them](./group.md)"
 msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:32
@@ -166,35 +165,47 @@ msgid "`SELECT foo(...)`"
 msgstr ""
 
 #: src/reference/stdlib/transforms/index.md:34
+msgid "`append`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:34
+msgid "[Concatenate two tables, stacking their rows](./append.md)"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:34
+msgid "`UNION ALL`"
+msgstr ""
+
+#: src/reference/stdlib/transforms/index.md:35
 msgid "`window`"
 msgstr ""
 
-#: src/reference/stdlib/transforms/index.md:34
+#: src/reference/stdlib/transforms/index.md:35
 msgid "[Apply a pipeline to overlapping segments of rows](./window.md)"
 msgstr ""
 
-#: src/reference/stdlib/transforms/index.md:34
+#: src/reference/stdlib/transforms/index.md:35
 msgid "`OVER`, `ROWS`, `RANGE`"
 msgstr ""
 
-#: src/reference/stdlib/transforms/index.md:35
+#: src/reference/stdlib/transforms/index.md:36
 msgid "`loop`"
 msgstr ""
 
-#: src/reference/stdlib/transforms/index.md:35
+#: src/reference/stdlib/transforms/index.md:36
 msgid ""
-"[Iteratively apply a function to a relation until it's empty](./loop.md)"
+"[Iteratively apply a pipeline to a relation until it's empty](./loop.md)"
 msgstr ""
 
-#: src/reference/stdlib/transforms/index.md:35
+#: src/reference/stdlib/transforms/index.md:36
 msgid "`WITH RECURSIVE ...`"
 msgstr ""
 
-#: src/reference/stdlib/transforms/index.md:37
+#: src/reference/stdlib/transforms/index.md:38
 msgid "See also"
 msgstr ""
 
-#: src/reference/stdlib/transforms/index.md:39
+#: src/reference/stdlib/transforms/index.md:40
 msgid ""
 "[`from`](../../data/from.md) — `from` is the main way of getting data into a "
 "pipeline (it's not listed above since it's not technically a transform, "
